@@ -166,3 +166,15 @@ Still open:
 - [ ] Build fetch per SOURCES.md checklist (FIE/USA/NJ.com epee filter) + email-ingest scripts
 - [ ] 2 dry-run issues per edition with Frank red-pen, then enable scheduled bot
 - [ ] See also: SOURCES.md (standing checklist), SECTIONS-MENU.md (full options), REDDIT-SETUP.md
+
+## 10. Approval design (locked 2026-10-06)
+- Primary: LOCAL budget page on the club computer (Musketeer). Stories + B&W-as-printed
+  photo previews, approve checkboxes, photo-include checkboxes. Submit writes timestamped
+  `approvals.json` the bot reads. Frank works on desktop, never phone.
+- Chat is DOORBELL only: the bot pings "budget ready" — no approval state lives in chat
+  (chat fragments across messages and forces scroll-to-reference; rejected as a surface).
+- Google Form rejected: static templates can't show per-issue photos without regenerating
+  the form each time, or force blind approvals.
+- Two gates always: (1) approve the budget, (2) approve the rendered proof. Nothing prints
+  otherwise. Missed message = skipped week, which is fine (low stakes, just for fun).
+- Reversal = re-render from a previous `approvals.json`. Every render records which file it used.
