@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>En Garde Gazette — Prototype v2 Monday Edition</title>
+<style>
+  @page { size: Letter; margin: 0.5in 0.5in 0.4in 0.5in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt; line-height: 1.26; color: #000;
+    font-variant-numeric: tabular-nums; }
+  .page { page-break-after: always; width: 7.5in; }
+  .page:last-child { page-break-after: auto; }
+
+  .masthead img { display: block; width: 76%; height: auto; margin: 0 auto; }
+  .dateline { display: flex; justify-content: space-between; align-items: center;
+    border-top: 2.5pt solid #000; border-bottom: 2.5pt solid #000;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-weight: bold; font-size: 8pt;
+    padding: 1.5pt 0; margin: 3pt 0 4pt 0; text-transform: uppercase; letter-spacing: 0.4pt; }
+  .sample-flag { background: #000; color: #fff; padding: 1pt 6pt; letter-spacing: 1pt; }
+
+  .cols3 { display: flex; gap: 9pt; }
+  .cols3 > .c { flex: 1; min-width: 0; }
+  .cols3 > .span2 { flex: 2.06; }
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
+  .boxtitle { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 9.5pt;
+    text-transform: uppercase; letter-spacing: 0.5pt; border-bottom: 1pt solid #000;
+    padding-bottom: 2pt; margin-bottom: 3pt; }
+
+  h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 16pt; line-height: 1.02; letter-spacing: -0.3pt; margin-bottom: 2pt; }
+  h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; }
+  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; }
+  .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; margin-bottom: 3pt; }
+  p { margin-bottom: 3pt; text-align: justify; hyphens: auto; }
+  p:last-child { margin-bottom: 0; }
+  .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
+
+  table.board { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 8.5pt; }
+  table.board th { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; text-align: left; border-bottom: 1.5pt solid #000; padding: 1pt 4pt 1pt 0; }
+  table.board td { border-bottom: 0.5pt solid #000; padding: 1pt 4pt 1pt 0; vertical-align: top; }
+  table.board tr:last-child td { border-bottom: none; }
+  td.r, th.r { text-align: right; }
+  td.num { text-align: right; white-space: nowrap; }
+
+  .footer { border-top: 2.5pt solid #000; margin-top: 1pt; padding-top: 2pt;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt;
+    display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: 0.3pt; }
+  .comicbox { border: 1.5pt dashed #000; padding: 8pt; text-align: center; margin-bottom: 4pt; min-height: 1.6in;
+    display: flex; flex-direction: column; justify-content: center; }
+  .comicbox .big { font-family: "Arial Black", "Arial", sans-serif; font-size: 11pt; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 (FRONT) ==================== -->
+<div class="page">
+  <div class="masthead"><img src="../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly"></div>
+  <div class="dateline">
+    <span>Monday Results Edition &nbsp;·&nbsp; October 13, 2026</span>
+    <span class="sample-flag">Sample Content</span>
+    <span>Issue No. 002 &nbsp;·&nbsp; Chatham, N.J.</span>
+  </div>
+
+  <h1 class="head">Team USA Sweeps Pan-Am Epee Gold in Lima</h1>
+  <p class="dek">Comebacks in both team finals cap a six-gold weekend for the Americans at the Pan American Zonal Championships.</p>
+
+  <div class="cols3">
+    <div class="c span2">
+      <div class="byline">Gazette Staff · Epee Only, As Always</div>
+      <p>The United States won all six team gold medals at the Pan American Senior Zonal Championships in Lima, Peru, with both epee squads delivering the weekend's best drama. The men trailed Venezuela 33–31 after seven legs before Gabriel Feinberg posted a 9–2 eighth leg, and anchor Ariel Simmons held off a 16–5 closing run from Colombia's John Edison Rodriguez to win 45–42. Elijah Imrek and Oleg Knysh fenced steady middle legs in the 14-team field.</p>
+      <p>The women were even more commanding, beating Canada 41–31 behind Hadley Husisian, Catherine Nixon, Charlene Kai Yan Liu, and Tierna Oxenreider. In individual action, Anna van Brummen upset Husisian 15–13 for women's epee gold in a 68-fencer field. The U.S. claimed four of six individual titles overall.</p>
+      <p><b>Why it matters here:</b> zonals use the same relay format as our regional events — closing tight legs without panicking is exactly what coaches preach in our room. Feinberg's patience and Simmons holding a shrinking lead are the two hardest things in team fencing.</p>
+    </div>
+    <div class="c">
+      <div class="box">
+        <div class="boxtitle">Ratings Earned</div>
+        <table class="board">
+          <tr><th>Name</th><th>Rating</th><th class="r">Event</th></tr>
+          <tr><td>Maya R.</td><td class="num">B26</td><td class="r">Cadet WE</td></tr>
+          <tr><td>Daniel K.</td><td class="num">D26</td><td class="r">Y14 ME</td></tr>
+          <tr><td>Sofia L.</td><td class="num">E26</td><td class="r">Y12 WE</td></tr>
+          <tr><td>James T.</td><td class="num">A26</td><td class="r">Div IA ME</td></tr>
+        </table>
+      </div>
+      <div class="box">
+        <div class="boxtitle">Scoreboard</div>
+        <table class="board">
+          <tr><th>Src</th><th>Result</th></tr>
+          <tr><td>FIE</td><td>Song reclaims world epee crown in priority-minute final</td></tr>
+          <tr><td>FIE</td><td>Budapest GP: Lehis, Santuccio set up epee showdown</td></tr>
+          <tr><td>USA</td><td>Junior men's epee takes first-ever world team title</td></tr>
+          <tr><td>NJ HS</td><td>Preseason polls: Chatham 3rd in epee</td></tr>
+          <tr><td>SYC</td><td>Four Elite FC fencers reach DEs in Edison</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="cols3">
+    <div class="c span2">
+      <h2 class="head">NAC Season Opens in Orlando This Week</h2>
+      <p>The October NAC runs Oct. 9–12 in Orlando with Division I, cadet, Y14, cadet team, and parafencing — the first national points of the season. The Division I epee fields show who spent the summer training. Admission is free; results post same-day. Next: Columbus in November, Milwaukee in December.</p>
+    </div>
+    <div class="c">
+      <h2 class="head">Chatham Ranked 3rd in Preseason Epee Poll</h2>
+      <p>Preseason polls place Chatham third in boys' epee and fifth in girls', with several Elite FC fencers expected to anchor both squads. Dual meets begin in December. High-school fencing is where many of our fencers first fence for something bigger than themselves.</p>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="box">
+    <div class="boxtitle">Signup Board — Who's In (Compact)</div>
+    <table class="board">
+      <tr><th>Tournament</th><th>Events (Epee)</th><th>Closes</th><th>Elite FC Entered</th></tr>
+      <tr><td>Hub City Fall Epee Open, New Brunswick</td><td>Y14 / Cadet / Senior Mixed</td><td class="num">Oct 16</td><td>Maya R., Daniel K., Sofia L. +4</td></tr>
+      <tr><td>Garden State RJC, Edison</td><td>Cadet / Junior</td><td class="num">Oct 21</td><td>James T., Priya S. +2</td></tr>
+      <tr><td>November NAC, Columbus OH</td><td>Div I / Junior / Cadet</td><td class="num">Oct 28</td><td>Travel group forming — ask at desk</td></tr>
+    </table>
+  </div>
+
+  <div class="footer">
+    <span>En Garde Gazette · Elite Fencers Club, 17 Watchung Ave, Chatham NJ</span>
+    <span>Past issues at the club desk · Sample content — not for distribution</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 (BACK) ==================== -->
+<div class="page">
+  <div class="dateline" style="margin-top:0;">
+    <span>Page Two &nbsp;·&nbsp; TV, Deadlines &amp; Club Business</span>
+    <span>Issue No. 002</span>
+  </div>
+
+  <div class="cols3">
+    <div class="c">
+      <div class="box">
+        <div class="boxtitle">Where to Watch — Epee on Screen</div>
+        <table class="board">
+          <tr><th>Event</th><th>When</th><th>Watch</th></tr>
+          <tr><td>October NAC, Orlando — Div I epee finals</td><td class="num">Oct 11–12</td><td>USA Fencing YouTube (free)</td></tr>
+          <tr><td>Casablanca Epee World Cup</td><td class="num">Oct 15–18</td><td>FencingTV.com (sub.)</td></tr>
+          <tr><td>Veteran Worlds, Tbilisi</td><td class="num">Oct 9–17</td><td>FencingTV.com (sub.)</td></tr>
+          <tr><td>First to 15 podcast</td><td class="num">Anytime</td><td>Podcast apps (free)</td></tr>
+          <tr><td>November NAC, Columbus — Div I epee</td><td class="num">Nov 20–23</td><td>USA Fencing YouTube (free)</td></tr>
+        </table>
+        <p style="margin-top:3pt;"><b>Watch like a fencer:</b> pick one fencer and count their advances before each touch. You'll start seeing the setup two moves before the light goes on — that's distance, and it's the whole weapon.</p>
+      </div>
+      <div class="box">
+        <div class="boxtitle">Deadlines</div>
+        <table class="board">
+          <tr><th>Date</th><th>Deadline</th></tr>
+          <tr><td class="num">Oct 16</td><td>Hub City Open entries close</td></tr>
+          <tr><td class="num">Oct 21</td><td>Garden State RJC prereg closes</td></tr>
+          <tr><td class="num">Oct 28</td><td>November NAC regular-fee deadline</td></tr>
+          <tr><td class="num">Nov 1</td><td>USFA membership renewals due</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="c">
+      <div class="box">
+        <div class="boxtitle">Club This Week</div>
+        <table class="board">
+          <tr><th>Day</th><th>What's On</th></tr>
+          <tr><td>Mon–Fri</td><td>3–9pm classes + open fencing</td></tr>
+          <tr><td>Saturday</td><td>8:30am–3pm; 10am Y10/Y12 practice tournament</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+          <tr><td>Dec 27–31</td><td>Winter Camp — sign up at desk</td></tr>
+        </table>
+      </div>
+      <div class="box">
+        <div class="boxtitle">Fencing 101 — The Double Touch</div>
+        <p>Epee has no right-of-way: if both fencers hit within about 40 milliseconds, <b>both score</b>. That's why you see 1–1 counters where foil would give one light. Lesson for beginners: when you're up by one late in a bout, don't chase — make them come to you, because a double keeps your lead. When you're down, avoid the double at all costs; only single-light touches change the math. Tied at the end of a direct-elimination bout, epee goes to a one-minute priority round after a draw for who advances on a tie — win the draw and the pressure flips entirely: your opponent must score, and you only need one light.</p>
+      </div>
+      <div class="box">
+        <div class="boxtitle">Corrections</div>
+        <p>None yet. Give us time.</p>
+      </div>
+    </div>
+    <div class="c">
+      <div class="box">
+        <div class="boxtitle">Club Results</div>
+        <table class="board">
+          <tr><th>Event</th><th class="r">Best Elite FC Finish</th></tr>
+          <tr><td>Garden State RJC</td><td class="r">Maya R. 6th, Cadet WE</td></tr>
+          <tr><td>Garden State RJC</td><td class="r">Daniel K. T8, Y14 ME</td></tr>
+          <tr><td>Hub City Open</td><td class="r">Sofia L. 3rd, Y12 WE</td></tr>
+          <tr><td>Edison SYC</td><td class="r">Two medals, Y14</td></tr>
+        </table>
+      </div>
+      <div class="box">
+        <div class="boxtitle">Milestones</div>
+        <p><b>50th Gazette touch:</b> this issue marks our second prototype — thank you to everyone who squinted at v1. <b>Welcome</b> to our four newest beginners from Saturday tryouts. <b>Good luck</b> to the Orlando travel group at the October NAC. <b>100-DE club:</b> congratulations to Daniel K., who fenced his 100th recorded direct-elimination bout this month — the first hundred are the hardest. <b>Blade milestone:</b> Sofia L. broke her first blade in competition and kept fencing. That's not a loss, that's an initiation.</p>
+      </div>
+      <div class="comicbox">
+        <div class="big">[ COMIC ]</div>
+        <p style="text-align:center; font-style:italic;">Frank's panel goes here.<br>Bot reserves this space.</p>
+      </div>
+      <div class="box">
+        <div class="boxtitle">About This Paper</div>
+        <p>Edited by Frank, printed at the club. Tips, links, and comics go by email to the paper's inbox. No bylines for the editor; guests get credited. Past issues live in the binder at the club desk — ask for the Gazette archive.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 002 · Printed at the club</span>
+    <span>Sample content — not for distribution</span>
+  </div>
+</div>
+
+</body>
+</html>

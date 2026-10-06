@@ -127,9 +127,10 @@ Needs: dedicated inbox address, allowlist (only Frank's app + Frank's forwards a
 - Later: `lp -d club-printer paper.pdf` auto-print after N clean issues.
 - API keys live in env file on the runner, never in git. Allowlisted inbox only.
 
-## 7. Style (unchanged from v1, plus epee note)
-- B&W only. Headline bold condensed sans; body serif 9.5–10.5pt; nothing below 7.5pt.
-- High-school reading level (FK 8–10). Explain jargon first use. Epee terms only (no right-of-way explainers for foil/saber).
+## 7. Style — see STYLE-GUIDE.md (authoritative, locked 2026-10-06)
+Visual rules (3-col grid, no heading symbols, no print chrome, alignment, fill rule, visual QA)
+live in STYLE-GUIDE.md. Voice rules stay here:
+- High-school reading level (FK 8–10). Explain jargon first use. Epee terms only.
 - Headlines ≤6 words, active verb. Full name + event + club on first local mention.
 - Ban list: "delve", "fast-paced world of", "testament to", snark.
 - Masthead/footer identical; only date/edition/issue # + template variant change.
