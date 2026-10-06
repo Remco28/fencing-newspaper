@@ -2,6 +2,20 @@
 Purpose: the largest option list, then narrow down. Fit = how well it works on 1 B&W sheet, 2x/week.
 Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 
+## LOCKED VERDICTS — Frank, 2026-10-06 (v1 lineup)
+- News: BEEFIER — a few interesting articles per issue, not just results. Weighting: club newsletter news first (personal), then national/regional tournaments, locals last. Results matter but aren't everything.
+- TV/streaming box: YES — monitor major events + where to watch (FencingTV etc.).
+- Club events from newsletter email: YES.
+- Ratings earned box: YES — celebrates club members, keep always.
+- Comics: YES but sparing; Frank draws them, sends via email like everything else.
+- Advice column ("Dear Ref"): MAYBE — fun, no slot figured out yet.
+- Recruiting/college notes: LOW priority — only when there's genuinely good stuff.
+- CUT: weather, food, travel, crossword, quiz/trivia, jokes/riddles (not childish).
+- Byline rule: no attribution for Frank; guest writers get credited.
+- No submission process. Archive pointers: keep.
+- Name: LOCKED 2026-10-06 — **En Garde Gazette**, descriptor "The Elite Fencers Club Weekly". No "!" in the nameplate.
+
+---
 ## News core
 1. Front page / lead story ✅ — weekend's biggest epee result, 120–150 words. (Monday lead.)
 2. World / International ✅ — FIE epee one-liners, scoreboard strip.
@@ -71,7 +85,26 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 52. How to read / submit footer ✅ — "tips by email to X; editor decides". (No submissions, but tips path needed.)
 53. Archive pointer ✅ — "past issues at <link>". 1 line.
 
-## Suggested v1 lineup (from this menu)
+## Locked v1 lineup (from verdicts 2026-10-06 — supersedes the proposal below)
+- Monday: lead + 1–2 short articles + club results + ratings earned + scoreboard + compact signup + TV/streaming + deadlines + club events.
+- Thursday: signup lead + full signup board + logistics + Monday pointer + TV/streaming + club events + comic (sparingly).
+- Maybe later: advice column. Low priority: recruiting. Cut: weather/food/travel/crossword/quiz/jokes.
+
+## Name ideas (undecided — playing)
+Call-to-arms angle (fencing's calls are literally this):
+- **En Garde!** — the referee's call itself; the most natural "call to arms" in fencing.
+- **Allez!** — "go!", what coaches yell; energetic, short in a masthead.
+- **To Arms / Call to Arms** — plain English, does what it says.
+- **The Piste Call / Call of the Piste** — piste = the strip; insider flavor.
+- **Prêts? Allez!** — the full referee sequence ("ready? go!"); fun but long.
+Newsletter-aspect angle:
+- **The Elite Pages / Elite FC Pages** — classic newsletter feel.
+- **The Elite Flyer** — you named it; light and club-bulletin-like.
+- **The Epee Report** — sharper than "Elite Report", says the weapon.
+- **The Elite Column** — a bit newspaper-y formal.
+Combos: **En Garde! — The Elite Epee Weekly** (call + description). Steering away from "Report" (yucky, agreed).
+
+## Suggested v1 lineup (original proposal — superseded, kept for history)
 - Monday: 1 lead + 5 club results + 4 NJ HS + 9 scoreboard + 29 compact signup + 28 calendar + 40 trivia + 37 crossword (alt 38) + 48 footer bits.
 - Thursday: 10 preview lead + 29 full signup + 30 logistics + 40 trivia + 36 comic + 41 joke.
 - Monthly rotation slots: 7/19/21/31/35/45/47 (pick one per issue, never two).

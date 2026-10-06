@@ -64,17 +64,30 @@ Epee filter applies to everything: FIE, national, high-school, club. If a source
 - Every issue keeps `sources.json` (URL + retrieved date, or email message-ID + date).
 - Foil/saber items are dropped at fetch time, not rewritten.
 
-## 3. Sections (v2 — 1 sheet, two editions)
+## 3. Sections (v3 — locked by Frank 2026-10-06)
 
-Shared shell: masthead (name TBD), date, edition tag (Monday Results / Thursday Signups), issue #, footer with print timestamp.
+Shared shell: masthead **En Garde Gazette** + descriptor "The Elite Fencers Club Weekly" (locked 2026-10-06; no "!" in the nameplate — the bang lives in headlines, not the masthead), date, edition tag (Monday Results / Thursday Signups), issue #,
+footer with print timestamp + archive pointer. Bylines: none for Frank, credit guest writers.
+Weighting rule: club newsletter news > national/regional tournaments > locals.
 
-**Monday — Results edition (front / back), results-first**
+**Monday — Results edition (front / back), news-first**
 1. Lead epee result of the weekend (FIE or national if big, else top NJ/club result). 120–150 words.
-2. Club results box: Elite FC epeeists, event, place — from emailed results data.
-3. NJ high-school epee roundup: 3–5 one-liners.
-4. Scoreboard strip: 4–6 world/national epee one-liners.
-5. **Signup board (every issue, compact on Monday): available tournaments + which Elite FC fencers are already entered** — social proof to lower the fear factor. Short version on Monday, full version Thursday.
-6. Back: 1 upcoming-deadline box + trivia + Fencing 101 epee rotation (rules, ref calls, gear — no coach tips).
+2. 1–2 more short epee articles (national/regional weight over locals). News beefier than scores.
+3. Club results box: Elite FC epeeists, event, place — from emailed results data.
+4. Ratings earned box: members' new ratings — always in, celebration.
+5. Scoreboard strip: 4–6 world/national epee one-liners.
+6. **Signup board (compact): available tournaments + Elite FC entrants.** Full version Thursday.
+7. Back: TV/streaming box (major events + where to watch) + 1 upcoming-deadline box + club events (from newsletter email).
+
+**Thursday — Signup edition (front / back), no rehash**
+1. Lead: "Entries close soon" — biased to local late/at-door events. 100–120 words.
+2. **Signup board (full): available tournaments + who from Elite FC is already entered**, grouped by event/day, short print-friendly entry URLs.
+3. Weekend logistics box: venue, check-in close, what to bring (sourced only).
+4. Back: 1-line pointer to Monday's results + TV/streaming box + club events.
+5. Comic (sparingly, Frank-supplied via email) as space allows.
+
+Maybe later: advice column ("Dear Ref") — no slot yet. Low priority: recruiting notes (only if genuinely good).
+Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, photos.
 
 **Thursday — Signup edition (front / back), no rehash**
 1. Lead: "Entries close soon" — tournament name, close date, why it fits our fencers. 100–120 words. Bias to **local events with late / at-door registration** (Thursday signups are last-minute locals, not NACs planned months out).
@@ -97,11 +110,13 @@ Rules:
 
 Why rotate fixed templates instead of free design: same readability + reliable print, but visual variety. New template = design task with test print, never a weekly AI decision.
 
-## 5. Inputs by email (v2)
+## 5. Inputs — email is the single channel (locked 2026-10-06)
 
-Two inbound streams, both editor-controlled:
-1. **Results/schedule app → newspaper bot:** structured email (JSON or fixed-format body + optional PDF attach) with tournament name, event, day, Elite FC entrants/results. Newspaper side parses to `inputs/results-<date>.json`. Replaces any scraping of entry lists.
-2. **Club emails forwarded:** Frank forwards announcements; bot extracts date-relevant items to `inputs/club-<date>.md`, always with source message-ID.
+Frank sends EVERYTHING via email, including comics he draws himself. The bot also does independent
+research per SOURCES.md. Allowlisted inbox; every item stored per-issue with message-ID.
+1. **Results/schedule app → bot:** structured email (JSON or fixed-format body + optional PDF attach): tournament, event, day, Elite FC entrants/results → `inputs/results-<date>.json`.
+2. **Club newsletter forwarded:** announcements, events, ratings → `inputs/club-<date>.md`.
+3. **Frank's extras:** comics (image attach), tips/thread links, guest pieces → `inputs/frank-<date>/`.
 
 Needs: dedicated inbox address, allowlist (only Frank's app + Frank's forwards accepted), attachment cap, spam fallback = ignore + flag in preview.
 
