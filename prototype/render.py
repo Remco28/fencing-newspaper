@@ -179,6 +179,19 @@ def main():
                 inches = g / 96.0
                 flag = "OK" if inches <= 0.75 else "FLAG"
                 print(f"page {i + 1}: gap above footer {inches:.2f}in [{flag}]")
+            # region balance: column-bottom spread within each row (FLAG > 0.5in)
+            res = call("Runtime.evaluate", {
+                "expression": "JSON.stringify("
+                "[...document.querySelectorAll('.page .cols3')].map(r => {"
+                "const hs = [...r.children].map("
+                "c => Math.round(c.getBoundingClientRect().height));"
+                "return Math.round(Math.max(...hs) - Math.min(...hs));"
+                "}))"
+            })
+            for i, s in enumerate(json.loads(res["result"]["value"])):
+                inches = s / 96.0
+                flag = "OK" if inches <= 0.5 else "FLAG"
+                print(f"row {i + 1}: column spread {inches:.2f}in [{flag}]")
         except Exception as e:
             print(f"measure skipped: {e}")
         try:

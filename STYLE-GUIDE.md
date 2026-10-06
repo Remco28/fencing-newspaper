@@ -110,3 +110,32 @@ thumbnails — alignment cannot be judged through frosted glass.
 - Numeric and date columns right-align BOTH the header and the data (`.r` on th and td).
   A left-aligned DATE header over right-aligned dates reads as broken even when rows align.
 - Audit every header/data pair on every render — one template rule, all boards fixed.
+
+## 15. Meta columns get fixed narrow widths (locked 2026-10-06)
+- Right-aligned dates/ratings must sit SNUG against their row content, not float at the far
+  edge of a wide equal column. Every board declares a `<colgroup>`: meta columns
+  (dates, ratings, SRC) get fixed narrow widths (0.5–0.8in), content columns take the rest.
+- Equal-width columns are banned on boards. A date hugging the right edge of a 2-inch
+  column, detached from its row, is the exact defect this rule exists to kill.
+
+## 16. Oversupply, then cut (locked 2026-10-06)
+- The writer ALWAYS generates ~115% of page capacity. Cutting is a designed step, not a failure.
+- Cut strictly bottom-up per CONTENT-HIERARCHY.md order (lowest priority goes first).
+  Never cut furniture, never shrink type, never cheat margins. The refinement to the
+  standing rule: oversupply is mandatory, and 115% (not 200%) keeps cuts cheap and fast.
+- Sections are built size-flexible (rows/words grow and shrink) so any hierarchy-compliant
+  selection fits — provided the oversupply exists. No oversupply, no fit guarantee.
+
+## 17. Headline scoping (locked 2026-10-06)
+- The lead headline, dek, and byline live INSIDE the lead columns — never full-bleed above
+  a rail. Full-width headlines visually collide with top-right rail boxes.
+- The rail rises to the very top beside the dek. Rebalance lead word budget against rail
+  height whenever this arrangement changes (see §11 budgets).
+
+## 18. Region balance (locked 2026-10-06)
+- Page-level fill is necessary but not sufficient: columns WITHIN a row must end within
+  ~0.5in of each other. A two-column-wide hole under a short lead next to a tall rail is
+  a defect even when the footer reaches the bottom.
+- `render.py` reports per-row column-bottom spread alongside the footer gap. Fixes in order:
+  retune the short column's word budget, then pull-quote, then restructure — never leave
+  a region void larger than 0.5in.
