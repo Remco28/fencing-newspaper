@@ -60,3 +60,34 @@ Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
 - [ ] Proofread: names spelled right, dates/days consistent, no foil/saber leaks?
 Any NO = fix, re-render, re-check. Fitting on the page is necessary but NOT sufficient —
 it must look purpose-built.
+Board-level QA must be done on zoomed crops (150dpi+) of each table, not full-page
+thumbnails — alignment cannot be judged through frosted glass.
+
+## 8. Box-free articles (locked 2026-10-06)
+- Articles flow WITHOUT bounding boxes: headline, optional dek, justified text, nothing else.
+- Columns are separated by `column-rule` (1pt vertical rule) — the classic newspaper divider.
+- Borders are reserved for TABULAR data (ratings, scoreboard, signups, deadlines, TV listings).
+- Lead headline may span full width with text flowing beneath in columns (Image 1/2 style).
+
+## 9. Layout patterns — select, never invent (locked 2026-10-06)
+- The template offers a small pre-defined set of layout patterns (e.g. FRONT-A: lead + rail;
+  FRONT-B: 3 equal shorts; BACK-A: 3 rails). The agent SELECTS a pattern per issue based on
+  content shape — it never hand-places boxes or invents arrangements per issue.
+- A new pattern is created only as a design task with a test render; once good, it is LOCKED
+  and added to the set. Patterns are vocabulary, not improvisation.
+
+## 10. Flexible table widths (locked 2026-10-06)
+- Every board supports width variants: `.w1` (1 col rail), `.w2` (2 cols), `.w3` (full width).
+- Width is chosen by CONTENT volume (few rows = rail, many rows = full width), never forced.
+  A 3-row signup board is a rail; a 10-row Thursday board earns full width.
+- Fixed table layout, declared column widths, tabular numerals, right-aligned dates/ratings —
+  alignment is template property, not per-issue tweaking.
+
+## 11. Word budgets — measure once, write to fit (locked 2026-10-06)
+- Each pattern slot carries a WORD BUDGET calibrated once per template. Current calibration
+  (8.5pt, ~2.4in columns): ~40 words per column-inch. Recalibrate if type or columns change.
+- The writer receives exact budgets per slot whose sum equals page capacity — no guessing.
+- Cut hierarchy (when long): shorts first, then scoreboard lines, then dek. Stretch hierarchy
+  (when short): Fencing 101 first, then milestones, then extra scoreboard lines. Never stretch
+  type or leading to fake fullness; if still short after stretch hierarchy, FLAG TO FRANK
+  with what and how much is missing.
