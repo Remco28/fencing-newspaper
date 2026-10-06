@@ -4,7 +4,7 @@
 # so we use Page.printToPDF with displayHeaderFooter=false. (Style guide section 1.)
 # Usage: ./render.sh prototype/monday-v2.html [output.pdf]
 set -e
-SRC="${1:-prototype/monday-v2.html}"
+SRC="${1:-prototype/monday-v6.html}"
 OUT="${2:-${SRC%.html}.pdf}"
 python3 prototype/render.py "$SRC" "$OUT"
 pdfinfo "$OUT" | grep Pages

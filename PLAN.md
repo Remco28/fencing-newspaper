@@ -80,22 +80,14 @@ Weighting rule: club newsletter news > national/regional tournaments > locals.
 7. Back: TV/streaming box (major events + where to watch) + 1 upcoming-deadline box + club events (from newsletter email).
 
 **Thursday — Signup edition (front / back), no rehash**
-1. Lead: "Entries close soon" — biased to local late/at-door events. 100–120 words.
-2. **Signup board (full): available tournaments + who from Elite FC is already entered**, grouped by event/day, short print-friendly entry URLs.
-3. Weekend logistics box: venue, check-in close, what to bring (sourced only).
-4. Back: 1-line pointer to Monday's results + TV/streaming box + club events.
-5. Comic (sparingly, Frank-supplied via email) as space allows.
-
-Maybe later: advice column ("Dear Ref") — no slot yet. Low priority: recruiting notes (only if genuinely good).
-Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, photos.
-
-**Thursday — Signup edition (front / back), no rehash**
 1. Lead: "Entries close soon" — tournament name, close date, why it fits our fencers. 100–120 words. Bias to **local events with late / at-door registration** (Thursday signups are last-minute locals, not NACs planned months out).
 2. **Signup board (core, full): available tournaments + who from Elite FC is already entered**, grouped by event/day, with entry links as short print-friendly URLs. Seeing clubmates entered is the point — keep names prominent.
 3. Weekend logistics box: venue, check-in close times, what to bring — only if sourced from AskFRED/USFA event pages or emailed data.
-4. Back: pointer to last Monday's results (1 line, no rehash) + trivia.
+4. Back: pointer to last Monday's results (1 line, no rehash) + TV/streaming box + club events.
+5. Comic (sparingly, Frank-supplied via email) as space allows.
 
-Dropped: coaching tips, foil/saber anything, editorials, long interviews.
+Maybe later: advice column ("Dear Ref") — no slot yet. Low priority: recruiting notes (only if genuinely good).
+Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coaching tips, foil/saber anything, editorials, long interviews. Photos pending photo-desk design (see work log 2026-10-06).
 
 ## 4. Layout — fixed set, rotated
 
@@ -104,7 +96,7 @@ Frank's call: fixed templates, but **rotate among 2–3 locked templates** so it
 Rules:
 - Templates A/B/C are designed once, print-tested, then frozen. Rotation is round-robin or Monday=A-results / Thursday=B-signups; no generative redesign.
 - Content/ layout split stands: AI fills `issue.json` (strict schema + word limits + epee-only), template renders `paper.pdf` deterministically (HTML + print CSS → Chromium headless or WeasyPrint).
-- US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art only (no photos v1).
+- US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art only (photos pending photo-desk design).
 - ~600–700 words max per issue.
 - Per-issue folder: `issues/<date>-<edition>/issue.json + sources.json + emails/ + paper.pdf`.
 
@@ -149,21 +141,28 @@ Resolved:
 - [x] Human-verified first, auto-print later
 - [x] Reddit verdict: search-discovery only
 
+- [x] Paper name — En Garde Gazette / The Elite Fencers Club Weekly (locked)
+- [x] V1 section lineup narrowed (CONTENT-HIERARCHY.md is canonical for slot order)
+- [x] Template A (Monday results) built through v6 + locked visual rules (STYLE-GUIDE.md)
+
 Still open:
-1. Paper name?
-2. Exact run times (Mon/Thu 6am OK?).
-3. Inbox address + email format from results app (define schema).
-4. Thursday data cutoff (e.g. entries as of Wed 8pm?).
-5. Archive PDFs in git or local-only?
-6. Printer model + who loads paper.
+1. Exact run times (Mon/Thu 6am OK? — all times US Eastern).
+2. Inbox address + email format from results app (define schema).
+3. Thursday data cutoff (proposal: entries as of Wed 8pm + fresh Thursday-morning refetch).
+4. Archive PDFs in git or local-only? (proposal: commit issue.json + sources.json, ignore PDFs/email bodies)
+5. Printer model + who loads paper.
+
+Canonical homes: CONTENT-HIERARCHY.md owns slot order + budgets · STYLE-GUIDE.md owns all
+visual rules · SOURCES.md owns the fetch checklist · SECTIONS-MENU.md is the option menu +
+past verdicts · PLAN owns narrative + decisions. On conflict, the canonical home wins.
 
 ## 9. Next steps
-- [ ] Lock name + run times + inbox address
+- [x] Lock name (En Garde Gazette) + v1 lineup (CONTENT-HIERARCHY.md)
+- [x] Build template A (Monday results) HTML/CSS, B&W test render
+- [ ] Confirm run times + inbox address + Thursday cutoff with Frank
 - [ ] Define results-app email schema (fields: tournament, event, day, entrants, results, source IDs)
-- [ ] Do Reddit OAuth setup per REDDIT-SETUP.md (Frank one-time, ~10 min)
-- [ ] Narrow SECTIONS-MENU.md to v1 lineup (proposal at bottom of that file)
-- [ ] Build templates A (results) + B (signups) HTML/CSS, B&W test print
-- [ ] Build fetch per SOURCES.md checklist (FIE/USA/NJ.com epee filter) + email-ingest scripts
+- [ ] Build template B (Thursday signups) from locked patterns + zoomed QA
+- [ ] Build fetch per SOURCES.md checklist + email-ingest scripts (per-source degrade behavior)
 - [ ] 2 dry-run issues per edition with Frank red-pen, then enable scheduled bot
 - [ ] See also: SOURCES.md (standing checklist), SECTIONS-MENU.md (full options), REDDIT-SETUP.md
 

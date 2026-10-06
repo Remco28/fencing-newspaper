@@ -9,7 +9,7 @@ If a render violates any rule below, it does not print — fix and re-render.
   headers or footers — they waste space and serve nothing. The paper's own dateline/footer carry that info.
 
 ## 2. Look: old-time newspaper
-- Masthead logo (`masthead001.png`) at ~80% width, centered. Nothing above it, ever.
+- Masthead logo (`masthead001.png`, cropped to opaque bbox) with §12 flanks. Nothing above it, ever.
 - Dateline bar: 2.5pt rules top and bottom, bold sans caps, date · edition · issue no.
 - Headings: PLAIN TEXT ONLY. No icons, no emojis, no ★≡✎▶!♦§◉✉ kickers, no symbols in or
   before headlines and box titles. Reasons: old-time look; symbols render inconsistently in B&W.
@@ -63,11 +63,14 @@ it must look purpose-built.
 Board-level QA must be done on zoomed crops (150dpi+) of each table, not full-page
 thumbnails — alignment cannot be judged through frosted glass.
 
-## 8. Box-free articles (locked 2026-10-06)
-- Articles flow WITHOUT bounding boxes: headline, optional dek, justified text, nothing else.
+## 8. Box-free articles; bordered utility boxes (locked 2026-10-06, clarified 2026-10-07)
+- ARTICLE text flows WITHOUT bounding boxes: headline, optional dek, justified text, nothing else.
+- UTILITY boxes (Milestones, New Faces, About, Fencing 101, Next Gazette, comic slot) MAY carry
+  borders — they are furniture, not articles. Borders on tabular-data boxes always.
 - Columns are separated by `column-rule` (1pt vertical rule) — the classic newspaper divider.
-- Borders are reserved for TABULAR data (ratings, scoreboard, signups, deadlines, TV listings).
-- Lead headline may span full width with text flowing beneath in columns (Image 1/2 style).
+- Lead headline lives inside the lead columns per §17 (never full-bleed over a rail).
+- Comic slot: define as an aspect-ratio box when real panels land (fixed min-height reflows
+  the rail on swap); placeholder min-height is prototype-only.
 
 ## 9. Layout patterns — select, never invent (locked 2026-10-06)
 - The template offers a small pre-defined set of layout patterns (e.g. FRONT-A: lead + rail;

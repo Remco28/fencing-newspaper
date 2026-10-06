@@ -19,9 +19,6 @@ import tempfile
 import time
 import urllib.request
 
-HTML2PDF_JS = None  # (placeholder, unused)
-
-
 def ws_connect(host, port, path):
     s = socket.create_connection((host, port), timeout=15)
     key = base64.b64encode(os.urandom(16)).decode()
@@ -160,6 +157,7 @@ def main():
         with open(out, "wb") as f:
             f.write(base64.b64decode(res["data"]))
         print(f"wrote {out}")
+        flags = []  # any FLAG fails the build unless --allow-flag is passed (V7)
         # --- whitespace instrument: footers are pinned to page bottom, so the
         # honest slack is the GAP ABOVE each footer (dead zone between last
         # content and footer). Screen px (~96dpi) ≈ print inches. FLAG > 0.75in.
@@ -177,30 +175,91 @@ def main():
             gaps = json.loads(res["result"]["value"])
             for i, g in enumerate(gaps):
                 inches = g / 96.0
-                flag = "OK" if inches <= 0.75 else "FLAG"
-                print(f"page {i + 1}: gap above footer {inches:.2f}in [{flag}]")
-            # region balance: column-bottom spread within each row (FLAG > 0.5in)
+                if inches <= 0.75:
+                    print(f"page {i + 1}: gap above footer {inches:.2f}in [OK]")
+                else:
+                    msg = f"page {i + 1}: gap above footer {inches:.2f}in [FLAG]"
+                    print(msg)
+                    flags.append(msg)
+            # region balance: CONTENT depth per column (deepest descendant bottom),
+            # not box height — flex stretch equalizes boxes by construction (V2).
             res = call("Runtime.evaluate", {
                 "expression": "JSON.stringify("
                 "[...document.querySelectorAll('.page .cols3')].map(r => {"
-                "const hs = [...r.children].map("
-                "c => Math.round(c.getBoundingClientRect().height));"
-                "return Math.round(Math.max(...hs) - Math.min(...hs));"
+                "const depth = c => {"
+                "const top = c.getBoundingClientRect().top; let b = top;"
+                "c.querySelectorAll('*').forEach(e => {"
+                "const rr = e.getBoundingClientRect();"
+                "if (rr.bottom > b) b = rr.bottom; });"
+                "return Math.round(b - top); };"
+                "const ds = [...r.children].map(depth);"
+                "const lo = Math.min(...ds), hi = Math.max(...ds);"
+                "return Math.round(hi - lo) + '|' + ds.map(d => Math.round(d)).join(',');"
                 "}))"
             })
-            for i, s in enumerate(json.loads(res["result"]["value"])):
-                inches = s / 96.0
-                flag = "OK" if inches <= 0.5 else "FLAG"
-                print(f"row {i + 1}: column spread {inches:.2f}in [{flag}]")
+            region = json.loads(res["result"]["value"])
+            for i, entry in enumerate(region):
+                if isinstance(entry, str) and "|" in entry:
+                    spread_px, _, depths = entry.partition("|")
+                else:
+                    spread_px, depths = entry, ""
+                inches = float(spread_px) / 96.0
+                detail = ""
+                if depths:
+                    detail = " [" + ", ".join(
+                        f"{int(d) / 96.0:.2f}in" for d in depths.split(",")) + "]"
+                if inches <= 0.5:
+                    print(f"row {i + 1}: column spread {inches:.2f}in [OK]{detail}")
+                else:
+                    msg = f"row {i + 1}: column spread {inches:.2f}in [FLAG]{detail}"
+                    print(msg)
+                    flags.append(msg)
+            # type floor (§4/§6): nothing below 7pt, measured as computed styles.
+            res = call("Runtime.evaluate", {
+                "expression": "JSON.stringify(Math.min("
+                "...[...document.querySelectorAll("
+                "'body p, body td, body th, body li, body h1, body h2, "
+                "body h3, body .footer, body .dateline, body .byline']"
+                ".map(e => parseFloat(getComputedStyle(e).fontSize))))"
+            })
+            try:
+                raw = res.get("result", {})
+                # CDP shape varies: {value} or {result: {value}}
+                val = raw.get("value", None)
+                if isinstance(val, dict):
+                    val = val.get("value", None)
+                min_px = json.loads(val) if isinstance(val, str) else val
+            except (KeyError, TypeError):
+                min_px = None
+            if min_px is None:
+                print("type floor n/a (no measurable text) [OK]")
+            else:
+                min_pt = min_px * 0.75
+                if min_pt < 7 - 1e-9:
+                    msg = f"type floor violated: {min_pt:.2f}pt < 7pt [FLAG]"
+                    print(msg)
+                    flags.append(msg)
+                else:
+                    print(f"type floor {min_pt:.2f}pt [OK]")
         except Exception as e:
-            print(f"measure skipped: {e}")
+            import traceback as _tb
+            _tb.print_exc()
+            try:
+                print("RES-DUMP:", json.dumps(res)[:400])
+            except Exception:
+                print("RES-DUMP: <unavailable>")
         try:
             info = subprocess.run(["pdfinfo", out], capture_output=True, text=True)
             for line in info.stdout.splitlines():
                 if line.startswith("Pages:"):
                     print("pdf", line.strip())
+                    if line.split()[1] != "2":
+                        flags.append(f"expected 2 pages, got {line.split()[1]}")
         except Exception:
             pass
+        if flags and "--allow-flag" not in sys.argv:
+            print("FAIL: " + "; ".join(flags), file=sys.stderr)
+            sys.exit(1)
     finally:
         chrome.terminate()
 
