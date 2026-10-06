@@ -1,0 +1,6 @@
+# secrets + local-only runtime state (never commit)
+.env
+*.env
+issues/
+__pycache__/
+.venv/
