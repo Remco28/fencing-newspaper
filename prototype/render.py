@@ -160,6 +160,34 @@ def main():
         with open(out, "wb") as f:
             f.write(base64.b64decode(res["data"]))
         print(f"wrote {out}")
+        # --- whitespace instrument: footers are pinned to page bottom, so the
+        # honest slack is the GAP ABOVE each footer (dead zone between last
+        # content and footer). Screen px (~96dpi) ≈ print inches. FLAG > 0.75in.
+        try:
+            res = call("Runtime.evaluate", {
+                "expression": "JSON.stringify("
+                "[...document.querySelectorAll('.page')].map(p => {"
+                "const f = p.querySelector('.footer');"
+                "const prev = f.previousElementSibling;"
+                "const fr = f.getBoundingClientRect();"
+                "const pr = prev.getBoundingClientRect();"
+                "return Math.round(fr.top - pr.bottom);"
+                "}))"
+            })
+            gaps = json.loads(res["result"]["value"])
+            for i, g in enumerate(gaps):
+                inches = g / 96.0
+                flag = "OK" if inches <= 0.75 else "FLAG"
+                print(f"page {i + 1}: gap above footer {inches:.2f}in [{flag}]")
+        except Exception as e:
+            print(f"measure skipped: {e}")
+        try:
+            info = subprocess.run(["pdfinfo", out], capture_output=True, text=True)
+            for line in info.stdout.splitlines():
+                if line.startswith("Pages:"):
+                    print("pdf", line.strip())
+        except Exception:
+            pass
     finally:
         chrome.terminate()
 

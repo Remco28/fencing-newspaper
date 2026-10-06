@@ -91,3 +91,22 @@ thumbnails — alignment cannot be judged through frosted glass.
   (when short): Fencing 101 first, then milestones, then extra scoreboard lines. Never stretch
   type or leading to fake fullness; if still short after stretch hierarchy, FLAG TO FRANK
   with what and how much is missing.
+
+## 12. Masthead flanks (locked 2026-10-06)
+- Logo at ~62% width, centered, flanked by two info blocks: LEFT "Vol. I — No. N /
+  Chatham, N.J. / Epee Only, As Always", RIGHT edition day / full date / "Price: One Touch".
+- Flanks: 7.5pt bold sans caps, 2pt side rules (left block left-ruled, right block right-ruled).
+  This is the classic-paper answer to side whitespace — never widen the logo to fill it.
+
+## 13. Footer pinning + gap instrument (locked 2026-10-06)
+- `.page` is a flex column with min-height 10.1in (Letter minus our @page margins);
+  footer uses margin-top:auto so it always sits at the page bottom. Shortfalls appear as
+  honest daylight ABOVE the footer, never hidden below it.
+- `render.py` measures the gap above each footer via CDP element boxes and reports inches:
+  FLAG above 0.75in. Thumbnails are for taste; NUMBERS are for fill. Eyeballing fill is banned.
+- The instrument (not the eye) decides whether a page passes; the eye decides whether it is beautiful.
+
+## 14. Header/data alignment (locked 2026-10-06)
+- Numeric and date columns right-align BOTH the header and the data (`.r` on th and td).
+  A left-aligned DATE header over right-aligned dates reads as broken even when rows align.
+- Audit every header/data pair on every render — one template rule, all boards fixed.
