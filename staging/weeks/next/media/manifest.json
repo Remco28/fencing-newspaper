@@ -47,6 +47,22 @@
       "vetted": false,
       "parent_item_id": "chat-winter-camp-reminder",
       "note": "Reference/source copy of the club's own flyer; not necessarily for print. Flyer text says 'Epee camp' — drop label in print (§0c)."
+    },
+    {
+      "id": "efc-winter-camp-2026-flyer-email",
+      "kind": "photo",
+      "filename": "efc-winter-camp-2026-flyer-email.png",
+      "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
+      "caption": "Winter Camp 2026 flyer as embedded in club Mailchimp 'Group Class! + Winter Camp❄️' (Sep 30, 2026)",
+      "source": "email",
+      "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
+      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
+      "from": "frankcng@gmail.com (fwd of elitefencersclub@111617670.mailchimpapp.com)",
+      "retrieved_at": "2026-10-07T19:16:00-04:00",
+      "vetted": true,
+      "vetted_by": "auto-club-mailchimp",
+      "parent_item_id": "chat-winter-camp-reminder",
+      "note": "Same flyer content as website jpg; email copy is source of truth. Not necessarily for print; flyer says 'Epee camp' — drop label in print (§0c)."
     }
   ],
   "rolled_forward": {
