@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.9
+# Fencing Newspaper — Plan v3.15
 Date: 2026-10-07
-Status: locked direction from Frank, details in progress (v3.9: photo fit no silent crop; production dateline (no SAMPLE); per-slot type scale enforced on Template A sample. v3.8: masthead flanks = fixed publisher line + rotating quip (`flank-quotes.json`); dateline = Vol/No · Chatham · weekday · date. v3.7: article size-by-importance + AgentMail `processed` labels. v3.6: Vet+notes UX. v3.5: email→photo extract. v3.4: scoreboard cut; photo desk. v3.3: Staging→Clean→Budget→Proof; see STAGING.md)
+Status: **sample taste LOCKED** (v3.14 sheet) + **ops cadence LOCKED** (v3.15). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + Mon/Tue full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Next: real Thursday edition (refine sources → HTML budget → proof). Prior: v3.14 taste lock; v3.13 ears/HRs/bylines; v3.12 Playfair + §8; v3.11 voice; v3.10 Desk.
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -19,7 +19,36 @@ Editorial control: **Frank only.** No parent/kid submissions. No coach involveme
 
 Automation: built to run under a scheduled bot — **Grok Bot (xAI)** — once per week. V1 runs **human-verified** (Frank approves PDF before print). Auto-print enabled only once issues look right.
 
-AI model is **swappable** by design. Template owns layout; model only fills fields.
+AI model is **swappable** by design. Template owns **rails** (geometry, type scales, patterns); Gazette Desk **composes** within them (PLAN §1a) — not a dumb field-filler.
+
+
+## 1a. The product is Gazette Desk (locked 2026-10-07 — Frank)
+
+**You (Gazette Desk, and every future version of you) are the product.** Content will arrive and Frank will approve a budget. Building the newspaper each week is *your* job.
+
+What that means:
+- After budget approval, **you compose** the sheet: hierarchy, pacing, where shorts sit, how furniture and flanks land, photo placement within locked rules. The reader should feel a custom paper made for Elite Fencers Club — all about us and the sport we’re in — carefully put together, **not** content forced into a template.
+- **Template A is rails, not the paper.** Print size, 3-col grid, type scales, word budgets, and QA instruments stay frozen. Inside those rails you exercise judgment so each issue feels tailor-made.
+- **Bot cooperation is vital.** Specs, STYLE-GUIDE, CONTENT-HIERARCHY, and STAGING.md exist so every future Gazette Desk shares one brief. If docs sound like “fill slots and ship,” rewrite them — the brief is compose for the reader.
+- **Pleasant and fun** = club kids and parents recognize themselves; the week’s lead has weight; shorts stay shorts; ratings / who’s-entered are glanceable; something earns a laugh; dense but not cramped; old-time newspaper energy, club voice, no chrome.
+- **Done is not “fits on the page.”** Mandatory loop: render → self-critique against this brief and STYLE-GUIDE → fix → re-render. Fitting is necessary; purpose-built for Elite FC is the bar.
+- Frank remains sole editorial control (budget + proof gates). You do not invent facts, weapons outside epee, or layouts outside locked patterns. You *do* own taste and composition within those locks.
+
+Canonical homes stay: CONTENT-HIERARCHY (slots/budgets) · STYLE-GUIDE (visual + composition rules) · STAGING (pipeline) · this PLAN (narrative + this role). On conflict, the home wins — and **§1a wins over any “dump into template” reading elsewhere.**
+
+
+## 1b. Voice (locked 2026-10-07 — Frank)
+
+The paper should **read like it knows it is a newsletter**: finite space, one sheet, readers scanning on a bench. That shapes every sentence.
+
+- **Selective by default.** No padding. Prefer the exact word over the long clause. Be verbose only when the slot has room — mainly the **lead**. Shorts and boxes stay tight.
+- **Reporter voice** for news, results, boards, and club notices: clear, concrete, attributed, high-school reading level. Not a blog, not a marketing blast, not a chatty bot.
+- **Exceptions:** opinion, humor columns, or **guest authors** may sound like themselves (still within STYLE-GUIDE bans and epee-only facts).
+- **Bylines:** only when a **real guest** wrote the piece (their name). **Never** invent house bylines (“Gazette Staff,” “Club Desk,” “Pretend Copy,” etc.). Frank has none; unsigned reporter voice is the default.
+- **Tone follows the piece**, not a fixed “house personality.” Levity when the story earns it; serious or somber when it must; never force jokes onto a hard result or pad a light bit into mock-solemnity.
+- Standing bans still apply (PLAN §7 / STYLE-GUIDE): no “delve,” “fast-paced world of,” “testament to,” snark-for-snark’s-sake; explain jargon on first use; headlines ≤6 words with an active verb.
+
+Canonical home for voice = this §1b; STYLE-GUIDE §0a repeats the composition-facing brief so the weekly composer doesn’t miss it.
 
 ## 2. Content rules (v2)
 
@@ -88,18 +117,18 @@ Maybe later: advice column ("Dear Ref") — no slot yet. Low priority: recruitin
 Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coaching tips, foil/saber anything, editorials, long interviews.
 **Photo desk (v3.4–v3.5):** budget page shows actual image thumbnails; Frank multi-selects → `photoIncludes`. **Email media extract (v3.5):** on ingest, save MIME attachments **and** download remote/inline HTML images (skip tracking pixels, social icons, tiny logos <~80px). Store under `staging/weeks/<target>/media/` with provenance (`message_id`, url/attachment id, `from`, `vetted`). Budget desk reads that folder. First pass: 2 real JPEGs from Frank’s forwarded club newsletter; demo still keeps a few labeled PRETEND PNGs for multi-select. Feature was planned earlier; synthetic PNGs only until this pass.
 
-## 4. Layout — fixed templates (Template A first)
+## 4. Layout — Template A rails (V1); patterns TBD
 
-Frank's call: fixed templates, optionally rotate among 2–3 locked ones later so weeks don't feel identical. **Template B (Thursday) is cancelled** with the Thursday edition. V1 ships Template A (prototype `monday-v6`) adapted for the single weekly issue.
+**V1 ships Template A** (prototype `monday-v6` energy adapted for the single weekly issue). **Template B (Thursday) is cancelled** with the Thursday edition. Furniture locked by sample `issues/2026-10-14` (v3.14) — see STYLE-GUIDE §2/§8/§12.
 
-Rules:
-- Templates are designed once, print-tested, then frozen. No generative redesign weekly.
-- Content/ layout split stands: AI fills `issue.json` (strict schema + word limits + epee-only), template renders `paper.pdf` deterministically (HTML + print CSS → Chromium headless or WeasyPrint).
+Rules (rails, not a weekly redesign):
+- Print geometry, type scales, word budgets, and furniture CSS are designed once, print-tested, then frozen. No generative redesign of the shell weekly.
+- Content / layout split: Gazette Desk composes into `issue.json` + HTML within locked rails (PLAN §1a); Chromium/WeasyPrint renders `paper.pdf`. Schema + epee-only + word limits still bind. “Fill slots and ship” is a fail — compose for Elite FC.
 - US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art + approved B&W photo picks from photo desk.
 - ~600–700 words max per issue.
 - Per-issue folder: `issues/<YYYY-MM-DD>/` (publish date) with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`. Pre-issue material lives under `staging/weeks/` — see **STAGING.md**. Raw email bodies stay in AgentMail (not in git); cite them by message-ID in `sources.json`.
 
-Why fixed templates: same readability + reliable print. New template = design task with test print, never a weekly AI decision.
+**PAUSED / deferred — Layout patterns (Frank 2026-10-07):** constrained dynamic arrangement (select from a small pattern vocabulary so weeks feel alive) vs rotating 2–3 locked templates is **on pause for future consideration**. Another agent warned against unconstrained dynamism; freehand weekly invention stays banned. **Until revisited: ship Template A only.** STYLE-GUIDE §9 remains the hook for a future pattern menu. Do **not** invent layouts weekly; do **not** build the pattern vocabulary until Frank un-pauses this.
 
 ## 5. Inputs — AgentMail is the single channel (locked 2026-10-06 evening; tips/vetting v3.3)
 
@@ -129,13 +158,14 @@ Still needed: results-app email schema, attachment cap, spam fallback = stage as
 ## 6. Automation + verification
 
 - Scheduler: once weekly. Default Monday morning (exact time TBD, US Eastern). If results-app / start lists show Elite FC members competing that Monday, **hold and publish Tuesday** after those results land (unless Frank overrides).
-- V1: bot stages → cleans → budget page → proof PDF; **waits for Frank's approve** at budget and proof (chat is doorbell only). No auto-print until approved. Unvetted tips stay off the sheet until Frank vets.
+- **Ops cadence (locked v3.15):** chat → staging anytime; email = daily morning light pass + second pass before HTML budget; self-gather = Wed mid-week skim + publish-morning full pass. Canonical: **STAGING.md § Ops cadence** + **SOURCES.md** cadence header.
+- V1 gates: **Budget → Frank approve → Desk compose → Proof → Frank approve → print.** Chat is doorbell only for budget/proof readiness. Every fact → `sources.json` provenance. Unvetted tips stay off the sheet until Frank vets. No auto-print until approved.
 - Later: `lp -d club-printer paper.pdf` auto-print after N clean issues.
 - API keys live in env file on the runner, never in git. Allowlisted inbox only.
 
-## 7. Style — see STYLE-GUIDE.md (authoritative, locked 2026-10-06)
+## 7. Style — see STYLE-GUIDE.md (authoritative; voice home PLAN §1b)
 Visual rules (3-col grid, no heading symbols, no print chrome, alignment, fill rule, visual QA)
-live in STYLE-GUIDE.md. Voice rules stay here:
+live in STYLE-GUIDE.md. **Voice:** PLAN §1b + STYLE-GUIDE §0a (newsletter-aware, selective, reporter default; tone matches the piece). Still true:
 - High-school reading level (FK 8–10). Explain jargon first use. Epee terms only.
 - Headlines ≤6 words, active verb. Full name + event + club on first local mention.
 - Ban list: "delve", "fast-paced world of", "testament to", snark.
@@ -153,7 +183,7 @@ Resolved:
 - [x] Email inputs (results app + forwarded club mail) via AgentMail
 - [x] No coaching tips, coach not involved
 - [x] Frank-only editorial (public tips OK but unvetted until Frank vets)
-- [x] Fixed templates (Template A first; no Template B)
+- [x] Template A first; no Template B (Thursday cancelled). **PAUSED/deferred:** constrained dynamic / multi-template menu — see §4 (Template A only until Frank un-pauses)
 - [x] Swappable model
 - [x] Human-verified first, auto-print later
 - [x] Reddit verdict: search-discovery only
@@ -169,9 +199,15 @@ Resolved:
 - [x] Folder layout proposal — `staging/weeks/<YYYY-MM-DD|next>/` + `issues/<YYYY-MM-DD>/` (STAGING.md)
 - [x] Article size-by-importance — slot word budgets + per-slot template type scale (STYLE-GUIDE §4/§11; CONTENT-HIERARCHY); stretch/cut hierarchies live (v3.7)
 - [x] AgentMail processed-mail triage — label `processed` after successful ingest; never delete (STAGING.md; v3.7)
-- [x] Masthead flanks + dateline swap (v3.8) — flanks: publisher line + rotating quip (`flank-quotes.json`); dateline: Vol/No · Chatham · weekday · date (STYLE-GUIDE §12)
+- [x] Masthead flanks + dateline swap (v3.8 origin) — **superseded by v3.12–v3.14 taste lock** (STYLE-GUIDE §12)
 - [x] Photo fit — no silent crop; soft ~2.2in tall flag (STYLE-GUIDE §19; v3.9)
-- [x] Production dateline — two-span Vol/No·place | weekday·date; SAMPLE flag removed (STYLE-GUIDE §2/§12; v3.9)
+- [x] Production dateline — SAMPLE removed (v3.9); **final form (v3.12):** centered Playfair Display SC edition word (`Tuesday Edition` / `Page Two`) + Caslon meta line; double top / solid bottom — **not** three-span Arial (STYLE-GUIDE §2/§12)
+- [x] Voice — newsletter-aware, selective word choice, reporter default; tone matches the piece (PLAN §1b; STYLE-GUIDE §0a; v3.11)
+- [x] §8 borders — **only** tabular `.box` boards; prose = `.rail-block` + `.rail-title` (no title underline); never wrap article-shaped copy in `.box` (v3.12–v3.14)
+- [x] Flanks as newspaper ears — Caslon/Times, hairline top+bottom, clear air from masthead logo; left fixed publisher line; right rotating quip from `flank-quotes.json` (v3.13–v3.14)
+- [x] No horizontal rules between page-2 article bands; no fake Gazette Staff bylines — guests only (v3.13–v3.14; PLAN §1b)
+- [x] **Sample taste locked** — `issues/2026-10-14/` (`paper-v3.14.pdf`) is the authoritative visual reference (Frank 2026-10-07)
+- [x] **Ops cadence locked (v3.15)** — chat anytime → next week; email daily + pre-budget; Wed skim + Mon/Tue full gather; Budget→approve→compose→Proof→approve→print; `sources.json`; chat doorbell only (STAGING.md + SOURCES.md)
 
 Still open:
 1. Exact Monday run time (proposal ~6am US Eastern) + Tuesday slip publish time.
@@ -180,11 +216,13 @@ Still open:
 4. Printer model + who loads paper.
 5. Optional later: archive older PDFs outside git for posterity (not required).
 6. Exact staging on-disk filenames (`items.jsonl` vs `items/*.json`) when ingest ships — layout tree is locked; leaf names flexible.
+7. **Layout patterns (PAUSED / deferred future):** constrained dynamic vs 2–3 locked templates — see §4. Not active work. Template A only; do not invent weekly layouts.
 
 Canonical homes: CONTENT-HIERARCHY.md owns slot order + budgets · STYLE-GUIDE.md owns all
-visual rules · SOURCES.md owns the fetch checklist · **STAGING.md owns pipeline + item
-schema + folder layout** · SECTIONS-MENU.md is the option menu + past verdicts · PLAN
-owns narrative + decisions. On conflict, the canonical home wins.
+visual rules · SOURCES.md owns the fetch checklist (+ cadence header) · **STAGING.md owns
+pipeline + item schema + folder layout + ops gather loop** · SECTIONS-MENU.md is the
+option menu + past verdicts · PLAN owns narrative + decisions. On conflict, the
+canonical home wins.
 
 ## 9. Next steps
 - [x] Lock name (En Garde Gazette) + v1 lineup (CONTENT-HIERARCHY.md)
@@ -202,6 +240,15 @@ owns narrative + decisions. On conflict, the canonical home wins.
 - [x] Docs v3.7: lock per-slot article size + refresh stretch/cut hierarchy; AgentMail `processed` labels (STAGING.md)
 - [x] Docs + sample v3.8: masthead flanks (publisher + rotating quip) / dateline (Vol/No · place · weekday · date); `flank-quotes.json`
 - [x] Docs + sample v3.9: photo no-crop; production dateline; per-slot type scale on `issues/2026-10-14` (Template A only — no alternate layouts this pass)
+- [x] Docs v3.10: Gazette Desk is the product — compose-for-Elite-FC brief (§1a); STYLE-GUIDE §0 composition bar
+- [x] Docs v3.11: voice — newsletter-aware / selective / reporter default; tone matches piece (§1b, STYLE-GUIDE §0a)
+- [x] AskFRED API — Bearer in `ASKFRED_API_KEY` (secret/.env); gentle use for NJ epee tournament search (SOURCES.md)
+- [x] Sample v3.11 taste: flanks + 3-span dateline + page-2 featured hierarchy on `issues/2026-10-14` (paper-v3.11.pdf)
+- [x] Sample v3.13: serif masthead ears; page-2 article HRs removed; fake bylines stripped (`paper-v3.13.pdf`)
+- [x] **Sample v3.14 taste LOCKED** (Frank): dateline + flanks + §8 rail-title + no page-2 article HRs; docs match; reference `issues/2026-10-14/paper-v3.14.pdf`
+- [ ] **Real Thursday edition** (next): refine source processing → HTML budget → proof render (complete run when ready)
+- [x] Docs v3.15: ops cadence locked (STAGING.md gather loop + SOURCES.md cadence header); dynamic layout marked PAUSED/deferred (§4)
+- [ ] Layout patterns (§4) — **paused**; revisit later only if Frank asks (Template A only until then)
 - [ ] Budget page (prod): same vet UX + write issue approvals.json
 - [x] Template CSS sample: flanks + dateline + photo fit + slot type scale on `issues/2026-10-14`
 - [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot

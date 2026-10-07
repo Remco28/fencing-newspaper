@@ -1,8 +1,28 @@
 # Standing source checklist
-For the bot: check every run. For Frank: forward-by-email also accepted.
+For the bot: check on the cadence below. For Frank: forward-by-email also accepted.
 Epee only. Record every fact in `sources.json` (URL + date, or email message-ID + date).
 
-## Every run (Mon + Thu)
+## Cadence (locked v3.15 — Frank 2026-10-07)
+
+Times = US Eastern. Full ops loop (chat / email / gates): **STAGING.md § Ops cadence**.
+
+| Pass | When | What |
+|------|------|------|
+| **Mid-week skim** | Wednesday | Light: Google News RSS (`fencing+epee` + `+New Jersey`) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging. Not a full checklist run. |
+| **Publish-morning full pass** | Default **Monday**; **Tuesday** if Mon→Tue slip | Full **Every run** checklist below + **Monday → Tuesday slip check**. |
+| **Email** | Daily morning light pass + second pass right before HTML budget | Ingest → staging, `processed` label, media extract (STAGING.md). |
+
+Keep all checklists below; do not delete sources when editing cadence.
+
+
+## AskFRED API (locked 2026-10-07 — gentle use)
+- Base: `https://www.askfred.net/api/v1/` — Bearer token in env `ASKFRED_API_KEY` (gitignored `.env` / process secret). **Never commit or paste the key into chat/docs.**
+- Prefer API over HTML for upcoming epee near NJ: `/tournaments?latitude=&longitude=&radius_miles=&weapon=epee&start_date_gteq=…&per_page≤50`.
+- Rate limits (respect 429): layered caps ~125 req/hour — for Gazette weekly use, **keep to a handful of calls per gather** (not bulk scrapes). This is a secondary account; do not abuse.
+- Still timestamp closes; HTML fallback OK if API errors. Combine with FencingTracker / results-app for Elite FC names.
+- Docs: https://help.askfred.net/en/articles/14068759-getting-started-w-askfred-s-api
+
+## Every run (publish-morning full pass)
 - [ ] FIE news: https://fie.org/news (+ epee event/result pages as needed)
 - [ ] USA Fencing epee feed: https://www.usafencing.org/news/epee
 - [ ] NJ.com HS fencing (boys + girls): https://highschoolsports.nj.com/boysfencing (+ girls equivalent, NJSIAA posts)

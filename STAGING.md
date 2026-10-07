@@ -2,10 +2,10 @@
 
 Canonical home for **how material moves** from tip/chat/email into a printed issue.
 PLAN.md owns the narrative + decision list; this file owns the pipeline names, item
-schema, vetting rules, and folder layout. On conflict, this file wins for pipeline
-topics.
+schema, vetting rules, folder layout, and **ops cadence / gather loop**. On conflict,
+this file wins for pipeline topics.
 
-Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7).
+Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7); **ops cadence / gather loop** locked 2026-10-07 (plan v3.15).
 
 ## Pipeline (formal names)
 
@@ -78,8 +78,35 @@ Auto-vet rule still applies: `from` = `frankcng@gmail.com` → `vetted: true`.
 ## Chat → staging
 
 When Frank tells the bot a fact/idea in chat, **default target = next weekly issue**
-staging unless he names another week. Chat does not hold approval state (doorbell
-only for budget/proof readiness).
+staging unless he names another week. Materials can accumulate for later weeks.
+Chat does **not** hold approval state — **doorbell only** for budget/proof readiness
+(approvals live on the budget page / `approvals.json`).
+
+## Ops cadence / gather loop (locked v3.15 — Frank 2026-10-07)
+
+Canonical home for **when** Gazette Desk checks chat, email, and self-gather.
+SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Eastern.
+
+### Chat → staging (anytime)
+- Frank tells Desk a fact/idea → stage for **next weekly issue** unless he names another week.
+- Same rule as § Chat → staging above; reaffirmed here so the gather loop is one place.
+
+### Email (`efc.weekly@agentmail.to`) — two passes
+1. **Daily light pass (morning):** ingest new mail → staging; apply `processed` (see § Email triage labels); run email media extract.
+2. **Second pass immediately before building the HTML budget:** catch late tips, results-app slices, and club forwards so the lineup isn’t stale.
+
+### Self-gather (SOURCES.md) — two passes
+1. **Mid-week skim (Wednesday):** light pass — Google News RSS (`fencing+epee` + `+New Jersey` variant) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging. Do **not** pretend this replaces the full checklist.
+2. **Publish-morning full pass (default Monday; Tuesday if Mon→Tue slip):** full SOURCES “Every run” checklist + Mon→Tue slip check (Elite FC members competing Monday?).
+
+### Publish gates (reminder)
+**Budget HTML → Frank approve → Gazette Desk compose → Proof PDF → Frank approve → print.**
+Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or email message-ID + date). Chat is doorbell only for “budget ready” / “proof ready.”
+
+### Related
+- Source checklists → **SOURCES.md**
+- Labels / media extract / item schema → sections above
+- Slip rule + schedule narrative → PLAN.md §1 / §6
 
 ## Item schema (sketch)
 
@@ -145,7 +172,8 @@ the tree above is the layout lock.
 
 ## Related locks (pointers)
 
-- Cadence, masthead flanks, footer disclaimer → PLAN.md / STYLE-GUIDE.md
+- Publish cadence (Mon/Tue slip) + furniture → PLAN.md / STYLE-GUIDE.md
+- Ops gather loop (email/self-gather timing) → this file § Ops cadence; fetch list → SOURCES.md
 - Slot order + budgets + cut/stretch → CONTENT-HIERARCHY.md (visual scale → STYLE-GUIDE §4/§11)
 - Fetch checklist → SOURCES.md
 - Approvals UX (budget + proof, chat doorbell, photo desk) → PLAN.md § Approval design

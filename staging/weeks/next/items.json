@@ -1,8 +1,40 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-07T00:08:00-04:00",
-  "note": "Pretend staging pile for budget-demo Vet+notes UX. Real Frank-forwarded newsletter photos stay vetted; seed unvetted public tips/photos for Frank to try the budget-page Vet flow.",
+  "updated_at": "2026-10-07T13:05:00-04:00",
+  "note": "Staging pile: pretend budget-demo seeds + Frank chat drops + self-gather 2026-10-07 test. chat-remise-anderson-app kept. New gather-* items appended, not wiped.",
   "items": [
+    {
+      "id": "chat-remise-anderson-app",
+      "kind": "graf",
+      "headline": "Club Parent Ships Remise Journal App",
+      "body": "Elite FC parent Eric Anderson released Remise, a free fencing journal on the App Store (iOS 17+). Log bouts, lessons, and opponent notes while they are still fresh; import results from fencingtracker.com so head-to-head history travels with you. Foil, epee, and saber. No account, no ads. App Store: https://apps.apple.com/us/app/remise-fencing-journal/id6799173957 — Eric says he is happy to take feedback.",
+      "word_count": 78,
+      "source": "chat",
+      "from": "frank",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_at": "2026-10-07T12:59:23-04:00",
+      "vetted_by": "frank",
+      "vet_notes": "Frank shared WhatsApp screenshot from Eric Anderson; App Store confirms developer name Eric Anderson. Club-parent local short for Thursday / next issue.",
+      "provenance": [
+        {
+          "type": "chat",
+          "note": "Frank drop 2026-10-07 with WhatsApp screenshot"
+        },
+        {
+          "type": "url",
+          "url": "https://apps.apple.com/us/app/remise-fencing-journal/id6799173957",
+          "retrieved_at": "2026-10-07T12:59:23-04:00"
+        }
+      ],
+      "suggested_slot": "secondary_short",
+      "tags": [
+        "club",
+        "app",
+        "parent",
+        "epee-ok"
+      ]
+    },
     {
       "id": "club-events-efc",
       "kind": "fact",
@@ -93,9 +125,9 @@
       "source": "email",
       "from": "neighbor.tip@example.com",
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T00:09:14-04:00",
       "vet_notes": null,
       "slot_hint": "nj-hs",
       "created_at": "2026-10-07T00:01:00-04:00",
@@ -123,9 +155,9 @@
       "source": "fie",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T00:08:58-04:00",
       "vet_notes": null,
       "slot_hint": "lead",
       "created_at": "2026-10-06T22:00:00-04:00",
@@ -153,9 +185,9 @@
       "source": "results-app",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T00:09:53-04:00",
       "vet_notes": null,
       "slot_hint": "ratings",
       "created_at": "2026-10-06T22:00:00-04:00",
@@ -168,9 +200,9 @@
       "source": "fie",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T00:09:34-04:00",
       "vet_notes": null,
       "slot_hint": "tv",
       "created_at": "2026-10-06T22:00:00-04:00",
@@ -213,9 +245,9 @@
       "source": "usafencing",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T00:10:09-04:00",
       "vet_notes": null,
       "slot_hint": "secondary-a",
       "created_at": "2026-10-06T22:00:00-04:00",
@@ -250,6 +282,220 @@
       "vet_notes": "Demo seed: already vetted so Include works without Vet.",
       "created_at": "2026-10-06T22:00:00-04:00",
       "pretend": true
+    },
+    {
+      "id": "gather-october-nac-orlando",
+      "kind": "tip",
+      "headline": "October NAC Opens Season in Orlando",
+      "body": "USA Fencing’s first NAC of 2026–27 runs Fri–Mon Oct 9–12 at Orange County Convention Center (Orlando). Epee slate includes Div I, Cadet, Y14, Cadet Team, and Parafencing. Free to watch. Classification-change deadline was Oct 7. Full schedule: usafencing.org/2026-october-nac",
+      "word_count": 58,
+      "source": "usafencing",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Self-gather 2026-10-07. Confirm any Elite FC entrants via results-app/AskFRED before printing names.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/2026-october-nac",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.askfred.net/tournaments/760723a1-becd-4d00-87ab-d3e0153f6cef",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/tournament/1776",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        }
+      ],
+      "suggested_slot": "deadlines_or_national_short",
+      "tags": [
+        "national",
+        "nac",
+        "epee",
+        "orlando",
+        "tv"
+      ],
+      "created_at": "2026-10-07T13:05:00-04:00"
+    },
+    {
+      "id": "gather-casablanca-epee-wc",
+      "kind": "tip",
+      "headline": "Casablanca Hosts Senior Epee World Cup Oct 15–18",
+      "body": "FIE Senior Men’s & Women’s Épée World Cup (individuals + teams) lands in Casablanca, Morocco, Oct 15–18. ~68 nations / 578 athletes entered. Men’s poules Thu Oct 15; women’s Fri Oct 16; tableaux Sat; teams Sun. Watch-box / international short candidate.",
+      "word_count": 52,
+      "source": "fie",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Self-gather 2026-10-07. Upcoming event (not results). Yabiladi Oct 5 preview also surfaced in Google News RSS.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2026/115",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://static.fie.org/uploads/41/205099-DOC-20260827-WA0005.pdf",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        }
+      ],
+      "suggested_slot": "tv_or_international_short",
+      "tags": [
+        "fie",
+        "world-cup",
+        "epee",
+        "casablanca",
+        "tv"
+      ],
+      "created_at": "2026-10-07T13:05:00-04:00"
+    },
+    {
+      "id": "gather-asian-games-song-sera-epee",
+      "kind": "graf",
+      "headline": "Song Se-ra Takes Asian Games Women’s Epee Gold",
+      "body": "South Korea’s Song Se-ra won individual women’s épée gold at the Asian Games (Aichi-Nagoya 2026), then Korea took silver in the women’s team épée. Men’s team épée also settled for silver after blowing a big lead (Korea Times / JoongAng, late September). International short if Thursday needs a non-club punch line.",
+      "word_count": 62,
+      "source": "google-news",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Self-gather 2026-10-07 via Google News RSS. ~1–2 weeks old; use only if space and no fresher international lead. Verify final scores from FIE/Asian Games before print.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://news.google.com/rss/search?q=fencing+epee&hl=en-US&gl=US&ceid=US:en",
+          "retrieved_at": "2026-10-07T13:05:00-04:00",
+          "note": "Song Se-ra / Korea epee items Sep 22–28 2026"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/news",
+          "retrieved_at": "2026-10-07T13:05:00-04:00",
+          "note": "FIE covered Asian Games educational stands Oct 5; results via press"
+        }
+      ],
+      "suggested_slot": "secondary_short",
+      "tags": [
+        "international",
+        "asian-games",
+        "epee",
+        "korea"
+      ],
+      "created_at": "2026-10-07T13:05:00-04:00"
+    },
+    {
+      "id": "gather-morris-cup-ryc-oct25",
+      "kind": "tip",
+      "headline": "Morris Cup RYC/RJCC Oct 25 — Suffern, NY",
+      "body": "Morris Cup RYC/RJCC at Rockland Community College (Suffern, NY) lists Junior Men’s Epee among events Sun Oct 25. Nearby regional for NJ clubs; Medeo already showing heavy entry on FencingTracker. Deadlines/signup board candidate — confirm closes on AskFRED before print.",
+      "word_count": 55,
+      "source": "fencingtracker",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Self-gather 2026-10-07. AskFRED API unavailable; close times not verified. Do not invent Elite FC names.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/19523",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.askfred.net/tournaments",
+          "retrieved_at": "2026-10-07T13:05:00-04:00",
+          "note": "Browse only; NJ+epee filter not usable without API"
+        }
+      ],
+      "suggested_slot": "signup_or_deadlines",
+      "tags": [
+        "regional",
+        "ryc",
+        "rjcc",
+        "epee",
+        "ny-near-nj"
+      ],
+      "created_at": "2026-10-07T13:05:00-04:00"
+    },
+    {
+      "id": "gather-college-path-shamel-epee",
+      "kind": "tip",
+      "headline": "College-Path Note: UNC’s Shamel Took NCAA Epee Title",
+      "body": "Google News resurfaced UNC first-year Youssef Shamel’s March 22 NCAA men’s epee national title (beat Notre Dame’s Kruz Schembri 15–7; first Carolina individual fencing title in 43 years). Not this-week news — optional college-path color for youth parents, not a lead.",
+      "word_count": 58,
+      "source": "google-news",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Self-gather 2026-10-07. Event date March 2026; RSS pubDate Oct 3 is republication noise. Low priority vs NAC/Casablanca/club.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://goheels.com/news/2026/3/22/fencing-shamel-crowned-mens-epee-national-champion",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.unc.edu/posts/2026/03/22/youssef-shamel-wins-epee-national-title-at-fencing-championships/",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        }
+      ],
+      "suggested_slot": "college_path_optional",
+      "tags": [
+        "college",
+        "ncaa",
+        "epee",
+        "evergreen"
+      ],
+      "created_at": "2026-10-07T13:05:00-04:00"
+    },
+    {
+      "id": "gather-njhs-offseason-note",
+      "kind": "tip",
+      "headline": "NJ HS Epee: Offseason — No Fresh Duals This Week",
+      "body": "NJ.com boys/girls fencing hubs still surface March 2026 state individual epee results (e.g. Midland Park’s Sverdlov boys epee title) and All-State packages. HS season is dormant in early October; nothing fresh to print as ‘this week’ dual news. Revisit Dec when duals start.",
+      "word_count": 55,
+      "source": "nj.com",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Self-gather 2026-10-07. Staging as ops note / degrade, not a print candidate unless Frank wants a look-back short.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://highschoolsports.nj.com/boysfencing",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://news.google.com/rss/search?q=fencing+epee+%22New+Jersey%22+OR+NJSIAA+OR+Chatham&hl=en-US&gl=US&ceid=US:en",
+          "retrieved_at": "2026-10-07T13:05:00-04:00"
+        }
+      ],
+      "suggested_slot": "ops_note_not_print",
+      "tags": [
+        "nj-hs",
+        "offseason",
+        "degrade"
+      ],
+      "created_at": "2026-10-07T13:05:00-04:00"
     }
   ]
 }

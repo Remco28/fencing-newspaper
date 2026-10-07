@@ -1,9 +1,53 @@
 # En Garde Gazette — Visual Style Guide (LOCKED)
 Authoritative for every issue, template, and prototype. Locked 2026-10-06 by Frank;
+**reference sample (taste locked 2026-10-07, plan v3.14):** `issues/2026-10-14/` —
+`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`. Match that sheet’s
+furniture (dateline, flanks, §8 boxes vs rails) unless Frank reopens a rule.
 article size-by-importance + stretch hierarchy refreshed 2026-10-07 (plan v3.7);
-masthead flanks = publisher line + rotating quip, dateline = Vol/No · place · weekday · date (plan v3.8);
-photo fit (no silent crop) + production dateline (no SAMPLE) locked 2026-10-07 (plan v3.9).
+masthead flanks = publisher + rotating quip ears (v3.8 → v3.14); dateline = centered
+Playfair `Tuesday Edition` / `Page Two` + meta (v3.12); photo fit no silent crop (v3.9);
+Gazette Desk composition §0 (v3.10); voice §0a (v3.11); §8 tabular-only `.box` +
+`.rail-title` no underline (v3.12–v3.14); guests-only bylines.
 If a render violates any rule below, it does not print — fix and re-render.
+
+
+## 0. Composition bar — Gazette Desk (locked 2026-10-07, plan v3.10)
+
+**Who:** Gazette Desk (this bot and every future version) builds each issue after Frank
+approves the budget. Frank owns editorial gates; you own composition and taste inside
+locked Template A.
+
+**Bar:** The sheet must feel tailor-made for Elite Fencers Club — pleasant, fun, carefully
+put together — **not** approved content dumped into slots. Club kids and parents should
+recognize themselves and their sport; the lead carries weight; shorts stay shorts; boards
+are glanceable; something earns a smile; dense without feeling forced.
+
+**Rails vs judgment:**
+- Rails (do not invent weekly): page geometry, 3-col grid, per-slot type scale, word/row
+  budgets, furniture (masthead / dateline / footer), pattern vocabulary, B&W rules, photo
+  fit, fill/gap instruments.
+- Judgment (required every issue): article order and pairing within pattern slots, pacing,
+  flank quip choice and presentation, photo slotting, cut/stretch decisions per §11 and
+  CONTENT-HIERARCHY, self-critique until the page feels designed.
+
+**Done loop (mandatory):** render → look (and instruments) → self-critique against this
+§0 + the checklist in §7 → fix → re-render. “Fits” without purpose is a fail.
+
+**Cooperation:** Prefer rewriting unclear docs over improvising a private house style.
+PLAN §1a is the narrative home for this role; this section is the visual/composition home.
+
+
+## 0a. Voice (locked 2026-10-07, plan v3.11)
+
+Write like a **newsletter with a hard page limit**: every word competes for space.
+- Selective word choice; cut fat before you cut facts. Verbose only when the **lead** (or another
+  budgeted long slot) has room — never inflate a short to “sound newspaper-y.”
+- Default voice = **reporter**: clean, concrete, sourced. Opinion / guest pieces may differ;
+  credit guests. Tone is **per article** (levity, serious, somber, etc.) — match the story,
+  don’t apply one house mood to every slot.
+- **No byline** unless a real guest wrote the piece. Never print “Gazette Staff,” “Club Desk,”
+  or other fake house bylines. Frank has none. Guests get a real name.
+- Full narrative home: PLAN §1b. Ban list and FK 8–10 rules still bind.
 
 ## 1. Page
 - US Letter, 1 sheet front + back = exactly 2 PDF pages. Never 1.5, never 3.
@@ -13,12 +57,13 @@ If a render violates any rule below, it does not print — fix and re-render.
 
 ## 2. Look: old-time newspaper
 - Masthead logo (`masthead001.png`, cropped to opaque bbox) with §12 flanks. Nothing above it, ever.
-- Dateline bar: 2.5pt rules top and bottom, bold sans caps, two-span flex (`space-between`). Content = **Vol. I — No. N · Chatham, N.J.** on the left and **weekday · full date** on the right. No SAMPLE / Pretend / middle badge. Vol/No and date live HERE — not in the masthead flanks. Page-2 kicker may use the same bar (section label left, Vol/No right).
+- Dateline (below masthead): **centered edition word** in a display face + one meta line under it — not a three-span flex bar. Top rule **3pt double**, bottom rule **2pt solid**. Edition: **`Tuesday Edition`** (or `Page Two` on the back) in **Playfair Display SC / Cinzel** ~12.5–14pt, tracked, uppercase. Meta line: serif small-caps (**Libre Caslon Text** / Times) ~8pt — `Vol. I — No. N · Chatham, N.J. · Month D, YYYY` (page 2: section topic · Vol/No). No SAMPLE / Pretend / middle badge. Vol/No and date live HERE — not in the flanks. Do **not** revert to Arial three-span.
 - Headings: PLAIN TEXT ONLY. No icons, no emojis, no ★≡✎▶!♦§◉✉ kickers, no symbols in or
   before headlines and box titles. Reasons: old-time look; symbols render inconsistently in B&W.
-- Box titles: small bold sans caps with a 1pt rule beneath. Hierarchy comes from size and rules,
-  not decoration.
-- Body: Times New Roman / Liberation Serif. Headlines: Arial Black / Arial bold. Nothing else.
+- **Tabular** box titles (`.box > .boxtitle` only): small bold sans caps with a 1pt rule
+  beneath. **Prose rail titles** use `.rail-title` — **no** underline (see §8). Hierarchy
+  comes from size and rules, not decoration.
+- Body: Times New Roman / Liberation Serif. Headlines: Arial Black / Arial bold. **Exception:** dateline edition word uses Playfair Display SC / Cinzel; dateline meta uses Libre Caslon Text (see §12).
 - B&W only. 100% black headlines and rules (1–2.5pt). No gray text under 10pt.
 
 ## 3. Grid: 3 columns
@@ -28,15 +73,16 @@ If a render violates any rule below, it does not print — fix and re-render.
 - Column gaps 9pt. Boxes: 1.5pt border, 3–4pt padding, 4pt bottom margin.
 
 ## 4. Type scale (v2 baseline — the "small" version; per-slot lock 2026-10-07)
-- **Size-by-importance is template CSS, not weekly judgment.** Each CONTENT-HIERARCHY
-  slot owns a fixed type scale + column span; the writer only fills the word budget.
-  Do not invent a new hierarchy each issue.
+- **Size-by-importance is template CSS, not weekly freehand.** Each CONTENT-HIERARCHY
+  slot owns a fixed type scale + column span; the writer fills the word budget. Gazette
+  Desk still composes pairing/pacing within those scales (§0) — do not invent a new type
+  hierarchy each issue.
 - Lead (slot 1): 2-column span; H1 ~17–19pt black, tight leading; body may run **+0.5pt**
   vs shorts; optional **one-line dek under the lead only** (no dek on shorts).
 - Secondary A (slot 4): medium — H2 ~11–12pt, body 8.5–9.3pt, leading ~1.26.
 - Secondary B + NJ HS (slots 5–6): smaller presence — same H2 tier or slightly tighter;
   shorter grafs within budget. Never enlarge shorts to match the lead.
-- Box titles 10pt caps. Tables/boards 8.5pt. Footer/dateline 7–8.5pt sans caps.
+- Box titles 10pt caps. Tables/boards 8.5pt. Footer 7pt sans caps. Dateline: edition ~12.5–14pt display; meta ~8pt serif small-caps (§2/§12).
   Nothing below 7pt, ever.
 
 ## 5. Alignment (be anal — this is what looks professional)
@@ -65,29 +111,54 @@ Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
 - [ ] 3-column flow intact, no column widowed/orphaned?
 - [ ] Both pages filled top-to-bottom (no dead zones > ~0.75in)?
 - [ ] Every board table: columns aligned, numbers tabular, rules consistent?
-- [ ] Masthead crisp, dateline on one line, footer complete?
+- [ ] Masthead crisp; dateline = centered edition + meta (Playfair SC, not three-span Arial); footer complete; flanks have air from logo?
 - [ ] B&W-safe: no washed gray text, no muddy fills?
 - [ ] Proofread: names spelled right, dates/days consistent, no foil/saber leaks?
+- [ ] Composition bar (§0): tailor-made for Elite FC — not slot-dump; hierarchy alive;
+      flanks/dateline designed; page 2 not equal tiles?
+- [ ] Voice (§0a): newsletter-tight; reporter unless guest/opinion; tone fits each piece;
+      no fake Gazette Staff bylines (guests only)?
+- [ ] §8: prose never in `.box`; `.rail-title` has no underline; no `<hr>` between page-2
+      article bands (Read preview-p2.png — confirm)?
 Any NO = fix, re-render, re-check. Fitting on the page is necessary but NOT sufficient —
-it must look purpose-built.
+it must look purpose-built for this club.
 Board-level QA must be done on zoomed crops (150dpi+) of each table, not full-page
 thumbnails — alignment cannot be judged through frosted glass.
 
-## 8. Box-free articles; bordered utility boxes (locked 2026-10-06, clarified 2026-10-07)
+## 8. Box-free articles; borders only on tables (locked 2026-10-06; **tightened 2026-10-07**)
 - ARTICLE text flows WITHOUT bounding boxes: headline, optional dek, justified text, nothing else.
-- UTILITY boxes (Milestones, New Faces, About, Fencing 101, Next Gazette, comic slot) MAY carry
-  borders — they are furniture, not articles. Borders on tabular-data boxes always.
+- **Borders (`class="box"`) ONLY on tabular utility** — ratings, scoreboard, signup board,
+  club calendar table, Where-to-Watch table, and any other board. If it is primarily a
+  `<table class="board">`, it may sit in `.box`.
+- **Prose furniture is NOT a box.** Tips, About blurbs, Next-week asks, one-sentence
+  explainers, Cheer Tips, Fencing 101-style copy — even when they live in a rail — use
+  `.rail-block` (or bare flow): **`.rail-title`** + paragraphs, **no outer border** and
+  **no title underline**. Putting article-shaped copy inside `.box` is the recurring defect
+  Frank flagged across versions. Title underlines (`border-bottom` on `.boxtitle`) belong
+  **only** inside `.box` tabular utilities — never on rail prose. Stacked `.rail-block`s
+  separate by margin only; never insert `<hr>` or a fake rule between them.
+- Do **not** treat “utility” as a license to draw a rectangle around prose. Killed sections
+  (About / Fencing 101 / Milestones / Next Gazette placeholders) stay killed in live weeks;
+  samples must still follow the no-prose-border rule.
 - Columns are separated by `column-rule` (1pt vertical rule) — the classic newspaper divider.
 - Lead headline lives inside the lead columns per §17 (never full-bleed over a rail).
-- Comic slot: define as an aspect-ratio box when real panels land (fixed min-height reflows
-  the rail on swap); placeholder min-height is prototype-only.
+- Comic slot: dashed/aspect-ratio frame when real panels land (that frame is the comic, not
+  an article); placeholder min-height is prototype-only.
 
-## 9. Layout patterns — select, never invent (locked 2026-10-06)
-- The template offers a small pre-defined set of layout patterns (e.g. FRONT-A: lead + rail;
+## 9. Layout patterns — select, never invent (locked 2026-10-06; OPEN 2026-10-07)
+- **Today (V1):** ship **Template A only**. Match the locked sample `issues/2026-10-14`
+  (v3.14). Varied article spans/heights inside that shell are composition (PLAN §1a), not a
+  new template — still no freehand box placement.
+- The long-term idea: a small pre-defined pattern vocabulary (e.g. FRONT-A: lead + rail;
   FRONT-B: 3 equal shorts; BACK-A: 3 rails). The agent SELECTS a pattern per issue based on
   content shape — it never hand-places boxes or invents arrangements per issue.
 - A new pattern is created only as a design task with a test render; once good, it is LOCKED
   and added to the set. Patterns are vocabulary, not improvisation.
+- **OPEN (Frank deciding — PLAN §4):** keep **2–3 locked full templates** and rotate weeks,
+  vs **one Template A shell + constrained pattern selection** so the page feels more dynamic
+  each time (real-newspaper energy) without unconstrained chaos. Another agent warned that
+  open-ended dynamism gets messy. Until Frank picks: do not add Template B/C and do not
+  invent layouts. Document the decision here when it lands.
 
 ## 10. Flexible table widths (locked 2026-10-06)
 - Every board supports width variants: `.w1` (1 col rail), `.w2` (2 cols), `.w3` (full width).
@@ -112,20 +183,39 @@ thumbnails — alignment cannot be judged through frosted glass.
   or cheat margins. Oversupply ~115% then cut is mandatory (§16).
 - Killed fillers (do not stretch with these): Fencing 101, Milestones, scoreboard strip.
 
-## 12. Masthead flanks + dateline (locked 2026-10-07, plan v3.8; production dateline v3.9)
-- Logo at ~62% width, centered in `.masthead` (retune slightly only if quotes wrap badly).
+## 12. Masthead flanks + dateline (locked 2026-10-07; dateline v3.12; flanks v3.14)
+- Logo ~58–62% width, centered in `.masthead` (retune if quotes wrap badly).
   Nothing above the masthead row, ever.
 - **Flanks (beside the logo) — prose quotes, not Vol/No/date:**
   - LEFT (fixed): `Published by a fencing parent with a bot.`
-  - RIGHT (rotates weekly): one quip from `flank-quotes.json` (`right_flank_quips`).
-- Flank CSS: ~7pt bold sans, **normal sentence case** (no forced ALL CAPS), wrapping OK,
-  2pt side rules (left block left-ruled, right block right-ruled). Left-align left flank;
-  right-align right flank. Never widen the logo to fill whitespace.
-- **Dateline** (thick top/bottom rules, two-span flex): left = `Vol. I — No. N · Chatham, N.J.`;
-  right = `Weekday · Month D, YYYY`. No SAMPLE / Pretend / middle badge — production chrome
-  only. Page 2 may reuse the bar as a section kicker (label left, Vol/No right). Do not invent
-  a new dateline format.
+  - RIGHT (rotates weekly): one quip from `flank-quotes.json` (`right_flank_quips`) —
+    pick for punch; wrap is OK.
+- **Flank presentation (v3.13 ears; v3.14 gap):**
+  Serif face (**Libre Caslon Text** / Times), **not** bold Arial side-rules.
+  Each ear: thin **0.75pt** top + bottom hairlines (no chunky 2pt side borders).
+  Text centered in its ear. Left: **small-caps**, ~6.5pt, light tracking.
+  Right: **italic**, ~6.8pt, sentence case. Never widen the logo to fill whitespace.
+  Do **not** revert to Arial + 2pt side rules.
+  **Clear air from the masthead logo:** logo ~**50%** width with **`margin: 0 10pt`**
+  on the img (PNG flourishes run to the image edges — CSS flex gap alone is not enough),
+  `.masthead` gap ~**18pt**, flank padding ≥ **5pt 7pt**. Closest hairline-to-art air
+  should read ~**28–32pt** (≥ ~0.4in). Hairlines must **not** kiss the nameplate.
+  Retune margin/gap before shrinking type.
+- **Dateline** (v3.12 — replaces three-span Arial bar): centered stack, not flex spans.
+  - Top: **3pt double** rule; bottom: **2pt solid** rule.
+  - `.edition`: **`Tuesday Edition`** (page 1) or **`Page Two`** (page 2) — Playfair Display SC
+    / Cinzel, ~12.5–14pt, tracked uppercase.
+  - `.meta` under it: Libre Caslon Text / Times, ~8pt small-caps —
+    `Vol. I — No. N · Chatham, N.J. · Month D, YYYY` (page 2: `Club Calendar & Notes · Vol/No`).
+  - No SAMPLE / Pretend / middle badge. Do **not** revert to three-span `space-between` Arial.
 - Price / "Epee Only, As Always" flank lines: killed (v3.8).
+- **Page 2 article bands + rail furniture:** no `<hr class="rule">` between article rows
+  or between stacked rail-blocks. No `.boxtitle` underline on prose rails — use
+  `.rail-title` (borderless). Column rules (`.cols3.ruled`) and utility `.box` borders
+  (with `.box > .boxtitle` underline) stay. Page 1 may still use rules between major
+  bands when they help. **Visual QA:** after render, Read preview-p2.png and confirm
+  About / Cheer Tip / Youth Points / Next Week titles have **no** horizontal line under
+  the heading.
 
 ## 13. Footer pinning + gap instrument (locked 2026-10-06; copy lock 2026-10-07)
 - `.page` is a flex column with min-height 10.1in (Letter minus our @page margins);
@@ -159,8 +249,9 @@ thumbnails — alignment cannot be judged through frosted glass.
   selection fits — provided the oversupply exists. No oversupply, no fit guarantee.
 
 ## 17. Headline scoping (locked 2026-10-06)
-- The lead headline, dek, and byline live INSIDE the lead columns — never full-bleed above
+- The lead headline and dek live INSIDE the lead columns — never full-bleed above
   a rail. Full-width headlines visually collide with top-right rail boxes.
+  Byline only if a real guest wrote it (see §0a); omit otherwise.
 - The rail rises to the very top beside the dek. Rebalance lead word budget against rail
   height whenever this arrangement changes (see §11 budgets).
 

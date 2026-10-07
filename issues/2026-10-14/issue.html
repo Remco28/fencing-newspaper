@@ -13,19 +13,34 @@
   .page:last-child { page-break-after: auto; }
   .page .footer { margin-top: auto; }
 
-  .masthead { display: flex; align-items: center; gap: 8pt; }
-  .masthead img { display: block; width: 62%; height: auto; margin: 0 auto; flex: none; }
-  .flank { flex: 1; min-width: 0; font-family: "Arial", "Liberation Sans", sans-serif;
-    font-size: 7pt; font-weight: bold; letter-spacing: 0.1pt;
-    line-height: 1.35; }
-  .flank.left { text-align: left; border-left: 2pt solid #000; padding-left: 6pt; }
-  .flank.right { text-align: right; border-right: 2pt solid #000; padding-right: 6pt; }
+  .masthead { display: flex; align-items: center; gap: 18pt; }
+  /* margin on img clears hairlines from PNG flourishes (art runs to image edges) */
+  .masthead img { display: block; width: 50%; height: auto; margin: 0 10pt; flex: none; }
+  /* Flanks: newspaper ears — clear air from logo (hairlines must not kiss masthead) */
+  .flank { flex: 1; min-width: 0; padding: 5pt 7pt; margin: 0;
+    border-top: 0.75pt solid #000; border-bottom: 0.75pt solid #000;
+    line-height: 1.22; }
+  .flank.left {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.5pt; font-variant: small-caps; letter-spacing: 0.06em;
+    text-align: center; font-weight: 400; }
+  .flank.right {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.8pt; font-style: italic; letter-spacing: 0.01em;
+    text-align: center; font-weight: 400; }
 
-  .dateline { display: flex; justify-content: space-between; align-items: center;
-    border-top: 2.5pt solid #000; border-bottom: 2.5pt solid #000;
-    font-family: "Arial", "Liberation Sans", sans-serif; font-weight: bold; font-size: 8pt;
-    padding: 2.5pt 1pt; margin: 4pt 0 5pt 0; text-transform: uppercase; letter-spacing: 0.55pt; }
-  .dateline > span { white-space: nowrap; }
+  /* Dateline: centered edition word (display face) + single meta line under it — not three-span */
+  .dateline { text-align: center;
+    border-top: 3pt double #000; border-bottom: 2pt solid #000;
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+  .dateline .edition {
+    font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
+    font-weight: 700; font-size: 12.5pt; line-height: 1.02;
+    letter-spacing: 0.16em; text-transform: uppercase; }
+  .dateline .meta {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.5pt; letter-spacing: 0.05em; margin-top: 1.5pt;
+    font-variant: small-caps; font-weight: 400; }
 
   .cols3 { display: flex; gap: 9pt; }
   .cols3 > .c { flex: 1; min-width: 0; }
@@ -34,25 +49,37 @@
   .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
 
   .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
-  .boxtitle { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
-    text-transform: uppercase; letter-spacing: 0.5pt; border-bottom: 1pt solid #000;
+  /* Prose furniture: title + text ONLY — never wrap in .box (STYLE-GUIDE §8) */
+  .rail-block { margin-bottom: 6pt; padding: 0; border: none; }
+  .rail-block + .rail-block { margin-top: 2pt; } /* spacing only — no HR between stacked rails */
+  /* Shared title type; underline ONLY inside .box (tabular utilities) */
+  .boxtitle, .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 0.5pt;
     padding-bottom: 2pt; margin-bottom: 3pt; }
+  .box > .boxtitle { border-bottom: 1pt solid #000; }
+  .rail-title { border: none; border-bottom: none; padding-bottom: 0; margin-bottom: 2pt; }
 
   /* Per-slot type scale (STYLE-GUIDE §4) */
   h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
-    font-size: 18pt; line-height: 1.02; letter-spacing: -0.3pt; margin-bottom: 2pt; }
+    font-size: 18.5pt; line-height: 1.02; letter-spacing: -0.35pt; margin-bottom: 2pt; }
   .span2 > p { font-size: 9pt; } /* lead body +0.5pt vs shorts */
   .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; } /* lead only */
   h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
     font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; } /* shorts default */
-  .slot-a h2.head { font-size: 11.5pt; } /* Secondary A medium */
+  .slot-a h2.head { font-size: 12pt; } /* Secondary A / page-2 featured */
   .slot-a > p { font-size: 8.8pt; }
   .slot-b h2.head { font-size: 10.5pt; } /* Secondary B / NJ HS */
+  .slot-feature h2.head { font-size: 13pt; line-height: 1.04; } /* page-2 span2 featured */
+  .slot-feature > p { font-size: 8.8pt; }
+  /* Byline ONLY for real guest authors — never "Gazette Staff" (PLAN §1b) */
   .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
     letter-spacing: 0.4pt; margin-bottom: 3pt; }
   p { margin-bottom: 3pt; text-align: justify; hyphens: auto; }
   p:last-child { margin-bottom: 0; }
   .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
+  /* Page 2: vertical rhythm — no HRs, no rail-title underlines */
+  .page:last-child > .cols3 { margin-bottom: 6pt; }
+  .page:last-child > .cols3:last-of-type { margin-bottom: 0; }
 
   table.board { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 8.5pt; }
   table.board th { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
@@ -81,18 +108,17 @@
   <div class="masthead">
     <div class="flank left">Published by a fencing parent with a bot.</div>
     <img src="../../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly">
-    <div class="flank right">The reports of our losses have been greatly exaggerated.</div>
+    <div class="flank right">It is better to deserve a rating than to have one.</div>
   </div>
   <div class="dateline">
-    <span>Vol. I — No. 007 &nbsp;·&nbsp; Chatham, N.J.</span>
-    <span>Tuesday &nbsp;·&nbsp; October 14, 2026</span>
+    <div class="edition">Tuesday Edition</div>
+    <div class="meta">Vol. I — No. 007 &nbsp;·&nbsp; Chatham, N.J. &nbsp;·&nbsp; October 14, 2026</div>
   </div>
 
   <div class="cols3 ruled">
     <div class="c span2">
       <h1 class="head">Canadian Epeeist Edges World No. 4 in Vancouver Grand Prix Final</h1>
       <p class="dek">A late-priority surge lifts a home-strip underdog past the draw’s top remaining seed.</p>
-      <div class="byline">Gazette Staff · Pretend Copy</div>
       <p>VANCOUVER — Canadian epeeist Avery Chen (world No. 47) upset Italy’s Luca Moretti, the world’s No. 4, 15–14 in a one-touch priority finish. Chen trailed 9–12 after two periods, then closed with three unanswered touches before priority decided it. Moretti had looked in control through pools and early direct elimination, including a 15–9 quarterfinal over France’s Elise Marchand.</p>
       <p>Chen’s coach called the final “a textbook distance reset”: shorter advances, fewer searches, and a willingness to invite the double when ahead in priority. Bronze went to Korea’s Min-jun Park over the United States’ Jordan Hale, 15–11. Hale’s deep run still moves him into the early-season Grand Prix points mix and gives American juniors a clear study tape.</p>
       <p><b>Why it matters here:</b> Grand Prix finals reward the same habits we drill on Monday night — hold distance when you are down, and do not chase when priority is yours. Chen’s last three touches came off retreats, not lunges. Bout video is expected on FencingTV and the FIE results pages this week. Elite FC fencers who streamed the final should bring one stolen idea to Tuesday Advanced. For readers new to priority: after a draw for who advances on a tie, the holder wins any double — which is exactly how Chen closed.</p>
@@ -166,11 +192,43 @@
 <!-- ==================== PAGE 2 (BACK) ==================== -->
 <div class="page">
   <div class="dateline" style="margin-top:0;">
-    <span>Page Two &nbsp;·&nbsp; Club Calendar &amp; Streaming</span>
-    <span>Vol. I — No. 007</span>
+    <div class="edition">Page Two</div>
+    <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 007</div>
   </div>
 
+  <!-- Featured row: span2 club story + short companion (monday-v6 energy) -->
   <div class="cols3 ruled">
+    <div class="c span2 slot-feature">
+      <h2 class="head">After the SYC: Three Finishes, One Lesson</h2>
+      <p>Ben Gutenberg gave Elite FC three finishes for the wall: Mila Siu’s Y12 bronze, Penny Young’s sixth in the same event, and Stella Kuo’s top-16 in Y14. Ask them what changed between pools and DEs — usually rest, simple actions, and fewer hero lunges. The wall board only holds names; the useful part is the story that got them there.</p>
+      <p>Medeo Youth Challenge #3 is Sunday. Christina Jiang and Bryce Cheng are on the sheet. If you are free, go cheer — local strips are where clubmates learn who shows up. Bring one DE lesson back to Tuesday Advanced. If you medal next week, tell the desk the same night so the board updates before Thursday practice.</p>
+      <p>Ratings rows on page one (Rivera, Lee, Patel) are invented celebration fuel for this sample. The SYC finishes and Medeo names are the real Frank-forwarded facts this sheet is built around. That split is the pipeline test: pretend national color beside real club ink. Real weeks will drop the invented letters the moment the results-app email arrives.</p>
+    </div>
+    <div class="c slot-b">
+      <h2 class="head">Strip Notes From Vancouver</h2>
+      <p>Chen’s closing period is worth a freeze-frame: three retreats, three lights, no chase. Moretti’s early lead came from searches that worked until they didn’t.</p>
+      <p>Hale’s bronze bout against Park is the cleaner teaching tape for cadets — fewer priority gymnastics, more honest distance. Replay tip: watch the last minute muted once, then with commentary. You will notice footwork you missed while listening to the call.</p>
+      <p>Cadets: pause every time the referee walks the strip — that is where distance arguments get won. Steal one idea, not the whole final. If you only have ten minutes, watch Chen’s last period once and stop — the rest is noise.</p>
+    </div>
+  </div>
+
+  <!-- Second band: asymmetric article + short (not three equal tiles) -->
+  <div class="cols3 ruled">
+    <div class="c span2 slot-a">
+      <h2 class="head">How Dual Meets Differ From Club</h2>
+      <p>School duals compress warm-ups and stack bouts. Referees want clear attacking intent; passivity costs arrive faster than Saturday open fencing. Bring a notebook: one idea per bout is enough. The Chatham 14–8 tip on page one is labeled pretend — confirm on NJ.com before you quote it in the hallway.</p>
+      <p>Returning varsity fencers should lock school tryout dates with their coach; club Advanced on Tuesday still covers the distance work duals punish when you forget it. Freshmen: salute cleanly, check your body cord twice, and ask a senior where the strip assignment sheet lives.</p>
+      <p>County rivals will scout the same YouTube finals on the watch board — steal the footwork, not the drama. If your school posts dual results late, email the Gazette tip address the same night — hallway memory fades by Wednesday.</p>
+    </div>
+    <div class="c slot-b">
+      <h2 class="head">What the Signup Board Is For</h2>
+      <p>The board exists to nudge more Elite FC names onto start lists. Cap stays at a few tournaments so names stay readable. Medeo is this week’s cheer target; Hub City and Garden State RJC are next on the local path.</p>
+      <p>Parents new to AskFRED: check weapon filters before you pay. This paper is epee only. If your name is missing from a tournament you already entered, tell the desk before the next issue. The board is useless if it lags the start list by a week — same-night tips beat hallway memory.</p>
+    </div>
+  </div>
+
+  <!-- Furniture rails: balanced stacks, varied box heights -->
+  <div class="cols3">
     <div class="c">
       <div class="box">
         <div class="boxtitle">This Week at Elite FC</div>
@@ -183,7 +241,11 @@
           <tr><td>Saturday</td><td>Youth practice blocks — ask coach</td></tr>
           <tr><td>Sunday</td><td>Closed · Medeo #3 away</td></tr>
         </table>
-        <p style="margin-top:3pt;">Times from this week’s club forward. Desk whiteboard wins if a group moved. Loaner masks sign out before warm-up, not after the lesson starts. Parents: pick-up runs through the lobby — please wait off the strip edge during Advanced. Saturday youth blocks rotate by age; ask Coach which strip your group owns before you unpack.</p>
+        <p style="margin-top:3pt;">Desk whiteboard wins if a group moved. Loaner masks sign out before warm-up. Parents: wait off the strip edge during Advanced. Saturday youth blocks rotate by age — ask Coach which strip your group owns before you unpack.</p>
+      </div>
+      <div class="rail-block">
+        <div class="rail-title">Youth Points in One Sentence</div>
+        <p>Late-November SYCs can still feed December seeding if you entered the right age event and the result posts before the lock. Screenshot the FAQ the day you register. Y10–Y12: double-check age category before you hit pay on AskFRED. If a result looks missing after seven days, email USA Fencing membership support with the tournament ID.</p>
       </div>
     </div>
     <div class="c">
@@ -198,57 +260,24 @@
           <tr><td>First to 15 podcast</td><td class="num">Anytime</td><td>Podcast apps</td></tr>
           <tr><td>November NAC Div I epee</td><td class="num">Nov 20–23</td><td>USA Fencing YT</td></tr>
         </table>
-        <p style="margin-top:3pt;"><b>Watch like a fencer:</b> count advances before each touch. Pause priority twice — feet, then blade.</p>
+        <p style="margin-top:3pt;"><b>Watch like a fencer:</b> count advances before each touch. Pause priority twice — feet, then blade. Bring a notebook; steal one idea per bout.</p>
+      </div>
+      <div class="rail-block">
+        <div class="rail-title">Next Week’s Ask</div>
+        <p>Real issues need real start lists, real ratings emails, and Frank’s budget checkboxes. Green-light a live week when the pipeline feels boring — boring is the goal.</p>
       </div>
     </div>
-    <div class="c slot-b">
-      <h2 class="head">After the SYC</h2>
-      <p>Ben Gutenberg gave Elite FC three finishes for the wall: Mila Siu’s Y12 bronze, Penny Young’s sixth in the same event, and Stella Kuo’s top-16 in Y14. Ask them what changed between pools and DEs — usually rest, simple actions, and fewer hero lunges.</p>
-      <p>Medeo Youth Challenge #3 is Sunday. Christina Jiang and Bryce Cheng are on the sheet. Tuesday’s slip waits for Monday club fencing so results land beside the national lead. Comic and deadlines were cut from this pretend budget; TV stayed because the include checkboxes won.</p>
-      <p>Ratings rows on page one (Rivera, Lee, Patel) are invented celebration fuel for the dry run. The SYC finishes and Medeo names are the real Frank-forwarded facts this sheet is built around. If you medal next week, tell the desk the same night so the wall board updates before Thursday practice. Bring one DE lesson back to Tuesday Advanced — the club wall is only half the story.</p>
-    </div>
-  </div>
-
-  <hr class="rule">
-
-  <div class="cols3 ruled">
-    <div class="c slot-b">
-      <h2 class="head">What the Signup Board Is For</h2>
-      <p>The board exists to nudge more Elite FC names onto start lists. Cap stays at a few tournaments so names stay readable. If one event fills with twenty clubmates, we show fewer events — not smaller type. Medeo is this week’s cheer target; Hub City and Garden State RJC are next on the local path.</p>
-      <p>Parents new to AskFRED: check event weapon filters before you pay. This paper is epee only. Foil and saber stay off the sheet even when a weekend mixed weapons. Travel groups form at the desk clipboard by Wednesday so drivers can plan Edison or New Brunswick rides.</p>
-      <p>If your name is missing from a tournament you already entered, tell Frank or the desk before the next issue — the board is only as good as the start list we were sent.</p>
-    </div>
-    <div class="c slot-b">
-      <h2 class="head">How Dual Meets Differ From Club</h2>
-      <p>School duals compress warm-ups and stack bouts. Referees want clear attacking intent; passivity costs arrive faster than Saturday open fencing. Bring a notebook: one idea per bout is enough. The Chatham 14–8 tip in this issue is labeled pretend — confirm on NJ.com before you quote it in the hallway.</p>
-      <p>Returning varsity fencers should lock school tryout dates with their coach; club Advanced on Tuesday still covers the distance work duals punish when you forget it. Freshmen: salute cleanly, check your body cord twice, and ask a senior where the strip assignment sheet lives.</p>
-      <p>County rivals will scout the same YouTube finals we listed on the watch board. Steal the footwork, not the drama. If your school posts dual results late, email the Gazette tip address the same night — hallway memory fades by Wednesday.</p>
-    </div>
-    <div class="c slot-b">
-      <h2 class="head">About This Pretend Run</h2>
-      <p>This sheet tests the budget-demo pipeline: approvals JSON in, HTML and PDF out, photo copied into the issue folder, sources logged. Masthead flanks drop price and “Epee Only” lines; the footer carries the fun-only disclaimer on both pages. Articles stay box-free with column rules; borders stay on utility tables only.</p>
-      <p>Comic and deadlines were cut from Frank’s pretend budget. TV stayed because include checkboxes won over the “cut unless inches free” note. Ratings rows (Rivera, Lee, Patel) are invented celebration fuel; SYC finishes and Medeo names are from Frank-forwarded club facts.</p>
-      <p>Vol. I — No. 007. Publish date Tuesday, October 14, 2026. Not for hallway distribution until a real week is green-lit. Past pretend proofs live beside this folder in git.</p>
-    </div>
-  </div>
-
-  <hr class="rule">
-
-  <div class="cols3 ruled">
-    <div class="c slot-b">
-      <h2 class="head">Strip Notes From Vancouver</h2>
-      <p>Chen’s closing period is worth a freeze-frame: three retreats, three lights, no chase. Moretti’s early lead came from searches that worked until they didn’t. Hale’s bronze-medal bout against Park is the cleaner teaching tape for cadets — fewer priority gymnastics, more honest distance.</p>
-      <p>Replay tip: watch the last minute muted once, then with commentary. You will notice footwork you missed while listening to the call. Bring that habit to club video night if coaches queue a NAC final. Cadets: pause every time the referee walks the strip — that is where distance arguments get won.</p>
-    </div>
-    <div class="c slot-b">
-      <h2 class="head">Youth Points in One Sentence</h2>
-      <p>The revised winter freeze dates mean a late-November SYC can still feed December seeding — but only if you entered the right age event and the result posts before the lock. When in doubt, screenshot the FAQ the day you register.</p>
-      <p>Y10 and Y12 families: the rollup does not care how loud the gym was — it cares that the event code matches. Double-check age category before you hit pay on AskFRED. If a result looks missing after seven days, email USA Fencing membership support with the tournament ID, not a screenshot of the livestream.</p>
-    </div>
-    <div class="c slot-b">
-      <h2 class="head">Next Week’s Ask</h2>
-      <p>Real issues need real start lists, real ratings emails, and Frank’s budget checkboxes. This pretend packet proves the folder shape: <i>issue.html</i>, <i>paper.pdf</i>, <i>approvals.json</i>, <i>sources.json</i>, and <i>media/</i>. Green-light a live Monday when the pipeline feels boring — boring is the goal.</p>
-      <p>Until then, treat every invented national name as layout fuel and every Frank-forwarded club fact as gospel for the wall board. Push the issue folder when the PDF looks right; keep submissions/ out of git. Boring pipeline beats clever layout — that is the whole point of a locked template.</p>
+    <div class="c">
+      <div class="rail-block">
+        <div class="rail-title">About This Sample</div>
+        <p>Vol. I — No. 007 tests Gazette Desk composition after budget approval: hierarchy that feels alive, flanks with punch, a dateline that fills its bar, and furniture that earns a glance. Comic and deadlines were cut from Frank’s pretend budget; TV stayed because the include checkboxes won over the “cut unless inches free” note.</p>
+        <p style="margin-top:3pt;">Folder shape: <i>issue.html</i>, <i>paper.pdf</i>, <i>approvals.json</i>, <i>sources.json</i>, and <i>media/</i>. Articles stay box-free with column rules; borders stay on utility tables only. Not for hallway distribution until a real week is green-lit.</p>
+        <p style="margin-top:3pt;">Treat invented national names as layout fuel; Frank-forwarded club facts are gospel for the wall board. Push the issue folder when the PDF looks right; keep submissions/ out of git.</p>
+      </div>
+      <div class="rail-block">
+        <div class="rail-title">Cheer Tip — Medeo</div>
+        <p>Sunday is Medeo Youth Challenge #3. Christina Jiang (Y12 WE) and Bryce Cheng (Y10 Mixed Epee) are on the sheet. If you are free, go support — local strips are where clubmates learn who shows up. Hub City still has room; put your name on the desk clipboard for a New Brunswick ride share.</p>
+      </div>
     </div>
   </div>
 
