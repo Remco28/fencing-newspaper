@@ -9,7 +9,7 @@
   "pretend": false,
   "first_real_issue": true,
   "prior_issues_checked": "issues/ contained only 2026-10-14 (pretend/sample, sources.json pretend:true) — this is No. 1.",
-  "status": "proof v2, awaiting Frank approval",
+  "status": "APPROVED — final (Frank, chat, 2026-10-07 18:40 ET). Proof v2 is the print version.",
   "proof_mark_note": "Template A has no proof-mark convention (STYLE-GUIDE furniture frozen; no SAMPLE/PROOF badges allowed), so proof status lives here and in the HTML <title> only — the printed sheet carries no PROOF stamp.",
   "template": "Template A (rails from issues/2026-10-14 v3.14; CSS copied verbatim + small composition additions: .qa pattern from prototype/qa-block.html, .board-split/.board-cap for side-by-side boards inside one tabular .box, stacked-article margins, left-aligned .boxnote)",
   "approvals": "issues/2026-10-08/approvals.json (copy of budget-demo/submissions/budget-20261007-172024.json, submitted 2026-10-07T17:20:24-04:00)",
@@ -149,7 +149,7 @@
   "not_printed": [
     {
       "what": "THE WEAPON (exploded epee)",
-      "why": "held for issue after next (Frank)"
+      "why": "held for Issue No. 2, week of Oct 12 (Frank: save for next week); now in staging/weeks/next/"
     },
     {
       "what": "Ratings earned / NJ HS roundup / deadlines / comic / TV box",
@@ -188,6 +188,10 @@
     {
       "version": 2,
       "note": "Frank's chat answers applied (podium names, NAC group on Go Cheer), weekly-class time column left-aligned, Rahi Shah Mirani no-wrap; page-2 bottom row reflowed + Desk-fill trims to hold 2 pages."
+    },
+    {
+      "version": "final",
+      "note": "Frank approved proof v2 in chat 2026-10-07 18:40 ET; printed it himself."
     }
   ],
   "desk_fill_trims_v2": [
@@ -203,5 +207,17 @@
       "Photos look fine; all Desk-fill stories kept.",
       "Do another version; might print and distribute tomorrow (Thu Oct 8)."
     ]
+  },
+  "final": true,
+  "proof_approval": {
+    "status": "approved",
+    "final": true,
+    "approved_by": "Frank",
+    "via": "chat",
+    "approved_at": "2026-10-07T18:40:00-04:00",
+    "approved_version": "proof v2",
+    "approved_commit": "aedb039",
+    "pdf": "issues/2026-10-08/paper.pdf",
+    "note": "Frank printed the PDF himself and said it looks great. PDF content frozen as approved (no re-render)."
   }
 }

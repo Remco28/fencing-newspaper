@@ -203,12 +203,12 @@
         "rows": [
           [
             "Christina Jiang",
-            "Y12 Women’s Epee (9:30 a.m.)",
+            "Y12 Women (9:30 a.m.)",
             "results pending"
           ],
           [
             "Bryce Cheng",
-            "Y10 Mixed Epee (11:30 a.m.)",
+            "Y10 Mixed (11:30 a.m.)",
             "results pending"
           ]
         ]
@@ -283,7 +283,7 @@
         "rows": 9,
         "span": 3
       },
-      "title": "Morris Cup RYC/RJCC — Rockland Community College, Suffern, N.Y., Oct. 24–25 · 20 Elite FC fencers, 29 entries (all epee)",
+      "title": "Morris Cup RYC/RJCC — Rockland Community College, Suffern, N.Y., Oct. 24–25 · 20 Elite FC fencers, 29 entries",
       "flags": [
         {
           "level": "info",
@@ -621,10 +621,10 @@
   ],
   "held": [
     {
-      "week": "after-next",
+      "week": "next",
       "id": "chat-asset-weapon-epee",
       "label": "THE WEAPON — exploded epee (SVG + PNG), span 2 columns",
-      "note": "Frank: hold for the issue after next. Read-only here."
+      "note": "Held out of Issue No. 1; Frank: save for next week = Issue No. 2 (week of Oct 12). Now in staging/weeks/next/ (rolled 2026-10-07)."
     }
   ],
   "not_proposed": [

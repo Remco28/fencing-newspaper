@@ -5,7 +5,7 @@ PLAN.md owns the narrative + decision list; this file owns the pipeline names, i
 schema, vetting rules, folder layout, and **ops cadence / gather loop**. On conflict,
 this file wins for pipeline topics.
 
-Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7); **ops cadence / gather loop** locked 2026-10-07 (plan v3.15; wording v3.19); **email trust allowlist** locked 2026-10-07 (plan v3.17); **Parent Q&A category** locked 2026-10-07 (plan v3.18).
+Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7); **ops cadence / gather loop** locked 2026-10-07 (plan v3.15; wording v3.19); **email trust allowlist** locked 2026-10-07 (plan v3.17); **Parent Q&A category** locked 2026-10-07 (plan v3.18); **first-real-run decisions** (slot-note override, scraped registrations unvetted, chat spellings, proof round, week roll-forward) locked 2026-10-07 (plan v3.20).
 
 ## Pipeline (formal names)
 
@@ -17,6 +17,10 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    honor `spelling_unresolved`), apply epee filter, enforce word/row counts, attach
    provenance for `sources.json`. New name confusions → ask Frank once, record the
    answer in the roster. Unvetted items stay labeled; Clean does not promote them.
+   **Spelling precedence (v3.20):** a name spelling Frank gives in chat beats any scraped
+   form (FencingTracker / AskFRED / registration). Print Frank’s spelling; add the scraped
+   form to that person’s `aliases` in `roster/people.json` as a scrape variant (e.g.
+   “Anayaà Sheth” → “Anayaa Sheth”).
 3. **Budget** — local HTML page on Musketeer's computer. Proposed lineup vs
    CONTENT-HIERARCHY.md. **Include only vetted** items in the proposed sheet;
    unvetted items may appear on the page labeled **UNVETTED** but are blocked from
@@ -39,10 +43,24 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    collapsed excluded drawer, stale items flagged (not proposed), dupes merged, provenance links +
    CLICK-CHECK marks on cards, rough two-page fit estimate (~40 w/col-in; furniture measured on the
    2026-10-14 sample). Served at `/`; old pretend demo at `/demo`.
+   **Slot note beats the date field (v3.20):** if Frank’s budget submission carries a slot
+   note or general note that names a publish day (e.g. “We are publishing this Thursday
+   (tomorrow)”), that note **overrides** the `publishDate` field; the issue folder and dateline
+   follow the note. Record the override in `issue.json`.
    Scoreboard strip is **cut** from the live hierarchy (v3.4); may return later as
    "headline wire" — do not treat it as a current Budget slot.
 4. **Proof** — rendered PDF; second approve gate. Nothing prints without both
    budget + proof approval.
+   **Proof round (v3.20 — as run for Issue No. 1):**
+   proof **v1** → “proof ready” doorbell with previews + open flags (Desk-fill list Frank can
+   veto, names to confirm) → **Frank’s answers** (chat) applied → proof **v2** (v3… if needed)
+   → **Frank approves** → print. **Frank prints the PDF himself** (no auto-print yet).
+   - **Proof status lives in `issue.json`** (`status`, `proof_version`, `proof_history`,
+     `proof_approval`) and the HTML `<title>` only — never a PROOF stamp on the sheet.
+     On approval also add `proofApproval` to the issue `approvals.json`. Approved PDFs are
+     frozen: do not re-render or edit an approved issue.
+   - Before any proof is called done, Desk opens and inspects every page PNG (STYLE-GUIDE §7).
+   - Frank’s chat answers count as verified facts; provenance `chat: Frank YYYY-MM-DD`.
 
 ## Tips / mail
 
@@ -61,6 +79,10 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
   in the issue until Frank vets them.
 - No Gmail for this project (inbox stays AgentMail). Raw MIME/bodies stay in
   AgentMail; cite by message-ID.
+- **Scraped registrations (v3.20):** Elite FC names found on **FencingTracker** (or other
+  scraped registration lists) are staged **`vetted: false`** until Frank confirms them — they
+  don’t print, even when the page looks clear. After Frank confirms, vet the item (source
+  `chat: Frank <date>`, append `vet-log.jsonl`) and normalize names via the roster.
 
 ## Email triage labels (locked v3.7)
 
@@ -183,7 +205,7 @@ staging/
       items.json           # (demo) staging items; items.jsonl OK when ingest ships
       vet-log.jsonl        # append-only Vet actions from budget page / tools
       media/
-    after-next/          # hold for the issue after `next` (e.g. THE WEAPON); same layout as next/
+    after-next/          # hold for the issue after `next`; same layout as next/
 
 issues/
   YYYY-MM-DD/            # closed (or in-flight) week after budget/proof work starts
@@ -202,6 +224,10 @@ Rules:
   history for that week until Frank says so (fun project — keep provenance).
 - `staging/weeks/next/` is the default chat/email dump target until Frank names a
   date or the scheduler assigns the next target publish date (usually Mon/Tue).
+- **Roll forward after an issue is approved (v3.20):** `next/` → `YYYY-MM-DD/` (the
+  published issue’s date — kept as history), `after-next/` → `next/`, fresh empty
+  `after-next/`. Still-relevant unprinted items may be copied into the new `next/` with
+  `carried_from`. First roll: 2026-10-07 (Issue No. 1 → `staging/weeks/2026-10-08/`).
 - Raw emails never land in git (see `.gitignore`); only message-IDs + derived files (including downloaded newsletter photos under `media/`).
 
 Exact filenames (`items.jsonl` vs `items/*.json`) may adjust when ingest ships;

@@ -17,6 +17,9 @@ future reports spell names consistently.
 - **Minors / privacy:** keep names, aliases, and relations only. Do **not** print
   this file as a list in the paper. Use it to normalize names inside stories and
   boards that already belong in the issue.
+- **Chat beats scrape (v3.20):** a spelling Frank gives in chat overrides scraped
+  registration forms (FencingTracker, AskFRED). Keep the scraped form in `aliases`
+  as a scrape variant so Clean maps it to Frank’s spelling.
 - **Unresolved spelling:** set `spelling_unresolved: true` and print each person
   as registered until Frank picks a house form.
 - **New confusion:** ask Frank once in chat, then record the answer here (and

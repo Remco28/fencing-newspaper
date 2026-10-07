@@ -5,7 +5,7 @@
   "pretend": false,
   "approvals": "issues/2026-10-08/approvals.json",
   "approvals_submitted_at": "2026-10-07T17:20:24-04:00",
-  "staging": "staging/weeks/next/items.json",
+  "staging": "staging/weeks/2026-10-08/items.json",
   "roster": "roster/people.json",
   "items": [
     {
@@ -13,7 +13,7 @@
       "itemId": "gather-nj-hs-season-primer",
       "vetted_by": "frank",
       "vetted_at": "2026-10-07T17:14:50-04:00",
-      "fact_map": "staging/weeks/next/drafts/nj-hs-season-primer.md (Sources 1-23 + 7a)",
+      "fact_map": "staging/weeks/2026-10-08/drafts/nj-hs-season-primer.md (Sources 1-23 + 7a)",
       "retrieved_at": "2026-10-07",
       "urls": [
         "https://www.njsiaa.org/sports/fencing",
@@ -54,14 +54,14 @@
       "from": "Frank",
       "at": "2026-10-07T16:00:00-04:00",
       "caption_source": "Frank-approved caption in chat; Morris Hills = Feb. 25 team finals site per NJSIAA fencing page",
-      "media": "issues/2026-10-08/media/nj-hs-dual-meet-morris-hills-crop.jpeg (from staging/weeks/next/media/nj-hs-dual-meet-morris-hills.png)"
+      "media": "issues/2026-10-08/media/nj-hs-dual-meet-morris-hills-crop.jpeg (from staging/weeks/2026-10-08/media/nj-hs-dual-meet-morris-hills.png)"
     },
     {
       "slot": "flèche sidebar",
       "itemId": "gather-nj-hs-fleche-rule",
       "vetted_by": "frank",
       "vetted_at": "2026-10-07T17:15:53-04:00",
-      "fact_map": "staging/weeks/next/drafts/nj-hs-fleche-rule.md (Fact → source map; Sources 1-9 printed basis, 10-13 corroboration only)",
+      "fact_map": "staging/weeks/2026-10-08/drafts/nj-hs-fleche-rule.md (Fact → source map; Sources 1-9 printed basis, 10-13 corroboration only)",
       "retrieved_at": "2026-10-07",
       "urls": [
         "https://web.archive.org/web/20150321021206/http://www.njsiaa.org/sites/default/files/document/14-15%20fencing%20mods.pdf",

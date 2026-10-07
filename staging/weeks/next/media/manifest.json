@@ -1,67 +1,44 @@
 {
   "target_week": "next",
-  "extracted_at": "2026-10-06T23:50:00-04:00",
-  "note": "First-pass email→photo extract from Frank's forwarded club newsletter. MIME had no image attachments; photos were remote HTML embeds (Mailchimp). Logo + social icons + tracking pixels skipped.",
+  "extracted_at": "2026-10-07T16:00:00-04:00",
+  "note": "Media for Issue No. 2 (week of Oct 12). Rolled from after-next/ 2026-10-07. Frank: save THE WEAPON for 'next week' relative to the Oct 8 issue -> Issue No. 2 (week of Oct 12). Rolled from after-next/ to next/ 2026-10-07 after Issue No. 1 was approved. Span 2.",
   "items": [
     {
-      "id": "club-newsletter-photo-1",
-      "kind": "photo",
-      "filename": "club-newsletter-photo-1.jpeg",
-      "media_path": "staging/weeks/next/media/club-newsletter-photo-1.jpeg",
-      "caption": "Club newsletter photo 1",
-      "source": "email",
-      "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
-      "from": "frankcng@gmail.com",
-      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/2ad02a90-a7b4-8404-6b02-5859ab35afd4.jpeg",
-      "vetted": true,
-      "vetted_by": "auto-frank-gmail",
-      "subject": "Fwd: Group Class! + Congrats!"
-    },
-    {
-      "id": "club-newsletter-photo-2",
-      "kind": "photo",
-      "filename": "club-newsletter-photo-2.jpeg",
-      "media_path": "staging/weeks/next/media/club-newsletter-photo-2.jpeg",
-      "caption": "Club newsletter photo 2",
-      "source": "email",
-      "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
-      "from": "frankcng@gmail.com",
-      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/a1506d76-0c64-b56e-0d0e-376eb73a8715.jpeg",
-      "vetted": true,
-      "vetted_by": "auto-frank-gmail",
-      "subject": "Fwd: Group Class! + Congrats!"
-    },
-    {
-      "id": "nj-hs-dual-meet-morris-hills",
-      "kind": "photo",
-      "filename": "nj-hs-dual-meet-morris-hills.png",
-      "media_path": "staging/weeks/next/media/nj-hs-dual-meet-morris-hills.png",
-      "media_paths": {
-        "png": "staging/weeks/next/media/nj-hs-dual-meet-morris-hills.png",
-        "bw_jpeg": "staging/weeks/next/media/nj-hs-dual-meet-morris-hills-bw.jpeg"
-      },
-      "caption": "A high school dual meet at Morris Hills High School, home of the state team finals.",
+      "id": "weapon-epee-exploded-svg",
+      "kind": "illustration",
+      "filename": "weapon-epee-exploded.svg",
+      "media_path": "staging/weeks/next/media/weapon-epee-exploded.svg",
+      "caption": "THE WEAPON — exploded epee (SVG primary)",
       "source": "chat",
       "from": "frank",
       "vetted": true,
       "vetted_by": "frank",
-      "parent_item_id": "chat-photo-nj-hs-dual-meet-morris-hills",
-      "for_item": "gather-nj-hs-season-primer",
-      "note": "Frank chat 2026-10-07. Color PNG primary; bw JPEG print companion. Do not name Yang/Sono in caption (minors) unless Frank says. No date/result known."
-    }
-  ],
-  "skipped": [
-    {
-      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/aa4813b4-203a-46bb-9f7a-5cb1f0e1b063.jpg",
-      "reason": "club logo / small brand mark"
+      "parent_item_id": "chat-asset-weapon-epee",
+      "preferred": true,
+      "note": "Frank chat asset 2026-10-07; hold for Issue No. 2 (week of Oct 12); layout: 2-col back-page figure (not 3 / not full-bleed)",
+      "columns": 2,
+      "span": 2
     },
     {
-      "reason": "instagram/website social icons + mailchimp tracking pixels (known icon hosts / 1x1)"
+      "id": "weapon-epee-exploded-png",
+      "kind": "illustration",
+      "filename": "weapon-epee-exploded.png",
+      "media_path": "staging/weeks/next/media/weapon-epee-exploded.png",
+      "caption": "THE WEAPON — exploded epee (PNG fallback)",
+      "source": "chat",
+      "from": "frank",
+      "vetted": true,
+      "vetted_by": "frank",
+      "parent_item_id": "chat-asset-weapon-epee",
+      "preferred": false,
+      "note": "Frank chat asset 2026-10-07; hold for Issue No. 2 (week of Oct 12); layout: 2-col back-page figure (not 3 / not full-bleed)",
+      "columns": 2,
+      "span": 2
     }
   ],
-  "last_email_ingest_at": "2026-10-07T13:15:19-04:00",
-  "ingest_2026_10_07_note": "Re-checked Frank Congrats forward + Mailchimp Footwork HTML. Congrats photos already on disk (same URLs/message_id) — no re-download. Mailchimp Footwork: logo 100px + social icons + 1x1 tracker only — skipped.",
-  "weapon_moved_2026_10_07_note": "THE WEAPON (weapon-epee-exploded.*) moved to staging/weeks/after-next/ — Frank: hold for the week after next issue (span 2).",
-  "chat_photo_2026_10_07_nj_hs_note": "Frank dropped Morris Hills HS dual-meet PNG for gather-nj-hs-season-primer; copied to nj-hs-dual-meet-morris-hills.png + grayscale JPEG companion.",
-  "updated_at": "2026-10-07T16:00:00-04:00"
+  "rolled_forward": {
+    "from": "staging/weeks/after-next",
+    "at": "2026-10-07T18:46:27-04:00",
+    "why": "Issue No. 1 (2026-10-08) approved; after-next became next (Issue No. 2, week of Oct 12)."
+  }
 }

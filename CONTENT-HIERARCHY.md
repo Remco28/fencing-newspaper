@@ -42,9 +42,30 @@ Educational figures (e.g. exploded-weapon art): not a hierarchy row — optional
   Lead = biggest type + 2-col; Secondary A = medium; Secondary B / NJ HS = smaller presence
   (locked in template — not a weekly dial).
 - **Stretch (when short):** grow lead → grow Secondary A → add TV/streaming or club-events
-  rows; if still short, FLAG TO FRANK (inches/words). Never stretch type/leading.
-- **Cut (when long):** drop Secondary B first, then trim NJ HS / TV / comic (keep Parent Q&A if printed — drop second Q&A before first), then trim
-  Secondary A / lead toward minima. Never cut furniture; never shrink type or cheat margins.
+  rows → **Desk fill** (v3.20): Gazette Desk may fill remaining space with **Frank-vetted**
+  staging items it picks (budget candidates / self-gather Frank already vetted). Desk fill is
+  listed in `issue.json` `desk_fill` and in the proof message; **Frank can veto any Desk-fill
+  piece at proof.** Never print unvetted items as fill. If still short, FLAG TO FRANK
+  (inches/words). Never stretch type/leading.
+- **Cut (when long) — content-heavy weeks (v3.20, Frank 2026-10-07): standing / utility boxes
+  give way to stories.** Work this order before cutting any story:
+  1. **Weekly Classes table** (the regular class schedule) — drop it. It runs only when
+     something changed or there is a special class, and even then a **one-line note** in Club
+     events (e.g. “Mini Musketeers now starts at 4:15 on Fridays.”) is preferred over the table.
+  2. **Upcoming-tournament boards** (signup / Go Cheer) — shrink to the **nearest and most
+     important** events and to **Elite FC entries only** (no open-call or “spots still open”
+     rows). Fewer tournaments before fewer names; the board shrinks, it is not dropped (core).
+  3. **Other standing utility boxes** — deadlines, TV/streaming, glance/explainer boxes,
+     comic: trim rows, then drop.
+  4. **Then stories:** Desk-fill and Secondary B first, then trim NJ HS, then trim Secondary A /
+     lead toward minima. Keep Parent Q&A if printed — drop a second Q&A before the first.
+  Club results + Ratings earned stay (always in). This order overrides strict bottom-up table
+  order for boxes. **Page 1 vs page 2 stays flexible** — cut order is priority, never a page
+  assignment. Never cut furniture; never shrink type or cheat margins.
+- **Two-page overflow from a late add (v3.20):** if adding an item (e.g. a Frank-confirmed
+  board group at proof) would push the issue past 2 pages, **trim Desk-fill stories first**
+  (reflow columns, then cut words from Desk fill), then follow the cut order above — **before**
+  any thought of shrinking type (which stays banned). Note every trim in `issue.json`.
 - If everything above the line still doesn't fit, the bot flags the overage in inches —
   it never shrinks type or cheats margins to force it.
 - OVERSUPPLY RULE: write to ~115% of page capacity, then cut bottom-up. Sections are

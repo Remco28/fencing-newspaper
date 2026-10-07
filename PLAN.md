@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.19
+# Fencing Newspaper — Plan v3.20
 Date: 2026-10-07
-Status: **sample taste LOCKED** (v3.14) + **ops cadence LOCKED** (v3.15; wording v3.19) + **reality/provenance LOCKED** (v3.16) + **email trust allowlist LOCKED** (v3.17) + **Parent Q&A category LOCKED** (v3.18) + **flexible weekly publish LOCKED** (v3.19). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + publish-morning full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Next: first real weekly edition (refine sources → HTML budget → proof). Prior: v3.19 drop Mon/Thu split / flexible weekly; v3.18 Parent Q&A; v3.17 email trust; v3.16 reality lock; v3.14 taste lock.
+Status: **sample taste LOCKED** (v3.14) + **ops cadence LOCKED** (v3.15; wording v3.19) + **reality/provenance LOCKED** (v3.16) + **email trust allowlist LOCKED** (v3.17) + **Parent Q&A category LOCKED** (v3.18) + **flexible weekly publish LOCKED** (v3.19) + **first-real-run decisions LOCKED** (v3.20: epee-assumed labels, content-heavy cut order, proof round). **Issue No. 1 published** (`issues/2026-10-08/`, Thursday Edition, approved by Frank 2026-10-07 18:40 ET). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + publish-morning full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Next: Issue No. 2 (week of Oct 12; THE WEAPON at span 2). Prior: v3.20 first-real-run decisions; v3.19 drop Mon/Thu split / flexible weekly; v3.18 Parent Q&A; v3.17 email trust; v3.16 reality lock; v3.14 taste lock.
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -8,7 +8,7 @@ Work item: office work #21
 ## 1. What we're building (v2 locked)
 
 1 sheet, front + back, black & white, high-school reading level.
-Audience: Elite Fencers Club members (Chatham, NJ), **epee only — no foil, no saber.**
+Audience: Elite Fencers Club members (Chatham, NJ), **epee only — no foil, no saber.** Because epee is assumed, club material never carries “Epee” / “(Epee)” labels (box titles, table headings, our fencers’ event names) — keep the word only for outside-world multi-weapon stories, proper names, and contrasts (STYLE-GUIDE §0c, v3.20). Frank will say if foil or sabre is ever added.
 
 **One weekly newsletter** (locked 2026-10-06; clarified v3.19): results + club signup encouragement on the same sheet. No Monday/Thursday split; no second edition.
 - **Target publish: Monday or Tuesday.** Later in the week is fine — not much changes; no rule broken.
@@ -123,6 +123,8 @@ Canonical slot order + budgets: **CONTENT-HIERARCHY.md** (table order = cut prio
 3. 1–2 short national/regional articles + NJ HS roundup.
 4. **Signup board (core):** upcoming tournaments + Elite FC names already entered — purpose is to nudge more clubmates into competition. Cap **4 tournaments**; if one event has many names (~20), show fewer tournaments so names stay readable (2–8 rows total).
 5. Club events + deadlines box.
+
+**Content-heavy weeks (v3.20):** standing/utility boxes give way to stories — drop the regular Weekly Classes table (changed/special class → one-line note), shrink tournament boards to the nearest/most important events + Elite FC entries, trim other utility boxes, then cut stories. Page 1 vs page 2 stays flexible. Canonical order: CONTENT-HIERARCHY “Cut (when long)”.
 6. Comic (sparingly) + TV/streaming box as space allows (lowest cut priority among listed slots).
 
 Killed: second (Thursday) edition; logistics box; Fencing 101; Milestones; About/corrections/archive placeholders.
@@ -175,7 +177,7 @@ Still needed: results-app email schema, attachment cap, spam fallback = stage as
 
 - Scheduler: once weekly. **Try Monday or Tuesday** (exact time TBD, US Eastern). Publishing later is OK. Soft preference only: hold for Monday club results when easy.
 - **Ops cadence (locked v3.15; wording v3.19):** chat → staging anytime; email = daily morning light pass + second pass before HTML budget; self-gather = Wed mid-week skim + publish-morning full pass. Canonical: **STAGING.md § Ops cadence** + **SOURCES.md** cadence header.
-- V1 gates: **Budget → Frank approve → Desk compose → Proof → Frank approve → print.** Chat is doorbell only for budget/proof readiness. Every fact → `sources.json` provenance. Unvetted tips stay off the sheet until Frank vets. No auto-print until approved.
+- V1 gates: **Budget → Frank approve → Desk compose → Proof → Frank approve → print.** Proof round in practice (v3.20): proof v1 → Frank’s answers → v2 (…) → approval → **Frank prints the PDF himself**. Proof status lives in `issue.json`. Detail: STAGING.md § Proof. Chat is doorbell only for budget/proof readiness. Every fact → `sources.json` provenance. Unvetted tips stay off the sheet until Frank vets. No auto-print until approved.
 - Later: `lp -d club-printer paper.pdf` auto-print after N clean issues.
 - API keys live in env file on the runner, never in git. Allowlisted inbox only.
 
@@ -228,6 +230,7 @@ Resolved:
 - [x] **Email trust allowlist locked (v3.17)** — auto-vet `frankcng@gmail.com`, `chunkymonkey@agentmail.to`, club Mailchimp; flexible ingest for other senders (stage + provenance, unvetted) — STAGING.md § Tips / mail
 - [x] **Ops cadence locked (v3.15; wording v3.19)** — chat anytime → next week; email daily + pre-budget; Wed skim + publish-morning full gather; Budget→approve→compose→Proof→approve→print; `sources.json`; chat doorbell only (STAGING.md + SOURCES.md)
 - [x] **Flexible weekly publish (v3.19)** — try Mon/Tue; later fine; no two-edition cadence
+- [x] **First real run decisions (v3.20)** — epee assumed (no club “Epee” labels, STYLE-GUIDE §0c); content-heavy cut order (utility boxes give way to stories — CONTENT-HIERARCHY); budget slot note overrides `publishDate`; Desk fill with Frank-vetted items (veto at proof); late add past 2 pages → trim Desk fill before anything else (never shrink type); captions name only Frank-confirmed people; chat spelling beats scrape (scrape → roster alias); FencingTracker registrations unvetted until Frank confirms; proof status in `issue.json`; proof v1 → answers → v2 → approve → Frank prints; Desk inspects PNGs before calling a proof done; staging roll-forward after approval (STAGING.md). See CHANGELOG.md.
 
 Still open:
 1. Exact preferred publish window (proposal ~Mon/Tue morning US Eastern) — soft target only.
@@ -266,7 +269,8 @@ canonical home wins.
 - [x] Sample v3.11 taste: flanks + 3-span dateline + page-2 featured hierarchy on `issues/2026-10-14` (paper-v3.11.pdf)
 - [x] Sample v3.13: serif masthead ears; page-2 article HRs removed; fake bylines stripped (`paper-v3.13.pdf`)
 - [x] **Sample v3.14 taste LOCKED** (Frank): dateline + flanks + §8 rail-title + no page-2 article HRs; docs match; reference `issues/2026-10-14/paper-v3.14.pdf`
-- [ ] **First real weekly edition** (next): refine source processing → HTML budget → proof render (complete run when ready)
+- [x] **First real weekly edition** — Issue No. 1, Thursday Edition Oct 8, 2026 (`issues/2026-10-08/`); proof v2 approved by Frank 2026-10-07 18:40 ET; Frank printed it
+- [x] Docs v3.20: first-real-run decisions + epee-assumed labels + content-heavy cut order (CHANGELOG.md)
 - [x] Docs v3.19: drop Mon/Thu split — weekly tries Mon/Tue, later OK; gather loop phrased publish-morning (not Monday-hard)
 - [x] Docs v3.18: Parent Q&A category locked (hierarchy slot + STAGING kind `qa` + STYLE-GUIDE §8a + prototype)
 - [x] Docs v3.15: ops cadence locked (STAGING.md gather loop + SOURCES.md cadence header); dynamic layout marked PAUSED/deferred (§4)

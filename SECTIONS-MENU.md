@@ -54,8 +54,8 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 27. TV / streaming listings 🔶-as-links — "watch this bout" short URLs (FencingTV). 1 line, keep.
 
 ## Service / utility
-28. Calendar / events ✅ — this week at Elite FC + deadlines. (Back-page core.)
-29. Signup board ✅ — tournaments + Elite FC entrants. (Core every week.)
+28. Calendar / events ✅ — this week at Elite FC + deadlines. **v3.20:** the regular Weekly Classes table is dropped on content-heavy weeks (runs only when something changed / special class — prefer a one-line note). Utility boxes give way to stories (CONTENT-HIERARCHY cut order).
+29. Signup board ✅ — tournaments + Elite FC entrants. (Core every week.) **v3.20:** on content-heavy weeks it shrinks to the nearest / most important events and Elite FC entries only. No “(Epee)” labels — epee is assumed (STYLE-GUIDE §0c).
 30. Logistics box ❌ — killed 2026-10-06 with the dropped Thursday signup edition (Frank: not sure what it was for).
 31. Classifieds / want ads 🔶 — "used epee body cords, size M, see desk". Free, community feel. Small box if demand exists.
 32. Public notices — ❌ skip (nothing to publish).

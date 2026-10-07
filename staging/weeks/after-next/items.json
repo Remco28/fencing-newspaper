@@ -1,55 +1,6 @@
 {
   "target_week": "after-next",
-  "updated_at": "2026-10-07T16:00:00-04:00",
-  "note": "Hold pile for the issue after the current `next` week. Created 2026-10-07 so THE WEAPON (chat-asset-weapon-epee) can sit one week out. Frank: hold for the week after next issue. Layout: span 2 / 2-col back-page figure.",
-  "items": [
-    {
-      "id": "chat-asset-weapon-epee",
-      "kind": "other",
-      "headline": "The Weapon — Exploded Epee",
-      "body": "Educational B&W infographic: exploded epee anatomy (grip/pommel, socket, bell guard, blade with wires in groove, point) + inside-the-point parts (barrel, big spring 750g+, small spring, tip screws) + how a touch scores (at rest vs pressed). Graphic title: THE WEAPON. Space-heavy — Frank: back page, **2 column widths** (not 3 / not full-bleed).",
-      "media_path": "staging/weeks/after-next/media/weapon-epee-exploded.svg",
-      "media_paths": {
-        "svg": "staging/weeks/after-next/media/weapon-epee-exploded.svg",
-        "png": "staging/weeks/after-next/media/weapon-epee-exploded.png"
-      },
-      "caption": "THE WEAPON — exploded epee anatomy and how a touch scores. Educational figure for Elite FC.",
-      "source": "chat",
-      "from": "frank",
-      "target_week": "after-next",
-      "vetted": true,
-      "vetted_at": "2026-10-07T14:28:00-04:00",
-      "vetted_by": "frank",
-      "vet_notes": "Frank drop 2026-10-07: two assets (SVG primary + PNG fallback). Clean B&W educational exploded-view. Prefer back page / page-2 feature at **2-col span** (Frank 2026-10-07: 3 cols too wide; not full-bleed). SVG preferred for print crispness. Kind=other (no illustration enum yet; not photo desk candid, not comic gag). Frank: hold for the week after next issue (not this week's next — moved 2026-10-07). Still span 2 / 2-col back-page figure.",
-      "provenance": [
-        {
-          "type": "chat",
-          "note": "Frank attached SVG+PNG 2026-10-07 — Elite FC newsletter educational figure",
-          "retrieved_at": "2026-10-07T14:28:00-04:00"
-        }
-      ],
-      "suggested_slot": "back_page_feature",
-      "slot_hint": "back_page_feature",
-      "tags": [
-        "illustration",
-        "figure",
-        "epee",
-        "educational",
-        "weapon",
-        "back-page",
-        "frank-asset",
-        "epee-ok",
-        "span-2",
-        "two-col"
-      ],
-      "layout_intent": "Back-page (page 2) figure at **2 columns** (span: 2) — not 3-col, not full-bleed. Prefer SVG for print; PNG fallback. Budget/compose pick — not forced into front-page sample.",
-      "draft_path": "staging/weeks/after-next/drafts/weapon-epee-exploded.md",
-      "created_at": "2026-10-07T14:28:00-04:00",
-      "section": "Educational figure (optional back page)",
-      "columns": 2,
-      "span": 2,
-      "hold_note": "Frank: hold for the week after next issue",
-      "updated_at": "2026-10-07T16:00:00-04:00"
-    }
-  ]
+  "updated_at": "2026-10-07T18:46:27-04:00",
+  "note": "Hold pile for the issue after `next` (Issue No. 3). Created empty 2026-10-07 at the roll-forward after Issue No. 1.",
+  "items": []
 }

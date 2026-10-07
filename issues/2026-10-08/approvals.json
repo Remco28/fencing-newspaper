@@ -197,5 +197,24 @@
     "cand-gather-morris-cup-ryc-oct25",
     "cand-gather-college-path-shamel-epee"
   ],
-  "submittedAt": "2026-10-07T17:20:24-04:00"
+  "submittedAt": "2026-10-07T17:20:24-04:00",
+  "budgetApproval": {
+    "status": "approved",
+    "by": "Frank",
+    "via": "budget page submit",
+    "at": "2026-10-07T17:20:24-04:00",
+    "note": "Fields above are the budget submission as submitted (publishDate field said 2026-10-13; Frank's slot note 'We are publishing this Thursday (tomorrow)' set the actual publish date 2026-10-08)."
+  },
+  "proofApproval": {
+    "status": "approved",
+    "final": true,
+    "by": "Frank",
+    "via": "chat",
+    "at": "2026-10-07T18:40:00-04:00",
+    "version": "proof v2",
+    "commit": "aedb039",
+    "pdf": "paper.pdf",
+    "note": "Frank printed the PDF and said it looks great."
+  },
+  "status": "approved/final"
 }

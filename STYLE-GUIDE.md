@@ -7,7 +7,7 @@ article size-by-importance + stretch hierarchy refreshed 2026-10-07 (plan v3.7);
 masthead flanks = publisher + rotating quip ears (v3.8 → v3.14); dateline = centered
 Playfair `<Weekday> Edition` (from actual publish day) / `Page Two` + meta (v3.12); photo fit no silent crop (v3.9);
 Gazette Desk composition §0 (v3.10); voice §0a (v3.11); §8 tabular-only `.box` +
-`.rail-title` no underline (v3.12–v3.14); guests-only bylines; reality/provenance §0b (v3.16); **Parent Q&A** category + `.qa` pattern (v3.18).
+`.rail-title` no underline (v3.12–v3.14); guests-only bylines; reality/provenance §0b (v3.16); **Parent Q&A** category + `.qa` pattern (v3.18); **epee assumed — no weapon labels in club context** §0c + captions name only Frank-confirmed people §19 + content-heavy cut order §11 (v3.20).
 If a render violates any rule below, it does not print — fix and re-render.
 
 
@@ -57,6 +57,23 @@ Layout samples may use labeled fiction. **A real issue may not.**
 - Compose only from vetted, provenance-backed staging (and the approved budget). Every printed fact must be traceable in issue `sources.json`.
 - Never treat sample / PRETEND / demo copy as club or competition fact.
 - Full rule: PLAN §1c + §2 Sourcing rules; STAGING.md provenance fields.
+
+## 0c. Epee is assumed — no weapon labels in club context (locked 2026-10-07, plan v3.20)
+
+Elite FC is **epee-only**, so the word is redundant on anything about our club and fencers.
+- **Never** label club material “Epee” / “(Epee)”: box titles (“Elite FC Entries (All Epee)”
+  → “Elite FC Entries”), table headings (“Finish (Epee)” → “Finish”; “Events (Epee)” →
+  “Events”), and event names for our fencers (“Y12 Women’s Epee” → “Y12 Women”; “Y10 Mixed
+  Epee” → “Y10 Mixed”; abbreviations like “Y12 WE” → “Y12 Women”). Captions and boardnotes too.
+- **Keep the word only when it is genuinely needed:** outside-world stories where other
+  weapons exist (an FIE/NAC field size, “women’s epee gold” at a multi-weapon Games), proper
+  names (“Hub City Fall Epee Open”, “Epee World Cup”), and contrasts such as rule explainers or
+  the three-weapon high-school primer (“sabre, foil and epee”). If dropping it would leave the
+  reader unsure which weapon, keep it.
+- Foil or sabre are never added on our own; **Frank will say** if the club ever adds a weapon.
+- QA: §7 proofread item checks this. Template labels / budget page / sample labels were
+  cleaned in v3.20 — do not reintroduce them when copying a past issue (the approved
+  2026-10-08 issue still carries “(All Epee)” and “Finish (Epee)”; drop them when reusing it).
 
 ## 1. Page
 - US Letter, 1 sheet front + back = exactly 2 PDF pages. Never 1.5, never 3.
@@ -110,8 +127,9 @@ Layout samples may use labeled fiction. **A real issue may not.**
 - If content runs short, the bot must TELL FRANK what and how much is missing ("back page needs
   ~150 words or one box") so he can fill the blanks — never stretch type, never widen leading,
   never ship white space to fake fullness.
-- If content runs long, cut bottom-up per §11 / CONTENT-HIERARCHY (never furniture,
-  never shrink type) — never shrink below the type minimums to force a fit.
+- If content runs long, cut per §11 / CONTENT-HIERARCHY (never furniture,
+  never shrink type) — never shrink below the type minimums to force a fit. If a late add
+  would make 3 pages, reflow and trim **Desk-fill** stories first (v3.20).
 
 ## 7. Mandatory visual QA (every render, no exceptions — human or bot)
 Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
@@ -124,7 +142,10 @@ Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
 - [ ] Every board table: columns aligned, numbers tabular, rules consistent?
 - [ ] Masthead crisp; dateline = centered edition + meta (Playfair SC, not three-span Arial); footer complete; flanks have air from logo?
 - [ ] B&W-safe: no washed gray text, no muddy fills?
-- [ ] Proofread: names spelled right, dates/days consistent, no foil/saber leaks?
+- [ ] Proofread: names spelled right, dates/days consistent, no foil/saber leaks? No
+      “Epee”/“(Epee)” labels on club boxes, headings, captions or our fencers’ events (§0c)?
+- [ ] Captions (§19): only Frank-confirmed names; no left/right order unless verifiable;
+      others = “other medalists”/similar?
 - [ ] Composition bar (§0): tailor-made for Elite FC — not slot-dump; hierarchy alive;
       flanks/dateline designed; page 2 not equal tiles?
 - [ ] Voice (§0a): newsletter-tight; reporter unless guest/opinion; tone fits each piece;
@@ -134,7 +155,9 @@ Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
 - [ ] Parent Q&A (§8a): if present, `.rail-block.qa` (no border); anonymous unless named;
       no Frank byline; 40–70w; usually one?
 Any NO = fix, re-render, re-check. Fitting on the page is necessary but NOT sufficient —
-it must look purpose-built for this club.
+it must look purpose-built for this club. **A proof is not “done” (and no “proof ready”
+doorbell goes out) until Desk has opened and inspected every page PNG** of the current render
+(v3.20 — reaffirmed from the first real run).
 Board-level QA must be done on zoomed crops (150dpi+) of each table, not full-page
 thumbnails — alignment cannot be judged through frosted glass.
 
@@ -205,12 +228,18 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   the Budget column. Template enforces importance; writer fills the range.
 - **Stretch hierarchy (when short):** (1) grow lead toward the top of its 150–180w range;
   (2) grow Secondary A toward top of 80–100w; (3) add TV/streaming rows or club-events
-  items. If still short after that → **FLAG TO FRANK** with what and how much is missing
+  items; (4) **Desk fill** with Frank-vetted items (Frank may veto at proof — v3.20). If
+  still short after that → **FLAG TO FRANK** with what and how much is missing
   (inches/words). Never stretch type or leading to fake fullness.
-- **Cut hierarchy (when long):** drop Secondary B first, then trim NJ HS / TV / comic;
-  then trim Secondary A / lead toward their minima. Never cut furniture (masthead,
-  dateline, footer, club results, ratings, signup board when core). Never shrink type
-  or cheat margins. Oversupply ~115% then cut is mandatory (§16).
+- **Cut hierarchy (when long) — v3.20 content-heavy order (canonical: CONTENT-HIERARCHY):**
+  standing / utility boxes give way to stories. (1) drop the regular Weekly Classes table
+  (changed/special class → one-line note instead); (2) shrink tournament boards to the
+  nearest / most important events and Elite FC entries only; (3) trim then drop other
+  utility boxes (deadlines, TV, glance, comic); (4) then stories — Desk fill / Secondary B
+  first, then NJ HS, then Secondary A / lead toward minima. Never cut furniture (masthead,
+  dateline, footer), club results, ratings, or the signup board entirely (it shrinks).
+  Page 1 vs page 2 placement stays flexible. Never shrink type or cheat margins.
+  Oversupply ~115% then cut is mandatory (§16).
 - Killed fillers (do not stretch with these): Fencing 101, Milestones, scoreboard strip.
 
 ## 12. Masthead flanks + dateline (locked 2026-10-07; dateline v3.12; flanks v3.14)
@@ -305,3 +334,8 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   issue used landscape `club-newsletter-photo-2.jpeg` (~1.8in) instead.
 - Caption under the image (sans ~7pt). Photo desk still chooses which frames run; layout
   only scales to column width.
+- **Caption naming (v3.20, first real run):** name **only people Frank has confirmed** (chat /
+  vetted source). No left/right order unless Desk can actually tell who is who from the
+  image. People from other clubs are “other medalists” (or similar) — never imply they are
+  Elite FC. Don’t call a placing “podium” unless the photo shows one; tie the caption to
+  results already printed. Look at the image before writing.
