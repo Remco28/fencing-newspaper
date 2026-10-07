@@ -28,6 +28,11 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    `photoIncludes` in the submit JSON. Submit → timestamped budget JSON + overwrite
    `approvals.json`. Vet → update `staging/weeks/next/items.json` + append
    `vet-log.jsonl`. Chat is doorbell only for budget/proof readiness.
+   **Budget server workflow (2026-10-07):** Gazette Desk serves the budget page on its own
+   computer: `cd budget-demo && nohup python3 server.py &` → `http://127.0.0.1:8766/` (keep port
+   8766; restart on the same port). Desk opens it in its desktop browser; Frank reviews / Vets /
+   Submits there via the Gazette Desk computer tab — or answers in chat and Desk applies the
+   answers to staging + the lineup. Chat stays doorbell ("budget ready").
    **Practice budget (2026-10-07):** `budget-demo/practice.html` renders Desk's proposed lineup
    (`budget-demo/practice-lineup.json`) against live staging — real items only, seed/pretend in a
    collapsed excluded drawer, stale items flagged (not proposed), dupes merged, provenance links +

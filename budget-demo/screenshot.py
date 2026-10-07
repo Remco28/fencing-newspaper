@@ -4,7 +4,7 @@
 Usage: python3 budget-demo/screenshot.py [url] [out_prefix] [width]
   default url  = http://127.0.0.1:8766/
   default out  = budget-demo/screens/practice-<YYYY-MM-DD>
-Writes <out>-full.png plus 2–3 readable slices <out>-1.png, -2.png, ... (<=3300px tall each).
+Writes <out>-full.png plus 2–3 readable slices <out>-1.png, -2.png, ... (<=3400px tall each).
 Slices need Pillow; the full PNG does not.
 """
 import base64
@@ -78,7 +78,7 @@ def main() -> None:
         img = Image.open(full)
         for old in Path(out).parent.glob(Path(out).name + "-[0-9]*.png"):
             old.unlink()
-        n = max(1, -(-height // 3300))
+        n = max(1, -(-height // 3400))
         step = -(-height // n)
         for i in range(n):
             part = img.crop((0, i * step, width, min(height, (i + 1) * step)))

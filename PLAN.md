@@ -284,6 +284,10 @@ canonical home wins.
   alternate. Demo: `POST /vet` updates `staging/weeks/next/items.json` + `vet-log.jsonl`.
   Submit POSTs JSON → timestamped `submissions/budget-*.json` AND overwrites
   `submissions/approvals.json` (demo) / issue `approvals.json` (prod). Frank works on desktop, never phone.
+- **Where the page runs (2026-10-07):** Gazette Desk serves it from its own computer (`budget-demo/server.py`,
+  port 8766: `cd budget-demo && nohup python3 server.py &`) and opens it in Desk's desktop browser; Frank
+  reviews / Vets / Submits through the Gazette Desk computer tab, or answers in chat and Desk applies them.
+  Detail: STAGING.md Budget step.
 - Chat is DOORBELL only: the bot pings "budget ready" / "proof ready" — no approval state
   lives in chat (chat fragments across messages and forces scroll-to-reference; rejected as
   a surface). Chat *facts* still go to staging (see STAGING.md).

@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-07T16:25:00-04:00",
-  "note": "Staging pile: pretend seeds + Frank chat (Remise) + self-gather 2026-10-07 + email ingest test 2026-10-07 (4 messages). Append-only; Remise + gather kept + Parents Ask Q&A (points/youth) staged 2026-10-07. Weapon epee moved to staging/weeks/after-next/ (Frank: hold for week after next). NJ HS dual-meet photo (Morris Hills) staged for gather-nj-hs-season-primer 2026-10-07. + flèche-rule sidebar (gather-nj-hs-fleche-rule) staged 2026-10-07 16:22 ET for the NJ HS primer.",
+  "updated_at": "2026-10-07T17:15:00-04:00",
+  "note": "Staging pile: pretend seeds + Frank chat (Remise) + self-gather 2026-10-07 + email ingest test 2026-10-07 (4 messages). Append-only; Remise + gather kept + Parents Ask Q&A (points/youth) staged 2026-10-07. Weapon epee moved to staging/weeks/after-next/ (Frank: hold for week after next). NJ HS dual-meet photo (Morris Hills) staged for gather-nj-hs-season-primer 2026-10-07. + flèche-rule sidebar (gather-nj-hs-fleche-rule) staged 2026-10-07 16:22 ET for the NJ HS primer. 2026-10-07 17:15 ET: Frank flag answers applied — Penny Young alias; Morris Cup names tidied (all 29 entries approved); Oct 5/Oct 7 class-time emails marked stale_for_issue next; club-website standing schedule staged unvetted (web-efc-standing-schedule).",
   "items": [
     {
       "id": "chat-remise-anderson-app",
@@ -91,7 +91,7 @@
       "vetted": true,
       "vetted_by": "auto-frank-gmail",
       "vetted_at": "2026-10-06T23:50:00-04:00",
-      "vet_notes": null,
+      "vet_notes": "Frank 2026-10-07 17:08 ET: club-email class times are correct, but last week's emails are ignored for this issue. STALE for target week next (publish Tue Oct 13): this item describes the week of Oct 5 — not printed as 'this week'. Kept for provenance.",
       "slot_hint": "club-events",
       "created_at": "2026-10-06T23:50:00-04:00",
       "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
@@ -103,7 +103,8 @@
           "retrieved_at": "2026-10-07T13:15:05-04:00",
           "note": "message_id attached on 2026-10-07 email ingest test"
         }
-      ]
+      ],
+      "stale_for_issue": "next"
     },
     {
       "id": "result-syc",
@@ -115,7 +116,7 @@
       "vetted": true,
       "vetted_by": "auto-frank-gmail",
       "vetted_at": "2026-10-06T23:50:00-04:00",
-      "vet_notes": null,
+      "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board.",
       "slot_hint": "club-results",
       "created_at": "2026-10-06T23:50:00-04:00",
       "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
@@ -127,7 +128,14 @@
           "retrieved_at": "2026-10-07T13:15:05-04:00",
           "note": "message_id attached on 2026-10-07 email ingest test"
         }
-      ]
+      ],
+      "name_aliases": {
+        "Penny Young": [
+          "Penelope Young",
+          "Young, Penelope",
+          "Young Penelope"
+        ]
+      }
     },
     {
       "id": "signup-medeo",
@@ -653,6 +661,12 @@
           "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
           "from": "AgentMail <chunkymonkey@agentmail.to>",
           "retrieved_at": "2026-10-07T13:15:05-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/tournament/1706",
+          "retrieved_at": "2026-10-07T17:15:00-04:00",
+          "note": "Name-spelling cross-check only (CDTME 'WU, Caden'; CDTWE 'Young, Penelope'; Y14ME 'Shah-Mirani, Ash'; Y10ME 'Shah Mirani, Rahi')"
         }
       ],
       "suggested_slot": "whos_entered",
@@ -665,7 +679,19 @@
       ],
       "overlap_note": "Richer than gather-morris-cup-ryc-oct25 (event-only); this is the full EFC entry list.",
       "vetted_by": "auto-chunkymonkey",
-      "vetted_at": "2026-10-07T13:20:00-04:00"
+      "vetted_at": "2026-10-07T13:20:00-04:00",
+      "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board. Name tidy (Desk, 2026-10-07): print First Last like the club newsletter. 'WU Caden' → 'Caden Wu' (casing only; FencingTracker CDTME shows 'WU, Caden' — registration caps). 'Shah-Mirani Ash' (Y14ME) vs 'Shah Mirani Rahi' (Y10ME): FencingTracker shows the same split ('Shah-Mirani, Ash' / 'Shah Mirani, Rahi'), so no authoritative single form — kept source forms per fencer and FLAGGED for Frank. Frank approved showing ALL 29 entries (20 fencers) — exception to the 8-row signup soft cap for big turnouts.",
+      "name_aliases": {
+        "Penny Young": [
+          "Young Penelope"
+        ],
+        "Caden Wu": [
+          "WU Caden"
+        ]
+      },
+      "name_flags": [
+        "Ash Shah-Mirani vs Rahi Shah Mirani — hyphen differs by registration (FencingTracker matches digest); confirm family spelling"
+      ]
     },
     {
       "id": "email-mailchimp-group-footwork-2026-10-07",
@@ -698,7 +724,9 @@
       ],
       "media_note": "HTML had logo (100px) + social icons + tracking pixel only — no real photos extracted.",
       "vetted_by": "auto-club-mailchimp",
-      "vetted_at": "2026-10-07T13:20:00-04:00"
+      "vetted_at": "2026-10-07T13:20:00-04:00",
+      "vet_notes": "Frank 2026-10-07 17:08 ET: club-email class times are correct, but last week's emails are ignored for this issue. STALE for target week next (publish Tue Oct 13): this item describes the week of Oct 5 — not printed as 'this week'. Kept for provenance.",
+      "stale_for_issue": "next"
     },
     {
       "id": "email-frank-medeo-entries-2026-10-07",
@@ -766,7 +794,15 @@
       "media_ids": [
         "club-newsletter-photo-1",
         "club-newsletter-photo-2"
-      ]
+      ],
+      "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board.",
+      "name_aliases": {
+        "Penny Young": [
+          "Penelope Young",
+          "Young, Penelope",
+          "Young Penelope"
+        ]
+      }
     },
     {
       "id": "gather-nj-hs-season-primer",
@@ -1115,6 +1151,142 @@
         "gemini-lead-only"
       ],
       "created_at": "2026-10-07T16:22:00-04:00"
+    },
+    {
+      "id": "web-efc-standing-schedule",
+      "kind": "fact",
+      "headline": "Elite FC weekly class schedule (club website)",
+      "body": "Club website 'Class times and activities' (regular weekly schedule): Mon 4:30–6:00 PM Group Class (Little Musketeers); Tue 6:00–7:30 PM Group Class; Wed 5:00–6:30 PM Group Class (Little Musketeers), 6:30–7:15 PM Footwork Class; Thu 6:00–7:30 PM Group Class; Fri 4:00–4:45 PM Mini Musketeers (Ages 5–7), 6:00–10:00 PM Open Bouting; Sat 11:00 AM–12:30 PM Group Class (Little Musketeers), 1:00–2:30 PM Group Class; Sun closed. Private lessons fill the other weekday/Sat. windows.",
+      "schedule_rows": [
+        [
+          "Monday",
+          "3:00 PM–10:00 PM",
+          "Private Lessons"
+        ],
+        [
+          "Monday",
+          "4:30 PM–6:00 PM",
+          "Group Class (Little Musketeers)"
+        ],
+        [
+          "Tuesday",
+          "3:00 PM–6:00 PM",
+          "Private Lessons"
+        ],
+        [
+          "Tuesday",
+          "6:00 PM–7:30 PM",
+          "Group Class"
+        ],
+        [
+          "Tuesday",
+          "7:30 PM–10:00 PM",
+          "Private Lessons"
+        ],
+        [
+          "Wednesday",
+          "3:00 PM–10:00 PM",
+          "Private Lessons"
+        ],
+        [
+          "Wednesday",
+          "5:00 PM–6:30 PM",
+          "Group Class (Little Musketeers)"
+        ],
+        [
+          "Wednesday",
+          "6:30 PM–7:15 PM",
+          "Footwork Class"
+        ],
+        [
+          "Thursday",
+          "3:00 PM–6:00 PM",
+          "Private Lessons"
+        ],
+        [
+          "Thursday",
+          "6:00 PM–7:30 PM",
+          "Group Class"
+        ],
+        [
+          "Thursday",
+          "7:30 PM–10:00 PM",
+          "Private Lessons"
+        ],
+        [
+          "Friday",
+          "3:00 PM–10:00 PM",
+          "Private Lessons"
+        ],
+        [
+          "Friday",
+          "4:00 PM–4:45 PM",
+          "Mini Musketeers (Ages 5–7)"
+        ],
+        [
+          "Friday",
+          "6:00 PM–10:00 PM",
+          "Open Bouting"
+        ],
+        [
+          "Saturday",
+          "9:00 AM–11:00 AM",
+          "Private Lessons"
+        ],
+        [
+          "Saturday",
+          "11:00 AM–12:30 PM",
+          "Group Class (Little Musketeers)"
+        ],
+        [
+          "Saturday",
+          "1:00 PM–2:30 PM",
+          "Group Class"
+        ],
+        [
+          "Sunday",
+          "CLOSED",
+          ""
+        ]
+      ],
+      "row_count": 9,
+      "source": "club-website",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Desk gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.'",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://www.elitefencersclub.com/programs",
+          "retrieved_at": "2026-10-07T17:15:00-04:00",
+          "note": "'Class times and activities' table — regular weekly schedule"
+        },
+        {
+          "type": "url",
+          "url": "https://www.elitefencersclub.com/location-hours",
+          "retrieved_at": "2026-10-07T17:15:00-04:00",
+          "note": "Operating hours Mon–Fri 3–9 PM, Sat 8:30–3, Sun closed; 'contact us for the most up-to-date class times'"
+        },
+        {
+          "type": "url",
+          "url": "https://www.elitefencersclub.com/",
+          "retrieved_at": "2026-10-07T17:15:00-04:00",
+          "note": "Homepage — no schedule"
+        }
+      ],
+      "suggested_slot": "club-events",
+      "slot_hint": "club-events",
+      "tags": [
+        "club",
+        "schedule",
+        "standing",
+        "website",
+        "freshness-unknown"
+      ],
+      "created_at": "2026-10-07T17:15:00-04:00"
     }
   ]
 }

@@ -49,6 +49,7 @@
   }
   .practice-note { background: #e8f0e6; border-color: #a8c4ad; border-left-color: var(--green); }
   .decision { background: var(--amber-bg); }
+  .decision.done { background: var(--green-bg); border-color: #a8c4ad; border-left-color: var(--green); }
   .decision.stale { background: var(--stale-bg); border-color: #d4a89c; border-left-color: var(--red-soft); }
   section { margin-top: 28px; }
   h2 {
@@ -180,6 +181,13 @@
   .card.excluded .preview.clip::after { background: linear-gradient(transparent, #f3eee6); }
   .preview table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; white-space: normal; }
   .preview.tbl { white-space: normal; }
+  .board-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .board-panel table { table-layout: fixed; }
+  .board-panel th:nth-child(1), .board-panel td:nth-child(1) { width: 62px; white-space: nowrap; }
+  .board-panel .nm { white-space: nowrap; }
+  .board-panel th:nth-child(2), .board-panel td:nth-child(2) { width: 100px; white-space: nowrap; }
+  .board-panel th:nth-child(4), .board-panel td:nth-child(4) { width: 22px; text-align: right; font-variant-numeric: tabular-nums; }
+  .board-day { font-family: var(--font-serif); font-weight: 700; font-size: 13px; border-bottom: 1.5px solid var(--ink); padding: 2px 0; }
   .preview th, .preview td { text-align: left; padding: 3px 6px; border-bottom: 1px solid #eee4d6; }
   .preview th { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
   .meta-line { font-size: 12px; color: var(--muted); }
@@ -506,7 +514,17 @@
     return "<table><thead><tr>" + head + "</tr></thead><tbody>" + rows + "</tbody></table>";
   }
 
+  function panelsHtml(pn) {
+    return '<div class="preview tbl board-panels">' + pn.panels.map((p) =>
+      '<div class="board-panel"><div class="board-day">' + esc(p.title) + "</div>" +
+      "<table><thead><tr>" + pn.head.map((h) => "<th>" + esc(h) + "</th>").join("") + "</tr></thead><tbody>" +
+      p.rows.map((r) => "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td><td>" +
+        String(r[2]).split(", ").map((n) => '<span class="nm">' + esc(n) + "</span>").join(", ") +
+        "</td><td>" + esc(r[3]) + "</td></tr>").join("") + "</tbody></table></div>").join("") + "</div>";
+  }
+
   function previewFor(slot, item) {
+    if (slot.panels) return panelsHtml(slot.panels);
     if (slot.table) return '<div class="preview tbl">' + tableHtml(slot.table) + "</div>";
     if (!item) return "";
     if (slot.part === "sidebar" && item.sidebar) {
@@ -524,6 +542,7 @@
 
   function metaCount(slot, item) {
     if (slot.empty) return "0 · empty";
+    if (slot.panels) return slot.panels.panels.reduce((n, p) => n + p.rows.length, 0) + " event rows · " + (slot.row_note || "");
     if (slot.table) return (slot.table.rows || []).length + " rows";
     if (slot.part === "sidebar" && item && item.sidebar) return (item.sidebar.rows || []).length + " rows";
     const w = wordsOf(item);
@@ -622,7 +641,7 @@
       (deck ? '<div class="deck">' + esc(deck) + "</div>" : "") +
       thumb +
       (slot.why ? '<div class="why">' + esc(slot.why) + "</div>" : "") +
-      (item && !item.vetted && item.vet_notes && slot.part !== "sidebar"
+      (item && !item.vetted && item.vet_notes && slot.part !== "sidebar" && !slot.hide_desk_notes
         ? '<div class="desk-notes"><strong>Desk notes</strong>' + esc(item.vet_notes) + "</div>"
         : "") +
       previewFor(slot, item) +
@@ -939,7 +958,7 @@
     document.getElementById("cutStretch").innerHTML =
       "<strong>Short (this week’s likely case):</strong> per CONTENT-HIERARCHY stretch order — (1) feature already runs long; (2) Remise short can take a line; (3) add a TV / club-events row. Real fillers waiting in the pile: Medeo results (if they land, +2 rows), a vetted Casablanca World Cup short (Secondary B), Song Se-ra or the college-path note, a Morris Cup deadline row. Missing entirely: <strong>ratings rows</strong> and a comic. If still short → Desk flags Frank with inches/words; never stretch type or leading.<br><br>" +
       "<strong>Over:</strong> drop Secondary B / candidates first → trim TV / comic → trim Remise toward 80w and the feature toward ~300w. Keep club results, signup board and Parent Q&amp;A. Never cut furniture; never shrink type or margins.<br><br>" +
-      "<strong>Swing items:</strong> Morris Hills photo at span 2 ≈ " + (C.span2_width_in * 720 / 1280).toFixed(2) + "in tall (over the 2.2in ceiling) vs span 1 ≈ " + (C.col_width_in * 720 / 1280).toFixed(2) + "in; signup board full-width vs 2-row Sat./Sun. merge.";
+      "<strong>Swing items:</strong> Morris Hills photo at span 2 ≈ " + (C.span2_width_in * 720 / 1280).toFixed(2) + "in tall (over the 2.2in ceiling) vs span 1 ≈ " + (C.col_width_in * 720 / 1280).toFixed(2) + "in; class schedule as a 9-row standing box vs the 5 weekday group classes.";
   }
 
   function refreshExcluded() {
@@ -1181,7 +1200,17 @@
       '<div class="decision"><strong>NJ.com click-checks.</strong> Chatham Santelli streak, Morris County streaks, and both 2026 state finals (14–13) came from search snippets (NJ.com blocks automated readers). Links are on the feature card.</div>'
     );
     bits.push(
-      '<div class="decision"><strong>Ratings empty.</strong> No real ratings rows — invented seed excluded. Club events may be last week’s classes — confirm before print.</div>'
+      '<div class="decision"><strong>Ratings empty.</strong> No real ratings rows; the invented seed is excluded.</div>'
+    );
+    bits.push(
+      '<div class="decision done"><strong>Frank answered (Oct. 7, 5:08 PM) — applied.</strong> ' +
+      "(1) Penny Young = Penelope Young: prints “Penny Young” everywhere, alias in staging. " +
+      "(2) Morris Cup board shows everyone: 29 entries / 20 fencers, two day panels, Frank-approved exception to the 8-row cap. " +
+      "(3) Oct. 5 / Oct. 7 class-time emails dropped as last week’s; club-website standing schedule staged <strong>unvetted</strong> for Club events. Times match the emails; freshness unknown.</div>"
+    );
+    bits.push(
+      '<div class="decision"><strong>Still open.</strong> Shah-Mirani (Ash) vs Shah Mirani (Rahi): source forms kept, confirm the spelling. ' +
+      "Club website schedule needs Vet (no “last updated” date; the Location & Hours page conflicts on closing time).</div>"
     );
     bits.push(
       '<div class="decision"><strong>Held:</strong> THE WEAPON (exploded epee) stays in <code>after-next</code>, span 2 — not this issue.</div>'
@@ -1207,7 +1236,7 @@
     globalNotes.value =
       "PRACTICE budget for next (publish Tue Oct 13, 2026 — Desk call; Mon Oct 12 alt). " +
       "Proposed: NJ HS primer feature + glance box + flèche sidebar + Morris Hills photo; " +
-      "SYC results; Morris Cup who’s-entered; club schedule (confirm freshness); Remise short; Parent Q&A. " +
+      "SYC results; Morris Cup who’s-entered (all 29 entries, Frank-approved); club-website class schedule (needs Vet); Remise short; Parent Q&A. " +
       "NOT proposed: Medeo as signup (stale — results-pending only); ratings (empty); THE WEAPON (held after-next). " +
       "Needs Vet: primer, flèche, and any candidate you want in. Click-check NJ.com streak/finals facts.";
     renderDecisions();
