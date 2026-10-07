@@ -17,10 +17,20 @@ Keep all checklists below; do not delete sources when editing cadence.
 
 ## AskFRED API (locked 2026-10-07 — gentle use)
 - Base: `https://www.askfred.net/api/v1/` — Bearer token in env `ASKFRED_API_KEY` (gitignored `.env` / process secret). **Never commit or paste the key into chat/docs.**
-- Prefer API over HTML for upcoming epee near NJ: `/tournaments?latitude=&longitude=&radius_miles=&weapon=epee&start_date_gteq=…&per_page≤50`.
+- **Client:** `scripts/askfred.py` — loads key from env/`.env`; backs off on 429; soft call cap (default 8). Defaults: Chatham NJ (40.7409, -74.3838), radius 75mi, weapon=epee, `per_page` 10.
+- Gather usage (repo root):
+  ```bash
+  set -a && source .env && set +a   # or export ASKFRED_API_KEY=…
+  python3 scripts/askfred.py me --summary --quiet-json
+  python3 scripts/askfred.py tournaments --summary          # nearby upcoming epee
+  python3 scripts/askfred.py tournament <uuid> --summary
+  python3 scripts/askfred.py events <uuid> --summary
+  ```
+  JSON on stdout (omit `--quiet-json`); human lines on stderr with `--summary`. Prefer this over HTML for NJ epee discovery.
+- Prefer API over HTML for upcoming epee near NJ: `/tournaments?latitude=&longitude=&radius_miles=&weapon=epee&start_date_gteq=…&per_page≤10` (API max 50; keep ≤10 for gather).
 - Rate limits (respect 429): layered caps ~125 req/hour — for Gazette weekly use, **keep to a handful of calls per gather** (not bulk scrapes). This is a secondary account; do not abuse.
 - Still timestamp closes; HTML fallback OK if API errors. Combine with FencingTracker / results-app for Elite FC names.
-- Docs: https://help.askfred.net/en/articles/14068759-getting-started-w-askfred-s-api
+- Docs: https://help.askfred.net/en/articles/14068759-getting-started-w-askfred-s-api · endpoints: https://help.askfred.net/en/articles/10328385-api-endpoints-data
 
 ## Every run (publish-morning full pass)
 - [ ] FIE news: https://fie.org/news (+ epee event/result pages as needed)

@@ -13,7 +13,7 @@
   **ops cadence / gather loop** (v3.15)
 - CONTENT-HIERARCHY.md — slot order + word budgets for the weekly issue (Frank sorts this file)
 - STYLE-GUIDE.md — all visual rules + mandatory QA checklist
-- SOURCES.md — standing fetch checklist + **cadence header** (Wed skim / Mon–Tue full pass)
+- SOURCES.md — standing fetch checklist + **cadence header** (Wed skim / Mon–Tue full pass) + AskFRED API/`scripts/askfred.py`
 - SECTIONS-MENU.md — option menu + past verdicts (history, not spec)
 - REDDIT-SETUP.md — Reddit OAuth path (approval-gated; fallbacks are default)
 - REVIEW-FROM-BUFFY-REVIEWER.md / VISUAL-REVIEW-DEEPSEEK-V4.1-FLASH.md — outside reviews
@@ -38,6 +38,6 @@ unless `--allow-flag` is passed. See STYLE-GUIDE.md §7 for the full QA checklis
 - `prototype/` — layout sandbox (versioned `monday-vN.html` + PDFs, `render.py`)
 - `masthead001.png` — nameplate art (cropped to opaque bbox)
 - `budget-demo/` — pretend local budget-page demo at `http://127.0.0.1:8766/` (`server.py` + `index.html` + `photos/`). Photo desk = visible thumbs multi-select → `photoIncludes`; serves real staging media at `/staging-media/`. Submit → `submissions/budget-*.json` + `approvals.json` (gitignored). Scoreboard cut (v3.4). Not full production ingest; see STAGING.md.
-- `scripts/` (future) — fetch, ingest, writer
+- `scripts/` — helpers; **`scripts/askfred.py`** = gentle AskFRED gather client (key in `.env`, see SOURCES.md)
 - `staging/weeks/` — upcoming material (`YYYY-MM-DD/` or `next/` + `media/`); see STAGING.md. **Email media extract (v3.5):** MIME attachments + remote/inline HTML images → `media/` with provenance; filter logos/icons/pixels.
 - `issues/` — per weekly issue (`issues/<YYYY-MM-DD>/` with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`); committed. **Taste reference:** `issues/2026-10-14/` (sample v3.14). Raw emails stay in AgentMail.
