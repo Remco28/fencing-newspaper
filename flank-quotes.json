@@ -1,0 +1,16 @@
+{
+  "left_flank_fixed": "Published by a fencing parent with a bot.",
+  "note": "Left flank never rotates. Right flank picks one quip per issue (rotate; avoid repeating consecutive weeks when the list allows).",
+  "right_flank_quips": [
+    "The reports of our losses have been greatly exaggerated.",
+    "It is better to deserve a rating than to have one.",
+    "Never put off till tomorrow the touch you can score while they're still talking.",
+    "It ain't what you don't know that hurts you; it's the double touch you were sure you won.",
+    "He who speaks does not know; he who knows is already in six.",
+    "Before you seek revenge, dig two graves — preferably both on their side of the strip.",
+    "Appear weak when you are strong; appear confused when you are absolutely about to land it.",
+    "All warfare is based on deception; all epee is based on \"I thought I had right-of-way.\"",
+    "Know yourself, know your enemy, know where you left your glove.",
+    "Softness overcomes hardness; tape overcomes everything else."
+  ]
+}

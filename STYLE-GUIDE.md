@@ -1,6 +1,7 @@
 # En Garde Gazette — Visual Style Guide (LOCKED)
 Authoritative for every issue, template, and prototype. Locked 2026-10-06 by Frank;
-article size-by-importance + stretch hierarchy refreshed 2026-10-07 (plan v3.7).
+article size-by-importance + stretch hierarchy refreshed 2026-10-07 (plan v3.7);
+masthead flanks = publisher line + rotating quip, dateline = Vol/No · place · weekday · date (plan v3.8).
 If a render violates any rule below, it does not print — fix and re-render.
 
 ## 1. Page
@@ -11,7 +12,7 @@ If a render violates any rule below, it does not print — fix and re-render.
 
 ## 2. Look: old-time newspaper
 - Masthead logo (`masthead001.png`, cropped to opaque bbox) with §12 flanks. Nothing above it, ever.
-- Dateline bar: 2.5pt rules top and bottom, bold sans caps, date · edition · issue no.
+- Dateline bar: 2.5pt rules top and bottom, bold sans caps. Content = **Vol. I — No. N · Chatham, N.J.** / weekday · full date (three-span flex; optional small SAMPLE/Pretend flag in the middle). Vol/No and date live HERE — not in the masthead flanks.
 - Headings: PLAIN TEXT ONLY. No icons, no emojis, no ★≡✎▶!♦§◉✉ kickers, no symbols in or
   before headlines and box titles. Reasons: old-time look; symbols render inconsistently in B&W.
 - Box titles: small bold sans caps with a 1pt rule beneath. Hierarchy comes from size and rules,
@@ -110,18 +111,26 @@ thumbnails — alignment cannot be judged through frosted glass.
   or cheat margins. Oversupply ~115% then cut is mandatory (§16).
 - Killed fillers (do not stretch with these): Fencing 101, Milestones, scoreboard strip.
 
-## 12. Masthead flanks (locked 2026-10-06)
-- Logo at ~62% width, centered, flanked by two info blocks: LEFT "Vol. I — No. N /
-  Chatham, N.J. / Epee Only, As Always", RIGHT edition day / full date / "Price: One Touch".
-- Flanks: 7.5pt bold sans caps, 2pt side rules (left block left-ruled, right block right-ruled).
-  This is the classic-paper answer to side whitespace — never widen the logo to fill it.
+## 12. Masthead flanks + dateline (locked 2026-10-07, plan v3.8)
+- Logo at ~62% width, centered in `.masthead` (retune slightly only if quotes wrap badly).
+  Nothing above the masthead row, ever.
+- **Flanks (beside the logo) — prose quotes, not Vol/No/date:**
+  - LEFT (fixed): `Published by a fencing parent with a bot.`
+  - RIGHT (rotates weekly): one quip from `flank-quotes.json` (`right_flank_quips`).
+- Flank CSS: ~7pt bold sans, **normal sentence case** (no forced ALL CAPS), wrapping OK,
+  2pt side rules (left block left-ruled, right block right-ruled). Left-align left flank;
+  right-align right flank. Never widen the logo to fill whitespace.
+- **Dateline** (same visual: thick top/bottom rules, flex three-span): carries what used to
+  live in the flanks — Vol/No · Chatham, N.J. · weekday · full date (issue no as fits the
+  spans). Optional middle SAMPLE/Pretend flag. Do not invent a new dateline format.
+- Price / "Epee Only, As Always" flank lines: killed (v3.8).
 
 ## 13. Footer pinning + gap instrument (locked 2026-10-06; copy lock 2026-10-07)
 - `.page` is a flex column with min-height 10.1in (Letter minus our @page margins);
   footer uses margin-top:auto so it always sits at the page bottom. Shortfalls appear as
   honest daylight ABOVE the footer, never hidden below it.
 - **Footer copy:** issue number + for-fun disclaimer only (e.g. tips path / "just for fun").
-  No "printed at the club" language; no print-timestamp line. Masthead flanks already carry
+  No "printed at the club" language; no print-timestamp line. Dateline already carries
   Vol/No and date — do not restate a full dateline in the footer.
 - `render.py` measures the gap above each footer via CDP element boxes and reports inches:
   FLAG above 0.75in. Thumbnails are for taste; NUMBERS are for fill. Eyeballing fill is banned.

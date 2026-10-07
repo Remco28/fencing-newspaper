@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.7
+# Fencing Newspaper — Plan v3.8
 Date: 2026-10-07
-Status: locked direction from Frank, details in progress (v3.7: article size-by-importance locked via slot budgets + template type scale; stretch/cut hierarchy refreshed; AgentMail `processed` label triage. v3.6: budget-page **Vet + notes** UX — UNVETTED badge, Include gated, `vet_notes` on staging item, POST `/vet`. v3.5: email→photo extract. v3.4: scoreboard cut; photo desk thumbs; submit UX. v3.3: Staging→Clean→Budget→Proof; see STAGING.md)
+Status: locked direction from Frank, details in progress (v3.8: masthead flanks = fixed publisher line + rotating quip (`flank-quotes.json`); dateline = Vol/No · Chatham · weekday · date. v3.7: article size-by-importance + AgentMail `processed` labels. v3.6: Vet+notes UX. v3.5: email→photo extract. v3.4: scoreboard cut; photo desk. v3.3: Staging→Clean→Budget→Proof; see STAGING.md)
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -139,7 +139,7 @@ live in STYLE-GUIDE.md. Voice rules stay here:
 - High-school reading level (FK 8–10). Explain jargon first use. Epee terms only.
 - Headlines ≤6 words, active verb. Full name + event + club on first local mention.
 - Ban list: "delve", "fast-paced world of", "testament to", snark.
-- Masthead/footer identical across issues; date + Vol/No live in flanks/dateline; footer = issue # + for-fun disclaimer only (+ template variant if we add more later).
+- Masthead/footer identical across issues; Vol/No + date live in the **dateline**; flanks = publisher line + rotating quip; footer = issue # + for-fun disclaimer only (+ template variant if we add more later).
 
 ## 8. Resolved in v2 / still open
 
@@ -169,6 +169,7 @@ Resolved:
 - [x] Folder layout proposal — `staging/weeks/<YYYY-MM-DD|next>/` + `issues/<YYYY-MM-DD>/` (STAGING.md)
 - [x] Article size-by-importance — slot word budgets + per-slot template type scale (STYLE-GUIDE §4/§11; CONTENT-HIERARCHY); stretch/cut hierarchies live (v3.7)
 - [x] AgentMail processed-mail triage — label `processed` after successful ingest; never delete (STAGING.md; v3.7)
+- [x] Masthead flanks + dateline swap (v3.8) — flanks: publisher line + rotating quip (`flank-quotes.json`); dateline: Vol/No · Chatham · weekday · date (STYLE-GUIDE §12)
 
 Still open:
 1. Exact Monday run time (proposal ~6am US Eastern) + Tuesday slip publish time.
@@ -177,7 +178,6 @@ Still open:
 4. Printer model + who loads paper.
 5. Optional later: archive older PDFs outside git for posterity (not required).
 6. Exact staging on-disk filenames (`items.jsonl` vs `items/*.json`) when ingest ships — layout tree is locked; leaf names flexible.
-7. Dateline bar vs masthead flanks (options A/B/C floated 2026-10-07) — **not locked**; leave current dateline + flanks until Frank picks.
 
 Canonical homes: CONTENT-HIERARCHY.md owns slot order + budgets · STYLE-GUIDE.md owns all
 visual rules · SOURCES.md owns the fetch checklist · **STAGING.md owns pipeline + item
@@ -198,8 +198,9 @@ owns narrative + decisions. On conflict, the canonical home wins.
 - [x] Email media extract first pass: remote HTML images → `staging/weeks/next/media/` + manifest; budget desk shows real + PRETEND (v3.5)
 - [x] Budget demo (v3.6): UNVETTED badge + Vet+notes on page; Include gated; POST `/vet` → items.json + vet-log
 - [x] Docs v3.7: lock per-slot article size + refresh stretch/cut hierarchy; AgentMail `processed` labels (STAGING.md)
+- [x] Docs + sample v3.8: masthead flanks (publisher + rotating quip) / dateline (Vol/No · place · weekday · date); `flank-quotes.json`
 - [ ] Budget page (prod): same vet UX + write issue approvals.json
-- [ ] Template CSS: enforce §4 per-slot type scale (lead 2-col / bigger H1; shorts smaller) — docs locked first
+- [x] Template CSS sample: flanks + dateline swap applied on `issues/2026-10-14`; per-slot type scale light-touch on same sample
 - [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot
 - [ ] See also: STAGING.md, SOURCES.md, SECTIONS-MENU.md, REDDIT-SETUP.md
 
