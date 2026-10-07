@@ -13,9 +13,10 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    signup rows, tips. Every item carries provenance (source, message-ID if email,
    target week, `vetted` bool). Materials can accumulate for subsequent weeks in
    advance.
-2. **Clean** — normalize names, apply epee filter, enforce word/row counts, attach
-   provenance for `sources.json`. Unvetted items stay labeled; Clean does not
-   promote them.
+2. **Clean** — normalize names against `roster/people.json` (canonical print form;
+   honor `spelling_unresolved`), apply epee filter, enforce word/row counts, attach
+   provenance for `sources.json`. New name confusions → ask Frank once, record the
+   answer in the roster. Unvetted items stay labeled; Clean does not promote them.
 3. **Budget** — local HTML page on Musketeer's computer. Proposed lineup vs
    CONTENT-HIERARCHY.md. **Include only vetted** items in the proposed sheet;
    unvetted items may appear on the page labeled **UNVETTED** but are blocked from

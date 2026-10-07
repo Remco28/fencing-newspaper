@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "updated": "2026-10-07",
+  "note": "Frank-confirmed club-people facts only. No ratings, ages, birthdays, or invented data. See roster/README.md.",
+  "people": [
+    {
+      "id": "penny-young",
+      "canonical": "Penny Young",
+      "aliases": [
+        "Penelope Young",
+        "Young, Penelope",
+        "Young Penelope"
+      ],
+      "relations": [],
+      "notes": "Club newsletter form is Penny Young; registration often uses Penelope. Same person.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank",
+        "when": "2026-10-07",
+        "via": "chat"
+      }
+    },
+    {
+      "id": "ash-shah-mirani",
+      "canonical": "Ash Shah-Mirani",
+      "aliases": [
+        "Shah-Mirani, Ash",
+        "Ash Shah Mirani"
+      ],
+      "relations": [
+        { "type": "sibling", "id": "rahi-shah-mirani" }
+      ],
+      "notes": "Brother of Rahi. Surname spelling unresolved vs Rahi's registration (hyphen). Print as registered until Frank confirms a house spelling.",
+      "spelling_unresolved": true,
+      "provenance": {
+        "who": "Frank",
+        "when": "2026-10-07",
+        "via": "chat"
+      }
+    },
+    {
+      "id": "rahi-shah-mirani",
+      "canonical": "Rahi Shah Mirani",
+      "aliases": [
+        "Shah Mirani, Rahi",
+        "Rahi Shah-Mirani"
+      ],
+      "relations": [
+        { "type": "sibling", "id": "ash-shah-mirani" }
+      ],
+      "notes": "Brother of Ash. Surname spelling unresolved vs Ash's registration (no hyphen). Print as registered until Frank confirms a house spelling.",
+      "spelling_unresolved": true,
+      "provenance": {
+        "who": "Frank",
+        "when": "2026-10-07",
+        "via": "chat"
+      }
+    },
+    {
+      "id": "caden-wu",
+      "canonical": "Caden Wu",
+      "aliases": [
+        "WU Caden",
+        "WU, Caden"
+      ],
+      "relations": [],
+      "notes": "Registration / FencingTracker often all-caps the family name. Print as Caden Wu.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank",
+        "when": "2026-10-07",
+        "via": "chat"
+      }
+    }
+  ]
+}

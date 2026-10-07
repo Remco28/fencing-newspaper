@@ -59,8 +59,9 @@ Sample / layout-test fiction was OK while we were tuning the sheet. **Real issue
 - **Every printed fact** needs provenance: staging item + issue `sources.json` (URL + retrieved date, or email/chat message-ID + date, or AskFRED/API call logged). No **model memory** as a source.
 - **Sample / pretend / demo** content (layout tests, PRETEND photos, fake boards) must stay **clearly labeled** and **never** treated as real club or competition fact when building a real issue.
 - Editorials, shorts, flanks, and furniture that mention real people follow the same rule — tone can vary (PLAN §1b); facts cannot.
+- **Club roster** (`roster/people.json`): Frank-confirmed name variants + family links only, each with provenance. Clean normalizes print names from it. Minors — names/aliases/relations only; never print the roster as a list.
 
-Canonical detail: this §1c + §2 Sourcing rules; STAGING.md (provenance on items); STYLE-GUIDE §0b for the compose checklist.
+Canonical detail: this §1c + §2 Sourcing rules; STAGING.md (provenance on items); STYLE-GUIDE §0b for the compose checklist; `roster/README.md`.
 
 ## 2. Content rules (v2)
 
