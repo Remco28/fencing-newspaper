@@ -28,6 +28,11 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    `photoIncludes` in the submit JSON. Submit → timestamped budget JSON + overwrite
    `approvals.json`. Vet → update `staging/weeks/next/items.json` + append
    `vet-log.jsonl`. Chat is doorbell only for budget/proof readiness.
+   **Practice budget (2026-10-07):** `budget-demo/practice.html` renders Desk's proposed lineup
+   (`budget-demo/practice-lineup.json`) against live staging — real items only, seed/pretend in a
+   collapsed excluded drawer, stale items flagged (not proposed), dupes merged, provenance links +
+   CLICK-CHECK marks on cards, rough two-page fit estimate (~40 w/col-in; furniture measured on the
+   2026-10-14 sample). Served at `/`; old pretend demo at `/demo`.
    Scoreboard strip is **cut** from the live hierarchy (v3.4); may return later as
    "headline wire" — do not treat it as a current Budget slot.
 4. **Proof** — rendered PDF; second approve gate. Nothing prints without both

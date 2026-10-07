@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1100" />
+<title>En Garde Gazette — Practice Budget (next)</title>
+<style>
+  :root {
+    --ink: #1c1612;
+    --ink-soft: #3a322a;
+    --muted: #6b5e52;
+    --rule: #c9b8a4;
+    --paper: #f6efe4;
+    --card: #fffdf8;
+    --card-border: #d9cbb8;
+    --accent: #8b4513;
+    --accent-soft: #c4a574;
+    --green: #2f5d3a;
+    --green-bg: #e8f0e6;
+    --amber-bg: #f7ecd8;
+    --red-soft: #8a3a2a;
+    --stale-bg: #f8e8e4;
+    --shadow: 0 1px 2px rgba(40, 28, 12, 0.06), 0 4px 14px rgba(40, 28, 12, 0.05);
+    --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse at top, #faf4ea 0%, var(--paper) 55%),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,150,110,0.04) 28px);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.45;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 28px 80px; }
+  header.mast { border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 22px; }
+  .vol { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  h1 { font-family: var(--font-serif); font-size: 28px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline; margin-top: 8px; }
+  .publish { font-family: var(--font-serif); font-size: 16px; color: var(--ink-soft); }
+  .publish strong { color: var(--accent); }
+  .pretend-note, .practice-note, .decision {
+    border: 1px solid var(--accent-soft); border-left: 4px solid var(--accent);
+    padding: 8px 12px; font-size: 13px; color: var(--ink-soft); margin-top: 12px; border-radius: 2px;
+  }
+  .practice-note { background: #e8f0e6; border-color: #a8c4ad; border-left-color: var(--green); }
+  .decision { background: var(--amber-bg); }
+  .decision.stale { background: var(--stale-bg); border-color: #d4a89c; border-left-color: var(--red-soft); }
+  section { margin-top: 28px; }
+  h2 {
+    font-family: var(--font-serif); font-size: 18px; margin: 0 0 10px;
+    border-bottom: 1px solid var(--rule); padding-bottom: 6px;
+  }
+  h2 .hint { font-family: var(--font-sans); font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 8px; }
+  .inbox { background: var(--card); border: 1px solid var(--card-border); box-shadow: var(--shadow); border-radius: 3px; overflow: hidden; }
+  .inbox table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .inbox th {
+    text-align: left; background: #efe6d6; padding: 8px 10px; font-size: 11px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .inbox td { padding: 8px 10px; border-bottom: 1px solid #eee4d6; vertical-align: top; }
+  .inbox tr:last-child td { border-bottom: none; }
+  .inbox tr.seed-row { opacity: 0.55; background: #f3eee6; }
+  .tag {
+    display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px;
+    background: #efe6d6; color: var(--ink-soft); white-space: nowrap;
+  }
+  .tag.result { background: #dde8f0; } .tag.signup { background: #e4edd9; }
+  .tag.club { background: #f0e6d4; } .tag.tip { background: #efe8f4; }
+  .tag.photo { background: #e8e8e8; } .tag.draft { background: #f5e4d8; }
+  .tag.qa { background: #e4ecf5; } .tag.ops { background: #eee; color: #777; }
+  .badge {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 2px 8px; border-radius: 999px; white-space: nowrap; vertical-align: middle;
+  }
+  .badge.unvetted { background: #f5e0c8; color: #8a4b12; border: 1px solid #d4a574; }
+  .badge.vetted { background: var(--green-bg); color: var(--green); border: 1px solid #a8c4ad; }
+  .badge.stale { background: var(--stale-bg); color: var(--red-soft); border: 1px solid #d4a89c; }
+  .badge.seed { background: #eee; color: #666; border: 1px solid #ccc; }
+  .badge.held { background: #e8e4f4; color: #4a3a6a; border: 1px solid #b8a8d4; }
+  .badge.empty { background: #f0ebe3; color: var(--muted); border: 1px dashed var(--rule); }
+  .vet-panel { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; min-width: 180px; }
+  .vet-panel textarea {
+    width: 100%; min-height: 52px; border: 1px solid var(--card-border); background: #faf7f1;
+    padding: 6px 8px; font-size: 12px; font-family: inherit; border-radius: 2px; resize: vertical; color: var(--ink-soft);
+  }
+  .vet-panel textarea:focus { outline: none; border-color: var(--accent-soft); background: #fff; }
+  .vet-panel .vet-hint { font-size: 11px; color: var(--muted); line-height: 1.3; }
+  .vet-panel .vet-notes-saved { font-size: 11px; color: var(--green); font-style: italic; }
+  button.vet-btn {
+    background: var(--accent); color: #fffdf8; border: none; padding: 6px 12px;
+    font-size: 12px; font-weight: 600; font-family: inherit; border-radius: 3px; cursor: pointer; align-self: flex-start;
+  }
+  button.vet-btn:hover { background: #6e3610; }
+  button.vet-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .check input:disabled { cursor: not-allowed; opacity: 0.45; }
+  .check.blocked { color: var(--muted); cursor: not-allowed; }
+  .inbox td.actions-cell { min-width: 220px; }
+  .photo-card.unvetted-card { border-color: #d4a574; background: #fffaf3; }
+  .photo-card .badge-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+  .card .badge-inline { margin-left: 4px; }
+
+  .fit-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; margin-bottom: 18px;
+  }
+  @media (max-width: 900px) { .fit-grid { grid-template-columns: 1fr; } }
+  .fit-card, .flag-list {
+    background: var(--card); border: 1px solid var(--card-border); box-shadow: var(--shadow);
+    border-radius: 3px; padding: 14px 16px;
+  }
+  .fit-card h3, .flag-list h3 {
+    font-family: var(--font-serif); font-size: 15px; margin: 0 0 8px;
+  }
+  .fit-meter {
+    height: 22px; background: #f7f2ea; border-radius: 3px; overflow: hidden;
+    border: 1px solid var(--card-border); margin: 8px 0 6px; position: relative;
+  }
+  .fit-meter .fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--green); transition: width 0.2s; }
+  .fit-meter.over .fill { background: var(--red-soft); }
+  .fit-meter.short .fill { background: #c4a574; }
+  .fit-meter .cap {
+    position: absolute; top: 0; bottom: 0; width: 2px; background: var(--ink);
+    opacity: 0.35;
+  }
+  .fit-meter .pending {
+    position: absolute; top: 0; bottom: 0;
+    background: repeating-linear-gradient(45deg, #d9c7a8, #d9c7a8 5px, #efe6d6 5px, #efe6d6 10px);
+  }
+  .fit-meter .cap.target { background: none; border-left: 2px dotted var(--ink); width: 0; opacity: 0.5; }
+  .fit-nums { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+  .fit-nums strong { color: var(--ink); }
+  .fit-detail { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+  .fit-detail code { font-size: 11px; background: rgba(0,0,0,0.05); padding: 1px 4px; border-radius: 2px; }
+
+  .lineup { display: flex; flex-direction: column; gap: 12px; }
+  .card {
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 3px;
+    box-shadow: var(--shadow); padding: 14px 16px 12px;
+    display: grid; grid-template-columns: 28px 1fr auto; gap: 10px 14px;
+    transition: opacity 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .card.excluded { opacity: 0.72; background: #f3eee6; border-style: dashed; }
+  .card.pending-vet { opacity: 1; background: #fffaf3; border: 1px solid #d4a574; border-left: 4px solid #c47a2a; }
+  .card.empty-slot { background: #faf7f1; border-style: dashed; opacity: 0.9; padding: 8px 16px; box-shadow: none; }
+  .card.empty-slot .slot-head { margin-bottom: 0; }
+  .empty-why { font-size: 12px; color: var(--muted); font-style: italic; }
+  .desk-notes { font-size: 12px; color: var(--ink-soft); background: #f7f2ea; border: 1px solid #e6dccb; padding: 5px 8px; border-radius: 2px; margin: 4px 0 6px; }
+  .desk-notes strong { color: var(--muted); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; margin-right: 4px; }
+  details.fulltext { font-size: 12px; margin: 0 0 8px; }
+  details.fulltext summary { cursor: pointer; color: var(--accent); }
+  details.fulltext .preview { margin-top: 6px; }
+  code { overflow-wrap: anywhere; }
+  .photo-card .prov, .photo-card .source { overflow-wrap: anywhere; }
+  .card.stale-card { border-color: #d4a89c; background: #fff8f6; }
+  .card.dragging { opacity: 0.4; border-color: var(--accent); }
+  .card.drag-over { border-top: 3px solid var(--accent); }
+  .drag-handle {
+    cursor: grab; color: var(--muted); font-size: 18px; line-height: 1;
+    padding-top: 2px; user-select: none; text-align: center;
+  }
+  .drag-handle:active { cursor: grabbing; }
+  .card-main { min-width: 0; }
+  .slot-head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; margin-bottom: 4px; }
+  .slot-name { font-family: var(--font-serif); font-size: 15px; font-weight: 700; }
+  .slot-budget { font-size: 12px; color: var(--muted); }
+  .slot-rank { font-size: 11px; color: var(--accent); letter-spacing: 0.04em; }
+  .headline { font-family: var(--font-serif); font-size: 16px; font-weight: 600; margin: 2px 0 6px; color: var(--ink); }
+  .deck { font-family: var(--font-serif); font-size: 13px; font-style: italic; color: var(--ink-soft); margin: -2px 0 8px; }
+  .preview { font-size: 13px; color: var(--ink-soft); white-space: pre-wrap; margin: 0 0 8px; }
+  .preview.clip { max-height: 9.5em; overflow: hidden; position: relative; }
+  .preview.clip::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2.2em;
+    background: linear-gradient(transparent, var(--card));
+  }
+  .card.excluded .preview.clip::after { background: linear-gradient(transparent, #f3eee6); }
+  .preview table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; white-space: normal; }
+  .preview.tbl { white-space: normal; }
+  .preview th, .preview td { text-align: left; padding: 3px 6px; border-bottom: 1px solid #eee4d6; }
+  .preview th { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+  .meta-line { font-size: 12px; color: var(--muted); }
+  .meta-line .count { color: var(--ink-soft); font-weight: 600; }
+  .meta-line a { color: var(--accent); }
+  .prov { font-size: 12px; margin: 6px 0 4px; line-height: 1.5; }
+  .prov a { color: var(--accent); word-break: break-word; }
+  .prov.click { background: #fff4ef; border: 1px solid #ecc9bd; padding: 6px 8px; border-radius: 2px; line-height: 1.6; }
+  .prov.click .badge { margin-right: 4px; }
+  details.prov-more { font-size: 12px; margin: 6px 0 4px; }
+  details.prov-more summary { cursor: pointer; color: var(--accent); }
+  details.prov-more ol { margin: 6px 0 0 0; padding-left: 22px; line-height: 1.5; }
+  details.prov-more a { color: var(--accent); word-break: break-word; }
+  .feature-thumb { float: right; width: 220px; margin: 0 0 8px 14px; border: 1px solid #ddd2c2; }
+  .feature-thumb img { width: 100%; height: auto; display: block; filter: grayscale(100%); }
+  .feature-thumb figcaption { font-size: 11px; color: var(--muted); padding: 3px 5px; }
+  .accounting { font-size: 12px; color: var(--muted); margin-top: 8px; }
+  .flag {
+    font-size: 12px; margin: 4px 0; padding: 5px 8px; border-radius: 2px;
+    border-left: 3px solid var(--accent-soft); background: var(--amber-bg); color: var(--ink-soft);
+  }
+  .flag.check { border-left-color: #c47a2a; }
+  .flag.stale { border-left-color: var(--red-soft); background: var(--stale-bg); }
+  .flag.info { border-left-color: #7a9ab8; background: #eef3f7; }
+  .card-controls { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; min-width: 160px; }
+  .check { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; user-select: none; }
+  .check input { width: 15px; height: 15px; accent-color: var(--accent); cursor: pointer; }
+  .card-notes { width: 100%; grid-column: 2 / -1; margin-top: 2px; }
+  .card-notes input {
+    width: 100%; border: 1px solid var(--card-border); background: #faf7f1;
+    padding: 5px 8px; font-size: 12px; font-family: inherit; border-radius: 2px; color: var(--ink-soft);
+  }
+  .card-notes input:focus { outline: none; border-color: var(--accent-soft); background: #fff; }
+
+  .photo-desk { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .photo-card {
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 3px;
+    box-shadow: var(--shadow); padding: 10px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .photo-card img {
+    width: 100%; height: 150px; object-fit: contain; filter: grayscale(100%);
+    border: 1px solid #ddd2c2; background: #e8e4dc; display: block;
+  }
+  .photo-card .caption { font-family: var(--font-serif); font-size: 13px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .photo-card .source { font-size: 11px; color: var(--muted); }
+  .photo-desk-hint { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+
+  .held-line, .drawer {
+    background: var(--card); border: 1px solid var(--card-border); border-radius: 3px;
+    box-shadow: var(--shadow); padding: 12px 14px; margin-top: 10px;
+  }
+  .held-line { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+  details.drawer > summary {
+    cursor: pointer; font-family: var(--font-serif); font-size: 14px; font-weight: 600;
+    list-style: none; color: var(--ink-soft);
+  }
+  details.drawer > summary::-webkit-details-marker { display: none; }
+  details.drawer > summary::before { content: "▸ "; color: var(--muted); }
+  details.drawer[open] > summary::before { content: "▾ "; }
+  details.drawer .body { margin-top: 10px; }
+  details.drawer table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  details.drawer th, details.drawer td { text-align: left; padding: 5px 8px; border-bottom: 1px solid #eee4d6; vertical-align: top; }
+  details.drawer th { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); background: #efe6d6; }
+
+  .global-notes {
+    width: 100%; min-height: 88px; border: 1px solid var(--card-border); background: var(--card);
+    padding: 10px 12px; font-family: inherit; font-size: 13px; border-radius: 3px;
+    resize: vertical; box-shadow: var(--shadow);
+  }
+  .global-notes:focus { outline: none; border-color: var(--accent-soft); }
+  .footer-preview {
+    background: #efe6d6; border: 1px dashed var(--rule); padding: 12px 16px; text-align: center;
+    font-family: var(--font-serif); font-size: 13px; font-style: italic; color: var(--ink-soft); border-radius: 2px;
+  }
+  .footer-preview .label {
+    display: block; font-family: var(--font-sans); font-style: normal; font-size: 11px;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 18px; }
+  button#submit {
+    background: var(--accent); color: #fffdf8; border: none; padding: 11px 22px;
+    font-size: 14px; font-weight: 600; font-family: inherit; border-radius: 3px;
+    cursor: pointer; letter-spacing: 0.02em; box-shadow: 0 2px 0 #5c2e0c;
+  }
+  button#submit:hover { background: #6e3610; }
+  button#submit:disabled { opacity: 0.55; cursor: wait; box-shadow: none; }
+  .summary { font-size: 13px; color: var(--muted); }
+  .summary strong { color: var(--ink-soft); }
+  #status { margin-top: 14px; padding: 10px 14px; border-radius: 3px; font-size: 13px; display: none; }
+  #status.ok { display: block; background: var(--green-bg); border: 1px solid #a8c4ad; color: var(--green); }
+  #status.err { display: block; background: #f5e4e0; border: 1px solid #d4a89c; color: var(--red-soft); }
+  #status code { font-size: 12px; background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 2px; }
+  .muted { color: var(--muted); }
+  .why { font-size: 12px; color: var(--muted); margin: 4px 0 6px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="vol">Vol. I · No. — · Elite Fencers Club · Chatham, NJ · epee only</div>
+    <h1>En Garde Gazette — Practice Budget</h1>
+    <div class="meta-row">
+      <div class="publish">Proposed publish: <strong id="publishLabel">Tuesday, October 13, 2026</strong>
+        <span class="muted" style="font-size:13px;" id="publishAlt"></span>
+      </div>
+    </div>
+    <div class="practice-note">
+      <strong>PRACTICE budget</strong> for target week <code>next</code> — real staging only.
+      Seed/pretend items are excluded from the proposed lineup (collapsed drawer below).
+      Unvetted cards stay labeled; <strong>Include</strong> unlocks only after <strong>Vet</strong>.
+      Submit → <code>submissions/budget-*.json</code> + <code>approvals.json</code>.
+      Vet → <code>staging/weeks/next/items.json</code> + vet-log. Pipeline: Budget → Frank approve → Desk compose → Proof → Frank approve → print.
+    </div>
+    <div class="decision" id="publishWhy"></div>
+  </header>
+
+  <section>
+    <h2>0 · Desk decisions <span class="hint">flags Frank should glance at before Include</span></h2>
+    <div id="decisionFlags"></div>
+  </section>
+
+  <section>
+    <h2>A · Fit estimate <span class="hint">~40 words/column-inch @8.5pt · Template A · two pages · estimate</span></h2>
+    <div class="fit-grid">
+      <div class="fit-card">
+        <h3>Two-page capacity</h3>
+        <div class="fit-meter" id="fitMeter"><div class="fill" id="fitFill"></div><div class="pending" id="fitPending"></div><div class="cap" id="fitCap"></div><div class="cap target" id="fitTarget"></div></div>
+        <div class="fit-nums" id="fitNums">Loading…</div>
+        <div class="fit-detail" id="fitDetail"></div>
+      </div>
+      <div class="flag-list">
+        <h3>Cut / stretch</h3>
+        <div id="cutStretch" class="fit-detail"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>B · Proposed lineup <span class="hint">hierarchy order · Desk judgment · drag to reorder · uncheck to cut</span></h2>
+    <div class="lineup" id="lineup"></div>
+    <div class="held-line" id="heldLine"></div>
+    <details class="drawer" id="mergedDrawer">
+      <summary>Merged duplicates &amp; ops notes — not proposed (<span id="mergedCount">0</span>)</summary>
+      <div class="body">
+        <table>
+          <thead><tr><th>Id</th><th>Item</th><th>Why not proposed</th></tr></thead>
+          <tbody id="mergedBody"></tbody>
+        </table>
+      </div>
+    </details>
+    <div class="accounting" id="accounting"></div>
+  </section>
+
+  <section>
+    <h2>C · Candidates <span class="hint">optional · shown UNVETTED · Include blocked until Vet</span></h2>
+    <div class="lineup" id="candidates"></div>
+  </section>
+
+  <section>
+    <h2>D · Photo desk <span class="hint">real photos · Include gated by vetted · no silent crop</span></h2>
+    <p class="photo-desk-hint">Morris Hills feature photo proposed with the primer. Newsletter photos optional for club results. Pretend seeds omitted from this desk (see seed drawer).</p>
+    <div class="photo-desk" id="photoDesk"></div>
+  </section>
+
+  <section>
+    <h2>E · Staging inbox <span class="hint">every real item · Vet here or on the cards · collapsed</span></h2>
+    <p class="photo-desk-hint">Unvetted self-gather tips need a <strong>Vet</strong> + short notes. Frank-forwarded / allowlist mail stays auto-vetted. Seed/pretend rows live in the drawer.</p>
+    <details class="drawer" id="inboxDrawer">
+    <summary>Full staging inbox — real items (<span id="realCount">0</span>)</summary>
+    <div class="body inbox">
+      <table>
+        <thead>
+          <tr><th>Type</th><th>Item</th><th>Source</th><th>Status</th><th>Vet</th></tr>
+        </thead>
+        <tbody id="stagingInboxBody"></tbody>
+      </table>
+    </div>
+    </details>
+    <details class="drawer" id="seedDrawer">
+      <summary>Seed / pretend — excluded from proposed lineup (<span id="seedCount">0</span>)</summary>
+      <div class="body">
+        <p class="photo-desk-hint">Demo seeds from the pretend budget. Reality lock (PLAN §1c): never promote these as club or competition fact.</p>
+        <table>
+          <thead><tr><th>Id</th><th>Body</th><th>Vetted?</th></tr></thead>
+          <tbody id="seedBody"></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section>
+    <h2>Notes <span class="hint">global — attached to submit JSON</span></h2>
+    <textarea class="global-notes" id="globalNotes"></textarea>
+  </section>
+
+  <section>
+    <h2>F · Footer disclaimer <span class="hint">locked in paper — preview only</span></h2>
+    <div class="footer-preview">
+      <span class="label">Locked footer</span>
+      For fun only — facts aren't guaranteed accurate.
+    </div>
+  </section>
+
+  <section>
+    <h2>G · Submit</h2>
+    <div class="actions">
+      <button type="button" id="submit">Submit practice budget</button>
+      <div class="summary" id="summary"></div>
+    </div>
+    <div id="status" role="status" aria-live="polite"></div>
+  </section>
+</div>
+
+<script>
+(function () {
+  const lineupEl = document.getElementById("lineup");
+  const candEl = document.getElementById("candidates");
+  const photoDesk = document.getElementById("photoDesk");
+  const submitBtn = document.getElementById("submit");
+  const statusEl = document.getElementById("status");
+  const summaryEl = document.getElementById("summary");
+  const globalNotes = document.getElementById("globalNotes");
+  const inboxBody = document.getElementById("stagingInboxBody");
+  const seedBody = document.getElementById("seedBody");
+
+  const KIND_TAG = { fact: "club", tip: "tip", photo: "photo", graf: "draft", signup_row: "signup", comic: "draft", qa: "qa", other: "tip" };
+  const KIND_LABEL = { fact: "fact", tip: "tip", photo: "photo", graf: "draft", signup_row: "signup", comic: "comic", qa: "Q&A", other: "other" };
+
+  let CFG = null;
+  let stagingItems = [];
+  let byId = {};
+  let PUBLISH = "2026-10-13";
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+  function wordsOf(item) {
+    if (!item) return 0;
+    if (item.word_count) return Number(item.word_count) || 0;
+    const t = (item.body || "").trim();
+    return t ? t.split(/\s+/).length : 0;
+  }
+  function isSeed(item) {
+    if (!item) return false;
+    if (item.pretend) return true;
+    const id = String(item.id || "");
+    const body = String(item.body || "");
+    const from = String(item.from || "");
+    if (CFG && CFG.seed_ids && CFG.seed_ids.indexOf(id) >= 0) return true;
+    if (/invented|PRETEND|pretend/i.test(id) || /invented|PRETEND|\(invented\)/i.test(body)) return true;
+    if (/@example\.com$/i.test(from)) return true;
+    return false;
+  }
+  function isOpsNote(item) {
+    return item && (item.suggested_slot === "ops_note_not_print" || (item.tags || []).indexOf("degrade") >= 0);
+  }
+  function cards(root) {
+    return Array.from((root || lineupEl).querySelectorAll(".card"));
+  }
+  function isVetted(el) { return el && el.getAttribute("data-vetted") === "true"; }
+
+  function mediaUrl(path) {
+    if (!path) return "";
+    const m = String(path).match(/media\/([^/]+)$/);
+    if (m) return "/staging-media/" + m[1];
+    if (path.indexOf("budget-demo/") === 0) return path.replace(/^budget-demo\//, "");
+    return path;
+  }
+
+  function provLink(p) {
+    const host = (() => { try { return new URL(p.url).hostname.replace(/^www\./, ""); } catch (e) { return p.url; } })();
+    const path = (() => { try { const u = new URL(p.url); return decodeURIComponent(u.pathname).replace(/\/$/, "").split("/").pop() || ""; } catch (e) { return ""; } })();
+    const label = host + (path ? " / " + (path.length > 64 ? path.slice(0, 61) + "…" : path) : "");
+    return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(label) + "</a>" + (p.note ? ' <span class="muted">— ' + esc(p.note) + "</span>" : "");
+  }
+
+  function provenanceHtml(item, clickHosts) {
+    if (!item) return "";
+    const prov = Array.isArray(item.provenance) ? item.provenance : [];
+    if (!prov.length) {
+      const bits = [];
+      if (item.from) bits.push(esc(item.from));
+      if (item.source) bits.push(esc(item.source));
+      if (item.message_id) bits.push("<code>" + esc(item.message_id) + "</code>");
+      return bits.length ? '<div class="prov"><strong>Provenance:</strong> ' + bits.join(" · ") + "</div>" : "";
+    }
+    const hosts = clickHosts || [];
+    const isClick = (p) => p.type === "url" && hosts.some((h) => String(p.url || "").indexOf(h) >= 0);
+    const fmt = (p) => {
+      if (p.type === "url" && p.url) return provLink(p);
+      if (p.type === "email") {
+        const subj = item.subject ? " · “" + esc(item.subject) + "”" : "";
+        return "email from <strong>" + esc(p.from || item.from || "") + "</strong>" + subj + (p.message_id ? " · <code>" + esc(p.message_id) + "</code>" : "");
+      }
+      if (p.type === "chat") return "chat (Frank)" + (p.note ? " — " + esc(p.note) : "");
+      return esc(p.type || "source");
+    };
+    const clicks = prov.filter(isClick);
+    const rest = prov.filter((p) => !isClick(p));
+    let out = "";
+    if (clicks.length) {
+      out += '<div class="prov click"><span class="badge stale">CLICK-CHECK</span> ' +
+        clicks.map(fmt).join("<br>") + "</div>";
+    }
+    if (rest.length <= 3) {
+      out += '<div class="prov"><strong>Provenance:</strong> ' + rest.map(fmt).join(" · ") + "</div>";
+    } else {
+      out += '<details class="prov-more"><summary>Provenance — ' + rest.length + " more sources</summary><ol>" +
+        rest.map((p) => "<li>" + fmt(p) + "</li>").join("") + "</ol></details>";
+    }
+    return out;
+  }
+
+  function flagsHtml(flags) {
+    if (!flags || !flags.length) return "";
+    return flags.map((f) => '<div class="flag ' + esc(f.level || "info") + '">' + esc(f.text) + "</div>").join("");
+  }
+
+  function tableHtml(tbl) {
+    if (!tbl) return "";
+    const head = (tbl.head || []).map((h) => "<th>" + esc(h) + "</th>").join("");
+    const rows = (tbl.rows || []).map((r) => "<tr>" + r.map((c) => "<td>" + esc(c) + "</td>").join("") + "</tr>").join("");
+    return "<table><thead><tr>" + head + "</tr></thead><tbody>" + rows + "</tbody></table>";
+  }
+
+  function previewFor(slot, item) {
+    if (slot.table) return '<div class="preview tbl">' + tableHtml(slot.table) + "</div>";
+    if (!item) return "";
+    if (slot.part === "sidebar" && item.sidebar) {
+      return '<div class="preview tbl">' + tableHtml({ head: ["When", "What"], rows: item.sidebar.rows || [] }) + "</div>";
+    }
+    const body = item.body || "";
+    if (body.length > 520) {
+      const first = body.split(/\n\n/).slice(0, 2).join("\n\n");
+      return '<p class="preview">' + esc(first) + "</p>" +
+        '<details class="fulltext"><summary>Read full draft (' + wordsOf(item) + " words)</summary>" +
+        '<p class="preview">' + esc(body) + "</p></details>";
+    }
+    return '<p class="preview">' + esc(body) + "</p>";
+  }
+
+  function metaCount(slot, item) {
+    if (slot.empty) return "0 · empty";
+    if (slot.table) return (slot.table.rows || []).length + " rows";
+    if (slot.part === "sidebar" && item && item.sidebar) return (item.sidebar.rows || []).length + " rows";
+    const w = wordsOf(item);
+    return w ? w + "w" : "—";
+  }
+
+  function buildCard(slot, opts) {
+    opts = opts || {};
+    const item = slot.item ? byId[slot.item] : null;
+    const vetted = slot.empty ? true : !!(item && item.vetted);
+    const proposed = !!slot.proposed && !slot.empty && !slot.stale;
+    const includeOn = proposed && vetted;
+    const headline = slot.title ||
+      (slot.part === "sidebar" && item && item.sidebar && item.sidebar.title) ||
+      (item && (item.headline || item.body)) || slot.slot;
+    if (slot.empty) {
+      return '<article class="card empty-slot" data-slot="' + esc(slot.key) + '" data-item-id="" data-vetted="true" data-empty="true" data-proposed="false" data-cost="{}" draggable="false">' +
+        '<div class="drag-handle" style="visibility:hidden">⋮⋮</div>' +
+        '<div class="card-main"><div class="slot-head">' +
+        '<span class="slot-rank">#' + esc(String(slot.rank)) + "</span>" +
+        '<span class="slot-name">' + esc(slot.slot) + "</span>" +
+        '<span class="slot-budget">' + esc(slot.budget || "") + "</span>" +
+        '<span class="badge empty">' + (slot.covered_by ? "COVERED BY FEATURE" : "EMPTY") + "</span></div>" +
+        '<div class="empty-why">' + esc(slot.why || "") + "</div></div>" +
+        '<div class="card-controls"></div></article>';
+    }
+    const deck = item && item.deck && !slot.part ? item.deck : "";
+    const classes = ["card"];
+    const pendingVet = proposed && !vetted;
+    if (pendingVet) classes.push("pending-vet");
+    else if (!includeOn) classes.push("excluded");
+    if (slot.empty) classes.push("empty-slot");
+    if (slot.stale) classes.push("stale-card");
+    if (!vetted && !slot.empty) classes.push("unvetted-card");
+
+    let badge = "";
+    if (slot.empty) badge = '<span class="badge empty badge-inline" data-badge>EMPTY</span>';
+    else if (slot.stale) badge = '<span class="badge stale badge-inline" data-badge>STALE</span>';
+    else if (vetted) badge = '<span class="badge vetted badge-inline" data-badge>VETTED</span>';
+    else badge = '<span class="badge unvetted badge-inline" data-badge>UNVETTED</span>';
+    if (pendingVet) badge += ' <span class="badge unvetted badge-inline">PROPOSED — NEEDS VET</span>';
+
+    let controls = "";
+    if (!slot.empty && item && !vetted) {
+      controls +=
+        '<div class="vet-panel" data-vet-panel>' +
+        '<span class="vet-hint">Why this matters / what the bot should know</span>' +
+        '<textarea data-vet-notes placeholder="Your notes for the bot (Desk notes shown on the card)…"></textarea>' +
+        '<button type="button" class="vet-btn" data-vet-btn>Vet</button></div>';
+    }
+    if (!slot.empty) {
+      const blocked = !vetted;
+      controls +=
+        '<label class="check' + (blocked ? " blocked" : "") + '">' +
+        '<input type="checkbox" data-include' +
+        (includeOn ? " checked" : "") +
+        (blocked ? " disabled" : "") +
+        " /> " + (slot.stale ? "Include anyway" : "Include in issue") + "</label>";
+    } else {
+      controls += '<span class="muted" style="font-size:12px;">Nothing to include</span>';
+    }
+
+    const photoItem = slot.photo ? byId[slot.photo] : null;
+    const photoNote = photoItem
+      ? '<div class="meta-line">Feature photo: <code>' + esc(slot.photo) + "</code> (Frank-vetted · Include on photo desk)</div>"
+      : "";
+    const thumb = photoItem
+      ? '<figure class="feature-thumb"><img src="' + esc(mediaUrl(photoItem.media_path)) + '" alt="" /><figcaption>' + esc(photoItem.caption || "") + " (B&amp;W as printed)</figcaption></figure>"
+      : "";
+    const merged = (slot.merged || []).length
+      ? '<div class="meta-line">Merged / deduped: ' + slot.merged.map((id) => "<code>" + esc(id) + "</code>").join(", ") + "</div>"
+      : "";
+    const covered = slot.covered_by
+      ? '<div class="meta-line">Covered by feature this week.</div>'
+      : "";
+
+    const art =
+      '<article class="' + classes.join(" ") + '" data-slot="' + esc(slot.key || slot.slot) +
+      '" data-item-id="' + esc(slot.item || "") +
+      '" data-vetted="' + (vetted ? "true" : "false") +
+      '" data-rank="' + esc(String(slot.rank || "")) +
+      '" data-proposed="' + (proposed ? "true" : "false") +
+      '" data-stale="' + (slot.stale ? "true" : "false") +
+      '" data-empty="' + (slot.empty ? "true" : "false") +
+      '" data-cost="' + esc(JSON.stringify(slot.cost || {})) +
+      '" draggable="' + (opts.draggable === false ? "false" : "true") + '">' +
+      '<div class="drag-handle" title="Drag to reorder">⋮⋮</div>' +
+      '<div class="card-main">' +
+      '<div class="slot-head">' +
+      '<span class="slot-rank">#' + esc(String(slot.rank || "")) + "</span>" +
+      '<span class="slot-name">' + esc(slot.slot) + "</span>" +
+      '<span class="slot-budget">' + esc(slot.budget || "") + "</span>" +
+      "</div>" +
+      badge +
+      '<div class="headline">' + esc(headline) + "</div>" +
+      (deck ? '<div class="deck">' + esc(deck) + "</div>" : "") +
+      thumb +
+      (slot.why ? '<div class="why">' + esc(slot.why) + "</div>" : "") +
+      (item && !item.vetted && item.vet_notes && slot.part !== "sidebar"
+        ? '<div class="desk-notes"><strong>Desk notes</strong>' + esc(item.vet_notes) + "</div>"
+        : "") +
+      previewFor(slot, item) +
+      flagsHtml(slot.flags) +
+      (slot.part === "sidebar"
+        ? '<div class="prov"><strong>Provenance:</strong> same sources as the primer; dates from ' +
+          ((item && item.provenance && item.provenance[0]) ? provLink(item.provenance[0]) : "NJSIAA") + "</div>"
+        : provenanceHtml(item, slot.click_check)) +
+      photoNote + merged + covered +
+      '<div class="meta-line"><span class="count">' + esc(metaCount(slot, item)) +
+      "</span> / " + esc(slot.budget || "—") +
+      (item ? " · id <code>" + esc(item.id) + "</code>" : "") +
+      (item ? " · Frank-vetted: " + (item.vetted ? "<strong>yes</strong>" : "no") : "") +
+      "</div>" +
+      (slot.empty ? "" : '<div class="card-notes"><input type="text" data-notes-for="' + esc(slot.key || "") + '" placeholder="Optional note for this slot…" /></div>') +
+      "</div>" +
+      '<div class="card-controls">' + controls + "</div>" +
+      "</article>";
+    return art;
+  }
+
+  function renderLineup() {
+    lineupEl.innerHTML = CFG.lineup.map((s) => buildCard(s)).join("");
+    candEl.innerHTML = (CFG.candidates || []).map((c, i) => {
+      const item = byId[c.item];
+      const slot = {
+        key: "cand-" + (c.item || i),
+        rank: "opt",
+        slot: "Candidate → " + (c.target || "optional"),
+        budget: item && item.word_count ? item.word_count + "w" : "optional",
+        item: c.item,
+        proposed: false,
+        flags: c.flags,
+        stale: c.stale,
+        why: "Self-gather candidate — not in Desk’s proposed Include set until you Vet + check Include.",
+        cost: c.cost,
+      };
+      return buildCard(slot, { draggable: true });
+    }).join("");
+
+    const held = (CFG.held || [])[0];
+    const heldEl = document.getElementById("heldLine");
+    if (held) {
+      heldEl.innerHTML =
+        '<span class="badge held">HELD FOR LATER</span> ' +
+        "<strong>" + esc(held.label) + "</strong> · week <code>" + esc(held.week) +
+        "</code> · " + esc(held.note || "");
+    }
+  }
+
+  function renderMergedAndAccounting() {
+    const np = CFG.not_proposed || [];
+    document.getElementById("mergedCount").textContent = String(np.length);
+    document.getElementById("mergedBody").innerHTML = np.map((n) => {
+      const it = byId[n.item] || {};
+      return "<tr><td><code>" + esc(n.item) + "</code></td><td>" + esc(it.headline || it.body || "(missing from staging)") + "</td><td>" + esc(n.why) + "</td></tr>";
+    }).join("");
+    const seen = new Set();
+    CFG.lineup.forEach((s) => { if (s.item) seen.add(s.item); (s.merged || []).forEach((m) => seen.add(m)); if (s.photo) seen.add(s.photo); });
+    (CFG.candidates || []).forEach((c) => seen.add(c.item));
+    (CFG.photos || []).forEach((p) => seen.add(p.item));
+    np.forEach((n) => seen.add(n.item));
+    const seeds = stagingItems.filter(isSeed).map((i) => i.id);
+    seeds.forEach((id) => seen.add(id));
+    const loose = stagingItems.filter((i) => !seen.has(i.id));
+    // guard: a seed must never sit in the proposed lineup
+    const leaked = CFG.lineup.filter((s) => s.item && isSeed(byId[s.item])).map((s) => s.item);
+    document.getElementById("accounting").innerHTML =
+      "Accounting: " + stagingItems.length + " staging items → " +
+      CFG.lineup.filter((s) => s.item).length + " lineup cards, " + (CFG.candidates || []).length + " candidates, " +
+      (CFG.photos || []).length + " photos, " + np.length + " merged/ops, " + seeds.length + " seed/pretend excluded." +
+      (loose.length ? ' <strong style="color:var(--red-soft)">Unsorted: ' + loose.map((i) => esc(i.id)).join(", ") + "</strong>" : " Nothing unsorted.") +
+      (leaked.length ? ' <strong style="color:var(--red-soft)">SEED IN LINEUP: ' + esc(leaked.join(", ")) + "</strong>" : "");
+  }
+
+  function renderPhotos() {
+    photoDesk.innerHTML = (CFG.photos || []).map((p) => {
+      const item = byId[p.item] || {};
+      const vetted = !!item.vetted || !!p.proposed; // proposed photos are frank-vetted
+      const realVetted = !!(item.vetted);
+      const src = mediaUrl(item.media_path || ("staging/weeks/next/media/" + p.file));
+      const hPrint = (() => {
+        const spanW = p.span === 2 ? CFG.capacity.span2_width_in : CFG.capacity.col_width_in;
+        return (spanW * (p.h / p.w)).toFixed(2);
+      })();
+      const overCeil = Number(hPrint) > CFG.capacity.photo_ceiling_in;
+      const includeOn = !!p.proposed && realVetted;
+      return (
+        '<div class="photo-card' + (!realVetted ? " unvetted-card" : "") +
+        '" data-item-id="' + esc(p.item) + '" data-vetted="' + (realVetted ? "true" : "false") +
+        '" data-photo-span="' + esc(String(p.span || 1)) +
+        '" data-photo-w="' + esc(String(p.w)) + '" data-photo-h="' + esc(String(p.h)) +
+        '" data-proposed="' + (p.proposed ? "true" : "false") + '">' +
+        '<img src="' + esc(src) + '" alt="' + esc(p.caption || item.caption || p.item) + '" />' +
+        '<div class="badge-row">' +
+        '<div class="caption">' + esc(item.caption || p.caption || p.item) +
+        ' <span style="color:#0a7;">· REAL</span></div>' +
+        (realVetted
+          ? '<span class="badge vetted" data-badge>VETTED</span>'
+          : '<span class="badge unvetted" data-badge>UNVETTED</span>') +
+        (p.proposed ? '<span class="badge vetted">PROPOSED</span>' : "") +
+        "</div>" +
+        '<div class="source">File <code>' + esc(p.file) + "</code> · " +
+        p.w + "×" + p.h + " · span " + p.span +
+        " → ~" + hPrint + "in tall" +
+        (overCeil ? ' <span style="color:var(--red-soft);font-weight:600;">· FLAGS &gt;2.2in ceiling</span>' : "") +
+        " · for " + esc(p.for || "") +
+        " · " + esc(item.from || item.source || "") +
+        "</div>" +
+        provenanceHtml(item) +
+        (realVetted
+          ? ""
+          : '<div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div>') +
+        '<label class="check' + (realVetted ? "" : " blocked") + '">' +
+        '<input type="checkbox" data-photo-id="' + esc(p.item) + '" data-include-gated' +
+        (includeOn ? " checked" : "") +
+        (realVetted ? "" : " disabled") +
+        " /> Include</label>" +
+        "</div>"
+      );
+    }).join("");
+  }
+
+  function renderInbox() {
+    const real = stagingItems.filter((i) => !isSeed(i));
+    const seeds = stagingItems.filter((i) => isSeed(i));
+    document.getElementById("seedCount").textContent = String(seeds.length);
+    document.getElementById("realCount").textContent = String(real.length);
+    seedBody.innerHTML = seeds
+      .map((i) =>
+        "<tr class=\"seed-row\"><td><code>" +
+        esc(i.id) +
+        "</code></td><td>" +
+        esc(i.body || i.headline || "") +
+        "</td><td>" +
+        (i.vetted ? "yes" : "no") +
+        "</td></tr>"
+      )
+      .join("");
+
+    const rows = real.slice().sort((a, b) => {
+      if (!!a.vetted !== !!b.vetted) return a.vetted ? 1 : -1;
+      return String(a.created_at || "").localeCompare(String(b.created_at || ""));
+    });
+    inboxBody.innerHTML = rows
+      .map((item) => {
+        const kind = item.kind || "other";
+        const tag = isOpsNote(item) ? "ops" : KIND_TAG[kind] || "tip";
+        const label = isOpsNote(item) ? "ops" : KIND_LABEL[kind] || kind;
+        const vetted = !!item.vetted;
+        const badge = vetted
+          ? '<span class="badge vetted" data-badge>VETTED</span>'
+          : '<span class="badge unvetted" data-badge>UNVETTED</span>';
+        const sourceBits = [];
+        if (item.from) sourceBits.push(esc(item.from));
+        if (item.source) sourceBits.push(esc(item.source));
+        if (isOpsNote(item)) sourceBits.push("ops note — not print");
+        const source = sourceBits.join(" · ") || "—";
+        let vetCell;
+        if (vetted) {
+          vetCell = item.vet_notes
+            ? '<div class="vet-notes-saved">' + esc(item.vet_notes) + "</div>"
+            : '<span style="color:var(--green);font-weight:600;font-size:12px;">yes</span>';
+        } else if (isOpsNote(item)) {
+          vetCell = '<span class="muted">not a print candidate</span>';
+        } else {
+          vetCell =
+            '<div class="vet-panel" data-vet-panel>' +
+            '<span class="vet-hint">Why this matters / what the bot should know</span>' +
+            (item.vet_notes ? '<div class="desk-notes"><strong>Desk notes</strong>' + esc(item.vet_notes) + "</div>" : "") +
+            '<textarea data-vet-notes placeholder="Your notes for the bot…"></textarea>' +
+            '<button type="button" class="vet-btn" data-vet-btn>Vet</button></div>';
+        }
+        return (
+          '<tr data-item-id="' +
+          esc(item.id) +
+          '" data-vetted="' +
+          (vetted ? "true" : "false") +
+          '"><td><span class="tag ' +
+          tag +
+          '">' +
+          esc(label) +
+          "</span></td><td>" +
+          esc(item.headline || item.body || item.id) +
+          "</td><td>" +
+          source +
+          "</td><td>" +
+          badge +
+          '</td><td class="actions-cell">' +
+          vetCell +
+          "</td></tr>"
+        );
+      })
+      .join("");
+  }
+
+  function includedSlots() {
+    return cards(lineupEl).filter((c) => {
+      const box = c.querySelector("[data-include]");
+      return box && !box.disabled && box.checked;
+    });
+  }
+
+  function estimateFit() {
+    const C = CFG.capacity;
+    const page1 = C.page1_col_in;
+    const page2 = C.page2_col_in;
+    const totalCap = page1 + page2;
+    const target = totalCap * C.oversupply;
+
+    let used = 0;
+    const parts = [];
+
+    function add(label, colIn) {
+      used += colIn;
+      parts.push({ label, colIn: Math.round(colIn * 100) / 100 });
+    }
+
+    function cardCost(card) {
+      let cost = {};
+      try { cost = JSON.parse(card.getAttribute("data-cost") || "{}"); } catch (e) { cost = {}; }
+      const item = byId[card.getAttribute("data-item-id")] || null;
+      const span = cost.span || 1;
+      if (cost.type === "prose") {
+        const w = wordsOf(item);
+        const wpi = cost.feature ? C.wpi_feature : C.wpi;
+        const head = cost.feature ? C.head_feature : C.head_short;
+        return w / wpi + head * span + C.gap * span;
+      }
+      if (cost.type === "table" || cost.type === "table_rows") {
+        const rows = cost.rows || 0;
+        const rowH = span >= 3 ? C.row_full : C.row_rail;
+        const head = cost.type === "table_rows" ? 0 : C.table_head;
+        return (head + rows * rowH + (cost.type === "table_rows" ? 0 : C.gap)) * span;
+      }
+      if (cost.type === "qa") {
+        return C.head_short + (wordsOf(item) || 40) / C.wpi + C.gap;
+      }
+      return 0;
+    }
+    cards(lineupEl).concat(cards(candEl)).forEach((card) => {
+      const box = card.querySelector("[data-include]");
+      if (!box || box.disabled || !box.checked) return;
+      const name = (card.querySelector(".slot-name") || {}).textContent || card.dataset.slot;
+      add(name, cardCost(card));
+    });
+
+    // Pending: proposed but blocked only by Vet
+    let pending = 0;
+    const pendingNames = [];
+    cards(lineupEl).forEach((card) => {
+      if (card.getAttribute("data-proposed") !== "true") return;
+      const box = card.querySelector("[data-include]");
+      if (box && box.disabled && !isVetted(card)) {
+        pending += cardCost(card);
+        pendingNames.push((card.querySelector(".slot-name") || {}).textContent || "");
+      }
+    });
+
+    // Photos included
+    photoDesk.querySelectorAll(".photo-card").forEach((pc) => {
+      const box = pc.querySelector("[data-photo-id]");
+      if (!box || box.disabled || !box.checked) return;
+      const span = Number(pc.getAttribute("data-photo-span") || 1);
+      const w = Number(pc.getAttribute("data-photo-w") || 1);
+      const h = Number(pc.getAttribute("data-photo-h") || 1);
+      const spanW = span >= 2 ? C.span2_width_in : C.col_width_in;
+      const printH = spanW * (h / w);
+      add("photo " + (pc.getAttribute("data-item-id") || ""), printH * span + C.caption_in * span);
+    });
+
+    const proposedTotal = used + pending;
+    const pct = Math.min(100, (used / (totalCap * 1.25)) * 100);
+    const pctPending = Math.min(100, (proposedTotal / (totalCap * 1.25)) * 100);
+    const meter = document.getElementById("fitMeter");
+    const fill = document.getElementById("fitFill");
+    const cap = document.getElementById("fitCap");
+    fill.style.width = pct + "%";
+    document.getElementById("fitPending").style.left = pct + "%";
+    document.getElementById("fitPending").style.width = Math.max(0, pctPending - pct) + "%";
+    cap.style.left = (100 / 1.25) + "%";
+    document.getElementById("fitTarget").style.left = (100 * C.oversupply / 1.25) + "%";
+    meter.classList.remove("over", "short");
+    let verdict = "in range";
+    const basis = proposedTotal;
+    if (basis > totalCap * 1.08) {
+      meter.classList.add("over");
+      verdict = "OVER — cut bottom-up";
+    } else if (basis < totalCap * 0.92) {
+      meter.classList.add("short");
+      verdict = "SHORT — stretch or flag Frank";
+    }
+
+    const wordsEq = (x) => Math.round(x * C.wpi / 10) * 10;
+    document.getElementById("fitNums").innerHTML =
+      "Included now: <strong>" + used.toFixed(1) + "</strong> col-in" +
+      (pending ? " · + pending Vet: <strong>" + pending.toFixed(1) + "</strong> (" + esc(pendingNames.join(", ")) + ")" : "") +
+      "<br>Proposed total: <strong>" + proposedTotal.toFixed(1) + "</strong> of <strong>" + totalCap.toFixed(1) +
+      "</strong> col-in capacity (p1 " + page1.toFixed(1) + " + p2 " + page2.toFixed(1) + ") = <strong>" +
+      Math.round(proposedTotal / totalCap * 100) + "%</strong> · oversupply target ~" + target.toFixed(1) +
+      "<br><strong>" + verdict + "</strong>" +
+      (basis < totalCap
+        ? " · short by ~" + (totalCap - basis).toFixed(1) + " col-in (≈" + wordsEq(totalCap - basis) + " words); ~" +
+          (target - basis).toFixed(1) + " col-in (≈" + wordsEq(target - basis) + "w) below the 115% oversupply target"
+        : " · over by ~" + (basis - totalCap).toFixed(1) + " col-in (≈" + wordsEq(basis - totalCap) + " words)");
+
+    document.getElementById("fitDetail").innerHTML =
+      "<strong>Estimate, not a proof.</strong> Prose ≈ words ÷ " + C.wpi + "/col-in (feature body ÷ " + C.wpi_feature +
+      " for +0.5pt type) + headline; tables ≈ title/header " + C.table_head + "in + rows × " + C.row_rail + "in (rail) or " +
+      C.row_full + "in × 3 cols (full width); photos = displayed height × span. Furniture measured on <code>issues/2026-10-14</code>. " +
+      "Bar: green/tan = included now, hatched = pending Vet, dark tick = 100% capacity, dotted tick = 115%.<br>Breakdown (col-in): " +
+      parts.map((p) => esc(p.label) + " <strong>" + p.colIn.toFixed(1) + "</strong>").join(" · ");
+
+    document.getElementById("cutStretch").innerHTML =
+      "<strong>Short (this week’s likely case):</strong> per CONTENT-HIERARCHY stretch order — (1) feature already runs long; (2) Remise short can take a line; (3) add a TV / club-events row. Real fillers waiting in the pile: Medeo results (if they land, +2 rows), a vetted Casablanca World Cup short (Secondary B), Song Se-ra or the college-path note, a Morris Cup deadline row. Missing entirely: <strong>ratings rows</strong> and a comic. If still short → Desk flags Frank with inches/words; never stretch type or leading.<br><br>" +
+      "<strong>Over:</strong> drop Secondary B / candidates first → trim TV / comic → trim Remise toward 80w and the feature toward ~300w. Keep club results, signup board and Parent Q&amp;A. Never cut furniture; never shrink type or margins.<br><br>" +
+      "<strong>Swing items:</strong> Morris Hills photo at span 2 ≈ " + (C.span2_width_in * 720 / 1280).toFixed(2) + "in tall (over the 2.2in ceiling) vs span 1 ≈ " + (C.col_width_in * 720 / 1280).toFixed(2) + "in; signup board full-width vs 2-row Sat./Sun. merge.";
+  }
+
+  function refreshExcluded() {
+    cards(lineupEl).concat(cards(candEl)).forEach((card) => {
+      const box = card.querySelector("[data-include]");
+      const on = box && !box.disabled && box.checked;
+      if (card.classList.contains("pending-vet") || card.getAttribute("data-empty") === "true") return;
+      card.classList.toggle("excluded", !on);
+    });
+    updateSummary();
+    estimateFit();
+  }
+
+  function updateSummary() {
+    const all = cards(lineupEl).filter((c) => c.getAttribute("data-empty") !== "true");
+    const inc = includedSlots().length;
+    const unv = all.filter((c) => !isVetted(c) && c.getAttribute("data-empty") !== "true").length;
+    summaryEl.innerHTML =
+      "<strong>" +
+      inc +
+      "</strong> included · <strong>" +
+      unv +
+      "</strong> unvetted on lineup · publish <strong>" +
+      esc(CFG.publish.label) +
+      "</strong> · PRACTICE";
+  }
+
+  function renumber() {
+    cards(lineupEl).forEach((card, i) => {
+      card.dataset.rank = String(i + 1);
+      const rankEl = card.querySelector(".slot-rank");
+      // keep original rank labels from CFG for clarity; only update if numeric
+    });
+  }
+
+  // Drag reorder on lineup
+  let dragCard = null;
+  lineupEl.addEventListener("dragstart", (e) => {
+    const card = e.target.closest(".card");
+    if (!card) return;
+    dragCard = card;
+    card.classList.add("dragging");
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", card.dataset.slot || "");
+  });
+  lineupEl.addEventListener("dragend", () => {
+    if (dragCard) dragCard.classList.remove("dragging");
+    dragCard = null;
+    cards(lineupEl).forEach((c) => c.classList.remove("drag-over"));
+    renumber();
+  });
+  lineupEl.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    const over = e.target.closest(".card");
+    if (!over || over === dragCard) return;
+    cards(lineupEl).forEach((c) => c.classList.remove("drag-over"));
+    over.classList.add("drag-over");
+    const rect = over.getBoundingClientRect();
+    const before = e.clientY < rect.top + rect.height / 2;
+    if (before) lineupEl.insertBefore(dragCard, over);
+    else lineupEl.insertBefore(dragCard, over.nextSibling);
+  });
+  lineupEl.addEventListener("drop", (e) => {
+    e.preventDefault();
+    cards(lineupEl).forEach((c) => c.classList.remove("drag-over"));
+  });
+  lineupEl.addEventListener("change", (e) => {
+    if (e.target.matches("[data-include]")) refreshExcluded();
+  });
+  candEl.addEventListener("change", (e) => {
+    if (e.target.matches("[data-include]")) refreshExcluded();
+  });
+  photoDesk.addEventListener("change", (e) => {
+    if (e.target.matches("[data-photo-id]")) estimateFit();
+  });
+
+  function markHostVetted(host, notes) {
+    if (!host) return;
+    host.setAttribute("data-vetted", "true");
+    host.classList.remove("unvetted-card");
+    host.classList.remove("pending-vet");
+    host.querySelectorAll(".badge").forEach((b) => { if (/NEEDS VET/.test(b.textContent)) b.remove(); });
+    const badge = host.querySelector("[data-badge]");
+    if (badge && !badge.classList.contains("stale") && !badge.classList.contains("empty") && !badge.classList.contains("held")) {
+      badge.className = "badge vetted" + (badge.classList.contains("badge-inline") ? " badge-inline" : "");
+      badge.textContent = "VETTED";
+    }
+    const panel = host.querySelector("[data-vet-panel]");
+    if (panel) {
+      panel.outerHTML = notes
+        ? '<div class="vet-notes-saved">Notes: ' + esc(notes) + "</div>"
+        : "";
+    }
+    host.querySelectorAll("[data-include], [data-include-gated]").forEach((box) => {
+      if (host.getAttribute("data-stale") === "true") return;
+      if (box.disabled && host.getAttribute("data-proposed") === "true") box.checked = true;
+      box.disabled = false;
+      const lab = box.closest("label");
+      if (lab) lab.classList.remove("blocked");
+    });
+    const meta = host.querySelector(".meta-line");
+    if (meta && /Frank-vetted:/.test(meta.innerHTML)) {
+      meta.innerHTML = meta.innerHTML.replace(
+        /Frank-vetted:\s*(?:no|<strong>yes<\/strong>)/,
+        "Frank-vetted: <strong>yes</strong>"
+      );
+    }
+  }
+
+  async function vetItem(itemId, notes) {
+    const res = await fetch("/vet", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: itemId, vet_notes: notes }),
+    });
+    let data;
+    try { data = await res.json(); } catch (e) { throw new Error("bad response (" + res.status + ")"); }
+    if (!res.ok || !data.ok) throw new Error((data && data.error) || "vet failed");
+    const idx = stagingItems.findIndex((i) => i.id === itemId);
+    if (idx >= 0) stagingItems[idx] = data.item;
+    else stagingItems.push(data.item);
+    byId[itemId] = data.item;
+    document.querySelectorAll('[data-item-id="' + itemId + '"]').forEach((el) => markHostVetted(el, notes));
+    renderInbox();
+    refreshExcluded();
+    return data;
+  }
+
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest("[data-vet-btn]");
+    if (!btn) return;
+    e.preventDefault();
+    const host = btn.closest("[data-item-id]");
+    if (!host) return;
+    const itemId = host.getAttribute("data-item-id");
+    const ta = host.querySelector("[data-vet-notes]");
+    let notes = ta ? ta.value.trim() : "";
+    if (!notes) {
+      const ok = window.confirm("No notes yet. Notes help the bot. Vet without notes anyway?");
+      if (!ok) { if (ta) ta.focus(); return; }
+    }
+    btn.disabled = true;
+    try {
+      await vetItem(itemId, notes);
+      statusEl.className = "ok";
+      statusEl.innerHTML =
+        "Vetted <code>" + esc(itemId) + "</code>" +
+        (notes ? " · notes saved" : " · no notes") +
+        " · persisted to <code>staging/weeks/next/items.json</code> + vet-log.";
+    } catch (err) {
+      statusEl.className = "err";
+      statusEl.textContent = "Vet failed: " + (err && err.message ? err.message : String(err));
+      btn.disabled = false;
+    }
+  });
+
+  function buildPayload() {
+    const order = [];
+    const includedSlots = [];
+    const excludedSlots = [];
+    const slotNotes = {};
+    cards(lineupEl).concat(cards(candEl)).forEach((card) => {
+      const slot = card.dataset.slot;
+      const nameEl = card.querySelector(".slot-name");
+      const headEl = card.querySelector(".headline");
+      const box = card.querySelector("[data-include]");
+      const include = !!(box && !box.disabled && box.checked);
+      const noteInput = card.querySelector("[data-notes-for]");
+      const note = noteInput ? noteInput.value.trim() : "";
+      const entry = {
+        slot,
+        name: nameEl ? nameEl.textContent.trim() : slot,
+        headline: headEl ? headEl.textContent.trim() : "",
+        itemId: card.getAttribute("data-item-id") || null,
+        vetted: isVetted(card),
+        stale: card.getAttribute("data-stale") === "true",
+      };
+      order.push(slot);
+      if (include) includedSlots.push(entry);
+      else excludedSlots.push(entry);
+      if (note) slotNotes[slot] = note;
+    });
+    const photoIncludes = Array.from(
+      document.querySelectorAll("#photoDesk [data-photo-id]:checked:not(:disabled)")
+    ).map((el) => el.getAttribute("data-photo-id"));
+    return {
+      publishDate: PUBLISH,
+      practice: true,
+      pretend: false,
+      targetWeek: "next",
+      includedSlots,
+      excludedSlots,
+      photoIncludes,
+      notes: globalNotes.value.trim(),
+      slotNotes,
+      order,
+      submittedAt: null,
+    };
+  }
+
+  submitBtn.addEventListener("click", async () => {
+    statusEl.className = "";
+    statusEl.textContent = "";
+    submitBtn.disabled = true;
+    const payload = buildPayload();
+    try {
+      const res = await fetch("/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      let data;
+      try { data = await res.json(); } catch (e) { throw new Error("bad response (" + res.status + ")"); }
+      if (!res.ok || !data.ok) throw new Error((data && data.error) || "submit failed");
+      statusEl.className = "ok";
+      statusEl.innerHTML =
+        "Practice budget saved. <code>" + esc(data.path) + "</code> · latest <code>" +
+        esc(data.approvals) + "</code> · " + esc(data.submittedAt) +
+        (payload.photoIncludes.length
+          ? " · photos: <code>" + esc(payload.photoIncludes.join(", ")) + "</code>"
+          : " · photos: none");
+    } catch (err) {
+      statusEl.className = "err";
+      statusEl.textContent = "Submit failed: " + (err && err.message ? err.message : String(err));
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  function renderDecisions() {
+    const bits = [];
+    bits.push(
+      '<div class="decision stale"><strong>Stale Medeo signup.</strong> Medeo Youth Challenge #3 is Sun. Oct. 11 — before publish. Not proposed on who’s-entered. If results arrive, add 2 rows to Club results (Jiang / Cheng); else drop. Deduped 4 staging copies → cite <code>email-frank-medeo-entries-2026-10-07</code>.</div>'
+    );
+    bits.push(
+      '<div class="decision"><strong>Unvetted feature package.</strong> Primer (<code>gather-nj-hs-season-primer</code>, 453w) + flèche sidebar (<code>gather-nj-hs-fleche-rule</code>, 190w) need Vet before Include unlocks. Morris Hills photo is already Frank-vetted.</div>'
+    );
+    bits.push(
+      '<div class="decision"><strong>NJ.com click-checks.</strong> Chatham Santelli streak, Morris County streaks, and both 2026 state finals (14–13) came from search snippets (NJ.com blocks automated readers). Links are on the feature card.</div>'
+    );
+    bits.push(
+      '<div class="decision"><strong>Ratings empty.</strong> No real ratings rows — invented seed excluded. Club events may be last week’s classes — confirm before print.</div>'
+    );
+    bits.push(
+      '<div class="decision"><strong>Held:</strong> THE WEAPON (exploded epee) stays in <code>after-next</code>, span 2 — not this issue.</div>'
+    );
+    document.getElementById("decisionFlags").innerHTML = bits.join("");
+    document.getElementById("publishWhy").textContent = CFG.publish.why;
+    document.getElementById("publishLabel").textContent = CFG.publish.label;
+    document.getElementById("publishAlt").textContent =
+      " — alt " + CFG.publish.alt + " if results don’t land";
+  }
+
+  async function boot() {
+    const [cfgRes, itemsRes] = await Promise.all([
+      fetch("/practice-lineup.json"),
+      fetch("/api/items"),
+    ]);
+    CFG = await cfgRes.json();
+    const data = await itemsRes.json();
+    stagingItems = Array.isArray(data.items) ? data.items : [];
+    byId = {};
+    stagingItems.forEach((i) => { byId[i.id] = i; });
+    PUBLISH = CFG.publish.date;
+    globalNotes.value =
+      "PRACTICE budget for next (publish Tue Oct 13, 2026 — Desk call; Mon Oct 12 alt). " +
+      "Proposed: NJ HS primer feature + glance box + flèche sidebar + Morris Hills photo; " +
+      "SYC results; Morris Cup who’s-entered; club schedule (confirm freshness); Remise short; Parent Q&A. " +
+      "NOT proposed: Medeo as signup (stale — results-pending only); ratings (empty); THE WEAPON (held after-next). " +
+      "Needs Vet: primer, flèche, and any candidate you want in. Click-check NJ.com streak/finals facts.";
+    renderDecisions();
+    renderInbox();
+    renderLineup();
+    renderPhotos();
+    renderMergedAndAccounting();
+    // sync already-vetted
+    stagingItems.forEach((item) => {
+      if (!item.vetted) return;
+      document.querySelectorAll('[data-item-id="' + item.id + '"]').forEach((el) => {
+        if (el.getAttribute("data-vetted") !== "true") markHostVetted(el, item.vet_notes || "");
+      });
+    });
+    refreshExcluded();
+  }
+
+  boot().catch((err) => {
+    statusEl.className = "err";
+    statusEl.textContent = "Boot failed: " + (err && err.message ? err.message : String(err));
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
-"""En Garde Gazette — pretend editorial budget server (stdlib only).
+"""En Garde Gazette — editorial budget server (stdlib only).
 
-Serves index.html at / and accepts:
+Pages:
+  GET /            → practice.html (PRACTICE budget from REAL staging/weeks/next)
+  GET /practice    → practice.html (alias)
+  GET /demo        → index.html (old PRETEND demo, kept for reference)
+  GET /practice-lineup.json → Desk's proposed lineup config (judgment file)
+  GET /api/media   → staging/weeks/next/media/manifest.json
+Accepts:
   POST /submit  → submissions/budget-*.json + approvals.json
   POST /vet     → update staging/weeks/next/items.json + append vet-log
   GET  /api/items → staging items JSON
@@ -97,8 +103,15 @@ class BudgetHandler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         path = self.path.split("?", 1)[0]
-        if path in ("/", "/index.html"):
+        if path in ("/", "/practice", "/practice.html"):
+            target = ROOT / "practice.html"
+        elif path in ("/demo", "/index.html"):
             target = ROOT / "index.html"
+        elif path == "/api/media":
+            manifest = STAGING_MEDIA / "manifest.json"
+            data = json.loads(manifest.read_text(encoding="utf-8")) if manifest.is_file() else {}
+            self._json(200, data)
+            return
         elif path in ("/api/items", "/staging/items.json"):
             data = _load_items()
             self._json(200, data)
@@ -256,7 +269,7 @@ def main() -> None:
         STAGING_VET_LOG.write_text("", encoding="utf-8")
 
     httpd = ThreadingHTTPServer((HOST, PORT), BudgetHandler)
-    print(f"En Garde Gazette budget demo → http://{HOST}:{PORT}/")
+    print(f"En Garde Gazette PRACTICE budget → http://{HOST}:{PORT}/  (pretend demo: /demo)")
     print(f"Serving {ROOT}")
     print("POST /submit → submissions/budget-*.json + approvals.json")
     print("POST /vet    → staging/weeks/next/items.json + vet-log.jsonl")
