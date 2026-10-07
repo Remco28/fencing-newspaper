@@ -1,0 +1,307 @@
+{
+  "issue": "2026-10-08",
+  "volume": "I",
+  "number": 1,
+  "pretend": false,
+  "approvals": "issues/2026-10-08/approvals.json",
+  "approvals_submitted_at": "2026-10-07T17:20:24-04:00",
+  "staging": "staging/weeks/next/items.json",
+  "roster": "roster/people.json",
+  "items": [
+    {
+      "slot": "lead/feature + Season at a Glance",
+      "itemId": "gather-nj-hs-season-primer",
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:14:50-04:00",
+      "fact_map": "staging/weeks/next/drafts/nj-hs-season-primer.md (Sources 1-23 + 7a)",
+      "retrieved_at": "2026-10-07",
+      "urls": [
+        "https://www.njsiaa.org/sports/fencing",
+        "https://www.njsiaa.org/sites/default/files/documents/2024-03/Winter%20Quick%20Chart%202024-27(1",
+        "https://www.njsiaa.org/sites/default/files/documents/2025-09/fencing-regular-season-rules-2025-26.pdf",
+        "https://www.njsiaa.org/sites/default/files/documents/2026-02/fencing-regs-2025-26_revised021626.pdf",
+        "https://www.njsiaa.org/sites/default/files/documents/2026-04/post-season-agenda-fencing-meeting-and-minutes-2025-26.pdf",
+        "https://www.njsiaa.org/sites/default/files/documents/2025-09/program-review-fencing-tournament.pdf",
+        "https://www.njsiaa.org/sites/default/files/documents/2024-05/post-season-agenda-fencingminutes2024.pdf",
+        "https://web.archive.org/web/20150321021206/http://www.njsiaa.org/sites/default/files/document/14-15%20fencing%20mods.pdf",
+        "https://docest.com/doc/435115/guide-to-montgomery-high-school-fencing",
+        "https://communitynews.org/sections/news/north-south-cross-swords/",
+        "https://www.usafencing.org/news/2025/march/10/what-every-fencing-parent-should-know-about-nac-direct-elimination-bouts",
+        "https://www.usafencing.org/news/2025/march/3/what-every-fencing-parent-should-know-about-nac-pools",
+        "https://ncaaorg.s3.amazonaws.com/championships/sports/fencing/rules/PRXFE_USAFencingRules.pdf",
+        "https://sites.google.com/site/njifa2/about-us",
+        "https://www.linkedin.com/posts/usafencing_history-in-the-making-tune-in-this-weekend-activity-7416894346953900034-PhrE",
+        "https://www.nj.com/highschoolsports/2026/01/no-3-chatham-girls-fencing-wins-fourth-consecutive-overall-title-at-2026-santelli-tournament.html",
+        "https://www.nj.com/highschoolsports/2026/01/girls-fencing-full-overall-team-standings-from-2026-santelli-tournament.html",
+        "https://www.nj.com/highschoolsports/2026/01/boys-fencing-cetrulo-tournament-recaps-results-photos-for-sunday-jan-18.html",
+        "https://www.newjerseyhills.com/chatham_courier/sports/chatham-girls-and-boys-repeat-county-fencing-titles/article_55b37c62-d4a9-48f4-a9d2-966b1d168a08.html",
+        "https://www.nj.com/highschoolsports/2026/02/no-1-bergen-tech-boys-fencing-wins-first-state-title-in-program-history.html",
+        "https://www.nj.com/highschoolsports/2026/02/no-4-columbia-girls-fencing-takes-down-no-6-morris-hills-earns-13th-state-title.html",
+        "https://www.nj.com/highschoolsports/2026/03/fencing-state-individual-championships-results-recaps-photos-mar-7.html",
+        "https://highschoolsports.nj.com/boysfencing/rankings",
+        "https://hs.tbtfencing.com/"
+      ],
+      "click_check_pending": [
+        "Chatham girls 4 straight Santellis (NJ.com, snippet)",
+        "Chatham Morris County streaks boys 7th / girls 5th (newjerseyhills.com, snippet)",
+        "Both 2026 state finals 14-13 (NJ.com, snippets)"
+      ]
+    },
+    {
+      "slot": "feature photo",
+      "itemId": "chat-photo-nj-hs-dual-meet-morris-hills",
+      "source": "chat",
+      "from": "Frank",
+      "at": "2026-10-07T16:00:00-04:00",
+      "caption_source": "Frank-approved caption in chat; Morris Hills = Feb. 25 team finals site per NJSIAA fencing page",
+      "media": "issues/2026-10-08/media/nj-hs-dual-meet-morris-hills-crop.jpeg (from staging/weeks/next/media/nj-hs-dual-meet-morris-hills.png)"
+    },
+    {
+      "slot": "flèche sidebar",
+      "itemId": "gather-nj-hs-fleche-rule",
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:15:53-04:00",
+      "fact_map": "staging/weeks/next/drafts/nj-hs-fleche-rule.md (Fact → source map; Sources 1-9 printed basis, 10-13 corroboration only)",
+      "retrieved_at": "2026-10-07",
+      "urls": [
+        "https://web.archive.org/web/20150321021206/http://www.njsiaa.org/sites/default/files/document/14-15%20fencing%20mods.pdf",
+        "https://web.archive.org/web/20161126212325/http://www.njsiaa.org/sports/fencing",
+        "https://docs.google.com/document/d/1-MIKmxEduPp67sjMhme4TJxGlo4OPZgXaeInRCgmrGI/edit",
+        "https://sites.google.com/site/njifa2/coaches-info/meeting-minutes",
+        "https://docs.google.com/a/millburn.org/document/d/1tyM8m6C89bxCPB44KU1yqnJST6_tNxGGrDKtH4Yg55s/edit",
+        "https://www.njsiaa.org/sites/default/files/documents/2021-08/fencing-constitutional-rules-2021-2022.pdf",
+        "https://www.njsiaa.org/sites/default/files/documents/2025-09/fencing-regular-season-rules-2025-26.pdf",
+        "https://www.njsiaa.org/sites/default/files/documents/2026-02/fencing-regs-2025-26_revised021626.pdf",
+        "https://www.njsiaa.org/sports/fencing",
+        "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blte3e086c4465493ef/68dd5a98b01de9504fa00d08/2025-10_USA_Fencing_Rules.pdf",
+        "https://ncaaorg.s3.amazonaws.com/championships/sports/fencing/nc/2025-26NCXFE_PreChampsManual.pdf",
+        "https://en.wikipedia.org/wiki/Fl%C3%A8che_(fencing",
+        "https://www.reddit.com/r/Fencing/comments/5kfdqt/nj_high_school_fleche_rules/",
+        "https://www.reddit.com/r/Fencing/comments/sqgcf8/fleching_ban/",
+        "https://docest.com/doc/435115/guide-to-montgomery-high-school-fencing",
+        "https://web.archive.org/web/20180127120527/http://www.njsiaa.org/sites/default/files/document/18%20Fencing%20Regulations_0.pdf"
+      ]
+    },
+    {
+      "slot": "club results",
+      "itemId": "result-syc",
+      "source": "email",
+      "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
+      "from": "frankcng@gmail.com",
+      "original_from": "Elite Fencers Club Mailchimp (Mon Oct 5, 2026)",
+      "email_received": "2026-10-07T02:50:29Z (2026-10-06 22:50 ET)",
+      "facts": [
+        "Mila Siu 3rd Y12",
+        "Penny Young 6th Y12",
+        "Stella Kuo top 16 Y14"
+      ],
+      "cross_checks": [
+        {
+          "url": "https://fencingtracker.com/tournament/1686",
+          "retrieved_at": "2026-10-07T18:05:00-04:00",
+          "note": "Ben Gutenberg Memorial SYC, Golisano Training Center at Nazareth University, Rochester NY, Oct 2-4, 2026"
+        },
+        {
+          "url": "https://fencingtracker.com/event/18676",
+          "retrieved_at": "2026-10-07T18:05:00-04:00",
+          "note": "Y12 Women's Epee registrations include Siu, Mila / Young, Penelope / Kuo, Stella (Elite Fencers Club) -> weapon = epee"
+        },
+        {
+          "url": "https://fencingtracker.com/event/18670",
+          "retrieved_at": "2026-10-07T18:05:00-04:00",
+          "note": "Y14 Women's Epee registrations include Kuo, Stella"
+        },
+        {
+          "url": "https://member.usafencing.org/details/tournaments/12083",
+          "retrieved_at": "2026-10-07T18:05:00-04:00",
+          "note": "Official name/dates; SYC open to all regions"
+        }
+      ],
+      "roster": "Penny Young (Penelope) — roster/people.json"
+    },
+    {
+      "slot": "club photo",
+      "itemId": "club-newsletter-photo-1",
+      "source": "email",
+      "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
+      "image_url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/2ad02a90-a7b4-8404-6b02-5859ab35afd4.jpeg",
+      "caption_basis": "In the forwarded Oct. 5 club newsletter HTML this image is the first block after the Ben Gutenberg SYC congratulations text; no alt text, no names. Caption states only that.",
+      "media": "issues/2026-10-08/media/club-newsletter-photo-1-crop.jpeg"
+    },
+    {
+      "slot": "signup — Medeo",
+      "itemId": "email-frank-medeo-entries-2026-10-07",
+      "source": "email",
+      "message_id": "<CA+CzU4eRQ2jZOfs-tt0yfZv3nhpSVL6OyKq==N0Ja3EY2K2u-w@mail.gmail.com>",
+      "from": "frankcng@gmail.com",
+      "retrieved_at": "2026-10-07T13:15:05-04:00",
+      "facts": [
+        "Y10/Y12/Y14 Youth Challenge #3 at Medeo, Sun Oct 11",
+        "9:30 AM Y12 Women's Epee: Christina Jiang",
+        "11:30 AM Y10 Mixed Epee: Bryce Cheng"
+      ],
+      "also": [
+        {
+          "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
+          "from": "chunkymonkey@agentmail.to",
+          "note": "same pair"
+        },
+        {
+          "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
+          "note": "club newsletter: Medeo Fencing Club, Bound Brook, NJ"
+        }
+      ]
+    },
+    {
+      "slot": "signup — Morris Cup",
+      "itemId": "email-agentmail-morris-cup-entries-2026-10-07",
+      "source": "email",
+      "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
+      "from": "chunkymonkey@agentmail.to",
+      "subject": "Club schedule · Wednesday, October 7",
+      "retrieved_at": "2026-10-07T13:15:05-04:00",
+      "facts": "All 29 Elite FC entries / 20 fencers, event times, Rockland Community College Eugene Levy Field House, Oct 24-25",
+      "location_note": "'Suffern, N.Y.' from the Frank-submitted budget headline (approvals.json) / gather-morris-cup-ryc-oct25",
+      "name_normalization": [
+        "Young Penelope -> Penny Young (roster)",
+        "WU Caden -> Caden Wu (roster)",
+        "Shah-Mirani Ash / Shah Mirani Rahi printed as registered (roster spelling_unresolved)"
+      ],
+      "cross_check": {
+        "url": "https://fencingtracker.com/tournament/1706",
+        "retrieved_at": "2026-10-07T17:15:00-04:00"
+      }
+    },
+    {
+      "slot": "club events — weekly classes",
+      "itemId": "web-efc-standing-schedule",
+      "urls": [
+        {
+          "url": "https://www.elitefencersclub.com/programs",
+          "retrieved_at": "2026-10-07T17:15:00-04:00"
+        },
+        {
+          "url": "https://www.elitefencersclub.com/location-hours",
+          "retrieved_at": "2026-10-07T17:15:00-04:00",
+          "note": "'Contact us for the most up-to-date class times'"
+        }
+      ],
+      "override": {
+        "source": "chat",
+        "from": "Frank",
+        "at": "2026-10-07T17:32:59-04:00",
+        "fact": "Fri Mini Musketeers moved to 4:15 PM (end time not given)"
+      }
+    },
+    {
+      "slot": "Secondary A (Desk fill) + NAC Epee by Day box",
+      "itemId": "gather-october-nac-orlando",
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:18:48-04:00",
+      "urls": [
+        {
+          "url": "https://www.usafencing.org/2026-october-nac",
+          "retrieved_at": "2026-10-07T18:10:00-04:00",
+          "facts": "Oct 9-12, Orange County Convention Center, Orlando FL, free to the public, Live Results link"
+        },
+        {
+          "url": "https://www.usafencing.org/news/2025/october/09/october-2026-nac-coming-to-orlando-florida",
+          "retrieved_at": "2026-10-07T18:20:00-04:00",
+          "facts": "first NAC / first tournament of 2026-27 national calendar; early chance at national ranking points; first Orlando return since 2023"
+        },
+        {
+          "url": "https://fencingtracker.com/tournament/1776",
+          "retrieved_at": "2026-10-07T18:15:00-04:00",
+          "facts": "epee events by day (Fri DV1ME, CDTWE, PARAME, PARAWE; Sat CDTME, CDTTMWE; Sun DV1WE, CDTTMME; Mon Y14WE, Y14ME)"
+        },
+        {
+          "url": "https://fencingtracker.com/event/21101",
+          "retrieved_at": "2026-10-07T18:15:00-04:00",
+          "facts": "DV1ME 383 approved entrants"
+        },
+        {
+          "url": "https://fencingtracker.com/event/21105",
+          "retrieved_at": "2026-10-07T18:15:00-04:00",
+          "facts": "CDTWE 200 approved entrants"
+        },
+        {
+          "url": "https://fencingtracker.com/event/21129",
+          "retrieved_at": "2026-10-07T18:15:00-04:00",
+          "facts": "Y14ME 172 approved entrants"
+        }
+      ]
+    },
+    {
+      "slot": "Secondary B (Desk fill)",
+      "itemId": "gather-asian-games-song-sera-epee",
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:19:01-04:00",
+      "urls": [
+        {
+          "url": "https://en.yna.co.kr/view/AEN20260922011451320",
+          "retrieved_at": "2026-10-07T18:20:00-04:00",
+          "facts": "Sept 22, 2026; beat Kiria Tikanah Abdul Rahman (Singapore) 15-8 in final"
+        },
+        {
+          "url": "https://www.koreaherald.com/article/10882607",
+          "retrieved_at": "2026-10-07T18:20:00-04:00",
+          "facts": "QF and SF 15-14; trailed Terayama 14-13 in SF, scored final two; age 33; two-time world champion; no prior individual Asian Games/Olympic gold"
+        },
+        {
+          "url": "https://news.sbs.co.kr/english/article.do?news_id=N1008766604",
+          "retrieved_at": "2026-10-07T18:20:00-04:00",
+          "facts": "corroboration"
+        }
+      ]
+    },
+    {
+      "slot": "TV/international short (Desk fill)",
+      "itemId": "gather-casablanca-epee-wc",
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:18:31-04:00",
+      "urls": [
+        {
+          "url": "https://fie.org/tournaments/2026/115",
+          "retrieved_at": "2026-10-07T18:10:00-04:00",
+          "facts": "Oct 15-18; 68 nations, 579 athletes; men's indiv Oct 15-17, women's Oct 16-17, team events Oct 18"
+        }
+      ]
+    },
+    {
+      "slot": "secondary short",
+      "itemId": "chat-remise-anderson-app",
+      "source": "chat",
+      "from": "Frank",
+      "at": "2026-10-07T12:59:23-04:00",
+      "urls": [
+        {
+          "url": "https://apps.apple.com/us/app/remise-fencing-journal/id6799173957",
+          "retrieved_at": "2026-10-07T12:59:23-04:00"
+        }
+      ]
+    },
+    {
+      "slot": "Parent Q&A",
+      "itemId": "chat-qa-points-youth",
+      "source": "chat",
+      "from": "Frank",
+      "at": "2026-10-07T13:26:00-04:00",
+      "urls": [
+        {
+          "url": "https://www.usafencing.org/news/2026/june/05/a-simpler-path-through-the-sport-inside-usa-fencing-s-new-points-and-events-structure",
+          "retrieved_at": "2026-10-07T13:26:00-04:00",
+          "facts": "trial from Aug 1, 2026 for Cadet, Junior, Division I; Youth not in trial"
+        },
+        {
+          "url": "https://www.usafencing.org/new-points-and-events-structure",
+          "retrieved_at": "2026-10-07T13:26:00-04:00"
+        }
+      ]
+    },
+    {
+      "slot": "masthead flank",
+      "source": "flank-quotes.json",
+      "quip": "Know yourself, know your enemy, know where you left your glove."
+    }
+  ]
+}

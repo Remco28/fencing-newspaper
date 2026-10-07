@@ -1,0 +1,172 @@
+{
+  "issue": "2026-10-08",
+  "publish_date": "2026-10-08",
+  "weekday": "Thursday",
+  "edition": "Thursday Edition",
+  "volume": "I",
+  "number": 1,
+  "dateline_meta": "Vol. I — No. 1 · Chatham, N.J. · October 8, 2026",
+  "pretend": false,
+  "first_real_issue": true,
+  "prior_issues_checked": "issues/ contained only 2026-10-14 (pretend/sample, sources.json pretend:true) — this is No. 1.",
+  "status": "PROOF — awaiting Frank approval (gate 2). Not approved for print.",
+  "proof_mark_note": "Template A has no proof-mark convention (STYLE-GUIDE furniture frozen; no SAMPLE/PROOF badges allowed), so proof status lives here and in the HTML <title> only — the printed sheet carries no PROOF stamp.",
+  "template": "Template A (rails from issues/2026-10-14 v3.14; CSS copied verbatim + small composition additions: .qa pattern from prototype/qa-block.html, .board-split/.board-cap for side-by-side boards inside one tabular .box, stacked-article margins, left-aligned .boxnote)",
+  "approvals": "issues/2026-10-08/approvals.json (copy of budget-demo/submissions/budget-20261007-172024.json, submitted 2026-10-07T17:20:24-04:00)",
+  "render": {
+    "tool": "prototype/render.py (Chrome CDP printToPDF, no header/footer)",
+    "pdf": "issues/2026-10-08/paper.pdf",
+    "previews": [
+      "issues/2026-10-08/preview-p1.png",
+      "issues/2026-10-08/preview-p2.png"
+    ],
+    "preview_dpi": 150,
+    "instruments": {
+      "pages": 2,
+      "p1_gap_in": 0.16,
+      "p2_gap_in": 0.2,
+      "p1_row_spread_in": 0.24,
+      "p2_row_spread_in": 0.49,
+      "type_floor": "render.py reported n/a (instrument quirk, same as before); smallest text by CSS = 7pt (captions, board headers, footer); flanks 6.5pt are locked furniture"
+    }
+  },
+  "pages": {
+    "1": [
+      {
+        "slot": "lead/feature",
+        "itemId": "gather-nj-hs-season-primer",
+        "headline": "School Fencing Season Starts Nov. 30",
+        "words": 453,
+        "span": 2,
+        "note": "Frank-vetted text verbatim (non-breaking spaces only)"
+      },
+      {
+        "slot": "feature_photo",
+        "itemId": "chat-photo-nj-hs-dual-meet-morris-hills",
+        "file": "media/nj-hs-dual-meet-morris-hills-crop.jpeg",
+        "span": 2,
+        "printed_height_in": 1.9,
+        "crop": "Desk photo-desk crop 1280x720 -> 1280x490 (rows 150-640: ceiling/rafters + some floor trimmed) to stay under the ~2.2in ceiling; grayscale",
+        "caption": "A high school dual meet at Morris Hills High School, home of the state team finals."
+      },
+      {
+        "slot": "club-results",
+        "itemId": "result-syc",
+        "rows": 3,
+        "note": "Penny Young per roster; Y12/Y14 women's epee confirmed via FencingTracker SYC event pages"
+      },
+      {
+        "slot": "glance",
+        "itemId": "gather-nj-hs-season-primer",
+        "rows": 7,
+        "note": "Season at a Glance box; row labels shortened for the rail"
+      },
+      {
+        "slot": "fleche_sidebar",
+        "itemId": "gather-nj-hs-fleche-rule",
+        "headline": "School Rules Let the Flèche Fly",
+        "words": 190,
+        "note": "verbatim"
+      }
+    ],
+    "2": [
+      {
+        "slot": "signup",
+        "itemIds": [
+          "email-frank-medeo-entries-2026-10-07",
+          "email-agentmail-morris-cup-entries-2026-10-07"
+        ],
+        "rows": 12,
+        "entries": 31,
+        "note": "Medeo (Sun Oct 11, 2 entries) + Morris Cup (Oct 24-25, all 29 entries / 20 fencers — Frank-approved exception to row cap); Medeo is UPCOMING for a Thu Oct 8 issue"
+      },
+      {
+        "slot": "club-events",
+        "itemId": "web-efc-standing-schedule",
+        "rows": 10,
+        "note": "Website class names used throughout; Fri Mini Musketeers 4:15 PM start only (Frank chat 17:32); private-lesson rows folded into one note line"
+      },
+      {
+        "slot": "secondary-a (Desk fill)",
+        "itemId": "gather-october-nac-orlando",
+        "headline": "NAC Opens National Season in Orlando",
+        "words": 93,
+        "plus": "NAC Epee by Day box (4 rows)",
+        "note": "No Elite FC names printed"
+      },
+      {
+        "slot": "club_photo",
+        "itemId": "club-newsletter-photo-1",
+        "file": "media/club-newsletter-photo-1-crop.jpeg",
+        "printed_height_in": 2.18,
+        "crop": "EXIF-rotated portrait 480x640 -> 480x450 (rows 100-550; top banner + shoes trimmed) to stay under ~2.2in",
+        "caption": "The club’s Oct. 5 newsletter ran this podium photo with its Ben Gutenberg SYC congratulations. Results on page one.",
+        "caption_basis": "Source email places this image directly after the SYC congratulations; no alt text, no names, event not stated — caption claims only placement"
+      },
+      {
+        "slot": "secondary_short",
+        "itemId": "chat-remise-anderson-app",
+        "headline": "Club Parent Builds Fencing Journal App",
+        "words": 66,
+        "note": "Dropped 'Foil, epee, and saber' line (epee-only rule); App Store URL replaced by search phrase"
+      },
+      {
+        "slot": "secondary-b (Desk fill)",
+        "itemId": "gather-asian-games-song-sera-epee",
+        "headline": "Song Rallies to Asian Games Gold",
+        "words": 85,
+        "note": "Verified vs Yonhap/Korea Herald/SBS; team-silver claims not printed"
+      },
+      {
+        "slot": "tv/international (Desk fill)",
+        "itemId": "gather-casablanca-epee-wc",
+        "headline": "World Cup Epee Heads to Casablanca",
+        "words": 43
+      },
+      {
+        "slot": "parent_qa",
+        "itemId": "chat-qa-points-youth",
+        "words": 43,
+        "note": "anonymous, no byline; added 'which started Aug. 1' from the vetted provenance"
+      }
+    ]
+  },
+  "desk_fill": [
+    "gather-october-nac-orlando (+ NAC Epee by Day box)",
+    "gather-asian-games-song-sera-epee",
+    "gather-casablanca-epee-wc"
+  ],
+  "flank_quip": "Know yourself, know your enemy, know where you left your glove.",
+  "not_printed": [
+    {
+      "what": "THE WEAPON (exploded epee)",
+      "why": "held for issue after next (Frank)"
+    },
+    {
+      "what": "ft-nac-efc-registrations-2026-10-07 (4 EFC fencers on FencingTracker NAC lists)",
+      "why": "unconfirmed; parent brief + Frank vet note require confirmation before names print; staged unvetted for Frank"
+    },
+    {
+      "what": "Ratings earned / NJ HS roundup / deadlines / comic / TV box",
+      "why": "excluded in budget; no real items"
+    },
+    {
+      "what": "club-newsletter-photo-2",
+      "why": "not in photoIncludes"
+    },
+    {
+      "what": "Asian Games team-epee silvers",
+      "why": "not verified"
+    }
+  ],
+  "open_flags": [
+    "NJ.com snippet-sourced facts in the primer still CLICK-CHECK pending: Chatham girls' four straight Santellis; Chatham Morris County streaks (boys 7th, girls 5th — sourced to newjerseyhills.com/Chatham Courier via snippet); both 2026 state finals 14-13 (Bergen Tech over Columbia; Columbia girls over Morris Hills).",
+    "Primer: 27-bout format official source is NJSIAA's 2014 guidelines (12 years old); 2026-27 NJSIAA rules/regs not posted — eligibility + top-36 qualifying written as last season's.",
+    "Flèche sidebar: exact year the one-crossover limit ended unknown (2018-2021); 2026-27 rules not posted.",
+    "Photo crops: Morris Hills (span 2) and podium photo were cropped on the photo desk (not CSS) to meet the ~2.2in ceiling — Frank to OK the crops.",
+    "Podium photo caption claims only that the newsletter ran it with the SYC congrats; who is pictured / which event is not stated in the source.",
+    "Class schedule: website freshness unknown; Mini Musketeers end time unknown (start only printed); class names follow the website ('Little Musketeers', 'Group class') rather than the emails ('Musketeers', 'Advanced').",
+    "Shah-Mirani (Ash) vs Shah Mirani (Rahi): printed as registered (roster spelling_unresolved).",
+    "FencingTracker lists EFC fencers at the October NAC (Penny Young CDTWE+Y14WE, Amina Gore CDTWE, Sheth Anaya? CDTWE [name garbled], Maksim Milinkovic DV1ME+CDTME) — confirm to add an NAC block to Go Cheer."
+  ]
+}

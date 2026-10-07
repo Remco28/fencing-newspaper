@@ -1,0 +1,201 @@
+{
+  "publishDate": "2026-10-13",
+  "practice": true,
+  "pretend": false,
+  "targetWeek": "next",
+  "includedSlots": [
+    {
+      "slot": "feature",
+      "name": "Lead → Feature (NJ HS season primer)",
+      "headline": "School Fencing Season Starts Nov. 30",
+      "itemId": "gather-nj-hs-season-primer",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "glance",
+      "name": "Feature box — Season at a glance",
+      "headline": "Season at a glance (2026–27, NJSIAA)",
+      "itemId": "gather-nj-hs-season-primer",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "fleche",
+      "name": "Feature sidebar — the flèche",
+      "headline": "School Rules Let the Flèche Fly",
+      "itemId": "gather-nj-hs-fleche-rule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-results",
+      "name": "Club results box",
+      "headline": "Ben Gutenberg SYC — Elite FC finishes",
+      "itemId": "result-syc",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "medeo",
+      "name": "Medeo — results pending (was signup)",
+      "headline": "Medeo Youth Challenge #3 — Sun. Oct. 11",
+      "itemId": "email-frank-medeo-entries-2026-10-07",
+      "vetted": true,
+      "stale": true
+    },
+    {
+      "slot": "remise",
+      "name": "Secondary A — club short",
+      "headline": "Club Parent Ships Remise Journal App",
+      "itemId": "chat-remise-anderson-app",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup",
+      "name": "Signup board — who’s entered",
+      "headline": "Morris Cup RYC/RJCC — Rockland Community College, Suffern, N.Y., Oct. 24–25 · 20 Elite FC fencers, 29 entries (all epee)",
+      "itemId": "email-agentmail-morris-cup-entries-2026-10-07",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-events",
+      "name": "Club events — weekly class schedule",
+      "headline": "Weekly group classes (club website)",
+      "itemId": "web-efc-standing-schedule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "qa",
+      "name": "Parent Q&A",
+      "headline": "Parent Q&A — New Points & Youth",
+      "itemId": "chat-qa-points-youth",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "ratings",
+      "name": "Ratings earned",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-b",
+      "name": "Secondary B",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ HS roundup",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines box",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "comic",
+      "name": "Comic",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tv",
+      "name": "TV / streaming",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "cand-gather-casablanca-epee-wc",
+      "name": "Candidate → Secondary B or TV row",
+      "headline": "Casablanca Hosts Senior Epee World Cup Oct 15–18",
+      "itemId": "gather-casablanca-epee-wc",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "cand-gather-october-nac-orlando",
+      "name": "Candidate → Secondary B (only as results)",
+      "headline": "October NAC Opens Season in Orlando",
+      "itemId": "gather-october-nac-orlando",
+      "vetted": true,
+      "stale": true
+    },
+    {
+      "slot": "cand-gather-asian-games-song-sera-epee",
+      "name": "Candidate → Secondary B",
+      "headline": "Song Se-ra Takes Asian Games Women’s Epee Gold",
+      "itemId": "gather-asian-games-song-sera-epee",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "cand-gather-morris-cup-ryc-oct25",
+      "name": "Candidate → Deadlines (1 row)",
+      "headline": "Morris Cup RYC/RJCC Oct 25 — Suffern, NY",
+      "itemId": "gather-morris-cup-ryc-oct25",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "cand-gather-college-path-shamel-epee",
+      "name": "Candidate → Stretch filler (rail short)",
+      "headline": "College-Path Note: UNC’s Shamel Took NCAA Epee Title",
+      "itemId": "gather-college-path-shamel-epee",
+      "vetted": false,
+      "stale": false
+    }
+  ],
+  "photoIncludes": [
+    "chat-photo-nj-hs-dual-meet-morris-hills",
+    "club-newsletter-photo-1"
+  ],
+  "notes": "PRACTICE budget for next (publish Tue Oct 13, 2026 — Desk call; Mon Oct 12 alt). Proposed: NJ HS primer feature + glance box + flèche sidebar + Morris Hills photo; SYC results; Morris Cup who’s-entered (all 29 entries, Frank-approved); club-website class schedule (needs Vet); Remise short; Parent Q&A. NOT proposed: Medeo as signup (stale — results-pending only); ratings (empty); THE WEAPON (held after-next). Needs Vet: primer, flèche, and any candidate you want in. Click-check NJ.com streak/finals facts.",
+  "slotNotes": {
+    "medeo": "We are publishing this Thursday (tomorrow), results don't matter yet."
+  },
+  "order": [
+    "feature",
+    "glance",
+    "fleche",
+    "club-results",
+    "medeo",
+    "ratings",
+    "remise",
+    "secondary-b",
+    "nj-hs",
+    "signup",
+    "club-events",
+    "qa",
+    "deadlines",
+    "comic",
+    "tv",
+    "cand-gather-casablanca-epee-wc",
+    "cand-gather-october-nac-orlando",
+    "cand-gather-asian-games-song-sera-epee",
+    "cand-gather-morris-cup-ryc-oct25",
+    "cand-gather-college-path-shamel-epee"
+  ],
+  "submittedAt": "2026-10-07T17:20:24-04:00"
+}

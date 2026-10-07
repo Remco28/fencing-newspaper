@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>En Garde Gazette — Vol. I No. 1 — October 8, 2026 (PROOF)</title>
+<style>
+  @page { size: Letter; margin: 0.5in 0.5in 0.4in 0.5in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt; line-height: 1.26; color: #000;
+    font-variant-numeric: tabular-nums; }
+  .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
+  .page:last-child { page-break-after: auto; }
+  .page .footer { margin-top: auto; }
+
+  .masthead { display: flex; align-items: center; gap: 18pt; }
+  /* margin on img clears hairlines from PNG flourishes (art runs to image edges) */
+  .masthead img { display: block; width: 50%; height: auto; margin: 0 10pt; flex: none; }
+  /* Flanks: newspaper ears — clear air from logo (hairlines must not kiss masthead) */
+  .flank { flex: 1; min-width: 0; padding: 5pt 7pt; margin: 0;
+    border-top: 0.75pt solid #000; border-bottom: 0.75pt solid #000;
+    line-height: 1.22; }
+  .flank.left {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.5pt; font-variant: small-caps; letter-spacing: 0.06em;
+    text-align: center; font-weight: 400; }
+  .flank.right {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.8pt; font-style: italic; letter-spacing: 0.01em;
+    text-align: center; font-weight: 400; }
+
+  /* Dateline: centered edition word (display face) + single meta line under it — not three-span */
+  .dateline { text-align: center;
+    border-top: 3pt double #000; border-bottom: 2pt solid #000;
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+  .dateline .edition {
+    font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
+    font-weight: 700; font-size: 12.5pt; line-height: 1.02;
+    letter-spacing: 0.16em; text-transform: uppercase; }
+  .dateline .meta {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.5pt; letter-spacing: 0.05em; margin-top: 1.5pt;
+    font-variant: small-caps; font-weight: 400; }
+
+  .cols3 { display: flex; gap: 9pt; }
+  .cols3 > .c { flex: 1; min-width: 0; }
+  .cols3 > .span2 { flex: 2.06; }
+  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: 9pt; }
+  .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
+
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
+  /* Prose furniture: title + text ONLY — never wrap in .box (STYLE-GUIDE §8) */
+  .rail-block { margin-bottom: 6pt; padding: 0; border: none; }
+  .rail-block + .rail-block { margin-top: 2pt; } /* spacing only — no HR between stacked rails */
+  /* Shared title type; underline ONLY inside .box (tabular utilities) */
+  .boxtitle, .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 0.5pt;
+    padding-bottom: 2pt; margin-bottom: 3pt; }
+  .box > .boxtitle { border-bottom: 1pt solid #000; }
+  .rail-title { border: none; border-bottom: none; padding-bottom: 0; margin-bottom: 2pt; }
+
+  /* Per-slot type scale (STYLE-GUIDE §4) */
+  h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 18.5pt; line-height: 1.02; letter-spacing: -0.35pt; margin-bottom: 2pt; }
+  .span2 > p { font-size: 9pt; } /* lead body +0.5pt vs shorts */
+  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; } /* lead only */
+  h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; } /* shorts default */
+  .slot-a h2.head { font-size: 12pt; } /* Secondary A / page-2 featured */
+  .slot-a > p { font-size: 8.8pt; }
+  .slot-b h2.head { font-size: 10.5pt; } /* Secondary B / NJ HS */
+  .slot-feature h2.head { font-size: 13pt; line-height: 1.04; } /* page-2 span2 featured */
+  .slot-feature > p { font-size: 8.8pt; }
+  /* Byline ONLY for real guest authors — never "Gazette Staff" (PLAN §1b) */
+  .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; margin-bottom: 3pt; }
+  p { margin-bottom: 3pt; text-align: justify; hyphens: auto; }
+  p:last-child { margin-bottom: 0; }
+  .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
+  /* Page 2: vertical rhythm — no HRs, no rail-title underlines */
+  .page:last-child > .cols3 { margin-bottom: 6pt; }
+  .page:last-child > .cols3:last-of-type { margin-bottom: 0; }
+
+  table.board { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 8.5pt; }
+  table.board th { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; text-align: left; border-bottom: 1.5pt solid #000; padding: 1pt 4pt 1pt 0; }
+  table.board td { border-bottom: 0.5pt solid #000; padding: 1pt 4pt 1pt 0; vertical-align: top; }
+  table.board tr:last-child td { border-bottom: none; }
+  td.r, th.r { text-align: right; }
+  table.board th.r { text-align: right; }
+  td.num { text-align: right; white-space: nowrap; }
+
+  .photo { margin-bottom: 3pt; }
+  .photo img { display: block; width: 100%; height: auto; /* no silent crop — full frame */
+    filter: grayscale(100%); }
+  .caption { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; margin-top: 2pt;
+    text-align: left; line-height: 1.3; }
+
+  .footer { border-top: 2.5pt solid #000; margin-top: 1pt; padding-top: 2pt;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt;
+    display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: 0.3pt; }
+  /* ---- Issue 2026-10-08 composition additions (no furniture changes) ---- */
+  /* Parent Q&A pattern (STYLE-GUIDE §8a; prototype/qa-block.html) */
+  .qa .q { font-style: italic; font-weight: bold; margin-bottom: 2pt; text-align: left; }
+  .qa .q::before { content: "Q. "; font-style: normal; font-weight: 900;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  .qa .a { margin-bottom: 0; text-align: justify; hyphens: auto; }
+  .qa .a::before { content: "A. "; font-family: "Arial", "Liberation Sans", sans-serif;
+    font-weight: 900; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  /* Lead run-in labels */
+  .span2 p b.run { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 8pt; letter-spacing: 0.2pt; }
+  /* Big signup board: two tables side by side inside one tabular .box */
+  .board-split { display: flex; gap: 12pt; }
+  .board-split > div { flex: 1; min-width: 0; }
+  .board-cap { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 3pt 0 1pt 0; }
+  .board-cap:first-child { margin-top: 0; }
+  .board-cap span { font-weight: 400; text-transform: none; letter-spacing: 0; font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  .boxnote { margin-top: 3pt; }
+  /* Stacked articles/rails inside one column: air between pieces (margin only, never an HR) */
+  .c > .slot-b + .slot-b, .c > .box + .slot-b, .c > .photo + .slot-b { margin-top: 5pt; }
+  .c > .slot-b + .rail-block { margin-top: 6pt; }
+  .boxnote { text-align: left; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 (FRONT) ==================== -->
+<div class="page">
+  <div class="masthead">
+    <div class="flank left">Published by a fencing parent with a bot.</div>
+    <img src="../../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly">
+    <div class="flank right">Know yourself, know your enemy, know where you left your glove.</div>
+  </div>
+  <div class="dateline">
+    <div class="edition">Thursday Edition</div>
+    <div class="meta">Vol. I — No. 1 &nbsp;·&nbsp; Chatham, N.J. &nbsp;·&nbsp; October 8, 2026</div>
+  </div>
+
+  <div class="cols3 ruled">
+    <div class="c span2">
+      <h1 class="head">School Fencing Season Starts Nov.&nbsp;30</h1>
+      <p class="dek">Three weapons, 27 bouts, one team score: what Elite FC families should know before New Jersey’s 2026–27 high school season.</p>
+      <div class="photo">
+        <img src="media/nj-hs-dual-meet-morris-hills-crop.jpeg" alt="High school epee bout in the Morris Hills High School gym">
+        <p class="caption">A high school dual meet at Morris Hills High School, home of the state team finals.</p>
+      </div>
+      <p>New Jersey high school fencing is a team sport first, which can surprise club families used to fencing for themselves. It also covers all three weapons, so your epeeist will have foil and sabre teammates.</p>
+      <p><b class="run">The dual meet.</b> A school team has three squads (sabre, foil and epee), and each sends three starters to the strip. Each starter fences all three opposing starters, so a meet runs 27 bouts, nine per weapon. Bouts go to five touches or three minutes, the length of a pool bout. Each win is one point for the school. The first team to 14 clinches, but all 27 are fenced, and coaches can send in subs.</p>
+      <p><b class="run">How it differs.</b> A USA Fencing tournament is individual: pools of five-touch bouts, then a single-elimination bracket of 15-touch bouts. A dual meet has no bracket. Every bout counts the same, so one epee bout can swing a night. Both 2026 state finals ended 14-13.</p>
+      <p><b class="run">The calendar.</b> NJSIAA, the state’s school sports body, runs the season under NCAA rules. For 2026–27, optional tryouts are Nov.&nbsp;23–25, first practice is Nov.&nbsp;30 and meets may start Dec.&nbsp;7. Teams can fence up to 16 regular-season contests.</p>
+      <p><b class="run">The big days.</b> Mid-January brings the Santelli Tournament (girls) and Cetrulo Tournament (boys) at Drew University in Madison. The state’s high school coaches association runs both, and USA Fencing calls them the largest and oldest high school team tournaments in the world. Squads place in each weapon, and the lowest combined total wins. They carry prestige but are not state titles. Chatham’s girls have won the last four Santellis. Morris County holds its own tournament in late January; in 2026 Chatham’s boys won it for a seventh straight year and its girls for a fifth.</p>
+      <p>The NJSIAA team tournament starts Feb.&nbsp;9, 2027. The top 16 teams by power points in the North and South brackets qualify, and higher seeds host until the North and South champions meet Feb.&nbsp;25 at Morris Hills High School. Last winter Bergen Tech won the boys title and Columbia the girls.</p>
+      <p>Individual states are Feb.&nbsp;27 at Hunterdon Central. Under last season’s rules, the top 36 fencers per weapon in dual-meet rankings on the Touch By Touch app qualify; district qualifiers were dropped in 2025–26. A team or individual state title is the summit.</p>
+      <p><b class="run">For club fencers.</b> Last season, state-tournament eligibility required fencing in at least half of a team’s meets, a rule NJSIAA says it is revising. NJSIAA also denies petitions from fencers who skip a state championship for a national, regional or other outside event. Check February against your USA Fencing calendar early. Can club epeeists flèche? See sidebar.</p>
+      <p>Follow along at NJ.com’s high school fencing pages and njsiaa.org.</p>
+    </div>
+    <div class="c">
+      <div class="box">
+        <div class="boxtitle">Ben Gutenberg SYC — Elite FC</div>
+        <table class="board">
+          <colgroup><col><col style="width:1.2in"></colgroup>
+          <tr><th>Fencer</th><th class="r">Finish (Epee)</th></tr>
+          <tr><td>Mila Siu</td><td class="r">3rd, Y12 Women</td></tr>
+          <tr><td>Penny Young</td><td class="r">6th, Y12 Women</td></tr>
+          <tr><td>Stella Kuo</td><td class="r">Top 16, Y14 Women</td></tr>
+        </table>
+        <p class="boxnote">Super Youth Circuit, Rochester, N.Y., <span style="white-space:nowrap">Oct.&nbsp;2–4</span>. Podium photo, page two.</p>
+      </div>
+      <div class="box">
+        <div class="boxtitle">Season at a Glance</div>
+        <table class="board">
+          <colgroup><col style="width:0.78in"><col></colgroup>
+          <tr><th class="r">When</th><th>What (2026–27)</th></tr>
+          <tr><td class="num">Nov.&nbsp;23–25</td><td>Optional tryouts</td></tr>
+          <tr><td class="num">Nov.&nbsp;30</td><td>First practice</td></tr>
+          <tr><td class="num">Dec.&nbsp;7</td><td>Meets may begin</td></tr>
+          <tr><td class="num">Mid-Jan.</td><td>Santelli, Cetrulo (Drew)</td></tr>
+          <tr><td class="num">Feb.&nbsp;9–23</td><td>State team rounds</td></tr>
+          <tr><td class="num">Feb.&nbsp;25</td><td>Team finals, Morris Hills</td></tr>
+          <tr><td class="num">Feb.&nbsp;27</td><td>Individual states</td></tr>
+        </table>
+        <p class="boxnote">2027 Santelli (girls) and Cetrulo (boys) dates are not out yet; 2026’s were Jan.&nbsp;17–18.</p>
+      </div>
+      <div class="slot-b">
+        <h2 class="head">School Rules Let the Flèche Fly</h2>
+        <p>A flèche (French for “arrow”) is an aggressive attack in which the fencer’s back foot swings past the front one, like an exaggerated stride. For years, New Jersey high schoolers couldn’t use it. NJSIAA’s 2014–15 fencing guidelines said it flatly: “NO fleching is permitted.”</p>
+        <p>Coaches pushed back. A 2016–17 trial rule let foil and epee fencers cross their feet once per action, and the state coaches association argued it over at its spring and fall 2017 meetings. Safety in cramped gyms was the worry; one coach said a flèche had hit a coach standing beside the strip at a state tournament. By fall the coaches’ summary was simple: running attacks out, garden-variety flèche fine.</p>
+        <p>The limit has since left the books. NJSIAA’s 2021–22 rules kept old items like three-minute bouts but listed no flèche restriction. Current rules say NCAA rules govern, and no NJSIAA changes are posted. NCAA uses USA Fencing’s rulebook, which allows the flèche in epee and foil but penalizes crashing into an opponent; sabre bans crossing the feet forward at all.</p>
+        <p>The 2026–27 rules aren’t out yet, so check with your coach before you let one fly.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 1</span>
+    <span>For fun only — facts aren't guaranteed accurate.</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 (BACK) ==================== -->
+<div class="page">
+  <div class="dateline" style="margin-top:0;">
+    <div class="edition">Page Two</div>
+    <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 1</div>
+  </div>
+
+  <div class="box w3">
+    <div class="boxtitle">Go Cheer — Elite FC Entries (All Epee)</div>
+    <div class="board-split">
+      <div>
+        <div class="board-cap">Medeo Youth Challenge #3 <span>· Bound Brook, N.J. · Sun., Oct.&nbsp;11</span></div>
+        <table class="board">
+          <colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup>
+          <tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr>
+          <tr><td class="num">9:30 AM</td><td>Y12 Women</td><td>Christina Jiang</td></tr>
+          <tr><td class="num">11:30 AM</td><td>Y10 Mixed</td><td>Bryce Cheng</td></tr>
+        </table>
+        <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sat., Oct.&nbsp;24</span></div>
+        <table class="board">
+          <colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup>
+          <tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr>
+          <tr><td class="num">8:00 AM</td><td>Junior Women</td><td>Amina Gore, Olivia Hayes</td></tr>
+          <tr><td class="num">8:00 AM</td><td>Y12 Men</td><td>Kian Jaising, Joshua Jeong, Remy Ng</td></tr>
+          <tr><td class="num">12:30 PM</td><td>Cadet Men</td><td>Pablo Aguirre, Connor Anderson, Nico Ng, Caden Wu</td></tr>
+          <tr><td class="num">3:00 PM</td><td>Y14 Women</td><td>Stella Kuo, Mila Siu</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sun., Oct.&nbsp;25</span></div>
+        <table class="board">
+          <colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup>
+          <tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr>
+          <tr><td class="num">8:00 AM</td><td>Cadet Women</td><td>Amina Gore, Adela Sullivan, Penny Young</td></tr>
+          <tr><td class="num">8:00 AM</td><td>Junior Men</td><td>Pablo Aguirre, Nico Ng</td></tr>
+          <tr><td class="num">10:00 AM</td><td>Y8 Women</td><td>Madeline Siu</td></tr>
+          <tr><td class="num">10:30 AM</td><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu</td></tr>
+          <tr><td class="num">1:30 PM</td><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani</td></tr>
+          <tr><td class="num">3:30 PM</td><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong, Rahi Shah Mirani, Maximus Siu</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="boxnote"><b>Medeo is this Sunday.</b> Go cheer Christina and Bryce, who are both entered at Morris Cup too. That one is Oct.&nbsp;24–25 at Rockland Community College’s Eugene Levy Field House, with 20 Elite FC fencers and 29 entries as of Wednesday. Not on the list? Check the tournament page for entry deadlines.</p>
+  </div>
+
+  <div class="box w3">
+    <div class="boxtitle">Weekly Classes at Elite FC</div>
+    <div class="board-split">
+      <div>
+        <table class="board">
+          <colgroup><col style="width:0.45in"><col style="width:1.15in"><col></colgroup>
+          <tr><th>Day</th><th class="r">Time</th><th>Class</th></tr>
+          <tr><td>Mon</td><td class="num">4:30–6:00 PM</td><td>Little Musketeers</td></tr>
+          <tr><td>Tue</td><td class="num">6:00–7:30 PM</td><td>Group class</td></tr>
+          <tr><td>Wed</td><td class="num">5:00–6:30 PM</td><td>Little Musketeers</td></tr>
+          <tr><td>Wed</td><td class="num">6:30–7:15 PM</td><td>Footwork class</td></tr>
+          <tr><td>Thu</td><td class="num">6:00–7:30 PM</td><td>Group class</td></tr>
+        </table>
+      </div>
+      <div>
+        <table class="board">
+          <colgroup><col style="width:0.45in"><col style="width:1.15in"><col></colgroup>
+          <tr><th>Day</th><th class="r">Time</th><th>Class</th></tr>
+          <tr><td>Fri</td><td class="num">4:15 PM</td><td>Mini Musketeers (ages 5–7)</td></tr>
+          <tr><td>Fri</td><td class="num">6:00–10:00 PM</td><td>Open bouting</td></tr>
+          <tr><td>Sat</td><td class="num">11:00 AM–12:30 PM</td><td>Little Musketeers</td></tr>
+          <tr><td>Sat</td><td class="num">1:00–2:30 PM</td><td>Group class</td></tr>
+          <tr><td>Sun</td><td class="num">—</td><td>Closed</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="boxnote">Mini Musketeers now starts at 4:15 on Fridays. Private lessons fill other open hours. Source: club website; check with the club for the latest.</p>
+  </div>
+
+  <div class="cols3 ruled">
+    <div class="c">
+      <div class="slot-a">
+        <h2 class="head">NAC Opens National Season in Orlando</h2>
+        <p>USA Fencing’s first national tournament of 2026–27, the October North American Cup, runs Friday through Monday, Oct.&nbsp;9–12, at the Orange County Convention Center in Orlando, Fla., USA Fencing’s first visit there since 2023. It gives fencers an early shot at national ranking points. Admission is free. Epee runs all four days (see box). The fields are deep: as of Wednesday, more than 380 fencers had registered for Division I men’s epee, 200 for Cadet women’s epee and 172 for Y14 men’s epee, according to FencingTracker. Live results will post at usafencing.org/2026-october-nac.</p>
+      </div>
+      <div class="box">
+        <div class="boxtitle">NAC Epee by Day</div>
+        <table class="board">
+          <colgroup><col style="width:0.62in"><col></colgroup>
+          <tr><th class="r">Day</th><th>Epee events</th></tr>
+          <tr><td class="num">Fri 10/9</td><td>Div. I Men · Cadet Women · Para Men and Women</td></tr>
+          <tr><td class="num">Sat 10/10</td><td>Cadet Men · Cadet Women’s Team</td></tr>
+          <tr><td class="num">Sun 10/11</td><td>Div. I Women · Cadet Men’s Team</td></tr>
+          <tr><td class="num">Mon 10/12</td><td>Y14 Men · Y14 Women</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="c">
+      <div class="photo">
+        <img src="media/club-newsletter-photo-1-crop.jpeg" alt="Podium photo from the Elite Fencers Club newsletter">
+        <p class="caption">The club’s Oct.&nbsp;5 newsletter ran this podium photo with its Ben Gutenberg SYC congratulations. Results on page one.</p>
+      </div>
+      <div class="slot-b">
+        <h2 class="head">Club Parent Builds Fencing Journal App</h2>
+        <p>Elite FC parent Eric Anderson has released Remise, a free fencing journal app on Apple’s App Store (iOS 17 or later). Fencers can log bouts, lessons and notes on opponents while they’re fresh, and import results from FencingTracker so head-to-head history stays in one place. There’s no account to make and no ads. Search “Remise Fencing Journal” on the App Store. Anderson says he welcomes feedback.</p>
+      </div>
+    </div>
+    <div class="c">
+      <div class="slot-b">
+        <h2 class="head">Song Rallies to Asian Games Gold</h2>
+        <p>South Korea’s Song Se-ra won women’s epee gold at the Asian Games in Japan on Sept.&nbsp;22, beating Singapore’s Kiria Tikanah Abdul Rahman 15-8 in the final. Getting there was the hard part. Song won her quarterfinal and semifinal 15-14 each. Against Japan’s Tamaki Terayama in the semis, she trailed 14-13, one touch from going home, and scored the last two. Song, 33, is a two-time world champion but had never won an individual Asian Games or Olympic title. Down 14-13 is not done.</p>
+      </div>
+      <div class="slot-b">
+        <h2 class="head">World Cup Epee Heads to Casablanca</h2>
+        <p>The senior epee World Cup circuit stops in Casablanca, Morocco, Oct.&nbsp;15–18, with 579 athletes from 68 nations entered, according to the FIE, fencing’s world governing body. Both individual events finish Saturday, Oct.&nbsp;17; the team events close it out Sunday. Results: fie.org.</p>
+      </div>
+      <div class="rail-block qa">
+        <div class="rail-title">Parent Q&amp;A</div>
+        <p class="q">Does the new points system affect my kid’s Youth events?</p>
+        <p class="a">No. USA Fencing’s trial points system, which started Aug.&nbsp;1, covers Cadet, Junior and Division I (Senior) events only. Youth events stay on the existing points tables; the trial does not touch them.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 1</span>
+    <span>For fun only — facts aren't guaranteed accurate.</span>
+  </div>
+</div>
+
+</body>
+</html>
