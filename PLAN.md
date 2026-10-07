@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.1
+# Fencing Newspaper — Plan v3.2
 Date: 2026-10-06
-Status: locked direction from Frank, details in progress (v3.1: AgentMail inbox + box/GitHub storage locked 2026-10-06 evening)
+Status: locked direction from Frank, details in progress (v3.2: single weekly edition Mon/Tue; Thursday cancelled; AgentMail + box/GitHub storage)
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -10,13 +10,14 @@ Work item: office work #21
 1 sheet, front + back, black & white, high-school reading level.
 Audience: Elite Fencers Club members (Chatham, NJ), **epee only — no foil, no saber.**
 
-Two editions per week:
-- **Monday morning: results edition.** What happened over the weekend.
-- **Thursday: signup edition.** Final reminder to enter upcoming tournaments + who from our club is already signed up.
+**One weekly issue** (locked 2026-10-06 evening): results + club signup encouragement on the same sheet.
+- **Default publish: Monday.** Frank can override.
+- **Auto-slip to Tuesday** when Elite FC members are competing on Monday (wait for those results before shipping). Dateline uses the **actual publish day** (not a forced "Monday Edition" label).
+- **Thursday edition cancelled** — too much cadence for a fun side project.
 
 Editorial control: **Frank only.** No parent/kid submissions. No coach involvement (skip coaching tips entirely).
 
-Automation: built to run under a scheduled bot — **Grok Bot (xAI) or OpenAI Dots** — at a chosen time. V1 runs **human-verified** (Frank approves PDF before print). Auto-print enabled only once issues look right.
+Automation: built to run under a scheduled bot — **Grok Bot (xAI)** — once per week. V1 runs **human-verified** (Frank approves PDF before print). Auto-print enabled only once issues look right.
 
 AI model is **swappable** by design. Template owns layout; model only fills fields.
 
@@ -65,43 +66,38 @@ Epee filter applies to everything: FIE, national, high-school, club. If a source
 - Every issue keeps `sources.json` (URL + retrieved date, or email message-ID + date).
 - Foil/saber items are dropped at fetch time, not rewritten.
 
-## 3. Sections (v3 — locked by Frank 2026-10-06)
+## 3. Sections (v3.2 — single weekly issue; Frank sorts CONTENT-HIERARCHY.md)
 
-Shared shell: masthead **En Garde Gazette** + descriptor "The Elite Fencers Club Weekly" (locked 2026-10-06; no "!" in the nameplate — the bang lives in headlines, not the masthead), date, edition tag (Monday Results / Thursday Signups), issue #,
-footer with print timestamp + archive pointer. Bylines: none for Frank, credit guest writers.
+Shared shell: masthead **En Garde Gazette** + descriptor "The Elite Fencers Club Weekly" (locked 2026-10-06; no "!" in the nameplate — the bang lives in headlines, not the masthead), **actual publish date** (Mon or Tue), issue #,
+footer with print timestamp. Bylines: none for Frank, credit guest writers.
 Weighting rule: club newsletter news > national/regional tournaments > locals.
+Canonical slot order + budgets: **CONTENT-HIERARCHY.md** (table order = cut priority). Summary:
 
-**Monday — Results edition (front / back), news-first**
-1. Lead epee result of the weekend (FIE or national if big, else top NJ/club result). 120–150 words.
-2. 1–2 more short epee articles (national/regional weight over locals). News beefier than scores.
-3. Club results box: Elite FC epeeists, event, place — from emailed results data.
-4. Ratings earned box: members' new ratings — always in, celebration.
-5. Scoreboard strip: 4–6 world/national epee one-liners.
-6. **Signup board (compact): available tournaments + Elite FC entrants.** Full version Thursday.
-7. Back: TV/streaming box (major events + where to watch) + 1 upcoming-deadline box + club events (from newsletter email).
+**Weekly — results + signup (front / back), news-first**
+1. Lead epee result of the weekend (FIE or national if big, else top NJ/club result).
+2. Club results + ratings earned (always in).
+3. 1–2 short national/regional articles + NJ HS roundup + scoreboard strip.
+4. **Signup board (core):** upcoming tournaments + Elite FC names already entered — purpose is to nudge more clubmates into competition. Cap **4 tournaments**; if one event has many names (~20), show fewer tournaments so names stay readable (2–8 rows total).
+5. Club events + deadlines box.
+6. Comic (sparingly) + TV/streaming box as space allows (lowest cut priority among listed slots).
 
-**Thursday — Signup edition (front / back), no rehash**
-1. Lead: "Entries close soon" — tournament name, close date, why it fits our fencers. 100–120 words. Bias to **local events with late / at-door registration** (Thursday signups are last-minute locals, not NACs planned months out).
-2. **Signup board (core, full): available tournaments + who from Elite FC is already entered**, grouped by event/day, with entry links as short print-friendly URLs. Seeing clubmates entered is the point — keep names prominent.
-3. Weekend logistics box: venue, check-in close times, what to bring — only if sourced from AskFRED/USFA event pages or emailed data.
-4. Back: pointer to last Monday's results (1 line, no rehash) + TV/streaming box + club events.
-5. Comic (sparingly, Frank-supplied via email) as space allows.
+Killed: Thursday edition; logistics box; Fencing 101; Milestones; About/corrections/archive placeholders.
 
 Maybe later: advice column ("Dear Ref") — no slot yet. Low priority: recruiting notes (only if genuinely good).
 Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coaching tips, foil/saber anything, editorials, long interviews. Photos pending photo-desk design (see work log 2026-10-06).
 
-## 4. Layout — fixed set, rotated
+## 4. Layout — fixed templates (Template A first)
 
-Frank's call: fixed templates, but **rotate among 2–3 locked templates** so it doesn't feel identical weekly.
+Frank's call: fixed templates, optionally rotate among 2–3 locked ones later so weeks don't feel identical. **Template B (Thursday) is cancelled** with the Thursday edition. V1 ships Template A (prototype `monday-v6`) adapted for the single weekly issue.
 
 Rules:
-- Templates A/B/C are designed once, print-tested, then frozen. Rotation is round-robin or Monday=A-results / Thursday=B-signups; no generative redesign.
+- Templates are designed once, print-tested, then frozen. No generative redesign weekly.
 - Content/ layout split stands: AI fills `issue.json` (strict schema + word limits + epee-only), template renders `paper.pdf` deterministically (HTML + print CSS → Chromium headless or WeasyPrint).
 - US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art only (photos pending photo-desk design).
 - ~600–700 words max per issue.
-- Per-issue folder: `issues/<date>-<edition>/` with `issue.json`, `sources.json`, derived `inputs/` (parsed results/club/frank extras), `approvals.json`, `paper.pdf`. Raw email bodies stay in AgentMail (not in git); cite them by message-ID in `sources.json`.
+- Per-issue folder: `issues/<YYYY-MM-DD>/` (publish date) with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`. Raw email bodies stay in AgentMail (not in git); cite them by message-ID in `sources.json`.
 
-Why rotate fixed templates instead of free design: same readability + reliable print, but visual variety. New template = design task with test print, never a weekly AI decision.
+Why fixed templates: same readability + reliable print. New template = design task with test print, never a weekly AI decision.
 
 ## 5. Inputs — AgentMail is the single channel (locked 2026-10-06 evening)
 
@@ -119,7 +115,7 @@ Still needed: allowlist (only Frank's app + Frank's forwards accepted), attachme
 
 ## 6. Automation + verification
 
-- Scheduler: Grok Bot or OpenAI Dots runs `make-issue.sh --edition monday|thursday` at set times (Mon ~6am, Thu ~6am — adjustable).
+- Scheduler: once weekly. Default Monday morning (exact time TBD, US Eastern). If results-app / start lists show Elite FC members competing that Monday, **hold and publish Tuesday** after those results land (unless Frank overrides).
 - V1: bot builds PDF + **waits for Frank's approve** on the local budget/proof page (chat is doorbell only). No auto-print until approved.
 - Later: `lp -d club-printer paper.pdf` auto-print after N clean issues.
 - API keys live in env file on the runner, never in git. Allowlisted inbox only.
@@ -130,32 +126,34 @@ live in STYLE-GUIDE.md. Voice rules stay here:
 - High-school reading level (FK 8–10). Explain jargon first use. Epee terms only.
 - Headlines ≤6 words, active verb. Full name + event + club on first local mention.
 - Ban list: "delve", "fast-paced world of", "testament to", snark.
-- Masthead/footer identical; only date/edition/issue # + template variant change.
+- Masthead/footer identical; only actual publish date + issue # (+ template variant if we add more later).
 
 ## 8. Resolved in v2 / still open
 
 Resolved:
 - [x] Epee only
-- [x] Mon results + Thu signups
-- [x] Signup board with club entrants
-- [x] Email inputs (results app + forwarded club mail)
+- [x] **One weekly issue** (Thursday edition cancelled 2026-10-06)
+- [x] Default Monday publish; auto-slip Tuesday if club fencing Monday; Frank can override
+- [x] Dateline = actual publish day
+- [x] Signup board is core (max 4 tournaments; names first; encourage competition)
+- [x] Logistics box / About-archive placeholders / Fencing 101 / Milestones killed for now
+- [x] Email inputs (results app + forwarded club mail) via AgentMail
 - [x] No coaching tips, coach not involved
 - [x] Frank-only editorial, no submissions
-- [x] Fixed templates, rotate 2–3
+- [x] Fixed templates (Template A first; no Template B)
 - [x] Swappable model
 - [x] Human-verified first, auto-print later
 - [x] Reddit verdict: search-discovery only
-
 - [x] Paper name — En Garde Gazette / The Elite Fencers Club Weekly (locked)
-- [x] V1 section lineup narrowed (CONTENT-HIERARCHY.md is canonical for slot order)
-- [x] Template A (Monday results) built through v6 + locked visual rules (STYLE-GUIDE.md)
-- [x] Inbox address — AgentMail `efc.weekly@agentmail.to` (not Gmail)
-- [x] Storage — box working copy + GitHub sync; everything except raw emails; PDFs in git for now
+- [x] V1 section lineup in CONTENT-HIERARCHY.md (table order = priority)
+- [x] Template A prototype through v6 + locked visual rules (STYLE-GUIDE.md)
+- [x] Inbox — AgentMail `efc.weekly@agentmail.to` (not Gmail)
+- [x] Storage — box working copy + GitHub sync; everything except raw emails
 
 Still open:
-1. Exact run times (Mon/Thu 6am OK? — all times US Eastern).
-2. Results-app email schema (fields: tournament, event, day, entrants, results, source IDs) + allowlist entries.
-3. Thursday data cutoff (proposal: entries as of Wed 8pm + fresh Thursday-morning refetch).
+1. Exact Monday run time (proposal ~6am US Eastern) + Tuesday slip publish time.
+2. How we detect "members competing Monday" reliably (results-app fields / AskFRED).
+3. Results-app email schema (tournament, event, day, entrants, results, source IDs) + allowlist.
 4. Printer model + who loads paper.
 5. Optional later: archive older PDFs outside git for posterity (not required).
 
@@ -167,11 +165,12 @@ past verdicts · PLAN owns narrative + decisions. On conflict, the canonical hom
 - [x] Lock name (En Garde Gazette) + v1 lineup (CONTENT-HIERARCHY.md)
 - [x] Build template A (Monday results) HTML/CSS, B&W test render
 - [x] Lock inbox address (AgentMail `efc.weekly@agentmail.to`) + box/GitHub storage
-- [ ] Confirm run times + Thursday cutoff with Frank
-- [ ] Define results-app email schema (fields: tournament, event, day, entrants, results, source IDs)
-- [ ] Build template B (Thursday signups) from locked patterns + zoomed QA
+- [x] Cancel Thursday edition; lock single weekly Mon/Tue slip rule
+- [ ] Confirm Monday run time + Tuesday slip time with Frank
+- [ ] Define results-app email schema + Monday-competitor detection fields
+- [ ] Adapt Template A for single weekly issue (signup board as core); no Template B
 - [ ] Build fetch per SOURCES.md checklist + email-ingest scripts (per-source degrade behavior)
-- [ ] 2 dry-run issues per edition with Frank red-pen, then enable scheduled bot
+- [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot
 - [ ] See also: SOURCES.md (standing checklist), SECTIONS-MENU.md (full options), REDDIT-SETUP.md
 
 ## 10. Approval design (locked 2026-10-06)

@@ -54,7 +54,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 ## Service / utility
 28. Calendar / events ✅ — this week at Elite FC + deadlines. (Back-page core.)
 29. Signup board ✅ — tournaments + Elite FC entrants. (Core both editions.)
-30. Logistics box ✅ — venue, check-in close, what to bring (sourced only). (Thursday core.)
+30. Logistics box ❌ — killed 2026-10-06 with Thursday edition (Frank: not sure what it was for).
 31. Classifieds / want ads 🔶 — "used epee body cords, size M, see desk". Free, community feel. Small box if demand exists.
 32. Public notices — ❌ skip (nothing to publish).
 33. Police log — ❌ skip. Fencing version: none. Good.
@@ -85,9 +85,9 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 52. How to read / submit footer ✅ — "tips by email to efc.weekly@agentmail.to; editor decides". (No submissions, but tips path needed.)
 53. Archive pointer ✅ — "past issues at <link>". 1 line.
 
-## Locked v1 lineup (from verdicts 2026-10-06 — supersedes the proposal below)
-- Monday: lead + 1–2 short articles + club results + ratings earned + scoreboard + compact signup + TV/streaming + deadlines + club events.
-- Thursday: signup lead + full signup board + logistics + Monday pointer + TV/streaming + club events + comic (sparingly).
+## Locked v1 lineup (updated 2026-10-06 evening — supersedes older Mon/Thu split)
+- **One weekly issue** (CONTENT-HIERARCHY.md is canonical): lead + club results + ratings + 1–2 shorts + NJ HS + scoreboard + **signup board (core, max 4 tournaments)** + club events + deadlines + comic (sparingly) + TV/streaming.
+- Thursday edition cancelled. Logistics / About-archive / Fencing 101 / Milestones out for now.
 - Maybe later: advice column. Low priority: recruiting. Cut: weather/food/travel/crossword/quiz/jokes.
 
 ## Name ideas (undecided — playing)
