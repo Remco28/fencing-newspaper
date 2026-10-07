@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.20
+# Fencing Newspaper — Plan v3.21
 Date: 2026-10-07
-Status: **sample taste LOCKED** (v3.14) + **ops cadence LOCKED** (v3.15; wording v3.19) + **reality/provenance LOCKED** (v3.16) + **email trust allowlist LOCKED** (v3.17) + **Parent Q&A category LOCKED** (v3.18) + **flexible weekly publish LOCKED** (v3.19) + **first-real-run decisions LOCKED** (v3.20: epee-assumed labels, content-heavy cut order, proof round). **Issue No. 1 published** (`issues/2026-10-08/`, Thursday Edition, approved by Frank 2026-10-07 18:40 ET). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + publish-morning full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Next: Issue No. 2 (week of Oct 12; THE WEAPON at span 2). Prior: v3.20 first-real-run decisions; v3.19 drop Mon/Thu split / flexible weekly; v3.18 Parent Q&A; v3.17 email trust; v3.16 reality lock; v3.14 taste lock.
+Status: **budget page v2** (v3.21: 1280×800 reading layout, questions for Frank, `answers` in submit) + **sample taste LOCKED** (v3.14) + **ops cadence LOCKED** (v3.15; wording v3.19) + **reality/provenance LOCKED** (v3.16) + **email trust allowlist LOCKED** (v3.17) + **Parent Q&A category LOCKED** (v3.18) + **flexible weekly publish LOCKED** (v3.19) + **first-real-run decisions LOCKED** (v3.20: epee-assumed labels, content-heavy cut order, proof round). **Issue No. 1 published** (`issues/2026-10-08/`, Thursday Edition, approved by Frank 2026-10-07 18:40 ET). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + publish-morning full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Next: Issue No. 2 (week of Oct 12; THE WEAPON at span 2). Prior: v3.20 first-real-run decisions; v3.19 drop Mon/Thu split / flexible weekly; v3.18 Parent Q&A; v3.17 email trust; v3.16 reality lock; v3.14 taste lock.
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -271,6 +271,7 @@ canonical home wins.
 - [x] **Sample v3.14 taste LOCKED** (Frank): dateline + flanks + §8 rail-title + no page-2 article HRs; docs match; reference `issues/2026-10-14/paper-v3.14.pdf`
 - [x] **First real weekly edition** — Issue No. 1, Thursday Edition Oct 8, 2026 (`issues/2026-10-08/`); proof v2 approved by Frank 2026-10-07 18:40 ET; Frank printed it
 - [x] Docs v3.20: first-real-run decisions + epee-assumed labels + content-heavy cut order (CHANGELOG.md)
+- [x] Docs v3.21: budget page v2 (practice.html redesign, lineup schema 2, `/thumb`, `answers`) — CHANGELOG.md
 - [x] Docs v3.19: drop Mon/Thu split — weekly tries Mon/Tue, later OK; gather loop phrased publish-morning (not Monday-hard)
 - [x] Docs v3.18: Parent Q&A category locked (hierarchy slot + STAGING kind `qa` + STYLE-GUIDE §8a + prototype)
 - [x] Docs v3.15: ops cadence locked (STAGING.md gather loop + SOURCES.md cadence header); dynamic layout marked PAUSED/deferred (§4)
@@ -293,6 +294,10 @@ canonical home wins.
   port 8766: `cd budget-demo && nohup python3 server.py &`) and opens it in Desk's desktop browser; Frank
   reviews / Vets / Submits through the Gazette Desk computer tab, or answers in chat and Desk applies them.
   Detail: STAGING.md Budget step.
+- **Budget page v2 (v3.21):** redesigned for Frank's 1280×800 remote view — fixed summary bar with
+  Submit, sections in reading order, one card per slot with questions for Frank answered in place
+  (`answers` in the submit JSON), collapsed draft/provenance, small cached thumbnails, no
+  animations. Monday routine rewrites `budget-demo/practice-lineup.json` (schema 2; STAGING.md).
 - Chat is DOORBELL only: the bot pings "budget ready" / "proof ready" — no approval state
   lives in chat (chat fragments across messages and forces scroll-to-reference; rejected as
   a surface). Chat *facts* still go to staging (see STAGING.md).

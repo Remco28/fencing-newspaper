@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Full-page screenshots of the running budget server via Chrome CDP (stdlib only).
 
-Usage: python3 budget-demo/screenshot.py [url] [out_prefix] [width]
+Usage: python3 budget-demo/screenshot.py [url] [out_prefix] [width] [viewport_height]
   default url  = http://127.0.0.1:8766/
   default out  = budget-demo/screens/practice-<YYYY-MM-DD>
 Writes <out>-full.png plus 2–3 readable slices <out>-1.png, -2.png, ... (<=3400px tall each).
 Slices need Pillow; the full PNG does not.
+
+Viewport mode (what Frank actually sees): pass a 4th arg, e.g. 800 →
+  python3 budget-demo/screenshot.py http://127.0.0.1:8766/ budget-demo/screens/budget-v2 1280 800
+writes <out>-vp-top.png and one <out>-vp-<section>.png per `section.sec` (scrolled so the
+section heading is at the top; fixed sidebar included). No full-page stitch in this mode.
 """
 import base64
 import json
@@ -57,11 +62,25 @@ def main() -> None:
             mid += 1
             return cdp_call(s, mid, method, params)
 
+        vp_h = int(sys.argv[4]) if len(sys.argv) > 4 else 0
         call("Page.enable")
         call("Emulation.setDeviceMetricsOverride",
-             {"width": width, "height": 900, "deviceScaleFactor": 1, "mobile": False})
+             {"width": width, "height": vp_h or 900, "deviceScaleFactor": 1, "mobile": False})
         call("Page.navigate", {"url": url})
         time.sleep(3.0)
+        if vp_h:
+            ids = call("Runtime.evaluate", {"expression": "JSON.stringify(Array.from(document.querySelectorAll('section.sec')).map(s=>s.id))",
+                                            "returnByValue": True})["result"]["value"]
+            for name, js in [("top", "window.scrollTo(0,0)")] + [
+                    (sid.replace("sec-", ""), f"document.getElementById('{sid}').scrollIntoView({{block:'start'}})")
+                    for sid in json.loads(ids)]:
+                call("Runtime.evaluate", {"expression": js})
+                time.sleep(0.6)
+                shot = call("Page.captureScreenshot", {"format": "png"})
+                pth = Path(f"{out}-vp-{name}.png")
+                pth.write_bytes(base64.b64decode(shot["data"]))
+                print(pth)
+            return
         res = call("Runtime.evaluate", {"expression": "document.documentElement.scrollHeight", "returnByValue": True})
         height = int(res["result"]["value"])
         call("Emulation.setDeviceMetricsOverride",

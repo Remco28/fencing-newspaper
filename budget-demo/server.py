@@ -7,28 +7,41 @@ Pages:
   GET /demo        → index.html (old PRETEND demo, kept for reference)
   GET /practice-lineup.json → Desk's proposed lineup config (judgment file)
   GET /api/media   → staging/weeks/next/media/manifest.json
+  GET /api/lineup  → practice-lineup.json (alias)
+  GET /thumb/<file>?w=320[&bw=1] → small cached JPEG of a staging media file (Pillow;
+                     cache in budget-demo/.thumbs/, gitignored). Keeps the remote desktop light.
 Accepts:
   POST /submit  → submissions/budget-*.json + approvals.json
   POST /vet     → update staging/weeks/next/items.json + append vet-log
   GET  /api/items → staging items JSON
 Bind: 127.0.0.1:8766
+
+Env overrides (testing against a throwaway copy; defaults = the real paths):
+  GAZETTE_STAGING_WEEK  (default <repo>/staging/weeks/next)
+  GAZETTE_SUBMISSIONS   (default budget-demo/submissions)
+  GAZETTE_LINEUP        (default budget-demo/practice-lineup.json)
+  GAZETTE_PORT          (default 8766)
 """
 from __future__ import annotations
 
+import io
 import json
+import os
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
 HOST = "127.0.0.1"
-PORT = 8766
+PORT = int(os.environ.get("GAZETTE_PORT", "8766"))
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
-STAGING_WEEK = REPO / "staging" / "weeks" / "next"
+STAGING_WEEK = Path(os.environ.get("GAZETTE_STAGING_WEEK") or (REPO / "staging" / "weeks" / "next")).resolve()
+LINEUP = Path(os.environ.get("GAZETTE_LINEUP") or (ROOT / "practice-lineup.json")).resolve()
+THUMBS = ROOT / ".thumbs"
 STAGING_MEDIA = STAGING_WEEK / "media"
 STAGING_ITEMS = STAGING_WEEK / "items.json"
 STAGING_VET_LOG = STAGING_WEEK / "vet-log.jsonl"
-SUBMISSIONS = ROOT / "submissions"
+SUBMISSIONS = Path(os.environ.get("GAZETTE_SUBMISSIONS") or (ROOT / "submissions")).resolve()
 SUBMISSIONS_VET_LOG = SUBMISSIONS / "vet-log.jsonl"
 MIME = {
     ".html": "text/html; charset=utf-8",
@@ -60,6 +73,52 @@ def _save_items(data: dict) -> None:
     STAGING_ITEMS.write_text(text, encoding="utf-8")
 
 
+def _thumb(src: Path, width: int, bw: bool) -> bytes:
+    """Small JPEG thumbnail, cached on disk keyed by source mtime/size."""
+    from PIL import Image  # Pillow is already on the box (screenshot slices use it)
+
+    st = src.stat()
+    THUMBS.mkdir(parents=True, exist_ok=True)
+    key = f"{src.stem}-{int(st.st_mtime)}-{st.st_size}-w{width}{'-bw' if bw else ''}.jpg"
+    cached = THUMBS / key
+    if cached.is_file():
+        return cached.read_bytes()
+    with Image.open(src) as im:
+        if im.mode in ("RGBA", "LA", "P"):
+            im = im.convert("RGBA")
+            bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
+            bg.alpha_composite(im)
+            im = bg
+        im = im.convert("L" if bw else "RGB")
+        if im.width > width:
+            im = im.resize((width, max(1, round(im.height * width / im.width))), Image.LANCZOS)
+        buf = io.BytesIO()
+        im.save(buf, "JPEG", quality=78, optimize=True)
+    data = buf.getvalue()
+    cached.write_bytes(data)
+    return data
+
+
+def _add_media_sizes(data: dict) -> None:
+    """Add pixel w/h to manifest entries (read-only; lets the page reserve thumb space)."""
+    try:
+        from PIL import Image
+    except ImportError:
+        return
+    for m in data.get("items", []) if isinstance(data, dict) else []:
+        if not isinstance(m, dict) or m.get("w"):
+            continue
+        name = m.get("filename") or str(m.get("media_path", "")).rsplit("/", 1)[-1]
+        src = STAGING_MEDIA / name
+        if not name or not src.is_file() or src.suffix.lower() == ".svg":
+            continue
+        try:
+            with Image.open(src) as im:
+                m["w"], m["h"] = im.size
+        except Exception:  # noqa: BLE001
+            pass
+
+
 def _append_vet_log(entry: dict) -> None:
     line = json.dumps(entry, ensure_ascii=False) + "\n"
     STAGING_WEEK.mkdir(parents=True, exist_ok=True)
@@ -71,7 +130,7 @@ def _append_vet_log(entry: dict) -> None:
 
 
 class BudgetHandler(BaseHTTPRequestHandler):
-    server_version = "EnGardeBudget/1.1"
+    server_version = "EnGardeBudget/2.0"
 
     def log_message(self, fmt: str, *args) -> None:
         print(f"[{self.log_date_time_string()}] {self.address_string()} {fmt % args}")
@@ -107,9 +166,15 @@ class BudgetHandler(BaseHTTPRequestHandler):
             target = ROOT / "practice.html"
         elif path in ("/demo", "/index.html"):
             target = ROOT / "index.html"
+        elif path in ("/practice-lineup.json", "/api/lineup"):
+            target = LINEUP
+        elif path.startswith("/thumb/"):
+            self._handle_thumb(path[len("/thumb/") :])
+            return
         elif path == "/api/media":
             manifest = STAGING_MEDIA / "manifest.json"
             data = json.loads(manifest.read_text(encoding="utf-8")) if manifest.is_file() else {}
+            _add_media_sizes(data)
             self._json(200, data)
             return
         elif path in ("/api/items", "/staging/items.json"):
@@ -144,6 +209,38 @@ class BudgetHandler(BaseHTTPRequestHandler):
         data = target.read_bytes()
         ctype = MIME.get(target.suffix.lower(), "application/octet-stream")
         self._send(200, data, ctype)
+
+    def _handle_thumb(self, rel: str) -> None:
+        from urllib.parse import parse_qs, unquote
+
+        rel = unquote(rel)
+        if not rel or "/" in rel or ".." in rel:
+            self._send(403, b"Forbidden", "text/plain; charset=utf-8")
+            return
+        src = (STAGING_MEDIA / rel).resolve()
+        if not str(src).startswith(str(STAGING_MEDIA.resolve())) or not src.is_file():
+            self._send(404, b"Not found", "text/plain; charset=utf-8")
+            return
+        if src.suffix.lower() not in (".png", ".jpg", ".jpeg", ".gif", ".webp"):
+            self._send(415, b"No thumbnail for this type", "text/plain; charset=utf-8")
+            return
+        qs = parse_qs(self.path.split("?", 1)[1]) if "?" in self.path else {}
+        try:
+            width = max(64, min(640, int(qs.get("w", ["320"])[0])))
+        except ValueError:
+            width = 320
+        bw = qs.get("bw", ["0"])[0] in ("1", "true", "yes")
+        try:
+            data = _thumb(src, width, bw)
+        except Exception as exc:  # noqa: BLE001 — report, don't crash the server
+            self._send(500, f"thumb failed: {exc}".encode(), "text/plain; charset=utf-8")
+            return
+        self.send_response(200)
+        self.send_header("Content-Type", "image/jpeg")
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "max-age=3600")
+        self.end_headers()
+        self.wfile.write(data)
 
     def do_POST(self) -> None:
         path = self.path.split("?", 1)[0]
@@ -271,6 +368,9 @@ def main() -> None:
     httpd = ThreadingHTTPServer((HOST, PORT), BudgetHandler)
     print(f"En Garde Gazette PRACTICE budget → http://{HOST}:{PORT}/  (pretend demo: /demo)")
     print(f"Serving {ROOT}")
+    print(f"Staging week: {STAGING_WEEK}")
+    print(f"Lineup: {LINEUP}")
+    print(f"Submissions: {SUBMISSIONS}")
     print("POST /submit → submissions/budget-*.json + approvals.json")
     print("POST /vet    → staging/weeks/next/items.json + vet-log.jsonl")
     print("GET  /api/items → staging items")

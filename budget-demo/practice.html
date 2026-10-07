@@ -2,1262 +2,662 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=1100" />
-<title>En Garde Gazette — Practice Budget (next)</title>
+<meta name="viewport" content="width=1280" />
+<title>Budget — En Garde Gazette (practice)</title>
 <style>
-  :root {
-    --ink: #1c1612;
-    --ink-soft: #3a322a;
-    --muted: #6b5e52;
-    --rule: #c9b8a4;
-    --paper: #f6efe4;
-    --card: #fffdf8;
-    --card-border: #d9cbb8;
-    --accent: #8b4513;
-    --accent-soft: #c4a574;
-    --green: #2f5d3a;
-    --green-bg: #e8f0e6;
-    --amber-bg: #f7ecd8;
-    --red-soft: #8a3a2a;
-    --stale-bg: #f8e8e4;
-    --shadow: 0 1px 2px rgba(40, 28, 12, 0.06), 0 4px 14px rgba(40, 28, 12, 0.05);
-    --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
-    --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background:
-      radial-gradient(ellipse at top, #faf4ea 0%, var(--paper) 55%),
-      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,150,110,0.04) 28px);
-    color: var(--ink);
-    font-family: var(--font-sans);
-    font-size: 14px;
-    line-height: 1.45;
-    min-height: 100vh;
-  }
-  .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 28px 80px; }
-  header.mast { border-bottom: 3px double var(--ink); padding-bottom: 14px; margin-bottom: 22px; }
-  .vol { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-  h1 { font-family: var(--font-serif); font-size: 28px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
-  .meta-row { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: baseline; margin-top: 8px; }
-  .publish { font-family: var(--font-serif); font-size: 16px; color: var(--ink-soft); }
-  .publish strong { color: var(--accent); }
-  .pretend-note, .practice-note, .decision {
-    border: 1px solid var(--accent-soft); border-left: 4px solid var(--accent);
-    padding: 8px 12px; font-size: 13px; color: var(--ink-soft); margin-top: 12px; border-radius: 2px;
-  }
-  .practice-note { background: #e8f0e6; border-color: #a8c4ad; border-left-color: var(--green); }
-  .decision { background: var(--amber-bg); }
-  .decision.done { background: var(--green-bg); border-color: #a8c4ad; border-left-color: var(--green); }
-  .decision.stale { background: var(--stale-bg); border-color: #d4a89c; border-left-color: var(--red-soft); }
-  section { margin-top: 28px; }
-  h2 {
-    font-family: var(--font-serif); font-size: 18px; margin: 0 0 10px;
-    border-bottom: 1px solid var(--rule); padding-bottom: 6px;
-  }
-  h2 .hint { font-family: var(--font-sans); font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 8px; }
-  .inbox { background: var(--card); border: 1px solid var(--card-border); box-shadow: var(--shadow); border-radius: 3px; overflow: hidden; }
-  .inbox table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .inbox th {
-    text-align: left; background: #efe6d6; padding: 8px 10px; font-size: 11px;
-    letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
-    border-bottom: 1px solid var(--card-border);
-  }
-  .inbox td { padding: 8px 10px; border-bottom: 1px solid #eee4d6; vertical-align: top; }
-  .inbox tr:last-child td { border-bottom: none; }
-  .inbox tr.seed-row { opacity: 0.55; background: #f3eee6; }
-  .tag {
-    display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 999px;
-    background: #efe6d6; color: var(--ink-soft); white-space: nowrap;
-  }
-  .tag.result { background: #dde8f0; } .tag.signup { background: #e4edd9; }
-  .tag.club { background: #f0e6d4; } .tag.tip { background: #efe8f4; }
-  .tag.photo { background: #e8e8e8; } .tag.draft { background: #f5e4d8; }
-  .tag.qa { background: #e4ecf5; } .tag.ops { background: #eee; color: #777; }
-  .badge {
-    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
-    text-transform: uppercase; padding: 2px 8px; border-radius: 999px; white-space: nowrap; vertical-align: middle;
-  }
-  .badge.unvetted { background: #f5e0c8; color: #8a4b12; border: 1px solid #d4a574; }
-  .badge.vetted { background: var(--green-bg); color: var(--green); border: 1px solid #a8c4ad; }
-  .badge.stale { background: var(--stale-bg); color: var(--red-soft); border: 1px solid #d4a89c; }
-  .badge.seed { background: #eee; color: #666; border: 1px solid #ccc; }
-  .badge.held { background: #e8e4f4; color: #4a3a6a; border: 1px solid #b8a8d4; }
-  .badge.empty { background: #f0ebe3; color: var(--muted); border: 1px dashed var(--rule); }
-  .vet-panel { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; min-width: 180px; }
-  .vet-panel textarea {
-    width: 100%; min-height: 52px; border: 1px solid var(--card-border); background: #faf7f1;
-    padding: 6px 8px; font-size: 12px; font-family: inherit; border-radius: 2px; resize: vertical; color: var(--ink-soft);
-  }
-  .vet-panel textarea:focus { outline: none; border-color: var(--accent-soft); background: #fff; }
-  .vet-panel .vet-hint { font-size: 11px; color: var(--muted); line-height: 1.3; }
-  .vet-panel .vet-notes-saved { font-size: 11px; color: var(--green); font-style: italic; }
-  button.vet-btn {
-    background: var(--accent); color: #fffdf8; border: none; padding: 6px 12px;
-    font-size: 12px; font-weight: 600; font-family: inherit; border-radius: 3px; cursor: pointer; align-self: flex-start;
-  }
-  button.vet-btn:hover { background: #6e3610; }
-  button.vet-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  .check input:disabled { cursor: not-allowed; opacity: 0.45; }
-  .check.blocked { color: var(--muted); cursor: not-allowed; }
-  .inbox td.actions-cell { min-width: 220px; }
-  .photo-card.unvetted-card { border-color: #d4a574; background: #fffaf3; }
-  .photo-card .badge-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
-  .card .badge-inline { margin-left: 4px; }
+/* v2 — desktop only, built for a 1280×800 viewport over a laggy remote desktop.
+   Deliberately: no animations/transitions, no shadows, no blur, no smooth scroll. */
+:root{
+  --ink:#1b1915; --soft:#3d3a34; --muted:#625e55; --rule:#d9d3c6; --bg:#f3f0e9; --card:#fff;
+  --accent:#7a2e12; --accent-ink:#fff;
+  --ok:#256b35; --ok-bg:#e3f0e4; --warn:#7a4f00; --warn-bg:#fbefd2; --ask:#9b2c1f; --ask-bg:#fbe3de;
+  --wait:#2c4f72; --wait-bg:#e2ebf4; --gray-bg:#ece9e2;
+  --serif:Georgia,"Iowan Old Style","Palatino Linotype",serif;
+  --sans:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--sans)}
+a{color:var(--accent)}
+button,input,textarea{font:inherit;color:inherit}
+code{font:13px/1.4 ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere}
 
-  .fit-grid {
-    display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; margin-bottom: 18px;
-  }
-  @media (max-width: 900px) { .fit-grid { grid-template-columns: 1fr; } }
-  .fit-card, .flag-list {
-    background: var(--card); border: 1px solid var(--card-border); box-shadow: var(--shadow);
-    border-radius: 3px; padding: 14px 16px;
-  }
-  .fit-card h3, .flag-list h3 {
-    font-family: var(--font-serif); font-size: 15px; margin: 0 0 8px;
-  }
-  .fit-meter {
-    height: 22px; background: #f7f2ea; border-radius: 3px; overflow: hidden;
-    border: 1px solid var(--card-border); margin: 8px 0 6px; position: relative;
-  }
-  .fit-meter .fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--green); transition: width 0.2s; }
-  .fit-meter.over .fill { background: var(--red-soft); }
-  .fit-meter.short .fill { background: #c4a574; }
-  .fit-meter .cap {
-    position: absolute; top: 0; bottom: 0; width: 2px; background: var(--ink);
-    opacity: 0.35;
-  }
-  .fit-meter .pending {
-    position: absolute; top: 0; bottom: 0;
-    background: repeating-linear-gradient(45deg, #d9c7a8, #d9c7a8 5px, #efe6d6 5px, #efe6d6 10px);
-  }
-  .fit-meter .cap.target { background: none; border-left: 2px dotted var(--ink); width: 0; opacity: 0.5; }
-  .fit-nums { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
-  .fit-nums strong { color: var(--ink); }
-  .fit-detail { font-size: 12px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
-  .fit-detail code { font-size: 11px; background: rgba(0,0,0,0.05); padding: 1px 4px; border-radius: 2px; }
+/* ---- fixed sidebar ---- */
+#side{position:fixed;top:0;left:0;bottom:0;width:280px;background:#fbfaf6;border-right:1px solid var(--rule);
+  padding:14px 18px 14px;display:flex;flex-direction:column;gap:10px;overflow:hidden}
+.brand{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.issue{font:700 24px/1.15 var(--serif);margin:2px 0 0}
+.week{color:var(--soft)}
+.practice-tag{display:inline-block;margin-top:4px;font-size:12px;font-weight:600;color:var(--wait);background:var(--wait-bg);padding:2px 8px;border-radius:3px}
+.side-block{border-top:1px solid var(--rule);padding-top:10px}
+.side-label{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+#publishDate{width:100%;height:38px;padding:4px 10px;border:1px solid #b9b2a3;border-radius:4px;background:#fff}
+#publishDay{font-size:14px;color:var(--soft);margin-top:4px}
+.meter{position:relative;height:16px;background:var(--gray-bg);border:1px solid #c9c2b4;border-radius:3px;overflow:hidden}
+.meter .fill{position:absolute;left:0;top:0;bottom:0;background:var(--ok)}
+.meter .pend{position:absolute;top:0;bottom:0;background:#b9c9b8}
+.meter .tick{position:absolute;top:0;bottom:0;width:2px;background:var(--ink)}
+.meter.over .fill{background:var(--ask)}
+#fitBig{font:700 19px/1.2 var(--serif);margin-top:5px}
+#fitSmall{font-size:14px;line-height:1.35;color:var(--soft)}
+.counts{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.count-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:58px;padding:4px 2px;
+  border:1px solid var(--rule);border-radius:4px;background:#fff;cursor:pointer;text-align:center;font-size:12px;line-height:1.15;color:var(--soft)}
+.count-btn:hover{border-color:#a9a293}
+.count-btn b{font-size:22px;line-height:1.1;order:-1}
+.count-btn.ask b{color:var(--ask)} .count-btn.warn b{color:var(--warn)} .count-btn.ok b{color:var(--ok)}
+nav.jump{flex:1 1 auto;min-height:0;overflow-y:auto}
+nav.jump a{display:flex;justify-content:space-between;padding:5px 10px;margin:0 -10px;border-radius:4px;text-decoration:none;color:var(--ink)}
+nav.jump a:hover{background:var(--gray-bg)}
+nav.jump span{color:var(--muted);font-size:14px}
+#submit{width:100%;min-height:50px;border:0;border-radius:4px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:17px;cursor:pointer}
+#submit:hover{background:#5f230d}
+#submit:disabled{opacity:.6;cursor:wait}
+#status{font-size:13px;line-height:1.4;overflow-wrap:anywhere;color:var(--muted);margin-top:6px;max-height:110px;overflow-y:auto}
+#status.ok{color:var(--ok)} #status.err{color:var(--ask)}
 
-  .lineup { display: flex; flex-direction: column; gap: 12px; }
-  .card {
-    background: var(--card); border: 1px solid var(--card-border); border-radius: 3px;
-    box-shadow: var(--shadow); padding: 14px 16px 12px;
-    display: grid; grid-template-columns: 28px 1fr auto; gap: 10px 14px;
-    transition: opacity 0.15s, border-color 0.15s, background 0.15s;
-  }
-  .card.excluded { opacity: 0.72; background: #f3eee6; border-style: dashed; }
-  .card.pending-vet { opacity: 1; background: #fffaf3; border: 1px solid #d4a574; border-left: 4px solid #c47a2a; }
-  .card.empty-slot { background: #faf7f1; border-style: dashed; opacity: 0.9; padding: 8px 16px; box-shadow: none; }
-  .card.empty-slot .slot-head { margin-bottom: 0; }
-  .empty-why { font-size: 12px; color: var(--muted); font-style: italic; }
-  .desk-notes { font-size: 12px; color: var(--ink-soft); background: #f7f2ea; border: 1px solid #e6dccb; padding: 5px 8px; border-radius: 2px; margin: 4px 0 6px; }
-  .desk-notes strong { color: var(--muted); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; margin-right: 4px; }
-  details.fulltext { font-size: 12px; margin: 0 0 8px; }
-  details.fulltext summary { cursor: pointer; color: var(--accent); }
-  details.fulltext .preview { margin-top: 6px; }
-  code { overflow-wrap: anywhere; }
-  .photo-card .prov, .photo-card .source { overflow-wrap: anywhere; }
-  .card.stale-card { border-color: #d4a89c; background: #fff8f6; }
-  .card.dragging { opacity: 0.4; border-color: var(--accent); }
-  .card.drag-over { border-top: 3px solid var(--accent); }
-  .drag-handle {
-    cursor: grab; color: var(--muted); font-size: 18px; line-height: 1;
-    padding-top: 2px; user-select: none; text-align: center;
-  }
-  .drag-handle:active { cursor: grabbing; }
-  .card-main { min-width: 0; }
-  .slot-head { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: baseline; margin-bottom: 4px; }
-  .slot-name { font-family: var(--font-serif); font-size: 15px; font-weight: 700; }
-  .slot-budget { font-size: 12px; color: var(--muted); }
-  .slot-rank { font-size: 11px; color: var(--accent); letter-spacing: 0.04em; }
-  .headline { font-family: var(--font-serif); font-size: 16px; font-weight: 600; margin: 2px 0 6px; color: var(--ink); }
-  .deck { font-family: var(--font-serif); font-size: 13px; font-style: italic; color: var(--ink-soft); margin: -2px 0 8px; }
-  .preview { font-size: 13px; color: var(--ink-soft); white-space: pre-wrap; margin: 0 0 8px; }
-  .preview.clip { max-height: 9.5em; overflow: hidden; position: relative; }
-  .preview.clip::after {
-    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2.2em;
-    background: linear-gradient(transparent, var(--card));
-  }
-  .card.excluded .preview.clip::after { background: linear-gradient(transparent, #f3eee6); }
-  .preview table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; white-space: normal; }
-  .preview.tbl { white-space: normal; }
-  .board-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .board-panel table { table-layout: fixed; }
-  .board-panel th:nth-child(1), .board-panel td:nth-child(1) { width: 62px; white-space: nowrap; }
-  .board-panel .nm { white-space: nowrap; }
-  .board-panel th:nth-child(2), .board-panel td:nth-child(2) { width: 100px; white-space: nowrap; }
-  .board-panel th:nth-child(4), .board-panel td:nth-child(4) { width: 22px; text-align: right; font-variant-numeric: tabular-nums; }
-  .board-day { font-family: var(--font-serif); font-weight: 700; font-size: 13px; border-bottom: 1.5px solid var(--ink); padding: 2px 0; }
-  .preview th, .preview td { text-align: left; padding: 3px 6px; border-bottom: 1px solid #eee4d6; }
-  .preview th { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
-  .meta-line { font-size: 12px; color: var(--muted); }
-  .meta-line .count { color: var(--ink-soft); font-weight: 600; }
-  .meta-line a { color: var(--accent); }
-  .prov { font-size: 12px; margin: 6px 0 4px; line-height: 1.5; }
-  .prov a { color: var(--accent); word-break: break-word; }
-  .prov.click { background: #fff4ef; border: 1px solid #ecc9bd; padding: 6px 8px; border-radius: 2px; line-height: 1.6; }
-  .prov.click .badge { margin-right: 4px; }
-  details.prov-more { font-size: 12px; margin: 6px 0 4px; }
-  details.prov-more summary { cursor: pointer; color: var(--accent); }
-  details.prov-more ol { margin: 6px 0 0 0; padding-left: 22px; line-height: 1.5; }
-  details.prov-more a { color: var(--accent); word-break: break-word; }
-  .feature-thumb { float: right; width: 220px; margin: 0 0 8px 14px; border: 1px solid #ddd2c2; }
-  .feature-thumb img { width: 100%; height: auto; display: block; filter: grayscale(100%); }
-  .feature-thumb figcaption { font-size: 11px; color: var(--muted); padding: 3px 5px; }
-  .accounting { font-size: 12px; color: var(--muted); margin-top: 8px; }
-  .flag {
-    font-size: 12px; margin: 4px 0; padding: 5px 8px; border-radius: 2px;
-    border-left: 3px solid var(--accent-soft); background: var(--amber-bg); color: var(--ink-soft);
-  }
-  .flag.check { border-left-color: #c47a2a; }
-  .flag.stale { border-left-color: var(--red-soft); background: var(--stale-bg); }
-  .flag.info { border-left-color: #7a9ab8; background: #eef3f7; }
-  .card-controls { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; min-width: 160px; }
-  .check { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; user-select: none; }
-  .check input { width: 15px; height: 15px; accent-color: var(--accent); cursor: pointer; }
-  .card-notes { width: 100%; grid-column: 2 / -1; margin-top: 2px; }
-  .card-notes input {
-    width: 100%; border: 1px solid var(--card-border); background: #faf7f1;
-    padding: 5px 8px; font-size: 12px; font-family: inherit; border-radius: 2px; color: var(--ink-soft);
-  }
-  .card-notes input:focus { outline: none; border-color: var(--accent-soft); background: #fff; }
+/* ---- main column ---- */
+#main{margin-left:280px;padding:26px 40px 160px}
+.wrap{max-width:900px}
+h1{font:700 30px/1.2 var(--serif);margin:0 0 6px}
+.lede{font-size:17px;color:var(--soft);margin:0 0 14px;max-width:70ch}
+.desk{background:#fff;border:1px solid var(--rule);border-left:4px solid var(--accent);border-radius:4px;padding:12px 18px;margin-bottom:8px}
+.desk h2{font:700 15px/1.3 var(--sans);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.desk ul{margin:0;padding-left:20px} .desk li{margin:3px 0}
+.desk .why{margin:8px 0 0;color:var(--soft);font-size:15px}
+section.sec{margin-top:34px}
+section.sec>h2{font:700 24px/1.2 var(--serif);margin:0 0 4px;display:flex;align-items:baseline;gap:12px}
+section.sec>h2 .sc{font:400 15px var(--sans);color:var(--muted)}
+.sec-hint{color:var(--muted);font-size:15px;margin:0 0 12px}
+.cards{display:flex;flex-direction:column;gap:12px}
 
-  .photo-desk { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-  .photo-card {
-    background: var(--card); border: 1px solid var(--card-border); border-radius: 3px;
-    box-shadow: var(--shadow); padding: 10px; display: flex; flex-direction: column; gap: 8px;
-  }
-  .photo-card img {
-    width: 100%; height: 150px; object-fit: contain; filter: grayscale(100%);
-    border: 1px solid #ddd2c2; background: #e8e4dc; display: block;
-  }
-  .photo-card .caption { font-family: var(--font-serif); font-size: 13px; font-weight: 600; color: var(--ink); line-height: 1.3; }
-  .photo-card .source { font-size: 11px; color: var(--muted); }
-  .photo-desk-hint { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+/* ---- cards ---- */
+.card{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:16px 18px;display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:20px}
+.card.is-in{border-left:6px solid var(--ok);padding-left:14px}
+.card.needs-vet{border-left:6px solid #d39b2a;padding-left:14px}
+.card.is-out{background:#faf9f6}
+.card.is-out h3{color:var(--soft)}
+.slotline{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted)}
+.slotline .slot{font-weight:700;color:var(--soft);text-transform:uppercase;letter-spacing:.04em;font-size:13px}
+.card h3{font:700 21px/1.25 var(--serif);margin:4px 0 6px}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.b{font-size:13px;font-weight:700;padding:2px 9px;border-radius:3px;white-space:nowrap}
+.b.ok{color:var(--ok);background:var(--ok-bg)} .b.warn{color:var(--warn);background:var(--warn-bg)}
+.b.ask{color:var(--ask);background:var(--ask-bg)} .b.wait{color:var(--wait);background:var(--wait-bg)}
+.b.gray{color:var(--soft);background:var(--gray-bg)}
+.sum{margin:0 0 10px;font-size:17px;max-width:68ch}
+.qs{background:var(--ask-bg);border:1px solid #efc2b9;border-radius:5px;padding:10px 12px;margin:0 0 10px}
+.qs-h{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ask);margin-bottom:6px}
+.q{display:block;margin:0 0 8px} .q:last-child{margin-bottom:0}
+.q span{display:block;font-weight:600;margin-bottom:3px}
+.q input{width:100%;height:38px;padding:4px 10px;border:1px solid #d9a99f;border-radius:4px;background:#fff}
+.q.done span{color:var(--ok)}
+.q.done input{border-color:#9cc3a3}
+.flags{margin:0 0 10px;padding:0;list-style:none}
+.flags li{font-size:15px;color:var(--soft);padding:4px 0 4px 12px;border-left:3px solid var(--rule);margin:4px 0}
+.flags li.check{border-left-color:#d39b2a}
+details{margin:6px 0 0}
+details>summary{cursor:pointer;display:inline-block;padding:6px 0;font-weight:600;color:var(--accent);list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸ ";color:var(--muted)}
+details[open]>summary::before{content:"▾ "}
+.draft-body{font:17px/1.6 var(--serif);max-width:62ch;background:#fbfaf7;border-left:3px solid var(--rule);padding:8px 18px;margin:4px 0 6px}
+.draft-body p{margin:0 0 .8em}
+.draft-body mark{background:var(--ask-bg);color:var(--ask);font:600 14px var(--sans);padding:0 3px}
+.prov-body{font-size:14px;color:var(--soft);line-height:1.5;padding:4px 0 2px}
+.prov-body ol{margin:4px 0 8px;padding-left:20px} .prov-body li{margin:3px 0}
+.prov-body .lbl{font-weight:700;color:var(--muted)}
+table.t{border-collapse:collapse;width:100%;font-size:15px;margin:4px 0 8px}
+table.t th{text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:3px 8px 3px 0}
+table.t td{border-bottom:1px solid #ebe6dc;padding:4px 8px 4px 0;vertical-align:top}
+.panel-h{font:700 16px var(--serif);margin:8px 0 2px}
 
-  .held-line, .drawer {
-    background: var(--card); border: 1px solid var(--card-border); border-radius: 3px;
-    box-shadow: var(--shadow); padding: 12px 14px; margin-top: 10px;
-  }
-  .held-line { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
-  details.drawer > summary {
-    cursor: pointer; font-family: var(--font-serif); font-size: 14px; font-weight: 600;
-    list-style: none; color: var(--ink-soft);
-  }
-  details.drawer > summary::-webkit-details-marker { display: none; }
-  details.drawer > summary::before { content: "▸ "; color: var(--muted); }
-  details.drawer[open] > summary::before { content: "▾ "; }
-  details.drawer .body { margin-top: 10px; }
-  details.drawer table { width: 100%; border-collapse: collapse; font-size: 12px; }
-  details.drawer th, details.drawer td { text-align: left; padding: 5px 8px; border-bottom: 1px solid #eee4d6; vertical-align: top; }
-  details.drawer th { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); background: #efe6d6; }
+/* card controls */
+.side-ctl{display:flex;flex-direction:column;gap:8px}
+.thumb{display:block;width:100%;height:auto;max-height:170px;object-fit:contain;background:var(--gray-bg);border:1px solid var(--rule)}
+label.inc{display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 12px;border:2px solid #b9b2a3;border-radius:6px;background:#fff;cursor:pointer;font-weight:700;user-select:none}
+label.inc input{width:22px;height:22px;margin:0;accent-color:var(--ok);cursor:pointer}
+label.inc.on{border-color:var(--ok);background:var(--ok-bg);color:var(--ok)}
+label.inc.locked{border-style:dashed;color:var(--muted);cursor:not-allowed;background:#f6f4ef}
+label.inc.locked input{cursor:not-allowed}
+.ctl-hint{font-size:13px;color:var(--muted);line-height:1.35}
+textarea.note{width:100%;min-height:62px;padding:6px 10px;border:1px solid #c9c2b4;border-radius:4px;background:#fff;resize:vertical;font-size:15px}
+button.vet{min-height:44px;border:0;border-radius:5px;background:#d39b2a;color:#231700;font-weight:700;cursor:pointer}
+button.vet:hover{background:#bf8a1c}
+button.vet:disabled{opacity:.6;cursor:wait}
+.move{display:flex;gap:6px}
+.move button{flex:1;min-height:34px;border:1px solid var(--rule);border-radius:4px;background:#fff;cursor:pointer;color:var(--muted);font-size:14px}
+.move button:hover{border-color:#a9a293;color:var(--ink)}
 
-  .global-notes {
-    width: 100%; min-height: 88px; border: 1px solid var(--card-border); background: var(--card);
-    padding: 10px 12px; font-family: inherit; font-size: 13px; border-radius: 3px;
-    resize: vertical; box-shadow: var(--shadow);
-  }
-  .global-notes:focus { outline: none; border-color: var(--accent-soft); }
-  .footer-preview {
-    background: #efe6d6; border: 1px dashed var(--rule); padding: 12px 16px; text-align: center;
-    font-family: var(--font-serif); font-size: 13px; font-style: italic; color: var(--ink-soft); border-radius: 2px;
-  }
-  .footer-preview .label {
-    display: block; font-family: var(--font-sans); font-style: normal; font-size: 11px;
-    letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px;
-  }
-  .actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 18px; }
-  button#submit {
-    background: var(--accent); color: #fffdf8; border: none; padding: 11px 22px;
-    font-size: 14px; font-weight: 600; font-family: inherit; border-radius: 3px;
-    cursor: pointer; letter-spacing: 0.02em; box-shadow: 0 2px 0 #5c2e0c;
-  }
-  button#submit:hover { background: #6e3610; }
-  button#submit:disabled { opacity: 0.55; cursor: wait; box-shadow: none; }
-  .summary { font-size: 13px; color: var(--muted); }
-  .summary strong { color: var(--ink-soft); }
-  #status { margin-top: 14px; padding: 10px 14px; border-radius: 3px; font-size: 13px; display: none; }
-  #status.ok { display: block; background: var(--green-bg); border: 1px solid #a8c4ad; color: var(--green); }
-  #status.err { display: block; background: #f5e4e0; border: 1px solid #d4a89c; color: var(--red-soft); }
-  #status code { font-size: 12px; background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 2px; }
-  .muted { color: var(--muted); }
-  .why { font-size: 12px; color: var(--muted); margin: 4px 0 6px; font-style: italic; }
+/* empty slots: one quiet line */
+.empty-wrap{display:flex;flex-direction:column;padding:10px 16px;border:1px dashed #c9c2b4;border-radius:6px}
+.empty{display:flex;gap:14px;align-items:baseline;font-size:15px;color:var(--muted)}
+.empty .slot{font-weight:700;color:var(--soft);min-width:170px}
+.empty-wrap .qs{margin:10px 0 2px}
+
+/* photo desk */
+.photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.ph{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:8px}
+.ph .thumb{max-height:220px}
+.ph .cap{font:700 16px/1.3 var(--serif)}
+.ph .meta{font-size:13px;color:var(--muted)}
+.held-list{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:4px 18px}
+.held-row{padding:10px 0;border-bottom:1px solid #ebe6dc}
+.held-row:last-child{border-bottom:0}
+.held-row b{display:block}
+.held-row span{font-size:15px;color:var(--soft)}
+textarea#globalNotes{width:100%;min-height:96px;padding:10px 12px;border:1px solid #c9c2b4;border-radius:5px;background:#fff;font-size:16px}
+.foot{margin-top:28px;font-size:14px;color:var(--muted)}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="mast">
-    <div class="vol">Vol. I · No. — · Elite Fencers Club · Chatham, NJ · epee only</div>
-    <h1>En Garde Gazette — Practice Budget</h1>
-    <div class="meta-row">
-      <div class="publish">Proposed publish: <strong id="publishLabel">Tuesday, October 13, 2026</strong>
-        <span class="muted" style="font-size:13px;" id="publishAlt"></span>
-      </div>
-    </div>
-    <div class="practice-note">
-      <strong>PRACTICE budget</strong> for target week <code>next</code> — real staging only.
-      Seed/pretend items are excluded from the proposed lineup (collapsed drawer below).
-      Unvetted cards stay labeled; <strong>Include</strong> unlocks only after <strong>Vet</strong>.
-      Submit → <code>submissions/budget-*.json</code> + <code>approvals.json</code>.
-      Vet → <code>staging/weeks/next/items.json</code> + vet-log. Pipeline: Budget → Frank approve → Desk compose → Proof → Frank approve → print.
-    </div>
-    <div class="decision" id="publishWhy"></div>
-  </header>
+<aside id="side">
+  <div>
+    <div class="brand">En Garde Gazette · budget</div>
+    <div class="issue" id="issueLabel">Issue</div>
+    <div class="week" id="weekLabel"></div>
+    <span class="practice-tag">PRACTICE — not a real submission</span>
+  </div>
+  <div class="side-block">
+    <label class="side-label" for="publishDate">Publish day</label>
+    <input type="date" id="publishDate" />
+    <div id="publishDay"></div>
+  </div>
+  <div class="side-block">
+    <div class="side-label">How full is the issue</div>
+    <div class="meter" id="meter"><div class="pend" id="mPend"></div><div class="fill" id="mFill"></div><div class="tick" id="mTick"></div></div>
+    <div id="fitBig">—</div>
+    <div id="fitSmall"></div>
+  </div>
+  <div class="side-block counts">
+    <button type="button" class="count-btn ok" data-jump="is-in"><b id="nIn">0</b>Included</button>
+    <button type="button" class="count-btn warn" data-jump="needs-vet"><b id="nVet">0</b>Need Vet</button>
+    <button type="button" class="count-btn ask" data-jump="has-q"><b id="nQ">0</b>Questions</button>
+  </div>
+  <nav class="side-block jump" id="jump"></nav>
+  <div class="side-block">
+    <button type="button" id="submit">Submit budget</button>
+    <div id="status" role="status" aria-live="polite">Saves a practice budget file. Vet saves to staging.</div>
+  </div>
+</aside>
 
-  <section>
-    <h2>0 · Desk decisions <span class="hint">flags Frank should glance at before Include</span></h2>
-    <div id="decisionFlags"></div>
+<main id="main"><div class="wrap">
+  <h1 id="pageTitle">Budget</h1>
+  <p class="lede">Tick <b>Include</b> for what goes in. Answer the red questions right where they are. Amber items need <b>Vet</b> before they can go in. Hit <b>Submit</b> in the left bar when you're done.</p>
+  <div class="desk" id="desk"></div>
+  <div id="sections"></div>
+  <section class="sec" id="sec-notes">
+    <h2>Notes for Desk</h2>
+    <p class="sec-hint">Anything else. Goes with the submission.</p>
+    <textarea id="globalNotes" placeholder="e.g. Publish Monday instead; skip the figure this week…"></textarea>
+    <p class="foot">Locked footer (prints on every issue): “For fun only — facts aren't guaranteed accurate.”</p>
   </section>
-
-  <section>
-    <h2>A · Fit estimate <span class="hint">~40 words/column-inch @8.5pt · Template A · two pages · estimate</span></h2>
-    <div class="fit-grid">
-      <div class="fit-card">
-        <h3>Two-page capacity</h3>
-        <div class="fit-meter" id="fitMeter"><div class="fill" id="fitFill"></div><div class="pending" id="fitPending"></div><div class="cap" id="fitCap"></div><div class="cap target" id="fitTarget"></div></div>
-        <div class="fit-nums" id="fitNums">Loading…</div>
-        <div class="fit-detail" id="fitDetail"></div>
-      </div>
-      <div class="flag-list">
-        <h3>Cut / stretch</h3>
-        <div id="cutStretch" class="fit-detail"></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>B · Proposed lineup <span class="hint">hierarchy order · Desk judgment · drag to reorder · uncheck to cut</span></h2>
-    <div class="lineup" id="lineup"></div>
-    <div class="held-line" id="heldLine"></div>
-    <details class="drawer" id="mergedDrawer">
-      <summary>Merged duplicates &amp; ops notes — not proposed (<span id="mergedCount">0</span>)</summary>
-      <div class="body">
-        <table>
-          <thead><tr><th>Id</th><th>Item</th><th>Why not proposed</th></tr></thead>
-          <tbody id="mergedBody"></tbody>
-        </table>
-      </div>
-    </details>
-    <div class="accounting" id="accounting"></div>
-  </section>
-
-  <section>
-    <h2>C · Candidates <span class="hint">optional · shown UNVETTED · Include blocked until Vet</span></h2>
-    <div class="lineup" id="candidates"></div>
-  </section>
-
-  <section>
-    <h2>D · Photo desk <span class="hint">real photos · Include gated by vetted · no silent crop</span></h2>
-    <p class="photo-desk-hint">Morris Hills feature photo proposed with the primer. Newsletter photos optional for club results. Pretend seeds omitted from this desk (see seed drawer).</p>
-    <div class="photo-desk" id="photoDesk"></div>
-  </section>
-
-  <section>
-    <h2>E · Staging inbox <span class="hint">every real item · Vet here or on the cards · collapsed</span></h2>
-    <p class="photo-desk-hint">Unvetted self-gather tips need a <strong>Vet</strong> + short notes. Frank-forwarded / allowlist mail stays auto-vetted. Seed/pretend rows live in the drawer.</p>
-    <details class="drawer" id="inboxDrawer">
-    <summary>Full staging inbox — real items (<span id="realCount">0</span>)</summary>
-    <div class="body inbox">
-      <table>
-        <thead>
-          <tr><th>Type</th><th>Item</th><th>Source</th><th>Status</th><th>Vet</th></tr>
-        </thead>
-        <tbody id="stagingInboxBody"></tbody>
-      </table>
-    </div>
-    </details>
-    <details class="drawer" id="seedDrawer">
-      <summary>Seed / pretend — excluded from proposed lineup (<span id="seedCount">0</span>)</summary>
-      <div class="body">
-        <p class="photo-desk-hint">Demo seeds from the pretend budget. Reality lock (PLAN §1c): never promote these as club or competition fact.</p>
-        <table>
-          <thead><tr><th>Id</th><th>Body</th><th>Vetted?</th></tr></thead>
-          <tbody id="seedBody"></tbody>
-        </table>
-      </div>
-    </details>
-  </section>
-
-  <section>
-    <h2>Notes <span class="hint">global — attached to submit JSON</span></h2>
-    <textarea class="global-notes" id="globalNotes"></textarea>
-  </section>
-
-  <section>
-    <h2>F · Footer disclaimer <span class="hint">locked in paper — preview only</span></h2>
-    <div class="footer-preview">
-      <span class="label">Locked footer</span>
-      For fun only — facts aren't guaranteed accurate.
-    </div>
-  </section>
-
-  <section>
-    <h2>G · Submit</h2>
-    <div class="actions">
-      <button type="button" id="submit">Submit practice budget</button>
-      <div class="summary" id="summary"></div>
-    </div>
-    <div id="status" role="status" aria-live="polite"></div>
-  </section>
-</div>
+</div></main>
 
 <script>
 (function () {
-  const lineupEl = document.getElementById("lineup");
-  const candEl = document.getElementById("candidates");
-  const photoDesk = document.getElementById("photoDesk");
-  const submitBtn = document.getElementById("submit");
-  const statusEl = document.getElementById("status");
-  const summaryEl = document.getElementById("summary");
-  const globalNotes = document.getElementById("globalNotes");
-  const inboxBody = document.getElementById("stagingInboxBody");
-  const seedBody = document.getElementById("seedBody");
-
-  const KIND_TAG = { fact: "club", tip: "tip", photo: "photo", graf: "draft", signup_row: "signup", comic: "draft", qa: "qa", other: "tip" };
-  const KIND_LABEL = { fact: "fact", tip: "tip", photo: "photo", graf: "draft", signup_row: "signup", comic: "comic", qa: "Q&A", other: "other" };
-
-  let CFG = null;
-  let stagingItems = [];
-  let byId = {};
-  let PUBLISH = "2026-10-13";
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var CFG = null, ITEMS = [], byId = {}, MEDIA = [], mediaById = {}, SLOTS = [];
+  var SECTION_GUESS = [
+    [/lead|feature|back_page|overheard|secondary_a/i, "lead"],
+    [/club|signup|whos|result|rating|deadline|class|schedule|event|go_cheer/i, "club"],
+    [/./, "shorts"]
+  ];
 
   function esc(s) {
-    return String(s == null ? "" : s)
-      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   }
-  function wordsOf(item) {
-    if (!item) return 0;
-    if (item.word_count) return Number(item.word_count) || 0;
-    const t = (item.body || "").trim();
-    return t ? t.split(/\s+/).length : 0;
+  function words(t) { t = String(t || "").trim(); return t ? t.split(/\s+/).length : 0; }
+  function itemWords(it) { return it ? (Number(it.word_count) || words(it.body)) : 0; }
+  function firstSentence(t) {
+    t = String(t || "").replace(/\s+/g, " ").trim();
+    var m = t.match(/^(.{20,200}?[.!?])(\s|$)/);
+    return m ? m[1] : (t.length > 180 ? t.slice(0, 177) + "…" : t);
   }
-  function isSeed(item) {
-    if (!item) return false;
-    if (item.pretend) return true;
-    const id = String(item.id || "");
-    const body = String(item.body || "");
-    const from = String(item.from || "");
-    if (CFG && CFG.seed_ids && CFG.seed_ids.indexOf(id) >= 0) return true;
-    if (/invented|PRETEND|pretend/i.test(id) || /invented|PRETEND|\(invented\)/i.test(body)) return true;
-    if (/@example\.com$/i.test(from)) return true;
-    return false;
+  function isSeed(it) {
+    if (!it) return false;
+    if (it.pretend) return true;
+    if ((CFG.seed_ids || []).indexOf(it.id) >= 0) return true;
+    return /invented|pretend/i.test(it.id || "") || /@example\.com$/i.test(it.from || "");
   }
-  function isOpsNote(item) {
-    return item && (item.suggested_slot === "ops_note_not_print" || (item.tags || []).indexOf("degrade") >= 0);
+  function guessSection(s) {
+    for (var i = 0; i < SECTION_GUESS.length; i++) if (SECTION_GUESS[i][0].test(s || "")) return SECTION_GUESS[i][1];
+    return "shorts";
   }
-  function cards(root) {
-    return Array.from((root || lineupEl).querySelectorAll(".card"));
-  }
-  function isVetted(el) { return el && el.getAttribute("data-vetted") === "true"; }
+  function fileOf(path) { var m = String(path || "").match(/([^/]+)$/); return m ? m[1] : ""; }
+  function thumbUrl(file, w, bw) { return "/thumb/" + encodeURIComponent(file) + "?w=" + (w || 320) + (bw ? "&bw=1" : ""); }
 
-  function mediaUrl(path) {
-    if (!path) return "";
-    const m = String(path).match(/media\/([^/]+)$/);
-    if (m) return "/staging-media/" + m[1];
-    if (path.indexOf("budget-demo/") === 0) return path.replace(/^budget-demo\//, "");
-    return path;
-  }
-
-  function provLink(p) {
-    const host = (() => { try { return new URL(p.url).hostname.replace(/^www\./, ""); } catch (e) { return p.url; } })();
-    const path = (() => { try { const u = new URL(p.url); return decodeURIComponent(u.pathname).replace(/\/$/, "").split("/").pop() || ""; } catch (e) { return ""; } })();
-    const label = host + (path ? " / " + (path.length > 64 ? path.slice(0, 61) + "…" : path) : "");
-    return '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(label) + "</a>" + (p.note ? ' <span class="muted">— ' + esc(p.note) + "</span>" : "");
-  }
-
-  function provenanceHtml(item, clickHosts) {
-    if (!item) return "";
-    const prov = Array.isArray(item.provenance) ? item.provenance : [];
-    if (!prov.length) {
-      const bits = [];
-      if (item.from) bits.push(esc(item.from));
-      if (item.source) bits.push(esc(item.source));
-      if (item.message_id) bits.push("<code>" + esc(item.message_id) + "</code>");
-      return bits.length ? '<div class="prov"><strong>Provenance:</strong> ' + bits.join(" · ") + "</div>" : "";
-    }
-    const hosts = clickHosts || [];
-    const isClick = (p) => p.type === "url" && hosts.some((h) => String(p.url || "").indexOf(h) >= 0);
-    const fmt = (p) => {
-      if (p.type === "url" && p.url) return provLink(p);
-      if (p.type === "email") {
-        const subj = item.subject ? " · “" + esc(item.subject) + "”" : "";
-        return "email from <strong>" + esc(p.from || item.from || "") + "</strong>" + subj + (p.message_id ? " · <code>" + esc(p.message_id) + "</code>" : "");
-      }
-      if (p.type === "chat") return "chat (Frank)" + (p.note ? " — " + esc(p.note) : "");
-      return esc(p.type || "source");
-    };
-    const clicks = prov.filter(isClick);
-    const rest = prov.filter((p) => !isClick(p));
-    let out = "";
-    if (clicks.length) {
-      out += '<div class="prov click"><span class="badge stale">CLICK-CHECK</span> ' +
-        clicks.map(fmt).join("<br>") + "</div>";
-    }
-    if (rest.length <= 3) {
-      out += '<div class="prov"><strong>Provenance:</strong> ' + rest.map(fmt).join(" · ") + "</div>";
-    } else {
-      out += '<details class="prov-more"><summary>Provenance — ' + rest.length + " more sources</summary><ol>" +
-        rest.map((p) => "<li>" + fmt(p) + "</li>").join("") + "</ol></details>";
-    }
+  /* ---------- slots: config + auto-placed staging items ---------- */
+  function buildSlots() {
+    var raw = CFG.slots || CFG.lineup || []; // `lineup` = schema-1 files still render
+    var seen = {};
+    var out = raw.map(function (s, i) {
+      var it = s.item ? byId[s.item] : null;
+      var sec = s.section || guessSection([s.key, s.slot, it && (it.slot_hint || it.suggested_slot)].join(" "));
+      if (s.item) seen[s.item] = 1;
+      (s.merged || []).forEach(function (m) { seen[m] = 1; });
+      return Object.assign({}, s, { section: sec, key: s.key || ("slot-" + i) });
+    });
+    (CFG.not_proposed || []).forEach(function (n) { seen[n.item] = 1; });
+    (CFG.held || []).forEach(function (h) { seen[h.id || h.item] = 1; });
+    ITEMS.forEach(function (it) {
+      if (seen[it.id] || isSeed(it)) return;
+      if (it.kind === "photo" && it.media_path) return; // photo desk
+      var hint = it.slot_hint || it.suggested_slot || it.kind || "";
+      if (/ops_note_not_print/.test(hint)) return;
+      out.push({
+        key: "auto-" + it.id, section: guessSection(hint), slot: "Not slotted yet (" + (hint || it.kind || "item") + ")",
+        budget: itemWords(it) ? itemWords(it) + "w" : "", item: it.id, proposed: false, auto: true,
+        cost: { type: "prose", span: 1 }
+      });
+    });
     return out;
   }
 
-  function flagsHtml(flags) {
-    if (!flags || !flags.length) return "";
-    return flags.map((f) => '<div class="flag ' + esc(f.level || "info") + '">' + esc(f.text) + "</div>").join("");
+  function questionsFor(s, it) {
+    if (s.questions) return s.questions;
+    if (it && Array.isArray(it.need)) return it.need.map(function (n) { return "Need: " + n; });
+    return [];
   }
 
-  function tableHtml(tbl) {
-    if (!tbl) return "";
-    const head = (tbl.head || []).map((h) => "<th>" + esc(h) + "</th>").join("");
-    const rows = (tbl.rows || []).map((r) => "<tr>" + r.map((c) => "<td>" + esc(c) + "</td>").join("") + "</tr>").join("");
-    return "<table><thead><tr>" + head + "</tr></thead><tbody>" + rows + "</tbody></table>";
+  /* ---------- rendering (string templates; one card at a time) ---------- */
+  function badgesHtml(s, it, vetted, nq) {
+    var b = [];
+    if (s.waiting) b.push('<span class="b wait">Waiting on results</span>');
+    if (vetted) b.push('<span class="b ok">Vetted' + (it && it.vet_scope === "angle_tone_only" ? " (angle &amp; tone)" : "") + "</span>");
+    else b.push('<span class="b warn">Unvetted — needs your Vet</span>');
+    if (it && it.facts_status === "pending") b.push('<span class="b warn">Facts pending</span>');
+    if (nq) b.push('<span class="b ask" data-qbadge>Needs Frank · ' + nq + "</span>");
+    if (s.proposed && !vetted) b.push('<span class="b gray">Desk proposes — goes in once vetted</span>');
+    if (s.auto) b.push('<span class="b gray">Auto-placed from staging</span>');
+    return '<div class="badges">' + b.join("") + "</div>";
   }
 
-  function panelsHtml(pn) {
-    return '<div class="preview tbl board-panels">' + pn.panels.map((p) =>
-      '<div class="board-panel"><div class="board-day">' + esc(p.title) + "</div>" +
-      "<table><thead><tr>" + pn.head.map((h) => "<th>" + esc(h) + "</th>").join("") + "</tr></thead><tbody>" +
-      p.rows.map((r) => "<tr><td>" + esc(r[0]) + "</td><td>" + esc(r[1]) + "</td><td>" +
-        String(r[2]).split(", ").map((n) => '<span class="nm">' + esc(n) + "</span>").join(", ") +
-        "</td><td>" + esc(r[3]) + "</td></tr>").join("") + "</tbody></table></div>").join("") + "</div>";
-  }
-
-  function previewFor(slot, item) {
-    if (slot.panels) return panelsHtml(slot.panels);
-    if (slot.table) return '<div class="preview tbl">' + tableHtml(slot.table) + "</div>";
-    if (!item) return "";
-    if (slot.part === "sidebar" && item.sidebar) {
-      return '<div class="preview tbl">' + tableHtml({ head: ["When", "What"], rows: item.sidebar.rows || [] }) + "</div>";
+  function cardHtml(s) {
+    var it = s.item ? byId[s.item] : null;
+    var qs = questionsFor(s, it);
+    if (s.empty) {
+      return '<div class="empty-wrap" id="c-' + esc(s.key) + '" data-key="' + esc(s.key) + '" data-empty="true"' + (qs.length ? ' data-hasq="1"' : "") + '>' +
+        '<div class="empty"><span class="slot">' + esc(s.slot) + '</span><span>Empty · ' + esc(s.why || "") + "</span></div>" +
+        (qs.length ? qsHtml(s, qs) : "") + "</div>";
     }
-    const body = item.body || "";
-    if (body.length > 520) {
-      const first = body.split(/\n\n/).slice(0, 2).join("\n\n");
-      return '<p class="preview">' + esc(first) + "</p>" +
-        '<details class="fulltext"><summary>Read full draft (' + wordsOf(item) + " words)</summary>" +
-        '<p class="preview">' + esc(body) + "</p></details>";
-    }
-    return '<p class="preview">' + esc(body) + "</p>";
-  }
-
-  function metaCount(slot, item) {
-    if (slot.empty) return "0 · empty";
-    if (slot.panels) return slot.panels.panels.reduce((n, p) => n + p.rows.length, 0) + " event rows · " + (slot.row_note || "");
-    if (slot.table) return (slot.table.rows || []).length + " rows";
-    if (slot.part === "sidebar" && item && item.sidebar) return (item.sidebar.rows || []).length + " rows";
-    const w = wordsOf(item);
-    return w ? w + "w" : "—";
-  }
-
-  function buildCard(slot, opts) {
-    opts = opts || {};
-    const item = slot.item ? byId[slot.item] : null;
-    const vetted = slot.empty ? true : !!(item && item.vetted);
-    const proposed = !!slot.proposed && !slot.empty && !slot.stale;
-    const includeOn = proposed && vetted;
-    const headline = slot.title ||
-      (slot.part === "sidebar" && item && item.sidebar && item.sidebar.title) ||
-      (item && (item.headline || item.body)) || slot.slot;
-    if (slot.empty) {
-      return '<article class="card empty-slot" data-slot="' + esc(slot.key) + '" data-item-id="" data-vetted="true" data-empty="true" data-proposed="false" data-cost="{}" draggable="false">' +
-        '<div class="drag-handle" style="visibility:hidden">⋮⋮</div>' +
-        '<div class="card-main"><div class="slot-head">' +
-        '<span class="slot-rank">#' + esc(String(slot.rank)) + "</span>" +
-        '<span class="slot-name">' + esc(slot.slot) + "</span>" +
-        '<span class="slot-budget">' + esc(slot.budget || "") + "</span>" +
-        '<span class="badge empty">' + (slot.covered_by ? "COVERED BY FEATURE" : "EMPTY") + "</span></div>" +
-        '<div class="empty-why">' + esc(slot.why || "") + "</div></div>" +
-        '<div class="card-controls"></div></article>';
-    }
-    const deck = item && item.deck && !slot.part ? item.deck : "";
-    const classes = ["card"];
-    const pendingVet = proposed && !vetted;
-    if (pendingVet) classes.push("pending-vet");
-    else if (!includeOn) classes.push("excluded");
-    if (slot.empty) classes.push("empty-slot");
-    if (slot.stale) classes.push("stale-card");
-    if (!vetted && !slot.empty) classes.push("unvetted-card");
-
-    let badge = "";
-    if (slot.empty) badge = '<span class="badge empty badge-inline" data-badge>EMPTY</span>';
-    else if (slot.stale) badge = '<span class="badge stale badge-inline" data-badge>STALE</span>';
-    else if (vetted) badge = '<span class="badge vetted badge-inline" data-badge>VETTED</span>';
-    else badge = '<span class="badge unvetted badge-inline" data-badge>UNVETTED</span>';
-    if (pendingVet) badge += ' <span class="badge unvetted badge-inline">PROPOSED — NEEDS VET</span>';
-
-    let controls = "";
-    if (!slot.empty && item && !vetted) {
-      controls +=
-        '<div class="vet-panel" data-vet-panel>' +
-        '<span class="vet-hint">Why this matters / what the bot should know</span>' +
-        '<textarea data-vet-notes placeholder="Your notes for the bot (Desk notes shown on the card)…"></textarea>' +
-        '<button type="button" class="vet-btn" data-vet-btn>Vet</button></div>';
-    }
-    if (!slot.empty) {
-      const blocked = !vetted;
-      controls +=
-        '<label class="check' + (blocked ? " blocked" : "") + '">' +
-        '<input type="checkbox" data-include' +
-        (includeOn ? " checked" : "") +
-        (blocked ? " disabled" : "") +
-        " /> " + (slot.stale ? "Include anyway" : "Include in issue") + "</label>";
-    } else {
-      controls += '<span class="muted" style="font-size:12px;">Nothing to include</span>';
-    }
-
-    const photoItem = slot.photo ? byId[slot.photo] : null;
-    const photoNote = photoItem
-      ? '<div class="meta-line">Feature photo: <code>' + esc(slot.photo) + "</code> (Frank-vetted · Include on photo desk)</div>"
-      : "";
-    const thumb = photoItem
-      ? '<figure class="feature-thumb"><img src="' + esc(mediaUrl(photoItem.media_path)) + '" alt="" /><figcaption>' + esc(photoItem.caption || "") + " (B&amp;W as printed)</figcaption></figure>"
-      : "";
-    const merged = (slot.merged || []).length
-      ? '<div class="meta-line">Merged / deduped: ' + slot.merged.map((id) => "<code>" + esc(id) + "</code>").join(", ") + "</div>"
-      : "";
-    const covered = slot.covered_by
-      ? '<div class="meta-line">Covered by feature this week.</div>'
-      : "";
-
-    const art =
-      '<article class="' + classes.join(" ") + '" data-slot="' + esc(slot.key || slot.slot) +
-      '" data-item-id="' + esc(slot.item || "") +
-      '" data-vetted="' + (vetted ? "true" : "false") +
-      '" data-rank="' + esc(String(slot.rank || "")) +
-      '" data-proposed="' + (proposed ? "true" : "false") +
-      '" data-stale="' + (slot.stale ? "true" : "false") +
-      '" data-empty="' + (slot.empty ? "true" : "false") +
-      '" data-cost="' + esc(JSON.stringify(slot.cost || {})) +
-      '" draggable="' + (opts.draggable === false ? "false" : "true") + '">' +
-      '<div class="drag-handle" title="Drag to reorder">⋮⋮</div>' +
-      '<div class="card-main">' +
-      '<div class="slot-head">' +
-      '<span class="slot-rank">#' + esc(String(slot.rank || "")) + "</span>" +
-      '<span class="slot-name">' + esc(slot.slot) + "</span>" +
-      '<span class="slot-budget">' + esc(slot.budget || "") + "</span>" +
+    var vetted = !!(it && it.vetted);
+    var on = !!s.proposed && vetted && !s.waiting;
+    var cls = ["card"];
+    if (!vetted) cls.push("needs-vet"); else if (on) cls.push("is-in"); else cls.push("is-out");
+    var headline = s.title || (it && it.headline) || s.slot;
+    var summary = s.summary || (it && it.summary) || firstSentence(it && it.body);
+    var w = itemWords(it);
+    var meta = [];
+    if (s.cost && /table/.test(s.cost.type || "")) meta.push((s.cost.rows || "?") + " rows");
+    else if (s.cost && s.cost.type === "figure") meta.push("figure, " + s.cost.span + " columns");
+    else if (w && !(it && /signup_row|fact/.test(it.kind || ""))) meta.push(w + " words");
+    if (s.budget) meta.push("budget " + s.budget);
+    var thumbFile = s.thumb || (it && it.media_path && !/\.svg$/i.test(it.media_path) ? fileOf(it.media_path) : "");
+    var media = thumbFile && mediaById["__file:" + thumbFile];
+    var dims = media && media.w ? ' width="' + 228 + '" height="' + Math.round(228 * media.h / media.w) + '"' : "";
+    var draftLabel = s.panels ? "See the board (" + s.panels.panels.reduce(function (n, p) { return n + p.rows.length; }, 0) + " events)" :
+      (it && it.schedule_rows) ? "See the class table" : (s.cost && s.cost.type === "figure") ? "Read Desk's description of the figure" : (it && /graf|qa|comic/.test(it.kind || "")) ? "Read the draft · " + w + " words" : "Read the staging text";
+    return '<article class="' + cls.join(" ") + '" id="c-' + esc(s.key) + '" data-key="' + esc(s.key) + '" data-item-id="' + esc(s.item || "") +
+      '" data-vetted="' + vetted + '"' + (qs.length ? ' data-hasq="1"' : "") + ">" +
+      '<div class="c-main">' +
+        '<div class="slotline"><span class="slot">' + esc(s.slot) + "</span><span>" + esc(meta.join(" · ")) + "</span></div>" +
+        "<h3>" + esc(headline) + "</h3>" +
+        badgesHtml(s, it, vetted, qs.length) +
+        '<p class="sum">' + esc(summary) + "</p>" +
+        (qs.length ? qsHtml(s, qs) : "") +
+        ((s.flags || []).length ? '<ul class="flags">' + s.flags.map(function (f) { return '<li class="' + esc(f.level || "") + '">' + esc(f.text) + "</li>"; }).join("") + "</ul>" : "") +
+        (it ? '<details data-lazy="draft"><summary>' + esc(draftLabel) + "</summary></details>" : "") +
+        (it ? '<details data-lazy="prov"><summary>Source &amp; provenance</summary></details>' : "") +
       "</div>" +
-      badge +
-      '<div class="headline">' + esc(headline) + "</div>" +
-      (deck ? '<div class="deck">' + esc(deck) + "</div>" : "") +
-      thumb +
-      (slot.why ? '<div class="why">' + esc(slot.why) + "</div>" : "") +
-      (item && !item.vetted && item.vet_notes && slot.part !== "sidebar" && !slot.hide_desk_notes
-        ? '<div class="desk-notes"><strong>Desk notes</strong>' + esc(item.vet_notes) + "</div>"
-        : "") +
-      previewFor(slot, item) +
-      flagsHtml(slot.flags) +
-      (slot.part === "sidebar"
-        ? '<div class="prov"><strong>Provenance:</strong> same sources as the primer; dates from ' +
-          ((item && item.provenance && item.provenance[0]) ? provLink(item.provenance[0]) : "NJSIAA") + "</div>"
-        : provenanceHtml(item, slot.click_check)) +
-      photoNote + merged + covered +
-      '<div class="meta-line"><span class="count">' + esc(metaCount(slot, item)) +
-      "</span> / " + esc(slot.budget || "—") +
-      (item ? " · id <code>" + esc(item.id) + "</code>" : "") +
-      (item ? " · Frank-vetted: " + (item.vetted ? "<strong>yes</strong>" : "no") : "") +
-      "</div>" +
-      (slot.empty ? "" : '<div class="card-notes"><input type="text" data-notes-for="' + esc(slot.key || "") + '" placeholder="Optional note for this slot…" /></div>') +
-      "</div>" +
-      '<div class="card-controls">' + controls + "</div>" +
-      "</article>";
-    return art;
+      '<div class="side-ctl">' +
+        (thumbFile ? '<img class="thumb" loading="lazy" alt="" src="' + esc(thumbUrl(thumbFile, 460, true)) + '"' + dims + " />" : "") +
+        '<label class="inc' + (on ? " on" : "") + (vetted ? "" : " locked") + '"><input type="checkbox" data-include' + (on ? " checked" : "") + (vetted ? "" : " disabled") + " /><span>" + (on ? "In the issue" : (vetted ? "Include" : "Include (Vet first)")) + "</span></label>" +
+        '<textarea class="note" data-notes-for="' + esc(s.key) + '" placeholder="' + (vetted ? "Note to Desk (optional)" : "Note for the bot (saved with Vet)") + '"></textarea>' +
+        (vetted ? "" : '<button type="button" class="vet" data-vet-btn>Vet this item</button>') +
+        '<div class="move"><button type="button" data-move="-1" title="Move up">↑ Up</button><button type="button" data-move="1" title="Move down">↓ Down</button></div>' +
+      "</div></article>";
   }
 
-  function renderLineup() {
-    lineupEl.innerHTML = CFG.lineup.map((s) => buildCard(s)).join("");
-    candEl.innerHTML = (CFG.candidates || []).map((c, i) => {
-      const item = byId[c.item];
-      const slot = {
-        key: "cand-" + (c.item || i),
-        rank: "opt",
-        slot: "Candidate → " + (c.target || "optional"),
-        budget: item && item.word_count ? item.word_count + "w" : "optional",
-        item: c.item,
-        proposed: false,
-        flags: c.flags,
-        stale: c.stale,
-        why: "Self-gather candidate — not in Desk’s proposed Include set until you Vet + check Include.",
-        cost: c.cost,
-      };
-      return buildCard(slot, { draggable: true });
-    }).join("");
+  function qsHtml(s, qs) {
+    return '<div class="qs"><div class="qs-h">Questions for Frank</div>' + qs.map(function (q, i) {
+      return '<label class="q"><span>' + esc(q) + '</span><input type="text" data-q="' + esc(s.key) + "|" + i + '" placeholder="Type your answer" /></label>';
+    }).join("") + "</div>";
+  }
 
-    const held = (CFG.held || [])[0];
-    const heldEl = document.getElementById("heldLine");
-    if (held) {
-      heldEl.innerHTML =
-        '<span class="badge held">HELD FOR LATER</span> ' +
-        "<strong>" + esc(held.label) + "</strong> · week <code>" + esc(held.week) +
-        "</code> · " + esc(held.note || "");
+  function draftBody(s, it) {
+    if (s.panels) {
+      return s.panels.panels.map(function (p) {
+        return '<div class="panel-h">' + esc(p.title) + '</div><table class="t"><thead><tr>' + s.panels.head.map(function (h) { return "<th>" + esc(h) + "</th>"; }).join("") +
+          "</tr></thead><tbody>" + p.rows.map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + esc(c) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table>";
+      }).join("");
     }
+    if (s.table || (it && it.schedule_rows)) {
+      var t = s.table || { head: ["Day", "Time", "Class"], rows: it.schedule_rows };
+      return '<table class="t"><thead><tr>' + t.head.map(function (h) { return "<th>" + esc(h) + "</th>"; }).join("") + "</tr></thead><tbody>" +
+        t.rows.map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + esc(c) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table>";
+    }
+    var body = String((it && it.body) || "");
+    return '<div class="draft-body">' + body.split(/\n\s*\n/).map(function (p) {
+      return "<p>" + esc(p.trim()).replace(/\n/g, "<br>").replace(/\[NEED:[^\]]*\]/g, function (m) { return "<mark>" + m + "</mark>"; }) + "</p>";
+    }).join("") + "</div>" + (it && it.draft_path ? '<div class="ctl-hint">Draft file: <code>' + esc(it.draft_path) + "</code></div>" : "");
   }
 
-  function renderMergedAndAccounting() {
-    const np = CFG.not_proposed || [];
-    document.getElementById("mergedCount").textContent = String(np.length);
-    document.getElementById("mergedBody").innerHTML = np.map((n) => {
-      const it = byId[n.item] || {};
-      return "<tr><td><code>" + esc(n.item) + "</code></td><td>" + esc(it.headline || it.body || "(missing from staging)") + "</td><td>" + esc(n.why) + "</td></tr>";
-    }).join("");
-    const seen = new Set();
-    CFG.lineup.forEach((s) => { if (s.item) seen.add(s.item); (s.merged || []).forEach((m) => seen.add(m)); if (s.photo) seen.add(s.photo); });
-    (CFG.candidates || []).forEach((c) => seen.add(c.item));
-    (CFG.photos || []).forEach((p) => seen.add(p.item));
-    np.forEach((n) => seen.add(n.item));
-    const seeds = stagingItems.filter(isSeed).map((i) => i.id);
-    seeds.forEach((id) => seen.add(id));
-    const loose = stagingItems.filter((i) => !seen.has(i.id));
-    // guard: a seed must never sit in the proposed lineup
-    const leaked = CFG.lineup.filter((s) => s.item && isSeed(byId[s.item])).map((s) => s.item);
-    document.getElementById("accounting").innerHTML =
-      "Accounting: " + stagingItems.length + " staging items → " +
-      CFG.lineup.filter((s) => s.item).length + " lineup cards, " + (CFG.candidates || []).length + " candidates, " +
-      (CFG.photos || []).length + " photos, " + np.length + " merged/ops, " + seeds.length + " seed/pretend excluded." +
-      (loose.length ? ' <strong style="color:var(--red-soft)">Unsorted: ' + loose.map((i) => esc(i.id)).join(", ") + "</strong>" : " Nothing unsorted.") +
-      (leaked.length ? ' <strong style="color:var(--red-soft)">SEED IN LINEUP: ' + esc(leaked.join(", ")) + "</strong>" : "");
+  function provLine(p) {
+    var bits = [];
+    if (p.type) bits.push('<span class="lbl">' + esc(p.type) + "</span>");
+    if (p.url) {
+      var label = p.url;
+      try { var u = new URL(p.url); label = u.hostname.replace(/^www\./, "") + u.pathname.replace(/\/$/, "").slice(0, 60); } catch (e) {}
+      bits.push('<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(label) + "</a>");
+    }
+    if (p.from) bits.push(esc(p.from));
+    if (p.subject) bits.push("“" + esc(p.subject) + "”");
+    if (p.note) bits.push(esc(p.note));
+    if (p.local_copy) bits.push("copy: <code>" + esc(p.local_copy) + "</code>");
+    if (p.message_id) bits.push("<code>" + esc(p.message_id) + "</code>");
+    if (p.retrieved_at) bits.push('<span class="lbl">' + esc(String(p.retrieved_at).slice(0, 16).replace("T", " ")) + "</span>");
+    return bits.join(" · ");
+  }
+  function provBody(s, it) {
+    var prov = Array.isArray(it.provenance) ? it.provenance : [];
+    var h = '<div class="prov-body">';
+    h += '<div><span class="lbl">Item</span> <code>' + esc(it.id) + "</code> · " + esc(it.kind || "") + " · source " + esc(it.source || "—") + (it.from ? " · from " + esc(it.from) : "") + "</div>";
+    if (it.vetted) h += '<div><span class="lbl">Vetted</span> by ' + esc(it.vetted_by || "?") + " · " + esc(String(it.vetted_at || "").slice(0, 16).replace("T", " ")) + "</div>";
+    if (prov.length) h += "<ol>" + prov.map(function (p) { return "<li>" + provLine(p) + "</li>"; }).join("") + "</ol>";
+    else if (it.message_id) h += "<div><code>" + esc(it.message_id) + "</code></div>";
+    if (Array.isArray(it.facts) && it.facts.length) h += '<div class="lbl">Facts on file</div><ol>' + it.facts.map(function (f) { return "<li>" + esc(f.claim) + (f.status ? " — " + esc(f.status) : "") + "</li>"; }).join("") + "</ol>";
+    if (it.claims_path) h += '<div><span class="lbl">Claim check</span> <code>' + esc(it.claims_path) + "</code></div>";
+    if (it.vet_notes) h += '<div style="margin-top:6px"><span class="lbl">Desk / vet notes</span> ' + esc(it.vet_notes) + "</div>";
+    if ((s.merged || []).length) h += '<div><span class="lbl">Merged</span> ' + s.merged.map(function (m) { return "<code>" + esc(m) + "</code>"; }).join(", ") + "</div>";
+    return h + "</div>";
   }
 
-  function renderPhotos() {
-    photoDesk.innerHTML = (CFG.photos || []).map((p) => {
-      const item = byId[p.item] || {};
-      const vetted = !!item.vetted || !!p.proposed; // proposed photos are frank-vetted
-      const realVetted = !!(item.vetted);
-      const src = mediaUrl(item.media_path || ("staging/weeks/next/media/" + p.file));
-      const hPrint = (() => {
-        const spanW = p.span === 2 ? CFG.capacity.span2_width_in : CFG.capacity.col_width_in;
-        return (spanW * (p.h / p.w)).toFixed(2);
-      })();
-      const overCeil = Number(hPrint) > CFG.capacity.photo_ceiling_in;
-      const includeOn = !!p.proposed && realVetted;
-      return (
-        '<div class="photo-card' + (!realVetted ? " unvetted-card" : "") +
-        '" data-item-id="' + esc(p.item) + '" data-vetted="' + (realVetted ? "true" : "false") +
-        '" data-photo-span="' + esc(String(p.span || 1)) +
-        '" data-photo-w="' + esc(String(p.w)) + '" data-photo-h="' + esc(String(p.h)) +
-        '" data-proposed="' + (p.proposed ? "true" : "false") + '">' +
-        '<img src="' + esc(src) + '" alt="' + esc(p.caption || item.caption || p.item) + '" />' +
-        '<div class="badge-row">' +
-        '<div class="caption">' + esc(item.caption || p.caption || p.item) +
-        ' <span style="color:#0a7;">· REAL</span></div>' +
-        (realVetted
-          ? '<span class="badge vetted" data-badge>VETTED</span>'
-          : '<span class="badge unvetted" data-badge>UNVETTED</span>') +
-        (p.proposed ? '<span class="badge vetted">PROPOSED</span>' : "") +
-        "</div>" +
-        '<div class="source">File <code>' + esc(p.file) + "</code> · " +
-        p.w + "×" + p.h + " · span " + p.span +
-        " → ~" + hPrint + "in tall" +
-        (overCeil ? ' <span style="color:var(--red-soft);font-weight:600;">· FLAGS &gt;2.2in ceiling</span>' : "") +
-        " · for " + esc(p.for || "") +
-        " · " + esc(item.from || item.source || "") +
-        "</div>" +
-        provenanceHtml(item) +
-        (realVetted
-          ? ""
-          : '<div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div>') +
-        '<label class="check' + (realVetted ? "" : " blocked") + '">' +
-        '<input type="checkbox" data-photo-id="' + esc(p.item) + '" data-include-gated' +
-        (includeOn ? " checked" : "") +
-        (realVetted ? "" : " disabled") +
-        " /> Include</label>" +
-        "</div>"
-      );
+  function photoHtml(p) {
+    var m = mediaById[p.id] || {};
+    var item = byId[p.id];
+    var vetted = !!(item ? item.vetted : m.vetted);
+    var on = !!p.proposed && vetted;
+    var file = m.filename || fileOf(m.media_path);
+    var dims = m.w ? ' width="250" height="' + Math.round(250 * m.h / m.w) + '"' : "";
+    return '<div class="ph" data-photo-card="' + esc(p.id) + '" data-item-id="' + esc(item ? p.id : "") + '" data-vetted="' + vetted + '" data-span="' + (p.span || 1) + '" data-w="' + (m.w || 1) + '" data-h="' + (m.h || 1) + '">' +
+      '<img class="thumb" loading="lazy" alt="" src="' + esc(thumbUrl(file, 500, true)) + '"' + dims + " />" +
+      '<div class="cap">' + esc(m.caption || p.id) + "</div>" +
+      '<div class="badges">' + (vetted ? '<span class="b ok">Vetted</span>' : '<span class="b warn">Unvetted</span>') + (p.proposed ? '<span class="b gray">Desk proposes</span>' : "") + "</div>" +
+      (p.note ? '<div class="meta">' + esc(p.note) + "</div>" : "") +
+      '<div class="meta">' + esc(file) + (m.w ? " · " + m.w + "×" + m.h : "") + " · " + esc(m.source || "") + (m.parent_item_id ? " · for <code>" + esc(m.parent_item_id) + "</code>" : "") + "</div>" +
+      '<label class="inc' + (on ? " on" : "") + (vetted ? "" : " locked") + '"><input type="checkbox" data-photo-id="' + esc(p.id) + '"' + (on ? " checked" : "") + (vetted ? "" : " disabled") + " /><span>" + (on ? "In the issue" : (vetted ? "Include photo" : "Unvetted — vet in chat")) + "</span></label>" +
+      (!vetted && item ? '<button type="button" class="vet" data-vet-btn>Vet this photo</button>' : "") +
+      "</div>";
+  }
+
+  function render() {
+    var secs = CFG.sections || [];
+    var html = "";
+    secs.forEach(function (sec) {
+      html += '<section class="sec" id="sec-' + esc(sec.key) + '"><h2>' + esc(sec.title) + ' <span class="sc" data-sc="' + esc(sec.key) + '"></span></h2>' +
+        (sec.hint ? '<p class="sec-hint">' + esc(sec.hint) + "</p>" : "");
+      if (sec.key === "photos") {
+        var photos = photoList();
+        html += photos.length ? '<div class="photos">' + photos.map(photoHtml).join("") + "</div>" : '<p class="sec-hint">No photos in staging.</p>';
+      } else if (sec.key === "held") {
+        html += heldHtml();
+      } else {
+        var list = SLOTS.filter(function (s) { return s.section === sec.key; });
+        html += '<div class="cards" data-cards="' + esc(sec.key) + '">' + list.map(cardHtml).join("") + "</div>";
+      }
+      html += "</section>";
+    });
+    $("sections").innerHTML = html;
+    $("jump").innerHTML = '<div class="side-label">Jump to</div>' + secs.map(function (sec) {
+      return '<a href="#sec-' + esc(sec.key) + '">' + esc(sec.title) + ' <span data-jc="' + esc(sec.key) + '"></span></a>';
     }).join("");
   }
 
-  function renderInbox() {
-    const real = stagingItems.filter((i) => !isSeed(i));
-    const seeds = stagingItems.filter((i) => isSeed(i));
-    document.getElementById("seedCount").textContent = String(seeds.length);
-    document.getElementById("realCount").textContent = String(real.length);
-    seedBody.innerHTML = seeds
-      .map((i) =>
-        "<tr class=\"seed-row\"><td><code>" +
-        esc(i.id) +
-        "</code></td><td>" +
-        esc(i.body || i.headline || "") +
-        "</td><td>" +
-        (i.vetted ? "yes" : "no") +
-        "</td></tr>"
-      )
-      .join("");
-
-    const rows = real.slice().sort((a, b) => {
-      if (!!a.vetted !== !!b.vetted) return a.vetted ? 1 : -1;
-      return String(a.created_at || "").localeCompare(String(b.created_at || ""));
+  function photoList() {
+    var cfgPhotos = CFG.photos || [];
+    var listed = {};
+    var out = cfgPhotos.map(function (p) { listed[p.id] = 1; return p; });
+    MEDIA.forEach(function (m) {
+      if (listed[m.id] || m.kind !== "photo") return;
+      out.push({ id: m.id, proposed: false, span: 1, note: "Not reviewed by Desk yet." });
     });
-    inboxBody.innerHTML = rows
-      .map((item) => {
-        const kind = item.kind || "other";
-        const tag = isOpsNote(item) ? "ops" : KIND_TAG[kind] || "tip";
-        const label = isOpsNote(item) ? "ops" : KIND_LABEL[kind] || kind;
-        const vetted = !!item.vetted;
-        const badge = vetted
-          ? '<span class="badge vetted" data-badge>VETTED</span>'
-          : '<span class="badge unvetted" data-badge>UNVETTED</span>';
-        const sourceBits = [];
-        if (item.from) sourceBits.push(esc(item.from));
-        if (item.source) sourceBits.push(esc(item.source));
-        if (isOpsNote(item)) sourceBits.push("ops note — not print");
-        const source = sourceBits.join(" · ") || "—";
-        let vetCell;
-        if (vetted) {
-          vetCell = item.vet_notes
-            ? '<div class="vet-notes-saved">' + esc(item.vet_notes) + "</div>"
-            : '<span style="color:var(--green);font-weight:600;font-size:12px;">yes</span>';
-        } else if (isOpsNote(item)) {
-          vetCell = '<span class="muted">not a print candidate</span>';
-        } else {
-          vetCell =
-            '<div class="vet-panel" data-vet-panel>' +
-            '<span class="vet-hint">Why this matters / what the bot should know</span>' +
-            (item.vet_notes ? '<div class="desk-notes"><strong>Desk notes</strong>' + esc(item.vet_notes) + "</div>" : "") +
-            '<textarea data-vet-notes placeholder="Your notes for the bot…"></textarea>' +
-            '<button type="button" class="vet-btn" data-vet-btn>Vet</button></div>';
-        }
-        return (
-          '<tr data-item-id="' +
-          esc(item.id) +
-          '" data-vetted="' +
-          (vetted ? "true" : "false") +
-          '"><td><span class="tag ' +
-          tag +
-          '">' +
-          esc(label) +
-          "</span></td><td>" +
-          esc(item.headline || item.body || item.id) +
-          "</td><td>" +
-          source +
-          "</td><td>" +
-          badge +
-          '</td><td class="actions-cell">' +
-          vetCell +
-          "</td></tr>"
-        );
-      })
-      .join("");
+    return out;
   }
 
-  function includedSlots() {
-    return cards(lineupEl).filter((c) => {
-      const box = c.querySelector("[data-include]");
-      return box && !box.disabled && box.checked;
+  function heldHtml() {
+    var rows = [];
+    (CFG.held || []).forEach(function (h) { rows.push("<b>Held: " + esc(h.label || h.id) + "</b><span>" + esc(h.note || "") + "</span>"); });
+    (CFG.not_proposed || []).forEach(function (n) {
+      var it = byId[n.item] || {};
+      rows.push("<b>" + esc(it.headline || n.item) + "</b><span>" + esc(n.why) + " · <code>" + esc(n.item) + "</code>" + (it.vetted === false ? " · unvetted" : "") + "</span>");
     });
+    var seeds = ITEMS.filter(isSeed);
+    if (seeds.length) rows.push("<b>Seed / pretend items excluded (" + seeds.length + ")</b><span>" + seeds.map(function (s) { return "<code>" + esc(s.id) + "</code>"; }).join(", ") + "</span>");
+    if (!rows.length) rows.push("<span>Nothing held.</span>");
+    return '<div class="held-list">' + rows.map(function (r) { return '<div class="held-row">' + r + "</div>"; }).join("") + "</div>";
   }
 
-  function estimateFit() {
-    const C = CFG.capacity;
-    const page1 = C.page1_col_in;
-    const page2 = C.page2_col_in;
-    const totalCap = page1 + page2;
-    const target = totalCap * C.oversupply;
-
-    let used = 0;
-    const parts = [];
-
-    function add(label, colIn) {
-      used += colIn;
-      parts.push({ label, colIn: Math.round(colIn * 100) / 100 });
-    }
-
-    function cardCost(card) {
-      let cost = {};
-      try { cost = JSON.parse(card.getAttribute("data-cost") || "{}"); } catch (e) { cost = {}; }
-      const item = byId[card.getAttribute("data-item-id")] || null;
-      const span = cost.span || 1;
-      if (cost.type === "prose") {
-        const w = wordsOf(item);
-        const wpi = cost.feature ? C.wpi_feature : C.wpi;
-        const head = cost.feature ? C.head_feature : C.head_short;
-        return w / wpi + head * span + C.gap * span;
+  /* ---------- fit estimate + counters (no DOM rebuilds) ---------- */
+  function slotByKey(k) { for (var i = 0; i < SLOTS.length; i++) if (SLOTS[i].key === k) return SLOTS[i]; return null; }
+  function costOf(s) {
+    var C = CFG.capacity, c = s.cost || {}, it = byId[s.item], span = c.span || 1;
+    if (c.type === "prose") { var f = c.feature; return itemWords(it) / (f ? C.wpi_feature : C.wpi) + (f ? C.head_feature : C.head_short) * span + C.gap * span; }
+    if (c.type === "table") return (C.table_head + (c.rows || 0) * (span >= 3 ? C.row_full : C.row_rail) + C.gap) * span;
+    if (c.type === "table_rows") return (c.rows || 0) * C.row_rail;
+    if (c.type === "qa") return C.head_short + (itemWords(it) || 40) / C.wpi + C.gap;
+    if (c.type === "figure") { var wIn = span >= 2 ? C.span2_width_in : C.col_width_in; return (wIn * (c.h / c.w) + C.caption_in + C.gap) * span; }
+    return 0;
+  }
+  function updateTotals() {
+    var C = CFG.capacity, cap = C.page1_col_in + C.page2_col_in, used = 0, pend = 0, nIn = 0, nVet = 0;
+    var perSec = {};
+    document.querySelectorAll("article.card").forEach(function (el) {
+      var s = slotByKey(el.getAttribute("data-key")); if (!s) return;
+      var sec = perSec[s.section] = perSec[s.section] || { n: 0, inc: 0 };
+      sec.n++;
+      var box = el.querySelector("[data-include]");
+      if (box && box.checked && !box.disabled) { used += costOf(s); nIn++; sec.inc++; }
+      if (el.getAttribute("data-vetted") !== "true") { nVet++; if (s.proposed) pend += costOf(s); }
+    });
+    var ps = perSec.photos = { n: 0, inc: 0 };
+    document.querySelectorAll("[data-photo-card]").forEach(function (el) {
+      ps.n++;
+      var box = el.querySelector("[data-photo-id]");
+      if (box && box.checked && !box.disabled) {
+        var span = Number(el.getAttribute("data-span")) || 1, wIn = span >= 2 ? C.span2_width_in : C.col_width_in;
+        used += (wIn * Number(el.getAttribute("data-h")) / Number(el.getAttribute("data-w")) + C.caption_in) * span; ps.inc++;
       }
-      if (cost.type === "table" || cost.type === "table_rows") {
-        const rows = cost.rows || 0;
-        const rowH = span >= 3 ? C.row_full : C.row_rail;
-        const head = cost.type === "table_rows" ? 0 : C.table_head;
-        return (head + rows * rowH + (cost.type === "table_rows" ? 0 : C.gap)) * span;
-      }
-      if (cost.type === "qa") {
-        return C.head_short + (wordsOf(item) || 40) / C.wpi + C.gap;
-      }
-      return 0;
-    }
-    cards(lineupEl).concat(cards(candEl)).forEach((card) => {
-      const box = card.querySelector("[data-include]");
-      if (!box || box.disabled || !box.checked) return;
-      const name = (card.querySelector(".slot-name") || {}).textContent || card.dataset.slot;
-      add(name, cardCost(card));
+      if (el.getAttribute("data-vetted") !== "true" && el.getAttribute("data-item-id")) nVet++;
     });
-
-    // Pending: proposed but blocked only by Vet
-    let pending = 0;
-    const pendingNames = [];
-    cards(lineupEl).forEach((card) => {
-      if (card.getAttribute("data-proposed") !== "true") return;
-      const box = card.querySelector("[data-include]");
-      if (box && box.disabled && !isVetted(card)) {
-        pending += cardCost(card);
-        pendingNames.push((card.querySelector(".slot-name") || {}).textContent || "");
-      }
-    });
-
-    // Photos included
-    photoDesk.querySelectorAll(".photo-card").forEach((pc) => {
-      const box = pc.querySelector("[data-photo-id]");
-      if (!box || box.disabled || !box.checked) return;
-      const span = Number(pc.getAttribute("data-photo-span") || 1);
-      const w = Number(pc.getAttribute("data-photo-w") || 1);
-      const h = Number(pc.getAttribute("data-photo-h") || 1);
-      const spanW = span >= 2 ? C.span2_width_in : C.col_width_in;
-      const printH = spanW * (h / w);
-      add("photo " + (pc.getAttribute("data-item-id") || ""), printH * span + C.caption_in * span);
-    });
-
-    const proposedTotal = used + pending;
-    const pct = Math.min(100, (used / (totalCap * 1.25)) * 100);
-    const pctPending = Math.min(100, (proposedTotal / (totalCap * 1.25)) * 100);
-    const meter = document.getElementById("fitMeter");
-    const fill = document.getElementById("fitFill");
-    const cap = document.getElementById("fitCap");
-    fill.style.width = pct + "%";
-    document.getElementById("fitPending").style.left = pct + "%";
-    document.getElementById("fitPending").style.width = Math.max(0, pctPending - pct) + "%";
-    cap.style.left = (100 / 1.25) + "%";
-    document.getElementById("fitTarget").style.left = (100 * C.oversupply / 1.25) + "%";
-    meter.classList.remove("over", "short");
-    let verdict = "in range";
-    const basis = proposedTotal;
-    if (basis > totalCap * 1.08) {
-      meter.classList.add("over");
-      verdict = "OVER — cut bottom-up";
-    } else if (basis < totalCap * 0.92) {
-      meter.classList.add("short");
-      verdict = "SHORT — stretch or flag Frank";
-    }
-
-    const wordsEq = (x) => Math.round(x * C.wpi / 10) * 10;
-    document.getElementById("fitNums").innerHTML =
-      "Included now: <strong>" + used.toFixed(1) + "</strong> col-in" +
-      (pending ? " · + pending Vet: <strong>" + pending.toFixed(1) + "</strong> (" + esc(pendingNames.join(", ")) + ")" : "") +
-      "<br>Proposed total: <strong>" + proposedTotal.toFixed(1) + "</strong> of <strong>" + totalCap.toFixed(1) +
-      "</strong> col-in capacity (p1 " + page1.toFixed(1) + " + p2 " + page2.toFixed(1) + ") = <strong>" +
-      Math.round(proposedTotal / totalCap * 100) + "%</strong> · oversupply target ~" + target.toFixed(1) +
-      "<br><strong>" + verdict + "</strong>" +
-      (basis < totalCap
-        ? " · short by ~" + (totalCap - basis).toFixed(1) + " col-in (≈" + wordsEq(totalCap - basis) + " words); ~" +
-          (target - basis).toFixed(1) + " col-in (≈" + wordsEq(target - basis) + "w) below the 115% oversupply target"
-        : " · over by ~" + (basis - totalCap).toFixed(1) + " col-in (≈" + wordsEq(basis - totalCap) + " words)");
-
-    document.getElementById("fitDetail").innerHTML =
-      "<strong>Estimate, not a proof.</strong> Prose ≈ words ÷ " + C.wpi + "/col-in (feature body ÷ " + C.wpi_feature +
-      " for +0.5pt type) + headline; tables ≈ title/header " + C.table_head + "in + rows × " + C.row_rail + "in (rail) or " +
-      C.row_full + "in × 3 cols (full width); photos = displayed height × span. Furniture measured on <code>issues/2026-10-14</code>. " +
-      "Bar: green/tan = included now, hatched = pending Vet, dark tick = 100% capacity, dotted tick = 115%.<br>Breakdown (col-in): " +
-      parts.map((p) => esc(p.label) + " <strong>" + p.colIn.toFixed(1) + "</strong>").join(" · ");
-
-    document.getElementById("cutStretch").innerHTML =
-      "<strong>Short (this week’s likely case):</strong> per CONTENT-HIERARCHY stretch order — (1) feature already runs long; (2) Remise short can take a line; (3) add a TV / club-events row. Real fillers waiting in the pile: Medeo results (if they land, +2 rows), a vetted Casablanca World Cup short (Secondary B), Song Se-ra or the college-path note, a Morris Cup deadline row. Missing entirely: <strong>ratings rows</strong> and a comic. If still short → Desk flags Frank with inches/words; never stretch type or leading.<br><br>" +
-      "<strong>Over:</strong> drop Secondary B / candidates first → trim TV / comic → trim Remise toward 80w and the feature toward ~300w. Keep club results, signup board and Parent Q&amp;A. Never cut furniture; never shrink type or margins.<br><br>" +
-      "<strong>Swing items:</strong> Morris Hills photo at span 2 ≈ " + (C.span2_width_in * 720 / 1280).toFixed(2) + "in tall (over the 2.2in ceiling) vs span 1 ≈ " + (C.col_width_in * 720 / 1280).toFixed(2) + "in; class schedule as a 9-row standing box vs the 5 weekday group classes.";
-  }
-
-  function refreshExcluded() {
-    cards(lineupEl).concat(cards(candEl)).forEach((card) => {
-      const box = card.querySelector("[data-include]");
-      const on = box && !box.disabled && box.checked;
-      if (card.classList.contains("pending-vet") || card.getAttribute("data-empty") === "true") return;
-      card.classList.toggle("excluded", !on);
-    });
-    updateSummary();
-    estimateFit();
-  }
-
-  function updateSummary() {
-    const all = cards(lineupEl).filter((c) => c.getAttribute("data-empty") !== "true");
-    const inc = includedSlots().length;
-    const unv = all.filter((c) => !isVetted(c) && c.getAttribute("data-empty") !== "true").length;
-    summaryEl.innerHTML =
-      "<strong>" +
-      inc +
-      "</strong> included · <strong>" +
-      unv +
-      "</strong> unvetted on lineup · publish <strong>" +
-      esc(CFG.publish.label) +
-      "</strong> · PRACTICE";
-  }
-
-  function renumber() {
-    cards(lineupEl).forEach((card, i) => {
-      card.dataset.rank = String(i + 1);
-      const rankEl = card.querySelector(".slot-rank");
-      // keep original rank labels from CFG for clarity; only update if numeric
+    var scale = cap * 1.25, pct = Math.round(used / cap * 100), pctP = Math.round((used + pend) / cap * 100);
+    $("mFill").style.width = Math.min(100, used / scale * 100) + "%";
+    $("mPend").style.width = Math.min(100, (used + pend) / scale * 100) + "%";
+    $("mTick").style.left = (100 / 1.25) + "%";
+    $("meter").classList.toggle("over", used > cap * 1.08);
+    $("fitBig").textContent = pct + "% of two pages";
+    var room = Math.round((cap - used) * C.wpi / 10) * 10;
+    $("fitSmall").innerHTML = (room >= 0 ? "Room for ≈ " + room.toLocaleString() + " more words" : "Over by ≈ " + (-room).toLocaleString() + " words — cut from the bottom") +
+      (pend ? "<br>" + pctP + "% if you Vet what Desk proposes" : "") + "<br><span style=\"font-size:12px\">Rough estimate · tick = full</span>";
+    $("nIn").textContent = nIn; $("nVet").textContent = nVet; updateQCount();
+    (CFG.sections || []).forEach(function (sec) {
+      var d = perSec[sec.key], t = "";
+      if (sec.key === "held") t = String((CFG.held || []).length + (CFG.not_proposed || []).length);
+      else if (d) t = d.inc + " of " + d.n + " in";
+      else if (sec.key !== "photos") t = "empty";
+      var a = document.querySelector('[data-sc="' + sec.key + '"]'); if (a) a.textContent = sec.key === "held" ? t + (t === "1" ? " item" : " items") : t;
+      var b = document.querySelector('[data-jc="' + sec.key + '"]'); if (b) b.textContent = t;
     });
   }
-
-  // Drag reorder on lineup
-  let dragCard = null;
-  lineupEl.addEventListener("dragstart", (e) => {
-    const card = e.target.closest(".card");
-    if (!card) return;
-    dragCard = card;
-    card.classList.add("dragging");
-    e.dataTransfer.effectAllowed = "move";
-    e.dataTransfer.setData("text/plain", card.dataset.slot || "");
-  });
-  lineupEl.addEventListener("dragend", () => {
-    if (dragCard) dragCard.classList.remove("dragging");
-    dragCard = null;
-    cards(lineupEl).forEach((c) => c.classList.remove("drag-over"));
-    renumber();
-  });
-  lineupEl.addEventListener("dragover", (e) => {
-    e.preventDefault();
-    const over = e.target.closest(".card");
-    if (!over || over === dragCard) return;
-    cards(lineupEl).forEach((c) => c.classList.remove("drag-over"));
-    over.classList.add("drag-over");
-    const rect = over.getBoundingClientRect();
-    const before = e.clientY < rect.top + rect.height / 2;
-    if (before) lineupEl.insertBefore(dragCard, over);
-    else lineupEl.insertBefore(dragCard, over.nextSibling);
-  });
-  lineupEl.addEventListener("drop", (e) => {
-    e.preventDefault();
-    cards(lineupEl).forEach((c) => c.classList.remove("drag-over"));
-  });
-  lineupEl.addEventListener("change", (e) => {
-    if (e.target.matches("[data-include]")) refreshExcluded();
-  });
-  candEl.addEventListener("change", (e) => {
-    if (e.target.matches("[data-include]")) refreshExcluded();
-  });
-  photoDesk.addEventListener("change", (e) => {
-    if (e.target.matches("[data-photo-id]")) estimateFit();
-  });
-
-  function markHostVetted(host, notes) {
-    if (!host) return;
-    host.setAttribute("data-vetted", "true");
-    host.classList.remove("unvetted-card");
-    host.classList.remove("pending-vet");
-    host.querySelectorAll(".badge").forEach((b) => { if (/NEEDS VET/.test(b.textContent)) b.remove(); });
-    const badge = host.querySelector("[data-badge]");
-    if (badge && !badge.classList.contains("stale") && !badge.classList.contains("empty") && !badge.classList.contains("held")) {
-      badge.className = "badge vetted" + (badge.classList.contains("badge-inline") ? " badge-inline" : "");
-      badge.textContent = "VETTED";
-    }
-    const panel = host.querySelector("[data-vet-panel]");
-    if (panel) {
-      panel.outerHTML = notes
-        ? '<div class="vet-notes-saved">Notes: ' + esc(notes) + "</div>"
-        : "";
-    }
-    host.querySelectorAll("[data-include], [data-include-gated]").forEach((box) => {
-      if (host.getAttribute("data-stale") === "true") return;
-      if (box.disabled && host.getAttribute("data-proposed") === "true") box.checked = true;
-      box.disabled = false;
-      const lab = box.closest("label");
-      if (lab) lab.classList.remove("blocked");
-    });
-    const meta = host.querySelector(".meta-line");
-    if (meta && /Frank-vetted:/.test(meta.innerHTML)) {
-      meta.innerHTML = meta.innerHTML.replace(
-        /Frank-vetted:\s*(?:no|<strong>yes<\/strong>)/,
-        "Frank-vetted: <strong>yes</strong>"
-      );
-    }
+  function updateQCount() {
+    var open = 0;
+    document.querySelectorAll("[data-q]").forEach(function (inp) { if (!inp.value.trim()) open++; });
+    $("nQ").textContent = open;
   }
 
-  async function vetItem(itemId, notes) {
-    const res = await fetch("/vet", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id: itemId, vet_notes: notes }),
-    });
-    let data;
-    try { data = await res.json(); } catch (e) { throw new Error("bad response (" + res.status + ")"); }
-    if (!res.ok || !data.ok) throw new Error((data && data.error) || "vet failed");
-    const idx = stagingItems.findIndex((i) => i.id === itemId);
-    if (idx >= 0) stagingItems[idx] = data.item;
-    else stagingItems.push(data.item);
-    byId[itemId] = data.item;
-    document.querySelectorAll('[data-item-id="' + itemId + '"]').forEach((el) => markHostVetted(el, notes));
-    renderInbox();
-    refreshExcluded();
-    return data;
+  /* ---------- interactions (event delegation; touch only what changed) ---------- */
+  function setIncludeLabel(box) {
+    var lab = box.closest("label.inc"); if (!lab) return;
+    lab.classList.toggle("on", box.checked);
+    lab.querySelector("span").textContent = box.checked ? "In the issue" : (box.hasAttribute("data-photo-id") ? "Include photo" : "Include");
+    var card = box.closest("article.card");
+    if (card) { card.classList.toggle("is-in", box.checked); card.classList.toggle("is-out", !box.checked); }
   }
-
-  document.addEventListener("click", async (e) => {
-    const btn = e.target.closest("[data-vet-btn]");
-    if (!btn) return;
-    e.preventDefault();
-    const host = btn.closest("[data-item-id]");
-    if (!host) return;
-    const itemId = host.getAttribute("data-item-id");
-    const ta = host.querySelector("[data-vet-notes]");
-    let notes = ta ? ta.value.trim() : "";
-    if (!notes) {
-      const ok = window.confirm("No notes yet. Notes help the bot. Vet without notes anyway?");
-      if (!ok) { if (ta) ta.focus(); return; }
+  document.addEventListener("change", function (e) {
+    var t = e.target;
+    if (t.matches("[data-include],[data-photo-id]")) { setIncludeLabel(t); updateTotals(); }
+    else if (t.id === "publishDate") showDay();
+  });
+  document.addEventListener("input", function (e) {
+    var t = e.target;
+    if (!t.matches("[data-q]")) return;
+    t.closest(".q").classList.toggle("done", !!t.value.trim());
+    var host = t.closest("[data-hasq]");
+    if (host) {
+      var left = 0; host.querySelectorAll("[data-q]").forEach(function (i) { if (!i.value.trim()) left++; });
+      var qb = host.querySelector("[data-qbadge]");
+      if (qb) { qb.textContent = left ? "Needs Frank · " + left : "Answered"; qb.className = "b " + (left ? "ask" : "ok"); }
     }
+    updateQCount();
+  });
+  document.addEventListener("toggle", function (e) {
+    var d = e.target;
+    if (!d.matches || !d.matches("details[data-lazy]") || !d.open || d.getAttribute("data-filled")) return;
+    var card = d.closest("[data-key]"), s = slotByKey(card.getAttribute("data-key")), it = byId[s.item];
+    d.insertAdjacentHTML("beforeend", d.getAttribute("data-lazy") === "draft" ? draftBody(s, it) : provBody(s, it));
+    d.setAttribute("data-filled", "1");
+  }, true);
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest("button"); if (!t) return;
+    if (t.hasAttribute("data-vet-btn")) return vetClick(t);
+    if (t.hasAttribute("data-move")) {
+      var card = t.closest("article.card"), dir = Number(t.getAttribute("data-move"));
+      var sib = dir < 0 ? card.previousElementSibling : card.nextElementSibling;
+      while (sib && !sib.matches("article.card")) sib = dir < 0 ? sib.previousElementSibling : sib.nextElementSibling;
+      if (sib) card.parentNode.insertBefore(card, dir < 0 ? sib : sib.nextSibling);
+      t.focus();
+      return;
+    }
+    if (t.hasAttribute("data-jump")) {
+      var which = t.getAttribute("data-jump"), el = null;
+      if (which === "has-q") { document.querySelectorAll("[data-q]").forEach(function (i) { if (!el && !i.value.trim()) el = i; }); if (el) { el.closest("[data-hasq]").scrollIntoView({ block: "start" }); el.focus({ preventScroll: true }); } }
+      else { el = document.querySelector("." + which) || document.querySelector('[data-photo-card][data-vetted="false"][data-item-id]:not([data-item-id=""])'); if (el) el.scrollIntoView({ block: "start" }); }
+    }
+  });
+
+  function status(cls, html) { var s = $("status"); s.className = cls; s.innerHTML = html; }
+
+  async function vetClick(btn) {
+    var host = btn.closest("[data-item-id]"), id = host.getAttribute("data-item-id");
+    var ta = host.querySelector("[data-notes-for]"), notes = ta ? ta.value.trim() : "";
+    if (!notes && !window.confirm("No note yet. Notes help the bot. Vet without a note?")) { if (ta) ta.focus(); return; }
     btn.disabled = true;
     try {
-      await vetItem(itemId, notes);
-      statusEl.className = "ok";
-      statusEl.innerHTML =
-        "Vetted <code>" + esc(itemId) + "</code>" +
-        (notes ? " · notes saved" : " · no notes") +
-        " · persisted to <code>staging/weeks/next/items.json</code> + vet-log.";
+      var res = await fetch("/vet", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: id, vet_notes: notes }) });
+      var data = await res.json().catch(function () { return {}; });
+      if (!res.ok || !data.ok) throw new Error(data.error || ("HTTP " + res.status));
+      var idx = ITEMS.findIndex(function (i) { return i.id === id; });
+      if (idx >= 0) ITEMS[idx] = data.item; byId[id] = data.item;
+      // Re-render only the card(s) for this item, keeping typed notes/answers.
+      document.querySelectorAll('[data-item-id="' + id + '"]').forEach(function (el) {
+        var kept = {};
+        el.querySelectorAll("input[type=text],textarea").forEach(function (i) { kept[i.getAttribute("data-q") || i.getAttribute("data-notes-for")] = i.value; });
+        var key = el.getAttribute("data-key"), fresh;
+        if (key) fresh = cardHtml(slotByKey(key));
+        else { var p = photoList().filter(function (x) { return x.id === id; })[0]; fresh = p ? photoHtml(p) : null; }
+        if (!fresh) return;
+        var tmp = document.createElement("div"); tmp.innerHTML = fresh; var node = tmp.firstElementChild;
+        node.querySelectorAll("input[type=text],textarea").forEach(function (i) { var k = i.getAttribute("data-q") || i.getAttribute("data-notes-for"); if (kept[k] != null) i.value = kept[k]; if (i.matches("[data-q]") && i.value.trim()) i.closest(".q").classList.add("done"); });
+        el.replaceWith(node);
+      });
+      updateTotals();
+      status("ok", "Vetted <code>" + esc(id) + "</code>" + (notes ? " with your note" : "") + ". Saved to staging + vet log.");
     } catch (err) {
-      statusEl.className = "err";
-      statusEl.textContent = "Vet failed: " + (err && err.message ? err.message : String(err));
       btn.disabled = false;
+      status("err", "Vet failed: " + esc(err.message || err));
     }
-  });
-
-  function buildPayload() {
-    const order = [];
-    const includedSlots = [];
-    const excludedSlots = [];
-    const slotNotes = {};
-    cards(lineupEl).concat(cards(candEl)).forEach((card) => {
-      const slot = card.dataset.slot;
-      const nameEl = card.querySelector(".slot-name");
-      const headEl = card.querySelector(".headline");
-      const box = card.querySelector("[data-include]");
-      const include = !!(box && !box.disabled && box.checked);
-      const noteInput = card.querySelector("[data-notes-for]");
-      const note = noteInput ? noteInput.value.trim() : "";
-      const entry = {
-        slot,
-        name: nameEl ? nameEl.textContent.trim() : slot,
-        headline: headEl ? headEl.textContent.trim() : "",
-        itemId: card.getAttribute("data-item-id") || null,
-        vetted: isVetted(card),
-        stale: card.getAttribute("data-stale") === "true",
-      };
-      order.push(slot);
-      if (include) includedSlots.push(entry);
-      else excludedSlots.push(entry);
-      if (note) slotNotes[slot] = note;
-    });
-    const photoIncludes = Array.from(
-      document.querySelectorAll("#photoDesk [data-photo-id]:checked:not(:disabled)")
-    ).map((el) => el.getAttribute("data-photo-id"));
-    return {
-      publishDate: PUBLISH,
-      practice: true,
-      pretend: false,
-      targetWeek: "next",
-      includedSlots,
-      excludedSlots,
-      photoIncludes,
-      notes: globalNotes.value.trim(),
-      slotNotes,
-      order,
-      submittedAt: null,
-    };
   }
 
-  submitBtn.addEventListener("click", async () => {
-    statusEl.className = "";
-    statusEl.textContent = "";
-    submitBtn.disabled = true;
-    const payload = buildPayload();
+  function collectAnswers() {
+    var out = [];
+    document.querySelectorAll("[data-q]").forEach(function (inp) {
+      var parts = inp.getAttribute("data-q").split("|"), s = slotByKey(parts[0]), v = inp.value.trim();
+      if (!v || !s) return;
+      out.push({ slot: s.key, itemId: s.item || null, question: questionsFor(s, byId[s.item])[Number(parts[1])], answer: v });
+    });
+    return out;
+  }
+  function buildPayload() {
+    var included = [], excluded = [], order = [], slotNotes = {};
+    document.querySelectorAll("article.card").forEach(function (el) {
+      var key = el.getAttribute("data-key"), s = slotByKey(key), box = el.querySelector("[data-include]");
+      var entry = { slot: key, name: s.slot, headline: el.querySelector("h3").textContent.trim(), itemId: s.item || null,
+        vetted: el.getAttribute("data-vetted") === "true", stale: !!(s.stale || s.waiting) };
+      order.push(key);
+      (box && box.checked && !box.disabled ? included : excluded).push(entry);
+      var n = el.querySelector("[data-notes-for]"); if (n && n.value.trim()) slotNotes[key] = n.value.trim();
+    });
+    document.querySelectorAll('[data-empty="true"]').forEach(function (el) { // empty slots: listed as excluded, like v1
+      var s = slotByKey(el.getAttribute("data-key"));
+      excluded.push({ slot: s.key, name: s.slot, headline: "", itemId: null, vetted: true, stale: false, empty: true });
+    });
+    return {
+      publishDate: $("publishDate").value || CFG.publish.date,
+      practice: true, pretend: false, targetWeek: CFG.target_week || "next",
+      issue: CFG.issue || null,
+      includedSlots: included, excludedSlots: excluded,
+      photoIncludes: Array.from(document.querySelectorAll("[data-photo-id]:checked:not(:disabled)")).map(function (b) { return b.getAttribute("data-photo-id"); }),
+      notes: $("globalNotes").value.trim(), slotNotes: slotNotes, answers: collectAnswers(), order: order,
+      pageVersion: "practice-v2", submittedAt: null
+    };
+  }
+  $("submit").addEventListener("click", async function () {
+    var btn = this; btn.disabled = true; status("", "Saving…");
     try {
-      const res = await fetch("/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      let data;
-      try { data = await res.json(); } catch (e) { throw new Error("bad response (" + res.status + ")"); }
-      if (!res.ok || !data.ok) throw new Error((data && data.error) || "submit failed");
-      statusEl.className = "ok";
-      statusEl.innerHTML =
-        "Practice budget saved. <code>" + esc(data.path) + "</code> · latest <code>" +
-        esc(data.approvals) + "</code> · " + esc(data.submittedAt) +
-        (payload.photoIncludes.length
-          ? " · photos: <code>" + esc(payload.photoIncludes.join(", ")) + "</code>"
-          : " · photos: none");
+      var payload = buildPayload();
+      var res = await fetch("/submit", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
+      var data = await res.json().catch(function () { return {}; });
+      if (!res.ok || !data.ok) throw new Error(data.error || ("HTTP " + res.status));
+      status("ok", "Saved: <code>" + esc(data.path) + "</code> (and <code>" + esc(data.approvals) + "</code>). " +
+        payload.includedSlots.length + " included, " + payload.answers.length + " answers, " + payload.photoIncludes.length + " photos.");
     } catch (err) {
-      statusEl.className = "err";
-      statusEl.textContent = "Submit failed: " + (err && err.message ? err.message : String(err));
-    } finally {
-      submitBtn.disabled = false;
-    }
+      status("err", "Submit failed: " + esc(err.message || err));
+    } finally { btn.disabled = false; }
   });
 
-  function renderDecisions() {
-    const bits = [];
-    bits.push(
-      '<div class="decision stale"><strong>Stale Medeo signup.</strong> Medeo Youth Challenge #3 is Sun. Oct. 11 — before publish. Not proposed on who’s-entered. If results arrive, add 2 rows to Club results (Jiang / Cheng); else drop. Deduped 4 staging copies → cite <code>email-frank-medeo-entries-2026-10-07</code>.</div>'
-    );
-    bits.push(
-      '<div class="decision"><strong>Unvetted feature package.</strong> Primer (<code>gather-nj-hs-season-primer</code>, 453w) + flèche sidebar (<code>gather-nj-hs-fleche-rule</code>, 190w) need Vet before Include unlocks. Morris Hills photo is already Frank-vetted.</div>'
-    );
-    bits.push(
-      '<div class="decision"><strong>NJ.com click-checks.</strong> Chatham Santelli streak, Morris County streaks, and both 2026 state finals (14–13) came from search snippets (NJ.com blocks automated readers). Links are on the feature card.</div>'
-    );
-    bits.push(
-      '<div class="decision"><strong>Ratings empty.</strong> No real ratings rows; the invented seed is excluded.</div>'
-    );
-    bits.push(
-      '<div class="decision done"><strong>Frank answered (Oct. 7, 5:08 PM) — applied.</strong> ' +
-      "(1) Penny Young = Penelope Young: prints “Penny Young” everywhere, alias in staging. " +
-      "(2) Morris Cup board shows everyone: 29 entries / 20 fencers, two day panels, Frank-approved exception to the 8-row cap. " +
-      "(3) Oct. 5 / Oct. 7 class-time emails dropped as last week’s; club-website standing schedule staged <strong>unvetted</strong> for Club events. Times match the emails; freshness unknown.</div>"
-    );
-    bits.push(
-      '<div class="decision"><strong>Still open.</strong> Shah-Mirani (Ash) vs Shah Mirani (Rahi): source forms kept, confirm the spelling. ' +
-      "Club website schedule needs Vet (no “last updated” date; the Location & Hours page conflicts on closing time).</div>"
-    );
-    bits.push(
-      '<div class="decision"><strong>Held:</strong> THE WEAPON (exploded epee) stays in <code>after-next</code>, span 2 — not this issue.</div>'
-    );
-    document.getElementById("decisionFlags").innerHTML = bits.join("");
-    document.getElementById("publishWhy").textContent = CFG.publish.why;
-    document.getElementById("publishLabel").textContent = CFG.publish.label;
-    document.getElementById("publishAlt").textContent =
-      " — alt " + CFG.publish.alt + " if results don’t land";
+  function showDay() {
+    var v = $("publishDate").value, d = v ? new Date(v + "T12:00:00") : null;
+    $("publishDay").textContent = d && !isNaN(d) ? d.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" }) +
+      (v === CFG.publish.date ? " · Desk's pick" : "") : "";
   }
 
   async function boot() {
-    const [cfgRes, itemsRes] = await Promise.all([
-      fetch("/practice-lineup.json"),
-      fetch("/api/items"),
-    ]);
-    CFG = await cfgRes.json();
-    const data = await itemsRes.json();
-    stagingItems = Array.isArray(data.items) ? data.items : [];
-    byId = {};
-    stagingItems.forEach((i) => { byId[i.id] = i; });
-    PUBLISH = CFG.publish.date;
-    globalNotes.value =
-      "PRACTICE budget for next (publish Tue Oct 13, 2026 — Desk call; Mon Oct 12 alt). " +
-      "Proposed: NJ HS primer feature + glance box + flèche sidebar + Morris Hills photo; " +
-      "SYC results; Morris Cup who’s-entered (all 29 entries, Frank-approved); club-website class schedule (needs Vet); Remise short; Parent Q&A. " +
-      "NOT proposed: Medeo as signup (stale — results-pending only); ratings (empty); THE WEAPON (held after-next). " +
-      "Needs Vet: primer, flèche, and any candidate you want in. Click-check NJ.com streak/finals facts.";
-    renderDecisions();
-    renderInbox();
-    renderLineup();
-    renderPhotos();
-    renderMergedAndAccounting();
-    // sync already-vetted
-    stagingItems.forEach((item) => {
-      if (!item.vetted) return;
-      document.querySelectorAll('[data-item-id="' + item.id + '"]').forEach((el) => {
-        if (el.getAttribute("data-vetted") !== "true") markHostVetted(el, item.vet_notes || "");
-      });
+    var r = await Promise.all([fetch("/practice-lineup.json"), fetch("/api/items"), fetch("/api/media")]);
+    CFG = await r[0].json();
+    var data = await r[1].json(), med = await r[2].json();
+    ITEMS = Array.isArray(data.items) ? data.items : [];
+    ITEMS.forEach(function (i) { byId[i.id] = i; });
+    MEDIA = Array.isArray(med.items) ? med.items : [];
+    MEDIA.forEach(function (m) { mediaById[m.id] = m; mediaById["__file:" + (m.filename || fileOf(m.media_path))] = m; });
+    (CFG.media_sizes ? Object.keys(CFG.media_sizes) : []).forEach(function (f) {
+      var d = CFG.media_sizes[f], m = mediaById["__file:" + f] || (mediaById["__file:" + f] = {});
+      m.w = d[0]; m.h = d[1];
     });
-    refreshExcluded();
+    SLOTS = buildSlots();
+    var iss = CFG.issue || {};
+    $("issueLabel").textContent = iss.label || "Next issue";
+    $("weekLabel").textContent = iss.week || "";
+    $("pageTitle").textContent = "Budget — " + (iss.label || "next issue") + (iss.week ? ", " + iss.week.replace(/^Week/, "week") : "");
+    document.title = "Budget — " + (iss.label || "next") + " (practice)";
+    $("publishDate").value = CFG.publish.date;
+    showDay();
+    $("desk").innerHTML = "<h2>Desk's read on this week</h2><ul>" + (CFG.desk_summary || []).map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") + "</ul>" +
+      (CFG.publish.why ? '<p class="why"><b>Publish day:</b> ' + esc(CFG.publish.why) + "</p>" : "");
+    render();
+    updateTotals();
   }
-
-  boot().catch((err) => {
-    statusEl.className = "err";
-    statusEl.textContent = "Boot failed: " + (err && err.message ? err.message : String(err));
-  });
+  boot().catch(function (err) { status("err", "Page failed to load: " + esc(err.message || err)); });
 })();
 </script>
 </body>

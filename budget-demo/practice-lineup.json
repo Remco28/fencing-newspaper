@@ -1,13 +1,18 @@
 {
-  "about": "Gazette Desk proposed lineup for staging/weeks/next — PRACTICE budget. Judgment lives here (slot → staging item ids); budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Table rows below are transcribed from the cited staging items (no new facts).",
-  "generated": "2026-10-07T17:15:00-04:00",
+  "schema": 2,
+  "about": "Gazette Desk's proposed lineup for staging/weeks/next — PRACTICE budget v2. Judgment lives here (slot → staging item ids, plain-English summary, questions for Frank). budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Any staging item this file doesn't mention still shows up (auto-placed by slot_hint, not proposed). Table rows are transcribed from the cited staging items (no new facts).",
+  "generated": "2026-10-07T19:40:00-04:00",
   "target_week": "next",
+  "issue": {
+    "number": 2,
+    "label": "Issue No. 2",
+    "week": "Week of Oct. 12, 2026"
+  },
   "publish": {
     "date": "2026-10-13",
     "label": "Tuesday, October 13, 2026",
-    "edition": "Tuesday Edition",
-    "alt": "Monday, October 12, 2026",
-    "why": "Desk’s call: Tuesday. Medeo (Sun. Oct. 11) and the October NAC (ends Mon. Oct. 12) both finish before then, so a Monday-evening email pass can catch real results. Monday works too if nothing comes in."
+    "alt": "2026-10-12",
+    "why": "Desk's call: Tuesday. The October NAC ends Mon. Oct. 12, so a Monday-evening results pass can catch Elite FC finishes for the lead and the results box. Monday works if Frank wants it out sooner."
   },
   "capacity": {
     "note": "Template A, US Letter, 3 columns (~2.42in each, 9pt gaps). Usable column height = 10.1in page minus furniture measured on the issues/2026-10-14 sample render: page 1 masthead 0.98in + dateline 0.55in + footer ~0.25in; page 2 dateline 0.52in + footer ~0.25in.",
@@ -40,268 +45,137 @@
     "photo-public-strip-cand",
     "tip-public-chatham-dual"
   ],
-  "lineup": [
+  "desk_summary": [
+    "Pile is light: one vetted club item (Winter Camp), the Morris Cup board, THE WEAPON figure, and a proposed new section (Overheard on Reddit) that still needs your Vet.",
+    "No lead yet. The October NAC (Orlando, Oct. 9–12) is the natural lead once results land — hence Tuesday.",
+    "Winter Camp copy is ready except price and how to sign up.",
+    "Weekly class table stays out (cut rule): a one-line Friday 4:15 note is offered instead."
+  ],
+  "sections": [
     {
-      "key": "feature",
-      "rank": "1",
-      "slot": "Lead → Feature (NJ HS season primer)",
-      "budget": "Lead 150–180w · this runs feature length (2-col)",
-      "item": "gather-nj-hs-season-primer",
+      "key": "lead",
+      "title": "Lead & features",
+      "hint": "Top of page 1 and the back-page feature"
+    },
+    {
+      "key": "club",
+      "title": "Club",
+      "hint": "Results, Go Cheer / signups, classes, events"
+    },
+    {
+      "key": "shorts",
+      "title": "Shorts & fill",
+      "hint": "Secondaries, Q&A, Desk fill — first to go if tight"
+    },
+    {
+      "key": "photos",
+      "title": "Photos",
+      "hint": "Thumbnails shown B&W as printed"
+    },
+    {
+      "key": "held",
+      "title": "Held, merged & next week",
+      "hint": "Not proposed for this issue"
+    }
+  ],
+  "slots": [
+    {
+      "key": "lead",
+      "section": "lead",
+      "slot": "Lead story",
+      "budget": "150–180w",
+      "empty": true,
+      "why": "Nothing in the pile yet. Best bet: October NAC results for Penny Young, Amina Gore, Maksim Milinkovic and Anayaa Sheth after the event ends Mon. Oct. 12.",
+      "questions": [
+        "Hold for Tuesday so NAC results can lead? (If not, Overheard on Reddit or Winter Camp moves up.)"
+      ]
+    },
+    {
+      "key": "overheard",
+      "section": "lead",
+      "slot": "Overheard on Reddit — proposed new section",
+      "budget": "130–170w",
+      "item": "reddit-rfencing-etiquette-thread",
       "proposed": true,
       "cost": {
         "type": "prose",
-        "feature": true,
-        "span": 2
+        "span": 1
       },
-      "photo": "chat-photo-nj-hs-dual-meet-morris-hills",
-      "why": "Frank asked for this topic; it fills the real-lead gap. Also covers slot 6 (NJ HS roundup) this week — the HS season is dormant until Dec. 7, so no separate roundup.",
-      "flags": [
-        {
-          "level": "check",
-          "text": "NJ.com blocks automated readers: the Chatham streaks (Santelli 4 straight; Morris County 7th/5th) and both 2026 state finals at 14-13 came from search snippets. Click-check the links marked CLICK-CHECK below."
-        },
-        {
-          "level": "check",
-          "text": "27-bout format: official source is NJSIAA’s Dec. 2014 guidelines (12 years old), backed by NJSIAA 2024 minutes (all 27 bouts fenced) + a school parents’ guide."
-        },
-        {
-          "level": "check",
-          "text": "2026–27 NJSIAA tournament rules aren’t posted; 50% eligibility and top-36 Touch By Touch qualifying are written as last season’s rules."
-        },
-        {
-          "level": "info",
-          "text": "453 words is ~2.5× the 150–180w lead budget. With the back page open (THE WEAPON held), Desk runs it full length, 2 columns wide, rather than cutting to ~300w."
-        },
-        {
-          "level": "info",
-          "text": "Three-weapon by nature (HS teams fence all three). Epee angle kept where possible; Frank already approved the topic."
-        }
+      "summary": "Light roundup of first-tournament etiquette tips from an r/Fencing thread. No usernames; only rule-checked facts print, the rest is attributed opinion.",
+      "questions": [
+        "Make “Overheard on Reddit” a recurring section? (No style rules written yet.)"
       ],
-      "click_check": [
-        "nj.com",
-        "newjerseyhills.com"
-      ]
-    },
-    {
-      "key": "glance",
-      "rank": "1b",
-      "slot": "Feature box — Season at a glance",
-      "budget": "6 rows · 1-col rail",
-      "item": "gather-nj-hs-season-primer",
-      "part": "sidebar",
-      "proposed": true,
-      "vet_with": "gather-nj-hs-season-primer",
-      "cost": {
-        "type": "table",
-        "rows": 6,
-        "span": 1
-      },
-      "why": "Dates box beside the feature; same sources as the primer (NJSIAA fencing page). Vets with the primer."
-    },
-    {
-      "key": "fleche",
-      "rank": "1c",
-      "slot": "Feature sidebar — the flèche",
-      "budget": "~150–190w · 1 col",
-      "item": "gather-nj-hs-fleche-rule",
-      "proposed": true,
-      "cost": {
-        "type": "prose",
-        "span": 1
-      },
-      "why": "Frank’s side story. Gemini answer used only as a hypothesis list; every printed claim is sourced.",
       "flags": [
         {
-          "level": "check",
-          "text": "Exact year the one-crossover limit ended is unknown (still there 2017–18, gone by 2021–22). Copy says only “has since left the books.”"
-        },
-        {
-          "level": "check",
-          "text": "Left out as unconfirmed: 1980s start, “Group 1 / touch annulled” penalty, liability/broken-blade rationale."
-        },
-        {
           "level": "info",
-          "text": "Deck under a sidebar breaks the “dek on the lead only” rule — Desk will drop or fold it at compose."
+          "text": "Claim check done against the USA Fencing Oct. 2026 rulebook. Handshake and pants-crackdown claims left out."
         }
       ]
+    },
+    {
+      "key": "weapon",
+      "section": "lead",
+      "slot": "Back-page figure — THE WEAPON",
+      "budget": "2-column figure",
+      "item": "chat-asset-weapon-epee",
+      "proposed": true,
+      "cost": {
+        "type": "figure",
+        "span": 2,
+        "w": 2880,
+        "h": 2040
+      },
+      "thumb": "weapon-epee-exploded.png",
+      "summary": "Your exploded-epee diagram: the parts of the weapon and how a touch scores. Two columns on the back page."
+    },
+    {
+      "key": "secondary-a",
+      "section": "lead",
+      "slot": "Secondary A",
+      "budget": "80–100w",
+      "empty": true,
+      "why": "No national or regional news staged yet. The publish-morning pass looks for one."
     },
     {
       "key": "club-results",
-      "rank": "2",
-      "slot": "Club results box",
+      "section": "club",
+      "slot": "Club results — October NAC",
       "budget": "3–5 rows",
-      "item": "result-syc",
-      "merged": [
-        "email-frank-congrats-forward-2026-10-07"
-      ],
-      "proposed": true,
-      "cost": {
-        "type": "table",
-        "rows": 3,
-        "span": 1
-      },
-      "title": "Ben Gutenberg SYC — Elite FC finishes",
-      "table": {
-        "head": [
-          "Fencer",
-          "Event",
-          "Place"
-        ],
-        "rows": [
-          [
-            "Mila Siu",
-            "Y12",
-            "3rd"
-          ],
-          [
-            "Penny Young",
-            "Y12",
-            "6th"
-          ],
-          [
-            "Stella Kuo",
-            "Y14",
-            "T16"
-          ]
-        ]
-      },
-      "flags": [
-        {
-          "level": "info",
-          "text": "Deduped: same facts as Frank’s “Fwd: Group Class! + Congrats!” forward (same message-ID). Newsletter gives Y12/Y14 without the weapon — epee assumed from the club; confirm."
-        },
-        {
-          "level": "info",
-          "text": "Penny Young = Penelope Young (Frank, Oct. 7). Print “Penny Young” everywhere; alias recorded in staging vet_notes."
-        }
-      ]
-    },
-    {
-      "key": "medeo",
-      "rank": "2b",
-      "slot": "Medeo — results pending (was signup)",
-      "budget": "+0–2 rows to Club results",
-      "item": "email-frank-medeo-entries-2026-10-07",
-      "merged": [
-        "signup-medeo",
-        "email-agentmail-medeo-entries-2026-10-07",
-        "tip-medeo-mention"
-      ],
+      "item": "ft-nac-efc-registrations-2026-10-07",
       "proposed": false,
-      "stale": true,
+      "waiting": true,
       "cost": {
         "type": "table_rows",
-        "rows": 2
+        "rows": 4
       },
-      "title": "Medeo Youth Challenge #3 — Sun. Oct. 11",
-      "table": {
-        "head": [
-          "Fencer",
-          "Event",
-          "Status"
-        ],
-        "rows": [
-          [
-            "Christina Jiang",
-            "Y12 Women (9:30 a.m.)",
-            "results pending"
-          ],
-          [
-            "Bryce Cheng",
-            "Y10 Mixed (11:30 a.m.)",
-            "results pending"
-          ]
-        ]
-      },
-      "flags": [
-        {
-          "level": "stale",
-          "text": "STALE as a signup: Medeo is Sun. Oct. 11, before either publish day. Desk does not propose it on the who’s-entered board. If results arrive by the pre-budget email pass, they become 2 rows in Club results; otherwise drop."
-        },
-        {
-          "level": "info",
-          "text": "4 copies deduped → cite Frank’s message (email-frank-medeo-entries). AgentMail digest, signup-medeo and newsletter mention are the same pair."
-        }
-      ]
+      "summary": "Four Elite FC fencers at the October NAC in Orlando (Oct. 9–12). Ran as Go Cheer in No. 1; this week it becomes results once they post.",
+      "title": "October NAC — Elite FC results (pending)"
     },
     {
       "key": "ratings",
-      "rank": "3",
+      "section": "club",
       "slot": "Ratings earned",
       "budget": "2–5 rows",
       "empty": true,
-      "why": "No real ratings rows in staging. The only ratings item is the invented seed (excluded). Needs a results-app email or Frank’s list — otherwise the slot sits out this week."
-    },
-    {
-      "key": "remise",
-      "rank": "4",
-      "slot": "Secondary A — club short",
-      "budget": "80–100w",
-      "item": "chat-remise-anderson-app",
-      "proposed": true,
-      "cost": {
-        "type": "prose",
-        "span": 1
-      },
-      "why": "Real club-parent news, Frank-vetted. Club short rather than national news, but it’s the strongest vetted short in the pile.",
-      "flags": [
-        {
-          "level": "info",
-          "text": "78 words — 2 under the 80w floor; Desk can stretch by a line at compose without padding."
-        }
-      ]
-    },
-    {
-      "key": "secondary-b",
-      "rank": "5",
-      "slot": "Secondary B",
-      "budget": "80–100w",
-      "empty": true,
-      "why": "Nothing vetted. Candidates below (Casablanca World Cup, Song Se-ra, college-path note) can fill it once vetted. Drops first if tight anyway."
-    },
-    {
-      "key": "nj-hs",
-      "rank": "6",
-      "slot": "NJ HS roundup",
-      "budget": "60–90w",
-      "empty": true,
-      "covered_by": "feature",
-      "why": "Covered by the feature this week. HS meets can’t start until Dec. 7, so there is no dual-meet news (see ops note in the drawer)."
+      "why": "No ratings rows in staging. Needs a results email or your list."
     },
     {
       "key": "signup",
-      "rank": "7",
-      "slot": "Signup board — who’s entered",
-      "budget": "2–8 rows soft cap · Frank-approved exception: show everyone",
+      "section": "club",
+      "slot": "Go Cheer — Morris Cup who's entered",
+      "budget": "all entries (your exception to the 8-row cap)",
       "item": "email-agentmail-morris-cup-entries-2026-10-07",
+      "proposed": true,
       "merged": [
         "gather-morris-cup-ryc-oct25"
       ],
-      "proposed": true,
       "cost": {
         "type": "table",
-        "rows": 9,
+        "rows": 10,
         "span": 3
       },
-      "title": "Morris Cup RYC/RJCC — Rockland Community College, Suffern, N.Y., Oct. 24–25 · 20 Elite FC fencers, 29 entries",
-      "flags": [
-        {
-          "level": "info",
-          "text": "Frank-approved exception: big turnouts may exceed the 8-row soft cap so every Elite FC name prints."
-        },
-        {
-          "level": "info",
-          "text": "Name tidy: “Young Penelope” → Penny Young (same fencer as SYC, per Frank); “WU Caden” → Caden Wu (casing only); all names flipped to First Last."
-        },
-        {
-          "level": "check",
-          "text": "Ash Shah-Mirani (Y14 Men) vs Rahi Shah Mirani (Y10 Men): the digest and FencingTracker both spell the two registrations differently, so there’s no single correct source. Desk kept each source form; Frank, confirm the family spelling."
-        },
-        {
-          "level": "info",
-          "text": "Entry list as of Wed. Oct. 7 (AgentMail digest). The pre-budget email pass should refresh it before compose."
-        }
-      ],
+      "title": "Morris Cup RYC/RJCC — Suffern, N.Y., Oct. 24–25",
+      "summary": "20 Elite FC fencers, 29 entries across two days. Same board as No. 1; Desk refreshes the entry list before compose.",
       "panels": {
         "head": [
           "Time",
@@ -382,288 +256,112 @@
           }
         ]
       },
-      "row_note": "two day panels side by side; Sunday panel governs height ≈ 9 print lines",
-      "why": "Frank (Oct. 7, 5:08 PM): show everyone. Design: full-width board split into two day panels (Saturday | Sunday), one row per event, compact Time / Event / names / count columns, names First Last like the club newsletter. Weapon dropped from each row (all epee, stated in the title)."
+      "questions": [
+        "Ash “Shah-Mirani” (Y14 Men) vs Rahi “Shah Mirani” (Y10 Men): which family spelling is right?"
+      ]
     },
     {
       "key": "club-events",
-      "rank": "8",
-      "slot": "Club events — weekly class schedule",
-      "budget": "3–5 items (9 class rows here)",
-      "item": "web-efc-standing-schedule",
-      "merged": [],
+      "section": "club",
+      "slot": "Club events — Winter Camp",
+      "budget": "~70w",
+      "item": "chat-winter-camp-reminder",
       "proposed": true,
+      "cost": {
+        "type": "prose",
+        "span": 1
+      },
+      "thumb": "efc-winter-camp-2026-flyer-email.png",
+      "summary": "Your reminder to sign up for Winter Camp, Dec. 27–31: the tune-up angle plus the escape-the-relatives joke. Facts from the club's Sept. 30 email.",
+      "questions": [
+        "Price?",
+        "How do people sign up (link, form or email)?",
+        "Any deadline beyond “as soon as possible”?",
+        "Print the 9:30–2:00 hours now, or wait for the club's day-to-day schedule?"
+      ]
+    },
+    {
+      "key": "classes",
+      "section": "club",
+      "slot": "Weekly classes",
+      "budget": "one line (cut rule)",
+      "item": "web-efc-standing-schedule",
+      "proposed": false,
       "cost": {
         "type": "table",
         "rows": 9,
         "span": 1
       },
-      "title": "Weekly group classes (club website)",
-      "table": {
-        "head": [
-          "Day",
-          "Time",
-          "Class"
-        ],
-        "rows": [
-          [
-            "Mon.",
-            "4:30–6:00 p.m.",
-            "Group Class (Little Musketeers)"
-          ],
-          [
-            "Tue.",
-            "6:00–7:30 p.m.",
-            "Group Class"
-          ],
-          [
-            "Wed.",
-            "5:00–6:30 p.m.",
-            "Group Class (Little Musketeers)"
-          ],
-          [
-            "Wed.",
-            "6:30–7:15 p.m.",
-            "Footwork Class"
-          ],
-          [
-            "Thu.",
-            "6:00–7:30 p.m.",
-            "Group Class"
-          ],
-          [
-            "Fri.",
-            "4:00–4:45 p.m.",
-            "Mini Musketeers (Ages 5–7)"
-          ],
-          [
-            "Fri.",
-            "6:00–10:00 p.m.",
-            "Open Bouting"
-          ],
-          [
-            "Sat.",
-            "11:00 a.m.–12:30 p.m.",
-            "Group Class (Little Musketeers)"
-          ],
-          [
-            "Sat.",
-            "1:00–2:30 p.m.",
-            "Group Class"
-          ]
-        ]
-      },
-      "flags": [
-        {
-          "level": "check",
-          "text": "Freshness unknown: no “last updated” date on elitefencersclub.com/programs (footer just says © 2026). The served copy’s cache age was ~25 days (since ~Sep. 12, 2026), but that’s a cache signal, not a content date."
-        },
-        {
-          "level": "info",
-          "text": "No time conflicts with the club emails: Mon. 4:30, Tue. 6:00, Wed. 5:00, Wed. 6:30 footwork and Thu. 6:00 all match. Names differ: emails say “Musketeers” / “Advanced Group Class”; the site says “Little Musketeers” / “Group Class”."
-        },
-        {
-          "level": "check",
-          "text": "Site conflicts with itself: the Location & Hours page says Mon.–Fri. 3–9 p.m. and Sat. 8:30 a.m.–3 p.m., while the schedule runs private lessons to 10 p.m. weekdays and starts Sat. at 9 a.m. Classes themselves aren’t affected."
-        },
-        {
-          "level": "check",
-          "text": "9 rows vs the 3–5 item budget. Option: print it as a standing schedule box (rail, 9 rows), or trim to the 5 weekday group classes. Desk leans standing box; it’s evergreen and useful."
-        }
-      ],
-      "why": "Per Frank, the Oct. 5 and Oct. 7 club emails are last week’s, so they’re dropped for this issue. Replaced by the club website’s standing weekly schedule (classes only; private-lesson windows omitted). Needs Vet: Frank isn’t sure the site is current.",
-      "hide_desk_notes": true
-    },
-    {
-      "key": "qa",
-      "rank": "9",
-      "slot": "Parent Q&A",
-      "budget": "40–70w (1 Q&A)",
-      "item": "chat-qa-points-youth",
-      "proposed": true,
-      "cost": {
-        "type": "qa",
-        "span": 1
-      },
-      "why": "Anonymous asker, no Frank byline. Answer checked against USA Fencing’s June 2026 announcement."
+      "summary": "Regular class table from the club website. Under the cut rule it runs only when something changed.",
+      "questions": [
+        "Run a one-line note instead: “Mini Musketeers now starts at 4:15 on Fridays”?"
+      ]
     },
     {
       "key": "deadlines",
-      "rank": "10",
+      "section": "club",
       "slot": "Deadlines box",
       "budget": "3–5 rows",
       "empty": true,
-      "why": "No verified entry-close times. Morris Cup close time isn’t confirmed (AskFRED API unavailable). Candidate below if Frank wants a one-row box."
+      "why": "No verified entry-close times (Morris Cup close time not confirmed)."
+    },
+    {
+      "key": "college",
+      "section": "shorts",
+      "slot": "Secondary B / Desk fill — college-path note",
+      "budget": "~60w",
+      "item": "gather-college-path-shamel-epee",
+      "proposed": false,
+      "cost": {
+        "type": "prose",
+        "span": 1
+      },
+      "summary": "UNC first-year Youssef Shamel's NCAA epee title (March) as college-path color for parents. Old news; optional fill only."
+    },
+    {
+      "key": "qa",
+      "section": "shorts",
+      "slot": "Parent Q&A",
+      "budget": "40–70w",
+      "empty": true,
+      "why": "No parent question this week."
     },
     {
       "key": "comic",
-      "rank": "11",
+      "section": "shorts",
       "slot": "Comic",
       "budget": "1 panel",
       "empty": true,
-      "why": "None from Frank this week (the seed panel is excluded)."
+      "why": "None from you this week."
     },
     {
       "key": "tv",
-      "rank": "12",
+      "section": "shorts",
       "slot": "TV / streaming",
       "budget": "3–5 rows",
       "empty": true,
-      "why": "Casablanca epee World Cup (Oct. 15–18) is the natural row once vetted. Under 3 rows — would ride as a line in Secondary B or a rail note instead of a box."
-    }
-  ],
-  "candidates": [
-    {
-      "item": "gather-casablanca-epee-wc",
-      "target": "Secondary B or TV row",
-      "cost": {
-        "type": "prose",
-        "span": 1
-      },
-      "flags": [
-        {
-          "level": "info",
-          "text": "Upcoming Oct. 15–18: still live on Oct. 12/13. Best of the self-gather pile for this issue."
-        }
-      ]
-    },
-    {
-      "item": "gather-october-nac-orlando",
-      "target": "Secondary B (only as results)",
-      "cost": {
-        "type": "prose",
-        "span": 1
-      },
-      "stale": true,
-      "flags": [
-        {
-          "level": "stale",
-          "text": "STALE as written: the NAC runs Oct. 9–12 and ends before publish. Only useful rewritten as results, and Elite FC entrants (if any) must come from AskFRED or results — none confirmed."
-        }
-      ]
-    },
-    {
-      "item": "gather-asian-games-song-sera-epee",
-      "target": "Secondary B",
-      "cost": {
-        "type": "prose",
-        "span": 1
-      },
-      "flags": [
-        {
-          "level": "check",
-          "text": "About 3 weeks old by publish. Verify final scores with the FIE or Asian Games before print."
-        }
-      ]
-    },
-    {
-      "item": "gather-morris-cup-ryc-oct25",
-      "target": "Deadlines (1 row)",
-      "cost": {
-        "type": "table",
-        "rows": 1,
-        "span": 1
-      },
-      "flags": [
-        {
-          "level": "check",
-          "text": "Event facts are already on the signup board via the AgentMail digest. Only value is a deadline row, and the close time isn’t verified."
-        }
-      ]
-    },
-    {
-      "item": "gather-college-path-shamel-epee",
-      "target": "Stretch filler (rail short)",
-      "cost": {
-        "type": "prose",
-        "span": 1
-      },
-      "flags": [
-        {
-          "level": "info",
-          "text": "Evergreen (March 2026 title). Low priority; use only if a page runs short."
-        }
-      ]
+      "why": "Nothing staged."
     }
   ],
   "photos": [
     {
-      "item": "chat-photo-nj-hs-dual-meet-morris-hills",
-      "file": "nj-hs-dual-meet-morris-hills.png",
-      "bw": "nj-hs-dual-meet-morris-hills-bw.jpeg",
-      "w": 1280,
-      "h": 720,
-      "span": 2,
-      "proposed": true,
-      "for": "feature",
-      "caption": "A high school dual meet at Morris Hills High School, home of the state team finals."
-    },
-    {
-      "item": "club-newsletter-photo-2",
-      "file": "club-newsletter-photo-2.jpeg",
-      "w": 640,
-      "h": 480,
-      "span": 1,
-      "proposed": true,
-      "for": "club-results",
-      "caption": "Club newsletter photo 2 — caption needed from Frank"
-    },
-    {
-      "item": "club-newsletter-photo-1",
-      "file": "club-newsletter-photo-1.jpeg",
-      "w": 480,
-      "h": 640,
-      "span": 1,
+      "id": "efc-winter-camp-2026-flyer-email",
       "proposed": false,
-      "for": "club-results",
-      "caption": "Club newsletter photo 1 (podium) — caption needed from Frank"
-    }
-  ],
-  "held": [
+      "span": 1,
+      "note": "Club flyer from the Sept. 30 email. Reference copy: printing it would repeat the Winter Camp text."
+    },
     {
-      "week": "next",
-      "id": "chat-asset-weapon-epee",
-      "label": "THE WEAPON — exploded epee (SVG + PNG), span 2 columns",
-      "note": "Held out of Issue No. 1; Frank: save for next week = Issue No. 2 (week of Oct 12). Now in staging/weeks/next/ (rolled 2026-10-07)."
+      "id": "efc-winter-camp-2026-flyer",
+      "proposed": false,
+      "span": 1,
+      "note": "Same flyer from the club website (unvetted web copy)."
     }
   ],
+  "held": [],
   "not_proposed": [
     {
-      "item": "gather-njhs-offseason-note",
-      "why": "Ops note, not print (suggested_slot ops_note_not_print)."
-    },
-    {
-      "item": "signup-medeo",
-      "why": "Duplicate of the Medeo pair → merged into “Medeo — results pending”."
-    },
-    {
-      "item": "email-agentmail-medeo-entries-2026-10-07",
-      "why": "Duplicate of the Medeo pair (AgentMail digest copy) → merged."
-    },
-    {
-      "item": "tip-medeo-mention",
-      "why": "Newsletter mention of Medeo → merged."
-    },
-    {
-      "item": "email-frank-congrats-forward-2026-10-07",
-      "why": "Same facts as Club results (SYC) + class schedule → merged; source of the two newsletter photos."
-    },
-    {
-      "item": "club-events-efc",
-      "why": "STALE for this issue (Frank): Oct. 5 class times from last week’s forwarded newsletter."
-    },
-    {
-      "item": "email-mailchimp-group-footwork-2026-10-07",
-      "why": "STALE for this issue (Frank): Wed. Oct. 7 day sheet (“today/tomorrow” classes) — times match the website schedule, but it doesn’t describe the week of Oct. 13."
+      "item": "gather-morris-cup-ryc-oct25",
+      "why": "Merged into the Morris Cup board (same event; close time unverified)."
     }
-  ],
-  "frank_answers": {
-    "at": "2026-10-07T17:08:00-04:00",
-    "applied": "2026-10-07T17:15:00-04:00",
-    "items": [
-      "Penny Young = Penelope Young (same fencer)",
-      "Morris Cup board: show everyone (exception to 8-row cap)",
-      "Class times: drop last week's emails; check club website schedule"
-    ]
-  }
+  ]
 }

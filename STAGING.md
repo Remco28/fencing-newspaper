@@ -38,11 +38,30 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    8766; restart on the same port). Desk opens it in its desktop browser; Frank reviews / Vets /
    Submits there via the Gazette Desk computer tab — or answers in chat and Desk applies the
    answers to staging + the lineup. Chat stays doorbell ("budget ready").
-   **Practice budget (2026-10-07):** `budget-demo/practice.html` renders Desk's proposed lineup
-   (`budget-demo/practice-lineup.json`) against live staging — real items only, seed/pretend in a
-   collapsed excluded drawer, stale items flagged (not proposed), dupes merged, provenance links +
-   CLICK-CHECK marks on cards, rough two-page fit estimate (~40 w/col-in; furniture measured on the
-   2026-10-14 sample). Served at `/`; old pretend demo at `/demo`.
+   **Practice budget v2 (v3.21, 2026-10-07):** `budget-demo/practice.html` renders Desk's proposed
+   lineup (`budget-demo/practice-lineup.json`, `"schema": 2`) against live staging
+   (`items.json` + `media/manifest.json`). Built for Frank's 1280×800 remote-desktop view: fixed
+   left bar (issue, publish-day field, rough fit meter, Included / Need Vet / Questions counts,
+   jump nav, Submit), then sections in reading order — Lead & features · Club · Shorts & fill ·
+   Photos · Held, merged & next week. One card per slot: headline, one-line summary, words/rows +
+   budget, badges, red **Questions for Frank** answer boxes, Include toggle, note box, Vet button,
+   ↑/↓ reorder; draft text and provenance are collapsed and built only when opened. Thumbnails come
+   from `GET /thumb/<file>?w=…&bw=1` (small cached B&W JPEGs). No animations or shadows (remote lag).
+   **Monday routine:** to build the budget, rewrite `practice-lineup.json` for the coming issue:
+   `issue` {number, label, week}, `publish` {date, label, alt, why}, `desk_summary` (3–5 plain
+   lines), `sections`, `slots` [{key, section, slot, budget, item | empty+why, proposed, cost,
+   summary, questions[], flags[], title?, panels?/table?, thumb?, merged?, waiting?}], `photos`
+   [{id (manifest id), proposed, span, note}], `held`, `not_proposed`, `seed_ids`, `capacity`. Any
+   staging item the file doesn't mention still shows up (auto-placed by `slot_hint`, not proposed);
+   an item's `need` list becomes its questions when the slot has none. Then restart the server.
+   Last issue's file is kept under `budget-demo/archive/`. Submit JSON keeps the v1 keys
+   (`publishDate`, `includedSlots`, `excludedSlots`, `photoIncludes`, `notes`, `slotNotes`,
+   `order`) and adds `answers` [{slot, itemId, question, answer}] — **apply Frank's answers like
+   chat answers** (provenance “budget: Frank YYYY-MM-DD”). Vet on a card saves that card's note as
+   `vet_notes`. Test against a throwaway copy with `GAZETTE_STAGING_WEEK`, `GAZETTE_SUBMISSIONS`,
+   `GAZETTE_PORT` (see `server.py`), never the real pile. Screens:
+   `python3 budget-demo/screenshot.py <url> budget-demo/screens/<name> 1280 800`. Old pretend demo
+   still at `/demo`.
    **Slot note beats the date field (v3.20):** if Frank’s budget submission carries a slot
    note or general note that names a publish day (e.g. “We are publishing this Thursday
    (tomorrow)”), that note **overrides** the `publishDate` field; the issue folder and dateline

@@ -2,6 +2,29 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.21 — 2026-10-07 (budget page v2)
+
+Frank: the practice budget page was hasty and hard to read, even on desktop. Redesigned for how he
+uses it — the box desktop browser through the computer tab, 1280×800, with some remote lag.
+
+- **`budget-demo/practice.html` v2:** fixed left bar (issue, publish-day field, rough fit meter,
+  Included / Need Vet / Questions counts that jump to the first match, section nav, Submit);
+  sections in reading order (Lead & features · Club · Shorts & fill · Photos · Held, merged & next
+  week); one card per slot with headline, one-line summary, words/rows + budget, status badges,
+  **Questions for Frank** answer boxes, big Include toggle, note box, Vet, ↑/↓ reorder (replaces
+  drag). Draft text (readable serif block, `[NEED]` highlighted) and provenance are collapsed and
+  built only when opened. 16px body, ~68ch lines. No animations, transitions, shadows, blur, or
+  smooth scroll; updates touch only the changed card and the counters.
+- **Lineup schema 2** (`practice-lineup.json`): `issue`, `desk_summary`, `sections`, `slots` with
+  `summary` / `questions`; staging items not in the file are auto-placed (not proposed). Issue No. 1's
+  lineup and the v1 page moved to `budget-demo/archive/`. Lineup rewritten for Issue No. 2.
+- **Server:** `GET /thumb/<file>?w=&bw=` (small cached JPEGs in gitignored `budget-demo/.thumbs/`),
+  `/api/media` adds pixel sizes, `/api/lineup` alias, env overrides for testing on a throwaway copy
+  (`GAZETTE_STAGING_WEEK`, `GAZETTE_SUBMISSIONS`, `GAZETTE_LINEUP`, `GAZETTE_PORT`). `/vet` and
+  `/submit` unchanged; submit JSON keeps v1 keys and adds `answers`, `issue`, `pageVersion`.
+- **`screenshot.py`:** viewport mode (`… <out> 1280 800`) shoots what Frank sees, per section.
+- Docs: STAGING.md Budget step (Monday routine + schema), PLAN §10, README.
+
 ## v3.20 — 2026-10-07 (after Issue No. 1)
 
 Issue No. 1 (Thursday Edition, Oct 8, 2026) approved by Frank in chat at 18:40 ET after proof v2;
