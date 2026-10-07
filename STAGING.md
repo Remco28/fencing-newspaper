@@ -5,7 +5,7 @@ PLAN.md owns the narrative + decision list; this file owns the pipeline names, i
 schema, vetting rules, and folder layout. On conflict, this file wins for pipeline
 topics.
 
-Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6).
+Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7).
 
 ## Pipeline (formal names)
 
@@ -43,6 +43,22 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
   in the issue until Frank vets them.
 - No Gmail for this project (inbox stays AgentMail). Raw MIME/bodies stay in
   AgentMail; cite by message-ID.
+
+## Email triage labels (locked v3.7)
+
+AgentMail has **labels**, not Gmail-style folders. Labels mark workflow state; raw
+bodies stay in AgentMail for cite-by-message-ID. **Never delete** ingested mail.
+
+1. After a message is **fully** ingested into staging (facts/media extracted,
+   `message_id` recorded, staging write succeeded), apply label **`processed`** and
+   remove **`unread`** if present.
+2. The ingest loop only considers messages that are **not** labeled `processed`
+   (equivalently: unread / missing `processed`).
+3. **Failed or partial ingest:** leave unlabeled, or apply **`ingest-error`**, so the
+   next pass retries / Frank can see it. Never mark `processed` until the staging
+   write succeeded.
+4. Optional later (not required for v1): `week:YYYY-MM-DD` for filtering — skip if it
+   complicates the first automation pass.
 
 ## Email media extract (locked v3.5)
 
@@ -130,7 +146,7 @@ the tree above is the layout lock.
 ## Related locks (pointers)
 
 - Cadence, masthead flanks, footer disclaimer → PLAN.md / STYLE-GUIDE.md
-- Slot order + budgets → CONTENT-HIERARCHY.md
+- Slot order + budgets + cut/stretch → CONTENT-HIERARCHY.md (visual scale → STYLE-GUIDE §4/§11)
 - Fetch checklist → SOURCES.md
 - Approvals UX (budget + proof, chat doorbell, photo desk) → PLAN.md § Approval design
 - Slot order (scoreboard cut v3.4) → CONTENT-HIERARCHY.md

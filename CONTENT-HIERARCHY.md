@@ -3,6 +3,7 @@ How to use: **table order top-to-bottom = print priority** (not the old # column
 The bot fills from the TOP and cuts from the BOTTOM when space runs out.
 Re-arrange freely; keep the budgets honest.
 Budgets in words (articles) or rows (tables). Calibration: ~40 words/column-inch @8.5pt.
+**Visual scale follows the slot (template CSS); words follow the Budget column** — see STYLE-GUIDE §4/§11. Writers do not invent size-by-importance weekly.
 
 One weekly issue only (Thursday edition cancelled 2026-10-06). Default publish Monday;
 may slip to Tuesday — see PLAN.md. Dateline uses the **actual publish day**.
@@ -32,6 +33,12 @@ Photo desk (budget page, not a print slot): visible thumbnails + multi-select In
 - Masthead, dateline, footer are template furniture: never cut, never grow. No separate About/archive slot.
 - Tables shrink/grow by ROWS (width variant follows: few rows = rail, many = full).
 - Articles shrink/grow by WORDS within their budget range, never below minimum.
+  Lead = biggest type + 2-col; Secondary A = medium; Secondary B / NJ HS = smaller presence
+  (locked in template — not a weekly dial).
+- **Stretch (when short):** grow lead → grow Secondary A → add TV/streaming or club-events
+  rows; if still short, FLAG TO FRANK (inches/words). Never stretch type/leading.
+- **Cut (when long):** drop Secondary B first, then trim NJ HS / TV / comic, then trim
+  Secondary A / lead toward minima. Never cut furniture; never shrink type or cheat margins.
 - If everything above the line still doesn't fit, the bot flags the overage in inches —
   it never shrinks type or cheats margins to force it.
 - OVERSUPPLY RULE: write to ~115% of page capacity, then cut bottom-up. Sections are

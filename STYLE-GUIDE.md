@@ -1,5 +1,6 @@
 # En Garde Gazette — Visual Style Guide (LOCKED)
-Authoritative for every issue, template, and prototype. Locked 2026-10-06 by Frank.
+Authoritative for every issue, template, and prototype. Locked 2026-10-06 by Frank;
+article size-by-importance + stretch hierarchy refreshed 2026-10-07 (plan v3.7).
 If a render violates any rule below, it does not print — fix and re-render.
 
 ## 1. Page
@@ -24,10 +25,17 @@ If a render violates any rule below, it does not print — fix and re-render.
 - Lead story may span 2 columns; rails/boxes take the third. Signup board and footer span full width.
 - Column gaps 9pt. Boxes: 1.5pt border, 3–4pt padding, 4pt bottom margin.
 
-## 4. Type scale (v2 baseline — the "small" version)
-- Body 8.5–9.3pt, leading ~1.26. Front-page lead may run 0.5pt larger than the shorts; never larger.
-- H1 (lead) ~17–19pt black, tight leading. H2 (shorts) ~11–12pt. Box titles 10pt caps.
-- Tables/boards 8.5pt. Footer/dateline 7–8.5pt sans caps. Nothing below 7pt, ever.
+## 4. Type scale (v2 baseline — the "small" version; per-slot lock 2026-10-07)
+- **Size-by-importance is template CSS, not weekly judgment.** Each CONTENT-HIERARCHY
+  slot owns a fixed type scale + column span; the writer only fills the word budget.
+  Do not invent a new hierarchy each issue.
+- Lead (slot 1): 2-column span; H1 ~17–19pt black, tight leading; body may run **+0.5pt**
+  vs shorts; optional **one-line dek under the lead only** (no dek on shorts).
+- Secondary A (slot 4): medium — H2 ~11–12pt, body 8.5–9.3pt, leading ~1.26.
+- Secondary B + NJ HS (slots 5–6): smaller presence — same H2 tier or slightly tighter;
+  shorter grafs within budget. Never enlarge shorts to match the lead.
+- Box titles 10pt caps. Tables/boards 8.5pt. Footer/dateline 7–8.5pt sans caps.
+  Nothing below 7pt, ever.
 
 ## 5. Alignment (be anal — this is what looks professional)
 - Boards (ratings, scoreboard, signups) are TABLES with fixed layout, never loose lists:
@@ -44,8 +52,8 @@ If a render violates any rule below, it does not print — fix and re-render.
 - If content runs short, the bot must TELL FRANK what and how much is missing ("back page needs
   ~150 words or one box") so he can fill the blanks — never stretch type, never widen leading,
   never ship white space to fake fullness.
-- If content runs long, cut words (shorts first, scoreboard lines second) — never shrink below
-  the type minimums to force a fit.
+- If content runs long, cut bottom-up per §11 / CONTENT-HIERARCHY (never furniture,
+  never shrink type) — never shrink below the type minimums to force a fit.
 
 ## 7. Mandatory visual QA (every render, no exceptions — human or bot)
 Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
@@ -86,14 +94,21 @@ thumbnails — alignment cannot be judged through frosted glass.
 - Fixed table layout, declared column widths, tabular numerals, right-aligned dates/ratings —
   alignment is template property, not per-issue tweaking.
 
-## 11. Word budgets — measure once, write to fit (locked 2026-10-06)
+## 11. Word budgets — measure once, write to fit (locked 2026-10-06; stretch refresh 2026-10-07)
 - Each pattern slot carries a WORD BUDGET calibrated once per template. Current calibration
   (8.5pt, ~2.4in columns): ~40 words per column-inch. Recalibrate if type or columns change.
-- The writer receives exact budgets per slot whose sum equals page capacity — no guessing.
-- Cut hierarchy (when long): shorts first, then scoreboard lines, then dek. Stretch hierarchy
-  (when short): Fencing 101 first, then milestones, then extra scoreboard lines. Never stretch
-  type or leading to fake fullness; if still short after stretch hierarchy, FLAG TO FRANK
-  with what and how much is missing.
+- The writer receives exact budgets per slot (see CONTENT-HIERARCHY.md) — **no weekly
+  guessing.** Visual scale (type + column span) follows the slot's CSS (§4); words follow
+  the Budget column. Template enforces importance; writer fills the range.
+- **Stretch hierarchy (when short):** (1) grow lead toward the top of its 150–180w range;
+  (2) grow Secondary A toward top of 80–100w; (3) add TV/streaming rows or club-events
+  items. If still short after that → **FLAG TO FRANK** with what and how much is missing
+  (inches/words). Never stretch type or leading to fake fullness.
+- **Cut hierarchy (when long):** drop Secondary B first, then trim NJ HS / TV / comic;
+  then trim Secondary A / lead toward their minima. Never cut furniture (masthead,
+  dateline, footer, club results, ratings, signup board when core). Never shrink type
+  or cheat margins. Oversupply ~115% then cut is mandatory (§16).
+- Killed fillers (do not stretch with these): Fencing 101, Milestones, scoreboard strip.
 
 ## 12. Masthead flanks (locked 2026-10-06)
 - Logo at ~62% width, centered, flanked by two info blocks: LEFT "Vol. I — No. N /
@@ -101,10 +116,13 @@ thumbnails — alignment cannot be judged through frosted glass.
 - Flanks: 7.5pt bold sans caps, 2pt side rules (left block left-ruled, right block right-ruled).
   This is the classic-paper answer to side whitespace — never widen the logo to fill it.
 
-## 13. Footer pinning + gap instrument (locked 2026-10-06)
+## 13. Footer pinning + gap instrument (locked 2026-10-06; copy lock 2026-10-07)
 - `.page` is a flex column with min-height 10.1in (Letter minus our @page margins);
   footer uses margin-top:auto so it always sits at the page bottom. Shortfalls appear as
   honest daylight ABOVE the footer, never hidden below it.
+- **Footer copy:** issue number + for-fun disclaimer only (e.g. tips path / "just for fun").
+  No "printed at the club" language; no print-timestamp line. Masthead flanks already carry
+  Vol/No and date — do not restate a full dateline in the footer.
 - `render.py` measures the gap above each footer via CDP element boxes and reports inches:
   FLAG above 0.75in. Thumbnails are for taste; NUMBERS are for fill. Eyeballing fill is banned.
 - The instrument (not the eye) decides whether a page passes; the eye decides whether it is beautiful.
