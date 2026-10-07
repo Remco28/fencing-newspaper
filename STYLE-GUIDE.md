@@ -1,7 +1,8 @@
 # En Garde Gazette — Visual Style Guide (LOCKED)
 Authoritative for every issue, template, and prototype. Locked 2026-10-06 by Frank;
 article size-by-importance + stretch hierarchy refreshed 2026-10-07 (plan v3.7);
-masthead flanks = publisher line + rotating quip, dateline = Vol/No · place · weekday · date (plan v3.8).
+masthead flanks = publisher line + rotating quip, dateline = Vol/No · place · weekday · date (plan v3.8);
+photo fit (no silent crop) + production dateline (no SAMPLE) locked 2026-10-07 (plan v3.9).
 If a render violates any rule below, it does not print — fix and re-render.
 
 ## 1. Page
@@ -12,7 +13,7 @@ If a render violates any rule below, it does not print — fix and re-render.
 
 ## 2. Look: old-time newspaper
 - Masthead logo (`masthead001.png`, cropped to opaque bbox) with §12 flanks. Nothing above it, ever.
-- Dateline bar: 2.5pt rules top and bottom, bold sans caps. Content = **Vol. I — No. N · Chatham, N.J.** / weekday · full date (three-span flex; optional small SAMPLE/Pretend flag in the middle). Vol/No and date live HERE — not in the masthead flanks.
+- Dateline bar: 2.5pt rules top and bottom, bold sans caps, two-span flex (`space-between`). Content = **Vol. I — No. N · Chatham, N.J.** on the left and **weekday · full date** on the right. No SAMPLE / Pretend / middle badge. Vol/No and date live HERE — not in the masthead flanks. Page-2 kicker may use the same bar (section label left, Vol/No right).
 - Headings: PLAIN TEXT ONLY. No icons, no emojis, no ★≡✎▶!♦§◉✉ kickers, no symbols in or
   before headlines and box titles. Reasons: old-time look; symbols render inconsistently in B&W.
 - Box titles: small bold sans caps with a 1pt rule beneath. Hierarchy comes from size and rules,
@@ -111,7 +112,7 @@ thumbnails — alignment cannot be judged through frosted glass.
   or cheat margins. Oversupply ~115% then cut is mandatory (§16).
 - Killed fillers (do not stretch with these): Fencing 101, Milestones, scoreboard strip.
 
-## 12. Masthead flanks + dateline (locked 2026-10-07, plan v3.8)
+## 12. Masthead flanks + dateline (locked 2026-10-07, plan v3.8; production dateline v3.9)
 - Logo at ~62% width, centered in `.masthead` (retune slightly only if quotes wrap badly).
   Nothing above the masthead row, ever.
 - **Flanks (beside the logo) — prose quotes, not Vol/No/date:**
@@ -120,9 +121,10 @@ thumbnails — alignment cannot be judged through frosted glass.
 - Flank CSS: ~7pt bold sans, **normal sentence case** (no forced ALL CAPS), wrapping OK,
   2pt side rules (left block left-ruled, right block right-ruled). Left-align left flank;
   right-align right flank. Never widen the logo to fill whitespace.
-- **Dateline** (same visual: thick top/bottom rules, flex three-span): carries what used to
-  live in the flanks — Vol/No · Chatham, N.J. · weekday · full date (issue no as fits the
-  spans). Optional middle SAMPLE/Pretend flag. Do not invent a new dateline format.
+- **Dateline** (thick top/bottom rules, two-span flex): left = `Vol. I — No. N · Chatham, N.J.`;
+  right = `Weekday · Month D, YYYY`. No SAMPLE / Pretend / middle badge — production chrome
+  only. Page 2 may reuse the bar as a section kicker (label left, Vol/No right). Do not invent
+  a new dateline format.
 - Price / "Epee Only, As Always" flank lines: killed (v3.8).
 
 ## 13. Footer pinning + gap instrument (locked 2026-10-06; copy lock 2026-10-07)
@@ -169,3 +171,16 @@ thumbnails — alignment cannot be judged through frosted glass.
 - `render.py` reports per-row column-bottom spread alongside the footer gap. Fixes in order:
   retune the short column's word budget, then pull-quote, then restructure — never leave
   a region void larger than 0.5in.
+
+## 19. Photos — fit, no silent crop (locked 2026-10-07, plan v3.9)
+- Default CSS: `width: 100%; height: auto;` — preserve the original aspect ratio. **Never**
+  use `object-fit: cover` or a hard `max-height` that silently crops the frame.
+- Grayscale filter (`filter: grayscale(100%)`) may stay for B&W print.
+- Soft ceiling: if a photo would print taller than **~2.2in** in its column, FLAG to Frank
+  (crop on the photo desk, pick a smaller slot, or swap the image). Do not auto-crop in CSS.
+  Measure **as displayed** (honor EXIF orientation) — a 640×480 file with orientation=6
+  renders as portrait and can exceed the ceiling even when the file header looks landscape.
+  Sample note (2026-10-14): `club-newsletter-photo-1.jpeg` FLAGS at ~3.1in in a 1-col;
+  issue used landscape `club-newsletter-photo-2.jpeg` (~1.8in) instead.
+- Caption under the image (sans ~7pt). Photo desk still chooses which frames run; layout
+  only scales to column width.

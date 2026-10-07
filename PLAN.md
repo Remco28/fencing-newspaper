@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.8
+# Fencing Newspaper — Plan v3.9
 Date: 2026-10-07
-Status: locked direction from Frank, details in progress (v3.8: masthead flanks = fixed publisher line + rotating quip (`flank-quotes.json`); dateline = Vol/No · Chatham · weekday · date. v3.7: article size-by-importance + AgentMail `processed` labels. v3.6: Vet+notes UX. v3.5: email→photo extract. v3.4: scoreboard cut; photo desk. v3.3: Staging→Clean→Budget→Proof; see STAGING.md)
+Status: locked direction from Frank, details in progress (v3.9: photo fit no silent crop; production dateline (no SAMPLE); per-slot type scale enforced on Template A sample. v3.8: masthead flanks = fixed publisher line + rotating quip (`flank-quotes.json`); dateline = Vol/No · Chatham · weekday · date. v3.7: article size-by-importance + AgentMail `processed` labels. v3.6: Vet+notes UX. v3.5: email→photo extract. v3.4: scoreboard cut; photo desk. v3.3: Staging→Clean→Budget→Proof; see STAGING.md)
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -170,6 +170,8 @@ Resolved:
 - [x] Article size-by-importance — slot word budgets + per-slot template type scale (STYLE-GUIDE §4/§11; CONTENT-HIERARCHY); stretch/cut hierarchies live (v3.7)
 - [x] AgentMail processed-mail triage — label `processed` after successful ingest; never delete (STAGING.md; v3.7)
 - [x] Masthead flanks + dateline swap (v3.8) — flanks: publisher line + rotating quip (`flank-quotes.json`); dateline: Vol/No · Chatham · weekday · date (STYLE-GUIDE §12)
+- [x] Photo fit — no silent crop; soft ~2.2in tall flag (STYLE-GUIDE §19; v3.9)
+- [x] Production dateline — two-span Vol/No·place | weekday·date; SAMPLE flag removed (STYLE-GUIDE §2/§12; v3.9)
 
 Still open:
 1. Exact Monday run time (proposal ~6am US Eastern) + Tuesday slip publish time.
@@ -199,8 +201,9 @@ owns narrative + decisions. On conflict, the canonical home wins.
 - [x] Budget demo (v3.6): UNVETTED badge + Vet+notes on page; Include gated; POST `/vet` → items.json + vet-log
 - [x] Docs v3.7: lock per-slot article size + refresh stretch/cut hierarchy; AgentMail `processed` labels (STAGING.md)
 - [x] Docs + sample v3.8: masthead flanks (publisher + rotating quip) / dateline (Vol/No · place · weekday · date); `flank-quotes.json`
+- [x] Docs + sample v3.9: photo no-crop; production dateline; per-slot type scale on `issues/2026-10-14` (Template A only — no alternate layouts this pass)
 - [ ] Budget page (prod): same vet UX + write issue approvals.json
-- [x] Template CSS sample: flanks + dateline swap applied on `issues/2026-10-14`; per-slot type scale light-touch on same sample
+- [x] Template CSS sample: flanks + dateline + photo fit + slot type scale on `issues/2026-10-14`
 - [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot
 - [ ] See also: STAGING.md, SOURCES.md, SECTIONS-MENU.md, REDDIT-SETUP.md
 

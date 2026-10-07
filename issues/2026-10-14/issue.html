@@ -24,8 +24,8 @@
   .dateline { display: flex; justify-content: space-between; align-items: center;
     border-top: 2.5pt solid #000; border-bottom: 2.5pt solid #000;
     font-family: "Arial", "Liberation Sans", sans-serif; font-weight: bold; font-size: 8pt;
-    padding: 1.5pt 0; margin: 3pt 0 4pt 0; text-transform: uppercase; letter-spacing: 0.4pt; }
-  .sample-flag { background: #000; color: #fff; padding: 1pt 6pt; letter-spacing: 1pt; }
+    padding: 2.5pt 1pt; margin: 4pt 0 5pt 0; text-transform: uppercase; letter-spacing: 0.55pt; }
+  .dateline > span { white-space: nowrap; }
 
   .cols3 { display: flex; gap: 9pt; }
   .cols3 > .c { flex: 1; min-width: 0; }
@@ -38,12 +38,16 @@
     text-transform: uppercase; letter-spacing: 0.5pt; border-bottom: 1pt solid #000;
     padding-bottom: 2pt; margin-bottom: 3pt; }
 
+  /* Per-slot type scale (STYLE-GUIDE §4) */
   h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
     font-size: 18pt; line-height: 1.02; letter-spacing: -0.3pt; margin-bottom: 2pt; }
+  .span2 > p { font-size: 9pt; } /* lead body +0.5pt vs shorts */
+  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; } /* lead only */
   h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
-    font-size: 11pt; line-height: 1.05; margin-bottom: 2pt; }
-  .span2 > p { font-size: 9pt; } /* lead body slightly larger than shorts */
-  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; }
+    font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; } /* shorts default */
+  .slot-a h2.head { font-size: 11.5pt; } /* Secondary A medium */
+  .slot-a > p { font-size: 8.8pt; }
+  .slot-b h2.head { font-size: 10.5pt; } /* Secondary B / NJ HS */
   .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
     letter-spacing: 0.4pt; margin-bottom: 3pt; }
   p { margin-bottom: 3pt; text-align: justify; hyphens: auto; }
@@ -60,7 +64,7 @@
   td.num { text-align: right; white-space: nowrap; }
 
   .photo { margin-bottom: 3pt; }
-  .photo img { display: block; width: 100%; height: auto; max-height: 1.55in; object-fit: cover; object-position: center;
+  .photo img { display: block; width: 100%; height: auto; /* no silent crop — full frame */
     filter: grayscale(100%); }
   .caption { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; margin-top: 2pt;
     text-align: left; line-height: 1.3; }
@@ -81,7 +85,6 @@
   </div>
   <div class="dateline">
     <span>Vol. I — No. 007 &nbsp;·&nbsp; Chatham, N.J.</span>
-    <span class="sample-flag">SAMPLE</span>
     <span>Tuesday &nbsp;·&nbsp; October 14, 2026</span>
   </div>
 
@@ -123,20 +126,20 @@
   <hr class="rule">
 
   <div class="cols3 ruled">
-    <div class="c">
+    <div class="c slot-a">
       <h2 class="head">USA Fencing Posts Revised Youth Points Timeline for Winter</h2>
       <p>USA Fencing published a revised winter timeline for youth points rollups, clarifying when Super Youth Circuit and Regional Open results lock into the national youth standings. Two mid-season freeze dates shift later by one week so late November SYCs still count toward December seeding. Cadet and junior rollups are unchanged. Parents tracking Y10–Y14 paths should re-check the points FAQ on usafencing.org before the next entry window. Coaches say the extra week helps families who travel every other weekend keep paperwork honest without racing a Friday close. Print the FAQ page and tape it inside the gear bag — the freeze date is easier to miss than a bout time.</p>
     </div>
-    <div class="c">
+    <div class="c slot-b">
       <h2 class="head">Epee Notebooks — Early Duals</h2>
       <p>High-school epee duals are already on the board across North Jersey. A neighbor tip — vetted for this pretend run — has Chatham boys opening with a 14–8 dual win last week, with several Elite FC fencers expected to see strip time as rosters settle. Girls’ squads around Morris County report similar early tests. Dual-meet season is where club distance work meets school dual pressure: short warm-ups, loud gyms, and referees who want clean attacks. Watch NJ.com fencing briefs for confirmed scores before you quote hallway rumors. Dual season rewards the fencer who can reset distance in a noisy gym — exactly what Advanced drills on Tuesday at 6:00.</p>
     </div>
     <div class="c">
       <div class="photo">
-        <img src="media/club-newsletter-photo-1.jpeg" alt="Elite FC club newsletter photo">
+        <img src="media/club-newsletter-photo-2.jpeg" alt="Elite FC club newsletter photo">
         <p class="caption"><b>On the strip.</b> Club newsletter photo — Elite FC session. Photo desk pick for this issue.</p>
       </div>
-      <p>Musketeers meet Monday at 4:30; Advanced meets Tuesday at 6:00. If your group moved, the desk whiteboard wins over last week’s handout. Photograph day was a good one — six medals, one frame, and a reminder that youth weekends are team sports even when the bout is one-on-one.</p>
+      <p>Musketeers Mon 4:30 · Advanced Tue 6:00. Desk whiteboard wins if a group moved.</p>
     </div>
   </div>
 
@@ -164,7 +167,6 @@
 <div class="page">
   <div class="dateline" style="margin-top:0;">
     <span>Page Two &nbsp;·&nbsp; Club Calendar &amp; Streaming</span>
-    <span class="sample-flag">SAMPLE</span>
     <span>Vol. I — No. 007</span>
   </div>
 
@@ -199,30 +201,30 @@
         <p style="margin-top:3pt;"><b>Watch like a fencer:</b> count advances before each touch. Pause priority twice — feet, then blade.</p>
       </div>
     </div>
-    <div class="c">
+    <div class="c slot-b">
       <h2 class="head">After the SYC</h2>
       <p>Ben Gutenberg gave Elite FC three finishes for the wall: Mila Siu’s Y12 bronze, Penny Young’s sixth in the same event, and Stella Kuo’s top-16 in Y14. Ask them what changed between pools and DEs — usually rest, simple actions, and fewer hero lunges.</p>
       <p>Medeo Youth Challenge #3 is Sunday. Christina Jiang and Bryce Cheng are on the sheet. Tuesday’s slip waits for Monday club fencing so results land beside the national lead. Comic and deadlines were cut from this pretend budget; TV stayed because the include checkboxes won.</p>
-      <p>Ratings rows on page one (Rivera, Lee, Patel) are invented celebration fuel for the dry run. The SYC finishes and Medeo names are the real Frank-forwarded facts this sheet is built around. If you medal next week, tell the desk the same night so the wall board updates before Thursday practice.</p>
+      <p>Ratings rows on page one (Rivera, Lee, Patel) are invented celebration fuel for the dry run. The SYC finishes and Medeo names are the real Frank-forwarded facts this sheet is built around. If you medal next week, tell the desk the same night so the wall board updates before Thursday practice. Bring one DE lesson back to Tuesday Advanced — the club wall is only half the story.</p>
     </div>
   </div>
 
   <hr class="rule">
 
   <div class="cols3 ruled">
-    <div class="c">
+    <div class="c slot-b">
       <h2 class="head">What the Signup Board Is For</h2>
       <p>The board exists to nudge more Elite FC names onto start lists. Cap stays at a few tournaments so names stay readable. If one event fills with twenty clubmates, we show fewer events — not smaller type. Medeo is this week’s cheer target; Hub City and Garden State RJC are next on the local path.</p>
       <p>Parents new to AskFRED: check event weapon filters before you pay. This paper is epee only. Foil and saber stay off the sheet even when a weekend mixed weapons. Travel groups form at the desk clipboard by Wednesday so drivers can plan Edison or New Brunswick rides.</p>
       <p>If your name is missing from a tournament you already entered, tell Frank or the desk before the next issue — the board is only as good as the start list we were sent.</p>
     </div>
-    <div class="c">
+    <div class="c slot-b">
       <h2 class="head">How Dual Meets Differ From Club</h2>
       <p>School duals compress warm-ups and stack bouts. Referees want clear attacking intent; passivity costs arrive faster than Saturday open fencing. Bring a notebook: one idea per bout is enough. The Chatham 14–8 tip in this issue is labeled pretend — confirm on NJ.com before you quote it in the hallway.</p>
       <p>Returning varsity fencers should lock school tryout dates with their coach; club Advanced on Tuesday still covers the distance work duals punish when you forget it. Freshmen: salute cleanly, check your body cord twice, and ask a senior where the strip assignment sheet lives.</p>
       <p>County rivals will scout the same YouTube finals we listed on the watch board. Steal the footwork, not the drama. If your school posts dual results late, email the Gazette tip address the same night — hallway memory fades by Wednesday.</p>
     </div>
-    <div class="c">
+    <div class="c slot-b">
       <h2 class="head">About This Pretend Run</h2>
       <p>This sheet tests the budget-demo pipeline: approvals JSON in, HTML and PDF out, photo copied into the issue folder, sources logged. Masthead flanks drop price and “Epee Only” lines; the footer carries the fun-only disclaimer on both pages. Articles stay box-free with column rules; borders stay on utility tables only.</p>
       <p>Comic and deadlines were cut from Frank’s pretend budget. TV stayed because include checkboxes won over the “cut unless inches free” note. Ratings rows (Rivera, Lee, Patel) are invented celebration fuel; SYC finishes and Medeo names are from Frank-forwarded club facts.</p>
@@ -233,20 +235,20 @@
   <hr class="rule">
 
   <div class="cols3 ruled">
-    <div class="c">
+    <div class="c slot-b">
       <h2 class="head">Strip Notes From Vancouver</h2>
       <p>Chen’s closing period is worth a freeze-frame: three retreats, three lights, no chase. Moretti’s early lead came from searches that worked until they didn’t. Hale’s bronze-medal bout against Park is the cleaner teaching tape for cadets — fewer priority gymnastics, more honest distance.</p>
       <p>Replay tip: watch the last minute muted once, then with commentary. You will notice footwork you missed while listening to the call. Bring that habit to club video night if coaches queue a NAC final. Cadets: pause every time the referee walks the strip — that is where distance arguments get won.</p>
     </div>
-    <div class="c">
+    <div class="c slot-b">
       <h2 class="head">Youth Points in One Sentence</h2>
       <p>The revised winter freeze dates mean a late-November SYC can still feed December seeding — but only if you entered the right age event and the result posts before the lock. When in doubt, screenshot the FAQ the day you register.</p>
       <p>Y10 and Y12 families: the rollup does not care how loud the gym was — it cares that the event code matches. Double-check age category before you hit pay on AskFRED. If a result looks missing after seven days, email USA Fencing membership support with the tournament ID, not a screenshot of the livestream.</p>
     </div>
-    <div class="c">
+    <div class="c slot-b">
       <h2 class="head">Next Week’s Ask</h2>
       <p>Real issues need real start lists, real ratings emails, and Frank’s budget checkboxes. This pretend packet proves the folder shape: <i>issue.html</i>, <i>paper.pdf</i>, <i>approvals.json</i>, <i>sources.json</i>, and <i>media/</i>. Green-light a live Monday when the pipeline feels boring — boring is the goal.</p>
-      <p>Until then, treat every invented national name as layout fuel and every Frank-forwarded club fact as gospel for the wall board. Push the issue folder when the PDF looks right; keep submissions/ out of git.</p>
+      <p>Until then, treat every invented national name as layout fuel and every Frank-forwarded club fact as gospel for the wall board. Push the issue folder when the PDF looks right; keep submissions/ out of git. Boring pipeline beats clever layout — that is the whole point of a locked template.</p>
     </div>
   </div>
 
