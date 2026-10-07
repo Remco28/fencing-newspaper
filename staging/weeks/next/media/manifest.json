@@ -1,0 +1,44 @@
+{
+  "target_week": "next",
+  "extracted_at": "2026-10-06T23:50:00-04:00",
+  "note": "First-pass email→photo extract from Frank's forwarded club newsletter. MIME had no image attachments; photos were remote HTML embeds (Mailchimp). Logo + social icons + tracking pixels skipped.",
+  "items": [
+    {
+      "id": "club-newsletter-photo-1",
+      "kind": "photo",
+      "filename": "club-newsletter-photo-1.jpeg",
+      "media_path": "staging/weeks/next/media/club-newsletter-photo-1.jpeg",
+      "caption": "Club newsletter photo 1",
+      "source": "email",
+      "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
+      "from": "frankcng@gmail.com",
+      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/2ad02a90-a7b4-8404-6b02-5859ab35afd4.jpeg",
+      "vetted": true,
+      "vetted_by": "auto-frank-gmail",
+      "subject": "Fwd: Group Class! + Congrats!"
+    },
+    {
+      "id": "club-newsletter-photo-2",
+      "kind": "photo",
+      "filename": "club-newsletter-photo-2.jpeg",
+      "media_path": "staging/weeks/next/media/club-newsletter-photo-2.jpeg",
+      "caption": "Club newsletter photo 2",
+      "source": "email",
+      "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
+      "from": "frankcng@gmail.com",
+      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/a1506d76-0c64-b56e-0d0e-376eb73a8715.jpeg",
+      "vetted": true,
+      "vetted_by": "auto-frank-gmail",
+      "subject": "Fwd: Group Class! + Congrats!"
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/aa4813b4-203a-46bb-9f7a-5cb1f0e1b063.jpg",
+      "reason": "club logo / small brand mark"
+    },
+    {
+      "reason": "instagram/website social icons + mailchimp tracking pixels (known icon hosts / 1x1)"
+    }
+  ]
+}

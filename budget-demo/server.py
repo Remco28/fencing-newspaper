@@ -16,6 +16,8 @@ from pathlib import Path
 HOST = "127.0.0.1"
 PORT = 8766
 ROOT = Path(__file__).resolve().parent
+REPO = ROOT.parent
+STAGING_MEDIA = REPO / "staging" / "weeks" / "next" / "media"
 SUBMISSIONS = ROOT / "submissions"
 MIME = {
     ".html": "text/html; charset=utf-8",
@@ -52,6 +54,16 @@ class BudgetHandler(BaseHTTPRequestHandler):
         path = self.path.split("?", 1)[0]
         if path in ("/", "/index.html"):
             target = ROOT / "index.html"
+        elif path.startswith("/staging-media/"):
+            # Real email-extracted photos live under staging/weeks/<target>/media/
+            rel = path[len("/staging-media/") :]
+            if ".." in rel or rel.startswith("/") or not rel:
+                self._send(403, b"Forbidden", "text/plain; charset=utf-8")
+                return
+            target = (STAGING_MEDIA / rel).resolve()
+            if not str(target).startswith(str(STAGING_MEDIA.resolve())):
+                self._send(403, b"Forbidden", "text/plain; charset=utf-8")
+                return
         else:
             # serve only files under ROOT (no traversal)
             rel = path.lstrip("/")

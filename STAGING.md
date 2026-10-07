@@ -5,7 +5,7 @@ PLAN.md owns the narrative + decision list; this file owns the pipeline names, i
 schema, vetting rules, and folder layout. On conflict, this file wins for pipeline
 topics.
 
-Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4.
+Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5).
 
 ## Pipeline (formal names)
 
@@ -39,6 +39,21 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
   in the issue until Frank vets them.
 - No Gmail for this project (inbox stays AgentMail). Raw MIME/bodies stay in
   AgentMail; cite by message-ID.
+
+## Email media extract (locked v3.5)
+
+On ingest from AgentMail (planned automation; first manual pass done 2026-10-06):
+
+1. **MIME attachments** — save image/PDF attachments into the target week’s media folder.
+2. **Remote / inline HTML images** — parse the HTML body and **download** embedded image URLs (club newsletters often use Mailchimp CDN embeds with **no** MIME attachments). Filter out:
+   - tracking pixels (1×1 / `list-manage` / known trackers)
+   - social icons (Instagram, website, Mailchimp monkey, etc. — known icon hosts)
+   - tiny logos / brand marks under ~80px (or obvious logo assets)
+3. **Store** under `staging/weeks/<target>/media/` with a `manifest.json` (or per-item records) carrying provenance: `message_id`, `url` or attachment id, `from`, `vetted`, `kind: photo`, caption.
+4. **Budget photo desk** reads from that media folder (thumbs visible). Demo server maps `/staging-media/*` → `staging/weeks/next/media/`.
+5. Until this pass, the pretend budget demo used **synthetic PNGs** under `budget-demo/photos/` only. Those remain as clearly labeled **PRETEND** placeholders for multi-select UX; real photos from Frank’s test mail now lead the desk.
+
+Auto-vet rule still applies: `from` = `frankcng@gmail.com` → `vetted: true`.
 
 ## Chat → staging
 
@@ -101,7 +116,7 @@ Rules:
   history for that week until Frank says so (fun project — keep provenance).
 - `staging/weeks/next/` is the default chat/email dump target until Frank names a
   date or the scheduler assigns the next Mon/Tue slip date.
-- Raw emails never land in git (see `.gitignore`); only message-IDs + derived files.
+- Raw emails never land in git (see `.gitignore`); only message-IDs + derived files (including downloaded newsletter photos under `media/`).
 
 Exact filenames (`items.jsonl` vs `items/*.json`) may adjust when ingest ships;
 the tree above is the layout lock.

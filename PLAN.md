@@ -1,6 +1,6 @@
 # Fencing Newspaper — Plan v3.4
 Date: 2026-10-06
-Status: locked direction from Frank, details in progress (v3.4: scoreboard cut; photo desk = visible thumbs multi-select on budget page; submit UX fix. Prior v3.3: Staging→Clean→Budget→Proof; tips vetting; chat→staging; see STAGING.md)
+Status: locked direction from Frank, details in progress (v3.5: email→photo extract — MIME + remote HTML images → staging media; budget desk shows real newsletter photos + PRETEND placeholders. Prior v3.4: scoreboard cut; photo desk thumbs; submit UX. v3.3: Staging→Clean→Budget→Proof; see STAGING.md)
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -86,7 +86,7 @@ Killed (v3.4): **Scoreboard strip** — hard to implement well as big headlines 
 
 Maybe later: advice column ("Dear Ref") — no slot yet. Low priority: recruiting notes (only if genuinely good).
 Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coaching tips, foil/saber anything, editorials, long interviews.
-**Photo desk (v3.4):** budget page shows actual image thumbnails (not bare checkboxes); Frank multi-selects which few to include → `photoIncludes` in submit JSON. Pretend demo uses placeholder PNGs under `budget-demo/photos/`.
+**Photo desk (v3.4–v3.5):** budget page shows actual image thumbnails; Frank multi-selects → `photoIncludes`. **Email media extract (v3.5):** on ingest, save MIME attachments **and** download remote/inline HTML images (skip tracking pixels, social icons, tiny logos <~80px). Store under `staging/weeks/<target>/media/` with provenance (`message_id`, url/attachment id, `from`, `vetted`). Budget desk reads that folder. First pass: 2 real JPEGs from Frank’s forwarded club newsletter; demo still keeps a few labeled PRETEND PNGs for multi-select. Feature was planned earlier; synthetic PNGs only until this pass.
 
 ## 4. Layout — fixed templates (Template A first)
 
@@ -190,11 +190,12 @@ owns narrative + decisions. On conflict, the canonical home wins.
 - [ ] Adapt Template A for single weekly issue (signup board as core); no Template B
 - [ ] Build fetch per SOURCES.md checklist + email-ingest → staging (per-source degrade behavior)
 - [x] Budget demo: photo desk thumbs + multi-select; submit → timestamped + approvals.json (pretend)
+- [x] Email media extract first pass: remote HTML images → `staging/weeks/next/media/` + manifest; budget desk shows real + PRETEND (v3.5)
 - [ ] Budget page (prod): show unvetted labeled; block include until vetted; write approvals.json
 - [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot
 - [ ] See also: STAGING.md, SOURCES.md, SECTIONS-MENU.md, REDDIT-SETUP.md
 
-## 10. Approval design (locked 2026-10-06; unvetted rule v3.3; photo desk v3.4)
+## 10. Approval design (locked 2026-10-06; unvetted rule v3.3; photo desk v3.4; email media extract v3.5)
 - Primary: LOCAL budget page on Musketeer's computer (Grok Bot box). Stories + **Photo desk**
   with visible B&W-as-printed thumbnails and Include checkboxes (multi-select → `photoIncludes`).
   Slot include checkboxes for the lineup. **Only vetted items can be included** in the issue

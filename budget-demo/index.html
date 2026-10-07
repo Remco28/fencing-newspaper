@@ -436,7 +436,7 @@
       </div>
     </div>
     <div class="pretend-note">
-      Pretend mode — sample content. Submit POSTs JSON → timestamped file under <code>submissions/</code> + overwrites <code>submissions/approvals.json</code>. Photo desk shows real thumbnails.
+      Pretend mode — sample content. Submit POSTs JSON → timestamped file under <code>submissions/</code> + overwrites <code>submissions/approvals.json</code>. Photo desk: 2 real email-extracted images + PRETEND placeholders.
     </div>
   </header>
 
@@ -778,56 +778,38 @@
 
 
   <section>
-    <h2>C · Photo desk <span class="hint">visible thumbs — pick a few to include (B&amp;W placeholders)</span></h2>
-    <p class="photo-desk-hint">Pretend mode: 8 placeholder images. Check Include on the ones you want in the issue; selected IDs land in <code>photoIncludes</code> on submit. Per-slot “include photo” checkboxes without images were removed.</p>
+    <h2>C · Photo desk <span class="hint">visible thumbs — pick a few to include</span></h2>
+    <p class="photo-desk-hint">2 <strong>real</strong> photos extracted from Frank’s forwarded club newsletter (Mailchimp HTML embeds → <code>staging/weeks/next/media/</code>), then 3 clearly labeled <strong>PRETEND</strong> placeholders so multi-select still demos. Check Include; selected IDs → <code>photoIncludes</code>. More old synthetic PNGs omitted.</p>
     <div class="photo-desk" id="photoDesk">
       <div class="photo-card">
-        <img src="photos/photo-a.png" alt="Photo A — SYC podium" width="480" height="320" />
-        <div class="caption">Photo A — SYC podium huddle</div>
-        <div class="source">Source: invented / pretend club camera</div>
-        <label class="check"><input type="checkbox" data-photo-id="photo-a" checked /> Include</label>
+        <img src="/staging-media/club-newsletter-photo-1.jpeg" alt="Club newsletter photo 1" />
+        <div class="caption">Club newsletter photo 1 <span style="color:#0a7;">· REAL</span></div>
+        <div class="source">Source: email frankcng@gmail.com · Fwd: Group Class! + Congrats! · vetted</div>
+        <label class="check"><input type="checkbox" data-photo-id="club-newsletter-photo-1" /> Include</label>
       </div>
       <div class="photo-card">
-        <img src="photos/photo-b.png" alt="Photo B — Vancouver GP" width="480" height="320" />
-        <div class="caption">Photo B — Vancouver GP strip</div>
-        <div class="source">Source: invented / pretend FIE wire</div>
-        <label class="check"><input type="checkbox" data-photo-id="photo-b" /> Include</label>
+        <img src="/staging-media/club-newsletter-photo-2.jpeg" alt="Club newsletter photo 2" />
+        <div class="caption">Club newsletter photo 2 <span style="color:#0a7;">· REAL</span></div>
+        <div class="source">Source: email frankcng@gmail.com · Fwd: Group Class! + Congrats! · vetted</div>
+        <label class="check"><input type="checkbox" data-photo-id="club-newsletter-photo-2" /> Include</label>
       </div>
       <div class="photo-card">
-        <img src="photos/photo-c.png" alt="Photo C — Elite FC strip" width="480" height="320" />
-        <div class="caption">Photo C — Elite FC open strip</div>
-        <div class="source">Source: invented / pretend club camera</div>
-        <label class="check"><input type="checkbox" data-photo-id="photo-c" checked /> Include</label>
+        <img src="photos/photo-a.png" alt="PRETEND Photo A — SYC podium" width="480" height="320" />
+        <div class="caption">PRETEND A — SYC podium huddle</div>
+        <div class="source">Source: invented placeholder (not from email)</div>
+        <label class="check"><input type="checkbox" data-photo-id="pretend-a" /> Include</label>
       </div>
       <div class="photo-card">
-        <img src="photos/photo-d.png" alt="Photo D — Y12 final" width="480" height="320" />
-        <div class="caption">Photo D — Y12 WE final bout</div>
-        <div class="source">Source: invented / pretend tournament</div>
-        <label class="check"><input type="checkbox" data-photo-id="photo-d" /> Include</label>
+        <img src="photos/photo-b.png" alt="PRETEND Photo B — Vancouver GP" width="480" height="320" />
+        <div class="caption">PRETEND B — Vancouver GP strip</div>
+        <div class="source">Source: invented placeholder (not from email)</div>
+        <label class="check"><input type="checkbox" data-photo-id="pretend-b" /> Include</label>
       </div>
       <div class="photo-card">
-        <img src="photos/photo-e.png" alt="Photo E — Ratings wall" width="480" height="320" />
-        <div class="caption">Photo E — Ratings wall (club)</div>
-        <div class="source">Source: invented / pretend club camera</div>
-        <label class="check"><input type="checkbox" data-photo-id="photo-e" /> Include</label>
-      </div>
-      <div class="photo-card">
-        <img src="photos/photo-f.png" alt="Photo F — Medeo signup" width="480" height="320" />
-        <div class="caption">Photo F — Medeo signup board</div>
-        <div class="source">Source: invented / pretend AskFRED screen</div>
-        <label class="check"><input type="checkbox" data-photo-id="photo-f" checked /> Include</label>
-      </div>
-      <div class="photo-card">
-        <img src="photos/photo-g.png" alt="Photo G — Coach demo" width="480" height="320" />
-        <div class="caption">Photo G — Coach demo en garde</div>
-        <div class="source">Source: invented / pretend club camera</div>
-        <label class="check"><input type="checkbox" data-photo-id="photo-g" /> Include</label>
-      </div>
-      <div class="photo-card">
-        <img src="photos/photo-h.png" alt="Photo H — Musketeers" width="480" height="320" />
-        <div class="caption">Photo H — Musketeers class</div>
-        <div class="source">Source: invented / pretend club camera</div>
-        <label class="check"><input type="checkbox" data-photo-id="photo-h" /> Include</label>
+        <img src="photos/photo-c.png" alt="PRETEND Photo C — Elite FC strip" width="480" height="320" />
+        <div class="caption">PRETEND C — Elite FC open strip</div>
+        <div class="source">Source: invented placeholder (not from email)</div>
+        <label class="check"><input type="checkbox" data-photo-id="pretend-c" /> Include</label>
       </div>
     </div>
   </section>
