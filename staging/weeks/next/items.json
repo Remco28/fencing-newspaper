@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-07T17:15:00-04:00",
+  "updated_at": "2026-10-07T17:19:01-04:00",
   "note": "Staging pile: pretend seeds + Frank chat (Remise) + self-gather 2026-10-07 + email ingest test 2026-10-07 (4 messages). Append-only; Remise + gather kept + Parents Ask Q&A (points/youth) staged 2026-10-07. Weapon epee moved to staging/weeks/after-next/ (Frank: hold for week after next). NJ HS dual-meet photo (Morris Hills) staged for gather-nj-hs-season-primer 2026-10-07. + flèche-rule sidebar (gather-nj-hs-fleche-rule) staged 2026-10-07 16:22 ET for the NJ HS primer. 2026-10-07 17:15 ET: Frank flag answers applied — Penny Young alias; Morris Cup names tidied (all 29 entries approved); Oct 5/Oct 7 class-time emails marked stale_for_issue next; club-website standing schedule staged unvetted (web-efc-standing-schedule).",
   "items": [
     {
@@ -406,9 +406,9 @@
       "source": "usafencing",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:18:48-04:00",
       "vet_notes": "Self-gather 2026-10-07. Confirm any Elite FC entrants via results-app/AskFRED before printing names.",
       "provenance": [
         {
@@ -446,9 +446,9 @@
       "source": "fie",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:18:31-04:00",
       "vet_notes": "Self-gather 2026-10-07. Upcoming event (not results). Yabiladi Oct 5 preview also surfaced in Google News RSS.",
       "provenance": [
         {
@@ -481,9 +481,9 @@
       "source": "google-news",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:19:01-04:00",
       "vet_notes": "Self-gather 2026-10-07 via Google News RSS. ~1–2 weeks old; use only if space and no fresher international lead. Verify final scores from FIE/Asian Games before print.",
       "provenance": [
         {
@@ -845,9 +845,9 @@
       "source": "self-gather",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:14:50-04:00",
       "vet_notes": "Topic requested by Frank in chat 2026-10-07 (wants an NJ HS season primer; he has never done HS fencing). Self-gathered research — Frank vets on budget page. Covers all three weapons by design (HS is 3-weapon); epee angle kept where possible. ~447w body exceeds Lead budget (150–180w): needs a 2-col feature/back-page slot or a trim to fit. 2026–27 NJSIAA tournament regulations not yet posted; eligibility (50% rule) and TbT top-36 qualifying are hedged as last-season rules. 2026-10-07 16:25 ET (approved patch): added Dec. 2014 NJSIAA Fencing Guidelines (Wayback) as primary source for the 27-bout dual-meet format; added cross-ref line to flèche sidebar (gather-nj-hs-fleche-rule).",
       "requested_by": "frank-chat-2026-10-07",
       "provenance": [
@@ -1039,9 +1039,9 @@
       "source": "self-gather",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:15:53-04:00",
       "notes": "Frank requested topic; Gemini lead only",
       "vet_notes": "Frank requested topic in chat 2026-10-07 after pasting a Gemini answer; Gemini used only as a hypothesis list. Ban (2014-15) and 2016-17 one-crossover trial confirmed from NJSIAA (Wayback) + NJIFA coaches' minutes; absence of any limit in 2021-22 and current NJSIAA rules confirmed; NCAA→USA Fencing allows flèche in foil/epee. NOT confirmed: exact year limit ended (2018–2021 window; 2017-18/2019-20 mods PDFs unarchived), Group-1 penalty (Reddit quote only), ban start date/rationale. 2026-27 NJSIAA rules not yet posted — recheck before print. Epee-first; foil brief; sabre one clause.",
       "requested_by": "frank-chat-2026-10-07",
@@ -1156,7 +1156,7 @@
       "id": "web-efc-standing-schedule",
       "kind": "fact",
       "headline": "Elite FC weekly class schedule (club website)",
-      "body": "Club website 'Class times and activities' (regular weekly schedule): Mon 4:30–6:00 PM Group Class (Little Musketeers); Tue 6:00–7:30 PM Group Class; Wed 5:00–6:30 PM Group Class (Little Musketeers), 6:30–7:15 PM Footwork Class; Thu 6:00–7:30 PM Group Class; Fri 4:00–4:45 PM Mini Musketeers (Ages 5–7), 6:00–10:00 PM Open Bouting; Sat 11:00 AM–12:30 PM Group Class (Little Musketeers), 1:00–2:30 PM Group Class; Sun closed. Private lessons fill the other weekday/Sat. windows.",
+      "body": "Club website 'Class times and activities' (regular weekly schedule): Mon 4:30–6:00 PM Group Class (Little Musketeers); Tue 6:00–7:30 PM Group Class; Wed 5:00–6:30 PM Group Class (Little Musketeers), 6:30–7:15 PM Footwork Class; Thu 6:00–7:30 PM Group Class; Fri 4:15 PM Mini Musketeers (Ages 5–7), 6:00–10:00 PM Open Bouting; Sat 11:00 AM–12:30 PM Group Class (Little Musketeers), 1:00–2:30 PM Group Class; Sun closed. Private lessons fill the other weekday/Sat. windows.",
       "schedule_rows": [
         [
           "Monday",
@@ -1220,7 +1220,7 @@
         ],
         [
           "Friday",
-          "4:00 PM–4:45 PM",
+          "4:15 PM",
           "Mini Musketeers (Ages 5–7)"
         ],
         [
@@ -1253,10 +1253,10 @@
       "source": "club-website",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
-      "vet_notes": "Desk gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.'",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:18:05-04:00",
+      "vet_notes": "Desk gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.' | Frank chat 2026-10-07T17:32: Friday Mini Musketeers moved to 4:15 PM (likely permanent; website not updated). End time not confirmed — print start time only unless Frank confirms.",
       "provenance": [
         {
           "type": "url",
@@ -1275,6 +1275,11 @@
           "url": "https://www.elitefencersclub.com/",
           "retrieved_at": "2026-10-07T17:15:00-04:00",
           "note": "Homepage — no schedule"
+        },
+        {
+          "type": "chat",
+          "note": "Frank: Mini Musketeers Fridays moved to 4:15 PM; website outdated",
+          "retrieved_at": "2026-10-07T17:32:59-04:00"
         }
       ],
       "suggested_slot": "club-events",
