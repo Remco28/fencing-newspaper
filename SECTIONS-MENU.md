@@ -1,5 +1,5 @@
 # Sections menu — classic papers → fencing versions
-Purpose: the largest option list, then narrow down. Fit = how well it works on 1 B&W sheet, 2x/week.
+Purpose: the largest option list, then narrow down. Fit = how well it works on 1 B&W sheet, once a week.
 Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 
 ## LOCKED VERDICTS — Frank, 2026-10-06 (v1 lineup)
@@ -8,7 +8,8 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 - Club events from newsletter email: YES.
 - Ratings earned box: YES — celebrates club members, keep always.
 - Comics: YES but sparing; Frank draws them, sends via email like everything else.
-- Advice column ("Dear Ref"): MAYBE — fun, no slot figured out yet.
+- **Parent Q&A** (LOCKED v3.18): parent asks Frank → Desk prints; anonymous; no Frank byline. Slot in CONTENT-HIERARCHY. Separate from ref-rule "Dear Ref".
+- Advice column ("Dear Ref"): MAYBE — fun, no slot figured out yet (distinct from Parent Q&A).
 - Recruiting/college notes: LOW priority — only when there's genuinely good stuff.
 - CUT: weather, food, travel, crossword, quiz/trivia, jokes/riddles (not childish).
 - Byline rule: no attribution for Frank; guest writers get credited.
@@ -17,18 +18,18 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 
 ---
 ## News core
-1. Front page / lead story ✅ — weekend's biggest epee result, 120–150 words. (Monday lead.)
+1. Front page / lead story ✅ — weekend's biggest epee result, 120–150 words. (Weekly lead.)
 2. World / International ✅ — FIE epee one-liners (scoreboard strip cut v3.4; may revive as headline wire).
 3. National ✅ — USA Fencing epee one-liners.
 4. Local / Metro ✅ — NJ HS epee + nearby club results. (Always in.)
-5. Club beat ✅ — Elite FC results + signup board. The reason to pick it up, both editions.
+5. Club beat ✅ — Elite FC results + signup board. The reason to pick it up every week.
 6. Business — ❌ skip (no club relevance).
 7. Science / Health 🔶 — e.g. "why epee blades break", footwork fitness, hydration. Monthly rotation max.
 8. Weather ✅-ish — 1-line strip under masthead ("Sat 41°F — drive safe to Edison"). Cheap, keep.
 
 ## Sports staples
 9. Scoreboard / standings ❌ cut v3.4 — was core one-liners; hard to implement well. Revive later as "headline wire" if wanted.
-10. Preview / matchup 🔶 — "tournament to watch" box, Thursday lead variant.
+10. Preview / matchup 🔶 — "tournament to watch" box (optional lead/secondary when the week is preview-heavy).
 11. Rankings watch 🔶 — FIE top-3 moves, 1–2 lines, when something changes.
 12. Injury / roster report — ❌ skip (youth privacy, no value).
 13. Recruiting / college path 🔶 — NCAA epee notes in season (NJIT etc.). Monthly.
@@ -39,7 +40,8 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 16. Op-Ed / guest column 🔶 — short parent-free contribution? Editor-only for now; revisit.
 17. Letters to the editor — ❌ skip (no submissions policy).
 18. Corrections box ✅ — 1-line "last issue we wrote X, correct is Y". Builds trust, keep tiny.
-19. Advice column ("Dear Ref") 🔶 — "my light didn't go on, why?" Ref-rule Q&A, epee only. Good rotation candidate.
+19a. **Parent Q&A** ✅ — locked v3.18. Practical parent questions Frank fields at the club; anonymous; Desk answers in print. See CONTENT-HIERARCHY + STYLE-GUIDE §8a.
+19b. Advice column ("Dear Ref") 🔶 — "my light didn't go on, why?" Ref-rule Q&A, epee only. Distinct from Parent Q&A. Rotation candidate.
 
 ## Life / culture
 20. Arts / entertainment — ❌ skip (generic).
@@ -53,13 +55,14 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 
 ## Service / utility
 28. Calendar / events ✅ — this week at Elite FC + deadlines. (Back-page core.)
-29. Signup board ✅ — tournaments + Elite FC entrants. (Core both editions.)
-30. Logistics box ❌ — killed 2026-10-06 with Thursday edition (Frank: not sure what it was for).
+29. Signup board ✅ — tournaments + Elite FC entrants. (Core every week.)
+30. Logistics box ❌ — killed 2026-10-06 with the dropped Thursday signup edition (Frank: not sure what it was for).
 31. Classifieds / want ads 🔶 — "used epee body cords, size M, see desk". Free, community feel. Small box if demand exists.
 32. Public notices — ❌ skip (nothing to publish).
 33. Police log — ❌ skip. Fencing version: none. Good.
 34. Lost & found 🔶 — "left glove, Tue class". Tiny, high-readership. Keep if desk feeds it by email.
 35. Gear care / armory notes 🔶 — replaces generic service journalism. Monthly.
+35a. Educational full-page figure 🔶 — e.g. exploded epee art; optional **back page** when Budget Includes it (not a standing hierarchy slot).
 
 ## Fun pages (your ask — all B&W-safe by design)
 36. Comics ✅ — single-panel epee gag (bot-written setup + simple SVG line art, or captioned stick-figure strip). 1 panel max. Test print first.
@@ -85,10 +88,10 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 52. How to read / submit footer ✅ — "tips by email to efc.weekly@agentmail.to; editor decides". (No submissions, but tips path needed.)
 53. Archive pointer ✅ — "past issues at <link>". 1 line.
 
-## Locked v1 lineup (updated 2026-10-06 evening — supersedes older Mon/Thu split)
-- **One weekly issue** (CONTENT-HIERARCHY.md is canonical): lead + club results + ratings + 1–2 shorts + NJ HS + **signup board (core, max 4 tournaments)** + club events + deadlines + comic (sparingly) + TV/streaming.
+## Locked v1 lineup (updated 2026-10-06 evening; clarified v3.19 — one weekly, no Mon/Thu split)
+- **One weekly newsletter** (CONTENT-HIERARCHY.md is canonical): lead + club results + ratings + 1–2 shorts + NJ HS + **signup board (core, max 4 tournaments)** + club events + deadlines + comic (sparingly) + TV/streaming.
 - Scoreboard strip **killed v3.4** (not in live hierarchy; optional later "headline wire").
-- Thursday edition cancelled. Logistics / About-archive / Fencing 101 / Milestones out for now.
+- Historical: a Thursday signup edition was dropped 2026-10-06. Logistics / About-archive / Fencing 101 / Milestones out for now.
 - Maybe later: advice column. Low priority: recruiting. Cut: weather/food/travel/crossword/quiz/jokes.
 
 ## Name ideas (undecided — playing)
@@ -105,7 +108,8 @@ Newsletter-aspect angle:
 - **The Elite Column** — a bit newspaper-y formal.
 Combos: **En Garde! — The Elite Epee Weekly** (call + description). Steering away from "Report" (yucky, agreed).
 
-## Suggested v1 lineup (original proposal — superseded, kept for history)
-- Monday: 1 lead + 5 club results + 4 NJ HS + 9 scoreboard + 29 compact signup + 28 calendar + 40 trivia + 37 crossword (alt 38) + 48 footer bits.
-- Thursday: 10 preview lead + 29 full signup + 30 logistics + 40 trivia + 36 comic + 41 joke.
+## Suggested v1 lineup (original Mon/Thu proposal — superseded, kept for history)
+- Early idea split Mon results / Thu signup; **dropped** — Gazette is one weekly sheet (v3.19).
+- Historical Monday pack: 1 lead + 5 club results + 4 NJ HS + 9 scoreboard + 29 compact signup + 28 calendar + 40 trivia + 37 crossword (alt 38) + 48 footer bits.
+- Historical Thursday pack: 10 preview lead + 29 full signup + 30 logistics + 40 trivia + 36 comic + 41 joke.
 - Monthly rotation slots: 7/19/21/31/35/45/47 (pick one per issue, never two).

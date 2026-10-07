@@ -5,7 +5,7 @@ PLAN.md owns the narrative + decision list; this file owns the pipeline names, i
 schema, vetting rules, folder layout, and **ops cadence / gather loop**. On conflict,
 this file wins for pipeline topics.
 
-Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7); **ops cadence / gather loop** locked 2026-10-07 (plan v3.15).
+Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7); **ops cadence / gather loop** locked 2026-10-07 (plan v3.15; wording v3.19); **email trust allowlist** locked 2026-10-07 (plan v3.17); **Parent Q&A category** locked 2026-10-07 (plan v3.18).
 
 ## Pipeline (formal names)
 
@@ -37,7 +37,14 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
 
 - **Public ask (small, OK):** tips & photos to `efc.weekly@agentmail.to`. Editor
   (Frank) decides what ships.
-- **Auto-Frank-vetted:** only mail from `frankcng@gmail.com`.
+- **Flexible ingest:** accept mail from Frank, apps, bots, newsletters, unknown
+  senders — **never reject** an unknown app/bot on address alone. Stage with full
+  provenance (`from`, `message_id`, `source`). Content shape may vary (plain tip,
+  structured digest, forward, newsletter HTML).
+- **Auto-vetted allowlist** (same rule as Frank — `vetted: true` on ingest):
+  - `frankcng@gmail.com` → `vetted_by: auto-frank-gmail`
+  - `chunkymonkey@agentmail.to` (Frank’s other bot) → `vetted_by: auto-chunkymonkey`
+  - `elitefencersclub@111617670.mailchimpapp.com` (club-owner Mailchimp) → `vetted_by: auto-club-mailchimp`
 - **Everyone else** → staging as **`vetted: false` (unvetted)**. Unvetted items MAY
   appear on the budget page but only labeled unvetted; they **cannot** be included
   in the issue until Frank vets them.
@@ -73,7 +80,7 @@ On ingest from AgentMail (planned automation; first manual pass done 2026-10-06)
 4. **Budget photo desk** reads from that media folder (thumbs visible). Demo server maps `/staging-media/*` → `staging/weeks/next/media/`.
 5. Until this pass, the pretend budget demo used **synthetic PNGs** under `budget-demo/photos/` only. Those remain as clearly labeled **PRETEND** placeholders for multi-select UX; real photos from Frank’s test mail now lead the desk.
 
-Auto-vet rule still applies: `from` = `frankcng@gmail.com` → `vetted: true`.
+Auto-vet allowlist still applies (see § Tips / mail): Frank Gmail, chunkymonkey, club Mailchimp → `vetted: true`.
 
 ## Chat → staging
 
@@ -82,7 +89,7 @@ staging unless he names another week. Materials can accumulate for later weeks.
 Chat does **not** hold approval state — **doorbell only** for budget/proof readiness
 (approvals live on the budget page / `approvals.json`).
 
-## Ops cadence / gather loop (locked v3.15 — Frank 2026-10-07)
+## Ops cadence / gather loop (locked v3.15 — Frank 2026-10-07; wording v3.19)
 
 Canonical home for **when** Gazette Desk checks chat, email, and self-gather.
 SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Eastern.
@@ -97,11 +104,17 @@ SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Easte
 
 ### Self-gather (SOURCES.md) — two passes
 1. **Mid-week skim (Wednesday):** light pass — Google News RSS (`fencing+epee` + `+New Jersey` variant) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging. Do **not** pretend this replaces the full checklist.
-2. **Publish-morning full pass (default Monday; Tuesday if Mon→Tue slip):** full SOURCES “Every run” checklist + Mon→Tue slip check (Elite FC members competing Monday?).
+2. **Publish-morning full pass** (when Frank is aiming to ship — usually Mon/Tue morning; later OK): full SOURCES “Every run” checklist. Soft preference: if Elite FC members are fencing Monday, waiting for those results is nice when easy — not required.
 
 ### Publish gates (reminder)
 **Budget HTML → Frank approve → Gazette Desk compose → Proof PDF → Frank approve → print.**
-Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or email message-ID + date). Chat is doorbell only for “budget ready” / “proof ready.”
+Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or email/chat message-ID + date, or logged API/fetch). Chat is doorbell only for “budget ready” / “proof ready.”
+
+### Reality / provenance (locked 2026-10-07 — plan v3.16)
+- **Real issues invent nothing.** Sample/layout fiction stays labeled (`sample`, `pretend`, `demo`) and must not be promoted as fact.
+- Every staging item that can become print copy carries provenance (`source`, `message_id` / URL / fetch log) so Clean and compose can fill `sources.json`.
+- No model memory as a source for names, results, ratings, dates, entries, or claims about real people.
+- Narrative home: PLAN §1c; compose checklist: STYLE-GUIDE §0b.
 
 ### Related
 - Source checklists → **SOURCES.md**
@@ -110,29 +123,41 @@ Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or 
 
 ## Item schema (sketch)
 
+## Parent Q&A (locked v3.18 — Frank 2026-10-07)
+
+Recurring **content category**, not a one-off layout trick.
+
+- **Flow:** A parent asks Frank → Frank tells Gazette Desk in chat (or email) → we stage + print.
+- **Privacy default:** **no parent name**, **no Frank byline**. Name the asker only if they ask to be named; still no Frank byline unless he is explicitly guesting.
+- **Staging:** `kind: qa`, tags include `qa`, `suggested_slot` / `slot_hint`: `parent_qa`, `vetted` per normal trust rules (Frank chat = vetted).
+- **Print:** CONTENT-HIERARCHY slot **Parent Q&A** (40–70w); STYLE-GUIDE `.rail-block.qa`. Usually **one** per issue.
+- **Facts:** same reality lock as everything else (PLAN §1c) — answers must be anchored; light source check OK; do not invent.
+
 Each staging item is one record (JSON object or equivalent). Fields:
 
 | Field | Type | Notes |
 |-------|------|-------|
 | `id` | string | Stable id within the week (or UUID) |
-| `kind` | enum | `fact` \| `photo` \| `graf` \| `signup_row` \| `tip` \| `comic` \| `other` |
+| `kind` | enum | `fact` \| `photo` \| `graf` \| `signup_row` \| `tip` \| `comic` \| **`qa`** \| `other` |
 | `body` | string | Text, or path/caption for media |
 | `media_path` | string? | Relative path under the week folder if photo/comic |
 | `source` | string | e.g. `email`, `chat`, `fie`, `results-app`, `frank-forward` |
 | `message_id` | string? | AgentMail message-ID when from email |
 | `from` | string? | Sender address when from email |
 | `target_week` | string | Publish-date folder key `YYYY-MM-DD` (or `next` until dated) |
-| `vetted` | bool | `true` only after Frank vet (or auto from `frankcng@gmail.com`) |
+| `vetted` | bool | `true` after Frank vet or auto from allowlist (Frank Gmail / chunkymonkey / club Mailchimp) |
 | `vetted_at` | string? | ISO timestamp when promoted |
-| `vetted_by` | string? | `frank` / `auto-frank-gmail` |
+| `vetted_by` | string? | `frank` / `auto-frank-gmail` / `auto-chunkymonkey` / `auto-club-mailchimp` |
 | `vet_notes` | string? | Frank’s context for the bot when vetting on the budget page (or chat) |
 | `slot_hint` | string? | Optional CONTENT-HIERARCHY slot name |
 | `word_count` / `row_count` | number? | Filled/checked in Clean |
 | `created_at` | string | ISO timestamp |
 
+Educational illustrations / figures (Frank assets): stage as **`kind: other`** with `media_path` (SVG preferred) + tags `illustration` / `figure`; `suggested_slot` e.g. `back_page_feature`; default **`columns` / `span`: 2** (not 3 / not full-bleed) unless Frank widens it. Do not use `photo` (photo desk) or `comic` (gag panel) unless that is what they are.
+
 Promotion / vet paths (any one is enough):
 - **Budget-page Vet + notes (preferred UX):** Frank hits **Vet** on an UNVETTED row/card/photo, adds `vet_notes`, Include unlocks. Demo: `POST /vet` → `staging/weeks/next/items.json` + `vet-log.jsonl`.
-- Frank forwards the tip from `frankcng@gmail.com` (auto-vetted on ingest).
+- Mail from the auto-vet allowlist (`frankcng@gmail.com`, `chunkymonkey@agentmail.to`, club Mailchimp) → auto-vetted on ingest.
 - Explicit promote action in chat/tools that sets `vetted: true` (+ optional notes) — still OK as alternate.
 
 ## Folder layout (proposed)
@@ -147,6 +172,7 @@ staging/
       items.json           # (demo) staging items; items.jsonl OK when ingest ships
       vet-log.jsonl        # append-only Vet actions from budget page / tools
       media/
+    after-next/          # hold for the issue after `next` (e.g. THE WEAPON); same layout as next/
 
 issues/
   YYYY-MM-DD/            # closed (or in-flight) week after budget/proof work starts
@@ -164,7 +190,7 @@ Rules:
   `issues/YYYY-MM-DD/`. Closed weeks stay under `issues/`; do not delete staging
   history for that week until Frank says so (fun project — keep provenance).
 - `staging/weeks/next/` is the default chat/email dump target until Frank names a
-  date or the scheduler assigns the next Mon/Tue slip date.
+  date or the scheduler assigns the next target publish date (usually Mon/Tue).
 - Raw emails never land in git (see `.gitignore`); only message-IDs + derived files (including downloaded newsletter photos under `media/`).
 
 Exact filenames (`items.jsonl` vs `items/*.json`) may adjust when ingest ships;
@@ -172,7 +198,7 @@ the tree above is the layout lock.
 
 ## Related locks (pointers)
 
-- Publish cadence (Mon/Tue slip) + furniture → PLAN.md / STYLE-GUIDE.md
+- Publish cadence (weekly, try Mon/Tue) + furniture → PLAN.md / STYLE-GUIDE.md
 - Ops gather loop (email/self-gather timing) → this file § Ops cadence; fetch list → SOURCES.md
 - Slot order + budgets + cut/stretch → CONTENT-HIERARCHY.md (visual scale → STYLE-GUIDE §4/§11)
 - Fetch checklist → SOURCES.md

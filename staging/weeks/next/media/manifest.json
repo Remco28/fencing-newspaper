@@ -30,6 +30,24 @@
       "vetted": true,
       "vetted_by": "auto-frank-gmail",
       "subject": "Fwd: Group Class! + Congrats!"
+    },
+    {
+      "id": "nj-hs-dual-meet-morris-hills",
+      "kind": "photo",
+      "filename": "nj-hs-dual-meet-morris-hills.png",
+      "media_path": "staging/weeks/next/media/nj-hs-dual-meet-morris-hills.png",
+      "media_paths": {
+        "png": "staging/weeks/next/media/nj-hs-dual-meet-morris-hills.png",
+        "bw_jpeg": "staging/weeks/next/media/nj-hs-dual-meet-morris-hills-bw.jpeg"
+      },
+      "caption": "A high school dual meet at Morris Hills High School, home of the state team finals.",
+      "source": "chat",
+      "from": "frank",
+      "vetted": true,
+      "vetted_by": "frank",
+      "parent_item_id": "chat-photo-nj-hs-dual-meet-morris-hills",
+      "for_item": "gather-nj-hs-season-primer",
+      "note": "Frank chat 2026-10-07. Color PNG primary; bw JPEG print companion. Do not name Yang/Sono in caption (minors) unless Frank says. No date/result known."
     }
   ],
   "skipped": [
@@ -40,5 +58,10 @@
     {
       "reason": "instagram/website social icons + mailchimp tracking pixels (known icon hosts / 1x1)"
     }
-  ]
+  ],
+  "last_email_ingest_at": "2026-10-07T13:15:19-04:00",
+  "ingest_2026_10_07_note": "Re-checked Frank Congrats forward + Mailchimp Footwork HTML. Congrats photos already on disk (same URLs/message_id) — no re-download. Mailchimp Footwork: logo 100px + social icons + 1x1 tracker only — skipped.",
+  "weapon_moved_2026_10_07_note": "THE WEAPON (weapon-epee-exploded.*) moved to staging/weeks/after-next/ — Frank: hold for the week after next issue (span 2).",
+  "chat_photo_2026_10_07_nj_hs_note": "Frank dropped Morris Hills HS dual-meet PNG for gather-nj-hs-season-primer; copied to nj-hs-dual-meet-morris-hills.png + grayscale JPEG companion.",
+  "updated_at": "2026-10-07T16:00:00-04:00"
 }

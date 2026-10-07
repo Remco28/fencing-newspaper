@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.15
+# Fencing Newspaper — Plan v3.19
 Date: 2026-10-07
-Status: **sample taste LOCKED** (v3.14 sheet) + **ops cadence LOCKED** (v3.15). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + Mon/Tue full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Next: real Thursday edition (refine sources → HTML budget → proof). Prior: v3.14 taste lock; v3.13 ears/HRs/bylines; v3.12 Playfair + §8; v3.11 voice; v3.10 Desk.
+Status: **sample taste LOCKED** (v3.14) + **ops cadence LOCKED** (v3.15; wording v3.19) + **reality/provenance LOCKED** (v3.16) + **email trust allowlist LOCKED** (v3.17) + **Parent Q&A category LOCKED** (v3.18) + **flexible weekly publish LOCKED** (v3.19). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + publish-morning full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Next: first real weekly edition (refine sources → HTML budget → proof). Prior: v3.19 drop Mon/Thu split / flexible weekly; v3.18 Parent Q&A; v3.17 email trust; v3.16 reality lock; v3.14 taste lock.
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -10,10 +10,10 @@ Work item: office work #21
 1 sheet, front + back, black & white, high-school reading level.
 Audience: Elite Fencers Club members (Chatham, NJ), **epee only — no foil, no saber.**
 
-**One weekly issue** (locked 2026-10-06 evening): results + club signup encouragement on the same sheet.
-- **Default publish: Monday.** Frank can override.
-- **Auto-slip to Tuesday** when Elite FC members are competing on Monday (wait for those results before shipping). Dateline uses the **actual publish day** (not a forced "Monday Edition" label).
-- **Thursday edition cancelled** — too much cadence for a fun side project.
+**One weekly newsletter** (locked 2026-10-06; clarified v3.19): results + club signup encouragement on the same sheet. No Monday/Thursday split; no second edition.
+- **Target publish: Monday or Tuesday.** Later in the week is fine — not much changes; no rule broken.
+- **Soft preference:** if Elite FC members are fencing Monday, holding for those results is nice when easy — not required.
+- Dateline uses the **actual publish day** (`<Weekday> Edition` — not a forced Monday label). Historical note: a Thursday signup edition was tried and dropped 2026-10-06.
 
 Editorial control: **Frank only.** No parent/kid submissions. No coach involvement (skip coaching tips entirely).
 
@@ -49,6 +49,18 @@ The paper should **read like it knows it is a newsletter**: finite space, one sh
 - Standing bans still apply (PLAN §7 / STYLE-GUIDE): no “delve,” “fast-paced world of,” “testament to,” snark-for-snark’s-sake; explain jargon on first use; headlines ≤6 words with an active verb.
 
 Canonical home for voice = this §1b; STYLE-GUIDE §0a repeats the composition-facing brief so the weekly composer doesn’t miss it.
+
+
+## 1c. Reality lock — invent nothing on real issues (locked 2026-10-07 — Frank)
+
+Sample / layout-test fiction was OK while we were tuning the sheet. **Real issues are different.** This paper names real people (kids, parents, clubmates). Copy must be anchored to sourced reality.
+
+- **No invention** of names, results, ratings, dates, entries, quotes, injuries, opinions attributed to real people, or “helpful” color that didn’t come from a source. Paraphrase OK; fabricating is not.
+- **Every printed fact** needs provenance: staging item + issue `sources.json` (URL + retrieved date, or email/chat message-ID + date, or AskFRED/API call logged). No **model memory** as a source.
+- **Sample / pretend / demo** content (layout tests, PRETEND photos, fake boards) must stay **clearly labeled** and **never** treated as real club or competition fact when building a real issue.
+- Editorials, shorts, flanks, and furniture that mention real people follow the same rule — tone can vary (PLAN §1b); facts cannot.
+
+Canonical detail: this §1c + §2 Sourcing rules; STAGING.md (provenance on items); STYLE-GUIDE §0b for the compose checklist.
 
 ## 2. Content rules (v2)
 
@@ -91,13 +103,15 @@ Epee filter applies to everything: FIE, national, high-school, club. If a source
 - FencingTimeLive (FTL): deferred to later, for live strips/results once results-app covers it.
 
 ### Sourcing rules
+- **Reality lock (v3.16 / §1c):** real issues invent nothing. Names, results, ratings, dates, entries, quotes, and any claim about a real person come from fetched/emailed/chat-staged sources — **never model memory**.
 - Scores, names, signup lists come from fetched/emailed sources, never model memory.
-- Every issue keeps `sources.json` (URL + retrieved date, or email message-ID + date).
+- Every issue keeps `sources.json` (URL + retrieved date, or email/chat message-ID + date, or logged API/fetch). Every staging item carries enough provenance to rebuild that entry.
+- **Sample / pretend / demo** material is labeled as such and is layout-only; do not promote it into a real issue as fact.
 - Foil/saber items are dropped at fetch time, not rewritten.
 
 ## 3. Sections (v3.4 — single weekly issue; Frank sorts CONTENT-HIERARCHY.md)
 
-Shared shell: masthead **En Garde Gazette** + descriptor "The Elite Fencers Club Weekly" (locked 2026-10-06; no "!" in the nameplate — the bang lives in headlines, not the masthead), **actual publish date** (Mon or Tue), issue #,
+Shared shell: masthead **En Garde Gazette** + descriptor "The Elite Fencers Club Weekly" (locked 2026-10-06; no "!" in the nameplate — the bang lives in headlines, not the masthead), **actual publish date**, issue #,
 footer with issue # + for-fun disclaimer only (no "printed at the club"; no print timestamp — locked 2026-10-07). Bylines: none for Frank, credit guest writers.
 Weighting rule: club newsletter news > national/regional tournaments > locals.
 Canonical slot order + budgets: **CONTENT-HIERARCHY.md** (table order = cut priority). Summary:
@@ -110,16 +124,16 @@ Canonical slot order + budgets: **CONTENT-HIERARCHY.md** (table order = cut prio
 5. Club events + deadlines box.
 6. Comic (sparingly) + TV/streaming box as space allows (lowest cut priority among listed slots).
 
-Killed: Thursday edition; logistics box; Fencing 101; Milestones; About/corrections/archive placeholders.
+Killed: second (Thursday) edition; logistics box; Fencing 101; Milestones; About/corrections/archive placeholders.
 Killed (v3.4): **Scoreboard strip** — hard to implement well as big headlines + one-line blurbs; can revive later as "headline wire" if wanted. Not in live hierarchy.
 
-Maybe later: advice column ("Dear Ref") — no slot yet. Low priority: recruiting notes (only if genuinely good).
+**Parent Q&A** locked v3.18 (CONTENT-HIERARCHY + STYLE-GUIDE §8a + STAGING `kind: qa`). Maybe later: ref-rule "Dear Ref" (distinct). Low priority: recruiting notes (only if genuinely good).
 Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coaching tips, foil/saber anything, editorials, long interviews.
 **Photo desk (v3.4–v3.5):** budget page shows actual image thumbnails; Frank multi-selects → `photoIncludes`. **Email media extract (v3.5):** on ingest, save MIME attachments **and** download remote/inline HTML images (skip tracking pixels, social icons, tiny logos <~80px). Store under `staging/weeks/<target>/media/` with provenance (`message_id`, url/attachment id, `from`, `vetted`). Budget desk reads that folder. First pass: 2 real JPEGs from Frank’s forwarded club newsletter; demo still keeps a few labeled PRETEND PNGs for multi-select. Feature was planned earlier; synthetic PNGs only until this pass.
 
 ## 4. Layout — Template A rails (V1); patterns TBD
 
-**V1 ships Template A** (prototype `monday-v6` energy adapted for the single weekly issue). **Template B (Thursday) is cancelled** with the Thursday edition. Furniture locked by sample `issues/2026-10-14` (v3.14) — see STYLE-GUIDE §2/§8/§12.
+**V1 ships Template A** (prototype `monday-v6` energy adapted for the weekly issue). One template only — no Template B / second-edition shell. Furniture locked by sample `issues/2026-10-14` (v3.14) — see STYLE-GUIDE §2/§8/§12.
 
 Rules (rails, not a weekly redesign):
 - Print geometry, type scales, word budgets, and furniture CSS are designed once, print-tested, then frozen. No generative redesign of the shell weekly.
@@ -130,14 +144,15 @@ Rules (rails, not a weekly redesign):
 
 **PAUSED / deferred — Layout patterns (Frank 2026-10-07):** constrained dynamic arrangement (select from a small pattern vocabulary so weeks feel alive) vs rotating 2–3 locked templates is **on pause for future consideration**. Another agent warned against unconstrained dynamism; freehand weekly invention stays banned. **Until revisited: ship Template A only.** STYLE-GUIDE §9 remains the hook for a future pattern menu. Do **not** invent layouts weekly; do **not** build the pattern vocabulary until Frank un-pauses this.
 
-## 5. Inputs — AgentMail is the single channel (locked 2026-10-06 evening; tips/vetting v3.3)
+## 5. Inputs — AgentMail is the single channel (locked 2026-10-06 evening; tips/vetting v3.3; trust allowlist v3.17)
 
 **Inbox (locked):** `efc.weekly@agentmail.to` (display name: The Elite Fencer's Club Weekly), via the AgentMail connector — **not Gmail**. Frank's Gmail stays for other work (rentals, etc.).
 
-**Tips / mail (locked v3.3):**
+**Tips / mail (locked v3.3; allowlist v3.17):**
 - Small public ask OK: tips & photos to `efc.weekly@agentmail.to` (editor decides).
-- Only mail from `frankcng@gmail.com` is **auto-Frank-vetted**.
-- Other senders → staging as **unvetted**. Unvetted items MAY appear on the budget page labeled **UNVETTED**; Include stays disabled until Frank vets them. **Primary vet UX:** budget-page **Vet + notes** (`vet_notes` stored on the item). Chat promote / forward-from-frank still OK as alternates.
+- **Flexible ingest:** do not reject unknown apps/bots/newsletters — stage with provenance; content may come from Frank, other apps, other bots, club mail, etc.
+- **Auto-vetted allowlist** (same as Frank — `vetted: true` on ingest): `frankcng@gmail.com`, `chunkymonkey@agentmail.to` (Frank’s other bot), `elitefencersclub@111617670.mailchimpapp.com` (club-owner Mailchimp). Detail: **STAGING.md § Tips / mail**.
+- Other senders → staging as **unvetted**. Unvetted items MAY appear on the budget page labeled **UNVETTED**; Include stays disabled until Frank vets them. **Primary vet UX:** budget-page **Vet + notes** (`vet_notes` stored on the item). Chat promote / allowlist-sender mail still OK as alternates.
 
 **Chat → staging (locked v3.3):** When Frank tells the bot a fact/idea in chat, default target = **next weekly issue** staging unless he names another week. Materials can accumulate for subsequent weeks in advance.
 
@@ -157,8 +172,8 @@ Still needed: results-app email schema, attachment cap, spam fallback = stage as
 
 ## 6. Automation + verification
 
-- Scheduler: once weekly. Default Monday morning (exact time TBD, US Eastern). If results-app / start lists show Elite FC members competing that Monday, **hold and publish Tuesday** after those results land (unless Frank overrides).
-- **Ops cadence (locked v3.15):** chat → staging anytime; email = daily morning light pass + second pass before HTML budget; self-gather = Wed mid-week skim + publish-morning full pass. Canonical: **STAGING.md § Ops cadence** + **SOURCES.md** cadence header.
+- Scheduler: once weekly. **Try Monday or Tuesday** (exact time TBD, US Eastern). Publishing later is OK. Soft preference only: hold for Monday club results when easy.
+- **Ops cadence (locked v3.15; wording v3.19):** chat → staging anytime; email = daily morning light pass + second pass before HTML budget; self-gather = Wed mid-week skim + publish-morning full pass. Canonical: **STAGING.md § Ops cadence** + **SOURCES.md** cadence header.
 - V1 gates: **Budget → Frank approve → Desk compose → Proof → Frank approve → print.** Chat is doorbell only for budget/proof readiness. Every fact → `sources.json` provenance. Unvetted tips stay off the sheet until Frank vets. No auto-print until approved.
 - Later: `lp -d club-printer paper.pdf` auto-print after N clean issues.
 - API keys live in env file on the runner, never in git. Allowlisted inbox only.
@@ -175,15 +190,15 @@ live in STYLE-GUIDE.md. **Voice:** PLAN §1b + STYLE-GUIDE §0a (newsletter-awar
 
 Resolved:
 - [x] Epee only
-- [x] **One weekly issue** (Thursday edition cancelled 2026-10-06)
-- [x] Default Monday publish; auto-slip Tuesday if club fencing Monday; Frank can override
-- [x] Dateline = actual publish day
+- [x] **One weekly newsletter** (no Mon/Thu split; Thursday edition dropped 2026-10-06)
+- [x] Target Mon/Tue publish; later OK (v3.19); soft preference to hold for Monday club results when easy
+- [x] Dateline = actual publish day (`<Weekday> Edition`)
 - [x] Signup board is core (max 4 tournaments; names first; encourage competition)
 - [x] Logistics box / About-archive placeholders / Fencing 101 / Milestones killed for now
 - [x] Email inputs (results app + forwarded club mail) via AgentMail
 - [x] No coaching tips, coach not involved
 - [x] Frank-only editorial (public tips OK but unvetted until Frank vets)
-- [x] Template A first; no Template B (Thursday cancelled). **PAUSED/deferred:** constrained dynamic / multi-template menu — see §4 (Template A only until Frank un-pauses)
+- [x] Template A only (no second-edition Template B). **PAUSED/deferred:** constrained dynamic / multi-template menu — see §4 (Template A only until Frank un-pauses)
 - [x] Swappable model
 - [x] Human-verified first, auto-print later
 - [x] Reddit verdict: search-discovery only
@@ -193,7 +208,7 @@ Resolved:
 - [x] Inbox — AgentMail `efc.weekly@agentmail.to` (not Gmail)
 - [x] Storage — box working copy + GitHub sync; everything except raw emails
 - [x] Pipeline names — Staging → Clean → Budget → Proof (STAGING.md)
-- [x] Tips — public ask to inbox OK; only `frankcng@gmail.com` auto-vetted; others unvetted until Frank promotes
+- [x] Tips — public ask to inbox OK; auto-vet allowlist = Frank Gmail + chunkymonkey + club Mailchimp (v3.17); others stage unvetted (never reject unknown apps/bots)
 - [x] Chat facts/ideas → next-week staging by default (named week override OK)
 - [x] Budget page may show unvetted labeled; include blocked until vetted
 - [x] Folder layout proposal — `staging/weeks/<YYYY-MM-DD|next>/` + `issues/<YYYY-MM-DD>/` (STAGING.md)
@@ -201,17 +216,21 @@ Resolved:
 - [x] AgentMail processed-mail triage — label `processed` after successful ingest; never delete (STAGING.md; v3.7)
 - [x] Masthead flanks + dateline swap (v3.8 origin) — **superseded by v3.12–v3.14 taste lock** (STYLE-GUIDE §12)
 - [x] Photo fit — no silent crop; soft ~2.2in tall flag (STYLE-GUIDE §19; v3.9)
-- [x] Production dateline — SAMPLE removed (v3.9); **final form (v3.12):** centered Playfair Display SC edition word (`Tuesday Edition` / `Page Two`) + Caslon meta line; double top / solid bottom — **not** three-span Arial (STYLE-GUIDE §2/§12)
+- [x] Production dateline — SAMPLE removed (v3.9); **final form (v3.12):** centered Playfair Display SC edition word (`<Weekday> Edition` from actual publish day / `Page Two`) + Caslon meta line; double top / solid bottom — **not** three-span Arial (STYLE-GUIDE §2/§12)
 - [x] Voice — newsletter-aware, selective word choice, reporter default; tone matches the piece (PLAN §1b; STYLE-GUIDE §0a; v3.11)
 - [x] §8 borders — **only** tabular `.box` boards; prose = `.rail-block` + `.rail-title` (no title underline); never wrap article-shaped copy in `.box` (v3.12–v3.14)
 - [x] Flanks as newspaper ears — Caslon/Times, hairline top+bottom, clear air from masthead logo; left fixed publisher line; right rotating quip from `flank-quotes.json` (v3.13–v3.14)
 - [x] No horizontal rules between page-2 article bands; no fake Gazette Staff bylines — guests only (v3.13–v3.14; PLAN §1b)
 - [x] **Sample taste locked** — `issues/2026-10-14/` (`paper-v3.14.pdf`) is the authoritative visual reference (Frank 2026-10-07)
-- [x] **Ops cadence locked (v3.15)** — chat anytime → next week; email daily + pre-budget; Wed skim + Mon/Tue full gather; Budget→approve→compose→Proof→approve→print; `sources.json`; chat doorbell only (STAGING.md + SOURCES.md)
+- [x] **Reality / provenance locked (v3.16)** — invent nothing on real issues; every printed fact → staging + `sources.json`; no model memory; sample/pretend labeled only (PLAN §1c)
+- [x] **Parent Q&A category locked (v3.18)** — recurring slot; anonymous; no Frank byline; `kind: qa`; `.rail-block.qa` (CONTENT-HIERARCHY + STYLE-GUIDE §8a + STAGING)
+- [x] **Email trust allowlist locked (v3.17)** — auto-vet `frankcng@gmail.com`, `chunkymonkey@agentmail.to`, club Mailchimp; flexible ingest for other senders (stage + provenance, unvetted) — STAGING.md § Tips / mail
+- [x] **Ops cadence locked (v3.15; wording v3.19)** — chat anytime → next week; email daily + pre-budget; Wed skim + publish-morning full gather; Budget→approve→compose→Proof→approve→print; `sources.json`; chat doorbell only (STAGING.md + SOURCES.md)
+- [x] **Flexible weekly publish (v3.19)** — try Mon/Tue; later fine; no two-edition cadence
 
 Still open:
-1. Exact Monday run time (proposal ~6am US Eastern) + Tuesday slip publish time.
-2. How we detect "members competing Monday" reliably (results-app fields / AskFRED).
+1. Exact preferred publish window (proposal ~Mon/Tue morning US Eastern) — soft target only.
+2. Optional: how to notice "members competing Monday" for the soft hold preference (results-app / AskFRED) — not a hard gate.
 3. Results-app email schema (tournament, event, day, entrants, results, source IDs).
 4. Printer model + who loads paper.
 5. Optional later: archive older PDFs outside git for posterity (not required).
@@ -226,13 +245,13 @@ canonical home wins.
 
 ## 9. Next steps
 - [x] Lock name (En Garde Gazette) + v1 lineup (CONTENT-HIERARCHY.md)
-- [x] Build template A (Monday results) HTML/CSS, B&W test render
+- [x] Build template A HTML/CSS, B&W test render
 - [x] Lock inbox address (AgentMail `efc.weekly@agentmail.to`) + box/GitHub storage
-- [x] Cancel Thursday edition; lock single weekly Mon/Tue slip rule
+- [x] Drop second edition; lock one weekly newsletter (flexible Mon/Tue target — v3.19)
 - [x] Lock Staging→Clean→Budget→Proof + tips vetting + chat→staging (STAGING.md)
-- [ ] Confirm Monday run time + Tuesday slip time with Frank
-- [ ] Define results-app email schema + Monday-competitor detection fields
-- [ ] Adapt Template A for single weekly issue (signup board as core); no Template B
+- [ ] Confirm preferred Mon/Tue publish window with Frank (soft target)
+- [ ] Define results-app email schema (+ optional Monday-competitor fields for soft hold)
+- [ ] Adapt Template A for weekly issue (signup board as core); Template A only
 - [ ] Build fetch per SOURCES.md checklist + email-ingest → staging (per-source degrade behavior)
 - [x] Budget demo: photo desk thumbs + multi-select; submit → timestamped + approvals.json (pretend)
 - [x] Email media extract first pass: remote HTML images → `staging/weeks/next/media/` + manifest; budget desk shows real + PRETEND (v3.5)
@@ -246,7 +265,9 @@ canonical home wins.
 - [x] Sample v3.11 taste: flanks + 3-span dateline + page-2 featured hierarchy on `issues/2026-10-14` (paper-v3.11.pdf)
 - [x] Sample v3.13: serif masthead ears; page-2 article HRs removed; fake bylines stripped (`paper-v3.13.pdf`)
 - [x] **Sample v3.14 taste LOCKED** (Frank): dateline + flanks + §8 rail-title + no page-2 article HRs; docs match; reference `issues/2026-10-14/paper-v3.14.pdf`
-- [ ] **Real Thursday edition** (next): refine source processing → HTML budget → proof render (complete run when ready)
+- [ ] **First real weekly edition** (next): refine source processing → HTML budget → proof render (complete run when ready)
+- [x] Docs v3.19: drop Mon/Thu split — weekly tries Mon/Tue, later OK; gather loop phrased publish-morning (not Monday-hard)
+- [x] Docs v3.18: Parent Q&A category locked (hierarchy slot + STAGING kind `qa` + STYLE-GUIDE §8a + prototype)
 - [x] Docs v3.15: ops cadence locked (STAGING.md gather loop + SOURCES.md cadence header); dynamic layout marked PAUSED/deferred (§4)
 - [ ] Layout patterns (§4) — **paused**; revisit later only if Frank asks (Template A only until then)
 - [ ] Budget page (prod): same vet UX + write issue approvals.json

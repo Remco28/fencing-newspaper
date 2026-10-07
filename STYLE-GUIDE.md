@@ -5,9 +5,9 @@ Authoritative for every issue, template, and prototype. Locked 2026-10-06 by Fra
 furniture (dateline, flanks, §8 boxes vs rails) unless Frank reopens a rule.
 article size-by-importance + stretch hierarchy refreshed 2026-10-07 (plan v3.7);
 masthead flanks = publisher + rotating quip ears (v3.8 → v3.14); dateline = centered
-Playfair `Tuesday Edition` / `Page Two` + meta (v3.12); photo fit no silent crop (v3.9);
+Playfair `<Weekday> Edition` (from actual publish day) / `Page Two` + meta (v3.12); photo fit no silent crop (v3.9);
 Gazette Desk composition §0 (v3.10); voice §0a (v3.11); §8 tabular-only `.box` +
-`.rail-title` no underline (v3.12–v3.14); guests-only bylines.
+`.rail-title` no underline (v3.12–v3.14); guests-only bylines; reality/provenance §0b (v3.16); **Parent Q&A** category + `.qa` pattern (v3.18).
 If a render violates any rule below, it does not print — fix and re-render.
 
 
@@ -49,6 +49,15 @@ Write like a **newsletter with a hard page limit**: every word competes for spac
   or other fake house bylines. Frank has none. Guests get a real name.
 - Full narrative home: PLAN §1b. Ban list and FK 8–10 rules still bind.
 
+
+## 0b. Reality — invent nothing (locked 2026-10-07, plan v3.16)
+
+Layout samples may use labeled fiction. **A real issue may not.**
+- Do not invent names, results, ratings, dates, entries, or quotes about real people.
+- Compose only from vetted, provenance-backed staging (and the approved budget). Every printed fact must be traceable in issue `sources.json`.
+- Never treat sample / PRETEND / demo copy as club or competition fact.
+- Full rule: PLAN §1c + §2 Sourcing rules; STAGING.md provenance fields.
+
 ## 1. Page
 - US Letter, 1 sheet front + back = exactly 2 PDF pages. Never 1.5, never 3.
 - Margins: 0.5in sides/top, 0.4in bottom. No more, no less.
@@ -57,7 +66,7 @@ Write like a **newsletter with a hard page limit**: every word competes for spac
 
 ## 2. Look: old-time newspaper
 - Masthead logo (`masthead001.png`, cropped to opaque bbox) with §12 flanks. Nothing above it, ever.
-- Dateline (below masthead): **centered edition word** in a display face + one meta line under it — not a three-span flex bar. Top rule **3pt double**, bottom rule **2pt solid**. Edition: **`Tuesday Edition`** (or `Page Two` on the back) in **Playfair Display SC / Cinzel** ~12.5–14pt, tracked, uppercase. Meta line: serif small-caps (**Libre Caslon Text** / Times) ~8pt — `Vol. I — No. N · Chatham, N.J. · Month D, YYYY` (page 2: section topic · Vol/No). No SAMPLE / Pretend / middle badge. Vol/No and date live HERE — not in the flanks. Do **not** revert to Arial three-span.
+- Dateline (below masthead): **centered edition word** in a display face + one meta line under it — not a three-span flex bar. Top rule **3pt double**, bottom rule **2pt solid**. Edition: **`<Weekday> Edition`** from the actual publish day (e.g. `Monday Edition`, `Tuesday Edition`) — or `Page Two` on the back — in **Playfair Display SC / Cinzel** ~12.5–14pt, tracked, uppercase. Meta line: serif small-caps (**Libre Caslon Text** / Times) ~8pt — `Vol. I — No. N · Chatham, N.J. · Month D, YYYY` (page 2: section topic · Vol/No). No SAMPLE / Pretend / middle badge. Vol/No and date live HERE — not in the flanks. Do **not** revert to Arial three-span.
 - Headings: PLAIN TEXT ONLY. No icons, no emojis, no ★≡✎▶!♦§◉✉ kickers, no symbols in or
   before headlines and box titles. Reasons: old-time look; symbols render inconsistently in B&W.
 - **Tabular** box titles (`.box > .boxtitle` only): small bold sans caps with a 1pt rule
@@ -70,6 +79,7 @@ Write like a **newsletter with a hard page limit**: every word competes for spac
 - Body content flows in 3 columns (flex thirds or CSS columns). Rationale: reads like a newspaper,
   eyes scan shorter line lengths faster.
 - Lead story may span 2 columns; rails/boxes take the third. Signup board and footer span full width.
+- Educational figures (e.g. exploded-weapon): default **span 2 columns** (not 3 / not full-bleed) unless Frank says otherwise.
 - Column gaps 9pt. Boxes: 1.5pt border, 3–4pt padding, 4pt bottom margin.
 
 ## 4. Type scale (v2 baseline — the "small" version; per-slot lock 2026-10-07)
@@ -105,6 +115,7 @@ Write like a **newsletter with a hard page limit**: every word competes for spac
 
 ## 7. Mandatory visual QA (every render, no exceptions — human or bot)
 Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
+- [ ] Reality / provenance (§0b / PLAN §1c): no invented facts about real people; every printed fact traceable; sample/pretend not treated as real?
 - [ ] Exactly 2 pages for 1 sheet?
 - [ ] Header/footer chrome absent?
 - [ ] No icons/emojis/symbols in any heading?
@@ -120,6 +131,8 @@ Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
       no fake Gazette Staff bylines (guests only)?
 - [ ] §8: prose never in `.box`; `.rail-title` has no underline; no `<hr>` between page-2
       article bands (Read preview-p2.png — confirm)?
+- [ ] Parent Q&A (§8a): if present, `.rail-block.qa` (no border); anonymous unless named;
+      no Frank byline; 40–70w; usually one?
 Any NO = fix, re-render, re-check. Fitting on the page is necessary but NOT sufficient —
 it must look purpose-built for this club.
 Board-level QA must be done on zoomed crops (150dpi+) of each table, not full-page
@@ -145,6 +158,23 @@ thumbnails — alignment cannot be judged through frosted glass.
 - Comic slot: dashed/aspect-ratio frame when real panels land (that frame is the comic, not
   an article); placeholder min-height is prototype-only.
 
+## 8a. Parent Q&A — `.qa` pattern (locked 2026-10-07, plan v3.18)
+
+Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a boxed board.
+
+- **Markup:** `<div class="rail-block qa">` + `<div class="rail-title">Parent Q&A</div>` +
+  `<p class="q">…</p>` + `<p class="a">…</p>`. **No** `.box` border, **no** title underline,
+  **no** `<hr>` under the block (same prose-rail rules as §8).
+- **Type:** `.q` = bold italic body (question). `.a` = justified body (answer). Optional
+  `Q.` / `A.` labels via CSS `::before` (small sans bold) or plain text — keep quiet.
+- **Identity:** default **anonymous asker**; **no Frank byline**. Name someone only when
+  they asked to be named. Guests elsewhere still follow §0a.
+- **Budget:** 40–70 words for the pair. **Default one** Q&A per issue; a second only if
+  space remains after the cut hierarchy.
+- **Voice:** clear parent-facing reporter answer; tone per the question (PLAN §1b). No
+  invented rules or points — cite/staging provenance required (§0b).
+- **Prototype:** `prototype/qa-block.html`.
+
 ## 9. Layout patterns — select, never invent (locked 2026-10-06; OPEN 2026-10-07)
 - **Today (V1):** ship **Template A only**. Match the locked sample `issues/2026-10-14`
   (v3.14). Varied article spans/heights inside that shell are composition (PLAN §1a), not a
@@ -163,7 +193,7 @@ thumbnails — alignment cannot be judged through frosted glass.
 ## 10. Flexible table widths (locked 2026-10-06)
 - Every board supports width variants: `.w1` (1 col rail), `.w2` (2 cols), `.w3` (full width).
 - Width is chosen by CONTENT volume (few rows = rail, many rows = full width), never forced.
-  A 3-row signup board is a rail; a 10-row Thursday board earns full width.
+  A 3-row signup board is a rail; a 10-row board earns full width.
 - Fixed table layout, declared column widths, tabular numerals, right-aligned dates/ratings —
   alignment is template property, not per-issue tweaking.
 
@@ -203,7 +233,7 @@ thumbnails — alignment cannot be judged through frosted glass.
   Retune margin/gap before shrinking type.
 - **Dateline** (v3.12 — replaces three-span Arial bar): centered stack, not flex spans.
   - Top: **3pt double** rule; bottom: **2pt solid** rule.
-  - `.edition`: **`Tuesday Edition`** (page 1) or **`Page Two`** (page 2) — Playfair Display SC
+  - `.edition`: **`<Weekday> Edition`** from actual publish day (page 1) or **`Page Two`** (page 2) — Playfair Display SC
     / Cinzel, ~12.5–14pt, tracked uppercase.
   - `.meta` under it: Libre Caslon Text / Times, ~8pt small-caps —
     `Vol. I — No. N · Chatham, N.J. · Month D, YYYY` (page 2: `Club Calendar & Notes · Vol/No`).

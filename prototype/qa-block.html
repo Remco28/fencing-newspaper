@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parent Q&A block — prototype</title>
+<style>
+  @page { size: Letter; margin: 0.5in; }
+  body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt;
+    line-height: 1.26; color: #000; max-width: 2.4in; margin: 24pt; }
+  /* STYLE-GUIDE §8: prose rail — never wrap in .box */
+  .rail-block { margin-bottom: 6pt; border: none; padding: 0; }
+  .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 10pt; text-transform: uppercase; letter-spacing: 0.5pt;
+    border: none; padding-bottom: 0; margin-bottom: 3pt; }
+  /* Parent Q&A pattern — light utility, box-free */
+  .qa .q { font-style: italic; font-weight: bold; margin-bottom: 2pt; text-align: left; }
+  .qa .q::before { content: "Q. "; font-style: normal; font-weight: 900;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7.5pt;
+    letter-spacing: 0.3pt; }
+  .qa .a { margin-bottom: 0; text-align: justify; hyphens: auto; }
+  .qa .a::before { content: "A. "; font-family: "Arial", "Liberation Sans", sans-serif;
+    font-weight: 900; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  .note { margin-top: 18pt; font-size: 7pt; color: #333; max-width: 4.2in;
+    font-family: "Arial", sans-serif; line-height: 1.35; }
+</style>
+</head>
+<body>
+  <div class="rail-block qa">
+    <div class="rail-title">Parent Q&A</div>
+    <p class="q">Does the new points system affect my kid’s Youth events?</p>
+    <p class="a">No. USA Fencing’s trial points system covers Cadet, Junior, and Division I (Senior) events only. Youth events stay on the existing points tables — this trial does not touch them.</p>
+  </div>
+  <p class="note">Prototype only — not a full sheet. Category: <strong>Parent Q&A</strong>.
+    Markup: <code>.rail-block.qa</code> + <code>.rail-title</code>. No border, no asker name, no Frank byline.
+    Budget 40–70w. Default 1 per issue (second only if space after cut hierarchy).</p>
+</body>
+</html>

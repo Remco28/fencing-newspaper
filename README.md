@@ -5,15 +5,18 @@
   a tailor-made Elite FC sheet (pleasant, fun), not a slot dump. STYLE-GUIDE §0 is the bar.
 - **PLAN.md §1b — voice:** newsletter-aware, selective words, reporter default; tone matches
   the piece. STYLE-GUIDE §0a for the weekly checklist.
+- **PLAN.md §1c — reality / provenance:** real issues invent nothing; every printed fact →
+  staging + `sources.json`; no model memory; sample/pretend labeled only. STYLE-GUIDE §0b +
+  STAGING.md.
 - PLAN.md — narrative, decisions, open questions, next steps
 - **Locked sample taste (v3.14):** `issues/2026-10-14/` (`paper-v3.14.pdf`) — furniture
   reference for dateline, flanks, §8 boxes vs rails. STYLE-GUIDE §2/§8/§12. PLAN §4:
   dynamic layout **PAUSED / deferred** (Template A only).
 - **STAGING.md** — Staging→Clean→Budget→Proof, tip vetting, item schema, folder layout,
-  **ops cadence / gather loop** (v3.15)
+  **ops cadence / gather loop** (v3.15); **Parent Q&A** category (v3.18)
 - CONTENT-HIERARCHY.md — slot order + word budgets for the weekly issue (Frank sorts this file)
 - STYLE-GUIDE.md — all visual rules + mandatory QA checklist
-- SOURCES.md — standing fetch checklist + **cadence header** (Wed skim / Mon–Tue full pass) + AskFRED API/`scripts/askfred.py`
+- SOURCES.md — standing fetch checklist + **cadence header** (Wed skim / publish-morning full pass) + AskFRED API/`scripts/askfred.py`
 - SECTIONS-MENU.md — option menu + past verdicts (history, not spec)
 - REDDIT-SETUP.md — Reddit OAuth path (approval-gated; fallbacks are default)
 - REVIEW-FROM-BUFFY-REVIEWER.md / VISUAL-REVIEW-DEEPSEEK-V4.1-FLASH.md — outside reviews
@@ -26,10 +29,11 @@
 (FLAG > 0.75in) and per-row column spread (FLAG > 0.5in). Any FLAG fails the build
 unless `--allow-flag` is passed. See STYLE-GUIDE.md §7 for the full QA checklist.
 
-## Ops (locked 2026-10-06; gather loop v3.15)
-- **Publish cadence:** one weekly issue. Default Monday; auto-slip Tuesday if club members fence Monday; Frank can override. Dateline = actual publish day. Thursday edition cancelled.
-- **Gather loop (v3.15):** chat → staging anytime (next week default); email = daily morning + pre-budget second pass; self-gather = Wed skim + Mon/Tue full pass. Detail: **STAGING.md § Ops cadence** + **SOURCES.md**.
-- **Mail:** AgentMail `efc.weekly@agentmail.to` only (not Gmail). Tips/photos OK there. Only `frankcng@gmail.com` is auto-Frank-vetted; other senders stage as **unvetted**.
+## Ops (locked 2026-10-06; gather loop v3.15; publish wording v3.19)
+- **Publish cadence:** one weekly newsletter. Try Monday or Tuesday; later is fine (no rule broken). Soft preference to hold for Monday club results when easy. Dateline = actual publish day (`<Weekday> Edition`). No Mon/Thu split.
+- **Parent Q&A (v3.18):** recurring category — parent → Frank → Desk; anonymous; `kind: qa`; see CONTENT-HIERARCHY + STYLE-GUIDE §8a.
+- **Gather loop (v3.15):** chat → staging anytime (next week default); email = daily morning + pre-budget second pass; self-gather = Wed skim + publish-morning full pass. Detail: **STAGING.md § Ops cadence** + **SOURCES.md**.
+- **Mail:** AgentMail `efc.weekly@agentmail.to` only (not Gmail). Tips/photos OK there. **Auto-vet allowlist:** `frankcng@gmail.com`, `chunkymonkey@agentmail.to`, club Mailchimp; other senders stage as **unvetted** (never reject unknown apps/bots).
 - **Pipeline:** Staging → Clean → **Budget → Frank approve → Desk compose → Proof → Frank approve → print**. Budget may show unvetted labeled; include blocked until Frank vets. Chat is doorbell only for budget/proof. Provenance → `sources.json`.
 - **Working copy:** `/workspace/fencing-newspaper` on Musketeer's computer.
 - **Durable store:** sync this repo to GitHub weekly (and after a finished issue if you care). Everything except raw email bodies.

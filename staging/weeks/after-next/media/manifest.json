@@ -1,0 +1,39 @@
+{
+  "target_week": "after-next",
+  "extracted_at": "2026-10-07T16:00:00-04:00",
+  "note": "Moved from staging/weeks/next/ 2026-10-07 — Frank: hold THE WEAPON for the week after next issue. Span 2.",
+  "items": [
+    {
+      "id": "weapon-epee-exploded-svg",
+      "kind": "illustration",
+      "filename": "weapon-epee-exploded.svg",
+      "media_path": "staging/weeks/after-next/media/weapon-epee-exploded.svg",
+      "caption": "THE WEAPON — exploded epee (SVG primary)",
+      "source": "chat",
+      "from": "frank",
+      "vetted": true,
+      "vetted_by": "frank",
+      "parent_item_id": "chat-asset-weapon-epee",
+      "preferred": true,
+      "note": "Frank chat asset 2026-10-07; hold for week after next; layout: 2-col back-page figure (not 3 / not full-bleed)",
+      "columns": 2,
+      "span": 2
+    },
+    {
+      "id": "weapon-epee-exploded-png",
+      "kind": "illustration",
+      "filename": "weapon-epee-exploded.png",
+      "media_path": "staging/weeks/after-next/media/weapon-epee-exploded.png",
+      "caption": "THE WEAPON — exploded epee (PNG fallback)",
+      "source": "chat",
+      "from": "frank",
+      "vetted": true,
+      "vetted_by": "frank",
+      "parent_item_id": "chat-asset-weapon-epee",
+      "preferred": false,
+      "note": "Frank chat asset 2026-10-07; hold for week after next; layout: 2-col back-page figure (not 3 / not full-bleed)",
+      "columns": 2,
+      "span": 2
+    }
+  ]
+}

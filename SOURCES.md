@@ -2,14 +2,14 @@
 For the bot: check on the cadence below. For Frank: forward-by-email also accepted.
 Epee only. Record every fact in `sources.json` (URL + date, or email message-ID + date).
 
-## Cadence (locked v3.15 — Frank 2026-10-07)
+## Cadence (locked v3.15 — Frank 2026-10-07; wording v3.19)
 
 Times = US Eastern. Full ops loop (chat / email / gates): **STAGING.md § Ops cadence**.
 
 | Pass | When | What |
 |------|------|------|
 | **Mid-week skim** | Wednesday | Light: Google News RSS (`fencing+epee` + `+New Jersey`) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging. Not a full checklist run. |
-| **Publish-morning full pass** | Default **Monday**; **Tuesday** if Mon→Tue slip | Full **Every run** checklist below + **Monday → Tuesday slip check**. |
+| **Publish-morning full pass** | When aiming to ship (usually **Mon/Tue**; later OK) | Full **Every run** checklist below. Soft: see **Club-results hold preference** if members fence Monday. |
 | **Email** | Daily morning light pass + second pass right before HTML budget | Ingest → staging, `processed` label, media extract (STAGING.md). |
 
 Keep all checklists below; do not delete sources when editing cadence.
@@ -37,7 +37,7 @@ Keep all checklists below; do not delete sources when editing cadence.
 - [ ] USA Fencing epee feed: https://www.usafencing.org/news/epee
 - [ ] NJ.com HS fencing (boys + girls): https://highschoolsports.nj.com/boysfencing (+ girls equivalent, NJSIAA posts)
 - [ ] AskFRED upcoming near NJ (epee filter, note check-in close + staleness warning): https://www.askfred.net/tournaments
-- [ ] Inbox **`efc.weekly@agentmail.to`** (AgentMail — SINGLE input channel; not Gmail). Frank emails everything, incl. his own comics: results-app slice (tournaments, entrants, results) + forwarded club newsletter + tips/thread links + comics/guest pieces. Cite by message-ID in `sources.json`; do not commit raw MIME.
+- [ ] Inbox **`efc.weekly@agentmail.to`** (AgentMail — SINGLE input channel; not Gmail). Flexible: Frank, apps, bots, newsletters, tips — stage all with provenance; never drop unknown senders. **Auto-vet allowlist:** `frankcng@gmail.com`, `chunkymonkey@agentmail.to` (Frank’s other bot / results-app digests), `elitefencersclub@111617670.mailchimpapp.com` (club Mailchimp). Others → unvetted until Frank vets. Cite by message-ID in `sources.json`; do not commit raw MIME. Detail: **STAGING.md § Tips / mail**.
 
 ## Weekly / as-needed
 - [ ] FencingTracker club page + NJ event pages: https://fencingtracker.com
@@ -61,7 +61,7 @@ Keep all checklists below; do not delete sources when editing cadence.
 - Instagram: profile fetch returns app-deep-link stubs, zero post content. Same wall. Exception: our OWN @elitefencersclub posts could come via Meta Graph API with the club's own token (our data, no scraping issue) — optional later.
 - Rule for all social: never a fact source; angles only, verified against Tier 1–3 before print.
 
-## Monday → Tuesday slip check
-- [ ] From results-app / start lists: any Elite FC members competing **today (Monday)**? If yes, hold the issue and publish Tuesday after those results land (unless Frank overrides).
+## Club-results hold preference (soft — not a rule)
+- [ ] Optional: from results-app / start lists, any Elite FC members competing **Monday**? Holding for those results is nice when easy — publishing later (or without them) is fine.
 - [ ] Re-check AskFRED close times for locals with late/at-door entry (feeds deadlines + signup board)
 - [ ] Re-check emailed start-list slice for Elite FC entrants (signup board names)
