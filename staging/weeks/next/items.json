@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-07T18:46:27-04:00",
+  "updated_at": "2026-10-07T19:05:00-04:00",
   "note": "Staging pile for Issue No. 2 (week of Oct 12, 2026). Rolled from after-next/ 2026-10-07 after Issue No. 1 approval: THE WEAPON (chat-asset-weapon-epee, span 2). Carry-forward copies from staging/weeks/2026-10-08/ marked carried_from (refresh before budget).",
   "items": [
     {
@@ -393,6 +393,143 @@
       "carried_from": "staging/weeks/2026-10-08",
       "carried_at": "2026-10-07T18:46:27-04:00",
       "carry_note": "NAC Oct 9-12: Elite FC names to look for in results (Penny Young, Amina Gore, Maksim Milinkovic, Anayaa Sheth)."
+    },
+    {
+      "id": "chat-winter-camp-reminder",
+      "kind": "graf",
+      "headline": "Winter Camp: Sign Up Now",
+      "body": "Elite FC Winter Camp runs December 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels. Call it a tune-up for the second half of the season: footwork, technical and tactical drills, strength and conditioning, and creative games. It's also a good excuse to escape visiting relatives for a few hours. Cost: [NEED: price]. To sign up, contact the club at elitefencersclub@gmail.com [NEED: confirm sign-up method + deadline].",
+      "source": "chat",
+      "from": "frank",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_at": "2026-10-07T18:53:00-04:00",
+      "vetted_by": "frank",
+      "vet_scope": "angle_tone_only",
+      "facts_status": "pending",
+      "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders.",
+      "facts": [
+        {
+          "claim": "Winter Camp 2026 runs December 27–31",
+          "source": "https://www.elitefencersclub.com/camps",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        },
+        {
+          "claim": "Daily hours 9:30 AM – 2:00 PM",
+          "source": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        },
+        {
+          "claim": "Open to all levels; train with high-level fencers",
+          "source": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        },
+        {
+          "claim": "Activities: footwork, technical/tactical drills, professional strength/conditioning, creative games",
+          "source": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        },
+        {
+          "claim": "For pricing and registration, contact the club (elitefencersclub@gmail.com; Register button -> /contact)",
+          "source": "https://www.elitefencersclub.com/camps",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        }
+      ],
+      "need": [
+        "price",
+        "ages / age groups",
+        "sign-up method + deadline",
+        "confirm camp runs Sunday Dec 27 (club closed Sundays per standing schedule)"
+      ],
+      "email_search": "Read-only 2026-10-07: AgentMail efc.weekly (4 messages incl. club Mailchimp 'Group Class! + Footwork Class' Oct 7 and Frank fwd of Oct 5 'Group Class! + Congrats!') — no Winter Camp mention. Connected Gmail is seventyfourwaldo@gmail.com (not Frank's frankcng@gmail.com) — 0 hits.",
+      "provenance": [
+        {
+          "type": "chat",
+          "note": "chat: Frank 2026-10-07 — Winter Camp reminder angle + family joke",
+          "retrieved_at": "2026-10-07T18:53:00-04:00"
+        },
+        {
+          "type": "web",
+          "url": "https://www.elitefencersclub.com/camps",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        },
+        {
+          "type": "web",
+          "url": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
+          "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer.jpg",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        }
+      ],
+      "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer.jpg",
+      "slot_hint": "club_events",
+      "suggested_slot": "club_events",
+      "tags": [
+        "winter-camp",
+        "club-event",
+        "reminder",
+        "facts-pending",
+        "frank-idea"
+      ],
+      "draft_path": "staging/weeks/next/drafts/winter-camp.md",
+      "word_count": 70,
+      "created_at": "2026-10-07T19:05:00-04:00"
+    },
+    {
+      "id": "reddit-rfencing-etiquette-thread",
+      "kind": "graf",
+      "headline": "Overheard on Reddit: First Tournament? The Internet Has Notes",
+      "body": "A nervous first-timer, the only one from the home club competing, asked r/Fencing what etiquette to know. The forum delivered.\n\nCheck your score sheet before you sign it, an epee fencer urged, in capital letters. Signing says you agree with the scores, and once the review period closes, they stand.\n\nDon't stop until the referee calls \"Halt,\" another commenter warned. Pulling up to look back at the scoring box can cost you, since a touch that lands before \"Halt\" still counts.\n\nAn epee referee suggested hanging your spare body cord on your spare weapon (the rules require a spare of each) and handing the reel connector to the next fencer instead of letting it zip back into the reel.\n\nAnother epee fencer's motto: \"You have no friends on strip.\" Rivals there, friends off it.\n\nThe consensus, in one commenter's words: \"Don't argue, be polite, and have fun.\"",
+      "section": "Overheard on Reddit",
+      "section_status": "proposed — under discussion with Frank; no doc rules yet",
+      "source": "reddit",
+      "from": "frank",
+      "target_week": "next",
+      "vetted": false,
+      "vetted_at": null,
+      "vetted_by": null,
+      "vet_notes": "Frank uploaded PDF capture of r/Fencing 'Fencing Etiquette' thread (2026-10-07). Proposed category 'Overheard on Reddit' (community chatter, word-on-the-street feel; Frank agreed no usernames). Draft prints only rulebook-verified facts or clearly attributed opinion; handshake and pants claims excluded. See drafts/overheard-etiquette-claims.md.",
+      "provenance": [
+        {
+          "type": "reddit",
+          "note": "r/Fencing post 'Fencing Etiquette' (shown '1d ago' at capture); PDF uploaded by Frank",
+          "local_copy": "staging/weeks/next/sources/reddit-rfencing-fencing-etiquette-2026-10-07.pdf",
+          "text_extract": "staging/weeks/next/sources/reddit-rfencing-fencing-etiquette-2026-10-07.txt",
+          "retrieved_at": "2026-10-07T18:50:53-04:00"
+        },
+        {
+          "type": "rulebook",
+          "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt0f86b976c72458f2/6abe872e4f25cae69c968ee1/2026-10-USA-Fencing-Rules-of-Competition.pdf",
+          "note": "USA Fencing Rules for Competition, Oct 2026: t.22.1, t.23.4, t.27.2, t.64.5, t.65.1, t.117, t.122, t.170, m.25",
+          "retrieved_at": "2026-10-07T19:00:00-04:00"
+        },
+        {
+          "type": "official",
+          "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt31ccda29e31349e7/USAF_OPsManual_2026_27.pdf",
+          "note": "Ops Manual 2026-27 p.18 Scoring (sign scoresheet; review period; no changes after)",
+          "retrieved_at": "2026-10-07T19:00:00-04:00"
+        },
+        {
+          "type": "official",
+          "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt3d6b7fafa4cd9d57/6ac52829f660869f580e11f2/2026-09_Monthly_Call_Rule_Updates.pdf",
+          "note": "t.122 handshake dropped effective 1 Oct 2026",
+          "retrieved_at": "2026-10-07T18:58:00-04:00"
+        }
+      ],
+      "claims_path": "staging/weeks/next/drafts/overheard-etiquette-claims.md",
+      "slot_hint": "overheard_on_reddit",
+      "suggested_slot": "overheard_on_reddit",
+      "tags": [
+        "overheard-on-reddit",
+        "proposed-category",
+        "reddit",
+        "etiquette",
+        "first-tournament",
+        "no-usernames",
+        "claims-checked"
+      ],
+      "draft_path": "staging/weeks/next/drafts/overheard-etiquette.md",
+      "word_count": 147,
+      "created_at": "2026-10-07T19:05:00-04:00"
     }
   ],
   "rolled_forward": {

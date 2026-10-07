@@ -34,6 +34,19 @@
       "note": "Frank chat asset 2026-10-07; hold for Issue No. 2 (week of Oct 12); layout: 2-col back-page figure (not 3 / not full-bleed)",
       "columns": 2,
       "span": 2
+    },
+    {
+      "id": "efc-winter-camp-2026-flyer",
+      "kind": "photo",
+      "filename": "efc-winter-camp-2026-flyer.jpg",
+      "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer.jpg",
+      "caption": "Winter Camp 2026 flyer — December 27–31, 9:30 AM–2:00 PM (club website)",
+      "source": "web",
+      "url": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
+      "retrieved_at": "2026-10-07T18:55:00-04:00",
+      "vetted": false,
+      "parent_item_id": "chat-winter-camp-reminder",
+      "note": "Reference/source copy of the club's own flyer; not necessarily for print. Flyer text says 'Epee camp' — drop label in print (§0c)."
     }
   ],
   "rolled_forward": {
