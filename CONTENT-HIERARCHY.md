@@ -6,6 +6,7 @@ Budgets in words (articles) or rows (tables). Calibration: ~40 words/column-inch
 
 One weekly issue only (Thursday edition cancelled 2026-10-06). Default publish Monday;
 may slip to Tuesday — see PLAN.md. Dateline uses the **actual publish day**.
+Pipeline (Staging→Clean→Budget→Proof) and tip vetting live in **STAGING.md**; this file only owns slot order + budgets.
 
 ## WEEKLY — Results + signup (news-first)
 | # | Slot | Budget | Source | Notes |

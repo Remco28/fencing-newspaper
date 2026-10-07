@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.2
+# Fencing Newspaper — Plan v3.3
 Date: 2026-10-06
-Status: locked direction from Frank, details in progress (v3.2: single weekly edition Mon/Tue; Thursday cancelled; AgentMail + box/GitHub storage)
+Status: locked direction from Frank, details in progress (v3.3: Staging→Clean→Budget→Proof pipeline; tips vetting; chat→staging; see STAGING.md)
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -66,7 +66,7 @@ Epee filter applies to everything: FIE, national, high-school, club. If a source
 - Every issue keeps `sources.json` (URL + retrieved date, or email message-ID + date).
 - Foil/saber items are dropped at fetch time, not rewritten.
 
-## 3. Sections (v3.2 — single weekly issue; Frank sorts CONTENT-HIERARCHY.md)
+## 3. Sections (v3.3 — single weekly issue; Frank sorts CONTENT-HIERARCHY.md)
 
 Shared shell: masthead **En Garde Gazette** + descriptor "The Elite Fencers Club Weekly" (locked 2026-10-06; no "!" in the nameplate — the bang lives in headlines, not the masthead), **actual publish date** (Mon or Tue), issue #,
 footer with print timestamp. Bylines: none for Frank, credit guest writers.
@@ -95,28 +95,37 @@ Rules:
 - Content/ layout split stands: AI fills `issue.json` (strict schema + word limits + epee-only), template renders `paper.pdf` deterministically (HTML + print CSS → Chromium headless or WeasyPrint).
 - US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art only (photos pending photo-desk design).
 - ~600–700 words max per issue.
-- Per-issue folder: `issues/<YYYY-MM-DD>/` (publish date) with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`. Raw email bodies stay in AgentMail (not in git); cite them by message-ID in `sources.json`.
+- Per-issue folder: `issues/<YYYY-MM-DD>/` (publish date) with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`. Pre-issue material lives under `staging/weeks/` — see **STAGING.md**. Raw email bodies stay in AgentMail (not in git); cite them by message-ID in `sources.json`.
 
 Why fixed templates: same readability + reliable print. New template = design task with test print, never a weekly AI decision.
 
-## 5. Inputs — AgentMail is the single channel (locked 2026-10-06 evening)
+## 5. Inputs — AgentMail is the single channel (locked 2026-10-06 evening; tips/vetting v3.3)
 
 **Inbox (locked):** `efc.weekly@agentmail.to` (display name: The Elite Fencer's Club Weekly), via the AgentMail connector — **not Gmail**. Frank's Gmail stays for other work (rentals, etc.).
 
-Frank sends EVERYTHING via email to that address, including comics he draws himself. The bot also does independent research per SOURCES.md. Allowlisted inbox; every ingested item recorded per-issue by AgentMail message-ID in `sources.json`.
+**Tips / mail (locked v3.3):**
+- Small public ask OK: tips & photos to `efc.weekly@agentmail.to` (editor decides).
+- Only mail from `frankcng@gmail.com` is **auto-Frank-vetted**.
+- Other senders → staging as **unvetted**. Unvetted items MAY appear on the budget page labeled unvetted; they cannot be included in the issue until Frank vets them (promote / forward-from-frank / checkbox that requires vet first).
 
-1. **Results/schedule app → bot:** structured email (JSON or fixed-format body + optional PDF attach): tournament, event, day, Elite FC entrants/results → `inputs/results-<date>.json`.
-2. **Club newsletter forwarded:** announcements, events, ratings → `inputs/club-<date>.md`.
-3. **Frank's extras:** comics (image attach), tips/thread links, guest pieces → `inputs/frank-<date>/`.
+**Chat → staging (locked v3.3):** When Frank tells the bot a fact/idea in chat, default target = **next weekly issue** staging unless he names another week. Materials can accumulate for subsequent weeks in advance.
 
-Still needed: allowlist (only Frank's app + Frank's forwards accepted), attachment cap, spam fallback = ignore + flag in preview, results-app email schema.
+Frank still sends comics and forwards to that address. The bot also does independent research per SOURCES.md. Every ingested email item recorded by AgentMail message-ID in `sources.json` / staging provenance.
 
-**Storage (locked 2026-10-06 evening):** Working copy on Musketeer's computer at `/workspace/fencing-newspaper`. Everything except raw emails syncs to GitHub (issue folders, PDFs, approvals, prototypes, specs). Raw MIME/bodies stay in AgentMail. Weekly `git push` is the baseline; optional push after a closed issue. PDFs may be archived elsewhere later for posterity — low stakes, fun project, not mission-critical. Secrets stay in `.env` on the runner, never in git.
+1. **Results/schedule app → bot:** structured email (JSON or fixed-format body + optional PDF attach): tournament, event, day, Elite FC entrants/results → staging, then Clean → `inputs/results-<date>.json`.
+2. **Club newsletter forwarded:** announcements, events, ratings → staging → `inputs/club-<date>.md`.
+3. **Frank's extras / public tips:** comics, tips, photos, thread links → staging (`vetted` per rules above).
+
+Still needed: results-app email schema, attachment cap, spam fallback = stage as unvetted + flag on budget (not silent drop of Frank-vetted mail).
+
+**Editorial pipeline (locked v3.3):** Staging → Clean → Budget → Proof. Canonical detail + item schema + folder layout: **STAGING.md**.
+
+**Storage (locked 2026-10-06 evening):** Working copy on Musketeer's computer at `/workspace/fencing-newspaper`. Everything except raw emails syncs to GitHub (staging, issue folders, PDFs, approvals, prototypes, specs). Raw MIME/bodies stay in AgentMail. Weekly `git push` is the baseline; optional push after a closed issue. PDFs may be archived elsewhere later for posterity — low stakes, fun project, not mission-critical. Secrets stay in `.env` on the runner, never in git.
 
 ## 6. Automation + verification
 
 - Scheduler: once weekly. Default Monday morning (exact time TBD, US Eastern). If results-app / start lists show Elite FC members competing that Monday, **hold and publish Tuesday** after those results land (unless Frank overrides).
-- V1: bot builds PDF + **waits for Frank's approve** on the local budget/proof page (chat is doorbell only). No auto-print until approved.
+- V1: bot stages → cleans → budget page → proof PDF; **waits for Frank's approve** at budget and proof (chat is doorbell only). No auto-print until approved. Unvetted tips stay off the sheet until Frank vets.
 - Later: `lp -d club-printer paper.pdf` auto-print after N clean issues.
 - API keys live in env file on the runner, never in git. Allowlisted inbox only.
 
@@ -139,7 +148,7 @@ Resolved:
 - [x] Logistics box / About-archive placeholders / Fencing 101 / Milestones killed for now
 - [x] Email inputs (results app + forwarded club mail) via AgentMail
 - [x] No coaching tips, coach not involved
-- [x] Frank-only editorial, no submissions
+- [x] Frank-only editorial (public tips OK but unvetted until Frank vets)
 - [x] Fixed templates (Template A first; no Template B)
 - [x] Swappable model
 - [x] Human-verified first, auto-print later
@@ -149,38 +158,51 @@ Resolved:
 - [x] Template A prototype through v6 + locked visual rules (STYLE-GUIDE.md)
 - [x] Inbox — AgentMail `efc.weekly@agentmail.to` (not Gmail)
 - [x] Storage — box working copy + GitHub sync; everything except raw emails
+- [x] Pipeline names — Staging → Clean → Budget → Proof (STAGING.md)
+- [x] Tips — public ask to inbox OK; only `frankcng@gmail.com` auto-vetted; others unvetted until Frank promotes
+- [x] Chat facts/ideas → next-week staging by default (named week override OK)
+- [x] Budget page may show unvetted labeled; include blocked until vetted
+- [x] Folder layout proposal — `staging/weeks/<YYYY-MM-DD|next>/` + `issues/<YYYY-MM-DD>/` (STAGING.md)
 
 Still open:
 1. Exact Monday run time (proposal ~6am US Eastern) + Tuesday slip publish time.
 2. How we detect "members competing Monday" reliably (results-app fields / AskFRED).
-3. Results-app email schema (tournament, event, day, entrants, results, source IDs) + allowlist.
+3. Results-app email schema (tournament, event, day, entrants, results, source IDs).
 4. Printer model + who loads paper.
 5. Optional later: archive older PDFs outside git for posterity (not required).
+6. Exact staging on-disk filenames (`items.jsonl` vs `items/*.json`) when ingest ships — layout tree is locked; leaf names flexible.
 
 Canonical homes: CONTENT-HIERARCHY.md owns slot order + budgets · STYLE-GUIDE.md owns all
-visual rules · SOURCES.md owns the fetch checklist · SECTIONS-MENU.md is the option menu +
-past verdicts · PLAN owns narrative + decisions. On conflict, the canonical home wins.
+visual rules · SOURCES.md owns the fetch checklist · **STAGING.md owns pipeline + item
+schema + folder layout** · SECTIONS-MENU.md is the option menu + past verdicts · PLAN
+owns narrative + decisions. On conflict, the canonical home wins.
 
 ## 9. Next steps
 - [x] Lock name (En Garde Gazette) + v1 lineup (CONTENT-HIERARCHY.md)
 - [x] Build template A (Monday results) HTML/CSS, B&W test render
 - [x] Lock inbox address (AgentMail `efc.weekly@agentmail.to`) + box/GitHub storage
 - [x] Cancel Thursday edition; lock single weekly Mon/Tue slip rule
+- [x] Lock Staging→Clean→Budget→Proof + tips vetting + chat→staging (STAGING.md)
 - [ ] Confirm Monday run time + Tuesday slip time with Frank
 - [ ] Define results-app email schema + Monday-competitor detection fields
 - [ ] Adapt Template A for single weekly issue (signup board as core); no Template B
-- [ ] Build fetch per SOURCES.md checklist + email-ingest scripts (per-source degrade behavior)
+- [ ] Build fetch per SOURCES.md checklist + email-ingest → staging (per-source degrade behavior)
+- [ ] Budget page: show unvetted labeled; block include until vetted; write approvals.json
 - [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot
-- [ ] See also: SOURCES.md (standing checklist), SECTIONS-MENU.md (full options), REDDIT-SETUP.md
+- [ ] See also: STAGING.md, SOURCES.md, SECTIONS-MENU.md, REDDIT-SETUP.md
 
-## 10. Approval design (locked 2026-10-06)
+## 10. Approval design (locked 2026-10-06; unvetted rule v3.3)
 - Primary: LOCAL budget page on Musketeer's computer (Grok Bot box). Stories + B&W-as-printed
-  photo previews, approve checkboxes, photo-include checkboxes. Submit writes timestamped
-  `approvals.json` the bot reads. Frank works on desktop, never phone.
-- Chat is DOORBELL only: the bot pings "budget ready" — no approval state lives in chat
-  (chat fragments across messages and forces scroll-to-reference; rejected as a surface).
+  photo previews, approve checkboxes, photo-include checkboxes. **Only vetted items can be
+  included** in the issue lineup; unvetted tips may appear on the page labeled unvetted but
+  include is blocked until Frank vets (promote / forward-from-frank / vet-first checkbox).
+  Submit writes timestamped `approvals.json` the bot reads. Frank works on desktop, never phone.
+- Chat is DOORBELL only: the bot pings "budget ready" / "proof ready" — no approval state
+  lives in chat (chat fragments across messages and forces scroll-to-reference; rejected as
+  a surface). Chat *facts* still go to staging (see STAGING.md).
 - Google Form rejected: static templates can't show per-issue photos without regenerating
   the form each time, or force blind approvals.
 - Two gates always: (1) approve the budget, (2) approve the rendered proof. Nothing prints
   otherwise. Missed message = skipped week, which is fine (low stakes, just for fun).
 - Reversal = re-render from a previous `approvals.json`. Every render records which file it used.
+- Pipeline detail: **STAGING.md**.
