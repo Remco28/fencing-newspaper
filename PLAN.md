@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.3
+# Fencing Newspaper — Plan v3.4
 Date: 2026-10-06
-Status: locked direction from Frank, details in progress (v3.3: Staging→Clean→Budget→Proof pipeline; tips vetting; chat→staging; see STAGING.md)
+Status: locked direction from Frank, details in progress (v3.4: scoreboard cut; photo desk = visible thumbs multi-select on budget page; submit UX fix. Prior v3.3: Staging→Clean→Budget→Proof; tips vetting; chat→staging; see STAGING.md)
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -50,7 +50,7 @@ Epee filter applies to everything: FIE, national, high-school, club. If a source
 
 ### Additional sources found 2026-10-06 (all filtered to epee)
 - USA Fencing epee-only news feed: https://www.usafencing.org/news/epee — use instead of the general news page.
-- FIE live results + rankings + event pages (e.g. Worlds results tables): https://fie.org — results are structured, good for scoreboard facts.
+- FIE live results + rankings + event pages (e.g. Worlds results tables): https://fie.org — results are structured, good for one-line result blurbs / future headline wire.
 - FencingTV: https://www.fencingtv.com — for "watch the bout" links (print as short URL), not facts.
 - European Fencing Confederation results, weapon-filterable to epee: https://fencing-efc.eu/results — useful when FIE coverage is thin.
 - AskFRED tournament catalog + preregistration pages: https://www.askfred.net/tournaments — entry lists, check-in close times, ratings mix (proven in fencer-schedules). Note pages warn lists may be stale — always timestamp.
@@ -66,7 +66,7 @@ Epee filter applies to everything: FIE, national, high-school, club. If a source
 - Every issue keeps `sources.json` (URL + retrieved date, or email message-ID + date).
 - Foil/saber items are dropped at fetch time, not rewritten.
 
-## 3. Sections (v3.3 — single weekly issue; Frank sorts CONTENT-HIERARCHY.md)
+## 3. Sections (v3.4 — single weekly issue; Frank sorts CONTENT-HIERARCHY.md)
 
 Shared shell: masthead **En Garde Gazette** + descriptor "The Elite Fencers Club Weekly" (locked 2026-10-06; no "!" in the nameplate — the bang lives in headlines, not the masthead), **actual publish date** (Mon or Tue), issue #,
 footer with print timestamp. Bylines: none for Frank, credit guest writers.
@@ -76,15 +76,17 @@ Canonical slot order + budgets: **CONTENT-HIERARCHY.md** (table order = cut prio
 **Weekly — results + signup (front / back), news-first**
 1. Lead epee result of the weekend (FIE or national if big, else top NJ/club result).
 2. Club results + ratings earned (always in).
-3. 1–2 short national/regional articles + NJ HS roundup + scoreboard strip.
+3. 1–2 short national/regional articles + NJ HS roundup.
 4. **Signup board (core):** upcoming tournaments + Elite FC names already entered — purpose is to nudge more clubmates into competition. Cap **4 tournaments**; if one event has many names (~20), show fewer tournaments so names stay readable (2–8 rows total).
 5. Club events + deadlines box.
 6. Comic (sparingly) + TV/streaming box as space allows (lowest cut priority among listed slots).
 
 Killed: Thursday edition; logistics box; Fencing 101; Milestones; About/corrections/archive placeholders.
+Killed (v3.4): **Scoreboard strip** — hard to implement well as big headlines + one-line blurbs; can revive later as "headline wire" if wanted. Not in live hierarchy.
 
 Maybe later: advice column ("Dear Ref") — no slot yet. Low priority: recruiting notes (only if genuinely good).
-Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coaching tips, foil/saber anything, editorials, long interviews. Photos pending photo-desk design (see work log 2026-10-06).
+Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coaching tips, foil/saber anything, editorials, long interviews.
+**Photo desk (v3.4):** budget page shows actual image thumbnails (not bare checkboxes); Frank multi-selects which few to include → `photoIncludes` in submit JSON. Pretend demo uses placeholder PNGs under `budget-demo/photos/`.
 
 ## 4. Layout — fixed templates (Template A first)
 
@@ -93,7 +95,7 @@ Frank's call: fixed templates, optionally rotate among 2–3 locked ones later s
 Rules:
 - Templates are designed once, print-tested, then frozen. No generative redesign weekly.
 - Content/ layout split stands: AI fills `issue.json` (strict schema + word limits + epee-only), template renders `paper.pdf` deterministically (HTML + print CSS → Chromium headless or WeasyPrint).
-- US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art only (photos pending photo-desk design).
+- US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art + approved B&W photo picks from photo desk.
 - ~600–700 words max per issue.
 - Per-issue folder: `issues/<YYYY-MM-DD>/` (publish date) with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`. Pre-issue material lives under `staging/weeks/` — see **STAGING.md**. Raw email bodies stay in AgentMail (not in git); cite them by message-ID in `sources.json`.
 
@@ -187,16 +189,19 @@ owns narrative + decisions. On conflict, the canonical home wins.
 - [ ] Define results-app email schema + Monday-competitor detection fields
 - [ ] Adapt Template A for single weekly issue (signup board as core); no Template B
 - [ ] Build fetch per SOURCES.md checklist + email-ingest → staging (per-source degrade behavior)
-- [ ] Budget page: show unvetted labeled; block include until vetted; write approvals.json
+- [x] Budget demo: photo desk thumbs + multi-select; submit → timestamped + approvals.json (pretend)
+- [ ] Budget page (prod): show unvetted labeled; block include until vetted; write approvals.json
 - [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot
 - [ ] See also: STAGING.md, SOURCES.md, SECTIONS-MENU.md, REDDIT-SETUP.md
 
-## 10. Approval design (locked 2026-10-06; unvetted rule v3.3)
-- Primary: LOCAL budget page on Musketeer's computer (Grok Bot box). Stories + B&W-as-printed
-  photo previews, approve checkboxes, photo-include checkboxes. **Only vetted items can be
-  included** in the issue lineup; unvetted tips may appear on the page labeled unvetted but
-  include is blocked until Frank vets (promote / forward-from-frank / vet-first checkbox).
-  Submit writes timestamped `approvals.json` the bot reads. Frank works on desktop, never phone.
+## 10. Approval design (locked 2026-10-06; unvetted rule v3.3; photo desk v3.4)
+- Primary: LOCAL budget page on Musketeer's computer (Grok Bot box). Stories + **Photo desk**
+  with visible B&W-as-printed thumbnails and Include checkboxes (multi-select → `photoIncludes`).
+  Slot include checkboxes for the lineup. **Only vetted items can be included** in the issue
+  lineup; unvetted tips may appear on the page labeled unvetted but include is blocked until
+  Frank vets (promote / forward-from-frank / vet-first checkbox).
+  Submit POSTs JSON → timestamped `submissions/budget-*.json` AND overwrites
+  `submissions/approvals.json` (demo) / issue `approvals.json` (prod). Frank works on desktop, never phone.
 - Chat is DOORBELL only: the bot pings "budget ready" / "proof ready" — no approval state
   lives in chat (chat fragments across messages and forces scroll-to-reference; rejected as
   a surface). Chat *facts* still go to staging (see STAGING.md).

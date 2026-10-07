@@ -29,7 +29,7 @@ unless `--allow-flag` is passed. See STYLE-GUIDE.md §7 for the full QA checklis
 ## Repo layout
 - `prototype/` — layout sandbox (versioned `monday-vN.html` + PDFs, `render.py`)
 - `masthead001.png` — nameplate art (cropped to opaque bbox)
-- `budget-demo/` — pretend local budget-page demo (not production ingest; see STAGING.md for the real pipeline)
+- `budget-demo/` — pretend local budget-page demo at `http://127.0.0.1:8766/` (`server.py` + `index.html` + `photos/`). Photo desk = visible thumbs multi-select → `photoIncludes`. Submit → `submissions/budget-*.json` + `approvals.json` (gitignored). Scoreboard cut from lineup (v3.4). Not production ingest; see STAGING.md for the real pipeline.
 - `scripts/` (future) — fetch, ingest, writer
 - `staging/weeks/` (future) — upcoming material (`YYYY-MM-DD/` or `next/`); see STAGING.md
 - `issues/` (future) — per weekly issue (`issues/<YYYY-MM-DD>/` with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`); committed. Raw emails stay in AgentMail.

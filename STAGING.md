@@ -5,7 +5,7 @@ PLAN.md owns the narrative + decision list; this file owns the pipeline names, i
 schema, vetting rules, and folder layout. On conflict, this file wins for pipeline
 topics.
 
-Locked 2026-10-06 late evening (plan v3.3).
+Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4.
 
 ## Pipeline (formal names)
 
@@ -20,7 +20,12 @@ Locked 2026-10-06 late evening (plan v3.3).
    CONTENT-HIERARCHY.md. **Include only vetted** items in the proposed sheet;
    unvetted items may appear on the page labeled **unvetted** but are blocked from
    include until Frank vets them (promote / forward-from-frank / checkbox that
-   requires vet first). Submit → `approvals.json`. Chat is doorbell only.
+   requires vet first). **Photo desk:** visible image thumbnails with multi-select
+   Include checkboxes; selected IDs → `photoIncludes` in the submit JSON (not bare
+   per-slot photo flags without images). Submit → timestamped budget JSON +
+   overwrite `approvals.json`. Chat is doorbell only.
+   Scoreboard strip is **cut** from the live hierarchy (v3.4); may return later as
+   "headline wire" — do not treat it as a current Budget slot.
 4. **Proof** — rendered PDF; second approve gate. Nothing prints without both
    budget + proof approval.
 
@@ -106,4 +111,5 @@ the tree above is the layout lock.
 - Cadence, masthead flanks, footer disclaimer → PLAN.md / STYLE-GUIDE.md
 - Slot order + budgets → CONTENT-HIERARCHY.md
 - Fetch checklist → SOURCES.md
-- Approvals UX (budget + proof, chat doorbell) → PLAN.md § Approval design
+- Approvals UX (budget + proof, chat doorbell, photo desk) → PLAN.md § Approval design
+- Slot order (scoreboard cut v3.4) → CONTENT-HIERARCHY.md

@@ -18,7 +18,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 ---
 ## News core
 1. Front page / lead story ✅ — weekend's biggest epee result, 120–150 words. (Monday lead.)
-2. World / International ✅ — FIE epee one-liners, scoreboard strip.
+2. World / International ✅ — FIE epee one-liners (scoreboard strip cut v3.4; may revive as headline wire).
 3. National ✅ — USA Fencing epee one-liners.
 4. Local / Metro ✅ — NJ HS epee + nearby club results. (Always in.)
 5. Club beat ✅ — Elite FC results + signup board. The reason to pick it up, both editions.
@@ -27,7 +27,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 8. Weather ✅-ish — 1-line strip under masthead ("Sat 41°F — drive safe to Edison"). Cheap, keep.
 
 ## Sports staples
-9. Scoreboard / standings ✅ — 4–6 one-line epee results. (Core.)
+9. Scoreboard / standings ❌ cut v3.4 — was core one-liners; hard to implement well. Revive later as "headline wire" if wanted.
 10. Preview / matchup 🔶 — "tournament to watch" box, Thursday lead variant.
 11. Rankings watch 🔶 — FIE top-3 moves, 1–2 lines, when something changes.
 12. Injury / roster report — ❌ skip (youth privacy, no value).
@@ -70,7 +70,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 41. Jokes / riddles ✅ — 1 fencing one-liner ("Why did the epeeist bring a ladder?…"). Kids clip these.
 42. Spot-the-difference / maze 🔶 — piste maze SVG. Monthly special, toner-cheap if line art.
 43. Caption contest — ❌ skip (needs submissions; editor-only policy).
-44. Photo page — ❌ skip v1 (B&W photos turn to mud; line art only until test print passes).
+44. Photo page — ❌ skip as a full print section v1; **Photo desk on budget page (v3.4)** shows visible thumbs + multi-select for a few B&W includes (`photoIncludes`).
 
 ## Milestones / people
 45. Milestones (birthdays/ratings) 🔶 — "new E26: Name" from emailed results. Ratings earned = beloved. Small box.
@@ -86,7 +86,8 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 53. Archive pointer ✅ — "past issues at <link>". 1 line.
 
 ## Locked v1 lineup (updated 2026-10-06 evening — supersedes older Mon/Thu split)
-- **One weekly issue** (CONTENT-HIERARCHY.md is canonical): lead + club results + ratings + 1–2 shorts + NJ HS + scoreboard + **signup board (core, max 4 tournaments)** + club events + deadlines + comic (sparingly) + TV/streaming.
+- **One weekly issue** (CONTENT-HIERARCHY.md is canonical): lead + club results + ratings + 1–2 shorts + NJ HS + **signup board (core, max 4 tournaments)** + club events + deadlines + comic (sparingly) + TV/streaming.
+- Scoreboard strip **killed v3.4** (not in live hierarchy; optional later "headline wire").
 - Thursday edition cancelled. Logistics / About-archive / Fencing 101 / Milestones out for now.
 - Maybe later: advice column. Low priority: recruiting. Cut: weather/food/travel/crossword/quiz/jokes.
 

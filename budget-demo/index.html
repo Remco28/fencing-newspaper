@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1100" />
+<title>En Garde Gazette — Budget (PRETEND)</title>
+<style>
+  :root {
+    --ink: #1c1612;
+    --ink-soft: #3a322a;
+    --muted: #6b5e52;
+    --rule: #c9b8a4;
+    --paper: #f6efe4;
+    --card: #fffdf8;
+    --card-border: #d9cbb8;
+    --accent: #8b4513;
+    --accent-soft: #c4a574;
+    --green: #2f5d3a;
+    --green-bg: #e8f0e6;
+    --amber-bg: #f7ecd8;
+    --red-soft: #8a3a2a;
+    --shadow: 0 1px 2px rgba(40, 28, 12, 0.06), 0 4px 14px rgba(40, 28, 12, 0.05);
+    --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(ellipse at top, #faf4ea 0%, var(--paper) 55%),
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,150,110,0.04) 28px);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    line-height: 1.45;
+    min-height: 100vh;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 28px 28px 80px;
+  }
+  header.mast {
+    border-bottom: 3px double var(--ink);
+    padding-bottom: 14px;
+    margin-bottom: 22px;
+  }
+  .vol {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    align-items: baseline;
+    margin-top: 8px;
+  }
+  .publish {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    color: var(--ink-soft);
+  }
+  .publish strong { color: var(--accent); }
+  .pretend-note {
+    background: var(--amber-bg);
+    border: 1px solid var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    border-radius: 2px;
+  }
+  section {
+    margin-top: 28px;
+  }
+  h2 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    margin: 0 0 10px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+  }
+  h2 .hint {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--muted);
+    margin-left: 8px;
+  }
+
+  /* Staging inbox */
+  .inbox {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .inbox table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .inbox th {
+    text-align: left;
+    background: #efe6d6;
+    padding: 8px 10px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .inbox td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee4d6;
+    vertical-align: top;
+  }
+  .inbox tr:last-child td { border-bottom: none; }
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 999px;
+    background: #efe6d6;
+    color: var(--ink-soft);
+    white-space:nowrap;
+  }
+  .tag.result { background: #dde8f0; }
+  .tag.signup { background: #e4edd9; }
+  .tag.club { background: #f0e6d4; }
+  .tag.tip { background: #efe8f4; }
+  .tag.photo { background: #e8e8e8; }
+  .tag.draft { background: #f5e4d8; }
+  .vetted-yes { color: var(--green); font-weight: 600; font-size: 12px; }
+  .vetted-no { color: var(--muted); font-size: 12px; }
+
+  /* Lineup cards */
+  .lineup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    padding: 14px 16px 12px;
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    gap: 10px 14px;
+    transition: opacity 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .card.excluded {
+    opacity: 0.55;
+    background: #f3eee6;
+    border-style: dashed;
+  }
+  .card.dragging {
+    opacity: 0.4;
+    border-color: var(--accent);
+  }
+  .card.drag-over {
+    border-top: 3px solid var(--accent);
+  }
+  .drag-handle {
+    cursor: grab;
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1;
+    padding-top: 2px;
+    user-select: none;
+    text-align: center;
+  }
+  .drag-handle:active { cursor: grabbing; }
+  .card-main { min-width: 0; }
+  .slot-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .slot-name {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .slot-budget {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .slot-rank {
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+  .headline {
+    font-family: var(--font-serif);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 2px 0 6px;
+    color: var(--ink);
+  }
+  .preview {
+    font-size: 13px;
+    color: var(--ink-soft);
+    white-space: pre-wrap;
+    margin: 0 0 8px;
+  }
+  .preview table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .preview th, .preview td {
+    text-align: left;
+    padding: 3px 6px;
+    border-bottom: 1px solid #eee4d6;
+  }
+  .preview th {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  .meta-line {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .meta-line .count {
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+  .card-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+    min-width: 150px;
+  }
+  .check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .check input { width: 15px; height: 15px; accent-color: var(--accent); cursor: pointer; }
+  .check.photo { font-size: 12px; color: var(--muted); }
+
+  /* Photo desk */
+  .photo-desk {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+  }
+  .photo-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .photo-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border: 1px solid #ddd2c2;
+    background: #e8e4dc;
+    display: block;
+  }
+  .photo-card .caption {
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .photo-card .source {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .photo-card .check {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  .photo-desk-hint {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 12px;
+  }
+  .card-notes {
+    width: 100%;
+    grid-column: 2 / -1;
+    margin-top: 2px;
+  }
+  .card-notes input {
+    width: 100%;
+    border: 1px solid var(--card-border);
+    background: #faf7f1;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-family: inherit;
+    border-radius: 2px;
+    color: var(--ink-soft);
+  }
+  .card-notes input:focus {
+    outline: none;
+    border-color: var(--accent-soft);
+    background: #fff;
+  }
+
+  /* Global notes + footer + submit */
+  .global-notes {
+    width: 100%;
+    min-height: 72px;
+    border: 1px solid var(--card-border);
+    background: var(--card);
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 13px;
+    border-radius: 3px;
+    resize: vertical;
+    box-shadow: var(--shadow);
+  }
+  .global-notes:focus {
+    outline: none;
+    border-color: var(--accent-soft);
+  }
+  .footer-preview {
+    background: #efe6d6;
+    border: 1px dashed var(--rule);
+    padding: 12px 16px;
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 13px;
+    font-style: italic;
+    color: var(--ink-soft);
+    border-radius: 2px;
+  }
+  .footer-preview .label {
+    display: block;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+    margin-top: 18px;
+  }
+  button#submit {
+    background: var(--accent);
+    color: #fffdf8;
+    border: none;
+    padding: 11px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 3px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    box-shadow: 0 2px 0 #5c2e0c;
+  }
+  button#submit:hover { background: #6e3610; }
+  button#submit:disabled {
+    opacity: 0.55;
+    cursor: wait;
+    box-shadow: none;
+  }
+  .summary {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .summary strong { color: var(--ink-soft); }
+  #status {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 3px;
+    font-size: 13px;
+    display: none;
+  }
+  #status.ok {
+    display: block;
+    background: var(--green-bg);
+    border: 1px solid #a8c4ad;
+    color: var(--green);
+  }
+  #status.err {
+    display: block;
+    background: #f5e4e0;
+    border: 1px solid #d4a89c;
+    color: var(--red-soft);
+  }
+  #status code {
+    font-size: 12px;
+    background: rgba(0,0,0,0.06);
+    padding: 1px 5px;
+    border-radius: 2px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="vol">Vol. I · No. — · Elite Fencers Club · Chatham, NJ · epee only</div>
+    <h1>En Garde Gazette — Budget (PRETEND)</h1>
+    <div class="meta-row">
+      <div class="publish">Proposed publish: <strong>Tuesday, October 14, 2026</strong>
+        <span style="color:var(--muted);font-size:13px;"> — Monday slip (club fenced Mon)</span>
+      </div>
+    </div>
+    <div class="pretend-note">
+      Pretend mode — sample content. Submit POSTs JSON → timestamped file under <code>submissions/</code> + overwrites <code>submissions/approvals.json</code>. Photo desk shows real thumbnails.
+    </div>
+  </header>
+
+  <section>
+    <h2>A · Staging inbox <span class="hint">cleaned pile — visibility only, not approvals</span></h2>
+    <div class="inbox">
+      <table>
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Item</th>
+            <th>Source</th>
+            <th>Vetted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="tag club">club event</span></td>
+            <td>Musketeers group class Mon 4:30 · Advanced Tue 6:00</td>
+            <td>frankcng → efc.weekly (fwd newsletter)</td>
+            <td><span class="vetted-yes">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag result">result</span></td>
+            <td>Ben Gutenberg SYC: Mila Siu 3rd Y12 · Penny Young 6th Y12 · Stella Kuo T16 Y14</td>
+            <td>frankcng → efc.weekly (fwd newsletter)</td>
+            <td><span class="vetted-yes">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag signup">signup</span></td>
+            <td>Medeo Youth Challenge #3 — Sun Oct 11 · Jiang Christina Y12 WE · Cheng Bryce Y10 Mixed Epee</td>
+            <td>frankcng → efc.weekly (signup slice)</td>
+            <td><span class="vetted-yes">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tip">tip</span></td>
+            <td>Medeo Youth Challenge #3 upcoming (newsletter mention)</td>
+            <td>frankcng → efc.weekly (fwd newsletter)</td>
+            <td><span class="vetted-yes">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag draft">draft</span></td>
+            <td>Lead: FIE Vancouver Grand Prix epee final (invented)</td>
+            <td>invented / pretend FIE wire</td>
+            <td><span class="vetted-no">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag draft">draft</span></td>
+            <td>Secondary: NJSIAA epee seeding chatter (invented)</td>
+            <td>invented</td>
+            <td><span class="vetted-no">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag result">result</span></td>
+            <td>Ratings earned slice — 3 EFC names (invented celebration rows)</td>
+            <td>invented (styled as results-app)</td>
+            <td><span class="vetted-no">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag tip">tip</span></td>
+            <td>TV: FencingTV / YouTube GP replay windows (invented)</td>
+            <td>invented / FIE calendar nod</td>
+            <td><span class="vetted-no">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag photo">photo</span></td>
+            <td>Club strip candidate — podium huddle (placeholder, B&amp;W)</td>
+            <td>invented photo candidate</td>
+            <td><span class="vetted-no">no</span></td>
+          </tr>
+          <tr>
+            <td><span class="tag draft">draft</span></td>
+            <td>Comic panel placeholder — “En garde, coffee first”</td>
+            <td>invented</td>
+            <td><span class="vetted-no">no</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>B · Proposed lineup <span class="hint">hierarchy order · drag handle to reorder · uncheck to cut</span></h2>
+    <div class="lineup" id="lineup">
+
+      <!-- 1 Lead -->
+      <article class="card" data-slot="lead" data-rank="1" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#1</span>
+            <span class="slot-name">Lead story</span>
+            <span class="slot-budget">150–180w</span>
+          </div>
+          <div class="headline">Canadian epeeist edges world No. 4 in Vancouver Grand Prix final</div>
+          <p class="preview">VANCOUVER — In a tense DE table that ran late into Sunday night, Canada’s Mara Chen upset the FIE world No. 4 15–13 to claim the women’s epee Grand Prix gold. The final bout swung on a double in overtime after Chen had trailed by three. U.S. fencers reached two T16 slots but no podium. Full DE tree and NJ travelers noted inside.</p>
+          <div class="meta-line"><span class="count">168w</span> / 150–180w · Source: <em>invented / pretend FIE wire</em> · Frank-vetted: no</div>
+          <div class="card-notes"><input type="text" data-notes-for="lead" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 2 Club results -->
+      <article class="card" data-slot="club-results" data-rank="2" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#2</span>
+            <span class="slot-name">Club results box</span>
+            <span class="slot-budget">3–5 rows</span>
+          </div>
+          <div class="headline">Ben Gutenberg SYC — Elite FC finishes</div>
+          <div class="preview"><table>
+            <thead><tr><th>Fencer</th><th>Event</th><th>Place</th></tr></thead>
+            <tbody>
+              <tr><td>Mila Siu</td><td>Y12 Women’s Epee</td><td>3rd</td></tr>
+              <tr><td>Penny Young</td><td>Y12 Women’s Epee</td><td>6th</td></tr>
+              <tr><td>Stella Kuo</td><td>Y14 Women’s Epee</td><td>T16</td></tr>
+            </tbody>
+          </table></div>
+          <div class="meta-line"><span class="count">3 rows</span> / 3–5 · Source: <em>frankcng fwd newsletter</em> · Frank-vetted: <strong>yes</strong></div>
+          <div class="card-notes"><input type="text" data-notes-for="club-results" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 3 Ratings -->
+      <article class="card" data-slot="ratings" data-rank="3" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#3</span>
+            <span class="slot-name">Ratings earned</span>
+            <span class="slot-budget">2–5 rows</span>
+          </div>
+          <div class="headline">New letters on the wall</div>
+          <div class="preview"><table>
+            <thead><tr><th>Fencer</th><th>New</th><th>Event</th></tr></thead>
+            <tbody>
+              <tr><td>Mila Siu</td><td>E2026</td><td>Ben Gutenberg SYC</td></tr>
+              <tr><td>Alex Rivera</td><td>D2026</td><td>Medeo Open (prior)</td></tr>
+              <tr><td>Sam Patel</td><td>C2026</td><td>NJ Div II qualifier</td></tr>
+            </tbody>
+          </table></div>
+          <div class="meta-line"><span class="count">3 rows</span> / 2–5 · Source: <em>invented (celebration rows; Mila nod from SYC)</em> · Frank-vetted: no</div>
+          <div class="card-notes"><input type="text" data-notes-for="ratings" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 4 Secondary A -->
+      <article class="card" data-slot="secondary-a" data-rank="4" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#4</span>
+            <span class="slot-name">Secondary A</span>
+            <span class="slot-budget">80–100w</span>
+          </div>
+          <div class="headline">USA Fencing posts revised youth points timeline for winter</div>
+          <p class="preview">COLORADO SPRINGS — USA Fencing confirmed a mid-November refresh of youth epee points ahead of December regionals. Coaches should re-check AskFRED seeding after Nov. 18. Club parents asking about Y12/Y14 travel windows: the board posts a short FAQ this week.</p>
+          <div class="meta-line"><span class="count">72w → stretch to ~90</span> / 80–100w · Source: <em>invented / pretend USA Fencing note</em> · Frank-vetted: no</div>
+          <div class="card-notes"><input type="text" data-notes-for="secondary-a" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 5 Secondary B -->
+      <article class="card" data-slot="secondary-b" data-rank="5" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#5</span>
+            <span class="slot-name">Secondary B</span>
+            <span class="slot-budget">80–100w</span>
+          </div>
+          <div class="headline">Local clubs trade strip space as fall calendar stacks up</div>
+          <p class="preview">MORRIS COUNTY — Three Chatham-area clubs report overlapping Saturday strip bookings through Halloween weekend. Elite FC keeps Musketeers and Advanced on schedule; visitors should confirm with the front desk before dropping in. A shared calendar link is circulating among coaches.</p>
+          <div class="meta-line"><span class="count">78w</span> / 80–100w · Source: <em>invented local color</em> · Frank-vetted: no</div>
+          <div class="card-notes"><input type="text" data-notes-for="secondary-b" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 6 NJ HS -->
+      <article class="card" data-slot="nj-hs" data-rank="6" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#6</span>
+            <span class="slot-name">NJ HS roundup</span>
+            <span class="slot-budget">60–90w or 3–5 one-liners</span>
+          </div>
+          <div class="headline">Epee notebooks — early duals</div>
+          <p class="preview">• Chatham boys epee split a dual at Westfield (invented)
+• Morristown girls epee edged Columbia 5–4 in OT bout count (invented)
+• Pingry hosted a three-team epee round-robin; scores pending NJ.com (invented)
+• Watch: first conference epee duals land next Wednesday</p>
+          <div class="meta-line"><span class="count">4 one-liners</span> / 3–5 · Source: <em>invented NJ HS color</em> · Frank-vetted: no</div>
+          <div class="card-notes"><input type="text" data-notes-for="nj-hs" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 7 Signup -->
+      <article class="card" data-slot="signup" data-rank="7" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#7</span>
+            <span class="slot-name">Signup board</span>
+            <span class="slot-budget">2–8 rows · max 4 tournaments · Elite FC names</span>
+          </div>
+          <div class="headline">Who’s entered — go cheer</div>
+          <div class="preview"><table>
+            <thead><tr><th>Event</th><th>When</th><th>Elite FC</th></tr></thead>
+            <tbody>
+              <tr><td>Medeo Youth Challenge #3 — Y12 WE</td><td>Sun Oct 11</td><td>Jiang Christina</td></tr>
+              <tr><td>Medeo Youth Challenge #3 — Y10 Mixed Epee</td><td>Sun Oct 11</td><td>Cheng Bryce</td></tr>
+              <tr><td>Garden State RJCC (invented hold)</td><td>Sat Oct 18</td><td>TBD — ask front desk</td></tr>
+            </tbody>
+          </table></div>
+          <div class="meta-line"><span class="count">3 rows / 1 tournament + hold</span> / 2–8 · Source: <em>frankcng signup slice + invented hold</em> · Frank-vetted: <strong>yes</strong> (Medeo rows)</div>
+          <div class="card-notes"><input type="text" data-notes-for="signup" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 8 Club events -->
+      <article class="card" data-slot="club-events" data-rank="8" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#8</span>
+            <span class="slot-name">Club events</span>
+            <span class="slot-budget">3–5 items</span>
+          </div>
+          <div class="headline">This week at Elite FC</div>
+          <p class="preview">• Musketeers group class — Mon 4:30
+• Advanced — Tue 6:00
+• Open strip night — Thu 7:00 (invented)
+• Parent coffee + FAQ — Sat 9:30 (invented)</p>
+          <div class="meta-line"><span class="count">4 items</span> / 3–5 · Source: <em>frankcng fwd newsletter + invented</em> · Frank-vetted: <strong>yes</strong> (Mon/Tue classes)</div>
+          <div class="card-notes"><input type="text" data-notes-for="club-events" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 9 Deadlines -->
+      <article class="card" data-slot="deadlines" data-rank="9" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#9</span>
+            <span class="slot-name">Deadlines</span>
+            <span class="slot-budget">3–5 rows</span>
+          </div>
+          <div class="headline">Closes soon</div>
+          <div class="preview"><table>
+            <thead><tr><th>What</th><th>Closes</th></tr></thead>
+            <tbody>
+              <tr><td>Medeo Youth Challenge #3 entry</td><td>Thu Oct 9 (invented)</td></tr>
+              <tr><td>USA Fencing membership renewals (winter)</td><td>rolling</td></tr>
+              <tr><td>Garden State RJCC early entry (invented)</td><td>Mon Oct 13</td></tr>
+              <tr><td>Club holiday party RSVP (invented)</td><td>Fri Nov 7</td></tr>
+            </tbody>
+          </table></div>
+          <div class="meta-line"><span class="count">4 rows</span> / 3–5 · Source: <em>invented AskFRED/newsletter style</em> · Frank-vetted: no</div>
+          <div class="card-notes"><input type="text" data-notes-for="deadlines" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 10 Comic — default cut -->
+      <article class="card excluded" data-slot="comic" data-rank="10" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#10</span>
+            <span class="slot-name">Comic</span>
+            <span class="slot-budget">1 panel</span>
+          </div>
+          <div class="headline">“En garde, coffee first”</div>
+          <p class="preview">[Placeholder panel] Fencer in mask reaches for a travel mug while referee says “Halt — caffeine check.” One-panel gag for strip-side grins.</p>
+          <div class="meta-line"><span class="count">1 panel</span> · Source: <em>invented placeholder</em> · Frank-vetted: no · <em>pre-cut to show hierarchy trim</em></div>
+          <div class="card-notes"><input type="text" data-notes-for="comic" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include /> Include in issue</label>
+        </div>
+      </article>
+
+      <!-- 11 TV — default cut -->
+      <article class="card excluded" data-slot="tv" data-rank="11" draggable="true">
+        <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
+        <div class="card-main">
+          <div class="slot-head">
+            <span class="slot-rank">#11</span>
+            <span class="slot-name">TV / streaming</span>
+            <span class="slot-budget">3–5 rows</span>
+          </div>
+          <div class="headline">Where to watch</div>
+          <div class="preview"><table>
+            <thead><tr><th>Event</th><th>Where</th></tr></thead>
+            <tbody>
+              <tr><td>Vancouver GP WE final replay</td><td>FencingTV (invented)</td></tr>
+              <tr><td>FIE highlights package</td><td>YouTube / FIE</td></tr>
+              <tr><td>USA Fencing youth clinic stream</td><td>Thu 8pm ET (invented)</td></tr>
+            </tbody>
+          </table></div>
+          <div class="meta-line"><span class="count">3 rows</span> / 3–5 · Source: <em>invented / FIE calendar nod</em> · Frank-vetted: no · <em>pre-cut</em></div>
+          <div class="card-notes"><input type="text" data-notes-for="tv" placeholder="Optional note for this slot…" /></div>
+        </div>
+        <div class="card-controls">
+          <label class="check"><input type="checkbox" data-include /> Include in issue</label>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <section>
+    <h2>C · Photo desk <span class="hint">visible thumbs — pick a few to include (B&amp;W placeholders)</span></h2>
+    <p class="photo-desk-hint">Pretend mode: 8 placeholder images. Check Include on the ones you want in the issue; selected IDs land in <code>photoIncludes</code> on submit. Per-slot “include photo” checkboxes without images were removed.</p>
+    <div class="photo-desk" id="photoDesk">
+      <div class="photo-card">
+        <img src="photos/photo-a.png" alt="Photo A — SYC podium" width="480" height="320" />
+        <div class="caption">Photo A — SYC podium huddle</div>
+        <div class="source">Source: invented / pretend club camera</div>
+        <label class="check"><input type="checkbox" data-photo-id="photo-a" checked /> Include</label>
+      </div>
+      <div class="photo-card">
+        <img src="photos/photo-b.png" alt="Photo B — Vancouver GP" width="480" height="320" />
+        <div class="caption">Photo B — Vancouver GP strip</div>
+        <div class="source">Source: invented / pretend FIE wire</div>
+        <label class="check"><input type="checkbox" data-photo-id="photo-b" /> Include</label>
+      </div>
+      <div class="photo-card">
+        <img src="photos/photo-c.png" alt="Photo C — Elite FC strip" width="480" height="320" />
+        <div class="caption">Photo C — Elite FC open strip</div>
+        <div class="source">Source: invented / pretend club camera</div>
+        <label class="check"><input type="checkbox" data-photo-id="photo-c" checked /> Include</label>
+      </div>
+      <div class="photo-card">
+        <img src="photos/photo-d.png" alt="Photo D — Y12 final" width="480" height="320" />
+        <div class="caption">Photo D — Y12 WE final bout</div>
+        <div class="source">Source: invented / pretend tournament</div>
+        <label class="check"><input type="checkbox" data-photo-id="photo-d" /> Include</label>
+      </div>
+      <div class="photo-card">
+        <img src="photos/photo-e.png" alt="Photo E — Ratings wall" width="480" height="320" />
+        <div class="caption">Photo E — Ratings wall (club)</div>
+        <div class="source">Source: invented / pretend club camera</div>
+        <label class="check"><input type="checkbox" data-photo-id="photo-e" /> Include</label>
+      </div>
+      <div class="photo-card">
+        <img src="photos/photo-f.png" alt="Photo F — Medeo signup" width="480" height="320" />
+        <div class="caption">Photo F — Medeo signup board</div>
+        <div class="source">Source: invented / pretend AskFRED screen</div>
+        <label class="check"><input type="checkbox" data-photo-id="photo-f" checked /> Include</label>
+      </div>
+      <div class="photo-card">
+        <img src="photos/photo-g.png" alt="Photo G — Coach demo" width="480" height="320" />
+        <div class="caption">Photo G — Coach demo en garde</div>
+        <div class="source">Source: invented / pretend club camera</div>
+        <label class="check"><input type="checkbox" data-photo-id="photo-g" /> Include</label>
+      </div>
+      <div class="photo-card">
+        <img src="photos/photo-h.png" alt="Photo H — Musketeers" width="480" height="320" />
+        <div class="caption">Photo H — Musketeers class</div>
+        <div class="source">Source: invented / pretend club camera</div>
+        <label class="check"><input type="checkbox" data-photo-id="photo-h" /> Include</label>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Notes <span class="hint">global — attached to submit JSON</span></h2>
+    <textarea class="global-notes" id="globalNotes" placeholder="Frank’s global notes for this budget…">Pretend run. Prefer Medeo signup + SYC results. Slip to Tuesday because club fenced Monday. Cut comic + TV unless inches free.</textarea>
+  </section>
+
+  <section>
+    <h2>D · Footer disclaimer <span class="hint">locked in paper — preview only</span></h2>
+    <div class="footer-preview">
+      <span class="label">Locked footer</span>
+      For fun only — facts aren't guaranteed accurate.
+    </div>
+  </section>
+
+  <section>
+    <h2>E · Submit</h2>
+    <div class="actions">
+      <button type="button" id="submit">Submit budget</button>
+      <div class="summary" id="summary"></div>
+    </div>
+    <div id="status" role="status" aria-live="polite"></div>
+  </section>
+</div>
+
+<script>
+(function () {
+  const lineup = document.getElementById("lineup");
+  const submitBtn = document.getElementById("submit");
+  const statusEl = document.getElementById("status");
+  const summaryEl = document.getElementById("summary");
+  const globalNotes = document.getElementById("globalNotes");
+  const PUBLISH = "2026-10-14";
+
+  function cards() {
+    return Array.from(lineup.querySelectorAll(".card"));
+  }
+
+  function refreshExcluded() {
+    cards().forEach((card) => {
+      const on = card.querySelector("[data-include]").checked;
+      card.classList.toggle("excluded", !on);
+    });
+    updateSummary();
+  }
+
+  function updateSummary() {
+    const all = cards();
+    const inc = all.filter((c) => c.querySelector("[data-include]").checked).length;
+    summaryEl.innerHTML =
+      "<strong>" +
+      inc +
+      "</strong> of " +
+      all.length +
+      " slots included · publish <strong>Tue Oct 14, 2026</strong>";
+  }
+
+  lineup.addEventListener("change", (e) => {
+    if (e.target.matches("[data-include]")) refreshExcluded();
+  });
+
+  // Drag reorder
+  let dragCard = null;
+  lineup.addEventListener("dragstart", (e) => {
+    const card = e.target.closest(".card");
+    if (!card) return;
+    dragCard = card;
+    card.classList.add("dragging");
+    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.setData("text/plain", card.dataset.slot);
+  });
+  lineup.addEventListener("dragend", () => {
+    if (dragCard) dragCard.classList.remove("dragging");
+    dragCard = null;
+    cards().forEach((c) => c.classList.remove("drag-over"));
+    renumber();
+  });
+  lineup.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    const over = e.target.closest(".card");
+    if (!over || over === dragCard) return;
+    cards().forEach((c) => c.classList.remove("drag-over"));
+    over.classList.add("drag-over");
+    const rect = over.getBoundingClientRect();
+    const before = e.clientY < rect.top + rect.height / 2;
+    if (before) lineup.insertBefore(dragCard, over);
+    else lineup.insertBefore(dragCard, over.nextSibling);
+  });
+  lineup.addEventListener("drop", (e) => {
+    e.preventDefault();
+    cards().forEach((c) => c.classList.remove("drag-over"));
+  });
+
+  function renumber() {
+    cards().forEach((card, i) => {
+      card.dataset.rank = String(i + 1);
+      const rankEl = card.querySelector(".slot-rank");
+      if (rankEl) rankEl.textContent = "#" + (i + 1);
+    });
+  }
+
+  function buildPayload() {
+    const order = [];
+    const includedSlots = [];
+    const excludedSlots = [];
+    const slotNotes = {};
+
+    cards().forEach((card) => {
+      const slot = card.dataset.slot;
+      const name = card.querySelector(".slot-name").textContent.trim();
+      const headline = card.querySelector(".headline").textContent.trim();
+      const include = card.querySelector("[data-include]").checked;
+      const noteInput = card.querySelector("[data-notes-for]");
+      const note = noteInput ? noteInput.value.trim() : "";
+
+      order.push(slot);
+      const entry = { slot, name, headline };
+      if (include) includedSlots.push(entry);
+      else excludedSlots.push(entry);
+      if (note) slotNotes[slot] = note;
+    });
+
+    const photoIncludes = Array.from(
+      document.querySelectorAll("#photoDesk [data-photo-id]:checked")
+    ).map((el) => el.getAttribute("data-photo-id"));
+
+    return {
+      publishDate: PUBLISH,
+      pretend: true,
+      includedSlots,
+      excludedSlots,
+      photoIncludes,
+      notes: globalNotes.value.trim(),
+      slotNotes,
+      order,
+      submittedAt: null,
+    };
+  }
+
+  submitBtn.addEventListener("click", async () => {
+    // Clear status via class only — never set inline display:none (it overrides #status.ok / .err)
+    statusEl.className = "";
+    statusEl.removeAttribute("style");
+    statusEl.textContent = "";
+    submitBtn.disabled = true;
+    const payload = buildPayload();
+    try {
+      const res = await fetch("/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      let data;
+      try {
+        data = await res.json();
+      } catch (parseErr) {
+        throw new Error("bad response (" + res.status + ")");
+      }
+      if (!res.ok || !data.ok) throw new Error((data && data.error) || "submit failed");
+      statusEl.className = "ok";
+      statusEl.innerHTML =
+        "Budget saved. Timestamped file: <code>" +
+        data.path +
+        "</code> · latest: <code>" +
+        data.approvals +
+        "</code> · " +
+        data.submittedAt +
+        (payload.photoIncludes.length
+          ? " · photos: <code>" + payload.photoIncludes.join(", ") + "</code>"
+          : " · photos: none");
+    } catch (err) {
+      statusEl.className = "err";
+      statusEl.textContent = "Submit failed: " + (err && err.message ? err.message : String(err));
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  refreshExcluded();
+})();
+</script>
+</body>
+</html>

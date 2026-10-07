@@ -9,3 +9,5 @@ emails/
 **/emails/
 *.eml
 *.mbox
+
+budget-demo/submissions/

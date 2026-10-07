@@ -17,14 +17,16 @@ Pipeline (Staging→Clean→Budget→Proof) and tip vetting live in **STAGING.md
 | 4 | Secondary article A | 80–100w | National / regional | Beefier news, not just scores |
 | 5 | Secondary article B | 80–100w | National / regional | Drop first if tight |
 | 6 | NJ high-school roundup | 60–90w or 3–5 one-liners | NJ.com / NJSIAA | Whole-state epee |
-| 7 | Scoreboard strip | 4–6 lines | FIE / USA / NJ | One-liners only |
-| 8 | Signup board | 2–8 rows | Results-app email | **Core.** Encourage clubmates to enter. Max **4 tournaments**; prefer listing all Elite FC names on those events — if ~20 fencers enter one event, show fewer tournaments to make room. |
-| 9 | Club events | 3–5 items | Newsletter email | From Frank's forwards |
-| 10 | Deadlines box | 3–5 rows | AskFRED / newsletter | Entry closes + renewals |
-| 11 | Comic | 1 panel | Frank via email | Sparingly |
-| 12 | TV / streaming box | 3–5 rows | FIE calendar / FencingTV / YT | Major events + where to watch |
+| 7 | Signup board | 2–8 rows | Results-app email | **Core.** Encourage clubmates to enter. Max **4 tournaments**; prefer listing all Elite FC names on those events — if ~20 fencers enter one event, show fewer tournaments to make room. |
+| 8 | Club events | 3–5 items | Newsletter email | From Frank's forwards |
+| 9 | Deadlines box | 3–5 rows | AskFRED / newsletter | Entry closes + renewals |
+| 10 | Comic | 1 panel | Frank via email | Sparingly |
+| 11 | TV / streaming box | 3–5 rows | FIE calendar / FencingTV / YT | Major events + where to watch |
 
 Killed (2026-10-06): Thursday signup edition entire; logistics box; Fencing 101; Milestones; About / corrections / archive placeholders.
+Killed (2026-10-06 late — plan v3.4): **Scoreboard strip** — was meant for big headlines + one-line blurbs from various sources; hard to implement well. Can revive later as a "headline wire" if wanted; not in the live hierarchy now.
+
+Photo desk (budget page, not a print slot): visible thumbnails + multi-select Include checkboxes → `photoIncludes` in approvals JSON. Not a hierarchy row.
 
 ## Rules for the sorter (Frank)
 - Masthead, dateline, footer are template furniture: never cut, never grow. No separate About/archive slot.
