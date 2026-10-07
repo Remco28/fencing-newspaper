@@ -125,8 +125,18 @@
       "source": "email",
       "message_id": "<CA+CzU4fpXsu8cf5FDE7aQA+QafnjN2sxgxLTBbfhoSCdaMHi9A@mail.gmail.com>",
       "image_url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/2ad02a90-a7b4-8404-6b02-5859ab35afd4.jpeg",
-      "caption_basis": "In the forwarded Oct. 5 club newsletter HTML this image is the first block after the Ben Gutenberg SYC congratulations text; no alt text, no names. Caption states only that.",
-      "media": "issues/2026-10-08/media/club-newsletter-photo-1-crop.jpeg"
+      "caption_basis": "v2: Names from Frank (chat: Frank 2026-10-07, ~17:53 ET: 'The two girls in the photo from our club is Mila and Penny'), normalized via roster (Penny Young) and SYC results (Mila Siu). Finishes (Mila 3rd, Penny 6th, Y12 women's epee) from result-syc. 'Other medalists': visible in image (all wear medals; one in a 'Toronto Fencing' jacket). No left/right order. v1 basis: in the forwarded Oct. 5 club newsletter HTML this image is the first block after the Ben Gutenberg SYC congratulations text; no alt text, no names.",
+      "media": "issues/2026-10-08/media/club-newsletter-photo-1-crop.jpeg",
+      "caption_v2": "Elite FC’s Mila Siu and Penny Young pose with other medalists at the Ben Gutenberg SYC awards in Rochester. Mila finished 3rd and Penny 6th in Y12 women’s epee. Results on page one.",
+      "provenance": [
+        {
+          "type": "chat",
+          "who": "Frank",
+          "source": "chat: Frank 2026-10-07",
+          "at": "2026-10-07T17:53:00-04:00",
+          "fact": "The two Elite FC girls in the photo are Mila and Penny"
+        }
+      ]
     },
     {
       "slot": "signup — Medeo",
@@ -302,6 +312,46 @@
       "slot": "masthead flank",
       "source": "flank-quotes.json",
       "quip": "Know yourself, know your enemy, know where you left your glove."
+    },
+    {
+      "slot": "Go Cheer board — October NAC group (v2)",
+      "itemId": "ft-nac-efc-registrations-2026-10-07",
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T17:53:00-04:00",
+      "vet_source": "chat: Frank 2026-10-07",
+      "facts": [
+        {
+          "fact": "Elite FC registrants at the October NAC: Penny Young, Amina Gore, Maksim Milinkovic, Anayaa Sheth",
+          "source": "chat: Frank 2026-10-07"
+        },
+        {
+          "fact": "Print spelling 'Anayaa Sheth' — ASCII spelling from Frank (FencingTracker scrape renders 'Anayaà'; Frank: name not garbled)",
+          "source": "chat: Frank 2026-10-07"
+        },
+        {
+          "fact": "Cadet Women's Epee, Fri Oct 9: Young, Penelope (-> Penny Young per roster); Sheth, Anayaà; Gore, Amina",
+          "source": "https://fencingtracker.com/event/21105",
+          "retrieved_at": "2026-10-07T18:15:00-04:00"
+        },
+        {
+          "fact": "Y14 Women's Epee, Mon Oct 12: Young, Penelope",
+          "source": "https://fencingtracker.com/event/21126",
+          "retrieved_at": "2026-10-07T18:15:00-04:00"
+        },
+        {
+          "fact": "Division I Men's Epee, Fri Oct 9: Milinkovic, Maksim",
+          "source": "https://fencingtracker.com/event/21101",
+          "retrieved_at": "2026-10-07T18:15:00-04:00"
+        },
+        {
+          "fact": "Cadet Men's Epee, Sat Oct 10: Milinkovic, Maksim",
+          "source": "https://fencingtracker.com/event/21109",
+          "retrieved_at": "2026-10-07T18:15:00-04:00"
+        }
+      ],
+      "not_printed": "Start times (not in staged data)",
+      "roster": "roster/people.json: anayaa-sheth added (alias 'Anayaà Sheth' = scrape variant); penny-young alias 'Young, Penelope'"
     }
-  ]
+  ],
+  "proof_version": 2
 }

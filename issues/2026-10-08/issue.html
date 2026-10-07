@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>En Garde Gazette — Vol. I No. 1 — October 8, 2026 (PROOF)</title>
+<title>En Garde Gazette — Vol. I No. 1 — October 8, 2026 (PROOF v2)</title>
 <style>
   @page { size: Letter; margin: 0.5in 0.5in 0.4in 0.5in; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -120,7 +120,10 @@
   /* Stacked articles/rails inside one column: air between pieces (margin only, never an HR) */
   .c > .slot-b + .slot-b, .c > .box + .slot-b, .c > .photo + .slot-b { margin-top: 5pt; }
   .c > .slot-b + .rail-block { margin-top: 6pt; }
+  .c > .photo + .rail-block { margin-top: 6pt; }
   .boxnote { text-align: left; }
+  /* Weekly classes: times left-aligned in a fixed column with clear air before the class name (proof v2) */
+  table.board th.t, table.board td.t { text-align: left; white-space: nowrap; padding-right: 8pt; }
 </style>
 </head>
 <body>
@@ -209,12 +212,14 @@
     <div class="boxtitle">Go Cheer — Elite FC Entries (All Epee)</div>
     <div class="board-split">
       <div>
-        <div class="board-cap">Medeo Youth Challenge #3 <span>· Bound Brook, N.J. · Sun., Oct.&nbsp;11</span></div>
+        <div class="board-cap">October NAC <span>· Orlando, Fla. · Fri.–Mon., Oct.&nbsp;9–12</span></div>
         <table class="board">
           <colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup>
-          <tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr>
-          <tr><td class="num">9:30 AM</td><td>Y12 Women</td><td>Christina Jiang</td></tr>
-          <tr><td class="num">11:30 AM</td><td>Y10 Mixed</td><td>Bryce Cheng</td></tr>
+          <tr><th class="r">Day</th><th>Event</th><th>Elite FC</th></tr>
+          <tr><td class="num">Fri 10/9</td><td>Cadet Women</td><td>Amina Gore, Anayaa Sheth, Penny Young</td></tr>
+          <tr><td class="num">Fri 10/9</td><td>Div. I Men</td><td>Maksim Milinkovic</td></tr>
+          <tr><td class="num">Sat 10/10</td><td>Cadet Men</td><td>Maksim Milinkovic</td></tr>
+          <tr><td class="num">Mon 10/12</td><td>Y14 Women</td><td>Penny Young</td></tr>
         </table>
         <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sat., Oct.&nbsp;24</span></div>
         <table class="board">
@@ -227,6 +232,13 @@
         </table>
       </div>
       <div>
+        <div class="board-cap">Medeo Youth Challenge #3 <span>· Bound Brook, N.J. · Sun., Oct.&nbsp;11</span></div>
+        <table class="board">
+          <colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup>
+          <tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr>
+          <tr><td class="num">9:30 AM</td><td>Y12 Women</td><td>Christina Jiang</td></tr>
+          <tr><td class="num">11:30 AM</td><td>Y10 Mixed</td><td>Bryce Cheng</td></tr>
+        </table>
         <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sun., Oct.&nbsp;25</span></div>
         <table class="board">
           <colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup>
@@ -235,8 +247,8 @@
           <tr><td class="num">8:00 AM</td><td>Junior Men</td><td>Pablo Aguirre, Nico Ng</td></tr>
           <tr><td class="num">10:00 AM</td><td>Y8 Women</td><td>Madeline Siu</td></tr>
           <tr><td class="num">10:30 AM</td><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu</td></tr>
-          <tr><td class="num">1:30 PM</td><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani</td></tr>
-          <tr><td class="num">3:30 PM</td><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong, Rahi Shah Mirani, Maximus Siu</td></tr>
+          <tr><td class="num">1:30 PM</td><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, <span style="white-space:nowrap">Ash Shah-Mirani</span></td></tr>
+          <tr><td class="num">3:30 PM</td><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong, Rahi&nbsp;Shah&nbsp;Mirani, Maximus Siu</td></tr>
         </table>
       </div>
     </div>
@@ -249,23 +261,23 @@
       <div>
         <table class="board">
           <colgroup><col style="width:0.45in"><col style="width:1.15in"><col></colgroup>
-          <tr><th>Day</th><th class="r">Time</th><th>Class</th></tr>
-          <tr><td>Mon</td><td class="num">4:30–6:00 PM</td><td>Little Musketeers</td></tr>
-          <tr><td>Tue</td><td class="num">6:00–7:30 PM</td><td>Group class</td></tr>
-          <tr><td>Wed</td><td class="num">5:00–6:30 PM</td><td>Little Musketeers</td></tr>
-          <tr><td>Wed</td><td class="num">6:30–7:15 PM</td><td>Footwork class</td></tr>
-          <tr><td>Thu</td><td class="num">6:00–7:30 PM</td><td>Group class</td></tr>
+          <tr><th>Day</th><th class="t">Time</th><th>Class</th></tr>
+          <tr><td>Mon</td><td class="t">4:30–6:00 PM</td><td>Little Musketeers</td></tr>
+          <tr><td>Tue</td><td class="t">6:00–7:30 PM</td><td>Group class</td></tr>
+          <tr><td>Wed</td><td class="t">5:00–6:30 PM</td><td>Little Musketeers</td></tr>
+          <tr><td>Wed</td><td class="t">6:30–7:15 PM</td><td>Footwork class</td></tr>
+          <tr><td>Thu</td><td class="t">6:00–7:30 PM</td><td>Group class</td></tr>
         </table>
       </div>
       <div>
         <table class="board">
           <colgroup><col style="width:0.45in"><col style="width:1.15in"><col></colgroup>
-          <tr><th>Day</th><th class="r">Time</th><th>Class</th></tr>
-          <tr><td>Fri</td><td class="num">4:15 PM</td><td>Mini Musketeers (ages 5–7)</td></tr>
-          <tr><td>Fri</td><td class="num">6:00–10:00 PM</td><td>Open bouting</td></tr>
-          <tr><td>Sat</td><td class="num">11:00 AM–12:30 PM</td><td>Little Musketeers</td></tr>
-          <tr><td>Sat</td><td class="num">1:00–2:30 PM</td><td>Group class</td></tr>
-          <tr><td>Sun</td><td class="num">—</td><td>Closed</td></tr>
+          <tr><th>Day</th><th class="t">Time</th><th>Class</th></tr>
+          <tr><td>Fri</td><td class="t">4:15 PM</td><td>Mini Musketeers (ages 5–7)</td></tr>
+          <tr><td>Fri</td><td class="t">6:00–10:00 PM</td><td>Open bouting</td></tr>
+          <tr><td>Sat</td><td class="t">11:00 AM–12:30 PM</td><td>Little Musketeers</td></tr>
+          <tr><td>Sat</td><td class="t">1:00–2:30 PM</td><td>Group class</td></tr>
+          <tr><td>Sun</td><td class="t">—</td><td>Closed</td></tr>
         </table>
       </div>
     </div>
@@ -292,27 +304,27 @@
     </div>
     <div class="c">
       <div class="photo">
-        <img src="media/club-newsletter-photo-1-crop.jpeg" alt="Podium photo from the Elite Fencers Club newsletter">
-        <p class="caption">The club’s Oct.&nbsp;5 newsletter ran this podium photo with its Ben Gutenberg SYC congratulations. Results on page one.</p>
-      </div>
-      <div class="slot-b">
-        <h2 class="head">Club Parent Builds Fencing Journal App</h2>
-        <p>Elite FC parent Eric Anderson has released Remise, a free fencing journal app on Apple’s App Store (iOS 17 or later). Fencers can log bouts, lessons and notes on opponents while they’re fresh, and import results from FencingTracker so head-to-head history stays in one place. There’s no account to make and no ads. Search “Remise Fencing Journal” on the App Store. Anderson says he welcomes feedback.</p>
-      </div>
-    </div>
-    <div class="c">
-      <div class="slot-b">
-        <h2 class="head">Song Rallies to Asian Games Gold</h2>
-        <p>South Korea’s Song Se-ra won women’s epee gold at the Asian Games in Japan on Sept.&nbsp;22, beating Singapore’s Kiria Tikanah Abdul Rahman 15-8 in the final. Getting there was the hard part. Song won her quarterfinal and semifinal 15-14 each. Against Japan’s Tamaki Terayama in the semis, she trailed 14-13, one touch from going home, and scored the last two. Song, 33, is a two-time world champion but had never won an individual Asian Games or Olympic title. Down 14-13 is not done.</p>
-      </div>
-      <div class="slot-b">
-        <h2 class="head">World Cup Epee Heads to Casablanca</h2>
-        <p>The senior epee World Cup circuit stops in Casablanca, Morocco, Oct.&nbsp;15–18, with 579 athletes from 68 nations entered, according to the FIE, fencing’s world governing body. Both individual events finish Saturday, Oct.&nbsp;17; the team events close it out Sunday. Results: fie.org.</p>
+        <img src="media/club-newsletter-photo-1-crop.jpeg" alt="Mila Siu and Penny Young with other medalists at the Ben Gutenberg SYC awards">
+        <p class="caption">Elite FC’s Mila Siu and Penny Young pose with other medalists at the Ben Gutenberg SYC awards in Rochester. Mila finished 3rd and Penny 6th in Y12 women’s epee. Results on page one.</p>
       </div>
       <div class="rail-block qa">
         <div class="rail-title">Parent Q&amp;A</div>
         <p class="q">Does the new points system affect my kid’s Youth events?</p>
         <p class="a">No. USA Fencing’s trial points system, which started Aug.&nbsp;1, covers Cadet, Junior and Division I (Senior) events only. Youth events stay on the existing points tables; the trial does not touch them.</p>
+      </div>
+    </div>
+    <div class="c">
+      <div class="slot-b">
+        <h2 class="head">Song Rallies to Asian Games Gold</h2>
+        <p>South Korea’s Song Se-ra won women’s epee gold at the Asian Games in Japan on Sept.&nbsp;22. She won her quarterfinal and semifinal 15-14 each; against Japan’s Tamaki Terayama in the semis, she trailed 14-13 and scored the last two. Song, 33, is a two-time world champion but had never won an individual Asian Games or Olympic title. Down 14-13 is not done.</p>
+      </div>
+      <div class="slot-b">
+        <h2 class="head">World Cup Epee Heads to Casablanca</h2>
+        <p>The senior epee World Cup stops in Casablanca, Morocco, Oct.&nbsp;15–18, with 579 athletes from 68 nations entered, per the FIE. Results: fie.org.</p>
+      </div>
+      <div class="slot-b">
+        <h2 class="head">Club Parent Builds Fencing Journal App</h2>
+        <p>Elite FC parent Eric Anderson has released Remise, a free fencing journal app on Apple’s App Store (iOS 17 or later). Fencers can log bouts, lessons and notes on opponents while they’re fresh, and import results from FencingTracker so head-to-head history stays in one place. There’s no account to make and no ads. Search “Remise Fencing Journal” on the App Store. Anderson says he welcomes feedback.</p>
       </div>
     </div>
   </div>

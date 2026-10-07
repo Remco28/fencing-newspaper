@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-07T18:30:00-04:00",
+  "updated_at": "2026-10-07T17:55:40-04:00",
   "note": "Staging pile: pretend seeds + Frank chat (Remise) + self-gather 2026-10-07 + email ingest test 2026-10-07 (4 messages). Append-only; Remise + gather kept + Parents Ask Q&A (points/youth) staged 2026-10-07. Weapon epee moved to staging/weeks/after-next/ (Frank: hold for week after next). NJ HS dual-meet photo (Morris Hills) staged for gather-nj-hs-season-primer 2026-10-07. + flèche-rule sidebar (gather-nj-hs-fleche-rule) staged 2026-10-07 16:22 ET for the NJ HS primer. 2026-10-07 17:15 ET: Frank flag answers applied — Penny Young alias; Morris Cup names tidied (all 29 entries approved); Oct 5/Oct 7 class-time emails marked stale_for_issue next; club-website standing schedule staged unvetted (web-efc-standing-schedule). 2026-10-07 18:30 ET: Desk compose of issue 2026-10-08 added desk_verification to Song/NAC/Casablanca and staged ft-nac-efc-registrations-2026-10-07 (unvetted).",
   "items": [
     {
@@ -1329,8 +1329,8 @@
       "source": "fencingtracker",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vet_notes": null,
+      "vetted": true,
+      "vet_notes": "Frank chat 2026-10-07 ~17:53 ET: confirmed all four Elite FC fencers at the October NAC (Orlando): Penny Young, Amina Gore, Maksim Milinkovic, Anayaa Sheth. Name not garbled (Frank: 'you had it right'); FencingTracker scrape shows 'Anayaà' — print 'Anayaa Sheth' as Frank typed it (ASCII spelling from Frank). Events/days per FencingTracker event pages (retrieved 2026-10-07 ~18:15 ET). Printed as NAC group on Go Cheer board, issue 2026-10-08 proof v2.",
       "slot_hint": "signup",
       "provenance": [
         {
@@ -1356,23 +1356,37 @@
           "url": "https://fencingtracker.com/event/21109",
           "retrieved_at": "2026-10-07T18:15:00-04:00",
           "note": "CDTME registrations"
+        },
+        {
+          "type": "chat",
+          "note": "Frank confirmed the four EFC NAC registrants and the Anayaa Sheth spelling (chat: Frank 2026-10-07)",
+          "retrieved_at": "2026-10-07T17:53:00-04:00"
         }
       ],
       "name_flags": [
-        "Sheth first name garbled on FencingTracker (Anayaà) - confirm spelling",
+        "Sheth first name: FencingTracker 'Anayaà' = 'Anayaa Sheth' (Frank chat 2026-10-07; ASCII spelling from Frank) - resolved",
         "Young, Penelope -> print Penny Young (roster)",
-        "Sheth / Milinkovic / Gore Amina: not yet in roster/people.json"
+        "Anayaa Sheth added to roster/people.json 2026-10-07; Milinkovic / Gore Amina not in roster (no variant confusion)"
       ],
       "tags": [
         "club",
         "nac",
         "signup",
         "epee",
-        "unvetted",
-        "frank-confirm"
+        "vetted",
+        "frank-confirmed"
       ],
       "created_at": "2026-10-07T18:15:00-04:00",
-      "note": "Found during compose of issue 2026-10-08. NOT printed: parent brief + Frank vet note on gather-october-nac-orlando require confirmation before printing EFC names. If Frank confirms, add an October NAC block to the Go Cheer board."
+      "note": "Confirmed by Frank in chat 2026-10-07 ~17:53 ET; printed as October NAC group on the Go Cheer board (issue 2026-10-08 proof v2).",
+      "vetted_at": "2026-10-07T17:53:00-04:00",
+      "vetted_by": "frank",
+      "vet_source": "chat: Frank 2026-10-07",
+      "print_names": {
+        "Young, Penelope": "Penny Young",
+        "Gore, Amina": "Amina Gore",
+        "Milinkovic, Maksim": "Maksim Milinkovic",
+        "Sheth, Anayaà": "Anayaa Sheth"
+      }
     }
   ]
 }

@@ -9,7 +9,7 @@
   "pretend": false,
   "first_real_issue": true,
   "prior_issues_checked": "issues/ contained only 2026-10-14 (pretend/sample, sources.json pretend:true) — this is No. 1.",
-  "status": "PROOF — awaiting Frank approval (gate 2). Not approved for print.",
+  "status": "proof v2, awaiting Frank approval",
   "proof_mark_note": "Template A has no proof-mark convention (STYLE-GUIDE furniture frozen; no SAMPLE/PROOF badges allowed), so proof status lives here and in the HTML <title> only — the printed sheet carries no PROOF stamp.",
   "template": "Template A (rails from issues/2026-10-14 v3.14; CSS copied verbatim + small composition additions: .qa pattern from prototype/qa-block.html, .board-split/.board-cap for side-by-side boards inside one tabular .box, stacked-article margins, left-aligned .boxnote)",
   "approvals": "issues/2026-10-08/approvals.json (copy of budget-demo/submissions/budget-20261007-172024.json, submitted 2026-10-07T17:20:24-04:00)",
@@ -24,10 +24,10 @@
     "instruments": {
       "pages": 2,
       "p1_gap_in": 0.16,
-      "p2_gap_in": 0.2,
+      "p2_gap_in": 0.12,
       "p1_row_spread_in": 0.24,
-      "p2_row_spread_in": 0.49,
-      "type_floor": "render.py reported n/a (instrument quirk, same as before); smallest text by CSS = 7pt (captions, board headers, footer); flanks 6.5pt are locked furniture"
+      "p2_row_spread_in": 0.19,
+      "type_floor": "render.py reported n/a (instrument quirk); smallest text by CSS = 7pt (captions, board headers, footer); flanks 6.5pt locked furniture; no type shrunk in v2"
     }
   },
   "pages": {
@@ -74,17 +74,18 @@
         "slot": "signup",
         "itemIds": [
           "email-frank-medeo-entries-2026-10-07",
-          "email-agentmail-morris-cup-entries-2026-10-07"
+          "email-agentmail-morris-cup-entries-2026-10-07",
+          "ft-nac-efc-registrations-2026-10-07"
         ],
-        "rows": 12,
-        "entries": 31,
-        "note": "Medeo (Sun Oct 11, 2 entries) + Morris Cup (Oct 24-25, all 29 entries / 20 fencers — Frank-approved exception to row cap); Medeo is UPCOMING for a Thu Oct 8 issue"
+        "rows": 16,
+        "entries": 36,
+        "note": "v2: October NAC group added (4 rows: Fri 10/9 Cadet Women — Amina Gore, Anayaa Sheth, Penny Young; Fri 10/9 Div. I Men — Maksim Milinkovic; Sat 10/10 Cadet Men — Maksim Milinkovic; Mon 10/12 Y14 Women — Penny Young). Names confirmed by Frank (chat: Frank 2026-10-07); events/days from FencingTracker event pages; no start times printed (none in staged data). 'Anayaa' is Frank's ASCII spelling (FencingTracker scrape: 'Anayaà'). Board layout v2: left = NAC + Morris Cup Sat; right = Medeo + Morris Cup Sun. Medeo (Sun Oct 11, 2 entries) + Morris Cup (Oct 24-25, 29 entries / 20 fencers) unchanged. Rahi Shah Mirani set with non-breaking spaces (as registered); Ash Shah-Mirani nowrap."
       },
       {
         "slot": "club-events",
         "itemId": "web-efc-standing-schedule",
         "rows": 10,
-        "note": "Website class names used throughout; Fri Mini Musketeers 4:15 PM start only (Frank chat 17:32); private-lesson rows folded into one note line"
+        "note": "Website class names used throughout; Fri Mini Musketeers 4:15 PM start only (Frank chat 17:32); private-lesson rows folded into one note line | v2 taste fix: Time column left-aligned (th/td.t, nowrap, 8pt right padding) in its fixed 1.15in column so times and class names read as separate columns."
       },
       {
         "slot": "secondary-a (Desk fill)",
@@ -100,34 +101,42 @@
         "file": "media/club-newsletter-photo-1-crop.jpeg",
         "printed_height_in": 2.18,
         "crop": "EXIF-rotated portrait 480x640 -> 480x450 (rows 100-550; top banner + shoes trimmed) to stay under ~2.2in",
-        "caption": "The club’s Oct. 5 newsletter ran this podium photo with its Ben Gutenberg SYC congratulations. Results on page one.",
-        "caption_basis": "Source email places this image directly after the SYC congratulations; no alt text, no names, event not stated — caption claims only placement"
+        "caption": "Elite FC’s Mila Siu and Penny Young pose with other medalists at the Ben Gutenberg SYC awards in Rochester. Mila finished 3rd and Penny 6th in Y12 women’s epee. Results on page one.",
+        "caption_basis": "Names: Frank, chat 2026-10-07 ('The two girls in the photo from our club is Mila and Penny') — chat: Frank 2026-10-07. Image inspected: 7 girls with medals at a Fencing Light / ROC Sports awards stand; at least one wears a 'Toronto Fencing' jacket, so the others are captioned only as 'other medalists' (not Elite FC). Left/right order not given (can't tell who is who from the image). Event of the photo not stated in source, so the caption ties to the SYC results (Mila 3rd, Penny 6th, Y12 women's epee, from result-syc) without claiming which podium it is. Source email places the image after the SYC congratulations.",
+        "alt": "Mila Siu and Penny Young with other medalists at the Ben Gutenberg SYC awards",
+        "column": "bottom row, column 2 (v2 reflow)"
       },
       {
         "slot": "secondary_short",
         "itemId": "chat-remise-anderson-app",
         "headline": "Club Parent Builds Fencing Journal App",
         "words": 66,
-        "note": "Dropped 'Foil, epee, and saber' line (epee-only rule); App Store URL replaced by search phrase"
+        "note": "Dropped 'Foil, epee, and saber' line (epee-only rule); App Store URL replaced by search phrase",
+        "column": "bottom row, column 3 (v2: moved below Casablanca; text unchanged)"
       },
       {
         "slot": "secondary-b (Desk fill)",
         "itemId": "gather-asian-games-song-sera-epee",
         "headline": "Song Rallies to Asian Games Gold",
-        "words": 85,
-        "note": "Verified vs Yonhap/Korea Herald/SBS; team-silver claims not printed"
+        "words": 63,
+        "note": "Verified vs Yonhap/Korea Herald/SBS; team-silver claims not printed",
+        "column": "bottom row, column 3",
+        "trim_v2": "Cut 'Getting there was the hard part.' and 'beating Singapore’s Kiria Tikanah Abdul Rahman 15-8 in the final'; merged QF/SF sentences ('She won her quarterfinal and semifinal 15-14 each; against Japan’s Tamaki Terayama in the semis, she trailed 14-13 and scored the last two.' — dropped 'one touch from going home'). No facts added."
       },
       {
         "slot": "tv/international (Desk fill)",
         "itemId": "gather-casablanca-epee-wc",
         "headline": "World Cup Epee Heads to Casablanca",
-        "words": 43
+        "words": 23,
+        "column": "bottom row, column 3 (between Song and Remise)",
+        "trim_v2": "Cut 'circuit', 'fencing’s world governing body' and 'Both individual events finish Saturday, Oct. 17; the team events close it out Sunday.'; 'according to the FIE' -> 'per the FIE'. No facts added."
       },
       {
         "slot": "parent_qa",
         "itemId": "chat-qa-points-youth",
         "words": 43,
-        "note": "anonymous, no byline; added 'which started Aug. 1' from the vetted provenance"
+        "note": "anonymous, no byline; added 'which started Aug. 1' from the vetted provenance",
+        "column": "bottom row, column 2 (v2: moved under podium photo; text unchanged)"
       }
     ]
   },
@@ -143,10 +152,6 @@
       "why": "held for issue after next (Frank)"
     },
     {
-      "what": "ft-nac-efc-registrations-2026-10-07 (4 EFC fencers on FencingTracker NAC lists)",
-      "why": "unconfirmed; parent brief + Frank vet note require confirmation before names print; staged unvetted for Frank"
-    },
-    {
       "what": "Ratings earned / NJ HS roundup / deadlines / comic / TV box",
       "why": "excluded in budget; no real items"
     },
@@ -157,16 +162,46 @@
     {
       "what": "Asian Games team-epee silvers",
       "why": "not verified"
+    },
+    {
+      "what": "Song Se-ra final opponent/score (15-8 over Kiria Tikanah Abdul Rahman); Casablanca individual/team finish days",
+      "why": "v2 space trims (Desk-fill) to hold 2 pages after the NAC group was added"
     }
   ],
   "open_flags": [
     "NJ.com snippet-sourced facts in the primer still CLICK-CHECK pending: Chatham girls' four straight Santellis; Chatham Morris County streaks (boys 7th, girls 5th — sourced to newjerseyhills.com/Chatham Courier via snippet); both 2026 state finals 14-13 (Bergen Tech over Columbia; Columbia girls over Morris Hills).",
     "Primer: 27-bout format official source is NJSIAA's 2014 guidelines (12 years old); 2026-27 NJSIAA rules/regs not posted — eligibility + top-36 qualifying written as last season's.",
     "Flèche sidebar: exact year the one-crossover limit ended unknown (2018-2021); 2026-27 rules not posted.",
-    "Photo crops: Morris Hills (span 2) and podium photo were cropped on the photo desk (not CSS) to meet the ~2.2in ceiling — Frank to OK the crops.",
-    "Podium photo caption claims only that the newsletter ran it with the SYC congrats; who is pictured / which event is not stated in the source.",
+    "Photo crops: Frank said the photos look fine (chat 2026-10-07).",
+    "Podium photo caption (v2) names Mila Siu and Penny Young per Frank; no left/right order; photo's event not stated in source, caption ties to SYC results without claiming which podium.",
     "Class schedule: website freshness unknown; Mini Musketeers end time unknown (start only printed); class names follow the website ('Little Musketeers', 'Group class') rather than the emails ('Musketeers', 'Advanced').",
     "Shah-Mirani (Ash) vs Shah Mirani (Rahi): printed as registered (roster spelling_unresolved).",
-    "FencingTracker lists EFC fencers at the October NAC (Penny Young CDTWE+Y14WE, Amina Gore CDTWE, Sheth Anaya? CDTWE [name garbled], Maksim Milinkovic DV1ME+CDTME) — confirm to add an NAC block to Go Cheer."
-  ]
+    "NAC group: events/days from FencingTracker registration lists retrieved 2026-10-07 ~18:15 ET; registrations can change before Friday."
+  ],
+  "proof_version": 2,
+  "proof_history": [
+    {
+      "version": 1,
+      "commit": "c9d3308",
+      "note": "Desk compose + proof PDF; Frank reviewed in chat 2026-10-07 ~17:53 ET (photos fine, Desk-fill kept, named podium girls, confirmed NAC registrants)."
+    },
+    {
+      "version": 2,
+      "note": "Frank's chat answers applied (podium names, NAC group on Go Cheer), weekly-class time column left-aligned, Rahi Shah Mirani no-wrap; page-2 bottom row reflowed + Desk-fill trims to hold 2 pages."
+    }
+  ],
+  "desk_fill_trims_v2": [
+    "Casablanca (first): 43 -> 23 words (whitespace count)",
+    "Song Se-ra (second): 84 -> 63 words (whitespace count)"
+  ],
+  "frank_answers_2026_10_07": {
+    "source": "chat: Frank 2026-10-07",
+    "at": "2026-10-07T17:53:00-04:00",
+    "answers": [
+      "Podium photo: the two Elite FC girls are Mila (Mila Siu) and Penny (Penny Young).",
+      "October NAC in Orlando: four EFC registrants confirmed — Penny Young, Amina Gore, Maksim Milinkovic, Anayaa Sheth; Sheth name not garbled (print 'Anayaa Sheth').",
+      "Photos look fine; all Desk-fill stories kept.",
+      "Do another version; might print and distribute tomorrow (Thu Oct 8)."
+    ]
+  }
 }
