@@ -5,7 +5,7 @@ PLAN.md owns the narrative + decision list; this file owns the pipeline names, i
 schema, vetting rules, and folder layout. On conflict, this file wins for pipeline
 topics.
 
-Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5).
+Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6).
 
 ## Pipeline (formal names)
 
@@ -18,12 +18,16 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    promote them.
 3. **Budget** — local HTML page on Musketeer's computer. Proposed lineup vs
    CONTENT-HIERARCHY.md. **Include only vetted** items in the proposed sheet;
-   unvetted items may appear on the page labeled **unvetted** but are blocked from
-   include until Frank vets them (promote / forward-from-frank / checkbox that
-   requires vet first). **Photo desk:** visible image thumbnails with multi-select
-   Include checkboxes; selected IDs → `photoIncludes` in the submit JSON (not bare
-   per-slot photo flags without images). Submit → timestamped budget JSON +
-   overwrite `approvals.json`. Chat is doorbell only.
+   unvetted items may appear on the page labeled **UNVETTED** but are blocked from
+   Include until Frank vets them. **Vetting UX (v3.6):** primary path is **Vet + notes
+   on the budget page** (staging inbox, lineup cards, photo desk). Notes field =
+   “Why this matters / what the bot should know”; stored on the staging item as
+   `vet_notes` (alias `notes` accepted on POST `/vet`). Chat promote / forward-from-
+   frank remain OK as alternates. **Photo desk:** visible image thumbnails with
+   multi-select Include checkboxes (gated until vetted); selected IDs →
+   `photoIncludes` in the submit JSON. Submit → timestamped budget JSON + overwrite
+   `approvals.json`. Vet → update `staging/weeks/next/items.json` + append
+   `vet-log.jsonl`. Chat is doorbell only for budget/proof readiness.
    Scoreboard strip is **cut** from the live hierarchy (v3.4); may return later as
    "headline wire" — do not treat it as a current Budget slot.
 4. **Proof** — rendered PDF; second approve gate. Nothing prints without both
@@ -78,14 +82,15 @@ Each staging item is one record (JSON object or equivalent). Fields:
 | `vetted` | bool | `true` only after Frank vet (or auto from `frankcng@gmail.com`) |
 | `vetted_at` | string? | ISO timestamp when promoted |
 | `vetted_by` | string? | `frank` / `auto-frank-gmail` |
+| `vet_notes` | string? | Frank’s context for the bot when vetting on the budget page (or chat) |
 | `slot_hint` | string? | Optional CONTENT-HIERARCHY slot name |
 | `word_count` / `row_count` | number? | Filled/checked in Clean |
 | `created_at` | string | ISO timestamp |
 
 Promotion / vet paths (any one is enough):
-- Frank marks vetted on the budget page (checkbox that requires vet first before include).
+- **Budget-page Vet + notes (preferred UX):** Frank hits **Vet** on an UNVETTED row/card/photo, adds `vet_notes`, Include unlocks. Demo: `POST /vet` → `staging/weeks/next/items.json` + `vet-log.jsonl`.
 - Frank forwards the tip from `frankcng@gmail.com` (auto-vetted on ingest).
-- Explicit promote action in chat/tools that sets `vetted: true` (Frank-initiated).
+- Explicit promote action in chat/tools that sets `vetted: true` (+ optional notes) — still OK as alternate.
 
 ## Folder layout (proposed)
 
@@ -96,7 +101,8 @@ staging/
       items.jsonl        # one staging item per line (or items/*.json)
       media/             # photos, comics (derived copies; originals may live elsewhere)
     next/                # default dump when publish date not yet chosen
-      items.jsonl
+      items.json           # (demo) staging items; items.jsonl OK when ingest ships
+      vet-log.jsonl        # append-only Vet actions from budget page / tools
       media/
 
 issues/

@@ -146,6 +146,98 @@
   .tag.draft { background: #f5e4d8; }
   .vetted-yes { color: var(--green); font-weight: 600; font-size: 12px; }
   .vetted-no { color: var(--muted); font-size: 12px; }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .badge.unvetted {
+    background: #f5e0c8;
+    color: #8a4b12;
+    border: 1px solid #d4a574;
+  }
+  .badge.vetted {
+    background: var(--green-bg);
+    color: var(--green);
+    border: 1px solid #a8c4ad;
+  }
+  .vet-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+    min-width: 180px;
+  }
+  .vet-panel textarea {
+    width: 100%;
+    min-height: 52px;
+    border: 1px solid var(--card-border);
+    background: #faf7f1;
+    padding: 6px 8px;
+    font-size: 12px;
+    font-family: inherit;
+    border-radius: 2px;
+    resize: vertical;
+    color: var(--ink-soft);
+  }
+  .vet-panel textarea:focus {
+    outline: none;
+    border-color: var(--accent-soft);
+    background: #fff;
+  }
+  .vet-panel .vet-hint {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  .vet-panel .vet-notes-saved {
+    font-size: 11px;
+    color: var(--green);
+    font-style: italic;
+  }
+  button.vet-btn {
+    background: var(--accent);
+    color: #fffdf8;
+    border: none;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    border-radius: 3px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  button.vet-btn:hover { background: #6e3610; }
+  button.vet-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .check input:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+  .check.blocked {
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+  .inbox td.actions-cell { min-width: 220px; }
+  .photo-card.unvetted-card {
+    border-color: #d4a574;
+    background: #fffaf3;
+  }
+  .photo-card .badge-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .card .badge-inline { margin-left: 4px; }
 
   /* Lineup cards */
   .lineup {
@@ -436,12 +528,13 @@
       </div>
     </div>
     <div class="pretend-note">
-      Pretend mode — sample content. Submit POSTs JSON → timestamped file under <code>submissions/</code> + overwrites <code>submissions/approvals.json</code>. Photo desk: 2 real email-extracted images + PRETEND placeholders.
+      Pretend mode — sample content. <strong>Vet</strong> unvetted tips/photos on this page (notes → bot context). Include stays off until vetted. Submit POSTs JSON → <code>submissions/</code> + <code>approvals.json</code>. Vet POSTs → <code>staging/weeks/next/items.json</code> + vet-log. Photo desk: 2 real Frank-vetted newsletter images + PRETEND unvetted seeds.
     </div>
   </header>
 
   <section>
-    <h2>A · Staging inbox <span class="hint">cleaned pile — visibility only, not approvals</span></h2>
+    <h2>A · Staging inbox <span class="hint">cleaned pile — Vet here; Include blocked until vetted</span></h2>
+    <p class="photo-desk-hint">Unvetted public tips/photos need a <strong>Vet</strong> + short notes (“why this matters / what the bot should know”). Chat promote still OK as alternate. Frank-forwarded club mail stays auto-vetted.</p>
     <div class="inbox">
       <table>
         <thead>
@@ -449,70 +542,12 @@
             <th>Type</th>
             <th>Item</th>
             <th>Source</th>
-            <th>Vetted</th>
+            <th>Status</th>
+            <th>Vet</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td><span class="tag club">club event</span></td>
-            <td>Musketeers group class Mon 4:30 · Advanced Tue 6:00</td>
-            <td>frankcng → efc.weekly (fwd newsletter)</td>
-            <td><span class="vetted-yes">yes</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag result">result</span></td>
-            <td>Ben Gutenberg SYC: Mila Siu 3rd Y12 · Penny Young 6th Y12 · Stella Kuo T16 Y14</td>
-            <td>frankcng → efc.weekly (fwd newsletter)</td>
-            <td><span class="vetted-yes">yes</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag signup">signup</span></td>
-            <td>Medeo Youth Challenge #3 — Sun Oct 11 · Jiang Christina Y12 WE · Cheng Bryce Y10 Mixed Epee</td>
-            <td>frankcng → efc.weekly (signup slice)</td>
-            <td><span class="vetted-yes">yes</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag tip">tip</span></td>
-            <td>Medeo Youth Challenge #3 upcoming (newsletter mention)</td>
-            <td>frankcng → efc.weekly (fwd newsletter)</td>
-            <td><span class="vetted-yes">yes</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag draft">draft</span></td>
-            <td>Lead: FIE Vancouver Grand Prix epee final (invented)</td>
-            <td>invented / pretend FIE wire</td>
-            <td><span class="vetted-no">no</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag draft">draft</span></td>
-            <td>Secondary: NJSIAA epee seeding chatter (invented)</td>
-            <td>invented</td>
-            <td><span class="vetted-no">no</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag result">result</span></td>
-            <td>Ratings earned slice — 3 EFC names (invented celebration rows)</td>
-            <td>invented (styled as results-app)</td>
-            <td><span class="vetted-no">no</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag tip">tip</span></td>
-            <td>TV: FencingTV / YouTube GP replay windows (invented)</td>
-            <td>invented / FIE calendar nod</td>
-            <td><span class="vetted-no">no</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag photo">photo</span></td>
-            <td>Club strip candidate — podium huddle (placeholder, B&amp;W)</td>
-            <td>invented photo candidate</td>
-            <td><span class="vetted-no">no</span></td>
-          </tr>
-          <tr>
-            <td><span class="tag draft">draft</span></td>
-            <td>Comic panel placeholder — “En garde, coffee first”</td>
-            <td>invented</td>
-            <td><span class="vetted-no">no</span></td>
-          </tr>
+        <tbody id="stagingInboxBody">
+          <!-- hydrated from /api/items -->
         </tbody>
       </table>
     </div>
@@ -523,7 +558,7 @@
     <div class="lineup" id="lineup">
 
       <!-- 1 Lead -->
-      <article class="card" data-slot="lead" data-rank="1" draggable="true">
+      <article class="card excluded" data-slot="lead" data-item-id="draft-lead-vancouver" data-vetted="false" data-rank="1" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -531,18 +566,19 @@
             <span class="slot-name">Lead story</span>
             <span class="slot-budget">150–180w</span>
           </div>
+          <span class="badge unvetted badge-inline" data-badge>UNVETTED</span>
           <div class="headline">Canadian epeeist edges world No. 4 in Vancouver Grand Prix final</div>
           <p class="preview">VANCOUVER — In a tense DE table that ran late into Sunday night, Canada’s Mara Chen upset the FIE world No. 4 15–13 to claim the women’s epee Grand Prix gold. The final bout swung on a double in overtime after Chen had trailed by three. U.S. fencers reached two T16 slots but no podium. Full DE tree and NJ travelers noted inside.</p>
           <div class="meta-line"><span class="count">168w</span> / 150–180w · Source: <em>invented / pretend FIE wire</em> · Frank-vetted: no</div>
           <div class="card-notes"><input type="text" data-notes-for="lead" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
-          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+          <div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes placeholder="Context for the bot before Include unlocks…"></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div><label class="check blocked"><input type="checkbox" data-include disabled /> Include in issue</label>
         </div>
       </article>
 
       <!-- 2 Club results -->
-      <article class="card" data-slot="club-results" data-rank="2" draggable="true">
+      <article class="card" data-slot="club-results" data-item-id="result-syc" data-vetted="true" data-rank="2" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -550,6 +586,7 @@
             <span class="slot-name">Club results box</span>
             <span class="slot-budget">3–5 rows</span>
           </div>
+          <span class="badge vetted badge-inline" data-badge>VETTED</span>
           <div class="headline">Ben Gutenberg SYC — Elite FC finishes</div>
           <div class="preview"><table>
             <thead><tr><th>Fencer</th><th>Event</th><th>Place</th></tr></thead>
@@ -568,7 +605,7 @@
       </article>
 
       <!-- 3 Ratings -->
-      <article class="card" data-slot="ratings" data-rank="3" draggable="true">
+      <article class="card excluded" data-slot="ratings" data-item-id="result-ratings-invented" data-vetted="false" data-rank="3" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -576,6 +613,7 @@
             <span class="slot-name">Ratings earned</span>
             <span class="slot-budget">2–5 rows</span>
           </div>
+          <span class="badge unvetted badge-inline" data-badge>UNVETTED</span>
           <div class="headline">New letters on the wall</div>
           <div class="preview"><table>
             <thead><tr><th>Fencer</th><th>New</th><th>Event</th></tr></thead>
@@ -589,12 +627,12 @@
           <div class="card-notes"><input type="text" data-notes-for="ratings" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
-          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+          <div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes placeholder="Context for the bot before Include unlocks…"></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div><label class="check blocked"><input type="checkbox" data-include disabled /> Include in issue</label>
         </div>
       </article>
 
       <!-- 4 Secondary A -->
-      <article class="card" data-slot="secondary-a" data-rank="4" draggable="true">
+      <article class="card excluded" data-slot="secondary-a" data-item-id="draft-secondary-usa" data-vetted="false" data-rank="4" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -602,18 +640,19 @@
             <span class="slot-name">Secondary A</span>
             <span class="slot-budget">80–100w</span>
           </div>
+          <span class="badge unvetted badge-inline" data-badge>UNVETTED</span>
           <div class="headline">USA Fencing posts revised youth points timeline for winter</div>
           <p class="preview">COLORADO SPRINGS — USA Fencing confirmed a mid-November refresh of youth epee points ahead of December regionals. Coaches should re-check AskFRED seeding after Nov. 18. Club parents asking about Y12/Y14 travel windows: the board posts a short FAQ this week.</p>
           <div class="meta-line"><span class="count">72w → stretch to ~90</span> / 80–100w · Source: <em>invented / pretend USA Fencing note</em> · Frank-vetted: no</div>
           <div class="card-notes"><input type="text" data-notes-for="secondary-a" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
-          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+          <div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes placeholder="Context for the bot before Include unlocks…"></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div><label class="check blocked"><input type="checkbox" data-include disabled /> Include in issue</label>
         </div>
       </article>
 
       <!-- 5 Secondary B -->
-      <article class="card" data-slot="secondary-b" data-rank="5" draggable="true">
+      <article class="card excluded" data-slot="secondary-b" data-item-id="draft-secondary-nj" data-vetted="false" data-rank="5" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -621,18 +660,19 @@
             <span class="slot-name">Secondary B</span>
             <span class="slot-budget">80–100w</span>
           </div>
+          <span class="badge unvetted badge-inline" data-badge>UNVETTED</span>
           <div class="headline">Local clubs trade strip space as fall calendar stacks up</div>
           <p class="preview">MORRIS COUNTY — Three Chatham-area clubs report overlapping Saturday strip bookings through Halloween weekend. Elite FC keeps Musketeers and Advanced on schedule; visitors should confirm with the front desk before dropping in. A shared calendar link is circulating among coaches.</p>
           <div class="meta-line"><span class="count">78w</span> / 80–100w · Source: <em>invented local color</em> · Frank-vetted: no</div>
           <div class="card-notes"><input type="text" data-notes-for="secondary-b" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
-          <label class="check"><input type="checkbox" data-include /> Include in issue</label>
+          <div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes placeholder="Context for the bot before Include unlocks…"></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div><label class="check blocked"><input type="checkbox" data-include disabled /> Include in issue</label>
         </div>
       </article>
 
       <!-- 6 NJ HS -->
-      <article class="card" data-slot="nj-hs" data-rank="6" draggable="true">
+      <article class="card excluded" data-slot="nj-hs" data-item-id="tip-public-chatham-dual" data-vetted="false" data-rank="6" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -640,6 +680,7 @@
             <span class="slot-name">NJ HS roundup</span>
             <span class="slot-budget">60–90w or 3–5 one-liners</span>
           </div>
+          <span class="badge unvetted badge-inline" data-badge>UNVETTED</span>
           <div class="headline">Epee notebooks — early duals</div>
           <p class="preview">• Chatham boys epee split a dual at Westfield (invented)
 • Morristown girls epee edged Columbia 5–4 in OT bout count (invented)
@@ -649,12 +690,12 @@
           <div class="card-notes"><input type="text" data-notes-for="nj-hs" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
-          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+          <div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes placeholder="Context for the bot before Include unlocks…"></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div><label class="check blocked"><input type="checkbox" data-include disabled /> Include in issue</label>
         </div>
       </article>
 
       <!-- 7 Signup -->
-      <article class="card" data-slot="signup" data-rank="7" draggable="true">
+      <article class="card" data-slot="signup" data-item-id="signup-medeo" data-vetted="true" data-rank="7" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -662,6 +703,7 @@
             <span class="slot-name">Signup board</span>
             <span class="slot-budget">2–8 rows · max 4 tournaments · Elite FC names</span>
           </div>
+          <span class="badge vetted badge-inline" data-badge>VETTED</span>
           <div class="headline">Who’s entered — go cheer</div>
           <div class="preview"><table>
             <thead><tr><th>Event</th><th>When</th><th>Elite FC</th></tr></thead>
@@ -671,7 +713,7 @@
               <tr><td>Garden State RJCC (invented hold)</td><td>Sat Oct 18</td><td>TBD — ask front desk</td></tr>
             </tbody>
           </table></div>
-          <div class="meta-line"><span class="count">3 rows / 1 tournament + hold</span> / 2–8 · Source: <em>frankcng signup slice + invented hold</em> · Frank-vetted: <strong>yes</strong> (Medeo rows)</div>
+          <div class="meta-line"><span class="count">3 rows / 1 tournament + hold</span> / 2–8 · Source: <em>frankcng signup slice + invented hold</em> · Frank-vetted: <strong>yes</strong></div>
           <div class="card-notes"><input type="text" data-notes-for="signup" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
@@ -680,7 +722,7 @@
       </article>
 
       <!-- 8 Club events -->
-      <article class="card" data-slot="club-events" data-rank="8" draggable="true">
+      <article class="card" data-slot="club-events" data-item-id="club-events-efc" data-vetted="true" data-rank="8" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -688,12 +730,13 @@
             <span class="slot-name">Club events</span>
             <span class="slot-budget">3–5 items</span>
           </div>
+          <span class="badge vetted badge-inline" data-badge>VETTED</span>
           <div class="headline">This week at Elite FC</div>
           <p class="preview">• Musketeers group class — Mon 4:30
 • Advanced — Tue 6:00
 • Open strip night — Thu 7:00 (invented)
 • Parent coffee + FAQ — Sat 9:30 (invented)</p>
-          <div class="meta-line"><span class="count">4 items</span> / 3–5 · Source: <em>frankcng fwd newsletter + invented</em> · Frank-vetted: <strong>yes</strong> (Mon/Tue classes)</div>
+          <div class="meta-line"><span class="count">4 items</span> / 3–5 · Source: <em>frankcng fwd newsletter + invented</em> · Frank-vetted: <strong>yes</strong></div>
           <div class="card-notes"><input type="text" data-notes-for="club-events" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
@@ -702,7 +745,7 @@
       </article>
 
       <!-- 9 Deadlines -->
-      <article class="card" data-slot="deadlines" data-rank="9" draggable="true">
+      <article class="card excluded" data-slot="deadlines" data-item-id="tip-deadlines-invented" data-vetted="false" data-rank="9" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -710,6 +753,7 @@
             <span class="slot-name">Deadlines</span>
             <span class="slot-budget">3–5 rows</span>
           </div>
+          <span class="badge unvetted badge-inline" data-badge>UNVETTED</span>
           <div class="headline">Closes soon</div>
           <div class="preview"><table>
             <thead><tr><th>What</th><th>Closes</th></tr></thead>
@@ -724,12 +768,12 @@
           <div class="card-notes"><input type="text" data-notes-for="deadlines" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
-          <label class="check"><input type="checkbox" data-include checked /> Include in issue</label>
+          <div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes placeholder="Context for the bot before Include unlocks…"></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div><label class="check blocked"><input type="checkbox" data-include disabled /> Include in issue</label>
         </div>
       </article>
 
       <!-- 10 Comic — default cut -->
-      <article class="card excluded" data-slot="comic" data-rank="10" draggable="true">
+      <article class="card excluded" data-slot="comic" data-item-id="tip-comic" data-vetted="false" data-rank="10" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -737,18 +781,19 @@
             <span class="slot-name">Comic</span>
             <span class="slot-budget">1 panel</span>
           </div>
+          <span class="badge unvetted badge-inline" data-badge>UNVETTED</span>
           <div class="headline">“En garde, coffee first”</div>
           <p class="preview">[Placeholder panel] Fencer in mask reaches for a travel mug while referee says “Halt — caffeine check.” One-panel gag for strip-side grins.</p>
           <div class="meta-line"><span class="count">1 panel</span> · Source: <em>invented placeholder</em> · Frank-vetted: no · <em>pre-cut to show hierarchy trim</em></div>
           <div class="card-notes"><input type="text" data-notes-for="comic" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
-          <label class="check"><input type="checkbox" data-include /> Include in issue</label>
+          <div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes placeholder="Context for the bot before Include unlocks…"></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div><label class="check blocked"><input type="checkbox" data-include disabled /> Include in issue</label>
         </div>
       </article>
 
       <!-- 11 TV — default cut -->
-      <article class="card excluded" data-slot="tv" data-rank="11" draggable="true">
+      <article class="card excluded" data-slot="tv" data-item-id="tip-tv-replay" data-vetted="false" data-rank="11" draggable="true">
         <div class="drag-handle" title="Drag to reorder">⋮⋮</div>
         <div class="card-main">
           <div class="slot-head">
@@ -756,6 +801,7 @@
             <span class="slot-name">TV / streaming</span>
             <span class="slot-budget">3–5 rows</span>
           </div>
+          <span class="badge unvetted badge-inline" data-badge>UNVETTED</span>
           <div class="headline">Where to watch</div>
           <div class="preview"><table>
             <thead><tr><th>Event</th><th>Where</th></tr></thead>
@@ -769,7 +815,7 @@
           <div class="card-notes"><input type="text" data-notes-for="tv" placeholder="Optional note for this slot…" /></div>
         </div>
         <div class="card-controls">
-          <label class="check"><input type="checkbox" data-include /> Include in issue</label>
+          <div class="vet-panel" data-vet-panel><span class="vet-hint">Why this matters / what the bot should know</span><textarea data-vet-notes placeholder="Context for the bot before Include unlocks…"></textarea><button type="button" class="vet-btn" data-vet-btn>Vet</button></div><label class="check blocked"><input type="checkbox" data-include disabled /> Include in issue</label>
         </div>
       </article>
 
@@ -778,38 +824,63 @@
 
 
   <section>
-    <h2>C · Photo desk <span class="hint">visible thumbs — pick a few to include</span></h2>
-    <p class="photo-desk-hint">2 <strong>real</strong> photos extracted from Frank’s forwarded club newsletter (Mailchimp HTML embeds → <code>staging/weeks/next/media/</code>), then 3 clearly labeled <strong>PRETEND</strong> placeholders so multi-select still demos. Check Include; selected IDs → <code>photoIncludes</code>. More old synthetic PNGs omitted.</p>
+    <h2>C · Photo desk <span class="hint">visible thumbs — Include only after Vet</span></h2>
+    <p class="photo-desk-hint">2 <strong>real</strong> Frank-vetted newsletter photos + seeded <strong>UNVETTED</strong> PRETEND/public-tip photos. Vet + notes unlocks Include. Selected IDs → <code>photoIncludes</code>.</p>
     <div class="photo-desk" id="photoDesk">
-      <div class="photo-card">
+      <div class="photo-card" data-item-id="club-newsletter-photo-1" data-vetted="true">
         <img src="/staging-media/club-newsletter-photo-1.jpeg" alt="Club newsletter photo 1" />
-        <div class="caption">Club newsletter photo 1 <span style="color:#0a7;">· REAL</span></div>
-        <div class="source">Source: email frankcng@gmail.com · Fwd: Group Class! + Congrats! · vetted</div>
-        <label class="check"><input type="checkbox" data-photo-id="club-newsletter-photo-1" /> Include</label>
+        <div class="badge-row">
+          <div class="caption">Club newsletter photo 1 <span style="color:#0a7;">· REAL</span></div>
+          <span class="badge vetted" data-badge>VETTED</span>
+        </div>
+        <div class="source">Source: email frankcng@gmail.com · Fwd: Group Class! + Congrats!</div>
+        <label class="check"><input type="checkbox" data-photo-id="club-newsletter-photo-1" data-include-gated /> Include</label>
       </div>
-      <div class="photo-card">
+      <div class="photo-card" data-item-id="club-newsletter-photo-2" data-vetted="true">
         <img src="/staging-media/club-newsletter-photo-2.jpeg" alt="Club newsletter photo 2" />
-        <div class="caption">Club newsletter photo 2 <span style="color:#0a7;">· REAL</span></div>
-        <div class="source">Source: email frankcng@gmail.com · Fwd: Group Class! + Congrats! · vetted</div>
-        <label class="check"><input type="checkbox" data-photo-id="club-newsletter-photo-2" /> Include</label>
+        <div class="badge-row">
+          <div class="caption">Club newsletter photo 2 <span style="color:#0a7;">· REAL</span></div>
+          <span class="badge vetted" data-badge>VETTED</span>
+        </div>
+        <div class="source">Source: email frankcng@gmail.com · Fwd: Group Class! + Congrats!</div>
+        <label class="check"><input type="checkbox" data-photo-id="club-newsletter-photo-2" data-include-gated /> Include</label>
       </div>
-      <div class="photo-card">
-        <img src="photos/photo-a.png" alt="PRETEND Photo A — SYC podium" width="480" height="320" />
-        <div class="caption">PRETEND A — SYC podium huddle</div>
-        <div class="source">Source: invented placeholder (not from email)</div>
-        <label class="check"><input type="checkbox" data-photo-id="pretend-a" /> Include</label>
+      <div class="photo-card unvetted-card" data-item-id="photo-public-strip-cand" data-vetted="false">
+        <img src="photos/photo-a.png" alt="UNVETTED public tip photo — open strip" width="480" height="320" />
+        <div class="badge-row">
+          <div class="caption">Public tip — open-strip candids (PRETEND)</div>
+          <span class="badge unvetted" data-badge>UNVETTED</span>
+        </div>
+        <div class="source">Source: parent.tips@example.com · public tip seed — try Vet + notes</div>
+        <div class="vet-panel" data-vet-panel>
+          <span class="vet-hint">Why this matters / what the bot should know</span>
+          <textarea data-vet-notes placeholder="e.g. Saturday open gym; faces OK; B&amp;W crop toward blades…"></textarea>
+          <button type="button" class="vet-btn" data-vet-btn>Vet</button>
+        </div>
+        <label class="check blocked"><input type="checkbox" data-photo-id="photo-public-strip-cand" data-include-gated disabled /> Include</label>
       </div>
-      <div class="photo-card">
-        <img src="photos/photo-b.png" alt="PRETEND Photo B — Vancouver GP" width="480" height="320" />
-        <div class="caption">PRETEND B — Vancouver GP strip</div>
-        <div class="source">Source: invented placeholder (not from email)</div>
-        <label class="check"><input type="checkbox" data-photo-id="pretend-b" /> Include</label>
+      <div class="photo-card unvetted-card" data-item-id="pretend-photo-b" data-vetted="false">
+        <img src="photos/photo-b.png" alt="UNVETTED PRETEND Photo B — Vancouver GP" width="480" height="320" />
+        <div class="badge-row">
+          <div class="caption">PRETEND B — Vancouver GP strip</div>
+          <span class="badge unvetted" data-badge>UNVETTED</span>
+        </div>
+        <div class="source">Source: invented placeholder — seed for Vet flow</div>
+        <div class="vet-panel" data-vet-panel>
+          <span class="vet-hint">Why this matters / what the bot should know</span>
+          <textarea data-vet-notes placeholder="e.g. illustrative only; do not imply real bout…"></textarea>
+          <button type="button" class="vet-btn" data-vet-btn>Vet</button>
+        </div>
+        <label class="check blocked"><input type="checkbox" data-photo-id="pretend-photo-b" data-include-gated disabled /> Include</label>
       </div>
-      <div class="photo-card">
+      <div class="photo-card" data-item-id="pretend-photo-c" data-vetted="true">
         <img src="photos/photo-c.png" alt="PRETEND Photo C — Elite FC strip" width="480" height="320" />
-        <div class="caption">PRETEND C — Elite FC open strip</div>
-        <div class="source">Source: invented placeholder (not from email)</div>
-        <label class="check"><input type="checkbox" data-photo-id="pretend-c" /> Include</label>
+        <div class="badge-row">
+          <div class="caption">PRETEND C — Elite FC open strip</div>
+          <span class="badge vetted" data-badge>VETTED</span>
+        </div>
+        <div class="source">Source: invented placeholder (demo already-vetted)</div>
+        <label class="check"><input type="checkbox" data-photo-id="pretend-photo-c" data-include-gated /> Include</label>
       </div>
     </div>
   </section>
@@ -844,15 +915,42 @@
   const statusEl = document.getElementById("status");
   const summaryEl = document.getElementById("summary");
   const globalNotes = document.getElementById("globalNotes");
+  const inboxBody = document.getElementById("stagingInboxBody");
   const PUBLISH = "2026-10-14";
+
+  const KIND_TAG = {
+    fact: "club",
+    tip: "tip",
+    photo: "photo",
+    graf: "draft",
+    signup_row: "signup",
+    comic: "draft",
+    other: "tip",
+  };
+  const KIND_LABEL = {
+    fact: "fact",
+    tip: "tip",
+    photo: "photo",
+    graf: "draft",
+    signup_row: "signup",
+    comic: "comic",
+    other: "other",
+  };
+
+  let stagingItems = [];
 
   function cards() {
     return Array.from(lineup.querySelectorAll(".card"));
   }
 
+  function isVetted(el) {
+    return el && el.getAttribute("data-vetted") === "true";
+  }
+
   function refreshExcluded() {
     cards().forEach((card) => {
-      const on = card.querySelector("[data-include]").checked;
+      const box = card.querySelector("[data-include]");
+      const on = box && !box.disabled && box.checked;
       card.classList.toggle("excluded", !on);
     });
     updateSummary();
@@ -860,13 +958,19 @@
 
   function updateSummary() {
     const all = cards();
-    const inc = all.filter((c) => c.querySelector("[data-include]").checked).length;
+    const inc = all.filter((c) => {
+      const box = c.querySelector("[data-include]");
+      return box && !box.disabled && box.checked;
+    }).length;
+    const unv = all.filter((c) => !isVetted(c)).length;
     summaryEl.innerHTML =
       "<strong>" +
       inc +
       "</strong> of " +
       all.length +
-      " slots included · publish <strong>Tue Oct 14, 2026</strong>";
+      " slots included · <strong>" +
+      unv +
+      "</strong> unvetted on lineup · publish <strong>Tue Oct 14, 2026</strong>";
   }
 
   lineup.addEventListener("change", (e) => {
@@ -913,6 +1017,174 @@
     });
   }
 
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function renderInbox() {
+    if (!inboxBody) return;
+    const rows = stagingItems.slice().sort((a, b) => {
+      // unvetted first, then by created_at
+      if (!!a.vetted !== !!b.vetted) return a.vetted ? 1 : -1;
+      return String(a.created_at || "").localeCompare(String(b.created_at || ""));
+    });
+    inboxBody.innerHTML = rows
+      .map((item) => {
+        const kind = item.kind || "other";
+        const tag = KIND_TAG[kind] || "tip";
+        const label = KIND_LABEL[kind] || kind;
+        const vetted = !!item.vetted;
+        const badge = vetted
+          ? '<span class="badge vetted" data-badge>VETTED</span>'
+          : '<span class="badge unvetted" data-badge>UNVETTED</span>';
+        const sourceBits = [];
+        if (item.from) sourceBits.push(escapeHtml(item.from));
+        if (item.source) sourceBits.push(escapeHtml(item.source));
+        if (item.pretend) sourceBits.push("pretend seed");
+        const source = sourceBits.join(" · ") || "—";
+        let vetCell;
+        if (vetted) {
+          const notes = item.vet_notes
+            ? '<div class="vet-notes-saved">' + escapeHtml(item.vet_notes) + "</div>"
+            : '<span class="vetted-yes">yes</span>';
+          vetCell = notes;
+        } else {
+          vetCell =
+            '<div class="vet-panel" data-vet-panel>' +
+            '<span class="vet-hint">Why this matters / what the bot should know</span>' +
+            '<textarea data-vet-notes placeholder="Notes for the bot…"></textarea>' +
+            '<button type="button" class="vet-btn" data-vet-btn>Vet</button>' +
+            "</div>";
+        }
+        return (
+          "<tr data-item-id=\"" +
+          escapeHtml(item.id) +
+          '" data-vetted="' +
+          (vetted ? "true" : "false") +
+          '">' +
+          '<td><span class="tag ' +
+          tag +
+          '">' +
+          escapeHtml(label) +
+          "</span></td>" +
+          "<td>" +
+          escapeHtml(item.body || item.id) +
+          "</td>" +
+          "<td>" +
+          source +
+          "</td>" +
+          "<td>" +
+          badge +
+          "</td>" +
+          '<td class="actions-cell">' +
+          vetCell +
+          "</td>" +
+          "</tr>"
+        );
+      })
+      .join("");
+  }
+
+  function markHostVetted(host, notes) {
+    if (!host) return;
+    host.setAttribute("data-vetted", "true");
+    host.classList.remove("unvetted-card");
+    const badge = host.querySelector("[data-badge]");
+    if (badge) {
+      badge.className = "badge vetted" + (badge.classList.contains("badge-inline") ? " badge-inline" : "");
+      badge.textContent = "VETTED";
+    }
+    const panel = host.querySelector("[data-vet-panel]");
+    if (panel) {
+      const saved = notes
+        ? '<div class="vet-notes-saved">Notes: ' + escapeHtml(notes) + "</div>"
+        : "";
+      panel.outerHTML = saved;
+    }
+    // Enable include checkboxes inside host
+    host.querySelectorAll("[data-include], [data-include-gated]").forEach((box) => {
+      box.disabled = false;
+      const lab = box.closest("label");
+      if (lab) lab.classList.remove("blocked");
+    });
+    // Update Frank-vetted meta on lineup cards
+    const meta = host.querySelector(".meta-line");
+    if (meta && /Frank-vetted:/.test(meta.innerHTML)) {
+      meta.innerHTML = meta.innerHTML.replace(
+        /Frank-vetted:\s*(?:no|<strong>yes<\/strong>)/,
+        "Frank-vetted: <strong>yes</strong>"
+      );
+    }
+  }
+
+  async function vetItem(itemId, notes, host) {
+    const res = await fetch("/vet", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: itemId, vet_notes: notes }),
+    });
+    let data;
+    try {
+      data = await res.json();
+    } catch (e) {
+      throw new Error("bad response (" + res.status + ")");
+    }
+    if (!res.ok || !data.ok) throw new Error((data && data.error) || "vet failed");
+    // Update local staging cache
+    const idx = stagingItems.findIndex((i) => i.id === itemId);
+    if (idx >= 0) stagingItems[idx] = data.item;
+    else stagingItems.push(data.item);
+    // Mark all hosts with this item id
+    document.querySelectorAll('[data-item-id="' + itemId + '"]').forEach((el) => {
+      markHostVetted(el, notes);
+    });
+    renderInbox();
+    refreshExcluded();
+    return data;
+  }
+
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest("[data-vet-btn]");
+    if (!btn) return;
+    e.preventDefault();
+    const host = btn.closest("[data-item-id]");
+    if (!host) return;
+    const itemId = host.getAttribute("data-item-id");
+    const ta = host.querySelector("[data-vet-notes]");
+    let notes = ta ? ta.value.trim() : "";
+    if (!notes) {
+      const ok = window.confirm(
+        "No notes yet. Notes help the bot understand context you already see. Vet without notes anyway?"
+      );
+      if (!ok) {
+        if (ta) ta.focus();
+        return;
+      }
+    }
+    btn.disabled = true;
+    try {
+      await vetItem(itemId, notes, host);
+      statusEl.className = "ok";
+      statusEl.removeAttribute("style");
+      statusEl.innerHTML =
+        "Vetted <code>" +
+        escapeHtml(itemId) +
+        "</code>" +
+        (notes ? " · notes saved" : " · no notes") +
+        " · persisted to <code>staging/weeks/next/items.json</code> + vet-log.";
+    } catch (err) {
+      statusEl.className = "err";
+      statusEl.removeAttribute("style");
+      statusEl.textContent =
+        "Vet failed: " + (err && err.message ? err.message : String(err));
+      btn.disabled = false;
+    }
+  });
+
   function buildPayload() {
     const order = [];
     const includedSlots = [];
@@ -923,19 +1195,27 @@
       const slot = card.dataset.slot;
       const name = card.querySelector(".slot-name").textContent.trim();
       const headline = card.querySelector(".headline").textContent.trim();
-      const include = card.querySelector("[data-include]").checked;
+      const box = card.querySelector("[data-include]");
+      const include = !!(box && !box.disabled && box.checked);
       const noteInput = card.querySelector("[data-notes-for]");
       const note = noteInput ? noteInput.value.trim() : "";
+      const vetted = isVetted(card);
 
       order.push(slot);
-      const entry = { slot, name, headline };
+      const entry = {
+        slot,
+        name,
+        headline,
+        itemId: card.getAttribute("data-item-id") || null,
+        vetted,
+      };
       if (include) includedSlots.push(entry);
       else excludedSlots.push(entry);
       if (note) slotNotes[slot] = note;
     });
 
     const photoIncludes = Array.from(
-      document.querySelectorAll("#photoDesk [data-photo-id]:checked")
+      document.querySelectorAll("#photoDesk [data-photo-id]:checked:not(:disabled)")
     ).map((el) => el.getAttribute("data-photo-id"));
 
     return {
@@ -952,7 +1232,6 @@
   }
 
   submitBtn.addEventListener("click", async () => {
-    // Clear status via class only — never set inline display:none (it overrides #status.ok / .err)
     statusEl.className = "";
     statusEl.removeAttribute("style");
     statusEl.textContent = "";
@@ -984,14 +1263,39 @@
           : " · photos: none");
     } catch (err) {
       statusEl.className = "err";
-      statusEl.textContent = "Submit failed: " + (err && err.message ? err.message : String(err));
+      statusEl.textContent =
+        "Submit failed: " + (err && err.message ? err.message : String(err));
     } finally {
       submitBtn.disabled = false;
     }
   });
 
+  async function loadStaging() {
+    try {
+      const res = await fetch("/api/items");
+      const data = await res.json();
+      stagingItems = Array.isArray(data.items) ? data.items : [];
+    } catch (e) {
+      stagingItems = [];
+      console.warn("Could not load /api/items", e);
+    }
+    renderInbox();
+    // Sync UI from staging file (e.g. after prior vet)
+    stagingItems.forEach((item) => {
+      if (!item.vetted) return;
+      document.querySelectorAll('[data-item-id="' + item.id + '"]').forEach((el) => {
+        if (el.getAttribute("data-vetted") !== "true") {
+          markHostVetted(el, item.vet_notes || "");
+        }
+      });
+    });
+    refreshExcluded();
+  }
+
   refreshExcluded();
+  loadStaging();
 })();
+</script>
 </script>
 </body>
 </html>

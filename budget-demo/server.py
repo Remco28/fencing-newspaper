@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """En Garde Gazette — pretend editorial budget server (stdlib only).
 
-Serves index.html at / and accepts POST /submit, writing:
-  submissions/budget-YYYYMMDD-HHMMSS.json
-  submissions/approvals.json  (latest overwrite)
+Serves index.html at / and accepts:
+  POST /submit  → submissions/budget-*.json + approvals.json
+  POST /vet     → update staging/weeks/next/items.json + append vet-log
+  GET  /api/items → staging items JSON
 Bind: 127.0.0.1:8766
 """
 from __future__ import annotations
@@ -17,8 +18,12 @@ HOST = "127.0.0.1"
 PORT = 8766
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
-STAGING_MEDIA = REPO / "staging" / "weeks" / "next" / "media"
+STAGING_WEEK = REPO / "staging" / "weeks" / "next"
+STAGING_MEDIA = STAGING_WEEK / "media"
+STAGING_ITEMS = STAGING_WEEK / "items.json"
+STAGING_VET_LOG = STAGING_WEEK / "vet-log.jsonl"
 SUBMISSIONS = ROOT / "submissions"
+SUBMISSIONS_VET_LOG = SUBMISSIONS / "vet-log.jsonl"
 MIME = {
     ".html": "text/html; charset=utf-8",
     ".css": "text/css; charset=utf-8",
@@ -32,8 +37,35 @@ MIME = {
 }
 
 
+def _now() -> datetime:
+    return datetime.now().astimezone()
+
+
+def _load_items() -> dict:
+    if not STAGING_ITEMS.is_file():
+        return {"target_week": "next", "items": []}
+    return json.loads(STAGING_ITEMS.read_text(encoding="utf-8"))
+
+
+def _save_items(data: dict) -> None:
+    STAGING_WEEK.mkdir(parents=True, exist_ok=True)
+    data["updated_at"] = _now().isoformat(timespec="seconds")
+    text = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+    STAGING_ITEMS.write_text(text, encoding="utf-8")
+
+
+def _append_vet_log(entry: dict) -> None:
+    line = json.dumps(entry, ensure_ascii=False) + "\n"
+    STAGING_WEEK.mkdir(parents=True, exist_ok=True)
+    SUBMISSIONS.mkdir(parents=True, exist_ok=True)
+    with STAGING_VET_LOG.open("a", encoding="utf-8") as fh:
+        fh.write(line)
+    with SUBMISSIONS_VET_LOG.open("a", encoding="utf-8") as fh:
+        fh.write(line)
+
+
 class BudgetHandler(BaseHTTPRequestHandler):
-    server_version = "EnGardeBudget/1.0"
+    server_version = "EnGardeBudget/1.1"
 
     def log_message(self, fmt: str, *args) -> None:
         print(f"[{self.log_date_time_string()}] {self.address_string()} {fmt % args}")
@@ -50,10 +82,27 @@ class BudgetHandler(BaseHTTPRequestHandler):
         raw = json.dumps(payload, indent=2).encode("utf-8")
         self._send(code, raw, "application/json; charset=utf-8")
 
+    def _read_json_body(self) -> tuple[dict | None, dict | None]:
+        length = int(self.headers.get("Content-Length", "0") or 0)
+        if length <= 0 or length > 2_000_000:
+            return None, {"ok": False, "error": "bad Content-Length"}
+        raw = self.rfile.read(length)
+        try:
+            payload = json.loads(raw.decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            return None, {"ok": False, "error": f"invalid JSON: {exc}"}
+        if not isinstance(payload, dict):
+            return None, {"ok": False, "error": "payload must be a JSON object"}
+        return payload, None
+
     def do_GET(self) -> None:
         path = self.path.split("?", 1)[0]
         if path in ("/", "/index.html"):
             target = ROOT / "index.html"
+        elif path in ("/api/items", "/staging/items.json"):
+            data = _load_items()
+            self._json(200, data)
+            return
         elif path.startswith("/staging-media/"):
             # Real email-extracted photos live under staging/weeks/<target>/media/
             rel = path[len("/staging-media/") :]
@@ -85,28 +134,22 @@ class BudgetHandler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         path = self.path.split("?", 1)[0]
-        if path != "/submit":
+        if path == "/submit":
+            self._handle_submit()
+        elif path == "/vet":
+            self._handle_vet()
+        else:
             self._json(404, {"ok": False, "error": "not found"})
-            return
 
-        length = int(self.headers.get("Content-Length", "0") or 0)
-        if length <= 0 or length > 2_000_000:
-            self._json(400, {"ok": False, "error": "bad Content-Length"})
+    def _handle_submit(self) -> None:
+        payload, err = self._read_json_body()
+        if err:
+            self._json(400, err)
             return
-
-        raw = self.rfile.read(length)
-        try:
-            payload = json.loads(raw.decode("utf-8"))
-        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
-            self._json(400, {"ok": False, "error": f"invalid JSON: {exc}"})
-            return
-
-        if not isinstance(payload, dict):
-            self._json(400, {"ok": False, "error": "payload must be a JSON object"})
-            return
+        assert payload is not None
 
         SUBMISSIONS.mkdir(parents=True, exist_ok=True)
-        now = datetime.now().astimezone()
+        now = _now()
         stamp = now.strftime("%Y%m%d-%H%M%S")
         payload.setdefault("pretend", True)
         payload["submittedAt"] = now.isoformat(timespec="seconds")
@@ -130,18 +173,94 @@ class BudgetHandler(BaseHTTPRequestHandler):
             },
         )
 
+    def _handle_vet(self) -> None:
+        payload, err = self._read_json_body()
+        if err:
+            self._json(400, err)
+            return
+        assert payload is not None
+
+        item_id = payload.get("id")
+        if not isinstance(item_id, str) or not item_id.strip():
+            self._json(400, {"ok": False, "error": "id required"})
+            return
+        item_id = item_id.strip()
+
+        notes_raw = payload.get("vet_notes", payload.get("notes", ""))
+        if notes_raw is None:
+            notes_raw = ""
+        if not isinstance(notes_raw, str):
+            self._json(400, {"ok": False, "error": "vet_notes must be a string"})
+            return
+        vet_notes = notes_raw.strip()
+
+        data = _load_items()
+        items = data.get("items")
+        if not isinstance(items, list):
+            self._json(500, {"ok": False, "error": "items.json malformed"})
+            return
+
+        found = None
+        for item in items:
+            if isinstance(item, dict) and item.get("id") == item_id:
+                found = item
+                break
+        if found is None:
+            self._json(404, {"ok": False, "error": f"item not found: {item_id}"})
+            return
+
+        now = _now()
+        already = bool(found.get("vetted"))
+        found["vetted"] = True
+        found["vetted_at"] = now.isoformat(timespec="seconds")
+        found["vetted_by"] = "frank"
+        if vet_notes:
+            found["vet_notes"] = vet_notes
+        elif "vet_notes" not in found:
+            found["vet_notes"] = None
+
+        _save_items(data)
+
+        log_entry = {
+            "id": item_id,
+            "vetted": True,
+            "vetted_at": found["vetted_at"],
+            "vetted_by": "frank",
+            "vet_notes": found.get("vet_notes"),
+            "already_vetted": already,
+            "kind": found.get("kind"),
+            "body": found.get("body"),
+            "source": "budget-page",
+        }
+        _append_vet_log(log_entry)
+
+        self._json(
+            200,
+            {
+                "ok": True,
+                "item": found,
+                "items_path": "staging/weeks/next/items.json",
+                "vet_log": "staging/weeks/next/vet-log.jsonl",
+                "vet_log_demo": "budget-demo/submissions/vet-log.jsonl",
+            },
+        )
+
 
 def main() -> None:
     SUBMISSIONS.mkdir(parents=True, exist_ok=True)
-    # keep empty dir in git-friendly shape without committing submissions
+    STAGING_WEEK.mkdir(parents=True, exist_ok=True)
     keep = SUBMISSIONS / ".gitkeep"
     if not keep.exists():
         keep.write_text("", encoding="utf-8")
+    if not STAGING_VET_LOG.exists():
+        STAGING_VET_LOG.write_text("", encoding="utf-8")
 
     httpd = ThreadingHTTPServer((HOST, PORT), BudgetHandler)
     print(f"En Garde Gazette budget demo → http://{HOST}:{PORT}/")
     print(f"Serving {ROOT}")
     print("POST /submit → submissions/budget-*.json + approvals.json")
+    print("POST /vet    → staging/weeks/next/items.json + vet-log.jsonl")
+    print("GET  /api/items → staging items")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:

@@ -1,6 +1,6 @@
-# Fencing Newspaper — Plan v3.4
-Date: 2026-10-06
-Status: locked direction from Frank, details in progress (v3.5: email→photo extract — MIME + remote HTML images → staging media; budget desk shows real newsletter photos + PRETEND placeholders. Prior v3.4: scoreboard cut; photo desk thumbs; submit UX. v3.3: Staging→Clean→Budget→Proof; see STAGING.md)
+# Fencing Newspaper — Plan v3.6
+Date: 2026-10-07
+Status: locked direction from Frank, details in progress (v3.6: budget-page **Vet + notes** UX — UNVETTED badge, Include gated, `vet_notes` on staging item, POST `/vet`. v3.5: email→photo extract. v3.4: scoreboard cut; photo desk thumbs; submit UX. v3.3: Staging→Clean→Budget→Proof; see STAGING.md)
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -108,7 +108,7 @@ Why fixed templates: same readability + reliable print. New template = design ta
 **Tips / mail (locked v3.3):**
 - Small public ask OK: tips & photos to `efc.weekly@agentmail.to` (editor decides).
 - Only mail from `frankcng@gmail.com` is **auto-Frank-vetted**.
-- Other senders → staging as **unvetted**. Unvetted items MAY appear on the budget page labeled unvetted; they cannot be included in the issue until Frank vets them (promote / forward-from-frank / checkbox that requires vet first).
+- Other senders → staging as **unvetted**. Unvetted items MAY appear on the budget page labeled **UNVETTED**; Include stays disabled until Frank vets them. **Primary vet UX:** budget-page **Vet + notes** (`vet_notes` stored on the item). Chat promote / forward-from-frank still OK as alternates.
 
 **Chat → staging (locked v3.3):** When Frank tells the bot a fact/idea in chat, default target = **next weekly issue** staging unless he names another week. Materials can accumulate for subsequent weeks in advance.
 
@@ -191,16 +191,18 @@ owns narrative + decisions. On conflict, the canonical home wins.
 - [ ] Build fetch per SOURCES.md checklist + email-ingest → staging (per-source degrade behavior)
 - [x] Budget demo: photo desk thumbs + multi-select; submit → timestamped + approvals.json (pretend)
 - [x] Email media extract first pass: remote HTML images → `staging/weeks/next/media/` + manifest; budget desk shows real + PRETEND (v3.5)
-- [ ] Budget page (prod): show unvetted labeled; block include until vetted; write approvals.json
+- [x] Budget demo (v3.6): UNVETTED badge + Vet+notes on page; Include gated; POST `/vet` → items.json + vet-log
+- [ ] Budget page (prod): same vet UX + write issue approvals.json
 - [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot
 - [ ] See also: STAGING.md, SOURCES.md, SECTIONS-MENU.md, REDDIT-SETUP.md
 
-## 10. Approval design (locked 2026-10-06; unvetted rule v3.3; photo desk v3.4; email media extract v3.5)
+## 10. Approval design (locked 2026-10-06; unvetted rule v3.3; photo desk v3.4; email media extract v3.5; Vet+notes v3.6)
 - Primary: LOCAL budget page on Musketeer's computer (Grok Bot box). Stories + **Photo desk**
   with visible B&W-as-printed thumbnails and Include checkboxes (multi-select → `photoIncludes`).
   Slot include checkboxes for the lineup. **Only vetted items can be included** in the issue
-  lineup; unvetted tips may appear on the page labeled unvetted but include is blocked until
-  Frank vets (promote / forward-from-frank / vet-first checkbox).
+  lineup; unvetted tips/photos appear labeled **UNVETTED** with Include disabled until Frank
+  hits **Vet** and (strongly encouraged) adds notes for the bot. Chat promote remains an
+  alternate. Demo: `POST /vet` updates `staging/weeks/next/items.json` + `vet-log.jsonl`.
   Submit POSTs JSON → timestamped `submissions/budget-*.json` AND overwrites
   `submissions/approvals.json` (demo) / issue `approvals.json` (prod). Frank works on desktop, never phone.
 - Chat is DOORBELL only: the bot pings "budget ready" / "proof ready" — no approval state
