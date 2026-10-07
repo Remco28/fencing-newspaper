@@ -1,0 +1,104 @@
+{
+  "publishDate": "2026-10-14",
+  "pretend": true,
+  "includedSlots": [
+    {
+      "slot": "lead",
+      "name": "Lead story",
+      "headline": "Canadian epeeist edges world No. 4 in Vancouver Grand Prix final",
+      "itemId": "draft-lead-vancouver",
+      "vetted": true
+    },
+    {
+      "slot": "club-results",
+      "name": "Club results box",
+      "headline": "Ben Gutenberg SYC — Elite FC finishes",
+      "itemId": "result-syc",
+      "vetted": true
+    },
+    {
+      "slot": "ratings",
+      "name": "Ratings earned",
+      "headline": "New letters on the wall",
+      "itemId": "result-ratings-invented",
+      "vetted": true
+    },
+    {
+      "slot": "secondary-a",
+      "name": "Secondary A",
+      "headline": "USA Fencing posts revised youth points timeline for winter",
+      "itemId": "draft-secondary-usa",
+      "vetted": true
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ HS roundup",
+      "headline": "Epee notebooks — early duals",
+      "itemId": "tip-public-chatham-dual",
+      "vetted": true
+    },
+    {
+      "slot": "signup",
+      "name": "Signup board",
+      "headline": "Who’s entered — go cheer",
+      "itemId": "signup-medeo",
+      "vetted": true
+    },
+    {
+      "slot": "club-events",
+      "name": "Club events",
+      "headline": "This week at Elite FC",
+      "itemId": "club-events-efc",
+      "vetted": true
+    },
+    {
+      "slot": "tv",
+      "name": "TV / streaming",
+      "headline": "Where to watch",
+      "itemId": "tip-tv-replay",
+      "vetted": true
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "secondary-b",
+      "name": "Secondary B",
+      "headline": "Local clubs trade strip space as fall calendar stacks up",
+      "itemId": "draft-secondary-nj",
+      "vetted": false
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines",
+      "headline": "Closes soon",
+      "itemId": "tip-deadlines-invented",
+      "vetted": false
+    },
+    {
+      "slot": "comic",
+      "name": "Comic",
+      "headline": "“En garde, coffee first”",
+      "itemId": "tip-comic",
+      "vetted": false
+    }
+  ],
+  "photoIncludes": [
+    "club-newsletter-photo-1"
+  ],
+  "notes": "Pretend run. Prefer Medeo signup + SYC results. Slip to Tuesday because club fenced Monday. Cut comic + TV unless inches free.",
+  "slotNotes": {},
+  "order": [
+    "lead",
+    "club-results",
+    "ratings",
+    "secondary-a",
+    "secondary-b",
+    "nj-hs",
+    "signup",
+    "club-events",
+    "deadlines",
+    "comic",
+    "tv"
+  ],
+  "submittedAt": "2026-10-07T00:10:27-04:00"
+}
