@@ -1,7 +1,8 @@
-# Fencing Newspaper — Plan v3
+# Fencing Newspaper — Plan v3.1
 Date: 2026-10-06
-Status: locked direction from Frank, details in progress (v3: signup board both days, Thursday = local last-minute, sources expanded, Reddit auth answered)
-Project folder: `~/Dev/fencing-newspaper` (moved from `~/Projects/fencing-newspaper` on 2026-10-06 — wrong-computer oops)
+Status: locked direction from Frank, details in progress (v3.1: AgentMail inbox + box/GitHub storage locked 2026-10-06 evening)
+Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
+Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
 
 ## 1. What we're building (v2 locked)
@@ -98,24 +99,28 @@ Rules:
 - Content/ layout split stands: AI fills `issue.json` (strict schema + word limits + epee-only), template renders `paper.pdf` deterministically (HTML + print CSS → Chromium headless or WeasyPrint).
 - US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art only (photos pending photo-desk design).
 - ~600–700 words max per issue.
-- Per-issue folder: `issues/<date>-<edition>/issue.json + sources.json + emails/ + paper.pdf`.
+- Per-issue folder: `issues/<date>-<edition>/` with `issue.json`, `sources.json`, derived `inputs/` (parsed results/club/frank extras), `approvals.json`, `paper.pdf`. Raw email bodies stay in AgentMail (not in git); cite them by message-ID in `sources.json`.
 
 Why rotate fixed templates instead of free design: same readability + reliable print, but visual variety. New template = design task with test print, never a weekly AI decision.
 
-## 5. Inputs — email is the single channel (locked 2026-10-06)
+## 5. Inputs — AgentMail is the single channel (locked 2026-10-06 evening)
 
-Frank sends EVERYTHING via email, including comics he draws himself. The bot also does independent
-research per SOURCES.md. Allowlisted inbox; every item stored per-issue with message-ID.
+**Inbox (locked):** `efc.weekly@agentmail.to` (display name: The Elite Fencer's Club Weekly), via the AgentMail connector — **not Gmail**. Frank's Gmail stays for other work (rentals, etc.).
+
+Frank sends EVERYTHING via email to that address, including comics he draws himself. The bot also does independent research per SOURCES.md. Allowlisted inbox; every ingested item recorded per-issue by AgentMail message-ID in `sources.json`.
+
 1. **Results/schedule app → bot:** structured email (JSON or fixed-format body + optional PDF attach): tournament, event, day, Elite FC entrants/results → `inputs/results-<date>.json`.
 2. **Club newsletter forwarded:** announcements, events, ratings → `inputs/club-<date>.md`.
 3. **Frank's extras:** comics (image attach), tips/thread links, guest pieces → `inputs/frank-<date>/`.
 
-Needs: dedicated inbox address, allowlist (only Frank's app + Frank's forwards accepted), attachment cap, spam fallback = ignore + flag in preview.
+Still needed: allowlist (only Frank's app + Frank's forwards accepted), attachment cap, spam fallback = ignore + flag in preview, results-app email schema.
+
+**Storage (locked 2026-10-06 evening):** Working copy on Musketeer's computer at `/workspace/fencing-newspaper`. Everything except raw emails syncs to GitHub (issue folders, PDFs, approvals, prototypes, specs). Raw MIME/bodies stay in AgentMail. Weekly `git push` is the baseline; optional push after a closed issue. PDFs may be archived elsewhere later for posterity — low stakes, fun project, not mission-critical. Secrets stay in `.env` on the runner, never in git.
 
 ## 6. Automation + verification
 
 - Scheduler: Grok Bot or OpenAI Dots runs `make-issue.sh --edition monday|thursday` at set times (Mon ~6am, Thu ~6am — adjustable).
-- V1: bot builds PDF + **waits for Frank's approve** (preview link / email). No auto-print until approved.
+- V1: bot builds PDF + **waits for Frank's approve** on the local budget/proof page (chat is doorbell only). No auto-print until approved.
 - Later: `lp -d club-printer paper.pdf` auto-print after N clean issues.
 - API keys live in env file on the runner, never in git. Allowlisted inbox only.
 
@@ -144,13 +149,15 @@ Resolved:
 - [x] Paper name — En Garde Gazette / The Elite Fencers Club Weekly (locked)
 - [x] V1 section lineup narrowed (CONTENT-HIERARCHY.md is canonical for slot order)
 - [x] Template A (Monday results) built through v6 + locked visual rules (STYLE-GUIDE.md)
+- [x] Inbox address — AgentMail `efc.weekly@agentmail.to` (not Gmail)
+- [x] Storage — box working copy + GitHub sync; everything except raw emails; PDFs in git for now
 
 Still open:
 1. Exact run times (Mon/Thu 6am OK? — all times US Eastern).
-2. Inbox address + email format from results app (define schema).
+2. Results-app email schema (fields: tournament, event, day, entrants, results, source IDs) + allowlist entries.
 3. Thursday data cutoff (proposal: entries as of Wed 8pm + fresh Thursday-morning refetch).
-4. Archive PDFs in git or local-only? (proposal: commit issue.json + sources.json, ignore PDFs/email bodies)
-5. Printer model + who loads paper.
+4. Printer model + who loads paper.
+5. Optional later: archive older PDFs outside git for posterity (not required).
 
 Canonical homes: CONTENT-HIERARCHY.md owns slot order + budgets · STYLE-GUIDE.md owns all
 visual rules · SOURCES.md owns the fetch checklist · SECTIONS-MENU.md is the option menu +
@@ -159,7 +166,8 @@ past verdicts · PLAN owns narrative + decisions. On conflict, the canonical hom
 ## 9. Next steps
 - [x] Lock name (En Garde Gazette) + v1 lineup (CONTENT-HIERARCHY.md)
 - [x] Build template A (Monday results) HTML/CSS, B&W test render
-- [ ] Confirm run times + inbox address + Thursday cutoff with Frank
+- [x] Lock inbox address (AgentMail `efc.weekly@agentmail.to`) + box/GitHub storage
+- [ ] Confirm run times + Thursday cutoff with Frank
 - [ ] Define results-app email schema (fields: tournament, event, day, entrants, results, source IDs)
 - [ ] Build template B (Thursday signups) from locked patterns + zoomed QA
 - [ ] Build fetch per SOURCES.md checklist + email-ingest scripts (per-source degrade behavior)
@@ -167,7 +175,7 @@ past verdicts · PLAN owns narrative + decisions. On conflict, the canonical hom
 - [ ] See also: SOURCES.md (standing checklist), SECTIONS-MENU.md (full options), REDDIT-SETUP.md
 
 ## 10. Approval design (locked 2026-10-06)
-- Primary: LOCAL budget page on the club computer (Musketeer). Stories + B&W-as-printed
+- Primary: LOCAL budget page on Musketeer's computer (Grok Bot box). Stories + B&W-as-printed
   photo previews, approve checkboxes, photo-include checkboxes. Submit writes timestamped
   `approvals.json` the bot reads. Frank works on desktop, never phone.
 - Chat is DOORBELL only: the bot pings "budget ready" — no approval state lives in chat

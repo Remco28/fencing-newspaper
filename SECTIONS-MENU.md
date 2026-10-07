@@ -82,7 +82,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 49. Masthead ✅ — name, date, edition, issue #. (Locked.)
 50. Table of contents — ❌ skip (1 sheet, pointless).
 51. Staff box 🔶 — "Editor: Frank". 1 line, fine.
-52. How to read / submit footer ✅ — "tips by email to X; editor decides". (No submissions, but tips path needed.)
+52. How to read / submit footer ✅ — "tips by email to efc.weekly@agentmail.to; editor decides". (No submissions, but tips path needed.)
 53. Archive pointer ✅ — "past issues at <link>". 1 line.
 
 ## Locked v1 lineup (from verdicts 2026-10-06 — supersedes the proposal below)

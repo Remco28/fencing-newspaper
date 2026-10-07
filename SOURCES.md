@@ -7,7 +7,7 @@ Epee only. Record every fact in `sources.json` (URL + date, or email message-ID 
 - [ ] USA Fencing epee feed: https://www.usafencing.org/news/epee
 - [ ] NJ.com HS fencing (boys + girls): https://highschoolsports.nj.com/boysfencing (+ girls equivalent, NJSIAA posts)
 - [ ] AskFRED upcoming near NJ (epee filter, note check-in close + staleness warning): https://www.askfred.net/tournaments
-- [ ] Inbox (SINGLE input channel — Frank emails everything, incl. his own comics): results-app slice (tournaments, entrants, results) + forwarded club newsletter + tips/thread links + comics/guest pieces
+- [ ] Inbox **`efc.weekly@agentmail.to`** (AgentMail — SINGLE input channel; not Gmail). Frank emails everything, incl. his own comics: results-app slice (tournaments, entrants, results) + forwarded club newsletter + tips/thread links + comics/guest pieces. Cite by message-ID in `sources.json`; do not commit raw MIME.
 
 ## Weekly / as-needed
 - [ ] FencingTracker club page + NJ event pages: https://fencingtracker.com
@@ -24,7 +24,7 @@ Epee only. Record every fact in `sources.json` (URL + date, or email message-ID 
 - [ ] fencing.net: open news archive + guides (https://fencing.net) — epee 101, gear/armory explainers for Fencing 101 rotation; puns page for the jokes box. Forums are sunset but archives are curated.
 - [ ] FIE events calendar (https://fie.org/events) — upcoming epee World Cups/satellites with dates, for Thursday previews.
 - [ ] YouTube channel RSS feeds (no login; verify channel IDs at build time — FIE, USA Fencing) — "watch this bout" links.
-- [ ] Newsletters by email: subscribe the newspaper inbox to USA Fencing + FIE updates — arrives as input, zero scraping.
+- [ ] Newsletters by email: subscribe `efc.weekly@agentmail.to` to USA Fencing + FIE updates — arrives as input, zero scraping.
 
 ## Social verdict (tested 2026-10-06)
 - X: firecrawl fails outright (login wall since 2023; free API killed, paid tiers ~$100/mo). Snippets via searxng only + forwarded links.

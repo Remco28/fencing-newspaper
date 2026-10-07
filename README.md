@@ -17,7 +17,14 @@
 (FLAG > 0.75in) and per-row column spread (FLAG > 0.5in). Any FLAG fails the build
 unless `--allow-flag` is passed. See STYLE-GUIDE.md §7 for the full QA checklist.
 
+## Ops (locked 2026-10-06 evening)
+- **Mail:** AgentMail `efc.weekly@agentmail.to` only (not Gmail). Tips/forwards go there.
+- **Working copy:** `/workspace/fencing-newspaper` on Musketeer's computer.
+- **Durable store:** sync this repo to GitHub weekly (and after a finished issue if you care). Everything except raw email bodies.
+- **Approvals:** local HTML budget/proof page on the box; chat is doorbell only.
+
 ## Repo layout
 - `prototype/` — layout sandbox (versioned `monday-vN.html` + PDFs, `render.py`)
 - `masthead001.png` — nameplate art (cropped to opaque bbox)
-- `scripts/` (future) — fetch, ingest, writer. `issues/` output stays local (gitignored).
+- `scripts/` (future) — fetch, ingest, writer
+- `issues/` (future) — per-edition output (`issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`); committed. Raw emails stay in AgentMail.
