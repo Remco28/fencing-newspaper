@@ -1,4 +1,4 @@
-# Winter Camp reminder — draft v2 (Issue No. 2, week of Oct 12)
+# Winter Camp reminder — draft v3 (Issue No. 2, week of Oct 12)
 
 Item: `chat-winter-camp-reminder` · Angle/tone vetted: Frank (chat, 2026-10-07 18:53 ET) · Facts: club Mailchimp email (Frank fwd 2026-10-07 7:11 PM ET) = source of truth · Still pending: price, sign-up method
 
@@ -6,7 +6,9 @@ Item: `chat-winter-camp-reminder` · Angle/tone vetted: Frank (chat, 2026-10-07 
 Winter Camp: Sign Up Now
 
 ## Body (print)
-Elite FC Winter Camp runs December 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels. Call it a tune-up for the second half of the season: footwork, technical and tactical drills, strength and conditioning, and creative games. It's also a good excuse to escape visiting relatives for a few hours. The club asks campers to register as soon as possible. Cost: [NEED: price]. To sign up: [NEED: sign-up method/link].
+Elite FC Winter Camp runs December 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels. Call it a tune-up for the second half of the season: footwork, technical and tactical drills, strength and conditioning, and creative games. It's also a good excuse to escape visiting relatives for a few hours. The club asks campers to register as soon as possible.
+
+Print version ends on "register as soon as possible" (Desk, 2026-10-07, told Frank in chat). Add one sentence if Frank supplies a price or signup link; don't print placeholders.
 
 ## Fact provenance (all from one email)
 Email: "Group Class! + Winter Camp❄️", Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>, Wed Sep 30, 2026 10:04 AM; forwarded by Frank Ng <frankcng@gmail.com> to efc.weekly@agentmail.to, Wed Oct 7, 2026 7:11 PM ET ("Fwd: Group Class! + Winter Camp❄️"). Full text: ../sources/email-fwd-winter-camp-2026-10-07.txt
