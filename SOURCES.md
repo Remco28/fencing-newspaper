@@ -8,8 +8,8 @@ Times = US Eastern. Full ops loop (chat / email / gates): **STAGING.md § Ops ca
 
 | Pass | When | What |
 |------|------|------|
-| **Mid-week skim** | Wednesday | Light: Google News RSS (`fencing+epee` + `+New Jersey`) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging. Not a full checklist run. |
-| **Publish-morning full pass** | When aiming to ship (usually **Mon/Tue**; later OK) | Full **Every run** checklist below. Soft: see **Club-results hold preference** if members fence Monday. |
+| **Mid-week skim** | Wednesday | Light: Google News RSS (`fencing+epee` + `+New Jersey`) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging; **X skim** (≈5–10 calls, see § X). Not a full checklist run. |
+| **Publish-morning full pass** | When aiming to ship (usually **Mon/Tue**; later OK) | Full **Every run** checklist below, incl. **X full pass** (≈15–25 calls, see § X). Soft: see **Club-results hold preference** if members fence Monday. |
 | **Email** | Daily morning light pass + second pass right before HTML budget | Ingest → staging, `processed` label, media extract (STAGING.md). |
 
 Keep all checklists below; do not delete sources when editing cadence.
@@ -37,6 +37,7 @@ Keep all checklists below; do not delete sources when editing cadence.
 - [ ] USA Fencing epee feed: https://www.usafencing.org/news/epee
 - [ ] NJ.com HS fencing (boys + girls): https://highschoolsports.nj.com/boysfencing (+ girls equivalent, NJSIAA posts)
 - [ ] AskFRED upcoming near NJ (epee filter, note check-in close + staleness warning): https://www.askfred.net/tournaments
+- [ ] X full pass (see **§ X (Twitter)**): tier-A timelines + 3–4 targeted searches; stage leads unvetted with post URL + time.
 - [ ] Inbox **`efc.weekly@agentmail.to`** (AgentMail — SINGLE input channel; not Gmail). Flexible: Frank, apps, bots, newsletters, tips — stage all with provenance; never drop unknown senders. **Auto-vet allowlist:** `frankcng@gmail.com`, `chunkymonkey@agentmail.to` (Frank’s other bot / results-app digests), `elitefencersclub@111617670.mailchimpapp.com` (club Mailchimp). Others → unvetted until Frank vets. Cite by message-ID in `sources.json`; do not commit raw MIME. Detail: **STAGING.md § Tips / mail**.
 
 ## Weekly / as-needed
@@ -57,9 +58,38 @@ Keep all checklists below; do not delete sources when editing cadence.
 - [ ] Newsletters by email: subscribe `efc.weekly@agentmail.to` to USA Fencing + FIE updates — arrives as input, zero scraping.
 
 ## Social verdict (tested 2026-10-06)
-- X: firecrawl fails outright (login wall since 2023; free API killed, paid tiers ~$100/mo). Snippets via searxng only + forwarded links.
+- X: firecrawl fails outright (login wall since 2023). **Superseded 2026-10-08:** the built-in read-only `x` tools work. See **§ X (Twitter)** below.
 - Instagram: profile fetch returns app-deep-link stubs, zero post content. Same wall. Exception: our OWN @elitefencersclub posts could come via Meta Graph API with the club's own token (our data, no scraping issue) — optional later.
 - Rule for all social: never a fact source; angles only, verified against Tier 1–3 before print.
+
+## X (Twitter) — added 2026-10-08 (v3.22)
+Tested 2026-10-08 with the built-in **read-only** `x` tools (via GetDynamicTools / CallDynamicTool, namespace `x`).
+**Vetted account list (tiers A/B/C + rejected + not-found): `sources/x-accounts.md`.** Only use handles from that
+list. Verify any new handle with `get_users_by_usernames` before adding it, and never guess.
+
+**Rules**
+- **An X post is a lead, not a fact.** The one exception is a **tier-A** primary account talking about *its own* news
+  (FIE on its own events, a college program on its own roster/results, a venue on its own dates). Even then,
+  keep provenance on the staging item: post URL, post time (UTC + ET), and retrieved_at.
+- Everything else (media, commentary, community) stages **unvetted** and gets checked against Tier 1–3 web sources
+  or Frank before print. "Nothing gets printed as fact without verification."
+- **Opinions** can run attributed, Overheard style ("one fan on X…"), with **no usernames** unless the account is an
+  official org or a public figure. Same as Overheard on Reddit.
+- **Never** list, quote, or name personal accounts of **minors or youth fencers**. Adult national-team athletes and
+  coaches are OK only if public, verified by lookup, and fencing-focused.
+- Don't mine the replies/mentions pile. `@USAFencing` mentions are mostly unrelated political noise.
+
+**Use it gently**
+- Limits: 30 reads/min, 1,000/day (each response reports what's left). Gazette budget: **Wednesday skim ≈5–10 calls;
+  Monday/publish-morning full pass ≈15–25 calls.** Never bulk-pull.
+- Cheapest useful calls: `get_users_posts` on tier-A ids (exclude replies, max 10–25), then `search_posts_all` with
+  `lang:en` and fencing context words (plain "epee"/"épée" pulls in French "sword" noise; "NAC" alone pulls in
+  soccer/supplements/Moldova). `get_posts_by_ids` to re-read a post exactly before quoting it.
+- Weak spots: `search_users` → 403 (app-only access), so you can't search for accounts. `search_news` is
+  Grok-written trend summaries ("may make mistakes"), mostly garbage-fence stories for "fencing", so skip it.
+  `sort_order: relevancy` gave off-topic junk for rule-change queries; prefer `recency` + tight terms.
+- Fold into the cadence: Wednesday skim = FIE + NJ college timelines + one NAC/epee search. Monday full pass =
+  all tier-A timelines active in the last 30 days + searches for this week's events (NAC, World Cup, NJ HS/college).
 
 ## Club-results hold preference (soft — not a rule)
 - [ ] Optional: from results-app / start lists, any Elite FC members competing **Monday**? Holding for those results is nice when easy — publishing later (or without them) is fine.

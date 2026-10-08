@@ -2,6 +2,25 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.22 — 2026-10-08 (X as a source)
+
+Frank: test X (Twitter) as a source using the built-in read-only `x` tools, gently (about 25 calls used of a
+40–60 budget; limits are 30/min and 1,000/day).
+
+- **Works:** user lookup, user timelines, full-archive post search, post re-reads, mentions. **Doesn't:**
+  `search_users` (403, app-only access); `search_news` is Grok trend summaries, noisy for "fencing".
+- **`sources/x-accounts.md`** (new): vetted list with handle, display name, X user id, tier (A official /
+  B media / C community), why, last active, vetted 2026-10-08. Plus rejected accounts (dormant, empty,
+  fence companies, spam, can't-verify) and handles that don't exist. No minors' accounts, no private adults.
+- **SOURCES.md § X (Twitter):** an X post is a lead, not a fact, unless it's a tier-A account on its own news
+  (provenance still required). Opinions can run Overheard-style without usernames (except official orgs /
+  public figures). Gentle-use budget: Wed skim ≈5–10 calls, Monday full pass ≈15–25. Old "Social verdict"
+  X line marked superseded. Cadence table + Every-run checklist + STAGING.md self-gather updated.
+- **Staged for Issue No. 2 (all unvetted, `source: "x"`, tag `x-lead`, provenance `x_post`):**
+  `x-lead-nac-oct-results-watch`, `x-lead-veteran-worlds-tbilisi`, `x-lead-elsayed-world-no1-epee-feature`,
+  `x-lead-passivity-p-black-explainer`, `x-lead-usafencing-nfl-radio-ad`. A corroborating @USAFencing post was
+  added to `gather-college-path-shamel-epee` provenance (vetted status unchanged).
+
 ## v3.21 — 2026-10-07 (budget page v2)
 
 Frank: the practice budget page was hasty and hard to read, even on desktop. Redesigned for how he

@@ -155,8 +155,8 @@ SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Easte
 2. **Second pass immediately before building the HTML budget:** catch late tips, results-app slices, and club forwards so the lineup isn’t stale.
 
 ### Self-gather (SOURCES.md) — two passes
-1. **Mid-week skim (Wednesday):** light pass — Google News RSS (`fencing+epee` + `+New Jersey` variant) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging. Do **not** pretend this replaces the full checklist.
-2. **Publish-morning full pass** (when Frank is aiming to ship — usually Mon/Tue morning; later OK): full SOURCES “Every run” checklist. Soft preference: if Elite FC members are fencing Monday, waiting for those results is nice when easy — not required.
+1. **Mid-week skim (Wednesday):** light pass — Google News RSS (`fencing+epee` + `+New Jersey` variant) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging; X skim (≈5–10 read-only calls, vetted accounts in `sources/x-accounts.md`). Do **not** pretend this replaces the full checklist.
+2. **Publish-morning full pass** (when Frank is aiming to ship — usually Mon/Tue morning; later OK): full SOURCES “Every run” checklist (incl. X full pass, ≈15–25 calls; X items stage `source: "x"`, unvetted, provenance `type: "x_post"` with post URL + UTC/ET time). Soft preference: if Elite FC members are fencing Monday, waiting for those results is nice when easy — not required.
 
 ### Publish gates (reminder)
 **Budget HTML → Frank approve → Gazette Desk compose → Proof PDF → Frank approve → print.**

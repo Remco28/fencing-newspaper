@@ -16,7 +16,8 @@
   **ops cadence / gather loop** (v3.15); **Parent Q&A** category (v3.18)
 - CONTENT-HIERARCHY.md — slot order + word budgets for the weekly issue (Frank sorts this file)
 - STYLE-GUIDE.md — all visual rules + mandatory QA checklist
-- SOURCES.md — standing fetch checklist + **cadence header** (Wed skim / publish-morning full pass) + AskFRED API/`scripts/askfred.py`
+- SOURCES.md — standing fetch checklist + **cadence header** (Wed skim / publish-morning full pass) + AskFRED API/`scripts/askfred.py` + **X (Twitter) rules** (v3.22)
+- sources/x-accounts.md — vetted X accounts (tier A/B/C, rejected, not-found), vetted 2026-10-08
 - SECTIONS-MENU.md — option menu + past verdicts (history, not spec)
 - **CHANGELOG.md** — doc version history (v3.20 onward; earlier in PLAN.md)
 - REDDIT-SETUP.md — Reddit OAuth path (approval-gated; fallbacks are default)

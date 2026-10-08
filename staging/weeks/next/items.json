@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-07T21:53:23-04:00",
+  "updated_at": "2026-10-08T04:55:00-04:00",
   "note": "Staging pile for Issue No. 2 (week of Oct 12, 2026). Rolled from after-next/ 2026-10-07 after Issue No. 1 approval: THE WEAPON (chat-asset-weapon-epee, span 2). Carry-forward copies from staging/weeks/2026-10-08/ marked carried_from (refresh before budget).",
   "items": [
     {
@@ -113,6 +113,17 @@
           "type": "url",
           "url": "https://www.unc.edu/posts/2026/03/22/youssef-shamel-wins-epee-national-title-at-fencing-championships/",
           "retrieved_at": "2026-10-07T13:05:00-04:00"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/USAFencing/status/2035831587019911331",
+          "author": "@USAFencing (USA Fencing)",
+          "author_id": "86206737",
+          "posted_at": "2026-03-22T21:30:48Z",
+          "posted_at_et": "2026-03-22 5:30 PM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "account_tier": "A",
+          "note": "Corroborating tier-A post (NCAA results incl. Shamel, men's epee). Added by X test 2026-10-08; vetted status unchanged."
         }
       ],
       "suggested_slot": "college_path_optional",
@@ -593,6 +604,220 @@
       "draft_path": "staging/weeks/next/drafts/overheard-etiquette.md",
       "word_count": 147,
       "created_at": "2026-10-07T19:05:00-04:00"
+    },
+    {
+      "id": "x-lead-nac-oct-results-watch",
+      "kind": "tip",
+      "headline": "October NAC Is On in Orlando This Weekend: Results Follow-Up for No. 2",
+      "body": "X confirms the October NAC is on this week at the Orange County Convention Center in Orlando: the venue's own account listed the 'USA Fencing Association 2026 October NAC,' and Florida's FL511 traffic accounts posted a NAC advisory. Stanford Fencing says it has 12 entered. Lead for Issue No. 2: an NAC results follow-up for the EFC registrants already staged (ft-nac-efc-registrations-2026-10-07). Results must come from FencingTimeLive/USA Fencing, not X.",
+      "word_count": 69,
+      "source": "x",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "X test 2026-10-08. Venue and dates were already printed in Issue No. 1 from USA Fencing's site; X only adds corroboration. Value is the follow-up hook. Do not print any result from X; pull results from FencingTimeLive / usafencing.org on the Monday pass.",
+      "provenance": [
+        {
+          "type": "x_post",
+          "url": "https://x.com/OCCC/status/2107195914259485141",
+          "author": "@OCCC (Orange County Convention Center)",
+          "author_id": "20173932",
+          "posted_at": "2026-10-05T19:47:10Z",
+          "posted_at_et": "2026-10-05 3:47 PM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "account_tier": "A",
+          "note": "Venue's own account, tier A for logistics only"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/fl_511_i4/status/2107441929055088908",
+          "author": "@fl_511_i4 (FL511 I-4, FDOT)",
+          "author_id": "462074824",
+          "posted_at": "2026-10-06T12:04:44Z",
+          "posted_at_et": "2026-10-06 8:04 AM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "note": "Government traffic account: 'USA Fencing’s North American Cup is bringing the action to Orlando this weekend … Orange County Convention Center'"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/StanfordFENCE/status/2107972114800337171",
+          "author": "@StanfordFENCE (Stanford Fencing)",
+          "author_id": "1123670759216254976",
+          "posted_at": "2026-10-07T23:11:31Z",
+          "posted_at_et": "2026-10-07 7:11 PM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "account_tier": "A",
+          "note": "'The Card will have 12 competing at the October NAC' (their own roster; tier A)"
+        }
+      ],
+      "slot_hint": "nac_results_followup",
+      "tags": [
+        "x-lead",
+        "unvetted",
+        "nac",
+        "orlando",
+        "usa-fencing",
+        "results-followup"
+      ],
+      "created_at": "2026-10-08T04:55:00-04:00"
+    },
+    {
+      "id": "x-lead-veteran-worlds-tbilisi",
+      "kind": "tip",
+      "headline": "Veteran World Championships in Tbilisi, Oct 9–17, Streaming on FencingTV",
+      "body": "The FIE says the Veteran World Championships run Oct 9–17 in Tbilisi, Georgia, streamed on FencingTV. Possible TV-box or fill line for Issue No. 2 (event in progress at publish). Check whether any EFC parents, coaches, or adult members are entered before giving it more than a line.",
+      "word_count": 48,
+      "source": "x",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "X test 2026-10-08. Tier-A post (FIE about its own event), so dates/venue/streaming are printable with provenance, but still cross-check fie.org/events. Epee-specific schedule not in the post; confirm epee days before printing any.",
+      "provenance": [
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2107831466885296370",
+          "author": "@FIE_fencing (Fencing / FIE)",
+          "author_id": "196195164",
+          "posted_at": "2026-10-07T13:52:37Z",
+          "posted_at_et": "2026-10-07 9:52 AM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "account_tier": "A",
+          "note": "FIE's own event: tier A for dates/venue/streaming"
+        }
+      ],
+      "slot_hint": "tv_box_or_fill",
+      "tags": [
+        "x-lead",
+        "unvetted",
+        "fie",
+        "veterans",
+        "tbilisi",
+        "tv"
+      ],
+      "created_at": "2026-10-08T04:55:00-04:00"
+    },
+    {
+      "id": "x-lead-elsayed-world-no1-epee-feature",
+      "kind": "tip",
+      "headline": "World No. 1 Men's Epee Mohamed Elsayed's 'Message to My Future Self' Feature",
+      "body": "FIE feature: world No. 1 in men's epee Mohamed Elsayed (Egypt, 'Super Mo') tells Ari Simmons about a video he recorded for his future self after Tokyo 2020, and the setbacks since. Possible fill or inspiration short for older fencers. Link out, one line plus link. Don't summarize the interview beyond the post until it's read.",
+      "word_count": 56,
+      "source": "x",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "X test 2026-10-08. Ranking claim ('World No. 1 in men's epee') to be checked against fie.org rankings on the Monday pass. Post is 10 days old; evergreen-ish.",
+      "provenance": [
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2104577525712130255",
+          "author": "@FIE_fencing (Fencing / FIE)",
+          "author_id": "196195164",
+          "posted_at": "2026-09-28T14:22:37Z",
+          "posted_at_et": "2026-09-28 10:22 AM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "account_tier": "A"
+        }
+      ],
+      "slot_hint": "desk_fill_international",
+      "tags": [
+        "x-lead",
+        "unvetted",
+        "fie",
+        "epee",
+        "feature",
+        "elsayed"
+      ],
+      "created_at": "2026-10-08T04:55:00-04:00"
+    },
+    {
+      "id": "x-lead-passivity-p-black-explainer",
+      "kind": "tip",
+      "headline": "Fencing 101 Angle: Passivity Calls and P-Cards at the Asian Games Women's Epee",
+      "body": "Asian Games women's epee had two passivity-flavored exits: the Philippines' Juliana Gomez went out in the table of 16 after a P-black card and explained the 'tricky technical call,' and a separate bout was decided by a passivity ruling while one fencer led 3–1. Angle: a short Fencing 101 on passivity and P-cards in epee, explained from the USA Fencing/FIE rulebook, with these as the hook.",
+      "word_count": 66,
+      "source": "x",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "X test 2026-10-08. Unvetted. The explainer must cite the current rulebook (passivity / P-card articles), not X. Bout details are lead-only: confirm on FIE/Asian Games results before naming anyone. Hook is optional; the explainer works without it.",
+      "provenance": [
+        {
+          "type": "x_post",
+          "url": "https://x.com/OneSportsPHL/status/2102632064705327559",
+          "author": "@OneSportsPHL (One Sports)",
+          "author_id": "306818072",
+          "posted_at": "2026-09-23T05:32:03Z",
+          "posted_at_et": "2026-09-23 1:32 AM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "note": "Tier B media"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/OneSportsPHL/status/2102591693531050439",
+          "author": "@OneSportsPHL (One Sports)",
+          "author_id": "306818072",
+          "posted_at": "2026-09-23T02:51:38Z",
+          "posted_at_et": "2026-09-22 10:51 PM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "note": "Tier B media: 'advanced via technical ruling for passivity while leading 3–1'"
+        }
+      ],
+      "slot_hint": "fencing_101_or_fill",
+      "tags": [
+        "x-lead",
+        "unvetted",
+        "epee",
+        "rules",
+        "passivity",
+        "fencing-101",
+        "asian-games"
+      ],
+      "created_at": "2026-10-08T04:55:00-04:00"
+    },
+    {
+      "id": "x-lead-usafencing-nfl-radio-ad",
+      "kind": "tip",
+      "headline": "Overheard Candidate: USA Fencing Ad on an NFL Radio Broadcast",
+      "body": "A listener posted that USA Fencing bought a live-read ad on Westwood One's radio call of the Oct 4 NFL London game, and that analyst Mike Mayock reacted on air: 'Fencing? Jeez, know your audience!' Possible light Overheard item (fencing reaching football fans). Unverified secondhand quote: needs the audio or a second source before it runs, and then only as attributed chatter.",
+      "word_count": 62,
+      "source": "x",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "X test 2026-10-08. Rumor-grade: one private account. Mayock is a public figure (named OK if verified); the poster stays unnamed. Don't run unless confirmed (broadcast audio, Westwood One, or USA Fencing). Tone check with Frank: gentle self-deprecating fun, not a dig at USA Fencing.",
+      "provenance": [
+        {
+          "type": "x_post",
+          "url": "https://x.com/DavidFJackson5/status/2106787827442987033",
+          "author": "private listener account (no username in print)",
+          "author_id": "1655749964",
+          "posted_at": "2026-10-04T16:45:34Z",
+          "posted_at_et": "2026-10-04 12:45 PM ET",
+          "retrieved_at": "2026-10-08T04:55:00-04:00",
+          "note": "Single private poster, not on the vetted list. Quote is unverified."
+        }
+      ],
+      "slot_hint": "fun_fill_x_chatter",
+      "tags": [
+        "x-lead",
+        "unvetted",
+        "usa-fencing",
+        "overheard-candidate",
+        "media",
+        "fun"
+      ],
+      "created_at": "2026-10-08T04:55:00-04:00"
     }
   ],
   "rolled_forward": {
