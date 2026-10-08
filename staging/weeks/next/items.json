@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-08T04:55:00-04:00",
+  "updated_at": "2026-10-08T08:05:00-04:00",
   "note": "Staging pile for Issue No. 2 (week of Oct 12, 2026). Rolled from after-next/ 2026-10-07 after Issue No. 1 approval: THE WEAPON (chat-asset-weapon-epee, span 2). Carry-forward copies from staging/weeks/2026-10-08/ marked carried_from (refresh before budget).",
   "items": [
     {
@@ -162,6 +162,14 @@
           "url": "https://fencingtracker.com/tournament/1706",
           "retrieved_at": "2026-10-07T17:15:00-04:00",
           "note": "Name-spelling cross-check only (CDTME 'WU, Caden'; CDTWE 'Young, Penelope'; Y14ME 'Shah-Mirani, Ash'; Y10ME 'Shah Mirani, Rahi')"
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a11b2b8c68-4461f351-6dc4-4fa1-9fc5-15934438e225-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Thursday, October 8",
+          "retrieved_at": "2026-10-08T08:05:00-04:00",
+          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7 digest (same 20 fencers / 29 entries, same events and times). No adds or drops."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -189,7 +197,8 @@
       ],
       "carried_from": "staging/weeks/2026-10-08",
       "carried_at": "2026-10-07T18:46:27-04:00",
-      "carry_note": "Morris Cup Oct 24-25 still upcoming; refresh entries (digest/AskFRED) before the No. 2 budget."
+      "carry_note": "Morris Cup Oct 24-25 still upcoming; refresh entries (digest/AskFRED) before the No. 2 budget.",
+      "entries_last_confirmed": "2026-10-08T08:05:00-04:00"
     },
     {
       "id": "web-efc-standing-schedule",
@@ -546,7 +555,10 @@
         ],
         "text_copy": "staging/weeks/next/sources/email-fwd-winter-camp-2026-10-07.txt"
       },
-      "updated_at": "2026-10-07T19:20:00-04:00"
+      "updated_at": "2026-10-07T19:20:00-04:00",
+      "ingest_notes": [
+        "2026-10-08 daily email pass: Frank's 'Fwd: Group Class! + Winter Camp' (<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>) was already ingested 2026-10-07 ~19:20 ET; it had just not been labeled processed. Labeled now; no new facts (price and sign-up method still pending)."
+      ]
     },
     {
       "id": "reddit-rfencing-etiquette-thread",
@@ -818,6 +830,40 @@
         "fun"
       ],
       "created_at": "2026-10-08T04:55:00-04:00"
+    },
+    {
+      "id": "email-agentmail-medeo-results-watch-2026-10-11",
+      "kind": "tip",
+      "headline": "Medeo Youth Challenge #3 (Sun Oct 11): results to chase for No. 2",
+      "body": "Two Elite FC entries at the Y10/Y12/Y14 Youth Challenge #3 at Medeo Fencing Club on Sunday, Oct 11: Christina Jiang (Y12 Women's Epee, 9:30 AM) and Bryce Cheng (Y10 Mixed Epee, 11:30 AM). Event lands before Issue No. 2 publishes, so pull results on the Monday full pass (club forward, AskFRED, or FencingTracker). No results exist yet; nothing here is printable as a result.",
+      "source": "email",
+      "message_id": "<010001a11b2b8c68-4461f351-6dc4-4fa1-9fc5-15934438e225-000000@email.amazonses.com>",
+      "from": "chunkymonkey@agentmail.to",
+      "subject": "Club schedule · Thursday, October 8",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "auto-chunkymonkey",
+      "vetted_at": "2026-10-08T08:05:00-04:00",
+      "vet_notes": "Allowlisted sender (Frank's other bot). Entries match the Oct 7 digest and the Issue No. 1 Medeo items. Results pending; do not print a result without a sourced fetch or forward.",
+      "created_at": "2026-10-08T08:05:00-04:00",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<010001a11b2b8c68-4461f351-6dc4-4fa1-9fc5-15934438e225-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "retrieved_at": "2026-10-08T08:05:00-04:00"
+        }
+      ],
+      "related": [
+        "staging/weeks/2026-10-08: email-agentmail-medeo-entries-2026-10-07, email-frank-medeo-entries-2026-10-07"
+      ],
+      "suggested_slot": "results_followup",
+      "tags": [
+        "club",
+        "medeo",
+        "results-watch",
+        "pending"
+      ]
     }
   ],
   "rolled_forward": {
