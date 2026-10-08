@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-07T19:20:00-04:00",
+  "updated_at": "2026-10-07T21:53:23-04:00",
   "note": "Staging pile for Issue No. 2 (week of Oct 12, 2026). Rolled from after-next/ 2026-10-07 after Issue No. 1 approval: THE WEAPON (chat-asset-weapon-epee, span 2). Carry-forward copies from staging/weeks/2026-10-08/ marked carried_from (refresh before budget).",
   "items": [
     {
@@ -547,9 +547,9 @@
       "source": "reddit",
       "from": "frank",
       "target_week": "next",
-      "vetted": false,
-      "vetted_at": null,
-      "vetted_by": null,
+      "vetted": true,
+      "vetted_at": "2026-10-07T21:53:23-04:00",
+      "vetted_by": "frank",
       "vet_notes": "Frank uploaded PDF capture of r/Fencing 'Fencing Etiquette' thread (2026-10-07). Proposed category 'Overheard on Reddit' (community chatter, word-on-the-street feel; Frank agreed no usernames). Draft prints only rulebook-verified facts or clearly attributed opinion; handshake and pants claims excluded. See drafts/overheard-etiquette-claims.md.",
       "provenance": [
         {
