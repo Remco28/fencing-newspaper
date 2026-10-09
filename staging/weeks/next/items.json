@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-08T08:05:00-04:00",
+  "updated_at": "2026-10-09T08:10:00-04:00",
   "note": "Staging pile for Issue No. 2 (week of Oct 12, 2026). Rolled from after-next/ 2026-10-07 after Issue No. 1 approval: THE WEAPON (chat-asset-weapon-epee, span 2). Carry-forward copies from staging/weeks/2026-10-08/ marked carried_from (refresh before budget).",
   "items": [
     {
@@ -170,6 +170,14 @@
           "subject": "Club schedule · Thursday, October 8",
           "retrieved_at": "2026-10-08T08:05:00-04:00",
           "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7 digest (same 20 fencers / 29 entries, same events and times). No adds or drops."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12051e7f7-12b87cb6-16d2-4ea6-8f7d-51d06e20d5a5-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, October 9",
+          "retrieved_at": "2026-10-09T08:10:00-04:00",
+          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7/8 digests (same 20 fencers / 29 entries, same events and times). No adds or drops."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -198,7 +206,7 @@
       "carried_from": "staging/weeks/2026-10-08",
       "carried_at": "2026-10-07T18:46:27-04:00",
       "carry_note": "Morris Cup Oct 24-25 still upcoming; refresh entries (digest/AskFRED) before the No. 2 budget.",
-      "entries_last_confirmed": "2026-10-08T08:05:00-04:00"
+      "entries_last_confirmed": "2026-10-09T08:10:00-04:00"
     },
     {
       "id": "web-efc-standing-schedule",
@@ -852,6 +860,14 @@
           "message_id": "<010001a11b2b8c68-4461f351-6dc4-4fa1-9fc5-15934438e225-000000@email.amazonses.com>",
           "from": "AgentMail <chunkymonkey@agentmail.to>",
           "retrieved_at": "2026-10-08T08:05:00-04:00"
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12051e7f7-12b87cb6-16d2-4ea6-8f7d-51d06e20d5a5-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, October 9",
+          "retrieved_at": "2026-10-09T08:10:00-04:00",
+          "note": "Daily refresh: Medeo Oct 11 EFC entries unchanged (Christina Jiang Y12WE 9:30 AM; Bryce Cheng Y10 Mixed 11:30 AM). Results still pending."
         }
       ],
       "related": [
