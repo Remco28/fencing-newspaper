@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-09T08:10:00-04:00",
+  "updated_at": "2026-10-12T08:10:00-04:00",
   "note": "Staging pile for Issue No. 2 (week of Oct 12, 2026). Rolled from after-next/ 2026-10-07 after Issue No. 1 approval: THE WEAPON (chat-asset-weapon-epee, span 2). Carry-forward copies from staging/weeks/2026-10-08/ marked carried_from (refresh before budget).",
   "items": [
     {
@@ -142,7 +142,7 @@
       "id": "email-agentmail-morris-cup-entries-2026-10-07",
       "kind": "signup_row",
       "headline": "Morris Cup RYC/RJCC — EFC who's entered",
-      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Wed Oct 7):\nSat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila.\nSun Oct 25: CDTWE 8:00 AM Gore Amina, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Shah Mirani Rahi, Siu Maximus.",
+      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Mon Oct 12, latest):\nSat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila.\nSun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
       "source": "email",
       "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
@@ -178,6 +178,30 @@
           "subject": "Club schedule · Friday, October 9",
           "retrieved_at": "2026-10-09T08:10:00-04:00",
           "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7/8 digests (same 20 fencers / 29 entries, same events and times). No adds or drops."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12578450c-c9092bce-80c6-4ffc-acc7-6a1213b75b5e-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, October 10",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "Daily refresh: identical to Oct 7/8/9 (20 fencers / 29 entries)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, October 11",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "CHANGE: Olivia Hayes added to CDTWE Sun Oct 25 8:00 AM (now 20 fencers / 30 entries)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, October 12",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "CHANGE: Rahi Shah Mirani no longer listed in Y10ME Sun Oct 25 (now 19 fencers / 29 entries). Latest list."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -191,7 +215,7 @@
       "overlap_note": "Richer than gather-morris-cup-ryc-oct25 (event-only); this is the full EFC entry list.",
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-10-07T13:20:00-04:00",
-      "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board. Name tidy (Desk, 2026-10-07): print First Last like the club newsletter. 'WU Caden' → 'Caden Wu' (casing only; FencingTracker CDTME shows 'WU, Caden' — registration caps). 'Shah-Mirani Ash' (Y14ME) vs 'Shah Mirani Rahi' (Y10ME): FencingTracker shows the same split ('Shah-Mirani, Ash' / 'Shah Mirani, Rahi'), so no authoritative single form — kept source forms per fencer and FLAGGED for Frank. Frank approved showing ALL 29 entries (20 fencers) — exception to the 8-row signup soft cap for big turnouts.",
+      "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board. Name tidy (Desk, 2026-10-07): print First Last like the club newsletter. 'WU Caden' → 'Caden Wu' (casing only; FencingTracker CDTME shows 'WU, Caden' — registration caps). 'Shah-Mirani Ash' (Y14ME) vs 'Shah Mirani Rahi' (Y10ME): FencingTracker shows the same split ('Shah-Mirani, Ash' / 'Shah Mirani, Rahi'), so no authoritative single form — kept source forms per fencer and FLAGGED for Frank. Frank approved showing ALL 29 entries (20 fencers) — exception to the 8-row signup soft cap for big turnouts. | Desk 2026-10-12: list refreshed from Oct 11/12 digests (Olivia Hayes added CDTWE; Rahi Shah Mirani dropped from Y10ME, now 19 fencers / 29 entries). Shah-Mirani hyphen flag now only matters for Ash on this board; Rahi's spelling still unresolved in roster.",
       "name_aliases": {
         "Penny Young": [
           "Young Penelope"
@@ -206,7 +230,22 @@
       "carried_from": "staging/weeks/2026-10-08",
       "carried_at": "2026-10-07T18:46:27-04:00",
       "carry_note": "Morris Cup Oct 24-25 still upcoming; refresh entries (digest/AskFRED) before the No. 2 budget.",
-      "entries_last_confirmed": "2026-10-09T08:10:00-04:00"
+      "entries_last_confirmed": "2026-10-12T08:10:00-04:00",
+      "entries_change_log": [
+        {
+          "seen_in": "Club schedule · Sunday, October 11",
+          "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
+          "change": "ADD Hayes, Olivia — CDTWE (Sun Oct 25, 8:00 AM)",
+          "noted_at": "2026-10-12T08:10:00-04:00"
+        },
+        {
+          "seen_in": "Club schedule · Monday, October 12",
+          "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
+          "change": "DROP Shah Mirani, Rahi — Y10ME (Sun Oct 25, 3:30 PM) no longer listed; reason unknown (withdrawal vs digest/registration glitch). Don't print as a withdrawal; just reflect the current list.",
+          "noted_at": "2026-10-12T08:10:00-04:00"
+        }
+      ],
+      "entries_count": "19 fencers / 29 entries (as of Oct 12 digest; was 20 / 29 through Oct 10)"
     },
     {
       "id": "web-efc-standing-schedule",
@@ -852,7 +891,7 @@
       "vetted": true,
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-10-08T08:05:00-04:00",
-      "vet_notes": "Allowlisted sender (Frank's other bot). Entries match the Oct 7 digest and the Issue No. 1 Medeo items. Results pending; do not print a result without a sourced fetch or forward.",
+      "vet_notes": "Allowlisted sender (Frank's other bot). Entries match the Oct 7 digest and the Issue No. 1 Medeo items. Results pending; do not print a result without a sourced fetch or forward. | Desk 2026-10-12 email pass: Oct 11/12 digests carry no Medeo results; chase on the Monday full pass (AskFRED/FencingTracker/forward).",
       "created_at": "2026-10-08T08:05:00-04:00",
       "provenance": [
         {
@@ -868,6 +907,22 @@
           "subject": "Club schedule · Friday, October 9",
           "retrieved_at": "2026-10-09T08:10:00-04:00",
           "note": "Daily refresh: Medeo Oct 11 EFC entries unchanged (Christina Jiang Y12WE 9:30 AM; Bryce Cheng Y10 Mixed 11:30 AM). Results still pending."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, October 11",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "Still lists Medeo Oct 11 entries only (Christina Jiang Y12WE 9:30 AM; Bryce Cheng Y10 Mixed 11:30 AM). No results in digest."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, October 12",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "Still lists Medeo Oct 11 entries only (Christina Jiang Y12WE 9:30 AM; Bryce Cheng Y10 Mixed 11:30 AM). No results in digest."
         }
       ],
       "related": [
