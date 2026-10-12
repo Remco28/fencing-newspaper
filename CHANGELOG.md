@@ -6,6 +6,17 @@ Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status 
 - Full SOURCES pass + second email pass; 8 new staging items (NAC results, Elite/Challenger explainer, Vet Worlds, NJSIAA dates, epee TV calendar, Ultimate Cup board, gear fill, NJFA lead); Clean marked 6 stale/merged items. Log: `staging/weeks/next/gather-log-2026-10-12.md`.
 - Budget page: lineup `mode: "real"` swaps the PRACTICE tag for "Real budget · Submit goes to the Desk" and submits `practice: false` / `pageVersion: budget-v2`. Rehearsals keep `mode: practice` (default).
 
+## 2026-10-12 — Issue No. 2 budget: Frank's chat answers (09:45 ET)
+
+Recorded as "chat: Frank 2026-10-12". Not composed (Frank hasn't submitted).
+- Vetted: NAC lead + results (FencingTracker kept as source), Ultimate Cup board, Medeo (Christina Jiang 5th),
+  NJFA Sept. 29 late lines (Bradley Tsai confirmed; Brendan Mendez on FencingTracker club listing + Frank's belief, school never printed).
+- Medeo: Bryce Cheng removed (did not fence; no reason printed). AskFRED lists Y12 Women's Epee, Frank said "Y12 mixed": row prints neutral "Y12" pending Frank.
+- Roster: + Dieko Johnson, Lillian Liu, Bradley Tsai, Brendan Mendez; Ash resolved as Shah-Mirani (Rahi still unresolved).
+- Winter Camp moved to staging/weeks/after-next (held for No. 3).
+- Lineup: one club results box; weaker NAC finishes as "also fenced" (provisional, tone policy pending). Publish note "Tue or Wed, Frank deciding" (date stays Tue 10/13).
+- practice.html: sidebar horizontal scrollbar fixed (jump-nav links' negative margin overflowed by 10px; nav now pads + overflow-x hidden); publish-day line shows the lineup's note.
+
 ## v3.22 — 2026-10-08 (X as a source)
 
 Frank: test X (Twitter) as a source using the built-in read-only `x` tools, gently (about 25 calls used of a

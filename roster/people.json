@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-07",
+  "updated": "2026-10-12",
   "note": "Frank-confirmed club-people facts only. No ratings, ages, birthdays, or invented data. See roster/README.md.",
   "people": [
     {
@@ -33,13 +33,20 @@
           "id": "rahi-shah-mirani"
         }
       ],
-      "notes": "Brother of Rahi. Surname spelling unresolved vs Rahi's registration (hyphen). Print as registered until Frank confirms a house spelling.",
-      "spelling_unresolved": true,
+      "notes": "Brother of Rahi. Prints as 'Shah-Mirani' (hyphen) — resolved by Frank 2026-10-12 (chat) for Ash only.",
+      "spelling_unresolved": false,
       "provenance": {
         "who": "Frank",
-        "when": "2026-10-07",
+        "when": "2026-10-12",
         "via": "chat"
-      }
+      },
+      "provenance_history": [
+        {
+          "who": "Frank",
+          "when": "2026-10-07",
+          "via": "chat"
+        }
+      ]
     },
     {
       "id": "rahi-shah-mirani",
@@ -54,7 +61,7 @@
           "id": "ash-shah-mirani"
         }
       ],
-      "notes": "Brother of Ash. Surname spelling unresolved vs Ash's registration (no hyphen). Print as registered until Frank confirms a house spelling.",
+      "notes": "Brother of Ash. Surname spelling unresolved vs Ash's registration (no hyphen). Print as registered until Frank confirms a house spelling. | 2026-10-12: Frank resolved Ash as 'Shah-Mirani'. Rahi's own spelling stays as registered ('Shah Mirani') and unresolved — the sibling link does not settle his house spelling. Ask Frank if Rahi should match.",
       "spelling_unresolved": true,
       "provenance": {
         "who": "Frank",
@@ -92,6 +99,67 @@
         "who": "Frank",
         "when": "2026-10-07",
         "via": "chat"
+      }
+    },
+    {
+      "id": "dieko-johnson",
+      "canonical": "Dieko Johnson",
+      "aliases": [
+        "Johnson, Dieko"
+      ],
+      "relations": [],
+      "notes": "Elite FC member, confirmed by Frank (chat 2026-10-12). First seen on FencingTracker Ultimate Cup registrations.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank",
+        "when": "2026-10-12",
+        "via": "chat"
+      }
+    },
+    {
+      "id": "lillian-liu",
+      "canonical": "Lillian Liu",
+      "aliases": [
+        "Liu, Lillian"
+      ],
+      "relations": [],
+      "notes": "Elite FC member, confirmed by Frank (chat 2026-10-12). First seen on FencingTracker Ultimate Cup registrations.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank",
+        "when": "2026-10-12",
+        "via": "chat"
+      }
+    },
+    {
+      "id": "bradley-tsai",
+      "canonical": "Bradley Tsai",
+      "aliases": [
+        "Tsai, Bradley"
+      ],
+      "relations": [],
+      "notes": "Elite FC, confirmed by Frank (chat 2026-10-12). NJFA Sept. 29: 2nd in Y12 per FencingTracker.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank",
+        "when": "2026-10-12",
+        "via": "chat"
+      }
+    },
+    {
+      "id": "brendan-mendez",
+      "canonical": "Brendan Mendez",
+      "aliases": [
+        "Mendez, Brendan"
+      ],
+      "relations": [],
+      "notes": "Treated as Elite FC: FencingTracker lists his club as Elite FC and Frank believes he 'probably is' ours (chat 2026-10-12). Not a hard confirmation. Never print his school.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank",
+        "when": "2026-10-12",
+        "via": "chat",
+        "basis": "FencingTracker club listing + Frank's belief ('probably is')"
       }
     }
   ]

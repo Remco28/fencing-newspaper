@@ -60,7 +60,7 @@
   "photo-public-strip-cand",
   "tip-public-chatham-dual"
  ],
- "generated": "2026-10-12T09:40:00-04:00",
+ "generated": "2026-10-12T09:50:00-04:00",
  "target_week": "next",
  "issue": {
   "number": 2,
@@ -71,13 +71,14 @@
   "date": "2026-10-13",
   "label": "Tuesday, October 13, 2026",
   "alt": "2026-10-12",
-  "why": "Desk's call: Tuesday. Penny Young's Y14 event at the NAC is today and the Medeo results haven't been uploaded yet, so a Tuesday-morning check can add both. Monday evening works too; we'd mark those two as still to come."
+  "why": "Tue or Wed, Frank deciding. chat: Frank 2026-10-12: Frank may push to Wednesday while he looks for more content. Date field stays at Tue 10/13 for now; Penny's Y14 result (fenced today) can be added either way.",
+  "note": "Tue or Wed, Frank deciding"
  },
  "desk_summary": [
-  "Real issue this week. Lead: Maksim Milinkovic finished 12th of 121 in Cadet Elite at the October NAC, winning three straight elimination bouts from the 49th seed.",
-  "Most new pieces come from scraped or official websites, so they need your Vet before they can be included: the NAC results, the Elite/Challenger explainer, Veteran Worlds, NJ high-school dates, the TV box and a second signup board.",
-  "Still pending: Penny's Y14 result (being fenced today), the Medeo Youth Challenge results, and any NAC ratings, which aren't posted anywhere yet.",
-  "THE WEAPON fills the back page at two columns; Overheard on Reddit and Winter Camp are ready."
+  "Real issue this week. Lead (OK'd by Frank): Maksim Milinkovic finished 12th of 121 in Cadet Elite at the October NAC, winning three straight elimination bouts from the 49th seed.",
+  "Vetted from your chat answers: the NAC lead and results, the Ultimate Cup board, Christina Jiang's 5th at Medeo, and late NJFA lines for Bradley Tsai and Brendan Mendez. Still unvetted website items: the Elite/Challenger explainer, Veteran Worlds, NJ high-school dates, the TV box and gear.",
+  "Results box draft: places only for strong finishes; other NAC fencers go in an \"also fenced\" line (provisional until you set the results tone policy). Penny's Y14 result is being fenced today.",
+  "Winter Camp is held for No. 3. THE WEAPON fills the back page at two columns; Overheard on Reddit is ready."
  ],
  "slots": [
   {
@@ -94,14 +95,15 @@
    },
    "title": "Milinkovic Climbs to 12th at the First 'Elite' NAC",
    "summary": "Maksim Milinkovic went from the 49th seed to 12th of 121 in Cadet Elite Men's Epee, winning DE bouts 15-14, 15-12 and 15-11 before a 10-15 loss in the round of 16. The day before, he went 6-0 in pools in a 233-fencer Div I Challenger field. Our three cadet women round out the story.",
-   "questions": [
-    "OK to lead with Maksim? (Facts are from FencingTracker's results pages, so they need your Vet.)"
-   ],
+   "questions": [],
    "flags": [
     {
      "level": "info",
      "text": "The Div I Elite winner's club is Elite Fencing Academy, not us. The copy will keep the two apart."
     }
+   ],
+   "answered": [
+    "chat: Frank 2026-10-12: OK to lead with Maksim (FencingTracker stays the source)."
    ]
   },
   {
@@ -157,14 +159,14 @@
    "key": "club-results",
    "section": "club",
    "slot": "Club results — October NAC",
-   "budget": "3–5 rows",
+   "budget": "5–6 rows",
    "item": "ft-nac-results-efc-2026-10-12",
    "proposed": true,
    "cost": {
     "type": "table_rows",
-    "rows": 5
+    "rows": 6
    },
-   "title": "October NAC — Elite FC results",
+   "title": "Club results",
    "table": {
     "head": [
      "Fencer",
@@ -174,52 +176,65 @@
     "rows": [
      [
       "Maksim Milinkovic",
-      "Cadet Elite Men",
+      "Cadet Elite Men (Oct. NAC)",
       "12th of 121"
      ],
      [
-      "Maksim Milinkovic",
-      "Div. I Challenger Men",
-      "68th of 233"
+      "Christina Jiang",
+      "Y12 (Medeo Youth Challenge #3)",
+      "5th"
      ],
      [
-      "Anayaa Sheth",
-      "Cadet Challenger Women",
-      "45th of 80"
+      "Bradley Tsai",
+      "Y12 Mixed (NJFA, Sept. 29)",
+      "2nd"
      ],
      [
-      "Amina Gore",
-      "Cadet Challenger Women",
-      "59th of 80"
+      "Brendan Mendez",
+      "Div. III Mixed (NJFA, Sept. 29)",
+      "3rd"
      ],
      [
-      "Penny Young",
-      "Cadet Challenger Women",
-      "68th of 80"
+      "Also fenced at the NAC",
+      "Maksim Milinkovic (Div. I Challenger, 6-0 in pools); Anayaa Sheth, Amina Gore, Penny Young (Cadet Challenger Women)",
+      ""
      ]
     ]
    },
-   "summary": "Five NAC finishes from FencingTracker. Penny's Y14 result gets added as a sixth row if it posts before compose.",
+   "summary": "One results box: Maksim's NAC finish, Christina's 5th at Medeo, and two late NJFA lines (Sept. 29). Other NAC fencers are listed under \"also fenced\" with no places (provisional). Penny's Y14 NAC result gets added if it posts before compose.",
    "questions": [
-    "Vet these results? (Same source and same four fencers you confirmed Oct. 7.)",
-    "FencingTracker also lists Bradley Tsai (2nd, Y12 Mixed) and Brendan Mendez (3rd, Div III Mixed) from the NJFA event on Sept. 29. Are they ours, and should they get a late line?"
+    "Results tone: OK to show places only for strong finishes and list everyone else as \"also fenced\"? (Drafted that way, provisional.)"
+   ],
+   "items": [
+    "ft-nac-results-efc-2026-10-12",
+    "email-agentmail-medeo-results-watch-2026-10-11",
+    "ft-njfa-sep29-possible-efc-results"
+   ],
+   "flags": [
+    {
+     "level": "info",
+     "text": "Provisional: the \"also fenced\" style waits on your results tone policy. Penny's Y14 (today) is not in yet."
+    },
+    {
+     "level": "info",
+     "text": "Brendan Mendez is treated as ours because FencingTracker lists him as Elite FC and you think he probably is. His school is never printed."
+    }
    ]
   },
   {
    "key": "medeo",
    "section": "club",
    "slot": "Club results — Medeo Youth Challenge #3",
-   "budget": "1–2 rows",
+   "budget": "in results box",
    "item": "email-agentmail-medeo-results-watch-2026-10-11",
-   "proposed": false,
-   "waiting": true,
+   "proposed": true,
    "cost": {
     "type": "table_rows",
-    "rows": 2
+    "rows": 0
    },
-   "summary": "Christina Jiang (Y12 Women) and Bryce Cheng (Y10 Mixed) fenced Sunday at Medeo. No results are uploaded on AskFRED or FencingTracker yet. Desk will re-check before compose.",
+   "summary": "Christina Jiang finished 5th (your word). Her row sits in the club results box above. Event label: you said 'Y12 mixed', but AskFRED lists only Y12 Women's and Y12 Men's Epee, so the row says just 'Y12' until you pick.",
    "questions": [
-    "Do you know how Christina and Bryce did? (If so, tell me and those rows can print from your word.)"
+    "Christina's event: AskFRED calls it Y12 Women's Epee (no Y12 mixed was offered). Print 'Y12 Women' or keep it as just 'Y12'?"
    ]
   },
   {
@@ -330,8 +345,9 @@
      }
     ]
    },
-   "questions": [
-    "Ash's last name: print it hyphenated, “Shah-Mirani”, as his registration shows? (The roster still flags the family spelling as unsettled.)"
+   "questions": [],
+   "answered": [
+    "chat: Frank 2026-10-12: Ash prints as Shah-Mirani (roster resolved for Ash)."
    ]
   },
   {
@@ -377,26 +393,9 @@
     ]
    },
    "summary": "Nine Elite FC fencers with 12 entries at a nearby N.J. regional, per FencingTracker's registration lists. Scraped names can't print until you confirm them.",
-   "questions": [
-    "Are these nine right, including Dieko Johnson and Lillian Liu, who are new to the Gazette? Are the spellings right?"
-   ]
-  },
-  {
-   "key": "club-events",
-   "section": "club",
-   "slot": "Club events — Winter Camp",
-   "budget": "~70w",
-   "item": "chat-winter-camp-reminder",
-   "proposed": true,
-   "cost": {
-    "type": "prose",
-    "span": 1
-   },
-   "thumb": "efc-winter-camp-2026-flyer-email.png",
-   "summary": "Your Winter Camp reminder for Dec. 27–31: the tune-up angle plus the joke about escaping visiting relatives. It ends on “register as soon as possible.”",
-   "questions": [
-    "Price or sign-up link to add? (If not, it prints without them.)",
-    "Did this week's club newsletter come out? Forward it and I'll add any club news."
+   "questions": [],
+   "answered": [
+    "chat: Frank 2026-10-12: Dieko Johnson and Lillian Liu confirmed Elite FC; board vetted."
    ]
   },
   {
@@ -526,21 +525,14 @@
    "why": "None from you this week."
   }
  ],
- "photos": [
+ "photos": [],
+ "held": [
   {
-   "id": "efc-winter-camp-2026-flyer-email",
-   "proposed": false,
-   "span": 1,
-   "note": "Club flyer from the Sept. 30 email. Printing it would repeat the Winter Camp text."
-  },
-  {
-   "id": "efc-winter-camp-2026-flyer",
-   "proposed": false,
-   "span": 1,
-   "note": "Same flyer from the club website (unvetted web copy)."
+   "id": "chat-winter-camp-reminder",
+   "label": "Winter Camp reminder (held for No. 3)",
+   "note": "chat: Frank 2026-10-12: skip it this week. Moved to staging/weeks/after-next. Price and sign-up link are still open."
   }
  ],
- "held": [],
  "not_proposed": [
   {
    "item": "ft-nac-efc-registrations-2026-10-07",
@@ -573,10 +565,6 @@
   {
    "item": "x-lead-usafencing-nfl-radio-ad",
    "why": "Unvetted X chatter, no room this week."
-  },
-  {
-   "item": "ft-njfa-sep29-possible-efc-results",
-   "why": "Sept. 29 results that may have been missed (Bradley Tsai 2nd in Y12 Mixed, Brendan Mendez 3rd in Div III Mixed). Needs your word that they're ours first."
   }
  ]
 }
