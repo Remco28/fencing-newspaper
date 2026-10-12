@@ -33,7 +33,7 @@
           "id": "rahi-shah-mirani"
         }
       ],
-      "notes": "Brother of Rahi. Prints as 'Shah-Mirani' (hyphen) — resolved by Frank 2026-10-12 (chat) for Ash only.",
+      "notes": "Brother of Rahi. Prints as 'Shah-Mirani' (hyphen) — resolved by Frank 2026-10-12 (chat); Rahi matches.",
       "spelling_unresolved": false,
       "provenance": {
         "who": "Frank",
@@ -50,10 +50,10 @@
     },
     {
       "id": "rahi-shah-mirani",
-      "canonical": "Rahi Shah Mirani",
+      "canonical": "Rahi Shah-Mirani",
       "aliases": [
         "Shah Mirani, Rahi",
-        "Rahi Shah-Mirani"
+        "Rahi Shah Mirani"
       ],
       "relations": [
         {
@@ -61,13 +61,20 @@
           "id": "ash-shah-mirani"
         }
       ],
-      "notes": "Brother of Ash. Surname spelling unresolved vs Ash's registration (no hyphen). Print as registered until Frank confirms a house spelling. | 2026-10-12: Frank resolved Ash as 'Shah-Mirani'. Rahi's own spelling stays as registered ('Shah Mirani') and unresolved — the sibling link does not settle his house spelling. Ask Frank if Rahi should match.",
-      "spelling_unresolved": true,
+      "notes": "Brother of Ash. Prints as 'Shah-Mirani' (hyphen), matching Ash — resolved by Frank 2026-10-12 (chat). Registrations show 'Shah Mirani'.",
+      "spelling_unresolved": false,
       "provenance": {
         "who": "Frank",
-        "when": "2026-10-07",
+        "when": "2026-10-12",
         "via": "chat"
-      }
+      },
+      "provenance_history": [
+        {
+          "who": "Frank",
+          "when": "2026-10-07",
+          "via": "chat"
+        }
+      ]
     },
     {
       "id": "caden-wu",

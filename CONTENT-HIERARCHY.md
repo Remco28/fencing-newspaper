@@ -13,7 +13,7 @@ Pipeline (Staging→Clean→Budget→Proof) and tip vetting live in **STAGING.md
 | # | Slot | Budget | Source | Notes |
 |---|------|--------|--------|-------|
 | 1 | Lead story | 150–180w | FIE / USA Fencing / big NJ result | Weekend's biggest epee result |
-| 2 | Club results box | 3–5 rows | Results-app email | Elite FC finishes, always in |
+| 2 | Club results box | 3–5 rows | Results-app email | Elite FC finishes, always in. **Strong results only** (podium/top 8, notable climb, PB, unbeaten pool); everyone else on one "also fenced" line — never a weak place (v3.23, STYLE-GUIDE §0d) |
 | 3 | Ratings earned | 2–5 rows | Results-app email | Celebration, always in |
 | 4 | Secondary article A | 80–100w | National / regional | Beefier news, not just scores |
 | 5 | Secondary article B | 80–100w | National / regional | Drop first if tight |

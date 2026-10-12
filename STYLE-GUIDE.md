@@ -75,6 +75,16 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
   cleaned in v3.20 — do not reintroduce them when copying a past issue (the approved
   2026-10-08 issue still carries “(All Epee)” and “Finish (Epee)”; drop them when reusing it).
 
+## 0d. Results tone — strong finishes only (locked 2026-10-12, plan v3.23)
+
+**Never print a weak finish or place.** Policy from Frank (chat 2026-10-12), permanent.
+- Print a place only when it is **strong**: podium / top 8, a notable climb (seed → finish or
+  rating jump), a personal best, or an unbeaten pool.
+- Everyone else who fenced gets an **"also fenced"** line (or **"also attended"**) with name
+  only — no place, no record — so nobody feels bad.
+- **When unsure, use "also fenced."** Never print a place to fill a row.
+- Applies to the club results box, captions, lead/secondary copy about our fencers, and boards.
+
 ## 1. Page
 - US Letter, 1 sheet front + back = exactly 2 PDF pages. Never 1.5, never 3.
 - Margins: 0.5in sides/top, 0.4in bottom. No more, no less.

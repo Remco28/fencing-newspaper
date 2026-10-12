@@ -2,6 +2,12 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.23 — 2026-10-12
+- **Results tone locked (Frank, chat 2026-10-12):** never print a weak finish/place; strong = podium/top 8, notable climb, personal best, unbeaten pool; others go on an "also fenced"/"also attended" line; when unsure, "also fenced". STYLE-GUIDE §0d, CONTENT-HIERARCHY results row. No. 2 results box no longer provisional.
+- Medeo: Christina Jiang 5th printed as **Y12 Mixed** (Medeo combines men's+women's when one is small; AskFRED "Y12 Women's" is registration only).
+- Roster: Rahi prints as **Shah-Mirani** (resolved, matches Ash).
+- Staged Overheard on Reddit #2 candidate (r/Fencing Princess Bride duel thread), unvetted, with claim-check; draft `staging/weeks/next/drafts/overheard-princess-bride.md`.
+
 ## 2026-10-12 — Issue No. 2 budget (Monday full pass)
 - Full SOURCES pass + second email pass; 8 new staging items (NAC results, Elite/Challenger explainer, Vet Worlds, NJSIAA dates, epee TV calendar, Ultimate Cup board, gear fill, NJFA lead); Clean marked 6 stale/merged items. Log: `staging/weeks/next/gather-log-2026-10-12.md`.
 - Budget page: lineup `mode: "real"` swaps the PRACTICE tag for "Real budget · Submit goes to the Desk" and submits `practice: false` / `pageVersion: budget-v2`. Rehearsals keep `mode: practice` (default).

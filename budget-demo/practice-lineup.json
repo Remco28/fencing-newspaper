@@ -77,8 +77,8 @@
  "desk_summary": [
   "Real issue this week. Lead (OK'd by Frank): Maksim Milinkovic finished 12th of 121 in Cadet Elite at the October NAC, winning three straight elimination bouts from the 49th seed.",
   "Vetted from your chat answers: the NAC lead and results, the Ultimate Cup board, Christina Jiang's 5th at Medeo, and late NJFA lines for Bradley Tsai and Brendan Mendez. Still unvetted website items: the Elite/Challenger explainer, Veteran Worlds, NJ high-school dates, the TV box and gear.",
-  "Results box draft: places only for strong finishes; other NAC fencers go in an \"also fenced\" line (provisional until you set the results tone policy). Penny's Y14 result is being fenced today.",
-  "Winter Camp is held for No. 3. THE WEAPON fills the back page at two columns; Overheard on Reddit is ready."
+  "Results tone is now house policy: places only for strong finishes; everyone else is on an \"also fenced\" line. Christina's Medeo 5th prints as Y12 Mixed. Penny's Y14 result is being fenced today.",
+  "Winter Camp is held for No. 3. THE WEAPON fills the back page at two columns. Overheard on Reddit (etiquette) is ready; a second, unvetted Overheard (Princess Bride duel) is proposed as space-fill. Your call."
  ],
  "slots": [
   {
@@ -140,6 +140,28 @@
    ]
   },
   {
+   "key": "overheard-2",
+   "section": "lead",
+   "slot": "Overheard on Reddit #2 — Princess Bride duel",
+   "budget": "130–160w",
+   "item": "reddit-rfencing-princess-bride-2026-10-12",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "A fun r/Fencing thread asking if the Princess Bride cliff-top duel is \"BS.\" The masters it names are real, Bob Anderson choreographed it, and the forum's verdict was \"great theatrical fencing.\" Facts are checked against non-forum sources; opinions are printed as what people said. No usernames.",
+   "questions": [
+    "Run it in No. 2 as space-fill after the etiquette piece (my pick: the issue is about half full), or hold it for No. 3? It needs your Vet either way."
+   ],
+   "flags": [
+    {
+     "level": "warn",
+     "text": "Not vetted: you can't verify the thread itself. The claim check found two fixes: the duel was shot on a set, not on the Cliffs of Moher, and the script line is \"the greatest sword fight in modern times.\""
+    }
+   ]
+  },
+  {
    "key": "weapon",
    "section": "lead",
    "slot": "Back-page figure — THE WEAPON",
@@ -181,7 +203,7 @@
      ],
      [
       "Christina Jiang",
-      "Y12 (Medeo Youth Challenge #3)",
+      "Y12 Mixed (Medeo Youth Challenge #3)",
       "5th"
      ],
      [
@@ -201,10 +223,7 @@
      ]
     ]
    },
-   "summary": "One results box: Maksim's NAC finish, Christina's 5th at Medeo, and two late NJFA lines (Sept. 29). Other NAC fencers are listed under \"also fenced\" with no places (provisional). Penny's Y14 NAC result gets added if it posts before compose.",
-   "questions": [
-    "Results tone: OK to show places only for strong finishes and list everyone else as \"also fenced\"? (Drafted that way, provisional.)"
-   ],
+   "summary": "One results box: Maksim's NAC finish, Christina's 5th at Medeo, and two late NJFA lines (Sept. 29). Other NAC fencers are listed under \"also fenced\" with no places. Penny's Y14 NAC result gets added if it posts before compose.",
    "items": [
     "ft-nac-results-efc-2026-10-12",
     "email-agentmail-medeo-results-watch-2026-10-11",
@@ -213,7 +232,7 @@
    "flags": [
     {
      "level": "info",
-     "text": "Provisional: the \"also fenced\" style waits on your results tone policy. Penny's Y14 (today) is not in yet."
+     "text": "Results tone is house policy now (your answer, Oct. 12): places only for strong finishes, everyone else on the \"also fenced\" line. Penny's Y14 (today) is not in yet."
     },
     {
      "level": "info",
@@ -232,9 +251,9 @@
     "type": "table_rows",
     "rows": 0
    },
-   "summary": "Christina Jiang finished 5th (your word). Her row sits in the club results box above. Event label: you said 'Y12 mixed', but AskFRED lists only Y12 Women's and Y12 Men's Epee, so the row says just 'Y12' until you pick.",
-   "questions": [
-    "Christina's event: AskFRED calls it Y12 Women's Epee (no Y12 mixed was offered). Print 'Y12 Women' or keep it as just 'Y12'?"
+   "summary": "Christina Jiang finished 5th in Y12 Mixed (your word). Medeo combined the men's and women's events, so AskFRED's 'Y12 Women's Epee' is just her registration. Her row sits in the club results box above.",
+   "answered": [
+    "Event: Y12 Mixed (chat, Oct. 12)."
    ]
   },
   {
@@ -264,7 +283,7 @@
     "span": 3
    },
    "title": "Morris Cup RYC/RJCC — Suffern, N.Y., Oct. 24–25",
-   "summary": "19 Elite FC fencers with 29 entries over two days, refreshed from today's club digest. Olivia Hayes was added to Cadet Women, and Rahi Shah Mirani is off Y10 Men (FencingTracker also shows him withdrawn).",
+   "summary": "19 Elite FC fencers with 29 entries over two days, refreshed from today's club digest. Olivia Hayes was added to Cadet Women, and Rahi Shah-Mirani is off Y10 Men (FencingTracker also shows him withdrawn).",
    "panels": {
     "head": [
      "Time",
