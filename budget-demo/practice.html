@@ -28,6 +28,7 @@ code{font:13px/1.4 ui-monospace,Menlo,Consolas,monospace;overflow-wrap:anywhere}
 .brand{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .issue{font:700 24px/1.15 var(--serif);margin:2px 0 0}
 .week{color:var(--soft)}
+.practice-tag.real{color:var(--ok, #2f6b3a);background:#e6f0e3}
 .practice-tag{display:inline-block;margin-top:4px;font-size:12px;font-weight:600;color:var(--wait);background:var(--wait-bg);padding:2px 8px;border-radius:3px}
 .side-block{border-top:1px solid var(--rule);padding-top:10px}
 .side-label{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
@@ -156,7 +157,7 @@ textarea#globalNotes{width:100%;min-height:96px;padding:10px 12px;border:1px sol
     <div class="brand">En Garde Gazette · budget</div>
     <div class="issue" id="issueLabel">Issue</div>
     <div class="week" id="weekLabel"></div>
-    <span class="practice-tag">PRACTICE — not a real submission</span>
+    <span class="practice-tag" id="modeTag">PRACTICE — not a real submission</span>
   </div>
   <div class="side-block">
     <label class="side-label" for="publishDate">Publish day</label>
@@ -198,6 +199,7 @@ textarea#globalNotes{width:100%;min-height:96px;padding:10px 12px;border:1px sol
 (function () {
   "use strict";
   var $ = function (id) { return document.getElementById(id); };
+  var REAL = false;
   var CFG = null, ITEMS = [], byId = {}, MEDIA = [], mediaById = {}, SLOTS = [];
   var SECTION_GUESS = [
     [/lead|feature|back_page|overheard|secondary_a/i, "lead"],
@@ -604,12 +606,12 @@ textarea#globalNotes{width:100%;min-height:96px;padding:10px 12px;border:1px sol
     });
     return {
       publishDate: $("publishDate").value || CFG.publish.date,
-      practice: true, pretend: false, targetWeek: CFG.target_week || "next",
+      practice: !REAL, pretend: false, targetWeek: CFG.target_week || "next",
       issue: CFG.issue || null,
       includedSlots: included, excludedSlots: excluded,
       photoIncludes: Array.from(document.querySelectorAll("[data-photo-id]:checked:not(:disabled)")).map(function (b) { return b.getAttribute("data-photo-id"); }),
       notes: $("globalNotes").value.trim(), slotNotes: slotNotes, answers: collectAnswers(), order: order,
-      pageVersion: "practice-v2", submittedAt: null
+      pageVersion: REAL ? "budget-v2" : "practice-v2", submittedAt: null
     };
   }
   $("submit").addEventListener("click", async function () {
@@ -649,7 +651,9 @@ textarea#globalNotes{width:100%;min-height:96px;padding:10px 12px;border:1px sol
     $("issueLabel").textContent = iss.label || "Next issue";
     $("weekLabel").textContent = iss.week || "";
     $("pageTitle").textContent = "Budget — " + (iss.label || "next issue") + (iss.week ? ", " + iss.week.replace(/^Week/, "week") : "");
-    document.title = "Budget — " + (iss.label || "next") + " (practice)";
+    REAL = CFG.mode === "real";
+    document.title = "Budget — " + (iss.label || "next") + (REAL ? "" : " (practice)");
+    if (REAL) { $("modeTag").textContent = "Real budget · Submit goes to the Desk"; $("modeTag").classList.add("real"); $("status").textContent = "Submit saves your budget for the Desk. Vet saves to staging."; }
     $("publishDate").value = CFG.publish.date;
     showDay();
     $("desk").innerHTML = "<h2>Desk's read on this week</h2><ul>" + (CFG.desk_summary || []).map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") + "</ul>" +

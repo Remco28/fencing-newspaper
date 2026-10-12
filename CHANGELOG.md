@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## 2026-10-12 — Issue No. 2 budget (Monday full pass)
+- Full SOURCES pass + second email pass; 8 new staging items (NAC results, Elite/Challenger explainer, Vet Worlds, NJSIAA dates, epee TV calendar, Ultimate Cup board, gear fill, NJFA lead); Clean marked 6 stale/merged items. Log: `staging/weeks/next/gather-log-2026-10-12.md`.
+- Budget page: lineup `mode: "real"` swaps the PRACTICE tag for "Real budget · Submit goes to the Desk" and submits `practice: false` / `pageVersion: budget-v2`. Rehearsals keep `mode: practice` (default).
+
 ## v3.22 — 2026-10-08 (X as a source)
 
 Frank: test X (Twitter) as a source using the built-in read-only `x` tools, gently (about 25 calls used of a

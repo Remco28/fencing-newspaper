@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-12T08:10:00-04:00",
+  "updated_at": "2026-10-12T09:35:00-04:00",
   "note": "Staging pile for Issue No. 2 (week of Oct 12, 2026). Rolled from after-next/ 2026-10-07 after Issue No. 1 approval: THE WEAPON (chat-asset-weapon-epee, span 2). Carry-forward copies from staging/weeks/2026-10-08/ marked carried_from (refresh before budget).",
   "items": [
     {
@@ -88,7 +88,12 @@
       "created_at": "2026-10-07T13:05:00-04:00",
       "carried_from": "staging/weeks/2026-10-08",
       "carried_at": "2026-10-07T18:46:27-04:00",
-      "carry_note": "Unvetted tip; still upcoming."
+      "carry_note": "Unvetted tip; still upcoming.",
+      "clean": {
+        "status": "merged",
+        "at": "2026-10-12T09:35:00-04:00",
+        "why": "Merged into the Morris Cup board (email-agentmail-morris-cup-entries-2026-10-07)."
+      }
     },
     {
       "id": "gather-college-path-shamel-epee",
@@ -136,7 +141,12 @@
       "created_at": "2026-10-07T13:05:00-04:00",
       "carried_from": "staging/weeks/2026-10-08",
       "carried_at": "2026-10-07T18:46:27-04:00",
-      "carry_note": "Unvetted, unprinted; optional college-path color."
+      "carry_note": "Unvetted, unprinted; optional college-path color.",
+      "clean": {
+        "status": "stale",
+        "at": "2026-10-12T09:35:00-04:00",
+        "why": "March 2026 story re-dated by a page update; Shamel was 20th in Div I Elite at the Oct NAC. Not news."
+      }
     },
     {
       "id": "email-agentmail-morris-cup-entries-2026-10-07",
@@ -202,6 +212,12 @@
           "subject": "Club schedule · Monday, October 12",
           "retrieved_at": "2026-10-12T08:10:00-04:00",
           "note": "CHANGE: Rahi Shah Mirani no longer listed in Y10ME Sun Oct 25 (now 19 fencers / 29 entries). Latest list."
+        },
+        {
+          "type": "fetch_log",
+          "path": "staging/weeks/next/gather-2026-10-12-web.json",
+          "retrieved_at": "2026-10-12T09:17:00-04:00",
+          "note": "FencingTracker cross-check 2026-10-12: 29 entries / 19 fencers; Rahi Shah Mirani shown WITHDRAWN from Y10ME — matches the Oct 12 digest."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -459,7 +475,12 @@
       },
       "carried_from": "staging/weeks/2026-10-08",
       "carried_at": "2026-10-07T18:46:27-04:00",
-      "carry_note": "NAC Oct 9-12: Elite FC names to look for in results (Penny Young, Amina Gore, Maksim Milinkovic, Anayaa Sheth)."
+      "carry_note": "NAC Oct 9-12: Elite FC names to look for in results (Penny Young, Amina Gore, Maksim Milinkovic, Anayaa Sheth).",
+      "clean": {
+        "status": "merged",
+        "at": "2026-10-12T09:35:00-04:00",
+        "why": "Event over; registrations superseded by ft-nac-results-efc-2026-10-12."
+      }
     },
     {
       "id": "chat-winter-camp-reminder",
@@ -720,7 +741,12 @@
         "usa-fencing",
         "results-followup"
       ],
-      "created_at": "2026-10-08T04:55:00-04:00"
+      "created_at": "2026-10-08T04:55:00-04:00",
+      "clean": {
+        "status": "stale",
+        "at": "2026-10-12T09:35:00-04:00",
+        "why": "Results-watch lead fulfilled by FencingTracker results (ft-nac-results-efc-2026-10-12)."
+      }
     },
     {
       "id": "x-lead-veteran-worlds-tbilisi",
@@ -757,7 +783,12 @@
         "tbilisi",
         "tv"
       ],
-      "created_at": "2026-10-08T04:55:00-04:00"
+      "created_at": "2026-10-08T04:55:00-04:00",
+      "clean": {
+        "status": "merged",
+        "at": "2026-10-12T09:35:00-04:00",
+        "why": "Merged into web-fie-vet-worlds-epee-2026-10-11 (FIE results)."
+      }
     },
     {
       "id": "x-lead-elsayed-world-no1-epee-feature",
@@ -840,7 +871,12 @@
         "fencing-101",
         "asian-games"
       ],
-      "created_at": "2026-10-08T04:55:00-04:00"
+      "created_at": "2026-10-08T04:55:00-04:00",
+      "clean": {
+        "status": "stale",
+        "at": "2026-10-12T09:35:00-04:00",
+        "why": "Asian Games (Sept) angle has aged; keep as idea only."
+      }
     },
     {
       "id": "x-lead-usafencing-nfl-radio-ad",
@@ -891,7 +927,7 @@
       "vetted": true,
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-10-08T08:05:00-04:00",
-      "vet_notes": "Allowlisted sender (Frank's other bot). Entries match the Oct 7 digest and the Issue No. 1 Medeo items. Results pending; do not print a result without a sourced fetch or forward. | Desk 2026-10-12 email pass: Oct 11/12 digests carry no Medeo results; chase on the Monday full pass (AskFRED/FencingTracker/forward).",
+      "vet_notes": "Allowlisted sender (Frank's other bot). Entries match the Oct 7 digest and the Issue No. 1 Medeo items. Results pending; do not print a result without a sourced fetch or forward. | Desk 2026-10-12 email pass: Oct 11/12 digests carry no Medeo results; chase on the Monday full pass (AskFRED/FencingTracker/forward). | Desk full pass 2026-10-12 ~09:17 ET: AskFRED public results page shows no results uploaded; not on FencingTracker. Still pending.",
       "created_at": "2026-10-08T08:05:00-04:00",
       "provenance": [
         {
@@ -923,6 +959,12 @@
           "subject": "Club schedule · Monday, October 12",
           "retrieved_at": "2026-10-12T08:10:00-04:00",
           "note": "Still lists Medeo Oct 11 entries only (Christina Jiang Y12WE 9:30 AM; Bryce Cheng Y10 Mixed 11:30 AM). No results in digest."
+        },
+        {
+          "type": "url",
+          "url": "https://www.askfred.net/tournaments/b6b193b7-eec3-4322-b5b6-38d92659fbbf/results",
+          "retrieved_at": "2026-10-12T09:17:30-04:00",
+          "note": "No results uploaded yet"
         }
       ],
       "related": [
@@ -935,6 +977,440 @@
         "results-watch",
         "pending"
       ]
+    },
+    {
+      "id": "ft-nac-results-efc-2026-10-12",
+      "kind": "fact",
+      "headline": "October NAC (Orlando): Elite FC results — Milinkovic 12th of 121 in Cadet Elite",
+      "body": "October NAC, Orlando, Oct 9–12 — first NAC under USA Fencing's Elite/Challenger split. Elite FC results per FencingTracker results pages (retrieved 2026-10-12 09:13–09:17 ET):\n- Maksim Milinkovic, Cadet Elite Men's Epee (Sat 10/10): 12th of 121. Seeded 49th; pools 3-3; DE wins 15-14, 15-12, 15-11; lost 10-15 in the round of 16 to the eventual 6th-place finisher. Winner: Andy Zheng (Guanyi FA).\n- Maksim Milinkovic, Division I Challenger Men's Epee (Fri 10/9): 68th of 233. Seeded 187th; pools 6-0; lost first DE 14-15. Winner: Steven Wu (AFM).\n- Cadet Challenger Women's Epee (Fri 10/9), 80 fencers: Anayaa Sheth 45th (pools 3-3, lost T64 12-15); Amina Gore 59th (pools 2-4, lost T64 5-15); Penny Young 68th (pools 2-4, no DE).\n- PENDING: Penny Young, Y14 Women's Epee (Mon 10/12, 118 approved entrants) — being fenced today.\nContext: Medeo FC (Bound Brook, NJ) — Anika Adyanthaya won Cadet Elite Women's Epee; Alexander Bezrodnov 3rd in Div I Elite Men's Epee (clubs from FT registration previews). Ratings earned: not posted anywhere yet.",
+      "source": "fencingtracker",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Desk Monday full pass 2026-10-12. Scraped results (FencingTracker) for the four fencers Frank confirmed 2026-10-07; needs Frank's Vet before print (scraped-source rule). Print names via roster: 'Young, Penelope' -> Penny Young; 'Anayaà' -> Anayaa Sheth. Don't confuse Elite Fencing Academy (Div I Elite winner Nathaniel Wimmer's club) with Elite FC. FencingTimeLive login-walled (not used).",
+      "slot_hint": "club_results",
+      "suggested_slot": "lead+club_results",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43505/results",
+          "retrieved_at": "2026-10-12T09:14:10-04:00",
+          "note": "Cadet Elite ME results"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43498/results",
+          "retrieved_at": "2026-10-12T09:14:10-04:00",
+          "note": "Div I Challenger ME results"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43495/results",
+          "retrieved_at": "2026-10-12T09:15:21-04:00",
+          "note": "Cadet Challenger WE results"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43504/results",
+          "retrieved_at": "2026-10-12T09:16:23-04:00",
+          "note": "Cadet Elite WE results (Medeo winner)"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43493/results",
+          "retrieved_at": "2026-10-12T09:16:23-04:00",
+          "note": "Div I Elite ME results"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/p/100239134/Maksim-Milinkovic/history",
+          "retrieved_at": "2026-10-12T09:14:10-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/21126",
+          "retrieved_at": "2026-10-12T09:15:21-04:00",
+          "note": "Y14WE preview: 118 approved; results pending"
+        },
+        {
+          "type": "fetch_log",
+          "path": "staging/weeks/next/gather-2026-10-12-web.json",
+          "retrieved_at": "2026-10-12T09:17:00-04:00"
+        }
+      ],
+      "merged_from": [
+        "ft-nac-efc-registrations-2026-10-07",
+        "x-lead-nac-oct-results-watch"
+      ],
+      "row_count": 5,
+      "tags": [
+        "club",
+        "nac",
+        "results",
+        "unvetted",
+        "scraped"
+      ],
+      "created_at": "2026-10-12T09:35:00-04:00"
+    },
+    {
+      "id": "web-usaf-elite-challenger-explainer",
+      "kind": "fact",
+      "headline": "Why NAC Fields Now Say 'Elite' and 'Challenger'",
+      "body": "USA Fencing's new structure debuted at the October NAC: Cadet and Division I events with more than 168 entries split into an Elite field (capped at 112, filled from the Unified Points List) and a Challenger field (everyone else). Cadet Elite = top 112 Cadet points; Div I Elite = top 72 Senior + 24 Junior + 16 Cadet points. Split set 15 days out (Oct NAC: Sept 24; Nov NAC: Nov 5). Challenger fencers who opt in can move up as Elite spots open until 5 p.m. local the night before. Two-year trial; new points system took effect Aug 1, 2026. Sept 28 update: temporary Elite opt-in for Oct/Nov, an apology for how 2025-26 points carryover was communicated, and an expanded points review group (incl. small-club voices) meeting after the Oct and Nov NACs.",
+      "word_count": 120,
+      "source": "usafencing",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Desk Monday full pass 2026-10-12. Parent-service explainer that explains our own results (Maksim fenced Elite in Cadet, Challenger in Div I; our women fenced Challenger). Official source; needs Frank Vet per budget rule.",
+      "slot_hint": "secondary_a",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/news/2026/september/19/how-the-event-split-works-what-to-know-before-the-october-nac",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/news/2026/september/28/what-s-next-for-the-points-system-an-expanded-review-group-and-how-to-weigh-in",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/new-points-and-events-structure",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        }
+      ],
+      "tags": [
+        "national",
+        "usa-fencing",
+        "explainer",
+        "unvetted"
+      ],
+      "created_at": "2026-10-12T09:35:00-04:00"
+    },
+    {
+      "id": "web-fie-vet-worlds-epee-2026-10-11",
+      "kind": "fact",
+      "headline": "Vet Worlds: U.S. Men's Epee Veterans Take Two Silvers, Two Team Bronzes",
+      "body": "Veteran World Championships, Tbilisi, Georgia, Oct 9–17 (65 nations, 1,273 athletes per FIE). Sean Ameli (USA) lost the Veteran 60 men's epee final 9-8 in overtime to France's Olivier Guilbert (field of 96). Bruce Jugan (USA) took silver in Veteran 70 men's epee, losing 10-5 to Belgium's Jean Stock (field of 74). Team USA won bronze in Veteran men's team epee (Aaron Gaines, Nicholas Hallman, Philip Hedges, Tommi Hurme, Alexander Tsinis) and Grand Veteran men's team epee (Sean Ameli, Jeffrey Hudson, Bruce Jugan, John Moreau, Mark Nixon). Women's epee runs Oct 12–14. Streamed/rewatch on FencingTV.",
+      "word_count": 105,
+      "source": "fie",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Desk Monday full pass 2026-10-12. FIE web + FIE X (tier A, own event). Angle: 'fencing is for life' for parents who fence. FIE web spells 'Jeffey Hudson' once; X post says 'Jeffrey Hudson' — print Jeffrey (verify). Bronze-medal bout scores per FIE web (beat Poland 45-33 / France 45-40) — recheck at compose.",
+      "slot_hint": "secondary_b",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fie.org/news/1743-four-first-veteran-world-champions-crowned-in-tbilisi",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/news/1744-usa-s-fabry-germany-s-hambach-richter-and-belgium-s-stock-repeat-as-world-champion-and-france-s-le-treut-wins-first",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/news/1746-usa-and-france-defend-titles-as-germany-repeats-at-veteran-team-world-championships",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/89",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2109367894551437568",
+          "author": "@FIE_fencing",
+          "author_id": "196195164",
+          "posted_at": "2026-10-11T19:37:50Z",
+          "posted_at_et": "2026-10-11 3:37 PM ET",
+          "retrieved_at": "2026-10-12T09:14:00-04:00",
+          "account_tier": "A",
+          "note": "Veteran Men's Team Epee medallists incl. Team USA bronze roster"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2109368054543249736",
+          "author": "@FIE_fencing",
+          "author_id": "196195164",
+          "posted_at": "2026-10-11T19:38:29Z",
+          "posted_at_et": "2026-10-11 3:38 PM ET",
+          "retrieved_at": "2026-10-12T09:14:00-04:00",
+          "account_tier": "A",
+          "note": "Grand Veteran Men's Team Epee medallists incl. Team USA bronze roster"
+        }
+      ],
+      "merged_from": [
+        "x-lead-veteran-worlds-tbilisi"
+      ],
+      "tags": [
+        "international",
+        "fie",
+        "veterans",
+        "unvetted"
+      ],
+      "created_at": "2026-10-12T09:35:00-04:00"
+    },
+    {
+      "id": "web-njsiaa-fencing-2026-27-dates",
+      "kind": "fact",
+      "headline": "NJ High School Fencing: 2026–27 Dates Are Set",
+      "body": "NJSIAA 2026–27 fencing calendar: tryouts Nov 23–25, first practice Nov 30, competition may begin Dec 7, 2026. Independent entries close Jan 8, 2027. Team state finals (boys and girls) Feb 25, 2027 at Morris Hills HS; Individual State Championships Feb 27, 2027 at Hunterdon Central HS. Regular season ends March 7, 2027. NJ.com fencing pages still show last season; no new HS fencing news.",
+      "word_count": 65,
+      "source": "njsiaa",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Desk Monday full pass 2026-10-12. Official NJSIAA page; short calendar note for the NJ HS slot (season weeks away).",
+      "slot_hint": "nj_hs",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://www.njsiaa.org/sports/fencing",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://highschoolsports.nj.com/boysfencing",
+          "retrieved_at": "2026-10-12T09:21:00-04:00",
+          "note": "quiet"
+        },
+        {
+          "type": "url",
+          "url": "https://highschoolsports.nj.com/girlsfencing",
+          "retrieved_at": "2026-10-12T09:21:00-04:00",
+          "note": "quiet"
+        }
+      ],
+      "tags": [
+        "nj-hs",
+        "njsiaa",
+        "calendar",
+        "unvetted"
+      ],
+      "created_at": "2026-10-12T09:35:00-04:00"
+    },
+    {
+      "id": "web-fie-epee-tv-calendar-2026-10-12",
+      "kind": "fact",
+      "headline": "Epee on Screen: Next Few Weeks (FIE calendar)",
+      "body": "FIE events calendar (epee): Veteran Worlds women's epee, Tbilisi, Oct 12–14 (FencingTV). Casablanca Senior Epee World Cup, men + women, Oct 15–18 (men indiv Oct 15–17, women indiv Oct 16–17, teams Oct 18; FencingTV; 68 nations, 626 athletes). San José Junior/Cadet Epee World Cup, Oct 22–25 (no streaming badge). Manama Junior/Cadet Epee World Cup, Nov 5–8 (no streaming badge). Berne Senior Men's Epee World Cup, Nov 12–14 (FencingTV). Wuxi Senior Women's Epee World Cup, Nov 13–15 (FencingTV). No start times or free/paid info on FIE cards.",
+      "source": "fie",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Desk Monday full pass 2026-10-12. FIE says 'Watch on fencingtv.com' only; don't print free/paid or times.",
+      "slot_hint": "tv",
+      "table": {
+        "head": [
+          "Dates",
+          "Event",
+          "Where to watch"
+        ],
+        "rows": [
+          [
+            "Oct. 12–14",
+            "Veteran Worlds, women (Tbilisi)",
+            "FencingTV"
+          ],
+          [
+            "Oct. 15–18",
+            "Senior World Cup, men + women (Casablanca)",
+            "FencingTV"
+          ],
+          [
+            "Oct. 22–25",
+            "Junior/Cadet World Cup (San José, Costa Rica)",
+            "No stream listed"
+          ],
+          [
+            "Nov. 12–15",
+            "Senior World Cups: Berne (men), Wuxi (women)",
+            "FencingTV"
+          ]
+        ]
+      },
+      "row_count": 4,
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/89",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/115",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/117",
+          "retrieved_at": "2026-10-12T09:18:50-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/118",
+          "retrieved_at": "2026-10-12T09:18:50-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/124",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/125",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/AllSportDB/status/2109575174194331671",
+          "posted_at": "2026-10-12T09:21:30Z",
+          "posted_at_et": "2026-10-12 5:21 AM ET",
+          "retrieved_at": "2026-10-12T09:15:00-04:00",
+          "note": "Unvetted aggregator, corroborates Casablanca start only (lead, not a source)"
+        }
+      ],
+      "tags": [
+        "tv",
+        "fie",
+        "calendar",
+        "unvetted"
+      ],
+      "created_at": "2026-10-12T09:35:00-04:00"
+    },
+    {
+      "id": "ft-ultimate-cup-efc-registrations-2026-10-12",
+      "kind": "signup_row",
+      "headline": "Ultimate Cup RJCC (Hillsborough, N.J., Oct. 31–Nov. 1) — Elite FC registrations per FencingTracker",
+      "body": "FencingTracker registrations, Ultimate Cup RJCC, Iron Peak Sports & Events, Hillsborough Township NJ, Oct 31–Nov 1 — 12 entries / 9 Elite FC fencers: Sat Oct 31 JNRWE Olivia Hayes, Adela Sullivan; CDTME Maksim Milinkovic, Caden Wu. Sun Nov 1 JNRME Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng; CDTWE Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young.",
+      "source": "fencingtracker",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Desk Monday full pass 2026-10-12. Scraped registrations: unvetted until Frank confirms (STAGING v3.20). Not on the chunkymonkey watched list yet. New names to the Gazette: Dieko Johnson, Lillian Liu (check spelling/membership). Event times not captured; close time unverified.",
+      "slot_hint": "signup",
+      "panels_rows": [
+        [
+          "Sat. Oct. 31",
+          "Junior Women",
+          "Olivia Hayes, Adela Sullivan",
+          "2"
+        ],
+        [
+          "Sat. Oct. 31",
+          "Cadet Men",
+          "Maksim Milinkovic, Caden Wu",
+          "2"
+        ],
+        [
+          "Sun. Nov. 1",
+          "Junior Men",
+          "Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng",
+          "4"
+        ],
+        [
+          "Sun. Nov. 1",
+          "Cadet Women",
+          "Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young",
+          "4"
+        ]
+      ],
+      "provenance": [
+        {
+          "type": "fetch_log",
+          "path": "staging/weeks/next/gather-2026-10-12-web.json",
+          "retrieved_at": "2026-10-12T09:17:00-04:00",
+          "note": "FencingTracker EFC club page / tournament registrations (URL in gather JSON)"
+        }
+      ],
+      "tags": [
+        "club",
+        "signup",
+        "scraped",
+        "unvetted"
+      ],
+      "created_at": "2026-10-12T09:35:00-04:00"
+    },
+    {
+      "id": "web-gear-recycling-blades-cords",
+      "kind": "tip",
+      "headline": "Second Life for Broken Gear",
+      "body": "FIE: the Takamatsu City World Cup (Japan, Oct 15–18, foil) hosts the first broken-blade collection at an official FIE event, feeding Kazuyasu Minobe's Re-blade 2028 project (blades into knives, medals, keychains). USA Fencing profiled Joshua Au's ReCord Initiative: 334 body cords repaired and given free to nonprofit clubs and public schools (goal 500); recipients pay shipping; Absolute Fencing provides collection bins at tournaments. Source gives no age/home club for Au.",
+      "word_count": 75,
+      "source": "fie+usafencing",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vet_notes": "Desk Monday full pass 2026-10-12. Optional fill / gear box. Blade event is foil; recycling angle is weapon-neutral.",
+      "slot_hint": "desk_fill",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fie.org/news/1742-giving-broken-blades-a-second-life-at-the-takamatsu-city-world-cup",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/news/2026/september/30/",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        }
+      ],
+      "tags": [
+        "fill",
+        "gear",
+        "unvetted"
+      ],
+      "created_at": "2026-10-12T09:35:00-04:00"
+    },
+    {
+      "id": "ft-njfa-sep29-possible-efc-results",
+      "kind": "tip",
+      "headline": "Possible missed results: NJFA Div. 3 & Y8–Y14 (Sept. 29)",
+      "body": "FencingTracker's Elite FC club Results tab lists Bradley Tsai 2nd in Y12 Mixed Epee and Brendan Mendez 3rd in Division III Mixed Epee at NJFA Div. 3 and Y8–Y14 Epee (Sept 29). Neither name has appeared in the Gazette or roster. Lead only: confirm club membership and spellings with Frank before any print.",
+      "source": "fencingtracker",
+      "from": null,
+      "target_week": "next",
+      "vetted": false,
+      "vet_notes": "Desk Monday full pass 2026-10-12. Two weeks old; would be a late \"also from the strip\" line if Frank confirms.",
+      "slot_hint": "club_results",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-10-12T09:14:43-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://member.usafencing.org/details/tournaments/13013",
+          "retrieved_at": "2026-10-12T09:14:43-04:00"
+        }
+      ],
+      "tags": [
+        "club",
+        "results",
+        "scraped",
+        "unvetted",
+        "question"
+      ],
+      "created_at": "2026-10-12T09:35:00-04:00"
     }
   ],
   "rolled_forward": {
