@@ -78,7 +78,7 @@
   "Real issue this week. Lead (OK'd by Frank): Maksim Milinkovic finished 12th of 121 in Cadet Elite at the October NAC, winning three straight elimination bouts from the 49th seed.",
   "Vetted from your chat answers: the NAC lead and results, the Ultimate Cup board, Christina Jiang's 5th at Medeo, and late NJFA lines for Bradley Tsai and Brendan Mendez. Still unvetted website items: the Elite/Challenger explainer, Veteran Worlds, NJ high-school dates, the TV box and gear.",
   "Results tone is now house policy: places only for strong finishes; everyone else is on an \"also fenced\" line. Christina's Medeo 5th prints as Y12 Mixed. Penny's Y14 result is being fenced today.",
-  "Winter Camp is held for No. 3. THE WEAPON fills the back page at two columns. Overheard on Reddit (etiquette) is ready; a second, unvetted Overheard (Princess Bride duel) is proposed as space-fill. Your call."
+  "Winter Camp and the Princess Bride Overheard (vetted) are held for No. 3. THE WEAPON fills the back page at two columns; Overheard on Reddit (etiquette) is ready."
  ],
  "slots": [
   {
@@ -136,28 +136,6 @@
     {
      "level": "info",
      "text": "Claim check done against the USA Fencing Oct. 2026 rulebook. Handshake and pants claims left out."
-    }
-   ]
-  },
-  {
-   "key": "overheard-2",
-   "section": "lead",
-   "slot": "Overheard on Reddit #2 — Princess Bride duel",
-   "budget": "130–160w",
-   "item": "reddit-rfencing-princess-bride-2026-10-12",
-   "proposed": true,
-   "cost": {
-    "type": "prose",
-    "span": 1
-   },
-   "summary": "A fun r/Fencing thread asking if the Princess Bride cliff-top duel is \"BS.\" The masters it names are real, Bob Anderson choreographed it, and the forum's verdict was \"great theatrical fencing.\" Facts are checked against non-forum sources; opinions are printed as what people said. No usernames.",
-   "questions": [
-    "Run it in No. 2 as space-fill after the etiquette piece (my pick: the issue is about half full), or hold it for No. 3? It needs your Vet either way."
-   ],
-   "flags": [
-    {
-     "level": "warn",
-     "text": "Not vetted: you can't verify the thread itself. The claim check found two fixes: the duel was shot on a set, not on the Cliffs of Moher, and the script line is \"the greatest sword fight in modern times.\""
     }
    ]
   },
@@ -550,6 +528,11 @@
    "id": "chat-winter-camp-reminder",
    "label": "Winter Camp reminder (held for No. 3)",
    "note": "chat: Frank 2026-10-12: skip it this week. Moved to staging/weeks/after-next. Price and sign-up link are still open."
+  },
+  {
+   "id": "reddit-rfencing-princess-bride-2026-10-12",
+   "label": "Overheard on Reddit #2: Princess Bride duel (held for No. 3)",
+   "note": "chat: Frank 2026-10-12: vetted; hold for No. 3 (week of Oct 19). Moved to staging/weeks/after-next."
   }
  ],
  "not_proposed": [
