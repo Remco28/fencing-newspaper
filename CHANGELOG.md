@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.29 — 2026-10-13
+- **Board named "Nearby Tournaments"** (chat: Frank 2026-10-13 11:29 ET), replacing "Go Cheer" (kept only in history: No. 2 print, CHANGELOG, roll-forward archives). Applied to CONTENT-HIERARCHY (row 8, cut order; open question removed), SECTIONS-MENU, PLAN, STYLE-GUIDE, Template A reference heading (`issues/2026-10-14/issue.html` box title), budget page labels (`budget-demo/index.html`, `practice-lineup.json`), and staging next/ board items (`board: "Nearby Tournaments"`).
+
 ## v3.28 — 2026-10-13
 - **Frank's answers to the hierarchy questions** (chat: Frank 2026-10-13 11:27 ET): no fixed section lengths (sizes are rough guides only; "Budget" column → "Rough guide"); Overheard on Reddit best at one per issue but skipped when nothing good; Deadlines box runs every issue (entry deadlines + renewals, months ahead), separate from and adjacent to the local tournaments board; "Go Cheer" being renamed (options: Close to Home / Nearby Tournaments / Local Strip; Frank to pick); "For the Parents" is final; "Dear Ref" (a Desk suggestion) folded into By the Book / dropped, pending Frank. Remaining open: ranking, board name, corrections, Ling credit. CONTENT-HIERARCHY, SECTIONS-MENU, PLAN.
 

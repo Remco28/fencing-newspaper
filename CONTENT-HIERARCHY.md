@@ -38,8 +38,8 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 | 5 | Secondary article B | ~80–100w | Web (FIE / national / regional) | Drop first if tight. |
 | 6 | NJ high-school roundup | ~60–90w or 3–5 one-liners | Web (NJ.com / NJSIAA) | Whole-state epee; in season. |
 | 7 | **Overheard on Reddit** (provisional rank) | ~130–170w | Reddit | Recurring since No. 1 (etiquette ran No. 2). Forum takes as attributed opinion, no usernames; checked facts as fact; optional one-line *Fact check:* line. **Best at one per issue, but don't force it:** most of Reddit is junk, so skip it when nothing good turned up (v3.28, chat: Frank 2026-10-13). |
-| 8 | Local tournaments board (**renaming** — formerly "Go Cheer"; Frank to pick: "Close to Home" / "Nearby Tournaments" / "Local Strip") | ~2–8 rows, max 4 tournaments | Email digest / FT registrations / AskFRED | **Core.** Elite FC entries only; prefer all names on fewer tournaments (if ~20 fencers enter one event, show fewer tournaments). Events coming up very soon in our area. No "(All Epee)". Sits next to the Deadlines box. |
-| 9 | **Deadlines box** | ~3–5 rows | AskFRED / Email / Web | **Runs every issue** (v3.28, chat: Frank 2026-10-13). Entry deadlines and renewals, which can be months ahead. Separate from the local tournaments board (events very soon); place the two **adjacent**. |
+| 8 | **Nearby Tournaments** board (formerly "Go Cheer"; name picked v3.29, chat: Frank 2026-10-13) | ~2–8 rows, max 4 tournaments | Email digest / FT registrations / AskFRED | **Core.** Elite FC entries only; prefer all names on fewer tournaments (if ~20 fencers enter one event, show fewer tournaments). Events coming up very soon in our area. No "(All Epee)". Sits next to the Deadlines box. |
+| 9 | **Deadlines box** | ~3–5 rows | AskFRED / Email / Web | **Runs every issue** (v3.28, chat: Frank 2026-10-13). Entry deadlines and renewals, which can be months ahead. Separate from the Nearby Tournaments board (events very soon); place the two **adjacent**. |
 | 10 | Club events | ~3–5 items or one-line notes | Email (newsletter) / Chat | Camps (e.g. Winter Camp), special classes, class changes as **one-line notes** (e.g. footwork class) — see Weekly Classes rule in Cut order. |
 | 11 | **Parent Q&A** | ~40–70w (1 Q&A) | Chat (parent ask → Frank → Desk) | Answers a **real question a parent asked**. Anonymous; no Frank byline. `.rail-block.qa`. Default 1 per issue; second only if space after cuts. |
 | 12 | **By the Book** (provisional rank) | 1 snippet | Frank's USA Fencing rulebook + penalty-guide material | v3.25. One rule or penalty per issue; random by default, the relevant penalty when something happened that week. **Nothing until Frank shares his material.** |
@@ -86,7 +86,7 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
   1. **Weekly Classes table** (the regular class schedule) — drop it. It runs only when
      something changed or there is a special class, and even then a **one-line note** in Club
      events (e.g. “Mini Musketeers now starts at 4:15 on Fridays.”) is preferred over the table.
-  2. **Upcoming-tournament boards** (local tournaments board, formerly "Go Cheer") — shrink to the **nearest and most
+  2. **Upcoming-tournament boards** (**Nearby Tournaments**) — shrink to the **nearest and most
      important** events and to **Elite FC entries only** (no open-call or “spots still open”
      rows). Fewer tournaments before fewer names; the board shrinks, it is not dropped (core).
   3. **Other standing utility boxes** — TV/streaming, glance/explainer boxes, comic: trim rows,
@@ -107,8 +107,7 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 
 ## Open questions for Frank
 1. **Ranking:** where do Overheard on Reddit, By the Book and For the Parents belong in the table? Placed provisionally.
-2. **Local tournaments board name:** "Close to Home", "Nearby Tournaments" or "Local Strip"? ("Go Cheer" is retired; kept only in history.)
-3. **Corrections:** SECTIONS-MENU marked a corrections box ✅, but corrections placeholders were killed 2026-10-06. Run a one-line correction only when needed, or never?
-4. **Comic by Ling:** credit line, and does Ling send via efc.weekly like Frank?
+2. **Corrections:** SECTIONS-MENU marked a corrections box ✅, but corrections placeholders were killed 2026-10-06. Run a one-line correction only when needed, or never?
+3. **Comic by Ling:** credit line, and does Ling send via efc.weekly like Frank?
 
-Answered 2026-10-13 11:27 ET (chat: Frank 2026-10-13): no fixed lengths; Overheard one per issue when good, skip otherwise; Deadlines box every issue, next to the local board; "For the Parents" is final; "Dear Ref" folded into By the Book / dropped pending Frank (it was a Desk suggestion, not Frank's idea); "Go Cheer" being renamed.
+Answered 2026-10-13 11:27 ET (chat: Frank 2026-10-13): no fixed lengths; Overheard one per issue when good, skip otherwise; Deadlines box every issue, next to the local board; "For the Parents" is final; "Dear Ref" folded into By the Book / dropped pending Frank (it was a Desk suggestion, not Frank's idea); "Go Cheer" being renamed → **"Nearby Tournaments"** (picked 11:29 ET).

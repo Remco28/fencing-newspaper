@@ -105,7 +105,7 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
 ## 3. Grid: 3 columns
 - Body content flows in 3 columns (flex thirds or CSS columns). Rationale: reads like a newspaper,
   eyes scan shorter line lengths faster.
-- Lead story may span 2 columns; rails/boxes take the third. Signup board and footer span full width.
+- Lead story may span 2 columns; rails/boxes take the third. Nearby Tournaments board (signup board; formerly "Go Cheer") and footer span full width.
 - Educational figures (e.g. exploded-weapon): default **span 2 columns** (not 3 / not full-bleed) unless Frank says otherwise.
 - Column gaps 9pt. Boxes: 1.5pt border, 3–4pt padding, 4pt bottom margin.
 

@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-13T08:02:30-04:00",
+  "updated_at": "2026-10-13T11:29:00-04:00",
   "note": "Hold pile for the issue after `next` (Issue No. 3). Created empty 2026-10-07 at the roll-forward after Issue No. 1.",
   "items": [
     {
@@ -242,6 +242,10 @@
           "vetted_by": "auto-chunkymonkey",
           "retrieved_at": "2026-10-13T08:05:00-04:00",
           "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 12 digest (19 fencers / 29 entries, same events and times). No adds or drops. Medeo no longer in the digest's watched list (event past)."
+        },
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "Board name: 'Nearby Tournaments' (formerly 'Go Cheer'), 11:29 ET."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -285,7 +289,8 @@
           "noted_at": "2026-10-12T08:10:00-04:00"
         }
       ],
-      "entries_count": "19 fencers / 29 entries (confirmed unchanged in Oct 13 digest; was 20 / 29 through Oct 10)"
+      "entries_count": "19 fencers / 29 entries (confirmed unchanged in Oct 13 digest; was 20 / 29 through Oct 10)",
+      "board": "Nearby Tournaments"
     },
     {
       "id": "web-efc-standing-schedule",
@@ -560,6 +565,10 @@
           "type": "chat",
           "note": "chat: Frank 2026-10-12 — Dieko Johnson + Lillian Liu confirmed Elite FC; Ultimate Cup board vetted",
           "retrieved_at": "2026-10-12T09:45:00-04:00"
+        },
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "Board name: 'Nearby Tournaments' (formerly 'Go Cheer'), 11:29 ET."
         }
       ],
       "tags": [
@@ -568,7 +577,8 @@
         "scraped"
       ],
       "created_at": "2026-10-12T09:35:00-04:00",
-      "carried_from": "staging/weeks/2026-10-13"
+      "carried_from": "staging/weeks/2026-10-13",
+      "board": "Nearby Tournaments"
     },
     {
       "id": "web-gear-recycling-blades-cords",

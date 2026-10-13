@@ -29,7 +29,7 @@
   {
    "key": "club",
    "title": "Club",
-   "hint": "Results, Go Cheer / signups, classes, events"
+   "hint": "Results, Nearby Tournaments, classes, events"
   },
   {
    "key": "shorts",
@@ -260,7 +260,7 @@
   {
    "key": "signup",
    "section": "club",
-   "slot": "Go Cheer — Morris Cup who's entered",
+   "slot": "Nearby Tournaments — Morris Cup who's entered",
    "budget": "all entries (your exception to the 8-row cap)",
    "item": "email-agentmail-morris-cup-entries-2026-10-07",
    "proposed": true,
@@ -362,7 +362,7 @@
   {
    "key": "signup-2",
    "section": "club",
-   "slot": "Go Cheer — Ultimate Cup who's entered",
+   "slot": "Nearby Tournaments — Ultimate Cup who's entered",
    "budget": "4 rows",
    "item": "ft-ultimate-cup-efc-registrations-2026-10-12",
    "proposed": true,
