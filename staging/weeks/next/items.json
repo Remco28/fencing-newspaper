@@ -650,8 +650,8 @@
       "vetted": false,
       "vetted_by": null,
       "vetted_at": null,
-      "status": "unvetted — awaiting Frank",
-      "vet_notes": "First Controversial Calls. No names; editor's-son note; facts attributed to family. Open: floor vs metal strip; senior ref's role (Head Referee?); pool score/stage; ref quote wording.",
+      "status": "revised — awaiting Frank's final vet",
+      "vet_notes": "Revised per Frank's answers 2026-10-13 11:52 ET: two years ago; landing spot unknown (off the strip; t.93/t.94.1 either way); formal appeal, Head Referee ruled point of fact (t.172/t.174); lost by one touch; ref 'thought she saw it hit' (attributed); opponent waved no-touch (attributed); verdict Judgment call. Second disputed touch deliberately excluded (fuzzy).",
       "claim_check": [
         {
           "claim": "Off-strip/floor touch in épée is disregarded where floor not insulated",
@@ -707,6 +707,16 @@
           "claim": "Facts of the bout (landing spot, who said what, senior ref)",
           "citation": "chat: Frank 2026-10-13 11:43 + 11:44 ET",
           "status": "UNVERIFIED, attributed to family"
+        },
+        {
+          "claim": "Formal appeal; Head Referee ruled it a point of fact",
+          "citation": "t.172.1-2, t.173, t.174",
+          "status": "consistent; facts attributed to family"
+        },
+        {
+          "claim": "Replay rules cited are current (2026-27); bout was ~2 years ago",
+          "citation": "Ops Manual 2026-27 p.19",
+          "status": "print says 'today'"
         }
       ],
       "provenance": [
@@ -723,6 +733,10 @@
         },
         {
           "source": "reference/usa-fencing/usaf-operations-manual-2026-27.pdf"
+        },
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "11:52 ET answers to draft questions"
         }
       ],
       "slot_hint": "controversial_calls",
@@ -731,7 +745,8 @@
         "rules",
         "controversial-calls"
       ],
-      "created_at": "2026-10-13T11:45:00-04:00"
+      "created_at": "2026-10-13T11:45:00-04:00",
+      "revised_at": "2026-10-13T11:55:00-04:00"
     }
   ],
   "rolled_forward": {
