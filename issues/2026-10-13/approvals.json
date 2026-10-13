@@ -212,5 +212,23 @@
         ]
       }
     }
-  ]
+  ],
+  "budgetApproval": {
+    "status": "approved",
+    "by": "Frank",
+    "via": "budget page submit",
+    "submission": "budget-demo/submissions/budget-20261012-101129.json",
+    "amended": "2026-10-13T07:30:00-04:00 (see amendments)"
+  },
+  "proofApproval": {
+    "status": "approved",
+    "final": true,
+    "by": "Frank",
+    "via": "chat",
+    "at": "2026-10-13T07:57:00-04:00",
+    "version": "proof v1",
+    "commit": "30746d1",
+    "pdf": "paper.pdf"
+  },
+  "status": "approved"
 }

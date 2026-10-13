@@ -7,7 +7,7 @@
   "number": 2,
   "dateline_meta": "Vol. I — No. 2 · Chatham, N.J. · October 13, 2026",
   "pretend": false,
-  "status": "PROOF v1 — awaiting Frank's approval (not approved). Composed 2026-10-13 after Frank: 'Let's publish when you're ready' (chat, 07:30 ET).",
+  "status": "APPROVED — final (Frank, chat, 2026-10-13 07:57 ET). Proof v1 is the print version.",
   "proof_mark_note": "Template A has no printed proof mark; status lives here and in the HTML <title>.",
   "template": "Template A (CSS verbatim from issues/2026-10-08 + .figure/.factcheck additions)",
   "approvals": "issues/2026-10-13/budget-submission.json (amended 2026-10-13 07:30 ET); approvals.json is a copy",
@@ -89,5 +89,12 @@
     "ft-njfa-sep29-possible-efc-results (Frank)",
     "chat-winter-camp-reminder (held No. 3)",
     "nj-hs, gear, ratings, deadlines, qa, comic (not in approved budget)"
-  ]
+  ],
+  "approved": {
+    "by": "Frank",
+    "via": "chat",
+    "at": "2026-10-13T07:57:00-04:00",
+    "version": "proof v1",
+    "proof_commit": "30746d1"
+  }
 }
