@@ -47,6 +47,11 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 | 14 | Comic | 1 panel | Email (Frank; Ling may draw from No. 3 or later) | Sparingly. A guest artist gets a credit (guest-byline rule). |
 | 15 | TV / streaming box | ~3–5 rows | Web (FIE calendar / FencingTV) | "Epee on Screen": major events + where to watch; no start times/prices unless listed. |
 
+## Occasional / triggered sections (not every issue)
+| Section | Trigger | Structure | Rules |
+|---------|---------|-----------|-------|
+| **Controversial Calls** (v3.30, chat: Frank 2026-10-13 11:34 ET) | Runs as an article **only when a real disputed call comes up** | 1. **The call** — what happened, verified facts only. 2. **The rule** — what the rulebook and penalty guide say, brief quotes. 3. **Both sides** — why the call stands and why people objected, labeled as opinion. 4. **The verdict** — what the rules support, or "judgment call". | Never name referees critically. Fencers named only with the family's OK. Reality lock applies (STYLE-GUIDE §0b). Length follows content (no fixed size). |
+
 ## Standing elements outside the priority table
 - **Educational figure / THE WEAPON (back-page figure):** optional page-2 feature when the budget includes
   it. Default **span 2 columns** (not 3, not full-bleed) unless Frank says otherwise; SVG preferred; short
@@ -110,4 +115,4 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 2. **Corrections:** SECTIONS-MENU marked a corrections box ✅, but corrections placeholders were killed 2026-10-06. Run a one-line correction only when needed, or never?
 3. **Comic by Ling:** credit line, and does Ling send via efc.weekly like Frank?
 
-Answered 2026-10-13 11:27 ET (chat: Frank 2026-10-13): no fixed lengths; Overheard one per issue when good, skip otherwise; Deadlines box every issue, next to the local board; "For the Parents" is final; "Dear Ref" folded into By the Book / dropped pending Frank (it was a Desk suggestion, not Frank's idea); "Go Cheer" being renamed → **"Nearby Tournaments"** (picked 11:29 ET).
+Answered 2026-10-13 11:27 ET (chat: Frank 2026-10-13): no fixed lengths; Overheard one per issue when good, skip otherwise; Deadlines box every issue, next to the local board; "For the Parents" is final; "Dear Ref" was a Desk suggestion, not Frank's idea — later kept as a MAYBE (v3.30); "Go Cheer" being renamed → **"Nearby Tournaments"** (picked 11:29 ET).

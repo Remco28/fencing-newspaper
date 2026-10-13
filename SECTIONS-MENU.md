@@ -13,7 +13,8 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 - Ratings earned box: YES — celebrates club members, keep always.
 - Comics: YES but sparing; Frank draws them, sends via email like everything else.
 - **Parent Q&A** (LOCKED v3.18): parent asks Frank → Desk prints; anonymous; no Frank byline. Slot in CONTENT-HIERARCHY. Separate from ref-rule "Dear Ref".
-- Advice column ("Dear Ref"): Desk-suggested maybe (not Frank's idea). **v3.28: folded into By the Book / dropped, pending Frank** (chat: Frank 2026-10-13 — he doesn't recall it).
+- Advice column ("Dear Ref"): **MAYBE** — Desk-suggested, not Frank's idea; Frank 2026-10-13: "isn't the worst thing" (v3.30). Kept separate from Controversial Calls; not dropped.
+- **Controversial Calls** (v3.30, chat: Frank 2026-10-13): occasional article, only when a real disputed call comes up — the call (verified facts) / the rule (rulebook + penalty guide, brief quotes) / both sides (opinion, labeled) / the verdict (what the rules support, or "judgment call"). No naming referees critically; fencers named only with the family's OK. See CONTENT-HIERARCHY § Occasional.
 - Recruiting/college notes: LOW priority — only when there's genuinely good stuff.
 - CUT: weather, food, travel, crossword, quiz/trivia, jokes/riddles (not childish).
 - Byline rule: no attribution for Frank; guest writers get credited.
@@ -45,7 +46,8 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 17. Letters to the editor — ❌ skip (no submissions policy).
 18. Corrections box 🔶 (conflicts with killed corrections placeholder — open question in CONTENT-HIERARCHY) — 1-line "last issue we wrote X, correct is Y". Builds trust, keep tiny.
 19a. **Parent Q&A** ✅ — locked v3.18. Practical parent questions Frank fields at the club; anonymous; Desk answers in print. See CONTENT-HIERARCHY + STYLE-GUIDE §8a.
-19b. Advice column ("Dear Ref") ❌ — Desk suggestion; folded into By the Book / dropped, pending Frank (v3.28). — "my light didn't go on, why?" Ref-rule Q&A, epee only. Distinct from Parent Q&A. Rotation candidate.
+19b. Advice column ("Dear Ref") 🔶 MAYBE — Desk suggestion; kept as a maybe, separate from Controversial Calls and By the Book (v3.30).
+19c. **Controversial Calls** 🔶 — occasional, triggered by a real disputed call (v3.30; CONTENT-HIERARCHY § Occasional). — "my light didn't go on, why?" Ref-rule Q&A, epee only. Distinct from Parent Q&A. Rotation candidate.
 
 ## Life / culture
 20. Arts / entertainment — ❌ skip (generic).

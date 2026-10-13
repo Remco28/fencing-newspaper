@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.30 — 2026-10-13
+- **New occasional section "Controversial Calls"** (chat: Frank 2026-10-13 11:34 ET): article only when a real disputed call comes up. Structure: the call (verified facts) / the rule (rulebook + penalty guide, brief quotes) / both sides (labeled opinion) / the verdict (what the rules support, or "judgment call"). No naming referees critically; fencers named only with the family's OK; reality lock applies. CONTENT-HIERARCHY new § Occasional / triggered sections; SECTIONS-MENU 19c; PLAN §3.
+- **Dear Ref back to MAYBE** (Frank: "isn't the worst thing"), separate from Controversial Calls; reverses the v3.28 "folded/dropped" mark.
+
 ## v3.29 — 2026-10-13
 - **Board named "Nearby Tournaments"** (chat: Frank 2026-10-13 11:29 ET), replacing "Go Cheer" (kept only in history: No. 2 print, CHANGELOG, roll-forward archives). Applied to CONTENT-HIERARCHY (row 8, cut order; open question removed), SECTIONS-MENU, PLAN, STYLE-GUIDE, Template A reference heading (`issues/2026-10-14/issue.html` box title), budget page labels (`budget-demo/index.html`, `practice-lineup.json`), and staging next/ board items (`board: "Nearby Tournaments"`).
 
