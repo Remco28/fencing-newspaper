@@ -1,0 +1,93 @@
+{
+  "issue": "2026-10-13",
+  "publish_date": "2026-10-13",
+  "weekday": "Tuesday",
+  "edition": "Tuesday Edition",
+  "volume": "I",
+  "number": 2,
+  "dateline_meta": "Vol. I — No. 2 · Chatham, N.J. · October 13, 2026",
+  "pretend": false,
+  "status": "PROOF v1 — awaiting Frank's approval (not approved). Composed 2026-10-13 after Frank: 'Let's publish when you're ready' (chat, 07:30 ET).",
+  "proof_mark_note": "Template A has no printed proof mark; status lives here and in the HTML <title>.",
+  "template": "Template A (CSS verbatim from issues/2026-10-08 + .figure/.factcheck additions)",
+  "approvals": "issues/2026-10-13/budget-submission.json (amended 2026-10-13 07:30 ET); approvals.json is a copy",
+  "render": {
+    "tool": "prototype/render.sh → render.py",
+    "pdf": "issues/2026-10-13/paper.pdf",
+    "previews": [
+      "issues/2026-10-13/preview-p1.png",
+      "issues/2026-10-13/preview-p2.png"
+    ],
+    "preview_dpi": 150,
+    "instruments": {
+      "pages": 2,
+      "p1_gap_in": 1.73,
+      "p2_gap_in": 1.03,
+      "p1_row_spread_in": 0.82,
+      "p2_row_spread_in": 1.57,
+      "note": "Gaps are deliberate white space: approved budget fills ~78%; no facts added to fill."
+    }
+  },
+  "pages": {
+    "1": [
+      {
+        "slot": "lead",
+        "itemId": "ft-nac-results-efc-2026-10-12"
+      },
+      {
+        "slot": "secondary-a",
+        "itemId": "web-usaf-elite-challenger-explainer"
+      },
+      {
+        "slot": "overheard-2",
+        "itemId": "reddit-rfencing-princess-bride-2026-10-12"
+      },
+      {
+        "slot": "club-results",
+        "itemIds": [
+          "ft-nac-results-efc-2026-10-12",
+          "ft-artdu-sullivan-jnrwe-2026-10-11",
+          "email-agentmail-medeo-results-watch-2026-10-11"
+        ]
+      },
+      {
+        "slot": "secondary-b",
+        "itemId": "web-fie-vet-worlds-epee-2026-10-11"
+      },
+      {
+        "slot": "footwork",
+        "itemId": "chat-footwork-class-2026-10-13"
+      }
+    ],
+    "2": [
+      {
+        "slot": "signup",
+        "itemId": "email-agentmail-morris-cup-entries-2026-10-07"
+      },
+      {
+        "slot": "signup-2",
+        "itemId": "ft-ultimate-cup-efc-registrations-2026-10-12"
+      },
+      {
+        "slot": "weapon",
+        "itemId": "chat-asset-weapon-epee",
+        "file": "media/weapon-epee-exploded.svg",
+        "span": 2
+      },
+      {
+        "slot": "tv",
+        "itemId": "web-fie-epee-tv-calendar-2026-10-12"
+      },
+      {
+        "slot": "overheard",
+        "itemId": "reddit-rfencing-etiquette-thread"
+      }
+    ]
+  },
+  "left_out": [
+    "web-efc-standing-schedule (class schedule, Frank)",
+    "ft-njfa-sep29-possible-efc-results (Frank)",
+    "chat-winter-camp-reminder (held No. 3)",
+    "nj-hs, gear, ratings, deadlines, qa, comic (not in approved budget)"
+  ]
+}

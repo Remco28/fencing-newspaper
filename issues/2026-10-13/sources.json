@@ -1,0 +1,476 @@
+{
+  "issue": "2026-10-13",
+  "pretend": false,
+  "items": [
+    {
+      "id": "ft-nac-results-efc-2026-10-12",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T09:45:00-04:00",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43505/results",
+          "retrieved_at": "2026-10-12T09:14:10-04:00",
+          "note": "Cadet Elite ME results"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43498/results",
+          "retrieved_at": "2026-10-12T09:14:10-04:00",
+          "note": "Div I Challenger ME results"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43495/results",
+          "retrieved_at": "2026-10-12T09:15:21-04:00",
+          "note": "Cadet Challenger WE results"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43504/results",
+          "retrieved_at": "2026-10-12T09:16:23-04:00",
+          "note": "Cadet Elite WE results (Medeo winner)"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43493/results",
+          "retrieved_at": "2026-10-12T09:16:23-04:00",
+          "note": "Div I Elite ME results"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/p/100239134/Maksim-Milinkovic/history",
+          "retrieved_at": "2026-10-12T09:14:10-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/21126",
+          "retrieved_at": "2026-10-12T09:15:21-04:00",
+          "note": "Y14WE preview: 118 approved; results pending"
+        },
+        {
+          "type": "fetch_log",
+          "path": "staging/weeks/next/gather-2026-10-12-web.json",
+          "retrieved_at": "2026-10-12T09:17:00-04:00"
+        },
+        {
+          "type": "chat",
+          "note": "chat: Frank 2026-10-12 — OK to lead with Maksim Milinkovic; vet lead + NAC results; FencingTracker remains the source",
+          "retrieved_at": "2026-10-12T09:45:00-04:00"
+        },
+        {
+          "source": "chat: Frank 2026-10-12",
+          "note": "Results tone is permanent policy (STYLE-GUIDE §0d): strong results only; 'also fenced' line for the rest. Not provisional."
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43522/results",
+          "retrieved_at": "2026-10-13T07:35:00-04:00",
+          "note": "Y14WE results: YOUNG Penelope 54th; last place 113"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43505/results",
+          "retrieved_at": "2026-10-13T07:36:00-04:00",
+          "note": "Re-check: MILINKOVIC Maksim 12th of 121 (unchanged)"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43495/results",
+          "retrieved_at": "2026-10-13T07:36:00-04:00",
+          "note": "Re-check: Sheth 45, Gore 59, Young 68 of 80 (unchanged)"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-10-13T07:30:00-04:00",
+          "note": "Club page: 6 October NAC results incl. Y14WE 54; DV1ME 68"
+        }
+      ]
+    },
+    {
+      "id": "web-usaf-elite-challenger-explainer",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T10:06:41-04:00",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/news/2026/september/19/how-the-event-split-works-what-to-know-before-the-october-nac",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/news/2026/september/28/what-s-next-for-the-points-system-an-expanded-review-group-and-how-to-weigh-in",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/new-points-and-events-structure",
+          "retrieved_at": "2026-10-12T09:21:00-04:00"
+        }
+      ]
+    },
+    {
+      "id": "reddit-rfencing-princess-bride-2026-10-12",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T10:05:00-04:00",
+      "provenance": [
+        {
+          "source": "staging/weeks/next/sources/reddit-rfencing-princess-bride-2026-10-12.pdf",
+          "retrieved_at": "2026-10-12",
+          "note": "Thread shows '6d ago' (~Oct 6)"
+        },
+        {
+          "source": "staging/weeks/next/sources/reddit-rfencing-princess-bride-2026-10-12.txt"
+        },
+        {
+          "source": "chat: Frank 2026-10-12",
+          "note": "Stage unvetted, no usernames; verify claims; paraphrase novel."
+        },
+        {
+          "source": "chat: Frank 2026-10-12",
+          "note": "Vetted; held for No. 3 (week of Oct 19). Moved from staging/weeks/next."
+        },
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "Include in No. 2 (moved back from after-next)."
+        }
+      ]
+    },
+    {
+      "id": "web-fie-vet-worlds-epee-2026-10-11",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T10:08:21-04:00",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fie.org/news/1743-four-first-veteran-world-champions-crowned-in-tbilisi",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/news/1744-usa-s-fabry-germany-s-hambach-richter-and-belgium-s-stock-repeat-as-world-champion-and-france-s-le-treut-wins-first",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/news/1746-usa-and-france-defend-titles-as-germany-repeats-at-veteran-team-world-championships",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/89",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2109367894551437568",
+          "author": "@FIE_fencing",
+          "author_id": "196195164",
+          "posted_at": "2026-10-11T19:37:50Z",
+          "posted_at_et": "2026-10-11 3:37 PM ET",
+          "retrieved_at": "2026-10-12T09:14:00-04:00",
+          "account_tier": "A",
+          "note": "Veteran Men's Team Epee medallists incl. Team USA bronze roster"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2109368054543249736",
+          "author": "@FIE_fencing",
+          "author_id": "196195164",
+          "posted_at": "2026-10-11T19:38:29Z",
+          "posted_at_et": "2026-10-11 3:38 PM ET",
+          "retrieved_at": "2026-10-12T09:14:00-04:00",
+          "account_tier": "A",
+          "note": "Grand Veteran Men's Team Epee medallists incl. Team USA bronze roster"
+        }
+      ]
+    },
+    {
+      "id": "chat-footwork-class-2026-10-13",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-13T07:30:00-04:00",
+      "provenance": [
+        {
+          "source": "chat: Frank 2026-10-13 (call)",
+          "note": "Requested; draft body supplied; no mention of Nico."
+        },
+        {
+          "source": "staging item web-efc-standing-schedule (club website)",
+          "note": "Wed 6:30–7:15 PM Footwork Class; Wed 5:00–6:30 PM Group Class (Little Musketeers)"
+        },
+        {
+          "source": "email Mailchimp 2026-10-07 'Group Class! + Footwork Class'",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261007142137.2d942fd58f.f99c85c7@mail150.atl241.mcsv.net>"
+        },
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "Vetted for No. 2."
+        }
+      ]
+    },
+    {
+      "id": "email-agentmail-morris-cup-entries-2026-10-07",
+      "vetted": true,
+      "vetted_by": "auto-chunkymonkey",
+      "vetted_at": "2026-10-07T13:20:00-04:00",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "retrieved_at": "2026-10-07T13:15:05-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/tournament/1706",
+          "retrieved_at": "2026-10-07T17:15:00-04:00",
+          "note": "Name-spelling cross-check only (CDTME 'WU, Caden'; CDTWE 'Young, Penelope'; Y14ME 'Shah-Mirani, Ash'; Y10ME 'Shah Mirani, Rahi')"
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a11b2b8c68-4461f351-6dc4-4fa1-9fc5-15934438e225-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Thursday, October 8",
+          "retrieved_at": "2026-10-08T08:05:00-04:00",
+          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7 digest (same 20 fencers / 29 entries, same events and times). No adds or drops."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12051e7f7-12b87cb6-16d2-4ea6-8f7d-51d06e20d5a5-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, October 9",
+          "retrieved_at": "2026-10-09T08:10:00-04:00",
+          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7/8 digests (same 20 fencers / 29 entries, same events and times). No adds or drops."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12578450c-c9092bce-80c6-4ffc-acc7-6a1213b75b5e-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, October 10",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "Daily refresh: identical to Oct 7/8/9 (20 fencers / 29 entries)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, October 11",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "CHANGE: Olivia Hayes added to CDTWE Sun Oct 25 8:00 AM (now 20 fencers / 30 entries)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, October 12",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "CHANGE: Rahi Shah Mirani no longer listed in Y10ME Sun Oct 25 (now 19 fencers / 29 entries). Latest list."
+        },
+        {
+          "type": "fetch_log",
+          "path": "staging/weeks/next/gather-2026-10-12-web.json",
+          "retrieved_at": "2026-10-12T09:17:00-04:00",
+          "note": "FencingTracker cross-check 2026-10-12: 29 entries / 19 fencers; Rahi Shah Mirani shown WITHDRAWN from Y10ME — matches the Oct 12 digest."
+        },
+        {
+          "source": "chat: Frank 2026-10-12",
+          "note": "Rahi prints as Shah-Mirani, matching Ash (roster resolved). Registration text keeps 'Shah Mirani'."
+        }
+      ]
+    },
+    {
+      "id": "ft-ultimate-cup-efc-registrations-2026-10-12",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T09:45:00-04:00",
+      "provenance": [
+        {
+          "type": "fetch_log",
+          "path": "staging/weeks/next/gather-2026-10-12-web.json",
+          "retrieved_at": "2026-10-12T09:17:00-04:00",
+          "note": "FencingTracker EFC club page / tournament registrations (URL in gather JSON)"
+        },
+        {
+          "type": "chat",
+          "note": "chat: Frank 2026-10-12 — Dieko Johnson + Lillian Liu confirmed Elite FC; Ultimate Cup board vetted",
+          "retrieved_at": "2026-10-12T09:45:00-04:00"
+        }
+      ]
+    },
+    {
+      "id": "chat-asset-weapon-epee",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T14:28:00-04:00",
+      "provenance": [
+        {
+          "type": "chat",
+          "note": "Frank attached SVG+PNG 2026-10-07 — Elite FC newsletter educational figure",
+          "retrieved_at": "2026-10-07T14:28:00-04:00"
+        }
+      ]
+    },
+    {
+      "id": "web-fie-epee-tv-calendar-2026-10-12",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T10:09:04-04:00",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/89",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/115",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/117",
+          "retrieved_at": "2026-10-12T09:18:50-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/118",
+          "retrieved_at": "2026-10-12T09:18:50-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/124",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://fie.org/tournaments/2027/125",
+          "retrieved_at": "2026-10-12T09:19:29-04:00"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/AllSportDB/status/2109575174194331671",
+          "posted_at": "2026-10-12T09:21:30Z",
+          "posted_at_et": "2026-10-12 5:21 AM ET",
+          "retrieved_at": "2026-10-12T09:15:00-04:00",
+          "note": "Unvetted aggregator, corroborates Casablanca start only (lead, not a source)"
+        }
+      ]
+    },
+    {
+      "id": "reddit-rfencing-etiquette-thread",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T21:53:23-04:00",
+      "provenance": [
+        {
+          "type": "reddit",
+          "note": "r/Fencing post 'Fencing Etiquette' (shown '1d ago' at capture); PDF uploaded by Frank",
+          "local_copy": "staging/weeks/next/sources/reddit-rfencing-fencing-etiquette-2026-10-07.pdf",
+          "text_extract": "staging/weeks/next/sources/reddit-rfencing-fencing-etiquette-2026-10-07.txt",
+          "retrieved_at": "2026-10-07T18:50:53-04:00"
+        },
+        {
+          "type": "rulebook",
+          "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt0f86b976c72458f2/6abe872e4f25cae69c968ee1/2026-10-USA-Fencing-Rules-of-Competition.pdf",
+          "note": "USA Fencing Rules for Competition, Oct 2026: t.22.1, t.23.4, t.27.2, t.64.5, t.65.1, t.117, t.122, t.170, m.25",
+          "retrieved_at": "2026-10-07T19:00:00-04:00"
+        },
+        {
+          "type": "official",
+          "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt31ccda29e31349e7/USAF_OPsManual_2026_27.pdf",
+          "note": "Ops Manual 2026-27 p.18 Scoring (sign scoresheet; review period; no changes after)",
+          "retrieved_at": "2026-10-07T19:00:00-04:00"
+        },
+        {
+          "type": "official",
+          "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt3d6b7fafa4cd9d57/6ac52829f660869f580e11f2/2026-09_Monthly_Call_Rule_Updates.pdf",
+          "note": "t.122 handshake dropped effective 1 Oct 2026",
+          "retrieved_at": "2026-10-07T18:58:00-04:00"
+        }
+      ]
+    },
+    {
+      "id": "ft-artdu-sullivan-jnrwe-2026-10-11",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-13T07:30:00-04:00",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-10-13T07:30:00-04:00",
+          "note": "Artdu ... Open Epee, Oct 11, 2026: Sullivan, Adela, JNRWE, place 2"
+        },
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "Vetted for No. 2."
+        }
+      ]
+    },
+    {
+      "id": "email-agentmail-medeo-results-watch-2026-10-11",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T09:45:00-04:00",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<010001a11b2b8c68-4461f351-6dc4-4fa1-9fc5-15934438e225-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "retrieved_at": "2026-10-08T08:05:00-04:00"
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12051e7f7-12b87cb6-16d2-4ea6-8f7d-51d06e20d5a5-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, October 9",
+          "retrieved_at": "2026-10-09T08:10:00-04:00",
+          "note": "Daily refresh: Medeo Oct 11 EFC entries unchanged (Christina Jiang Y12WE 9:30 AM; Bryce Cheng Y10 Mixed 11:30 AM). Results still pending."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, October 11",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "Still lists Medeo Oct 11 entries only (Christina Jiang Y12WE 9:30 AM; Bryce Cheng Y10 Mixed 11:30 AM). No results in digest."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, October 12",
+          "retrieved_at": "2026-10-12T08:10:00-04:00",
+          "note": "Still lists Medeo Oct 11 entries only (Christina Jiang Y12WE 9:30 AM; Bryce Cheng Y10 Mixed 11:30 AM). No results in digest."
+        },
+        {
+          "type": "url",
+          "url": "https://www.askfred.net/tournaments/b6b193b7-eec3-4322-b5b6-38d92659fbbf/results",
+          "retrieved_at": "2026-10-12T09:17:30-04:00",
+          "note": "No results uploaded yet"
+        },
+        {
+          "type": "chat",
+          "note": "chat: Frank 2026-10-12 — Christina Jiang 5th; Frank calls the event 'Y12 mixed'; Bryce Cheng did not fence that weekend",
+          "retrieved_at": "2026-10-12T09:45:00-04:00"
+        },
+        {
+          "type": "api",
+          "url": "https://www.askfred.net/api/v1/tournaments/b6b193b7-eec3-4322-b5b6-38d92659fbbf/events",
+          "retrieved_at": "2026-10-12T09:46:45-04:00",
+          "note": "Event list: Y10 Mixed, Y12 Men's, Y12 Women's, Y14 Men's, Y14 Women's Epee. No Y12 mixed."
+        },
+        {
+          "source": "chat: Frank 2026-10-12",
+          "note": "Christina Jiang's 5th was in Y12 Mixed (Medeo combined men's+women's); AskFRED 'Y12 Women's Epee' is registration only."
+        }
+      ]
+    }
+  ]
+}
