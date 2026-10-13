@@ -1,6 +1,47 @@
 {
   "target_week": "after-next",
-  "updated_at": "2026-10-13T07:58:00-04:00",
+  "updated_at": "2026-10-13T08:02:30-04:00",
   "note": "Fresh pile after Issue No. 2 roll-forward.",
-  "items": []
+  "items": [
+    {
+      "id": "chat-become-a-referee-placeholder-2026-10-13",
+      "kind": "placeholder",
+      "headline": "How to become a referee — placeholder (no content yet)",
+      "body": "PLACEHOLDER — no content. Planned piece on how to become a fencing referee; Frank is personally interested. Do not draft or research until Frank picks the issue.",
+      "source": "chat",
+      "from": "Frank (call, 2026-10-13 08:02 ET)",
+      "target_week": "after-next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Planning note only, not print copy.",
+      "status": "placeholder — No. 4",
+      "open_questions": [],
+      "provenance": [
+        {
+          "source": "call: Frank 2026-10-13",
+          "note": "Planning note: piece on how to become a referee; issue undecided (No. 3 or No. 4)."
+        },
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "Issue picked: No. 4. Moved next/ → after-next/."
+        }
+      ],
+      "slot_hint": "feature_tbd",
+      "tags": [
+        "placeholder",
+        "referee",
+        "planning"
+      ],
+      "created_at": "2026-10-13T08:02:00-04:00",
+      "answered_questions": [
+        {
+          "q": "No. 3 or No. 4?",
+          "a": "No. 4",
+          "source": "chat: Frank 2026-10-13",
+          "at": "2026-10-13T08:02:30-04:00"
+        }
+      ]
+    }
+  ]
 }
