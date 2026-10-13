@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.26 — 2026-10-13
+- **New recurring section "For the Grown-Ups"** (working name; Frank, call 2026-10-13 08:07 ET): standing box for non-fencing parents, one practical item per issue (fencing term decoded, tournament tip, or what to expect at an event). Differs from Parent Q&A: Q&A answers real parent questions; this is a proactive topic. Start issue open; no content staged. CONTENT-HIERARCHY row 9b (position provisional, Frank sorts); PLAN §3.
+
 ## v3.25 — 2026-10-13
 - **New recurring section "By the Book"** (Frank, call 2026-10-13 08:01 ET): short snippets from the USA Fencing rulebook and penalty guide, one rule or penalty per issue; random by default, or the relevant penalty when something specific happened that week. No content yet — awaiting Frank's material (rulebook / penalty-guide apps). Name clash with future club-site book content considered; Frank says fine. CONTENT-HIERARCHY row 9a; PLAN §3. Placeholder staged in `staging/weeks/next/` (No. 3): `chat-by-the-book-placeholder-2026-10-13`.
 
