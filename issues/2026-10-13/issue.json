@@ -7,7 +7,7 @@
   "number": 2,
   "dateline_meta": "Vol. I — No. 2 · Chatham, N.J. · October 13, 2026",
   "pretend": false,
-  "status": "APPROVED — final (Frank, chat, 2026-10-13 07:57 ET). Proof v1 is the print version.",
+  "status": "PROOF v2 — awaiting Frank's re-approval (reopened chat: Frank 2026-10-13 12:01 ET; not yet printed). Supersedes the 07:57 ET approval of proof v1.",
   "proof_mark_note": "Template A has no printed proof mark; status lives here and in the HTML <title>.",
   "template": "Template A (CSS verbatim from issues/2026-10-08 + .figure/.factcheck additions)",
   "approvals": "issues/2026-10-13/budget-submission.json (amended 2026-10-13 07:30 ET); approvals.json is a copy",
@@ -96,5 +96,15 @@
     "at": "2026-10-13T07:57:00-04:00",
     "version": "proof v1",
     "proof_commit": "30746d1"
-  }
+  },
+  "status_history": [
+    {
+      "status": "APPROVED — final (Frank, chat, 2026-10-13 07:57 ET). Proof v1 is the print version."
+    }
+  ],
+  "proof_v2_changes": [
+    "Right flank: 'It is better to deserve a rating than to have one.'",
+    "Board renamed 'Go Cheer' -> 'Nearby Tournaments'",
+    "New Deadlines box, page 2 right column directly under the Nearby Tournaments board, above Overheard"
+  ]
 }

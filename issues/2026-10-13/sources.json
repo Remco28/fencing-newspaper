@@ -471,6 +471,34 @@
           "note": "Christina Jiang's 5th was in Y12 Mixed (Medeo combined men's+women's); AskFRED 'Y12 Women's Epee' is registration only."
         }
       ]
+    },
+    {
+      "slot": "deadlines",
+      "rows": [
+        {
+          "row": "Mon 10/19 Ultimate Cup regular-fee entry (extended from Oct 12)",
+          "source": "https://member.usafencing.org/details/tournaments/12158",
+          "note": "'Registration Deadline Extended!... regular registration fee deadline to Monday, October 19, 2026, at 11:59 PM PT'; timeline Entry Deadline Oct 19, 2026 11:59pm",
+          "checked": "2026-10-13 ~12:10 ET"
+        },
+        {
+          "row": "Thu 10/22 Morris Cup late entry deadline",
+          "source": "https://member.usafencing.org/details/tournaments/12095",
+          "note": "Timeline: Entry Deadline Oct 5, Late Entry Deadline Oct 22, 2026 11:59pm; late fees triple Oct 6–22",
+          "checked": "2026-10-13 ~12:10 ET"
+        },
+        {
+          "row": "Thu 10/29 Ultimate Cup late entry deadline",
+          "source": "https://member.usafencing.org/details/tournaments/12158",
+          "note": "Timeline: Late Entry Deadline Oct 29, 2026 11:59pm; late fees triple (page text has a typo 'until September 23')",
+          "checked": "2026-10-13 ~12:10 ET"
+        }
+      ],
+      "left_out": [
+        "Winter Camp: club email says only 'as soon as possible', no date",
+        "USA Fencing membership renewal: no sourced date in staging",
+        "AskFRED NJFA local prereg closes: not requested"
+      ]
     }
   ]
 }

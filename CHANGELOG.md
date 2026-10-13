@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.32 — 2026-10-13
+- **No. 2 reopened as PROOF v2** (chat: Frank 2026-10-13 12:01 ET; not yet printed): right flank now "It is better to deserve a rating than to have one." (default applies **from No. 2 onward**; `flank-quotes.json`, STYLE-GUIDE §12); board renamed "Go Cheer" → "Nearby Tournaments"; new **Deadlines** box (page 2, directly under the board): Ultimate Cup regular entry Oct 19 (extended), Morris Cup late entry Oct 22, Ultimate Cup late entry Oct 29, all from USA Fencing tournament pages. Awaiting re-approval.
+
 ## v3.31 — 2026-10-13
 - **Masthead right flank default from No. 3:** "It is better to deserve a rating than to have one." (Frank, 2026-10-13 11:58 ET), replacing "Know yourself, know your enemy, know where you left your glove." Approved Nos. 1–2 unchanged. `flank-quotes.json` gains `right_flank_default`; STYLE-GUIDE §12 updated. Template A reference sheet (`issues/2026-10-14`) already carried this quip. Fit check: `staging/weeks/next/checks/masthead-check-no3.png` (wraps to two lines, hairlines clear of the logo).
 

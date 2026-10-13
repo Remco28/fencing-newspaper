@@ -257,8 +257,8 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   Nothing above the masthead row, ever.
 - **Flanks (beside the logo) — prose quotes, not Vol/No/date:**
   - LEFT (fixed): `Published by a fencing parent with a bot.`
-  - RIGHT (default from No. 3, v3.31): `It is better to deserve a rating than to have one.`
-    (`flank-quotes.json` → `right_flank_default`). Nos. 1–2 printed "Know yourself, know your
+  - RIGHT (default from No. 2, v3.32): `It is better to deserve a rating than to have one.`
+    (`flank-quotes.json` → `right_flank_default`). No. 1 printed "Know yourself, know your
     enemy, know where you left your glove." Other quips in `right_flank_quips` only if Frank
     picks one for an issue. Wrap is OK (two lines at Template A widths).
 - **Flank presentation (v3.13 ears; v3.14 gap):**
