@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.28 — 2026-10-13
+- **Frank's answers to the hierarchy questions** (chat: Frank 2026-10-13 11:27 ET): no fixed section lengths (sizes are rough guides only; "Budget" column → "Rough guide"); Overheard on Reddit best at one per issue but skipped when nothing good; Deadlines box runs every issue (entry deadlines + renewals, months ahead), separate from and adjacent to the local tournaments board; "Go Cheer" being renamed (options: Close to Home / Nearby Tournaments / Local Strip; Frank to pick); "For the Parents" is final; "Dear Ref" (a Desk suggestion) folded into By the Book / dropped, pending Frank. Remaining open: ranking, board name, corrections, Ling credit. CONTENT-HIERARCHY, SECTIONS-MENU, PLAN.
+
 ## v3.27 — 2026-10-13
 - **CONTENT-HIERARCHY review/cleanup** (Frank, call 2026-10-13 08:09 ET): renumbered 1–15 (no 9a/9b); source key added (efc.weekly email, FencingTracker, AskFRED, chat, web, X, Reddit) replacing stale "Results-app email"; house-rules line (invent nothing, no club Epee labels, results tone, bylines); added Overheard on Reddit row (provisional) and Go Cheer naming; Ratings earned "always in when earned"; Club events covers camps + one-line class notes; comic notes Ling; TV box = "Epee on Screen"; new sections "Standing elements" (THE WEAPON figure, Weekly Classes rule, photo desk, page placement) and "Planned one-off features" (referee piece → No. 4); killed list tidied; second Overheard counts as Desk fill in cut order; open questions for Frank listed at bottom.
 - SECTIONS-MENU reconciled: header says CONTENT-HIERARCHY is canonical; cut items (weather, crossword, quiz, jokes) marked ❌; lead budget aligned to 150–180w; Dear Ref and Corrections flagged as open questions; new sections noted.

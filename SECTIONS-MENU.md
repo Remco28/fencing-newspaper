@@ -2,8 +2,9 @@
 Purpose: the largest option list, then narrow down. Fit = how well it works on 1 B&W sheet, once a week.
 Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 
+> **No fixed lengths (v3.28, chat: Frank 2026-10-13):** word counts in this menu are historical ideas only.
 > **Canonical lineup = CONTENT-HIERARCHY.md** (reviewed v3.27, 2026-10-13). This file is the idea menu and history; where they differ, the hierarchy wins. Locked verdicts below override the per-item ✅ marks (e.g. crossword, quiz, jokes and weather are **cut**).
-> Added since the menu was written: **Overheard on Reddit** (No. 1+), **Go Cheer** boards (signup), **THE WEAPON** back-page figure, **By the Book** (v3.25), **For the Parents** (v3.26, working name). Comics: Frank, and Ling may draw from No. 3 or later.
+> Added since the menu was written: **Overheard on Reddit** (No. 1+), local tournaments board (formerly "Go Cheer"; renaming, Frank to pick), **THE WEAPON** back-page figure, **By the Book** (v3.25), **For the Parents** (v3.26; name final v3.28). Comics: Frank, and Ling may draw from No. 3 or later.
 
 ## LOCKED VERDICTS — Frank, 2026-10-06 (v1 lineup)
 - News: BEEFIER — a few interesting articles per issue, not just results. Weighting: club newsletter news first (personal), then national/regional tournaments, locals last. Results matter but aren't everything.
@@ -12,7 +13,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 - Ratings earned box: YES — celebrates club members, keep always.
 - Comics: YES but sparing; Frank draws them, sends via email like everything else.
 - **Parent Q&A** (LOCKED v3.18): parent asks Frank → Desk prints; anonymous; no Frank byline. Slot in CONTENT-HIERARCHY. Separate from ref-rule "Dear Ref".
-- Advice column ("Dear Ref"): MAYBE — fun, no slot figured out yet (distinct from Parent Q&A).
+- Advice column ("Dear Ref"): Desk-suggested maybe (not Frank's idea). **v3.28: folded into By the Book / dropped, pending Frank** (chat: Frank 2026-10-13 — he doesn't recall it).
 - Recruiting/college notes: LOW priority — only when there's genuinely good stuff.
 - CUT: weather, food, travel, crossword, quiz/trivia, jokes/riddles (not childish).
 - Byline rule: no attribution for Frank; guest writers get credited.
@@ -44,7 +45,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 17. Letters to the editor — ❌ skip (no submissions policy).
 18. Corrections box 🔶 (conflicts with killed corrections placeholder — open question in CONTENT-HIERARCHY) — 1-line "last issue we wrote X, correct is Y". Builds trust, keep tiny.
 19a. **Parent Q&A** ✅ — locked v3.18. Practical parent questions Frank fields at the club; anonymous; Desk answers in print. See CONTENT-HIERARCHY + STYLE-GUIDE §8a.
-19b. Advice column ("Dear Ref") 🔶 — see By the Book (v3.25); overlap is an open question in CONTENT-HIERARCHY. — "my light didn't go on, why?" Ref-rule Q&A, epee only. Distinct from Parent Q&A. Rotation candidate.
+19b. Advice column ("Dear Ref") ❌ — Desk suggestion; folded into By the Book / dropped, pending Frank (v3.28). — "my light didn't go on, why?" Ref-rule Q&A, epee only. Distinct from Parent Q&A. Rotation candidate.
 
 ## Life / culture
 20. Arts / entertainment — ❌ skip (generic).
