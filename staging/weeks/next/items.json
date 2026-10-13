@@ -638,6 +638,100 @@
         "by-the-book"
       ],
       "created_at": "2026-10-13T08:01:00-04:00"
+    },
+    {
+      "id": "chat-controversial-calls-off-strip-2026-10-13",
+      "kind": "article",
+      "headline": "Controversial Calls: The touch nobody saw land, except the referee",
+      "draft": "drafts/controversial-calls-off-strip-touch.md",
+      "source": "chat",
+      "from": "Frank (chat, 2026-10-13 11:43 & 11:44 ET)",
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "status": "unvetted — awaiting Frank",
+      "vet_notes": "First Controversial Calls. No names; editor's-son note; facts attributed to family. Open: floor vs metal strip; senior ref's role (Head Referee?); pool score/stage; ref quote wording.",
+      "claim_check": [
+        {
+          "claim": "Off-strip/floor touch in épée is disregarded where floor not insulated",
+          "citation": "t.93 (Oct 2026 Rules, p.38)",
+          "status": "verified"
+        },
+        {
+          "claim": "Touch on the conductive strip registering is annulled",
+          "citation": "t.94.1",
+          "status": "verified (not cited in print)"
+        },
+        {
+          "claim": "Validity of a hit is a point of fact; no appeal except video review",
+          "citation": "t.172.1, t.172.2, t.136.2",
+          "status": "verified"
+        },
+        {
+          "claim": "Appeal allowed on misapplied rule; Head Referee settles; must be made by fencer, immediately, before next touch",
+          "citation": "t.172.2, t.173, t.174, t.138",
+          "status": "verified"
+        },
+        {
+          "claim": "Unjustified appeal on point of fact is penalized (Group 1, yellow card)",
+          "citation": "t.170 penalty chart (Oct 2026); t.172.2",
+          "status": "verified (not in print)"
+        },
+        {
+          "claim": "Bout Committee may intervene in disputes but cannot overturn a point of fact",
+          "citation": "t.139.2, t.175, t.136.2",
+          "status": "verified (not in print)"
+        },
+        {
+          "claim": "Only the fencer on the strip may request video review; referee's decision final after review",
+          "citation": "t.60, t.61, t.62.5",
+          "status": "verified"
+        },
+        {
+          "claim": "National tournaments: replay guaranteed from R16 (Div I/Jr/Cdt Elite) or R8 (Challenger, Y10-Y14, Vet, etc.); teams gold/bronze; not pools",
+          "citation": "USA Fencing Operations Manual 2026-27, p.19 video replay criteria",
+          "status": "verified"
+        },
+        {
+          "claim": "Phone/parent video isn't used for official calls",
+          "citation": "USA Fencing article 2025-04-13 'What Every Fencing Parent Should Know... Referee Point of View' (t.49, t.62)",
+          "status": "verified (practice, not a rule text)"
+        },
+        {
+          "claim": "No rule gives weight to opponent's admission",
+          "citation": "Searched Oct 2026 Rules; none found; t.59/t.172 vest materiality in referee",
+          "status": "absence check"
+        },
+        {
+          "claim": "Facts of the bout (landing spot, who said what, senior ref)",
+          "citation": "chat: Frank 2026-10-13 11:43 + 11:44 ET",
+          "status": "UNVERIFIED, attributed to family"
+        }
+      ],
+      "provenance": [
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "11:43 ET account; 11:44 ET: pool bout, no replay."
+        },
+        {
+          "source": "reference/usa-fencing/usaf-rules-for-competition-2026-10.pdf",
+          "note": "Oct 2026 Rules, downloaded from usafencing.org/rules-compliance 2026-10-13"
+        },
+        {
+          "source": "reference/usa-fencing/usaf-penalty-chart-2026-10.pdf"
+        },
+        {
+          "source": "reference/usa-fencing/usaf-operations-manual-2026-27.pdf"
+        }
+      ],
+      "slot_hint": "controversial_calls",
+      "tags": [
+        "occasional",
+        "rules",
+        "controversial-calls"
+      ],
+      "created_at": "2026-10-13T11:45:00-04:00"
     }
   ],
   "rolled_forward": {

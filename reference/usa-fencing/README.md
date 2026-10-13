@@ -9,3 +9,5 @@ Reference PDFs from Frank (chat, 2026-10-07 19:14 ET). They are used to check ru
 | `usaf-athlete-handbook-2026-27.pdf` | USA Fencing Athlete Handbook 2026–2027 (88 pp) | Published September 2026, current. |
 
 Rule of use: when a rule is cited in print, cite the **current** edition and give the article number. When a rule changes between editions, the change itself can be a story (see the Oct 2026 handshake change).
+
+**Added 2026-10-13 (current editions, from usafencing.org/rules-compliance):** `usaf-rules-for-competition-2026-10.pdf` (Oct 2026 Rules), `usaf-penalty-chart-2026-10.pdf` (Oct 2026 penalty chart), `usaf-operations-manual-2026-27.pdf` (Ops Manual 2026–27; video-replay scheduling criteria on p.19).
