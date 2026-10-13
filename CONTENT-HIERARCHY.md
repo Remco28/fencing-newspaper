@@ -21,6 +21,7 @@ Pipeline (Staging→Clean→Budget→Proof) and tip vetting live in **STAGING.md
 | 7 | Signup board | 2–8 rows | Results-app email | **Core.** Encourage clubmates to enter. Max **4 tournaments**; prefer listing all Elite FC names on those events — if ~20 fencers enter one event, show fewer tournaments to make room. |
 | 8 | Club events | 3–5 items | Newsletter email | From Frank's forwards |
 | 9 | **Parent Q&A** | 40–70w (1 Q&A) | Frank chat (parent ask → desk) | Recurring category. Anonymous asker + no Frank byline unless they ask to be named. Layout: `.rail-block.qa`. **Default 1 per issue**; second only if space after cut hierarchy. |
+| 9a | **By the Book** | 1 short snippet (≈40–80w) | USA Fencing rulebook + penalty guide (Frank's apps/material) | Recurring section (v3.25, Frank call 2026-10-13). One rule or penalty per issue: **random by default**; if something specific happened that week, run the relevant penalty instead. Built only from Frank's source material — nothing until he shares it. Table position provisional; Frank sorts. |
 | 10 | Deadlines box | 3–5 rows | AskFRED / newsletter | Entry closes + renewals |
 | 11 | Comic | 1 panel | Frank via email | Sparingly |
 | 12 | TV / streaming box | 3–5 rows | FIE calendar / FencingTV / YT | Major events + where to watch |

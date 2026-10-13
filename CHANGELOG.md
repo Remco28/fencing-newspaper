@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.25 — 2026-10-13
+- **New recurring section "By the Book"** (Frank, call 2026-10-13 08:01 ET): short snippets from the USA Fencing rulebook and penalty guide, one rule or penalty per issue; random by default, or the relevant penalty when something specific happened that week. No content yet — awaiting Frank's material (rulebook / penalty-guide apps). Name clash with future club-site book content considered; Frank says fine. CONTENT-HIERARCHY row 9a; PLAN §3. Placeholder staged in `staging/weeks/next/` (No. 3): `chat-by-the-book-placeholder-2026-10-13`.
+
 ## v3.24 — 2026-10-13
 - **FencingTracker added to recurring sources** (Frank, call 2026-10-13 07:58 ET): it catches results the NAC feed misses (Adela Sullivan's Artdu Open 2nd showed up only there) and Frank uses it. Club page https://fencingtracker.com/club/100261977/Elite%20FC/results. Cadence: daily quick look (weekday morning pass), Wednesday skim, Monday full sweep. Gentle use like AskFRED. SOURCES.md § FencingTracker + cadence table; STAGING.md § Ops cadence.
 - Issue No. 2 approved (Frank 2026-10-13 07:57 ET); staging rolled forward (No. 3 = week of Oct 19).
