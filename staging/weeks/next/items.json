@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-12T10:05:00-04:00",
+  "updated_at": "2026-10-13T07:45:00-04:00",
   "note": "Staging pile for Issue No. 2 (week of Oct 12, 2026). Rolled from after-next/ 2026-10-07 after Issue No. 1 approval: THE WEAPON (chat-asset-weapon-epee, span 2). Carry-forward copies from staging/weeks/2026-10-08/ marked carried_from (refresh before budget).",
   "items": [
     {
@@ -880,14 +880,14 @@
       "id": "ft-nac-results-efc-2026-10-12",
       "kind": "fact",
       "headline": "October NAC (Orlando): Elite FC results — Milinkovic 12th of 121 in Cadet Elite",
-      "body": "October NAC, Orlando, Oct 9–12 — first NAC under USA Fencing's Elite/Challenger split. Elite FC results per FencingTracker results pages (retrieved 2026-10-12 09:13–09:17 ET):\n- Maksim Milinkovic, Cadet Elite Men's Epee (Sat 10/10): 12th of 121. Seeded 49th; pools 3-3; DE wins 15-14, 15-12, 15-11; lost 10-15 in the round of 16 to the eventual 6th-place finisher. Winner: Andy Zheng (Guanyi FA).\n- Maksim Milinkovic, Division I Challenger Men's Epee (Fri 10/9): 68th of 233. Seeded 187th; pools 6-0; lost first DE 14-15. Winner: Steven Wu (AFM).\n- Cadet Challenger Women's Epee (Fri 10/9), 80 fencers: Anayaa Sheth 45th (pools 3-3, lost T64 12-15); Amina Gore 59th (pools 2-4, lost T64 5-15); Penny Young 68th (pools 2-4, no DE).\n- PENDING: Penny Young, Y14 Women's Epee (Mon 10/12, 118 approved entrants) — being fenced today.\nContext: Medeo FC (Bound Brook, NJ) — Anika Adyanthaya won Cadet Elite Women's Epee; Alexander Bezrodnov 3rd in Div I Elite Men's Epee (clubs from FT registration previews). Ratings earned: not posted anywhere yet.",
+      "body": "October NAC, Orlando, Oct 9–12 — first NAC under USA Fencing's Elite/Challenger split. Elite FC results per FencingTracker results pages (retrieved 2026-10-12 09:13–09:17 ET; refreshed 2026-10-13 07:35 ET):\n- Maksim Milinkovic, Cadet Elite Men's Epee (Sat 10/10): 12th of 121. Seeded 49th; pools 3-3; DE wins 15-14, 15-12, 15-11; lost 10-15 in the round of 16 to the eventual 6th-place finisher. Winner: Andy Zheng (Guanyi FA).\n- Maksim Milinkovic, Division I Challenger Men's Epee (Fri 10/9): 68th of 233. Seeded 187th; pools 6-0; lost first DE 14-15. Winner: Steven Wu (AFM).\n- Cadet Challenger Women's Epee (Fri 10/9), 80 fencers: Anayaa Sheth 45th (pools 3-3, lost T64 12-15); Amina Gore 59th (pools 2-4, lost T64 5-15); Penny Young 68th (pools 2-4, no DE).\n- Penny Young, Y14 Women's Epee (Mon 10/12): 54th of 113 (FencingTracker event 43522, retrieved 2026-10-13 07:35 ET). Not a strong finish under the tone policy → 'also fenced'.\nContext: Medeo FC (Bound Brook, NJ) — Anika Adyanthaya won Cadet Elite Women's Epee; Alexander Bezrodnov 3rd in Div I Elite Men's Epee (clubs from FT registration previews). Ratings earned: not posted anywhere yet.",
       "source": "fencingtracker",
       "from": null,
       "target_week": "next",
       "vetted": true,
       "vetted_by": "frank",
       "vetted_at": "2026-10-12T09:45:00-04:00",
-      "vet_notes": "Desk Monday full pass 2026-10-12. Scraped results (FencingTracker) for the four fencers Frank confirmed 2026-10-07; needs Frank's Vet before print (scraped-source rule). Print names via roster: 'Young, Penelope' -> Penny Young; 'Anayaà' -> Anayaa Sheth. Don't confuse Elite Fencing Academy (Div I Elite winner Nathaniel Wimmer's club) with Elite FC. FencingTimeLive login-walled (not used). | chat: Frank 2026-10-12 09:45 ET: OK to lead with Maksim Milinkovic; NAC results vetted. Source stays FencingTracker (results pages in provenance). Penny Young Y14 still pending (fenced today). Results tone is now policy (chat: Frank 2026-10-12 10:00 ET; STYLE-GUIDE §0d): strong finishes only; others on the 'also fenced' line. Not provisional.",
+      "vet_notes": "Desk Monday full pass 2026-10-12. Scraped results (FencingTracker) for the four fencers Frank confirmed 2026-10-07; needs Frank's Vet before print (scraped-source rule). Print names via roster: 'Young, Penelope' -> Penny Young; 'Anayaà' -> Anayaa Sheth. Don't confuse Elite Fencing Academy (Div I Elite winner Nathaniel Wimmer's club) with Elite FC. FencingTimeLive login-walled (not used). | chat: Frank 2026-10-12 09:45 ET: OK to lead with Maksim Milinkovic; NAC results vetted. Source stays FencingTracker (results pages in provenance). Penny Young Y14 still pending (fenced today). Results tone is now policy (chat: Frank 2026-10-12 10:00 ET; STYLE-GUIDE §0d): strong finishes only; others on the 'also fenced' line. Not provisional. | Desk refresh 2026-10-13 07:35 ET: Penny Young Y14 posted (54th of 113, FencingTracker) → also-fenced line. Re-checked Maksim (Cadet Elite 12th of 121; Div I 68th of 233) and Cadet Challenger Women (Sheth 45, Gore 59, Young 68 of 80): unchanged. No other Elite FC NAC events. efc.weekly digest Oct 13 has no results. FencingTimeLive login-walled (not used).",
       "slot_hint": "club_results",
       "suggested_slot": "lead+club_results",
       "provenance": [
@@ -945,6 +945,30 @@
         {
           "source": "chat: Frank 2026-10-12",
           "note": "Results tone is permanent policy (STYLE-GUIDE §0d): strong results only; 'also fenced' line for the rest. Not provisional."
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43522/results",
+          "retrieved_at": "2026-10-13T07:35:00-04:00",
+          "note": "Y14WE results: YOUNG Penelope 54th; last place 113"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43505/results",
+          "retrieved_at": "2026-10-13T07:36:00-04:00",
+          "note": "Re-check: MILINKOVIC Maksim 12th of 121 (unchanged)"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43495/results",
+          "retrieved_at": "2026-10-13T07:36:00-04:00",
+          "note": "Re-check: Sheth 45, Gore 59, Young 68 of 80 (unchanged)"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-10-13T07:30:00-04:00",
+          "note": "Club page: 6 October NAC results incl. Y14WE 54; DV1ME 68"
         }
       ],
       "merged_from": [
@@ -958,7 +982,15 @@
         "results",
         "scraped"
       ],
-      "created_at": "2026-10-12T09:35:00-04:00"
+      "created_at": "2026-10-12T09:35:00-04:00",
+      "print_rows": [
+        [
+          "Maksim Milinkovic",
+          "Cadet Elite Men (Oct. NAC)",
+          "12th of 121"
+        ]
+      ],
+      "also_fenced": "Maksim Milinkovic (Div. I Challenger, 6-0 in pools); Anayaa Sheth, Amina Gore (Cadet Challenger Women); Penny Young (Cadet Challenger Women, Y14 Women)"
     },
     {
       "id": "web-usaf-elite-challenger-explainer",
@@ -969,9 +1001,9 @@
       "source": "usafencing",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T10:06:41-04:00",
       "vet_notes": "Desk Monday full pass 2026-10-12. Parent-service explainer that explains our own results (Maksim fenced Elite in Cadet, Challenger in Div I; our women fenced Challenger). Official source; needs Frank Vet per budget rule.",
       "slot_hint": "secondary_a",
       "provenance": [
@@ -1008,9 +1040,9 @@
       "source": "fie",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T10:08:21-04:00",
       "vet_notes": "Desk Monday full pass 2026-10-12. FIE web + FIE X (tier A, own event). Angle: 'fencing is for life' for parents who fence. FIE web spells 'Jeffey Hudson' once; X post says 'Jeffrey Hudson' — print Jeffrey (verify). Bronze-medal bout scores per FIE web (beat Poland 45-33 / France 45-40) — recheck at compose.",
       "slot_hint": "secondary_b",
       "provenance": [
@@ -1117,9 +1149,9 @@
       "source": "fie",
       "from": null,
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-12T10:09:04-04:00",
       "vet_notes": "Desk Monday full pass 2026-10-12. FIE says 'Watch on fencingtv.com' only; don't print free/paid or times.",
       "slot_hint": "tv",
       "table": {
@@ -1349,6 +1381,73 @@
         "bradley-tsai": "Frank confirmed (chat 2026-10-12)",
         "brendan-mendez": "FencingTracker club listing + Frank's belief ('probably is'), chat 2026-10-12 — not a hard confirmation"
       }
+    },
+    {
+      "id": "ft-artdu-sullivan-jnrwe-2026-10-11",
+      "kind": "fact",
+      "headline": "Artdu Open (Oct. 11): Adela Sullivan 2nd, Junior Women",
+      "body": "Artdu Fencing Juniors/Cadets/Senior Open Epee, Sun Oct 11: Adela Sullivan (Elite FC) placed 2nd in Junior Women's Epee (JNRWE), per FencingTracker club results page. Field size and venue not shown (no event page linked). Strong finish under the tone policy (podium).",
+      "source": "web",
+      "from": "FencingTracker",
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Desk refresh 2026-10-13: NEW, scraped (FencingTracker) — needs Frank's Vet before print. Proposed as a row in the club results box.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-10-13T07:30:00-04:00",
+          "note": "Artdu ... Open Epee, Oct 11, 2026: Sullivan, Adela, JNRWE, place 2"
+        }
+      ],
+      "print_rows": [
+        [
+          "Adela Sullivan",
+          "Junior Women (Artdu Open, Oct. 11)",
+          "2nd"
+        ]
+      ],
+      "slot_hint": "club_results",
+      "tags": [
+        "club",
+        "results"
+      ],
+      "created_at": "2026-10-13T07:45:00-04:00"
+    },
+    {
+      "id": "chat-footwork-class-2026-10-13",
+      "kind": "graf",
+      "headline": "New: Wednesday Footwork Class",
+      "body": "Elite FC now runs a footwork class on Wednesdays from 6:30 to 7:15 p.m., right after the 5:00 group class. It's 45 minutes focused on the legs, the part of fencing that sets up everything else.",
+      "source": "chat",
+      "from": "Frank (call, 2026-10-13 morning)",
+      "target_week": "next",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "vet_notes": "Frank asked for it on a call 2026-10-13: informative only; no mention of Nico; just that the class exists. Body is Frank's draft. Facts: club website schedule (Wed 6:30–7:15 PM Footwork Class; Wed 5:00–6:30 PM Group Class (Little Musketeers)) and Oct 7 club Mailchimp ('Musketeers Group Class today at 5:00PM and our Footwork Class today at 6:30PM'). Unvetted until Frank OKs the final text. Proposed for No. 2.",
+      "provenance": [
+        {
+          "source": "chat: Frank 2026-10-13 (call)",
+          "note": "Requested; draft body supplied; no mention of Nico."
+        },
+        {
+          "source": "staging item web-efc-standing-schedule (club website)",
+          "note": "Wed 6:30–7:15 PM Footwork Class; Wed 5:00–6:30 PM Group Class (Little Musketeers)"
+        },
+        {
+          "source": "email Mailchimp 2026-10-07 'Group Class! + Footwork Class'",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261007142137.2d942fd58f.f99c85c7@mail150.atl241.mcsv.net>"
+        }
+      ],
+      "slot_hint": "shorts_club_note",
+      "tags": [
+        "club",
+        "classes"
+      ],
+      "created_at": "2026-10-13T07:45:00-04:00"
     }
   ],
   "rolled_forward": {

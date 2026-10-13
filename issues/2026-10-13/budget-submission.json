@@ -1,0 +1,194 @@
+{
+  "publishDate": "2026-10-13",
+  "practice": false,
+  "pretend": false,
+  "targetWeek": "next",
+  "issue": {
+    "number": 2,
+    "label": "Issue No. 2",
+    "week": "Week of Oct. 12, 2026"
+  },
+  "includedSlots": [
+    {
+      "slot": "lead",
+      "name": "Lead story",
+      "headline": "Milinkovic Climbs to 12th at the First 'Elite' NAC",
+      "itemId": "ft-nac-results-efc-2026-10-12",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-a",
+      "name": "Secondary A — Elite vs. Challenger",
+      "headline": "Why NAC Fields Now Say 'Elite' and 'Challenger'",
+      "itemId": "web-usaf-elite-challenger-explainer",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "overheard",
+      "name": "Overheard on Reddit",
+      "headline": "Overheard on Reddit: First Tournament? The Internet Has Notes",
+      "itemId": "reddit-rfencing-etiquette-thread",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "weapon",
+      "name": "Back-page figure — THE WEAPON",
+      "headline": "The Weapon — Exploded Epee",
+      "itemId": "chat-asset-weapon-epee",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-results",
+      "name": "Club results — October NAC",
+      "headline": "Club results",
+      "itemId": "ft-nac-results-efc-2026-10-12",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "medeo",
+      "name": "Club results — Medeo Youth Challenge #3",
+      "headline": "Medeo Youth Challenge #3 (Oct. 11): Christina Jiang 5th",
+      "itemId": "email-agentmail-medeo-results-watch-2026-10-11",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup",
+      "name": "Go Cheer — Morris Cup who's entered",
+      "headline": "Morris Cup RYC/RJCC — Suffern, N.Y., Oct. 24–25",
+      "itemId": "email-agentmail-morris-cup-entries-2026-10-07",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-2",
+      "name": "Go Cheer — Ultimate Cup who's entered",
+      "headline": "Ultimate Cup RJCC — Hillsborough, N.J., Oct. 31–Nov. 1",
+      "itemId": "ft-ultimate-cup-efc-registrations-2026-10-12",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-b",
+      "name": "Secondary B — Veteran Worlds",
+      "headline": "Vet Worlds: U.S. Men's Epee Veterans Take Two Silvers, Two Team Bronzes",
+      "itemId": "web-fie-vet-worlds-epee-2026-10-11",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tv",
+      "name": "TV / streaming",
+      "headline": "Epee on Screen: Next Few Weeks (FIE calendar)",
+      "itemId": "web-fie-epee-tv-calendar-2026-10-12",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "overheard-2",
+      "name": "Overheard on Reddit #2 — Princess Bride duel",
+      "headline": "Overheard on Reddit: Inconceivable?",
+      "itemId": "reddit-rfencing-princess-bride-2026-10-12",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "classes",
+      "name": "Weekly classes",
+      "headline": "Elite FC weekly class schedule (club website)",
+      "itemId": "web-efc-standing-schedule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "auto-ft-njfa-sep29-possible-efc-results",
+      "name": "Not slotted yet (club_results_late)",
+      "headline": "Late results: NJFA Div. 3 & Y8–Y14 Epee (Sept. 29)",
+      "itemId": "ft-njfa-sep29-possible-efc-results",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ high-school roundup",
+      "headline": "NJ High School Fencing: 2026–27 Dates Are Set",
+      "itemId": "web-njsiaa-fencing-2026-27-dates",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "gear",
+      "name": "Desk fill — Second life for broken gear",
+      "headline": "Second Life for Broken Gear",
+      "itemId": "web-gear-recycling-blades-cords",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "ratings",
+      "name": "Ratings earned",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines box",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "qa",
+      "name": "Parent Q&A",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "comic",
+      "name": "Comic",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    }
+  ],
+  "photoIncludes": [],
+  "notes": "",
+  "slotNotes": {},
+  "answers": [],
+  "order": [
+    "lead",
+    "secondary-a",
+    "overheard",
+    "overheard-2",
+    "weapon",
+    "club-results",
+    "medeo",
+    "signup",
+    "signup-2",
+    "classes",
+    "auto-ft-njfa-sep29-possible-efc-results",
+    "nj-hs",
+    "secondary-b",
+    "tv",
+    "gear"
+  ],
+  "pageVersion": "budget-v2",
+  "submittedAt": "2026-10-12T10:11:29-04:00"
+}

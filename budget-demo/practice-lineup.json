@@ -77,8 +77,9 @@
  "desk_summary": [
   "Real issue this week. Lead (OK'd by Frank): Maksim Milinkovic finished 12th of 121 in Cadet Elite at the October NAC, winning three straight elimination bouts from the 49th seed.",
   "Vetted from your chat answers: the NAC lead and results, the Ultimate Cup board, Christina Jiang's 5th at Medeo, and late NJFA lines for Bradley Tsai and Brendan Mendez. Still unvetted website items: the Elite/Challenger explainer, Veteran Worlds, NJ high-school dates, the TV box and gear.",
-  "Results tone is now house policy: places only for strong finishes; everyone else is on an \"also fenced\" line. Christina's Medeo 5th prints as Y12 Mixed. Penny's Y14 result is being fenced today.",
-  "Winter Camp and the Princess Bride Overheard (vetted) are held for No. 3. THE WEAPON fills the back page at two columns; Overheard on Reddit (etiquette) is ready."
+  "Results refreshed Oct. 13: Maksim's 12th of 121 holds. Penny's Y14 posted (54th of 113) and goes on the \"also fenced\" line. New for your OK: Adela Sullivan was 2nd in Junior Women at the Artdu open (Oct. 11). NJFA lines stay out.",
+  "Winter Camp and the Princess Bride Overheard (vetted) are held for No. 3. THE WEAPON fills the back page at two columns; Overheard on Reddit (etiquette) is ready.",
+  "New proposed: a short Wednesday footwork-class note (from your call). It needs your Vet."
  ],
  "slots": [
   {
@@ -164,7 +165,7 @@
    "proposed": true,
    "cost": {
     "type": "table_rows",
-    "rows": 6
+    "rows": 4
    },
    "title": "Club results",
    "table": {
@@ -185,37 +186,57 @@
       "5th"
      ],
      [
-      "Bradley Tsai",
-      "Y12 Mixed (NJFA, Sept. 29)",
-      "2nd"
-     ],
-     [
-      "Brendan Mendez",
-      "Div. III Mixed (NJFA, Sept. 29)",
-      "3rd"
-     ],
-     [
       "Also fenced at the NAC",
-      "Maksim Milinkovic (Div. I Challenger, 6-0 in pools); Anayaa Sheth, Amina Gore, Penny Young (Cadet Challenger Women)",
+      "Maksim Milinkovic (Div. I Challenger, 6-0 in pools); Anayaa Sheth, Amina Gore (Cadet Challenger Women); Penny Young (Cadet Challenger Women, Y14 Women)",
       ""
      ]
     ]
    },
-   "summary": "One results box: Maksim's NAC finish, Christina's 5th at Medeo, and two late NJFA lines (Sept. 29). Other NAC fencers are listed under \"also fenced\" with no places. Penny's Y14 NAC result gets added if it posts before compose.",
+   "summary": "One results box: Maksim's NAC finish and Christina's 5th at Medeo. Other NAC fencers, including Penny's Y14 (54th of 113), are on the \"also fenced\" line with no places. Refreshed Oct. 13 from FencingTracker.",
    "items": [
     "ft-nac-results-efc-2026-10-12",
-    "email-agentmail-medeo-results-watch-2026-10-11",
-    "ft-njfa-sep29-possible-efc-results"
+    "email-agentmail-medeo-results-watch-2026-10-11"
    ],
    "flags": [
     {
      "level": "info",
-     "text": "Results tone is house policy now (your answer, Oct. 12): places only for strong finishes, everyone else on the \"also fenced\" line. Penny's Y14 (today) is not in yet."
+     "text": "Results tone is house policy (Oct. 12): places only for strong finishes, everyone else on the \"also fenced\" line. Penny's Y14 posted: 54th of 113, so she stays on that line."
     },
     {
      "level": "info",
-     "text": "Brendan Mendez is treated as ours because FencingTracker lists him as Elite FC and you think he probably is. His school is never printed."
+     "text": "The NJFA late lines (Tsai, Mendez) are out, as in your approved budget."
     }
+   ]
+  },
+  {
+   "key": "artdu",
+   "section": "club",
+   "slot": "Club results — Artdu Open (new)",
+   "budget": "+1 row in results box",
+   "item": "ft-artdu-sullivan-jnrwe-2026-10-11",
+   "proposed": true,
+   "cost": {
+    "type": "table_rows",
+    "rows": 1
+   },
+   "title": "Club results (add)",
+   "table": {
+    "head": [
+     "Fencer",
+     "Event",
+     "Place"
+    ],
+    "rows": [
+     [
+      "Adela Sullivan",
+      "Junior Women (Artdu Open, Oct. 11)",
+      "2nd"
+     ]
+    ]
+   },
+   "summary": "New since Monday: Adela Sullivan was 2nd in Junior Women at the Artdu Fencing open on Oct. 11 (FencingTracker). A podium, so it fits the tone rule. It would be one more row in the results box.",
+   "questions": [
+    "Add Adela's 2nd at Artdu to the results box? (Scraped from FencingTracker; field size not shown.)"
    ]
   },
   {
@@ -415,13 +436,19 @@
    "slot": "NJ high-school roundup",
    "budget": "60–90w",
    "item": "web-njsiaa-fencing-2026-27-dates",
-   "proposed": true,
+   "proposed": false,
    "cost": {
     "type": "prose",
     "span": 1,
     "words": 65
    },
-   "summary": "The season is still weeks away, so this is a calendar note from NJSIAA: tryouts Nov. 23–25, competition from Dec. 7, team finals Feb. 25 at Morris Hills, and individual states Feb. 27 at Hunterdon Central."
+   "summary": "The season is still weeks away, so this is a calendar note from NJSIAA: tryouts Nov. 23–25, competition from Dec. 7, team finals Feb. 25 at Morris Hills, and individual states Feb. 27 at Hunterdon Central.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "Left out of your approved budget (Oct. 12)."
+    }
+   ]
   },
   {
    "key": "secondary-b",
@@ -520,6 +547,22 @@
    "budget": "1 panel",
    "empty": true,
    "why": "None from you this week."
+  },
+  {
+   "key": "footwork",
+   "section": "shorts",
+   "slot": "Club note — Footwork class",
+   "budget": "~35w",
+   "item": "chat-footwork-class-2026-10-13",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "Short note from your call: the Wednesday footwork class (6:30–7:15 p.m., right after the 5:00 group class). Informative only, no names. Times match the club website and the Oct. 7 club email.",
+   "questions": [
+    "Run the footwork note in No. 2 (my pick) or No. 3?"
+   ]
   }
  ],
  "photos": [],
@@ -567,6 +610,10 @@
   {
    "item": "x-lead-usafencing-nfl-radio-ad",
    "why": "Unvetted X chatter, no room this week."
+  },
+  {
+   "item": "ft-njfa-sep29-possible-efc-results",
+   "why": "You left the NJFA late lines out of the approved budget (Oct. 12)."
   }
  ]
 }
