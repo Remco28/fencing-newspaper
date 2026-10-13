@@ -647,10 +647,10 @@
       "source": "chat",
       "from": "Frank (chat, 2026-10-13 11:43 & 11:44 ET)",
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
-      "status": "revised — awaiting Frank's final vet",
+      "vetted": true,
+      "vetted_by": "Frank",
+      "vetted_at": "2026-10-13T11:55:00-04:00",
+      "status": "vetted for No. 3",
       "vet_notes": "Revised per Frank's answers 2026-10-13 11:52 ET: two years ago; landing spot unknown (off the strip; t.93/t.94.1 either way); formal appeal, Head Referee ruled point of fact (t.172/t.174); lost by one touch; ref 'thought she saw it hit' (attributed); opponent waved no-touch (attributed); verdict Judgment call. Second disputed touch deliberately excluded (fuzzy).",
       "claim_check": [
         {
@@ -717,6 +717,11 @@
           "claim": "Replay rules cited are current (2026-27); bout was ~2 years ago",
           "citation": "Ops Manual 2026-27 p.19",
           "status": "print says 'today'"
+        },
+        {
+          "claim": "No penalty card given for the appeal",
+          "citation": "chat: Frank 2026-10-13 11:55 ET",
+          "status": "confirmed by Frank (not in print)"
         }
       ],
       "provenance": [
@@ -737,6 +742,10 @@
         {
           "source": "chat: Frank 2026-10-13",
           "note": "11:52 ET answers to draft questions"
+        },
+        {
+          "source": "chat: Frank 2026-10-13",
+          "note": "11:55 ET: vetted as-is; confirmed no card was given for the appeal."
         }
       ],
       "slot_hint": "controversial_calls",
