@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-13T07:58:00-04:00",
+  "updated_at": "2026-10-13T08:05:00-04:00",
   "note": "Hold pile for the issue after `next` (Issue No. 3). Created empty 2026-10-07 at the roll-forward after Issue No. 1.",
   "items": [
     {
@@ -162,7 +162,7 @@
       "id": "email-agentmail-morris-cup-entries-2026-10-07",
       "kind": "signup_row",
       "headline": "Morris Cup RYC/RJCC — EFC who's entered",
-      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Mon Oct 12, latest):\nSat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila.\nSun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
+      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Mon Oct 12; confirmed unchanged Tue Oct 13):\nSat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila.\nSun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
       "source": "email",
       "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
@@ -232,6 +232,16 @@
         {
           "source": "chat: Frank 2026-10-12",
           "note": "Rahi prints as Shah-Mirani, matching Ash (roster resolved). Registration text keeps 'Shah Mirani'."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a134eb584c-cb652784-f44c-42f7-b69c-6ffef15336a5-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Tuesday, October 13",
+          "vetted": true,
+          "vetted_by": "auto-chunkymonkey",
+          "retrieved_at": "2026-10-13T08:05:00-04:00",
+          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 12 digest (19 fencers / 29 entries, same events and times). No adds or drops. Medeo no longer in the digest's watched list (event past)."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -260,7 +270,7 @@
       "carried_from": "staging/weeks/2026-10-13",
       "carried_at": "2026-10-07T18:46:27-04:00",
       "carry_note": "Morris Cup Oct 24-25 still upcoming; refresh entries (digest/AskFRED) before the No. 2 budget.",
-      "entries_last_confirmed": "2026-10-12T08:10:00-04:00",
+      "entries_last_confirmed": "2026-10-13T08:05:00-04:00",
       "entries_change_log": [
         {
           "seen_in": "Club schedule · Sunday, October 11",
@@ -275,7 +285,7 @@
           "noted_at": "2026-10-12T08:10:00-04:00"
         }
       ],
-      "entries_count": "19 fencers / 29 entries (as of Oct 12 digest; was 20 / 29 through Oct 10)"
+      "entries_count": "19 fencers / 29 entries (confirmed unchanged in Oct 13 digest; was 20 / 29 through Oct 10)"
     },
     {
       "id": "web-efc-standing-schedule",
