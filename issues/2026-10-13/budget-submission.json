@@ -88,17 +88,23 @@
       "itemId": "web-fie-epee-tv-calendar-2026-10-12",
       "vetted": true,
       "stale": false
-    }
-  ],
-  "excludedSlots": [
+    },
     {
       "slot": "overheard-2",
       "name": "Overheard on Reddit #2 — Princess Bride duel",
-      "headline": "Overheard on Reddit: Inconceivable?",
       "itemId": "reddit-rfencing-princess-bride-2026-10-12",
-      "vetted": false,
+      "vetted": true,
       "stale": false
     },
+    {
+      "slot": "footwork",
+      "name": "Club note — Footwork class",
+      "itemId": "chat-footwork-class-2026-10-13",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
     {
       "slot": "classes",
       "name": "Weekly classes",
@@ -190,5 +196,21 @@
     "gear"
   ],
   "pageVersion": "budget-v2",
-  "submittedAt": "2026-10-12T10:11:29-04:00"
+  "submittedAt": "2026-10-12T10:11:29-04:00",
+  "amendments": [
+    {
+      "at": "2026-10-13T07:30:00-04:00",
+      "source": "chat: Frank 2026-10-13",
+      "note": "Frank vetted and added: Adela Sullivan 2nd JNRWE Artdu Open Oct 11 (row in club-results, item ft-artdu-sullivan-jnrwe-2026-10-11); footwork class note (text unchanged); Princess Bride Overheard moved back from after-next. Class schedule box stays out. Original submission: budget-demo/submissions/budget-20261012-101129.json.",
+      "added_slots": [
+        "overheard-2",
+        "footwork"
+      ],
+      "added_rows": {
+        "club-results": [
+          "ft-artdu-sullivan-jnrwe-2026-10-11"
+        ]
+      }
+    }
+  ]
 }

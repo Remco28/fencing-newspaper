@@ -77,9 +77,9 @@
  "desk_summary": [
   "Real issue this week. Lead (OK'd by Frank): Maksim Milinkovic finished 12th of 121 in Cadet Elite at the October NAC, winning three straight elimination bouts from the 49th seed.",
   "Vetted from your chat answers: the NAC lead and results, the Ultimate Cup board, Christina Jiang's 5th at Medeo, and late NJFA lines for Bradley Tsai and Brendan Mendez. Still unvetted website items: the Elite/Challenger explainer, Veteran Worlds, NJ high-school dates, the TV box and gear.",
-  "Results refreshed Oct. 13: Maksim's 12th of 121 holds. Penny's Y14 posted (54th of 113) and goes on the \"also fenced\" line. New for your OK: Adela Sullivan was 2nd in Junior Women at the Artdu open (Oct. 11). NJFA lines stay out.",
-  "Winter Camp and the Princess Bride Overheard (vetted) are held for No. 3. THE WEAPON fills the back page at two columns; Overheard on Reddit (etiquette) is ready.",
-  "New proposed: a short Wednesday footwork-class note (from your call). It needs your Vet."
+  "Results refreshed Oct. 13: Maksim's 12th of 121 holds; Penny's Y14 (54th of 113) is on the \"also fenced\" line; Adela Sullivan's 2nd at the Artdu open is in the box (vetted). NJFA lines stay out.",
+  "Winter Camp is held for No. 3. THE WEAPON fills the back page at two columns. Both Overheard pieces run (etiquette + Princess Bride).",
+  "Footwork-class note vetted and in. Class schedule box stays out."
  ],
  "slots": [
   {
@@ -141,6 +141,22 @@
    ]
   },
   {
+   "key": "overheard-2",
+   "section": "lead",
+   "slot": "Overheard on Reddit #2 — Princess Bride duel",
+   "budget": "130–160w",
+   "item": "reddit-rfencing-princess-bride-2026-10-12",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "The r/Fencing Princess Bride duel thread: the masters it names are real, Bob Anderson choreographed it, and the forum called it great theatrical fencing. Vetted Oct. 12; back in No. 2 per your Oct. 13 call.",
+   "answered": [
+    "Moved back to No. 2 (chat, Oct. 13)."
+   ]
+  },
+  {
    "key": "weapon",
    "section": "lead",
    "slot": "Back-page figure — THE WEAPON",
@@ -165,7 +181,7 @@
    "proposed": true,
    "cost": {
     "type": "table_rows",
-    "rows": 4
+    "rows": 5
    },
    "title": "Club results",
    "table": {
@@ -186,16 +202,22 @@
       "5th"
      ],
      [
+      "Adela Sullivan",
+      "Junior Women (Artdu Open, Oct. 11)",
+      "2nd"
+     ],
+     [
       "Also fenced at the NAC",
       "Maksim Milinkovic (Div. I Challenger, 6-0 in pools); Anayaa Sheth, Amina Gore (Cadet Challenger Women); Penny Young (Cadet Challenger Women, Y14 Women)",
       ""
      ]
     ]
    },
-   "summary": "One results box: Maksim's NAC finish and Christina's 5th at Medeo. Other NAC fencers, including Penny's Y14 (54th of 113), are on the \"also fenced\" line with no places. Refreshed Oct. 13 from FencingTracker.",
+   "summary": "One results box: Maksim's NAC finish, Christina's 5th at Medeo and Adela's 2nd at the Artdu open. Other NAC fencers, including Penny's Y14 (54th of 113), are on the \"also fenced\" line.",
    "items": [
     "ft-nac-results-efc-2026-10-12",
-    "email-agentmail-medeo-results-watch-2026-10-11"
+    "email-agentmail-medeo-results-watch-2026-10-11",
+    "ft-artdu-sullivan-jnrwe-2026-10-11"
    ],
    "flags": [
     {
@@ -206,37 +228,6 @@
      "level": "info",
      "text": "The NJFA late lines (Tsai, Mendez) are out, as in your approved budget."
     }
-   ]
-  },
-  {
-   "key": "artdu",
-   "section": "club",
-   "slot": "Club results — Artdu Open (new)",
-   "budget": "+1 row in results box",
-   "item": "ft-artdu-sullivan-jnrwe-2026-10-11",
-   "proposed": true,
-   "cost": {
-    "type": "table_rows",
-    "rows": 1
-   },
-   "title": "Club results (add)",
-   "table": {
-    "head": [
-     "Fencer",
-     "Event",
-     "Place"
-    ],
-    "rows": [
-     [
-      "Adela Sullivan",
-      "Junior Women (Artdu Open, Oct. 11)",
-      "2nd"
-     ]
-    ]
-   },
-   "summary": "New since Monday: Adela Sullivan was 2nd in Junior Women at the Artdu Fencing open on Oct. 11 (FencingTracker). A podium, so it fits the tone rule. It would be one more row in the results box.",
-   "questions": [
-    "Add Adela's 2nd at Artdu to the results box? (Scraped from FencingTracker; field size not shown.)"
    ]
   },
   {
@@ -560,8 +551,8 @@
     "span": 1
    },
    "summary": "Short note from your call: the Wednesday footwork class (6:30–7:15 p.m., right after the 5:00 group class). Informative only, no names. Times match the club website and the Oct. 7 club email.",
-   "questions": [
-    "Run the footwork note in No. 2 (my pick) or No. 3?"
+   "answered": [
+    "Vetted for No. 2, text unchanged (chat, Oct. 13)."
    ]
   }
  ],
@@ -571,11 +562,6 @@
    "id": "chat-winter-camp-reminder",
    "label": "Winter Camp reminder (held for No. 3)",
    "note": "chat: Frank 2026-10-12: skip it this week. Moved to staging/weeks/after-next. Price and sign-up link are still open."
-  },
-  {
-   "id": "reddit-rfencing-princess-bride-2026-10-12",
-   "label": "Overheard on Reddit #2: Princess Bride duel (held for No. 3)",
-   "note": "chat: Frank 2026-10-12: vetted; hold for No. 3 (week of Oct 19). Moved to staging/weeks/after-next."
   }
  ],
  "not_proposed": [
