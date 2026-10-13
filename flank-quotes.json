@@ -1,6 +1,9 @@
 {
   "left_flank_fixed": "Published by a fencing parent with a bot.",
-  "note": "Left flank never rotates. Right flank picks one quip per issue (rotate; avoid repeating consecutive weeks when the list allows).",
+  "right_flank_default": "It is better to deserve a rating than to have one.",
+  "right_flank_default_from": "No. 3",
+  "right_flank_default_provenance": "Frank (via parent agent), 2026-10-13 11:58 ET; Nos. 1–2 keep 'Know yourself, know your enemy, know where you left your glove.'",
+  "note": "Left flank never rotates. Right flank: use right_flank_default from No. 3 onward unless Frank picks another quip from right_flank_quips for a given issue.",
   "right_flank_quips": [
     "The reports of our losses have been greatly exaggerated.",
     "It is better to deserve a rating than to have one.",

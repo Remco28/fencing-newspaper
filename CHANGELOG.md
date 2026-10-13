@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.31 — 2026-10-13
+- **Masthead right flank default from No. 3:** "It is better to deserve a rating than to have one." (Frank, 2026-10-13 11:58 ET), replacing "Know yourself, know your enemy, know where you left your glove." Approved Nos. 1–2 unchanged. `flank-quotes.json` gains `right_flank_default`; STYLE-GUIDE §12 updated. Template A reference sheet (`issues/2026-10-14`) already carried this quip. Fit check: `staging/weeks/next/checks/masthead-check-no3.png` (wraps to two lines, hairlines clear of the logo).
+
 ## v3.30 — 2026-10-13
 - **New occasional section "Controversial Calls"** (chat: Frank 2026-10-13 11:34 ET): article only when a real disputed call comes up. Structure: the call (verified facts) / the rule (rulebook + penalty guide, brief quotes) / both sides (labeled opinion) / the verdict (what the rules support, or "judgment call"). No naming referees critically; fencers named only with the family's OK; reality lock applies. CONTENT-HIERARCHY new § Occasional / triggered sections; SECTIONS-MENU 19c; PLAN §3.
 - **Dear Ref back to MAYBE** (Frank: "isn't the worst thing"), separate from Controversial Calls; reverses the v3.28 "folded/dropped" mark.
