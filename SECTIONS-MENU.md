@@ -2,6 +2,9 @@
 Purpose: the largest option list, then narrow down. Fit = how well it works on 1 B&W sheet, once a week.
 Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 
+> **Canonical lineup = CONTENT-HIERARCHY.md** (reviewed v3.27, 2026-10-13). This file is the idea menu and history; where they differ, the hierarchy wins. Locked verdicts below override the per-item ✅ marks (e.g. crossword, quiz, jokes and weather are **cut**).
+> Added since the menu was written: **Overheard on Reddit** (No. 1+), **Go Cheer** boards (signup), **THE WEAPON** back-page figure, **By the Book** (v3.25), **For the Parents** (v3.26, working name). Comics: Frank, and Ling may draw from No. 3 or later.
+
 ## LOCKED VERDICTS — Frank, 2026-10-06 (v1 lineup)
 - News: BEEFIER — a few interesting articles per issue, not just results. Weighting: club newsletter news first (personal), then national/regional tournaments, locals last. Results matter but aren't everything.
 - TV/streaming box: YES — monitor major events + where to watch (FencingTV etc.).
@@ -18,14 +21,14 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 
 ---
 ## News core
-1. Front page / lead story ✅ — weekend's biggest epee result, 120–150 words. (Weekly lead.)
+1. Front page / lead story ✅ — weekend's biggest epee result, 150–180 words (CONTENT-HIERARCHY). (Weekly lead.)
 2. World / International ✅ — FIE epee one-liners (scoreboard strip cut v3.4; may revive as headline wire).
 3. National ✅ — USA Fencing epee one-liners.
 4. Local / Metro ✅ — NJ HS epee + nearby club results. (Always in.)
 5. Club beat ✅ — Elite FC results + signup board. The reason to pick it up every week.
 6. Business — ❌ skip (no club relevance).
 7. Science / Health 🔶 — e.g. "why epee blades break", footwork fitness, hydration. Monthly rotation max.
-8. Weather ✅-ish — 1-line strip under masthead ("Sat 41°F — drive safe to Edison"). Cheap, keep.
+8. Weather ❌ (cut — locked verdict) — 1-line strip under masthead ("Sat 41°F — drive safe to Edison"). Cheap, keep.
 
 ## Sports staples
 9. Scoreboard / standings ❌ cut v3.4 — was core one-liners; hard to implement well. Revive later as "headline wire" if wanted.
@@ -39,9 +42,9 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 15. Editorial — ❌ skip (Frank's paper; news voice only, v1).
 16. Op-Ed / guest column 🔶 — short parent-free contribution? Editor-only for now; revisit.
 17. Letters to the editor — ❌ skip (no submissions policy).
-18. Corrections box ✅ — 1-line "last issue we wrote X, correct is Y". Builds trust, keep tiny.
+18. Corrections box 🔶 (conflicts with killed corrections placeholder — open question in CONTENT-HIERARCHY) — 1-line "last issue we wrote X, correct is Y". Builds trust, keep tiny.
 19a. **Parent Q&A** ✅ — locked v3.18. Practical parent questions Frank fields at the club; anonymous; Desk answers in print. See CONTENT-HIERARCHY + STYLE-GUIDE §8a.
-19b. Advice column ("Dear Ref") 🔶 — "my light didn't go on, why?" Ref-rule Q&A, epee only. Distinct from Parent Q&A. Rotation candidate.
+19b. Advice column ("Dear Ref") 🔶 — see By the Book (v3.25); overlap is an open question in CONTENT-HIERARCHY. — "my light didn't go on, why?" Ref-rule Q&A, epee only. Distinct from Parent Q&A. Rotation candidate.
 
 ## Life / culture
 20. Arts / entertainment — ❌ skip (generic).
@@ -66,11 +69,11 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 
 ## Fun pages (your ask — all B&W-safe by design)
 36. Comics ✅ — single-panel epee gag (bot-written setup + simple SVG line art, or captioned stick-figure strip). 1 panel max. Test print first.
-37. Crossword ✅ — 5x5 or 7x7 mini, fencing words (EPEE, PISTE, EN GARDE, RIPOSTE-free since epee… use FLECHE, BALESTRA, CORPS-A-CORPS). New grid weekly = cheap generation, high kid engagement.
+37. Crossword ❌ (cut — locked verdict; idea kept) — 5x5 or 7x7 mini, fencing words (EPEE, PISTE, EN GARDE, RIPOSTE-free since epee… use FLECHE, BALESTRA, CORPS-A-CORPS). New grid weekly = cheap generation, high kid engagement.
 38. Word search 🔶 — alternate with crossword every other week.
 39. Sudoku (numbers) 🔶 — no fencing version; generic but kids like it. Rotate rarely.
-40. Quiz / trivia ✅ — 1 question + upside-down answer. (Already in plan.)
-41. Jokes / riddles ✅ — 1 fencing one-liner ("Why did the epeeist bring a ladder?…"). Kids clip these.
+40. Quiz / trivia ❌ (cut — locked verdict) — 1 question + upside-down answer. (Already in plan.)
+41. Jokes / riddles ❌ (cut — locked verdict) — 1 fencing one-liner ("Why did the epeeist bring a ladder?…"). Kids clip these.
 42. Spot-the-difference / maze 🔶 — piste maze SVG. Monthly special, toner-cheap if line art.
 43. Caption contest — ❌ skip (needs submissions; editor-only policy).
 44. Photo page — ❌ skip as a full print section v1; **Photo desk on budget page (v3.4)** shows visible thumbs + multi-select for a few B&W includes (`photoIncludes`).

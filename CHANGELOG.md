@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.27 — 2026-10-13
+- **CONTENT-HIERARCHY review/cleanup** (Frank, call 2026-10-13 08:09 ET): renumbered 1–15 (no 9a/9b); source key added (efc.weekly email, FencingTracker, AskFRED, chat, web, X, Reddit) replacing stale "Results-app email"; house-rules line (invent nothing, no club Epee labels, results tone, bylines); added Overheard on Reddit row (provisional) and Go Cheer naming; Ratings earned "always in when earned"; Club events covers camps + one-line class notes; comic notes Ling; TV box = "Epee on Screen"; new sections "Standing elements" (THE WEAPON figure, Weekly Classes rule, photo desk, page placement) and "Planned one-off features" (referee piece → No. 4); killed list tidied; second Overheard counts as Desk fill in cut order; open questions for Frank listed at bottom.
+- SECTIONS-MENU reconciled: header says CONTENT-HIERARCHY is canonical; cut items (weather, crossword, quiz, jokes) marked ❌; lead budget aligned to 150–180w; Dear Ref and Corrections flagged as open questions; new sections noted.
+
 ## v3.26 — 2026-10-13
 - **New recurring section "For the Parents"** (working name; Frank, call 2026-10-13 08:07 ET): standing box for non-fencing parents, one practical item per issue (fencing term decoded, tournament tip, or what to expect at an event). Differs from Parent Q&A: Q&A answers real parent questions; this is a proactive topic. Start issue open; no content staged. CONTENT-HIERARCHY row 9b (position provisional, Frank sorts); PLAN §3.
 - Renamed from "For the Grown-Ups" to **"For the Parents"** (Frank, call 2026-10-13 08:08 ET): "Grown-Ups" suggests parents of little kids; "For the Parents" is warmer and clearer. Nothing else changed.
