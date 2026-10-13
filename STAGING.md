@@ -154,9 +154,10 @@ SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Easte
 1. **Daily light pass (morning):** ingest new mail → staging; apply `processed` (see § Email triage labels); run email media extract.
 2. **Second pass immediately before building the HTML budget:** catch late tips, results-app slices, and club forwards so the lineup isn’t stale.
 
-### Self-gather (SOURCES.md) — two passes
-1. **Mid-week skim (Wednesday):** light pass — Google News RSS (`fencing+epee` + `+New Jersey` variant) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging; X skim (≈5–10 read-only calls, vetted accounts in `sources/x-accounts.md`). Do **not** pretend this replaces the full checklist.
-2. **Publish-morning full pass** (when Frank is aiming to ship — usually Mon/Tue morning; later OK): full SOURCES “Every run” checklist (incl. X full pass, ≈15–25 calls; X items stage `source: "x"`, unvetted, provenance `type: "x_post"` with post URL + UTC/ET time). Soft preference: if Elite FC members are fencing Monday, waiting for those results is nice when easy — not required.
+### Self-gather (SOURCES.md) — two passes + FencingTracker daily look
+0. **Daily quick look (weekday morning pass, v3.24):** FencingTracker Elite FC club page (https://fencingtracker.com/club/100261977/Elite%20FC/results), one fetch; stage any new Elite FC result unvetted (`source: "web"`, from FencingTracker, URL + retrieved_at). Gentle use per SOURCES.md § FencingTracker.
+1. **Mid-week skim (Wednesday):** light pass — Google News RSS (`fencing+epee` + `+New Jersey` variant) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging; X skim (≈5–10 read-only calls, vetted accounts in `sources/x-accounts.md`); FencingTracker club-page check (v3.24). Do **not** pretend this replaces the full checklist.
+2. **Publish-morning full pass** (when Frank is aiming to ship — usually Mon/Tue morning; later OK): full SOURCES “Every run” checklist (incl. FencingTracker full sweep — club page + event results pages, v3.24; X full pass, ≈15–25 calls; X items stage `source: "x"`, unvetted, provenance `type: "x_post"` with post URL + UTC/ET time). Soft preference: if Elite FC members are fencing Monday, waiting for those results is nice when easy — not required.
 
 ### Publish gates (reminder)
 **Budget HTML → Frank approve → Gazette Desk compose → Proof PDF → Frank approve → print.**

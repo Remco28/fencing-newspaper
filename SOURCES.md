@@ -10,10 +10,22 @@ Times = US Eastern. Full ops loop (chat / email / gates): **STAGING.md § Ops ca
 |------|------|------|
 | **Mid-week skim** | Wednesday | Light: Google News RSS (`fencing+epee` + `+New Jersey`) as juice detector; skim Tier-1 headlines / AskFRED changes worth staging; **X skim** (≈5–10 calls, see § X). Not a full checklist run. |
 | **Publish-morning full pass** | When aiming to ship (usually **Mon/Tue**; later OK) | Full **Every run** checklist below, incl. **X full pass** (≈15–25 calls, see § X). Soft: see **Club-results hold preference** if members fence Monday. |
+| **FencingTracker club page** (v3.24) | **Daily quick look** (weekday morning pass) · **Wednesday skim** · **Monday full pass** | Daily + Wed: one fetch of the Elite FC club results page for new results. Monday: full sweep (club page + event results pages for anything new). Gentle use — see § FencingTracker. |
 | **Email** | Daily morning light pass + second pass right before HTML budget | Ingest → staging, `processed` label, media extract (STAGING.md). |
 
 Keep all checklists below; do not delete sources when editing cadence.
 
+
+## FencingTracker (recurring source — locked 2026-10-13, plan v3.24, Frank on a call 07:58 ET)
+- **Club page (Elite FC results):** https://fencingtracker.com/club/100261977/Elite%20FC/results
+- **Good for:** Elite FC results the NAC feed / AskFRED miss — local opens and regionals (e.g. Adela Sullivan's 2nd at the Artdu Open, Oct 11, 2026, appeared only here); placements by event; rating earned; links to event results pages (field size, pool/DE detail) and fencer history pages. Frank uses it himself.
+- **Cadence:**
+  - **Daily quick look (weekday morning pass):** fetch the club page once; diff against staging for new results.
+  - **Wednesday skim:** same club-page check.
+  - **Monday full pass:** full sweep — club page plus event results pages (`/event/<id>/results`) for any new Elite FC result (field size, pools, DE scores) and registration previews for upcoming boards.
+- **Gentle use (like AskFRED):** a handful of page fetches per pass (daily/Wed: 1; Monday: ≲10), no crawling, no parallel bursts, plain browser User-Agent, back off on errors/429. Read-only.
+- **Caveats:** scraped results are **unvetted until Frank vets** (scraped-source rule); some events (local opens) have no linked event page, so field size/venue may be missing; club attribution comes from registration and can be wrong — cross-check names against `roster/people.json`; names appear in registration form ("Young, Penelope", "Anayaà") → print via roster; don't confuse Elite Fencing Academy with Elite FC; results can post hours to a day after an event; FencingTimeLive is login-walled, so FencingTracker is our results mirror.
+- Provenance: URL + retrieved_at (ET) in the staging item.
 
 ## AskFRED API (locked 2026-10-07 — gentle use)
 - Base: `https://www.askfred.net/api/v1/` — Bearer token in env `ASKFRED_API_KEY` (gitignored `.env` / process secret). **Never commit or paste the key into chat/docs.**
@@ -41,7 +53,7 @@ Keep all checklists below; do not delete sources when editing cadence.
 - [ ] Inbox **`efc.weekly@agentmail.to`** (AgentMail — SINGLE input channel; not Gmail). Flexible: Frank, apps, bots, newsletters, tips — stage all with provenance; never drop unknown senders. **Auto-vet allowlist:** `frankcng@gmail.com`, `chunkymonkey@agentmail.to` (Frank’s other bot / results-app digests), `elitefencersclub@111617670.mailchimpapp.com` (club Mailchimp). Others → unvetted until Frank vets. Cite by message-ID in `sources.json`; do not commit raw MIME. Detail: **STAGING.md § Tips / mail**.
 
 ## Weekly / as-needed
-- [ ] FencingTracker club page + NJ event pages: https://fencingtracker.com
+- [ ] FencingTracker club page (full sweep, § FencingTracker): https://fencingtracker.com/club/100261977/Elite%20FC/results + NJ event pages
 - [ ] European Fencing Confederation results (epee): https://fencing-efc.eu/results
 - [ ] FIE rankings pages (1 line each, top-3 moves only)
 - [ ] Nearby NJ club blogs (Freehold template; add 2–3 more)

@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.24 — 2026-10-13
+- **FencingTracker added to recurring sources** (Frank, call 2026-10-13 07:58 ET): it catches results the NAC feed misses (Adela Sullivan's Artdu Open 2nd showed up only there) and Frank uses it. Club page https://fencingtracker.com/club/100261977/Elite%20FC/results. Cadence: daily quick look (weekday morning pass), Wednesday skim, Monday full sweep. Gentle use like AskFRED. SOURCES.md § FencingTracker + cadence table; STAGING.md § Ops cadence.
+- Issue No. 2 approved (Frank 2026-10-13 07:57 ET); staging rolled forward (No. 3 = week of Oct 19).
+
 ## v3.23 — 2026-10-12
 - **Results tone locked (Frank, chat 2026-10-12):** never print a weak finish/place; strong = podium/top 8, notable climb, personal best, unbeaten pool; others go on an "also fenced"/"also attended" line; when unsure, "also fenced". STYLE-GUIDE §0d, CONTENT-HIERARCHY results row. No. 2 results box no longer provisional.
 - Medeo: Christina Jiang 5th printed as **Y12 Mixed** (Medeo combines men's+women's when one is small; AskFRED "Y12 Women's" is registration only).
