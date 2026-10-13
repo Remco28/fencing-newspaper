@@ -216,6 +216,11 @@
       "at": "2026-10-13T12:01:00-04:00",
       "by": "Frank (chat)",
       "note": "Reopened as PROOF v2 before printing: flank quip change, Deadlines box added, Go Cheer renamed Nearby Tournaments. Awaiting re-approval."
+    },
+    {
+      "at": "2026-10-13T12:48:00-04:00",
+      "by": "Frank (chat)",
+      "note": "Proof v2 approved for print."
     }
   ],
   "budgetApproval": {
@@ -235,5 +240,10 @@
     "commit": "30746d1",
     "pdf": "paper.pdf"
   },
-  "status": "approved"
+  "status": "approved",
+  "final_approval": {
+    "proof": "v2",
+    "at": "2026-10-13T12:48:00-04:00",
+    "by": "Frank (chat)"
+  }
 }
