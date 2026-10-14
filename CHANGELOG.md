@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.33 — 2026-10-13
+- **New source: fencing-api** (Frank's API over AskFRED / USA Fencing / FencingTracker; chat: Frank 2026-10-13 22:54 ET). SOURCES.md § fencing-api (coverage, limits, gentle use, staging as `source: "fencingapi"`, unvetted). Helper `scripts/fencingapi.py` reads `FENCING_API_KEY` from gitignored `.env`. Cadence **proposed** (daily quick look + Wed skim + Monday full pass + pre-budget); Frank to confirm before it goes into STAGING ops cadence. Test calls matched staged data (Morris Cup Cadet Men entrants; Medeo Y12 Mixed 5th for Christina Jiang; Milinkovic FencingTracker id).
+
 ## v3.32 — 2026-10-13
 - **No. 2 reopened as PROOF v2** (chat: Frank 2026-10-13 12:01 ET; not yet printed): right flank now "It is better to deserve a rating than to have one." (default applies **from No. 2 onward**; `flank-quotes.json`, STYLE-GUIDE §12); board renamed "Go Cheer" → "Nearby Tournaments"; new **Deadlines** box (page 2, directly under the board): Ultimate Cup regular entry Oct 19 (extended), Morris Cup late entry Oct 22, Ultimate Cup late entry Oct 29, all from USA Fencing tournament pages. Awaiting re-approval.
 
