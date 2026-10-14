@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.34 — 2026-10-13
+- **fencing-api is supplemental** (chat: Frank 2026-10-13 22:57 ET): it does not replace direct AskFRED / FencingTracker / USA Fencing / email checks. Removed the "use it instead of scraping" wording. Cadence locked as an extra cross-check in each pass (daily quick look, Wednesday skim, Monday full pass, pre-budget) in SOURCES.md § fencing-api and STAGING ops cadence (0b). API-vs-direct disagreements are flagged for Frank.
+
 ## v3.33 — 2026-10-13
 - **New source: fencing-api** (Frank's API over AskFRED / USA Fencing / FencingTracker; chat: Frank 2026-10-13 22:54 ET). SOURCES.md § fencing-api (coverage, limits, gentle use, staging as `source: "fencingapi"`, unvetted). Helper `scripts/fencingapi.py` reads `FENCING_API_KEY` from gitignored `.env`. Cadence **proposed** (daily quick look + Wed skim + Monday full pass + pre-budget); Frank to confirm before it goes into STAGING ops cadence. Test calls matched staged data (Morris Cup Cadet Men entrants; Medeo Y12 Mixed 5th for Christina Jiang; Milinkovic FencingTracker id).
 
