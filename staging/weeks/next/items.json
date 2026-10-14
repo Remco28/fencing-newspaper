@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-13T11:29:00-04:00",
-  "note": "Hold pile for the issue after `next` (Issue No. 3). Created empty 2026-10-07 at the roll-forward after Issue No. 1.",
+  "updated_at": "2026-10-14T07:55:00-04:00",
+  "note": "Hold pile for Issue No. 3 (week of Oct 19). Created empty 2026-10-07 at the roll-forward after Issue No. 1; No. 2 rolled 2026-10-13.",
   "items": [
     {
       "id": "chat-winter-camp-reminder",
@@ -162,7 +162,7 @@
       "id": "email-agentmail-morris-cup-entries-2026-10-07",
       "kind": "signup_row",
       "headline": "Morris Cup RYC/RJCC — EFC who's entered",
-      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Mon Oct 12; confirmed unchanged Tue Oct 13):\nSat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila.\nSun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
+      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Mon Oct 12; confirmed unchanged through Wed Oct 14):\nSat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila.\nSun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
       "source": "email",
       "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
@@ -246,6 +246,16 @@
         {
           "source": "chat: Frank 2026-10-13",
           "note": "Board name: 'Nearby Tournaments' (formerly 'Go Cheer'), 11:29 ET."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Wednesday, October 14",
+          "vetted": true,
+          "vetted_by": "auto-chunkymonkey",
+          "retrieved_at": "2026-10-14T07:55:00-04:00",
+          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 12/13 digests (19 fencers / 29 entries, same events and times). No adds or drops. Digest also newly lists Medeo Youth Challenge #5 (Nov 8) and empty Wanglei Oct 25 / Nov 8 cups — staged separately."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -274,7 +284,7 @@
       "carried_from": "staging/weeks/2026-10-13",
       "carried_at": "2026-10-07T18:46:27-04:00",
       "carry_note": "Morris Cup Oct 24-25 still upcoming; refresh entries (digest/AskFRED) before the No. 2 budget.",
-      "entries_last_confirmed": "2026-10-13T08:05:00-04:00",
+      "entries_last_confirmed": "2026-10-14T07:55:00-04:00",
       "entries_change_log": [
         {
           "seen_in": "Club schedule · Sunday, October 11",
@@ -289,7 +299,7 @@
           "noted_at": "2026-10-12T08:10:00-04:00"
         }
       ],
-      "entries_count": "19 fencers / 29 entries (confirmed unchanged in Oct 13 digest; was 20 / 29 through Oct 10)",
+      "entries_count": "19 fencers / 29 entries (confirmed unchanged through Oct 14 digest; was 20 / 29 through Oct 10)",
       "board": "Nearby Tournaments"
     },
     {
@@ -756,6 +766,49 @@
       ],
       "created_at": "2026-10-13T11:45:00-04:00",
       "revised_at": "2026-10-13T11:55:00-04:00"
+    },
+    {
+      "id": "email-agentmail-medeo-yc5-entries-2026-10-14",
+      "kind": "signup_row",
+      "headline": "Medeo Youth Challenge #5 (Nov. 8) — EFC entries",
+      "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 9:30 AM Y12 Women's Epee: Jiang, Christina. 11:30 AM Y10 Mixed Epee: Li, Nora. 11:30 AM Y14 Men's Epee: Li, Owen. (AgentMail club-schedule digest Wed Oct 14; 4 entries / 4 fencers.)",
+      "source": "email",
+      "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
+      "from": "chunkymonkey@agentmail.to",
+      "subject": "Club schedule · Wednesday, October 14",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "auto-chunkymonkey",
+      "vetted_at": "2026-10-14T07:55:00-04:00",
+      "created_at": "2026-10-14T07:55:00-04:00",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Wednesday, October 14",
+          "retrieved_at": "2026-10-14T07:55:00-04:00",
+          "note": "First appearance of Medeo YC #5 on the watched list in this inbox."
+        }
+      ],
+      "suggested_slot": "whos_entered",
+      "board": "Nearby Tournaments",
+      "tags": [
+        "club",
+        "medeo",
+        "signup",
+        "epee",
+        "nearby-tournaments"
+      ],
+      "entries_count": "4 fencers / 4 entries",
+      "entries_last_confirmed": "2026-10-14T07:55:00-04:00",
+      "name_flags": [
+        "SarroWaite, Samuel — not in roster/people.json; confirm print spelling (camel-case as digest?).",
+        "Li, Nora — not in roster; confirm Elite FC membership + print form.",
+        "Li, Owen — not in roster; confirm Elite FC membership + print form.",
+        "Jiang, Christina — known from Medeo #3; still not in roster (no variant confusion yet)."
+      ],
+      "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged."
     }
   ],
   "rolled_forward": {
