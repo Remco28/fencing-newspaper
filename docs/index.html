@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>En Garde Gazette — Elite Fencers Club, Chatham NJ</title>
+<meta name="description" content="The En Garde Gazette: a weekly épée fencing newsletter from Elite Fencers Club, Chatham, New Jersey.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2316201b'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' font-family='Georgia' font-style='italic' font-weight='bold' fill='%23c8a45a'%3EEG%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="./"><b>En Garde Gazette</b><small>Elite Fencers Club &middot; Chatham, NJ</small></a>
+  <p class="hint">Drag the papers about &middot; click one to read it</p>
+  <nav class="nav" aria-label="Site">
+    <button type="button" id="shuffle" class="btn ghost">Re-mess desk</button>
+    <a class="btn" href="archive.html">Archive</a>
+  </nav>
+</header>
+
+<main>
+  <h1 class="sr-only">En Garde Gazette, weekly épée newsletter</h1>
+  <p id="load-error" class="hint" hidden>Couldn’t load the issues. <a href="archive.html">Try the archive</a>.</p>
+  <noscript><p class="hint">This desk needs JavaScript. <a href="archive.html">Browse the archive</a> instead.</p></noscript>
+
+  <div class="desk-view">
+    <div class="stage" id="stage">
+      <img class="desk-img" src="assets/desk.webp" alt="" width="1520" height="1012">
+      <div id="props"></div>
+      <div class="stage-fx"></div>
+    </div>
+  </div>
+
+  <div class="mobile-view">
+    <h2>Latest issue</h2>
+    <div id="m-cover"></div>
+    <h2>All issues</h2>
+    <ul class="m-list" id="m-list"></ul>
+    <p style="margin-top:24px"><a class="btn" href="archive.html">Browse the archive</a></p>
+  </div>
+</main>
+
+<script src="js/common.js"></script>
+<script src="js/pencil3d.js"></script>
+<script src="js/desk.js"></script>
+</body>
+</html>
