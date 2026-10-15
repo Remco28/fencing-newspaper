@@ -1,0 +1,91 @@
+{
+  "retrieved_by": "Gazette Desk daily FT quick look",
+  "date": "2026-10-15",
+  "retrieved_at": "2026-10-15T07:51:30-04:00",
+  "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+  "method": "one curl fetch; club page only; no event deep-fetch",
+  "page_summary": {
+    "tournament_count": 161,
+    "row_count": 1208,
+    "most_recent_tournaments": [
+      {
+        "id": 2424,
+        "name": "Artdu Fencing Juniors/Cadets/Senior Open Epee",
+        "efc_rows": [
+          {
+            "name": "Sullivan, Adela",
+            "event": "Junior Women's Epee (JNRWE)",
+            "place": 2,
+            "date": "2026-10-11"
+          }
+        ]
+      },
+      {
+        "id": 1776,
+        "name": "October NAC",
+        "dates": "Oct 9 - Oct 12, 2026",
+        "efc_rows": [
+          {
+            "name": "Milinkovic, Maksim",
+            "event": "Division I Men's Epee (DV1ME)",
+            "place": 68,
+            "date": "2026-10-09"
+          },
+          {
+            "name": "Sheth, Anaya\u00e0",
+            "event": "Cadet Women's Epee (CDTWE)",
+            "place": 45,
+            "date": "2026-10-09"
+          },
+          {
+            "name": "Gore, Amina",
+            "event": "Cadet Women's Epee (CDTWE)",
+            "place": 59,
+            "date": "2026-10-09"
+          },
+          {
+            "name": "Young, Penelope",
+            "event": "Cadet Women's Epee (CDTWE)",
+            "place": 68,
+            "date": "2026-10-09"
+          },
+          {
+            "name": "Milinkovic, Maksim",
+            "event": "Cadet Men's Epee (CDTME)",
+            "place": 12,
+            "date": "2026-10-10"
+          },
+          {
+            "name": "Young, Penelope",
+            "event": "Youth 14 Women's Epee (Y14WE)",
+            "place": 54,
+            "date": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "id": 1686,
+        "name": "Ben Gutenberg Memorial SYC - RJCC",
+        "dates": "Oct 2 - Oct 4, 2026"
+      },
+      {
+        "id": 2289,
+        "name": "NJFA - Div. 3 and Y8-Y14 Epee"
+      }
+    ]
+  },
+  "new_vs_staging": [],
+  "already_known": [
+    "Artdu Sullivan JNRWE 2nd \u2014 staged+printed Issue No. 2",
+    "October NAC EFC results \u2014 staged+printed Issue No. 2",
+    "Ben Gutenberg / NJFA \u2014 prior weeks"
+  ],
+  "fencingapi_crosscheck": {
+    "call": "club-results --since 2026-10-01 (cache)",
+    "fetched_at": "2026-10-14T02:55:37Z",
+    "items": [
+      "Christina Jiang 5th Y12 Mixed Epee Medeo #3 (2026-10-11) \u2014 already printed Issue No. 2"
+    ],
+    "note": "No newer Elite FC results in API cache; agrees with FT club page (Medeo #3 still absent from FT club page)."
+  }
+}
