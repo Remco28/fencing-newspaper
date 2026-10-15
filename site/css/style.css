@@ -120,16 +120,12 @@ a { color: inherit; }
 .paper.fold-v .sheet::before { background: linear-gradient(to right, transparent 49%, rgba(0,0,0,.12) 49.7%, rgba(255,255,255,.26) 50.5%, transparent 52%); }
 .paper:focus-visible { outline: none; }
 .paper:focus-visible .sheet { outline: 3px solid var(--brass); outline-offset: 4px; }
-.tin .sheet img, .pencil .sheet svg { display: block; width: 100%; height: 100%; }
-.pencil { width: 27%; aspect-ratio: 540 / 20; pointer-events: none; }
-.pencil .sheet { pointer-events: auto; transition: none; animation: none; transform: rotate(var(--r, 0deg)); }
-.pencil .sheet::after { content: ""; position: absolute; inset: -12px 0; } /* fatter grab target, rotates with the pencil */
-.pencil .sheet svg { overflow: visible; }
-.pencil.dragging .sheet { transform: rotate(var(--r, 0deg)); }
-.pencil.falling { pointer-events: none; }
-.pencil.falling .sheet { pointer-events: none; transition: transform .75s cubic-bezier(.5,0,.9,.6), opacity .75s ease-in;
-  transform: translate(var(--fx, 0px), var(--fy, 40px)) rotate(var(--r, 0deg)) scale(.45); opacity: 0; }
-.pencil.falling { filter: drop-shadow(10px 18px 14px rgba(0,0,0,.45)); }
+.tin .sheet img { display: block; width: 100%; height: 100%; }
+/* 3D pencils: one fixed, click-through WebGL canvas whose camera maps the desk plane 1:1 to CSS px */
+.pencil-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 3; pointer-events: none; }
+.stage { touch-action: none; }
+body.pencil-hover, body.pencil-hover .item { cursor: grab; }
+body.pencil-drag, body.pencil-drag .item { cursor: grabbing; }
 
 /* ---------- mobile / small-screen fallback ---------- */
 .mobile-view { display: none; padding: 4px 16px 36px; max-width: 560px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
@@ -143,7 +139,7 @@ a { color: inherit; }
 .m-list .meta { color: var(--brass); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
 .m-list .row { display: flex; gap: 8px; margin-top: 8px; }
 @media (max-width: 720px), (max-height: 460px) {
-  .desk-view, .hint, #shuffle { display: none; }
+  .desk-view, .hint, #shuffle, .pencil-canvas { display: none; }
   .mobile-view { display: block; }
   :root { --head-h: 60px; }
 }
@@ -186,13 +182,10 @@ body.reading { overflow: hidden; }
 .reader-controls .btn { padding: 7px 11px; }
 .reader-controls .readout { min-width: 5.2em; text-align: center; font-size: 13px; color: #cfd3c0; }
 .reader-controls .sep { width: 1px; height: 24px; background: rgba(200,164,90,.35); margin: 0 4px; }
-.reader-view { flex: 1; overflow: auto; display: flex; padding: 16px; outline: none; overscroll-behavior: contain; }
+.reader-view { flex: 1; overflow: auto; display: flex; padding: 16px; outline: none; overscroll-behavior: contain; touch-action: none; }
 .reader-view.pan { cursor: grab; } .reader-view.panning { cursor: grabbing; user-select: none; }
-.reader-page { margin: auto; flex: none; perspective: 1800px; }
+.reader-page { margin: auto; flex: none; position: relative; }
+.reader-curl { display: none; position: absolute; pointer-events: none; z-index: 2; filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)); }
 .reader-page img { display: block; background: var(--paper); box-shadow: 0 12px 40px rgba(0,0,0,.7); max-width: none; user-select: none; -webkit-user-drag: none; }
-.reader-page img.turn-next { animation: turnNext .45s ease-out; transform-origin: left center; }
-.reader-page img.turn-prev { animation: turnPrev .45s ease-out; transform-origin: right center; }
-@keyframes turnNext { from { transform: rotateY(-70deg); opacity: .2; } to { transform: none; opacity: 1; } }
-@keyframes turnPrev { from { transform: rotateY(70deg); opacity: .2; } to { transform: none; opacity: 1; } }
 @media (max-width: 560px) { .reader-controls .label { display: none; } .reader-view { padding: 8px; } }
-@media (prefers-reduced-motion: reduce) { .sheet, .reader-page img { animation: none !important; } .item, .sheet { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .sheet { animation: none !important; } .item, .sheet { transition: none; } }
