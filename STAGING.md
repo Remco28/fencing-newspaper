@@ -233,7 +233,7 @@ issues/
     issue.json
     sources.json
     approvals.json
-    paper.pdf
+    en-garde-gazette-no-<N>-<YYYY-MM-DD>.pdf   # unique; never bare paper.pdf for published issues
     inputs/              # Clean outputs derived for the template
 ```
 
@@ -262,3 +262,7 @@ the tree above is the layout lock.
 - Fetch checklist → SOURCES.md
 - Approvals UX (budget + proof, chat doorbell, photo desk) → PLAN.md § Approval design
 - Slot order (scoreboard cut v3.4) → CONTENT-HIERARCHY.md
+
+## Printed-page archive whisper (2026-10-15)
+
+Footer middle line on every page: `Past issues · newsletter.teamremco.org` (class `.foot-archive`). Carry into No. 3+ from the locked issue HTML pattern.

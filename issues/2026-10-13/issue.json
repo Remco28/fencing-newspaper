@@ -13,7 +13,7 @@
   "approvals": "issues/2026-10-13/budget-submission.json (amended 2026-10-13 07:30 ET); approvals.json is a copy",
   "render": {
     "tool": "prototype/render.sh → render.py",
-    "pdf": "issues/2026-10-13/paper.pdf",
+    "pdf": "issues/2026-10-13/en-garde-gazette-no-2-2026-10-13.pdf",
     "previews": [
       "issues/2026-10-13/preview-p1.png",
       "issues/2026-10-13/preview-p2.png"

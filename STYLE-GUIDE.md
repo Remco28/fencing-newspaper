@@ -351,3 +351,25 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   image. People from other clubs are “other medalists” (or similar) — never imply they are
   Elite FC. Don’t call a placing “podium” unless the photo shows one; tie the caption to
   results already printed. Look at the image before writing.
+
+## PDF filename & download (locked 2026-10-15)
+
+Each published issue has **one** canonical PDF, uniquely named:
+
+`en-garde-gazette-no-<N>-<YYYY-MM-DD>.pdf`
+
+Examples: `en-garde-gazette-no-1-2026-10-08.pdf`, `en-garde-gazette-no-2-2026-10-13.pdf`.
+
+- Lives in `issues/<date>/` (and the site/docs copies). Do **not** use a bare `paper.pdf` for published issues.
+- Render with: `python3 prototype/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf`
+- Site `issues.json` `pdf` field and the Download button must point at that filename so browsers save the unique name.
+- PDF Author field (when set): **Nico's Dad** (Frank's joke byline).
+
+## Archive whisper on the printed page (locked 2026-10-15)
+
+Every page footer includes a quiet middle line (not a website banner):
+
+`Past issues · newsletter.teamremco.org`
+
+CSS class `.foot-archive` — smaller, sentence case, muted. Do not enlarge or promote.
+

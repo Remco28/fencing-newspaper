@@ -67,7 +67,7 @@
       return shadeRGB(base, 0.38 + 0.66 * d, sp);
     }
     var R = H / 2, cy = H / 2, tipG = 9, cone = 36;
-    var endLen = st.ferrule ? 34 : 3, x0 = cone, x1 = W - endLen;
+    var endLen = st.ferrule ? 17 : 3, x0 = cone, x1 = W - endLen;
     var roll = b.roll, faces = [], i;
 
     // round section shading across the width (used by the cone, ferrule, eraser and round barrels)
@@ -133,17 +133,19 @@
 
     // --- back end ---
     if (st.ferrule) {
-      var fx = x1, fl = 17;
+      var fx = x1, fl = 11;
       ctx.fillStyle = cylGrad(0, 0, [196, 160, 88], 1.1, R);
       ctx.fillRect(fx, 0.15, fl, H - 0.3);
       ctx.fillStyle = 'rgba(60,40,5,.45)';
-      [2, 4, 12.6, 14.6].forEach(function (d) { ctx.fillRect(fx + d, 0.15, 0.55, H - 0.3); });
+      [1.6, 3.4, 8.4, 10.2].forEach(function (d) { ctx.fillRect(fx + d, 0.15, 0.5, H - 0.3); });
       ctx.fillStyle = 'rgba(255,240,200,.35)';
-      [2.7, 4.7, 13.3, 15.3].forEach(function (d) { ctx.fillRect(fx + d, 0.3, 0.4, H - 0.6); });
-      ctx.fillStyle = cylGrad(0, 0, st.eraser, 0.15, R * 0.94);
+      [2.2, 4.0, 9.0, 10.8].forEach(function (d) { ctx.fillRect(fx + d, 0.3, 0.35, H - 0.6); });
+      // Real eraser tip is short (~6–8 mm); keep diameter under the barrel
+      var eR = R * 0.78, eL = Math.min(6.5, Math.max(5, W - fx - fl - 0.5));
+      ctx.fillStyle = cylGrad(0, 0, st.eraser, 0.15, eR);
       ctx.beginPath();
-      if (ctx.roundRect) ctx.roundRect(fx + fl - 0.5, cy - R * 0.94, W - fx - fl, R * 1.88, [0, 3.2, 3.2, 0]);
-      else ctx.rect(fx + fl - 0.5, cy - R * 0.94, W - fx - fl, R * 1.88);
+      if (ctx.roundRect) ctx.roundRect(fx + fl - 0.3, cy - eR, eL, eR * 2, [0, 2.2, 2.2, 0]);
+      else ctx.rect(fx + fl - 0.3, cy - eR, eL, eR * 2);
       ctx.fill();
     } else {
       ctx.fillStyle = cylGrad(0, 0, [st.paint[0] * 0.55, st.paint[1] * 0.55, st.paint[2] * 0.55], 0.3, R);

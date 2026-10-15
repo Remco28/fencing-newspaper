@@ -15,7 +15,7 @@
   "approvals": "issues/2026-10-08/approvals.json (copy of budget-demo/submissions/budget-20261007-172024.json, submitted 2026-10-07T17:20:24-04:00)",
   "render": {
     "tool": "prototype/render.py (Chrome CDP printToPDF, no header/footer)",
-    "pdf": "issues/2026-10-08/paper.pdf",
+    "pdf": "issues/2026-10-08/en-garde-gazette-no-1-2026-10-08.pdf",
     "previews": [
       "issues/2026-10-08/preview-p1.png",
       "issues/2026-10-08/preview-p2.png"
@@ -217,7 +217,7 @@
     "approved_at": "2026-10-07T18:40:00-04:00",
     "approved_version": "proof v2",
     "approved_commit": "aedb039",
-    "pdf": "issues/2026-10-08/paper.pdf",
+    "pdf": "issues/2026-10-08/en-garde-gazette-no-1-2026-10-08.pdf",
     "note": "Frank printed the PDF himself and said it looks great. PDF content frozen as approved (no re-render)."
   }
 }

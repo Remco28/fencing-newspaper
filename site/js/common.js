@@ -276,7 +276,7 @@
     title.textContent = 'En Garde Gazette No. ' + iss.number + (iss.headline ? ' — ' + iss.headline : '');
     sub.textContent = EGG.fmtDate(iss.date, true) + (iss.edition ? ' · ' + iss.edition : '');
     dl.href = iss.pdf;
-    dl.setAttribute('download', iss.pdf.split('/').pop().replace(/^paper/, 'en-garde-gazette-' + iss.number));
+    dl.setAttribute('download', (iss.pdf.split('/').pop()) || ('en-garde-gazette-no-' + iss.number + '.pdf'));
     img.removeAttribute('src'); hi.hidden = true;
     root.hidden = false;
     document.body.classList.add('reading');
