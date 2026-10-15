@@ -1,47 +1,88 @@
-# Site revision report
+# En Garde Gazette site, v4 rebuild
 
-## What changed
-- **Desk bounds (`js/desk.js`)**: papers and the paperclip tin are clamped so their *rotated bounding box* stays inside the inner wood panel of `desk.webp` (`PANEL` = 8.4–93.4 % × 10.8–88.6 % of the stage, measured from the 1520×1012 image). The clamp applies at initial placement and during drag. Papers stay 2D and the same size, and the `page-N.webp` / `page-N-1200.webp` srcset is untouched.
-- **3D pencils (`js/pencil3d.js`, new; SVG pencil code and `.pencil` CSS removed)**:
-  - One fixed, click-through WebGL canvas. The camera is set so the desk plane maps 1:1 to CSS px, so pencils line up with the photo.
-  - Geometry is a lathe: hex barrel (6.5 mm flat-to-flat, 190.5 mm long, about 29:1), sharpened cone with scalloped paint, graphite tip, brass ferrule with ridges, pink eraser. The barrel texture has stamped text and a dipped end.
-  - Roll angle is real: dragging or sliding perpendicular to the axis rolls the hex barrel. Sliding along the axis grips quickly. A soft contact shadow follows the pencil.
-  - Flick or drag. Dragging is clamped to the desk edge; a flick or a small nudge near the rim tips it over.
-  - Past a desk edge it falls with gravity along -z, tumbles about the edge axis, darkens into the backdrop, and is removed. **Re-mess only re-scatters survivors** (checked: after a pencil fell and Re-mess was clicked, 1 pencil remained).
-  - Pencil length is 25 % of desk width, a little longer than a letter page is wide.
-  - Test hook: `window.__pencils3d` has `list` (alive), `all`, `fallen`, `ready`, `whenReady`, `flick(i,vx,vy)`, `setPose(i,x,y,thDeg)`, `project(i)` and `render()`.
-  - Coffee ring and ink blot are unchanged (2D).
-- **Tin**: still the 2D photo. It now twists slightly when pushed sideways. No thumbtack references exist.
-- **Reader (`js/common.js`, `css/style.css`)**:
-  - Wheel and trackpad-pinch zoom is continuous (1×–5×) and centred on the cursor. +/−/Fit/dblclick/keys use the same anchored zoom.
-  - Pointer-based pan for mouse, touch and pen when zoomed (`touch-action: none` on the view).
-  - Two-finger pinch is implemented explicitly around the midpoint, because it replaces browser-native pinch inside the reader.
-  - New page turn (below).
+## What I built
+- **One desk engine** (`js/desk-engine.js`). A small 2D rigid-body world in desk-photo pixels (1520×1012; about 14 units = 1 cm). The whole wooden top is the play area, frame included: `bounds` = 36–1504 × 33–996, measured from the alpha of `desk.webp`.
+  - The scene is a single CSS-transformed layer. On tall or portrait screens the desk is turned 90°, so phones get a full-height desk instead of a list.
+  - Pointer coordinates go through the inverse transform. Hit testing is done in world space, not with DOM targets.
+- **Gestures (shared by all objects):**
+  - *Drag:* the grab point stays under the finger.
+  - *Towing:* grab off-centre and the object swings round to trail the finger, like a sheet pushed with one fingertip. Grabbing near the centre only translates. This is the main way to rotate with a mouse.
+  - *Other rotation:* mouse wheel over an object; two-finger twist on touch (both fingers on the object, or a second finger anywhere).
+  - *Flick:* release velocity, linear and angular, comes from the last ~100 ms of movement.
+  - *Tap:* a press of under 7 px and under 550 ms. Papers open the reader, the tin spins, a pencil gets a roll.
+  - *Keyboard:* papers are focusable buttons. Enter opens; arrows move; `[` and `]` rotate.
+- **Physics:**
+  - Friction and spin decay per kind.
+  - Desk-rim bounce uses proper corner impulses, so the tin caroms and spins off the edge.
+  - Solid bodies collide with each other (box-vs-box SAT plus impulses): pencils bump the tin and each other, and a held object shoves others.
+  - Papers aren't solid. They stack, and props sit on top of them.
+  - The loop sleeps when nothing moves.
+- **Papers:** our real page-1 images (the 1200 px thumbs, or full size on very dense screens).
+  - 7 copies (5 on small screens), with random positions and orientations on every load and on "Re-mess".
+  - The newest issue is always the top sheet, near the middle, roughly upright on screen (also when the desk is turned).
+  - The whole outline is kept on the wood. A held paper lifts slightly and its shadow grows.
+- **Tin:** the existing photo, with a collision box that matches the tin. It's heavy and slides well, with low spin friction: a tap gives it a 10–15 rad/s spin (about 3 turns), and a corner flick spins and slides it.
+- **Pencils (yellow hex HB with brass ferrule and eraser; blue round copy-editor's pencil):**
+  - Drawn on a canvas from a lighting model of the barrel cross-section. The hex faces and the stamp visibly turn over as the pencil rolls, and the sharpened end has a scalloped paint edge.
+  - Rolling is a real degree of freedom: low drag across the length, high drag along it. The hex pencil clacks from flat to flat and settles on a face. The round one keeps rolling, so it's the one that ends up on the floor.
+  - **Falling off:**
+    - Once the centre of mass passes the rim, the pencil pivots about the rim line under gravity (rod-on-pivot dynamics) and keeps sliding out, gathering speed.
+    - It leaves the rim when its inner end clears it, then free-falls in 3D and is removed at floor depth (1150 units down).
+    - It's rendered with a hand-built `matrix3d`. The perspective (camera height 2300) is folded into that matrix, so no CSS `perspective` or `preserve-3d` is involved.
+    - While tipping, the part still over the wood is drawn above the desk. The overhang is a clipped copy drawn *under* the desk photo, so the desk edge really hides it as it drops.
+    - You can catch a tipping pencil by grabbing it. Reload or Re-mess brings fallen pencils back.
+- **Reader** (`js/common.js`):
+  - **No page-turn animation.** The next page is pre-decoded and swapped in instantly.
+  - Zoom: wheel or trackpad pinch (cursor-anchored), touch pinch, +/−/Fit, double-click and keys, from 1× to 8×.
+  - Pan by dragging (mouse or touch) when zoomed. At fit, swipe left or right to change page.
+  - **Sharp zoom:** past the image's own resolution, the *visible* part of the page is re-rendered from the PDF with pdf.js, vendored in `vendor/pdfjs/` (Apache-2.0) and lazy-loaded on first deep zoom. Type stays crisp at any zoom, and the canvas never exceeds the viewport size.
+  - Download PDF is still there, saved as `en-garde-gazette-N.pdf`. `?read=N` deep links still work.
+- **Archive:** unchanged simple list, with Read (opens the reader) and PDF. CNAME and `.nojekyll` are untouched.
 
-## 3D library: OGL (not three.js)
-- OGL is a thin WebGL2 wrapper, about 40 kB gzipped as one jsDelivr `+esm` bundle. three.js is roughly 150 kB gzipped or more.
-- One pencil needs a few meshes, one small shader pair, a texture and a perspective camera. Physics is hand-written, so none of three's scene graph, materials or loaders would be used.
-- The cost is writing the ~20-line lighting shader and the lathe geometry by hand. If you want PBR, shadows or loading a modelled `.glb`, three.js is the better tool.
-- The library is lazy-loaded (dynamic `import()`) on the first desk build only. Phones and the mobile list never download it.
-- If the CDN or WebGL is unavailable, the desk still works without pencils (a console warning is logged).
+## Discarded from v3
+- `js/pencil3d.js` and the OGL/WebGL CDN dependency. Its pencil lived on a separate full-screen canvas: it couldn't interleave with papers, wasn't part of the shared drag system, and fell as a visual-only effect.
+- The canvas "cylinder curl" page turn and its paper-colour flap.
+- The inner-panel clamp (objects now use the whole wooden top).
+- The separate phone list view (the turned desk works on phones).
+- CSS coffee-ring and ink-blot doodles.
+- Animation-based placement via `left`/`top` percentages.
 
-## Page turn: custom canvas "cylinder curl"
-- The outgoing sheet (or the incoming one when going back) is drawn as 2 px vertical strips wrapped around a small cylinder that rolls across the page.
-- The free edge lifts, curls over, and shows a paper-coloured underside with faint show-through. It has per-strip shading and a cast shadow on the page below. About 720 ms, eased. Back-turn is the same render in reverse.
-- It is skipped while zoomed, and under `prefers-reduced-motion`.
-- Alternatives considered:
-  - **StPageFlip (`page-flip`)** is a good book-spread engine, but it owns layout and sizing and fights the custom zoom/pan viewer.
-  - **turn.js** needs jQuery and has licensing friction.
+## Adding a future prop
+Each prop kind is one registry entry. The engine supplies everything else.
+```js
+// a photographed object: transparent image + the box (image px) that is the object itself + its width on the desk
+EGG.Desk.register('stapler', EGG.Desk.imageProp({
+  src: 'assets/stapler.webp', imageWidth: 1200, imageHeight: 800, box: [40, 60, 1160, 760], width: 220,
+  density: 4, slide: 900, spin: 6, restitution: 0.2, edge: 'contain',   // or 'fall' to let it go over the edge
+  onTap: function (b, desk) { /* optional */ }
+}));
+desk.add('stapler', { x: 400, y: 300, a: 0.3, drop: 0.5 });   // e.g. in js/desk.js mess()
+```
+- **Options** (defaults are in `BASE` in `desk-engine.js`):
+  - `layer`: `'paper'` or `'prop'`
+  - `solid`, `edge` (`'contain'` or `'fall'`), `rod` (for long thin things that fall)
+  - `density`, `slide`, `spin`, `restitution`, `tow`
+  - `hitPad`, `lift`, `focusable`, `shadow` (a soft blurred box)
+- **Hooks:**
+  - `build(b, opts, desk)` (required): set `b.w`/`b.h` and fill `b.face`
+  - `friction(b, dt)`: custom motion, as the pencils' rolling does
+  - `draw(b, desk)`: custom-drawn faces, e.g. a canvas or a WebGL model rendered into a canvas
+  - `onScale`, `onDrag`, `onTap`, `onGone`
+- **Rotation** is planar on the desk. 3D only happens when something goes over the edge, and then the engine animates `b.face` itself.
 
-## Tin recommendation
-- Keep it 2D with the nudge-twist. A 3D rebuild isn't worth it: it's a static photographed prop with baked lighting, and a 3D tin would add little at this size.
-- If you ever want it, a simple extruded rounded box built the same way as the pencil, with the photo as lid and base textures, would be enough.
+## Verified (headless Chrome, `python -m http.server`)
+- Desktop 1440×900 and 1280×800, portrait phone 390×844 (touch), landscape phone 844×390. No console errors.
+- Corner tow rotates a paper (−35° in one test drag). A tin tap spins it. The round pencil flicked across its length rolls off the bottom edge and is removed. The hex pencil slid hard along its length tips over the left edge and falls. A gentler slide stops overhanging the rim without falling.
+- Touch (CDP synthetic events): one-finger drag, two-finger twist, tap opens the reader, pinch zoom, pan. The pdf.js sharp overlay rendered.
+- Reader: `?read=1`, arrow key to page 2, Escape closes. Re-mess restores all 10 objects.
 
-## Known remaining issues
-- The pencil canvas always draws **above** the DOM papers and tin (it cannot interleave), so pencils always lie on top of the pile. The old SVG pencils could be buried under a later-dragged paper.
-- Pencils can lie on the outer frame; only papers and the tin are limited to the inner panel.
-- Falling is visual only: the pencil is never hidden under the desk. Frame time is capped, so on a slow GPU the fall plays in slow motion.
-- Tested in headless Chromium with SwiftShader only (no physical GPU, no touch hardware, no Safari/Firefox). Touch pan and pinch were checked with synthetic CDP events.
-- Hex rolling is smooth; there is no "clack" or height bob from the barrel corners.
-- Native browser pinch-zoom is disabled inside the reader (`touch-action: none`), replaced by the custom pinch.
-- Nothing has been committed.
+## Remaining issues
+- No real GPU, touch hardware, Safari or Firefox testing; touch was synthetic.
+- Pencils are drawn top-down; the stamp and facets update while rolling. During a fall the canvas is frozen and only billboards about its own axis, which is fine at fall speed.
+- A pencil rolling off parallel to an edge disappears in roughly 0.1–0.2 s. That's physically right for a camera above the desk, but quick.
+- Papers don't drag the props lying on them.
+- Shadows are soft boxes, not true silhouettes (the open-lid tin is close enough).
+- Collisions are box-shaped. A held object pushing a body hard against the rim can overlap it briefly.
+- Native browser pinch-zoom is off on the desk and inside the reader (`touch-action: none`); the custom gestures replace it.
+- pdf.js needs ES-module dynamic `import()`. Without it the reader still works with images only, capped at image sharpness.
+- Nothing is committed. `docs/` hasn't been synced.
