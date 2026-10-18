@@ -48,3 +48,15 @@ unless `--allow-flag` is passed. See STYLE-GUIDE.md §7 for the full QA checklis
 - `scripts/` — helpers; **`scripts/askfred.py`** = gentle AskFRED gather client (key in `.env`, see SOURCES.md)
 - `staging/weeks/` — upcoming material (`YYYY-MM-DD/` or `next/` + `media/`); see STAGING.md. **Email media extract (v3.5):** MIME attachments + remote/inline HTML images → `media/` with provenance; filter logos/icons/pixels.
 - `issues/` — per weekly issue (`issues/<YYYY-MM-DD>/` with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`); committed. **Taste reference:** `issues/2026-10-14/` (sample v3.14). Raw emails stay in AgentMail.
+
+## License
+
+Copyright Team Remco (https://teamremco.org).
+
+Free to use, and free to build on for your own use. You may use, copy and change this for personal, educational and other noncommercial purposes under the [PolyForm Noncommercial License 1.0.0](LICENSE.md).
+
+Commercial use needs permission. If you'd like to use this commercially, [open an issue](https://github.com/Remco28/fencing-newspaper/issues) and we can talk.
+
+Quotes, photos, names, results and other material from third-party sources belong to their owners and are not covered by this license.
+
+Third-party libraries keep their own licenses.
