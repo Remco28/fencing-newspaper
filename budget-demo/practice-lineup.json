@@ -60,7 +60,7 @@
   "tip-public-chatham-dual"
  ],
  "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below ('practice' = rehearsal). Judgment lives here (slot → staging item ids, plain-English summary, questions for Frank). budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Any staging item this file doesn't mention still shows up (auto-placed by slot_hint, not proposed). Table rows are transcribed from the cited staging items (no new facts).",
- "generated": "2026-10-18T08:55:00-04:00",
+ "generated": "2026-10-18T09:05:00-04:00",
  "target_week": "next",
  "issue": {
   "number": 3,
@@ -79,7 +79,8 @@
   "Checked on fie.org this morning: all four U.S. Vet Worlds women's medals hold, and the U.S. women also won the veterans team event (45-31 over France). Team names stay out because FIE and Wikipedia list different teams.",
   "Elsayed is in as Secondary B: FIE's own ranking shows him No. 1 and the FIE article backs every line. By the Book is written from the October 2026 rulebook (unjustified appeals, t.172/t.174/t.165).",
   "Club results: nothing new through Saturday. Two Elite FC cadets fence today's NJ Junior Olympics qualifier. The Monday pass adds them if they finish strong; otherwise they go on the 'also fenced' line.",
-  "Boards refreshed: Morris Cup still has 20 fencers and 30 entries; Ultimate Cup adds Anayaa Sheth (13 entries); Medeo #4/#5 is one line, pending entries included. Fill is about 69% with everything vetted, 74% with For the Parents, and about 75% once the JO results are in (No. 2 printed at about 78%). Stretch option: the Winter Camp flyer photo adds about 6%."
+  "Boards refreshed: Morris Cup still has 20 fencers and 30 entries; Ultimate Cup adds Anayaa Sheth (13 entries); Medeo #4/#5 is one line, pending entries included. Fill is about 69% with everything vetted. Optional add-ons: Overheard on Reddit (+8%), For the Parents (+4.5%), and the JO results (+1%); with all three it's about 82% (No. 2 printed at about 78%). The Winter Camp flyer photo would add about 6% more.",
+  "New at 8:49 a.m.: Overheard on Reddit, 'After the Split: What Fencers Said' (150 words with the fact-check line). It's optional and needs your Vet."
  ],
  "slots": [
   {
@@ -593,10 +594,29 @@
   {
    "key": "overheard",
    "section": "shorts",
-   "slot": "Overheard on Reddit",
+   "slot": "Overheard on Reddit (optional)",
    "budget": "130–170w",
-   "empty": true,
-   "why": "Skipped this issue (Frank, Oct. 18)."
+   "item": "reddit-challenger-elite-split-2026-10-18",
+   "proposed": false,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "title": "After the Split: What Fencers Said",
+   "summary": "Frank asked for this (chat, 8:49 a.m. ET): reactions on r/Fencing after the first split NAC, following up No. 2's explainer. It has the top-voted case for the split, an Elite fencer's 'most concentrated U.S. event,' the quote 'Pools was tough but it was a lot more fun,' and the pushback: coaches' long days, tiers that track activity more than strength, and requests to drop Challenger's 20% cut. The fact-check line on placement and Cadet points is checked against USA Fencing.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "Cut as unverified: Challenger 'handing out A's', and Challenger points not counting toward Legacy lists (USA Fencing doesn't say)."
+    },
+    {
+     "level": "info",
+     "text": "Not in the lineup by default. Frank earlier said to skip Overheard this week; tick Include to run it."
+    }
+   ],
+   "questions": [
+    "Run it this week (about +8% fill), or hold for No. 4?"
+   ]
   },
   {
    "key": "qa",
