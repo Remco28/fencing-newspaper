@@ -1711,7 +1711,7 @@
    "headline": "Photo from History: 1965: Club epee, with everyone close enough to watch",
    "body": "The Oude RAI in Amsterdam was the setting for the Dutch national team epee championship on 21 November 1965. In this photograph, Laurens van Tiggele is at left and Raoul Popken at right; the archive records Zaal Abrahamse of The Hague as the winning club. Around their exchange, the hall is busy: a spectator sits close behind them, another bout continues in the background, and a body cord trails from the nearest fencer. The tight framing keeps all of that activity together, with the two masked opponents in the foreground and the people watching and competing close behind them.",
    "caption": "Laurens van Tiggele, left, faces Raoul Popken at the Dutch national team epee championship in Amsterdam’s Oude RAI on 21 November 1965. The winning club was Zaal Abrahamse of The Hague; spectators and another bout fill the space behind the two fencers.",
-   "credit": "Photo: unknown photographer / Anefo, Nationaal Archief, collection 2.24.01.05, no. 918-4711 (Nov. 21, 1965). CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Full-resolution JPEG converted from the archive’s original TIFF. Cropped. Source: https://commons.wikimedia.org/wiki/File:Duel_tussen_Van_Tiggele_(links)_en_Popken,_Bestanddeelnr_918-4711.jpg.",
+   "credit": "Photo: unknown photographer / Anefo, Nationaal Archief, collection 2.24.01.05, no. 918-4711 (Nov. 21, 1965). CC0 1.0 (creativecommons.org/publicdomain/zero/1.0). Full-resolution JPEG converted from the archive’s original TIFF. Cropped. Source: Wikimedia Commons, File:Duel_tussen_Van_Tiggele…918-4711.jpg.",
    "alt_text": "Black-and-white photograph of two masked epee fencers: Van Tiggele at left, seen from behind in a forward movement, and Popken at right in a low stance with his free arm raised; spectators and another bout are behind them.",
    "word_count": 170,
    "media_path": "staging/weeks/next/media/06-dutch-team-epee-1965-crop.jpg",
@@ -1742,7 +1742,7 @@
    "vetted": true,
    "vetted_by": "frank",
    "vetted_at": "2026-10-18T15:15:00-04:00",
-   "vet_notes": "Frank approved 2026-10-18 ~15:15 ET (relayed by Grok Bot): add entry 06 as Photo from History, 1 column, grayscale OK, caption + blurb + credit + alt from the card. | 2026-10-18 15:23 ET Frank: crop bottom ~25% (empty floor), add 'Cropped.' to credit. Proof: credit date restyled to Nov. 21, 1965; caption date likewise; blurb cut to one line (Claude Code proof check: caption already covers spectators/background bout). Original 1600px file kept.",
+   "vet_notes": "Frank approved 2026-10-18 ~15:15 ET (relayed by Grok Bot): add entry 06 as Photo from History, 1 column, grayscale OK, caption + blurb + credit + alt from the card. | 2026-10-18 15:23 ET Frank: crop bottom ~25% (empty floor), add 'Cropped.' to credit. Proof: credit date restyled to Nov. 21, 1965; caption date likewise; blurb cut to one line (Claude Code proof check: caption already covers spectators/background bout). Original 1600px file kept. | 2026-10-18 15:58 ET Frank: shorten the Commons URL in the credit (CC0, license link kept).",
    "slot_hint": "photo-history",
    "created_at": "2026-10-18T15:20:00-04:00"
   }

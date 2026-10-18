@@ -2,6 +2,12 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.39 — 2026-10-18
+- **Nearby Tournaments: one block per tournament** (Frank 15:58 ET, reader feedback on the split Morris board): name · town · dates once, days as sub-rows in date order, `Time · Event · Elite FC` only when times are sourced. New default in `prototype/template-a-v2.css` (`.tourney`, `.tourney-head`, `tr.day`) and STYLE-GUIDE §10a.
+- **Footer archive line integrated:** the footer is a trio in the same 7pt sans caps (no smaller muted line). Template A reference sheet (`issues/2026-10-14`) and the Nos. 1–2 sources carry the rule for any re-render; they weren't re-rendered.
+- **Left flank:** "Published by a fencing parent and his bot." (from No. 3; one-line config `flank-quotes.json` → `left_flank_fixed`).
+- No. 3 proof v2 rendered (shorter photo credit: Wikimedia Commons file name, CC0 link kept). Not published or printed.
+
 ## v3.38 — 2026-10-18
 - **No. 3 proof composed** (Frank 15:23 ET: budget approved, Epee on Screen cut): `issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf` + `preview-p1/p2.png`, PROOF v1, not published or printed. Photo 06 cropped (bottom ~25% of floor; credit says "Cropped."); Club Results box dropped (no NJ JO qualifier results posted on AskFRED at ~15:24 ET). Composer and overrides in `issues/2026-10-19/build/`. Claude Code (Opus) proof check run; taken/rejected fixes in `issue.json`.
 - **render.py sets PDF Author** (STYLE-GUIDE: "Nico's Dad"): stdlib incremental update of the Info dict after printToPDF (Chrome can't set it). Order: `--author=NAME`, else `<meta name="author">`, else "Nico's Dad". Title still comes from `<title>`.

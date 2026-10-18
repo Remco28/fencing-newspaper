@@ -13,6 +13,8 @@ def ty(t):
 def paras(t): return "\n".join(f"<p>{ty(p.strip())}</p>" for p in t.strip().split("\n\n") if p.strip())
 OV=json.load(open(R+'issues/2026-10-19/build/overrides.json')) if len(sys.argv)>1 else {}
 def body(k): return OV.get(k) or D[S[k]['item']]['body']
+TPL_CSS=open(R+'prototype/template-a-v2.css').read()
+FLANK=json.load(open(R+'flank-quotes.json'))
 css=open(R+'issues/2026-10-13/issue.html').read().split('<style>')[1].split('</style>')[0]
 css+="""  /* ---- Issue 2026-10-19 composition additions (no furniture changes) ---- */
   .credit { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; color: #333; margin-top: 2pt; text-align: left; line-height: 1.25; overflow-wrap: anywhere; text-align: left !important; hyphens: none; }
@@ -20,7 +22,7 @@ css+="""  /* ---- Issue 2026-10-19 composition additions (no furniture changes) 
   .eds-note { font-style: italic; }
   p, td { text-wrap: pretty; }
   h1.head, h2.head { text-wrap: balance; }
-"""
+"""+TPL_CSS
 cc=body('secondary-a')
 def table(head,rows,cols,numcol=0):
     h="<tr>"+"".join(f'<th{" class=\"r\"" if i==numcol else ""}>{ty(x)}</th>' for i,x in enumerate(head))+"</tr>"
@@ -33,6 +35,17 @@ def morrows(p): return [[am(r[0]),r[1],r[2].replace('Ash Shah-Mirani','<span sty
 ult=[["Sat 10/31","Junior Women","Olivia Hayes, Anayaa Sheth, Adela Sullivan"],["Sat 10/31","Cadet Men","Maksim Milinkovic, Caden Wu"],["Sun 11/1","Junior Men","Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng"],["Sun 11/1","Cadet Women","Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young"]]
 med=[["Sun 10/25","#4","Nora Li (Y10 Mixed)"],["Sun 11/8","#5","Samuel SarroWaite (Y12 Men), Christina Jiang (Y12 Women), Nora Li (Y10 Mixed), Owen Li (Y14 Men)"]]
 dl=[["Thu 10/22","Morris Cup: last day to enter (late fees)"],["Thu 10/29","Ultimate Cup: last day to enter (late fees)"],["Sun 11/1","Cobra Challenge (Secaucus, Nov.&nbsp;27–29): regular entry closes; late entry to Nov.&nbsp;7"],["Wed 11/11","Junior Olympics: regular-fee deadline"],["Fri 1/8","N.J. high school: independent fencers’ entries close"]]
+
+def tourney(name,where,dates,head,cols,days):
+    """One coherent block per tournament: name · town · dates once; days as sub-rows (STYLE-GUIDE §9b)."""
+    n=len(head)
+    h="<tr>"+"".join(f'<th{" class=\"r\"" if (i==0 and head[0]=="Time") else ""}>{x}</th>' for i,x in enumerate(head))+"</tr>"
+    rr=""
+    for label,rows in days:
+        rr+=f'<tr class="day"><td colspan="{n}">{label}</td></tr>'
+        rr+="".join("<tr>"+"".join(f'<td{" class=\"num\"" if (i==0 and head[0]=="Time") else ""}>{x}</td>' for i,x in enumerate(r))+"</tr>" for r in rows)
+    cg="<colgroup>"+"".join(f'<col style="width:{c}">' if c else "<col>" for c in cols)+"</colgroup>"
+    return f'<div class="tourney"><div class="tourney-head">{name} <span>· {where} · {dates}</span></div><table class="board">{cg}{h}{rr}</table></div>'
 ph=D['history-photo-06-dutch-team-epee-1965']
 credit=OV.get('credit') or ph['credit']
 camp=body('camp'); cls=D[S['classes']['item']]['body']
@@ -67,7 +80,7 @@ h=f'''<!DOCTYPE html>
 <!-- ==================== PAGE 1 (FRONT) ==================== -->
 <div class="page">
   <div class="masthead">
-    <div class="flank left">Published by a fencing parent with a bot.</div>
+    <div class="flank left">{FLANK["left_flank_fixed"]}</div>
     <img src="../../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly">
     <div class="flank right">It is better to deserve a rating than to have one.</div>
   </div>
@@ -105,16 +118,11 @@ h=f'''<!DOCTYPE html>
     <div class="boxtitle">Nearby Tournaments — Elite FC Entries</div>
     <div class="board-split">
       <div>
-        <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sat., Oct.&nbsp;24</span></div>
-        {table(["Time","Event","Elite FC"],morrows(mor[0]),["0.62in","0.78in",None])}
-        <div class="board-cap">Ultimate Cup RJCC <span>· Hillsborough, N.J. · Oct.&nbsp;31–Nov.&nbsp;1</span></div>
-        {table(["Day","Event","Elite FC"],ult,["0.62in","0.78in",None])}
+        {tourney("Morris Cup RYC/RJCC","Suffern, N.Y.","Oct.&nbsp;24–25",["Time","Event","Elite FC"],["0.62in","0.8in",None],[("Saturday, Oct.&nbsp;24",morrows(mor[0])),("Sunday, Oct.&nbsp;25",morrows(mor[1]))])}
       </div>
       <div>
-        <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sun., Oct.&nbsp;25</span></div>
-        {table(["Time","Event","Elite FC"],morrows(mor[1]),["0.62in","0.78in",None])}
-        <div class="board-cap">Medeo Youth Challenges <span>· Bound Brook, N.J.</span></div>
-        {table(["Day","No.","Elite FC"],med,["0.62in","0.4in",None])}
+        {tourney("Ultimate Cup RJCC","Hillsborough, N.J.","Oct.&nbsp;31–Nov.&nbsp;1",["Event","Elite FC"],["0.85in",None],[("Saturday, Oct.&nbsp;31",[r[1:] for r in ult if r[0].startswith("Sat")]),("Sunday, Nov.&nbsp;1",[r[1:] for r in ult if r[0].startswith("Sun")])])}
+        {tourney("Medeo Youth Challenges","Bound Brook, N.J.","Oct.&nbsp;25 &amp; Nov.&nbsp;8",["Event","Elite FC"],["0.85in",None],[("No.&nbsp;4 · Sunday, Oct.&nbsp;25",[["Y10 Mixed","Nora Li"]]),("No.&nbsp;5 · Sunday, Nov.&nbsp;8",[["Y12 Men","Samuel SarroWaite"],["Y12 Women","Christina Jiang"],["Y10 Mixed","Nora Li"],["Y14 Men","Owen Li"]])])}
       </div>
     </div>
     <p class="boxnote">Morris Cup is at Rockland Community College’s Eugene Levy Field House: 20 Elite FC fencers, 30 entries. Ultimate Cup is at Iron Peak Sports &amp; Events in Hillsborough: 10 Elite FC fencers, 13 entries.</p>

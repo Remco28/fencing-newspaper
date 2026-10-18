@@ -231,6 +231,20 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 - Fixed table layout, declared column widths, tabular numerals, right-aligned dates/ratings —
   alignment is template property, not per-issue tweaking.
 
+## 10a. Nearby Tournaments — one block per tournament (locked 2026-10-18, Frank)
+
+- Each tournament is ONE block: `.tourney` → `.tourney-head` = **NAME** · town · dates (once), then a
+  single `table.board`. Days are sub-rows inside it (`tr.day`, e.g. `SATURDAY, OCT. 24`, or
+  `NO. 5 · SUNDAY, NOV. 8` for a numbered series), in chronological order. Never split one tournament's
+  days across columns or repeat its heading per day (readers took Sat/Sun halves as two events).
+- Columns: `Time · Event · Elite FC` when times are sourced (check-in close per USA Fencing),
+  otherwise `Event · Elite FC`. No guessed times.
+- Arrangement inside the full-width box: blocks flow top-to-bottom in `.board-split` halves; the
+  biggest tournament takes the left half (or the full width if it is tall enough), smaller
+  ones stack in the right half in date order. Venue/count note (`.boxnote`) stays under the board.
+- CSS: `prototype/template-a-v2.css` (append to Template A). Helper: `tourney()` in the issue composer
+  (`issues/2026-10-19/build/compose.py`).
+
 ## 11. Word budgets — measure once, write to fit (locked 2026-10-06; stretch refresh 2026-10-07)
 - Each pattern slot carries a WORD BUDGET calibrated once per template. Current calibration
   (8.5pt, ~2.4in columns): ~40 words per column-inch. Recalibrate if type or columns change.
@@ -257,7 +271,7 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 - Logo ~58–62% width, centered in `.masthead` (retune if quotes wrap badly).
   Nothing above the masthead row, ever.
 - **Flanks (beside the logo) — prose quotes, not Vol/No/date:**
-  - LEFT (fixed): `Published by a fencing parent with a bot.`
+  - LEFT (fixed): `Published by a fencing parent and his bot.` (from No. 3; Nos. 1–2 printed "with a bot"). One-line config: `flank-quotes.json` → `left_flank_fixed`; Frank may reword "his bot".
   - RIGHT (default from No. 2, v3.32): `It is better to deserve a rating than to have one.`
     (`flank-quotes.json` → `right_flank_default`). No. 1 printed "Know yourself, know your
     enemy, know where you left your glove." Other quips in `right_flank_quips` only if Frank
@@ -366,11 +380,11 @@ Examples: `en-garde-gazette-no-1-2026-10-08.pdf`, `en-garde-gazette-no-2-2026-10
 - Site `issues.json` `pdf` field and the Download button must point at that filename so browsers save the unique name.
 - PDF Author field (when set): **Nico's Dad** (Frank's joke byline).
 
-## Archive whisper on the printed page (locked 2026-10-15)
+## Archive whisper on the printed page (locked 2026-10-15; restyled 2026-10-18)
 
-Every page footer includes a quiet middle line (not a website banner):
-
-`Past issues · newsletter.teamremco.org`
-
-CSS class `.foot-archive` — smaller, sentence case, muted. Do not enlarge or promote.
+Every page footer is a trio on the 2.5pt rule — left `En Garde Gazette · Issue No. N`, centre
+`Past issues · newsletter.teamremco.org`, right the for-fun disclaimer — all in the **same footer
+type** (7pt sans caps, same tracking and colour). CSS class `.foot-archive` now inherits the footer
+style (`prototype/template-a-v2.css`); it must not get its own size, weight, case or colour (Frank
+2026-10-18: the smaller muted line looked shoehorned). Do not enlarge or promote it.
 

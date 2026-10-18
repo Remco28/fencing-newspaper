@@ -1,0 +1,13 @@
+  /* ---- Template A furniture v2 (2026-10-18, Frank) — STYLE-GUIDE §9b + §13a ---- */
+  /* Footer: the archive line is the centred member of the footer trio, in the same 7pt sans caps as its neighbours (no separate size/colour). */
+  .footer { gap: 14pt; letter-spacing: 0.15pt; }
+  .footer .foot-archive { text-transform: inherit; letter-spacing: inherit; font-size: inherit; color: inherit; }
+  /* Nearby Tournaments: one block per tournament (name · town · dates once), days as sub-rows inside. */
+  .tourney + .tourney { margin-top: 9pt; }
+  .tourney-head { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 0 0 1pt 0; }
+  .tourney-head span { font-weight: 400; text-transform: none; letter-spacing: 0;
+    font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  table.board tr.day td { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7pt;
+    letter-spacing: 0.3pt; text-transform: uppercase; padding-top: 3pt; padding-bottom: 1pt;
+    border-bottom: 0.5pt solid #000; text-align: left; }

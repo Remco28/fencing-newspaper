@@ -130,12 +130,28 @@
   .figure img { display: block; width: 100%; height: auto; }
   .figure .caption { margin-top: 3pt; }
   .factcheck { font-style: italic; }
+  /* Footer v2 (2026-10-18, STYLE-GUIDE archive whisper): archive line matches footer type */
+  .footer { gap: 14pt; letter-spacing: 0.15pt; }
+  .footer .foot-archive { text-transform: inherit; letter-spacing: inherit; font-size: inherit; color: inherit; }
   /* ---- Issue 2026-10-19 composition additions (no furniture changes) ---- */
   .credit { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; color: #333; margin-top: 2pt; text-align: left; line-height: 1.25; overflow-wrap: anywhere; text-align: left !important; hyphens: none; }
   .c > .rail-block + .slot-b, .c > .slot-b + .box { margin-top: 6pt; }
   .eds-note { font-style: italic; }
   p, td { text-wrap: pretty; }
   h1.head, h2.head { text-wrap: balance; }
+  /* ---- Template A furniture v2 (2026-10-18, Frank) — STYLE-GUIDE §9b + §13a ---- */
+  /* Footer: the archive line is the centred member of the footer trio, in the same 7pt sans caps as its neighbours (no separate size/colour). */
+  .footer { gap: 14pt; letter-spacing: 0.15pt; }
+  .footer .foot-archive { text-transform: inherit; letter-spacing: inherit; font-size: inherit; color: inherit; }
+  /* Nearby Tournaments: one block per tournament (name · town · dates once), days as sub-rows inside. */
+  .tourney + .tourney { margin-top: 9pt; }
+  .tourney-head { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 0 0 1pt 0; }
+  .tourney-head span { font-weight: 400; text-transform: none; letter-spacing: 0;
+    font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  table.board tr.day td { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7pt;
+    letter-spacing: 0.3pt; text-transform: uppercase; padding-top: 3pt; padding-bottom: 1pt;
+    border-bottom: 0.5pt solid #000; text-align: left; }
 </style>
 </head>
 <body>
@@ -143,7 +159,7 @@
 <!-- ==================== PAGE 1 (FRONT) ==================== -->
 <div class="page">
   <div class="masthead">
-    <div class="flank left">Published by a fencing parent with a bot.</div>
+    <div class="flank left">Published by a fencing parent and his bot.</div>
     <img src="../../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly">
     <div class="flank right">It is better to deserve a rating than to have one.</div>
   </div>
@@ -174,7 +190,7 @@
       </div>
     </div>
     <div class="c">
-      <div class="slot-b"><h2 class="head">World No.&nbsp;1’s Message to His Future Self</h2><p>After a quarterfinal loss at the Tokyo Olympics, Egypt’s Mohamed Elsayed recorded a private video message to himself: a promise that came true with a bronze medal at Paris 2024, Egypt’s first Olympic fencing medal in 12 years. Now ranked No. 1 in the world in men’s epee, he tells Team USA epeeist Ari Simmons the story on the FIE’s podcast “The Will to Win” (Episode 3). His advice: “Fencing is like life. There’s always a comeback in life, and there’s always a comeback in fencing.” Listen on the FIE’s YouTube channel.</p></div><div class="rail-block"><div class="rail-title">Photo from History</div><h2 class="head">1965: Club Epee, With Everyone Close Enough to Watch</h2><div class="photo"><img src="media/06-dutch-team-epee-1965-crop.jpg" alt="Black-and-white photograph of two masked epee fencers: Van Tiggele at left, seen from behind in a forward movement, and Popken at right in a low stance with his free arm raised; spectators and another bout are behind them."><p class="caption">Laurens van Tiggele, left, faces Raoul Popken at the Dutch national team epee championship in Amsterdam’s Oude RAI on Nov.&nbsp;21, 1965. The winning club was Zaal Abrahamse of The Hague; spectators and another bout fill the space behind the two fencers.</p></div><p>Look closely and a body cord trails from the nearest fencer.</p><p class="credit">Photo: unknown photographer / Anefo, Nationaal Archief, collection 2.24.01.05, no. 918-4711 (Nov. 21, 1965). CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Full-resolution JPEG converted from the archive’s original TIFF. Cropped. Source: https://commons.wikimedia.org/wiki/File:Duel_tussen_Van_Tiggele_(links)_en_Popken,_Bestanddeelnr_918-4711.jpg.</p></div>
+      <div class="slot-b"><h2 class="head">World No.&nbsp;1’s Message to His Future Self</h2><p>After a quarterfinal loss at the Tokyo Olympics, Egypt’s Mohamed Elsayed recorded a private video message to himself: a promise that came true with a bronze medal at Paris 2024, Egypt’s first Olympic fencing medal in 12 years. Now ranked No. 1 in the world in men’s epee, he tells Team USA epeeist Ari Simmons the story on the FIE’s podcast “The Will to Win” (Episode 3). His advice: “Fencing is like life. There’s always a comeback in life, and there’s always a comeback in fencing.” Listen on the FIE’s YouTube channel.</p></div><div class="rail-block"><div class="rail-title">Photo from History</div><h2 class="head">1965: Club Epee, With Everyone Close Enough to Watch</h2><div class="photo"><img src="media/06-dutch-team-epee-1965-crop.jpg" alt="Black-and-white photograph of two masked epee fencers: Van Tiggele at left, seen from behind in a forward movement, and Popken at right in a low stance with his free arm raised; spectators and another bout are behind them."><p class="caption">Laurens van Tiggele, left, faces Raoul Popken at the Dutch national team epee championship in Amsterdam’s Oude RAI on Nov.&nbsp;21, 1965. The winning club was Zaal Abrahamse of The Hague; spectators and another bout fill the space behind the two fencers.</p></div><p>Look closely and a body cord trails from the nearest fencer.</p><p class="credit">Photo: unknown photographer / Anefo, Nationaal Archief, collection 2.24.01.05, no. 918-4711 (Nov. 21, 1965). CC0 1.0 (creativecommons.org/publicdomain/zero/1.0). Full-resolution JPEG converted from the archive’s original TIFF. Cropped. Source: Wikimedia Commons, File:Duel_tussen_Van_Tiggele…918-4711.jpg.</p></div>
     </div>
   </div>
   <div class="footer">
@@ -195,16 +211,11 @@
     <div class="boxtitle">Nearby Tournaments — Elite FC Entries</div>
     <div class="board-split">
       <div>
-        <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sat., Oct.&nbsp;24</span></div>
-        <table class="board"><colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr><td class="num">8:00 AM</td><td>Junior Women</td><td>Amina Gore, Olivia Hayes, Anayaa Sheth</td></tr><tr><td class="num">8:00 AM</td><td>Y12 Men</td><td>Kian Jaising, Joshua Jeong, Remy Ng</td></tr><tr><td class="num">12:30 PM</td><td>Cadet Men</td><td>Pablo Aguirre, Connor Anderson, Nico Ng, Caden Wu</td></tr><tr><td class="num">3:00 PM</td><td>Y14 Women</td><td>Stella Kuo, Mila Siu</td></tr></table>
-        <div class="board-cap">Ultimate Cup RJCC <span>· Hillsborough, N.J. · Oct.&nbsp;31–Nov.&nbsp;1</span></div>
-        <table class="board"><colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup><tr><th class="r">Day</th><th>Event</th><th>Elite FC</th></tr><tr><td class="num">Sat 10/31</td><td>Junior Women</td><td>Olivia Hayes, Anayaa Sheth, Adela Sullivan</td></tr><tr><td class="num">Sat 10/31</td><td>Cadet Men</td><td>Maksim Milinkovic, Caden Wu</td></tr><tr><td class="num">Sun 11/1</td><td>Junior Men</td><td>Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng</td></tr><tr><td class="num">Sun 11/1</td><td>Cadet Women</td><td>Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young</td></tr></table>
+        <div class="tourney"><div class="tourney-head">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Oct.&nbsp;24–25</span></div><table class="board"><colgroup><col style="width:0.62in"><col style="width:0.8in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="3">Saturday, Oct.&nbsp;24</td></tr><tr><td class="num">8:00 AM</td><td>Junior Women</td><td>Amina Gore, Olivia Hayes, Anayaa Sheth</td></tr><tr><td class="num">8:00 AM</td><td>Y12 Men</td><td>Kian Jaising, Joshua Jeong, Remy Ng</td></tr><tr><td class="num">12:30 PM</td><td>Cadet Men</td><td>Pablo Aguirre, Connor Anderson, Nico Ng, Caden Wu</td></tr><tr><td class="num">3:00 PM</td><td>Y14 Women</td><td>Stella Kuo, Mila Siu</td></tr><tr class="day"><td colspan="3">Sunday, Oct.&nbsp;25</td></tr><tr><td class="num">8:00 AM</td><td>Cadet Women</td><td>Amina Gore, Olivia Hayes, Adela Sullivan, Penny Young</td></tr><tr><td class="num">8:00 AM</td><td>Junior Men</td><td>Pablo Aguirre, Nico Ng</td></tr><tr><td class="num">10:00 AM</td><td>Y8 Women</td><td>Madeline Siu</td></tr><tr><td class="num">10:30 AM</td><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu</td></tr><tr><td class="num">1:30 PM</td><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, <span style="white-space:nowrap">Ash Shah-Mirani</span></td></tr><tr><td class="num">3:30 PM</td><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong, Maximus Siu</td></tr></table></div>
       </div>
       <div>
-        <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sun., Oct.&nbsp;25</span></div>
-        <table class="board"><colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr><td class="num">8:00 AM</td><td>Cadet Women</td><td>Amina Gore, Olivia Hayes, Adela Sullivan, Penny Young</td></tr><tr><td class="num">8:00 AM</td><td>Junior Men</td><td>Pablo Aguirre, Nico Ng</td></tr><tr><td class="num">10:00 AM</td><td>Y8 Women</td><td>Madeline Siu</td></tr><tr><td class="num">10:30 AM</td><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu</td></tr><tr><td class="num">1:30 PM</td><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, <span style="white-space:nowrap">Ash Shah-Mirani</span></td></tr><tr><td class="num">3:30 PM</td><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong, Maximus Siu</td></tr></table>
-        <div class="board-cap">Medeo Youth Challenges <span>· Bound Brook, N.J.</span></div>
-        <table class="board"><colgroup><col style="width:0.62in"><col style="width:0.4in"><col></colgroup><tr><th class="r">Day</th><th>No.</th><th>Elite FC</th></tr><tr><td class="num">Sun 10/25</td><td>#4</td><td>Nora Li (Y10 Mixed)</td></tr><tr><td class="num">Sun 11/8</td><td>#5</td><td>Samuel SarroWaite (Y12 Men), Christina Jiang (Y12 Women), Nora Li (Y10 Mixed), Owen Li (Y14 Men)</td></tr></table>
+        <div class="tourney"><div class="tourney-head">Ultimate Cup RJCC <span>· Hillsborough, N.J. · Oct.&nbsp;31–Nov.&nbsp;1</span></div><table class="board"><colgroup><col style="width:0.85in"><col></colgroup><tr><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="2">Saturday, Oct.&nbsp;31</td></tr><tr><td>Junior Women</td><td>Olivia Hayes, Anayaa Sheth, Adela Sullivan</td></tr><tr><td>Cadet Men</td><td>Maksim Milinkovic, Caden Wu</td></tr><tr class="day"><td colspan="2">Sunday, Nov.&nbsp;1</td></tr><tr><td>Junior Men</td><td>Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng</td></tr><tr><td>Cadet Women</td><td>Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young</td></tr></table></div>
+        <div class="tourney"><div class="tourney-head">Medeo Youth Challenges <span>· Bound Brook, N.J. · Oct.&nbsp;25 &amp; Nov.&nbsp;8</span></div><table class="board"><colgroup><col style="width:0.85in"><col></colgroup><tr><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="2">No.&nbsp;4 · Sunday, Oct.&nbsp;25</td></tr><tr><td>Y10 Mixed</td><td>Nora Li</td></tr><tr class="day"><td colspan="2">No.&nbsp;5 · Sunday, Nov.&nbsp;8</td></tr><tr><td>Y12 Men</td><td>Samuel SarroWaite</td></tr><tr><td>Y12 Women</td><td>Christina Jiang</td></tr><tr><td>Y10 Mixed</td><td>Nora Li</td></tr><tr><td>Y14 Men</td><td>Owen Li</td></tr></table></div>
       </div>
     </div>
     <p class="boxnote">Morris Cup is at Rockland Community College’s Eugene Levy Field House: 20 Elite FC fencers, 30 entries. Ultimate Cup is at Iron Peak Sports &amp; Events in Hillsborough: 10 Elite FC fencers, 13 entries.</p>
