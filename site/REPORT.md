@@ -86,3 +86,6 @@ desk.add('stapler', { x: 400, y: 300, a: 0.3, drop: 0.5 });   // e.g. in js/desk
 - Native browser pinch-zoom is off on the desk and inside the reader (`touch-action: none`); the custom gestures replace it.
 - pdf.js needs ES-module dynamic `import()`. Without it the reader still works with images only, capped at image sharpness.
 - Nothing is committed. `docs/` hasn't been synced.
+
+## Which issues land on the desk (Frank, 2026-10-18)
+`js/pick-issues.js` (`EGG.pickDeskIssues`): newest always on top (centred, near-upright); the next 2 issues (1 on small screens) always in the pile; remaining slots of 7 (5 small) sampled uniformly without replacement from all older issues; duplicates only when there are fewer issues than slots (older first, never a second newest on top). Tests: `node site/tests/pick-issues.test.js`.

@@ -15,7 +15,6 @@
   var issues = [];
 
   function rnd(a, b) { return a + Math.random() * (b - a); }
-  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   // best-candidate sampling: spread out, but still overlapping like a real pile
   function spot(box, taken, tries) {
@@ -34,9 +33,8 @@
     var B = desk.bounds, small = Math.min(vp.clientWidth, vp.clientHeight) < 560;
     var up = desk.upright(), W = B.x1 - B.x0, H = B.y1 - B.y0;
     var count = small ? 5 : 7, pw = small ? 360 : 300;
-    var newest = issues[0], order = [];
-    for (var i = 0; i < count - 1; i++) order.push(issues[i % issues.length]);
-    shuffle(order).push(newest);
+    // newest on top; next 2 (1 small) always in; rest random from the back catalogue — see js/pick-issues.js
+    var order = EGG.pickDeskIssues(issues, count, small ? 1 : 2);
 
     var taken = [], delay = 0;
     order.forEach(function (iss, i) {

@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.41 — 2026-10-18
+- **Desk issue selection** (Frank 17:41 ET): newest on top as before; the next 2 issues (1 on small screens) always in the pile; other slots filled at random without repeats from the whole back catalogue; duplicates only when there are fewer issues than slots (never a second newest on top). Count stays 7 / 5. Code: `site/js/pick-issues.js`; tests `node site/tests/pick-issues.test.js`. `publish_issue.py` keeps `tests/` out of `docs/`.
+
 ## v3.40 — 2026-10-18
 - **No. 3 approved and published** (Frank 16:08 ET, proof v2): on newsletter.teamremco.org, newest on the desk. `issues/2026-10-19/issue.json` marked approved/published; new `issues/PUBLICATION-LOG.md`.
 - **`scripts/publish_issue.py <date>`**: copies the issue PDF to `site/`, renders page images (220 dpi; 1870 px + 1200 px WebP), upserts `site/issues.json` newest-first, syncs `site/` → `docs/` safely (never empty). Idempotent. No commit/push.

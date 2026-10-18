@@ -11,7 +11,7 @@ Steps (safe to re-run; same input -> same result):
      Skipped when the images are already newer than the PDF (unless --force-images).
   3. Upsert the entry in site/issues.json (keyed by date), sorted newest first,
      so the newest issue lands on top of the desk.
-  4. Sync site/ -> docs/ (GitHub Pages source), minus REPORT.md. Builds docs.new
+  4. Sync site/ -> docs/ (GitHub Pages source), minus REPORT.md and tests/. Builds docs.new
      first and swaps it in, so docs/ is never left empty.
 
 Then publish with git add/commit/push yourself.
@@ -21,7 +21,7 @@ from datetime import date as Date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE, DOCS = os.path.join(ROOT, 'site'), os.path.join(ROOT, 'docs')
-EXCLUDE_FROM_DOCS = {'REPORT.md'}
+EXCLUDE_FROM_DOCS = {'REPORT.md', 'tests'}
 
 
 def die(msg):
