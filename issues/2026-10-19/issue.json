@@ -1,82 +1,94 @@
 {
- "issue": 3,
- "vol": "I",
- "date": "2026-10-19",
- "dateline": "Monday Edition · Vol. I — No. 3 · Chatham, N.J. · October 19, 2026",
- "status": "PROOF v2 — not published, not printed; awaiting Frank",
- "composed_at": "2026-10-18T15:50:00-04:00",
- "approval": "Frank 2026-10-18 15:23 ET: budget approved with one change (cut Epee on Screen)",
- "pdf": "issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf",
- "previews": [
-  "issues/2026-10-19/preview-p1.png",
-  "issues/2026-10-19/preview-p2.png"
- ],
- "pdf_metadata": {
-  "Title": "En Garde Gazette — Vol. I No. 3 — October 19, 2026",
-  "Author": "Nico's Dad"
- },
- "build": "python3 issues/2026-10-19/build/compose.py x && python3 prototype/render.py issues/2026-10-19/issue.html issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf --allow-flag",
- "pages": {
-  "1": [
-   "Vet Worlds, Part Two (lead)",
-   "Controversial Calls (feature)",
-   "World No. 1’s Message to His Future Self",
-   "Photo from History 06 (cropped)"
+  "issue": 3,
+  "vol": "I",
+  "date": "2026-10-19",
+  "dateline": "Monday Edition · Vol. I — No. 3 · Chatham, N.J. · October 19, 2026",
+  "status": "APPROVED — final, published (Frank, chat, 2026-10-18 16:08 ET). Proof v2 is the print version.",
+  "composed_at": "2026-10-18T15:50:00-04:00",
+  "approval": "Frank 2026-10-18 15:23 ET: budget approved with one change (cut Epee on Screen)",
+  "pdf": "issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf",
+  "previews": [
+    "issues/2026-10-19/preview-p1.png",
+    "issues/2026-10-19/preview-p2.png"
   ],
-  "2": [
-   "Nearby Tournaments (Morris, Ultimate, Medeo)",
-   "Deadlines",
-   "N.J. High School Fencing",
-   "By the Book",
-   "For the Parents",
-   "Class Notes",
-   "Overheard on Reddit",
-   "Winter Camp"
-  ]
- },
- "cut": [
-  "Epee on Screen (Frank)",
-  "Club Results box (no official NJ JO qualifier results posted on AskFRED as of ~15:24 ET)"
- ],
- "instruments": {
-  "p1_gap_in": 0.75,
-  "p2_gap_in": 0.38,
-  "row1_spread_in": 0.32,
-  "row2_spread_in": 0.47,
-  "pages": 2
- },
- "claude_code_proof_check": {
-  "taken": [
-   "caption/blurb redundancy: blurb cut to one line",
-   "credit date Nov. 21, 1965",
-   "non-breaking space in 9:30 a.m. etc."
+  "pdf_metadata": {
+    "Title": "En Garde Gazette — Vol. I No. 3 — October 19, 2026",
+    "Author": "Nico's Dad"
+  },
+  "build": "python3 issues/2026-10-19/build/compose.py x && python3 prototype/render.py issues/2026-10-19/issue.html issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf --allow-flag",
+  "pages": {
+    "1": [
+      "Vet Worlds, Part Two (lead)",
+      "Controversial Calls (feature)",
+      "World No. 1’s Message to His Future Self",
+      "Photo from History 06 (cropped)"
+    ],
+    "2": [
+      "Nearby Tournaments (Morris, Ultimate, Medeo)",
+      "Deadlines",
+      "N.J. High School Fencing",
+      "By the Book",
+      "For the Parents",
+      "Class Notes",
+      "Overheard on Reddit",
+      "Winter Camp"
+    ]
+  },
+  "cut": [
+    "Epee on Screen (Frank)",
+    "Club Results box (no official NJ JO qualifier results posted on AskFRED as of ~15:24 ET)"
   ],
-  "rejected": [
-   "AM/PM in tables (house style since No. 2)",
-   "left-align/hyphenate narrow justified text (STYLE-GUIDE: justified)",
-   "SarroWaite spelling (AskFRED official spelling)",
-   "p2 bottom band (needs content, not filler)",
-   "Medeo #5 3rd line (minor)"
-  ],
-  "note": "footer apostrophe already curly in source (glyph renders straight in small caps)"
- },
- "proof_v2": {
-  "requested": "Frank 2026-10-18 15:58 ET",
-  "changes": [
-   "Nearby Tournaments: one block per tournament, day sub-rows in date order (Morris left; Ultimate + Medeo right)",
-   "Footer trio in one type style (archive line centred)",
-   "Left flank: Published by a fencing parent and his bot. (flank-quotes.json left_flank_fixed)",
-   "Photo credit: short Commons file reference; license link kept"
-  ],
-  "claude_code_layout_check": {
-   "taken": [
-    "more space above the Medeo block"
-   ],
-   "rejected": [
-    "p1 bottom gap 0.75in (within instrument limit)",
-    "justified narrow columns (STYLE-GUIDE: justified)",
-    "Morris half ~0.3in shorter than right half (acceptable)"
-   ]
+  "instruments": {
+    "p1_gap_in": 0.75,
+    "p2_gap_in": 0.38,
+    "row1_spread_in": 0.32,
+    "row2_spread_in": 0.47,
+    "pages": 2
+  },
+  "claude_code_proof_check": {
+    "taken": [
+      "caption/blurb redundancy: blurb cut to one line",
+      "credit date Nov. 21, 1965",
+      "non-breaking space in 9:30 a.m. etc."
+    ],
+    "rejected": [
+      "AM/PM in tables (house style since No. 2)",
+      "left-align/hyphenate narrow justified text (STYLE-GUIDE: justified)",
+      "SarroWaite spelling (AskFRED official spelling)",
+      "p2 bottom band (needs content, not filler)",
+      "Medeo #5 3rd line (minor)"
+    ],
+    "note": "footer apostrophe already curly in source (glyph renders straight in small caps)"
+  },
+  "proof_v2": {
+    "requested": "Frank 2026-10-18 15:58 ET",
+    "changes": [
+      "Nearby Tournaments: one block per tournament, day sub-rows in date order (Morris left; Ultimate + Medeo right)",
+      "Footer trio in one type style (archive line centred)",
+      "Left flank: Published by a fencing parent and his bot. (flank-quotes.json left_flank_fixed)",
+      "Photo credit: short Commons file reference; license link kept"
+    ],
+    "claude_code_layout_check": {
+      "taken": [
+        "more space above the Medeo block"
+      ],
+      "rejected": [
+        "p1 bottom gap 0.75in (within instrument limit)",
+        "justified narrow columns (STYLE-GUIDE: justified)",
+        "Morris half ~0.3in shorter than right half (acceptable)"
+      ]
+    }
+  },
+  "approved": {
+    "by": "Frank",
+    "at": "2026-10-18T16:08:00-04:00",
+    "proof_version": 2,
+    "channel": "chat"
+  },
+  "published": {
+    "at": "2026-10-18",
+    "site": "https://newsletter.teamremco.org/",
+    "pdf_url": "https://newsletter.teamremco.org/issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf",
+    "via": "scripts/publish_issue.py 2026-10-19"
   }
- }
 }

@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.40 — 2026-10-18
+- **No. 3 approved and published** (Frank 16:08 ET, proof v2): on newsletter.teamremco.org, newest on the desk. `issues/2026-10-19/issue.json` marked approved/published; new `issues/PUBLICATION-LOG.md`.
+- **`scripts/publish_issue.py <date>`**: copies the issue PDF to `site/`, renders page images (220 dpi; 1870 px + 1200 px WebP), upserts `site/issues.json` newest-first, syncs `site/` → `docs/` safely (never empty). Idempotent. No commit/push.
+
 ## v3.39 — 2026-10-18
 - **Nearby Tournaments: one block per tournament** (Frank 15:58 ET, reader feedback on the split Morris board): name · town · dates once, days as sub-rows in date order, `Time · Event · Elite FC` only when times are sourced. New default in `prototype/template-a-v2.css` (`.tourney`, `.tourney-head`, `tr.day`) and STYLE-GUIDE §10a.
 - **Footer archive line integrated:** the footer is a trio in the same 7pt sans caps (no smaller muted line). Template A reference sheet (`issues/2026-10-14`) and the Nos. 1–2 sources carry the rule for any re-render; they weren't re-rendered.
