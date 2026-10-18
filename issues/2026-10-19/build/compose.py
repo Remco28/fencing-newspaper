@@ -117,7 +117,7 @@ h=f'''<!DOCTYPE html>
         {table(["Day","No.","Elite FC"],med,["0.62in","0.4in",None])}
       </div>
     </div>
-    <p class="boxnote">Morris Cup is at Rockland Community College’s Eugene Levy Field House: 20 Elite FC fencers, 30 entries. Ultimate Cup is at Iron Peak Sports &amp; Events in Hillsborough: 10 Elite FC fencers, 13 entries. The Medeo Youth Challenges are at Medeo Fencing Club in Bound Brook.</p>
+    <p class="boxnote">Morris Cup is at Rockland Community College’s Eugene Levy Field House: 20 Elite FC fencers, 30 entries. Ultimate Cup is at Iron Peak Sports &amp; Events in Hillsborough: 10 Elite FC fencers, 13 entries.</p>
   </div>
 
   <div class="cols3 ruled">
