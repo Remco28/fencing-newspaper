@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.36 — 2026-10-18
+- **Claude Code is an optional second reviewer** (Frank 2026-10-18, relayed by Grok Bot): (a) copy check after vetting, before budget/compose; (b) proof check of rendered PNGs alongside Desk's own visual QA; (c) site and code work. Desk stays the writer and source-of-truth keeper; Claude Code never adds facts. Skip it if it's unavailable. PLAN §6, STAGING § Claude Code. First run: No. 3 copy check (Opus); taken/rejected fixes are logged in each item's `vet_notes`.
+- **No. 3 budget feedback applied** (`issues/2026-10-19/budget-submission.json`, Frank 09:13 ET): Vet Worlds is now the lead (165w); the Controversial Call is rewritten for flow (v2, no new facts; v1 kept) and becomes the page-1 feature; Club Results runs only if a club fencer qualified at the NJ JO qualifier, otherwise the box is dropped (no "also fenced"); Overheard runs; gear and the weekly class table are out; Winter Camp stays "contact the club". Fill is about 84%; compose waits for Frank's additions.
+
 ## v3.35 — 2026-10-18
 - **No. 3 budget built Sunday** (voice: Frank 2026-10-18 ~8:26 ET) instead of the Monday 8:50 routine. The No. 2 lineup is archived at `budget-demo/archive/practice-lineup-issue2-2026-10-13.json`, and the new `budget-demo/practice-lineup.json` is No. 3 (fill about 69% vetted, 74% with For the Parents).
 - **By the Book is now Desk-written from the rulebook** (`reference/usa-fencing/`), so Frank's material isn't needed first (CONTENT-HIERARCHY row 12). First item: unjustified appeals (t.172 / t.174 / t.165).

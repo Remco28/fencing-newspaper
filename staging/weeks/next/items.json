@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-18T09:05:00-04:00",
+ "updated_at": "2026-10-18T09:40:00-04:00",
  "note": "Hold pile for Issue No. 3 (week of Oct 19). Created empty 2026-10-07 at the roll-forward after Issue No. 1; No. 2 rolled 2026-10-13. Budget for No. 3 built Sun 2026-10-18 (Frank, voice) instead of the Monday 8:50 routine.",
  "items": [
   {
@@ -16,7 +16,7 @@
    "vetted_by": "frank",
    "vet_scope": "angle_tone_only",
    "facts_status": "verified (price omitted)",
-   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed.",
+   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed).",
    "facts": [
     {
      "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
@@ -526,7 +526,8 @@
    "created_at": "2026-10-07T17:15:00-04:00",
    "carried_from": "staging/weeks/2026-10-13",
    "carried_at": "2026-10-07T18:46:27-04:00",
-   "carry_note": "Reference only: v3.20 cut order drops the regular Weekly Classes table unless something changed / special class (one-line note)."
+   "carry_note": "Reference only: v3.20 cut order drops the regular Weekly Classes table unless something changed / special class (one-line note).",
+   "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET."
   },
   {
    "id": "x-lead-elsayed-world-no1-epee-feature",
@@ -778,20 +779,21 @@
    "carried_from": "staging/weeks/2026-10-13",
    "body_full": "FIE: the Takamatsu City World Cup (Japan, Oct 15–18, foil) hosts the first broken-blade collection at an official FIE event, feeding Kazuyasu Minobe's Re-blade 2028 project (blades into knives, medals, keychains). USA Fencing profiled Joshua Au's ReCord Initiative: 334 body cords repaired and given free to nonprofit clubs and public schools (goal 500); recipients pay shipping; Absolute Fencing provides collection bins at tournaments. Source gives no age/home club for Au.",
    "vetted_by": "frank (voice 2026-10-18: run gear note trimmed to one line)",
-   "vetted_at": "2026-10-18T08:45:00-04:00"
+   "vetted_at": "2026-10-18T08:45:00-04:00",
+   "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET."
   },
   {
    "id": "chat-by-the-book-placeholder-2026-10-13",
    "kind": "graf",
    "headline": "By the Book: You Can't Appeal What the Referee Saw",
-   "body": "A referee's ruling on what happened on the strip, like whether a hit landed or a fencer stepped off the side, is a \"point of fact,\" and it can't be appealed (t.172). Argue one during the bout, or make an appeal the Head Referee finds unjustified (t.174), and it's a First Group offense: a yellow card the first time, then a red card, a penalty touch, for each repeat in that bout (t.165). Appeal the rule, not the call.",
+   "body": "A referee's ruling on what happened on the strip, like whether a hit landed or a fencer stepped off the side, is a \"point of fact,\" and it can't be appealed (t.172). Argue a point of fact during the bout, or make an appeal the Head Referee finds unjustified (t.174), and it's a First Group offense: a yellow card the first time, then a red card (a penalty touch) for each repeat in that bout (t.165). Appeal the rule, not the call.",
    "source": "usaf-rulebook",
    "from": "Gazette Desk",
    "target_week": "next",
    "vetted": true,
    "vetted_by": "frank (voice 2026-10-18: Desk-written By the Book goes in; approve or cut at budget)",
    "vetted_at": "2026-10-18T08:45:00-04:00",
-   "vet_notes": "Placeholder replaced 2026-10-18. Frank (voice 2026-10-18): Desk writes By the Book from the rulebook; he has nothing further to contribute. | Desk-written from Oct 2026 Rules t.165/t.172/t.174 + penalty chart t.170.",
+   "vet_notes": "Placeholder replaced 2026-10-18. Frank (voice 2026-10-18): Desk writes By the Book from the rulebook; he has nothing further to contribute. | Desk-written from Oct 2026 Rules t.165/t.172/t.174 + penalty chart t.170. | Claude Code copy check 2026-10-18 ~09:35 ET (claude -p, Opus; no facts added); Desk applied: punctuation of card ladder; 'Argue one' -> 'Argue a point of fact'. Rejected: add t.170 cite (t.165 is the First Group article itself).",
    "status": "drafted by Desk 2026-10-18 from the Oct 2026 rulebook",
    "provenance": [
     {
@@ -819,7 +821,7 @@
     "desk-written"
    ],
    "created_at": "2026-10-13T08:01:00-04:00",
-   "word_count": 79,
+   "word_count": 82,
    "facts": [
     {
      "claim": "No appeal against the referee's decision on a point of fact (except video refereeing)",
@@ -853,7 +855,7 @@
   {
    "id": "chat-controversial-calls-off-strip-2026-10-13",
    "kind": "article",
-   "headline": "Controversial Calls: The touch nobody saw land, except the referee",
+   "headline": "Controversial Calls: The Touch Nobody Saw Land, Except the Referee",
    "draft": "drafts/controversial-calls-off-strip-touch.md",
    "source": "chat",
    "from": "Frank (chat, 2026-10-13 11:43 & 11:44 ET)",
@@ -862,7 +864,7 @@
    "vetted_by": "Frank",
    "vetted_at": "2026-10-13T11:55:00-04:00",
    "status": "vetted for No. 3",
-   "vet_notes": "Revised per Frank's answers 2026-10-13 11:52 ET: two years ago; landing spot unknown (off the strip; t.93/t.94.1 either way); formal appeal, Head Referee ruled point of fact (t.172/t.174); lost by one touch; ref 'thought she saw it hit' (attributed); opponent waved no-touch (attributed); verdict Judgment call. Second disputed touch deliberately excluded (fuzzy).",
+   "vet_notes": "Revised per Frank's answers 2026-10-13 11:52 ET: two years ago; landing spot unknown (off the strip; t.93/t.94.1 either way); formal appeal, Head Referee ruled point of fact (t.172/t.174); lost by one touch; ref 'thought she saw it hit' (attributed); opponent waved no-touch (attributed); verdict Judgment call. Second disputed touch deliberately excluded (fuzzy). | v2 rewrite 2026-10-18 (Desk, per Frank's budget note): no new facts. Claude Code copy check 2026-10-18 ~09:35 ET (claude -p, Opus; no facts added); Desk applied: family attribution kept across the coach/opponent lines; 'said she thought she saw it hit'; 'No rule we found...' (absence check); verdict 'On the family's own account...'; generic 'how a rule was applied'; replay 'not in pools'; dropped 'even'; t.94.1 status. Rejected: headline change (Frank-vetted), cutting 'national tournament' (in v1), editor's note question (Frank's own disclosure). Re-vet of v2 wording: Frank.",
    "claim_check": [
     {
      "claim": "Off-strip/floor touch in épée is disregarded where floor not insulated",
@@ -872,7 +874,7 @@
     {
      "claim": "Touch on the conductive strip registering is annulled",
      "citation": "t.94.1",
-     "status": "verified (not cited in print)"
+     "status": "verified (cited in print from v2)"
     },
     {
      "claim": "Validity of a hit is a point of fact; no appeal except video review",
@@ -959,18 +961,19 @@
      "note": "11:55 ET: vetted as-is; confirmed no card was given for the appeal."
     }
    ],
-   "slot_hint": "lead",
+   "slot_hint": "feature",
    "tags": [
     "occasional",
     "rules",
     "controversial-calls"
    ],
    "created_at": "2026-10-13T11:45:00-04:00",
-   "revised_at": "2026-10-13T11:55:00-04:00",
-   "body": "*Editor's note: The fencer in this story is the editor's son.*\n\n**The call.** In a pool bout at a national tournament two years ago, an Elite FC fencer's opponent scored a touch that, according to the fencer's family, landed off the strip. The fencer said it never hit him. The family says the opponent waved a hand to signal no touch, which the Elite FC coach pointed out at the time; the opponent's coach did not contest it. The family says the referee said she thought she saw it hit. The fencer made a formal appeal. The Head Referee came over and ruled that it was the referee's call. The fencer lost the bout by one touch. Pools had no video replay.\n\n**The rule.** If the blade missed, the touch shouldn't count, whether it hit the floor or the metal strip. In épée, touches \"made on the ground where it is not insulated\" are disregarded (t.93), and a touch on the strip that registers is annulled (t.94.1). But whether a hit landed is a \"point of fact,\" and \"no appeal can be made\" against one (t.172.1). Appeals cover only a misapplied rule, and the Head Referee settles them (t.172.2, t.174). The rules give an opponent's signal no formal weight.\n\n**Both sides (opinion).** For the call: the referee judges from where she stands, and finality keeps bouts from being re-argued. Against: when the opponent signals a miss, an uncertain sighting is a thin basis for a decisive touch.\n\n**The verdict.** Judgment call. The Head Referee applied the rules correctly: a referee's view of a hit can't be appealed.\n\n**For parents.** You can't appeal what a referee saw, only how she applied a rule. Only the fencer can appeal, right away, before the next touch. At national tournaments today, video replay is guaranteed only in later direct-elimination rounds (from the round of 16 or 8, depending on the event), never in pools. Phone video doesn't count.",
-   "word_count": 324,
+   "revised_at": "2026-10-18T09:40:00-04:00",
+   "body": "*Editor's note: The fencer in this story is the editor's son.*\n\nThe light went on, and the argument started. In a pool bout at a national tournament two years ago, an Elite FC fencer's opponent scored a touch that, the fencer's family says, landed off the strip. The fencer said the blade never hit him.\n\nBy the family's account, the opponent waved a hand to signal no touch, the Elite FC coach pointed that out on the spot, and the opponent's coach didn't dispute it. The referee, the family says, said she thought she saw it hit. The fencer made a formal appeal, and the Head Referee came over and ruled that it was the referee's call. Pools had no video replay. The fencer lost the bout by one touch.\n\nOn paper, a hit that misses the fencer shouldn't count. In epee, touches \"made on the ground where it is not insulated\" are disregarded (t.93), and a touch that lands on the strip and registers is annulled (t.94.1). The catch is who decides whether it landed. That is a \"point of fact,\" and against a point of fact \"no appeal can be made\" (t.172.1). An appeal can challenge only how a rule was applied, and the Head Referee settles it (t.172.2, t.174). No rule we found gives an opponent's signal any formal weight.\n\n**Both sides (opinion).** For the call: the referee judges from where she stands, and making her view final keeps bouts from being re-argued touch by touch. Against it: when the fencer who scored signals a miss, a referee who only thought she saw a hit has a thin basis for a decisive touch.\n\n**The verdict: judgment call.** On the family's own account, the Head Referee applied the rules correctly. A referee's view of a hit can't be appealed, no matter how differently it looked from the side of the strip.\n\n**For parents,** the lesson is narrow but useful. You can't appeal what a referee saw, only how a rule was applied. Only the fencer can appeal, and it has to happen right away, before the next touch. At national tournaments today, video replay is guaranteed only in later direct-elimination rounds (from the round of 16 or 8, depending on the event), not in pools. And a parent's phone video doesn't count.",
+   "word_count": 384,
    "draft_path": "staging/weeks/next/drafts/controversial-calls-off-strip-touch.md",
-   "budget_note": "voice: Frank 2026-10-18 8:26 ET (relayed by Grok Bot): runs as the No. 3 lead, taking lead + secondary space."
+   "budget_note": "Frank budget 2026-10-18 09:13 ET: not the lead; 'needs to read a bit better... felt like a rushed article.' Rewritten for flow (same facts, same structure), runs as page-1 feature. v1 kept at drafts/controversial-calls-off-strip-touch.v1-2026-10-13.md.",
+   "rewrite_needs_frank_look": true
   },
   {
    "id": "email-agentmail-medeo-yc5-entries-2026-10-14",
@@ -1123,18 +1126,18 @@
   },
   {
    "id": "x-fie-vet-worlds-women-epee-2026-10-13",
-   "kind": "fact",
+   "kind": "article",
    "headline": "Vet Worlds, Part Two: Two World Titles for U.S. Women",
-   "body": "The U.S. women's epee veterans came home from the Veteran World Championships in Tbilisi, Georgia, with two world titles. Leslie Marx won Veteran 50, beating Belgium's Nathalie Vandewalle 10-4 in the final of an 83-fencer field; the FIE says it is her first title in the event since 2017. In Veteran 40, Cassandra Bates took silver after a 10-9 final against Julia Ashchuk, and Lacey Biniak won bronze. Charlotta Bowie added bronze in Veteran 70. Then the U.S. won the women's veterans team event, beating Italy 45-40 and France 45-31.",
-   "word_count": 90,
+   "body": "The U.S. women's epee veterans left the Veteran World Championships in Tbilisi, Georgia, with two world titles and four individual medals.\n\nLeslie Marx led the way in Veteran 50, working through an 83-fencer field and beating Belgium's Nathalie Vandewalle 10-4 in the final. The FIE says it was her first title in the event since 2017.\n\nThe Veteran 40 gold came down to one touch. Cassandra Bates lost the final 10-9 to Julia Ashchuk and took silver, and Lacey Biniak, who fell to Ashchuk 10-8 in the semifinals, took bronze. That gave the U.S. two of the four medals in a 63-fencer field. In Veteran 70, Charlotta Bowie won bronze after a 10-7 semifinal loss to Germany's Astrid Kircheis, the eventual champion.\n\nThen came the team event. In a field of 19 teams, the U.S. beat Italy 45-40 in the semifinals and France 45-31 in the final for gold.\n\nThe championships, held Oct. 9–17, drew 1,273 athletes from 65 nations. The women's epee events ran Oct. 12–14.",
+   "word_count": 167,
    "source": "fie",
    "from": null,
    "target_week": "next",
    "vetted": true,
    "vetted_by": "frank (conditional vet; condition = fie.org check, met 2026-10-18)",
    "vetted_at": "2026-10-18T08:45:00-04:00",
-   "vet_notes": "Wednesday skim 2026-10-14. Tier-A @FIE_fencing on its own event (fact-eligible per SOURCES § X), still unvetted until Frank vets. Monday pass: confirm on fie.org results (field sizes, Vet-60/80 women, any other U.S. medals, team events). Note FIE first posted the Vet-40 podium labeled 'Vet-60' (post 2110099424458551446), then corrected it — use the corrected posts. Women's epee was listed Oct 12–14, so results may not be complete. | Desk 2026-10-18: fie.org check done, all staged medals confirmed; team gold confirmed (names withheld: FIE entry list vs Wikipedia conflict). Promoted to vetted per Frank's conditional vet. Rewatch-on-FencingTV line dropped (not verified).",
-   "slot_hint": "desk_fill_international",
+   "vet_notes": "Wednesday skim 2026-10-14. Tier-A @FIE_fencing on its own event (fact-eligible per SOURCES § X), still unvetted until Frank vets. Monday pass: confirm on fie.org results (field sizes, Vet-60/80 women, any other U.S. medals, team events). Note FIE first posted the Vet-40 podium labeled 'Vet-60' (post 2110099424458551446), then corrected it — use the corrected posts. Women's epee was listed Oct 12–14, so results may not be complete. | Desk 2026-10-18: fie.org check done, all staged medals confirmed; team gold confirmed (names withheld: FIE entry list vs Wikipedia conflict). Promoted to vetted per Frank's conditional vet. Rewatch-on-FencingTV line dropped (not verified). | Lead expansion 2026-10-18 (165w) uses only fie_check facts: field sizes, semifinal scores (Biniak 10-8, Bowie 10-7 to Kircheis, USA 45-40 ITA), Kircheis champion, 1,273 athletes / 65 nations. Claude Code copy check 2026-10-18 ~09:35 ET (claude -p, Opus; no facts added); Desk applied: 'The Veteran 40 gold came down to one touch'; 'it was her first'. Rejected: drop 'Part Two' (No. 2 ran the men's part).",
+   "slot_hint": "lead",
    "provenance": [
     {
      "type": "x_post",
@@ -1244,7 +1247,8 @@
       "status": "FIE X post (fact-eligible tier A); Marx line printed, Kircheis not printed"
      }
     ]
-   }
+   },
+   "budget_note": "2026-10-18 09:16 ET: promoted to lead (Grok Bot's call after Frank's budget note that the Controversial Call shouldn't lead; Frank can override). Expanded only with fie_check facts already gathered."
   },
   {
    "id": "email-mailchimp-group-class-2026-10-14",
@@ -1516,22 +1520,25 @@
    "name_flags": [
     "Aaditya Jaising and Charles Young are not in roster/people.json. Standing rule: print as listed on AskFRED (official tournament page). AskFRED lists Charles Young's club as 'Elite Fencers Club / Elite Fencers Club'. Any relation to Kian Jaising / Penny Young is unknown — don't assume."
    ],
-   "vetted": false,
-   "vet_notes": "Results-watch only. Not print copy until results post; then strong-finish rule applies.",
+   "vetted": true,
+   "vet_notes": "I have no idea who Charles Young is...but I guess we include him anyway?\n\nWe will only use this article if either of them qualified.  I don't want to embarass anyone. | Frank budget note 2026-10-18 09:13 ET: run Club Results ONLY if Aaditya Jaising or Charles Young QUALIFIED for Junior Olympics at the NJ Division JO qualifier (Oct 18). Otherwise drop the box entirely: no 'also fenced' line, no non-qualifying results. Charles Young included per the official-names rule (Frank doesn't know him; fine).",
    "tags": [
     "club",
     "results-watch",
     "jo-qualifier",
     "scraped"
    ],
-   "created_at": "2026-10-18T08:45:00-04:00"
+   "created_at": "2026-10-18T08:45:00-04:00",
+   "vetted_at": "2026-10-18T09:07:00-04:00",
+   "vetted_by": "frank",
+   "run_rule": "Frank budget note 2026-10-18 09:13 ET: run Club Results ONLY if Aaditya Jaising or Charles Young QUALIFIED for Junior Olympics at the NJ Division JO qualifier (Oct 18). Otherwise drop the box entirely: no 'also fenced' line, no non-qualifying results. Charles Young included per the official-names rule (Frank doesn't know him; fine)."
   },
   {
    "id": "desk-for-the-parents-jo-registration-2026-10-18",
    "kind": "graf",
    "headline": "For the Parents: Qualifying Isn't Registering",
-   "body": "Qualifying isn't the same as registering. A fencer who earns a Junior Olympics spot, including through a division qualifier, still has to sign up; USA Fencing says it does not register anyone automatically. The regular-fee deadline is Nov. 11, even if a fencer's qualifier comes later; the entry stays \"pending\" until qualification is confirmed. Division results can take two to five days to reach USA Fencing. The 2027 Junior Olympics run Jan. 8–11 in Oklahoma City.",
-   "word_count": 76,
+   "body": "Qualifying isn't the same as registering. A fencer who earns a Junior Olympics spot, including through a division qualifier, still has to sign up; USA Fencing says it does not register anyone automatically. Register by the Nov. 11 regular-fee deadline, even if a fencer's qualifier comes later; the entry stays \"pending\" until qualification is confirmed. Division results can take two to five days to reach USA Fencing. The 2027 Junior Olympics run Jan. 8–11 in Oklahoma City.",
+   "word_count": 77,
    "source": "usafencing",
    "target_week": "next",
    "slot_hint": "for_the_parents",
@@ -1569,21 +1576,23 @@
      "retrieved_at": "2026-10-18T08:40:00-04:00"
     }
    ],
-   "vetted": false,
-   "vet_notes": "Desk pick 2026-10-18 (optional per Frank). Timely: NJ's division JO qualifier is today. Vet to include; first For the Parents box.",
+   "vetted": true,
+   "vet_notes": "Desk pick 2026-10-18 (optional per Frank). Timely: NJ's division JO qualifier is today. Vet to include; first For the Parents box. | Claude Code copy check 2026-10-18 ~09:35 ET (claude -p, Opus; no facts added); Desk applied: deadline sentence recast as the action. Rejected: cut opener.",
    "tags": [
     "for-the-parents",
     "desk-written",
     "unvetted"
    ],
-   "created_at": "2026-10-18T08:45:00-04:00"
+   "created_at": "2026-10-18T08:45:00-04:00",
+   "vetted_at": "2026-10-18T09:11:21-04:00",
+   "vetted_by": "frank"
   },
   {
    "id": "reddit-challenger-elite-split-2026-10-18",
    "kind": "overheard",
    "headline": "After the Split: What Fencers Said",
-   "body": "After October's NAC, the first with fields split into Elite and Challenger, r/Fencing compared notes. The top-voted take came from a fan of the change: top fencers used to coast through easy pools and early DEs, and now they meet strong opponents every round. One fencer placed in Elite called it the most concentrated U.S. event they'd seen. Another put it simply: \"Pools was tough but it was a lot more fun.\" Not everyone was sold. One poster said coaches called the day brutal for coaches and referees, and another argued the tiers reflect how often you compete more than how well you fence. Others said one event is too early to judge, and several want the 20% pool cut dropped in Challenger.",
-   "fact_check_line": "*Fact check:* Fields are set by Unified Points List rank 15 days out. In Cadet, one Elite DE win (51.6 points) outscores a Challenger top-16 finish (49.2).",
+   "body": "After October's NAC, the first with fields split into Elite and Challenger, r/Fencing compared notes. The top-voted take came from a fan of the change: top fencers used to get easy pools and early DEs, and now they meet strong opponents every round. One fencer placed in Elite called it the most concentrated U.S. event they'd seen. Another put it simply: \"Pools was tough but it was a lot more fun.\" Not everyone was sold. One poster said coaches found the day brutal, for them and for referees, and another argued the tiers reflect how active a fencer is more than how strong. Others said it's too early to judge from one event, and several want the 20% pool cut dropped in Challenger.",
+   "fact_check_line": "*Fact check:* Fields are set by Unified Points List rank 15 days out. In Cadet, an Elite top-64 finish (51.6 points) outscores a Challenger top-16 finish (49.2).",
    "word_count": 150,
    "source": "reddit",
    "url": "https://www.reddit.com/r/Fencing/comments/1x519k0/challenger_and_elite_categories/",
@@ -1599,7 +1608,7 @@
    "requested": "Frank chat 2026-10-18 08:49 ET",
    "target_week": "next",
    "slot_hint": "overheard",
-   "vetted": false,
+   "vetted": true,
    "vet_status": "needs Frank",
    "follows": "No. 2 Elite/Challenger explainer",
    "opinions_attributed": [
@@ -1681,7 +1690,10 @@
     ],
     "checked_at": "2026-10-18 ~09:00 ET"
    },
-   "house_rules": "no usernames; opinions attributed; no Epee labels"
+   "house_rules": "no usernames; opinions attributed; no Epee labels",
+   "vetted_at": "2026-10-18T09:12:59-04:00",
+   "vetted_by": "frank",
+   "vet_notes": "Claude Code copy check 2026-10-18 ~09:35 ET (claude -p, Opus; no facts added); Desk applied: 'one Elite DE win' -> 'an Elite top-64 finish' (T64 can come via bye); 'coast' -> 'get'; coaches line de-duplicated; 'how often you compete' line recast; 'too early' line smoothed. Rejected: drop '20%' (posters' wording, true for Cadet/Junior). Frank vetted 09:12 ET; answer: run this week."
   }
  ],
  "rolled_forward": {

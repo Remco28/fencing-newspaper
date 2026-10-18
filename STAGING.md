@@ -68,7 +68,7 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    follow the note. Record the override in `issue.json`.
    Scoreboard strip is **cut** from the live hierarchy (v3.4); may return later as
    "headline wire" — do not treat it as a current Budget slot.
-4. **Proof** — rendered PDF; second approve gate. Nothing prints without both
+4. **Proof** — rendered PDF; second approve gate. (Optional Claude Code copy check after vetting and PNG proof check: see § Claude Code, v3.36.) Nothing prints without both
    budget + proof approval.
    **Proof round (v3.20 — as run for Issue No. 1):**
    proof **v1** → “proof ready” doorbell with previews + open flags (Desk-fill list Frank can
@@ -169,6 +169,13 @@ Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or 
 - Every staging item that can become print copy carries provenance (`source`, `message_id` / URL / fetch log) so Clean and compose can fill `sources.json`.
 - No model memory as a source for names, results, ratings, dates, entries, or claims about real people.
 - Narrative home: PLAN §1c; compose checklist: STYLE-GUIDE §0b.
+
+### Claude Code — optional second reviewer (v3.36 — Frank 2026-10-18)
+Claude Code (`claude -p`, Opus or Sonnet, whichever is available on the runner) is an **optional second reviewer**. It never writes copy or adds facts. **Desk stays the writer and the keeper of sources.** If Claude Code isn't available, skip the step: nothing depends on it.
+- **(a) Copy check:** after vetting, before budget or compose. Give it the texts plus the house rules (STYLE-GUIDE §0a–0d: reality lock, no Epee labels in club context, opinions labeled, no usernames, strong results only, no birth years) and each item's provenance. Ask it to flag unsupported claims, opinion/fact drift, typos, awkward lines and house-rule slips. Desk takes the fixes it agrees with and notes taken/rejected fixes in the item's `vet_notes`. A fact Claude Code proposes never goes in.
+- **(b) Proof check:** run it on rendered page PNGs (overflow, orphans, gaps, alignment) alongside Desk's own STYLE-GUIDE §7 visual QA. It does not replace Desk's check.
+- **(c) Site and code work:** reviews of budget page, site and scripts changes.
+- Never pass `.env` contents, API keys, raw email or DOBs into a Claude Code prompt.
 
 ### Names + pending entries (v3.35 — voice: Frank 2026-10-18)
 - **Official pages are the source of truth for names.** Print a fencer's name exactly as the official club or tournament page lists it (AskFRED, USA Fencing/member.usafencing.org entrant lists, the club's own pages and emails). Don't ask Frank about names. Order of precedence: a spelling Frank gives in chat, then an existing roster house form, then the official page. FencingTracker is a mirror, not an official page: if it disagrees with an official page, use the official spelling. New names go into `roster/people.json` with the official spelling and provenance "Frank (standing rule)".

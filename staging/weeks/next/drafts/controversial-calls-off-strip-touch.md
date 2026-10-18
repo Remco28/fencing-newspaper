@@ -1,13 +1,15 @@
-# Controversial Calls: The touch nobody saw land, except the referee
+# Controversial Calls: The Touch Nobody Saw Land, Except the Referee
 
 *Editor's note: The fencer in this story is the editor's son.*
 
-**The call.** In a pool bout at a national tournament two years ago, an Elite FC fencer's opponent scored a touch that, according to the fencer's family, landed off the strip. The fencer said it never hit him. The family says the opponent waved a hand to signal no touch, which the Elite FC coach pointed out at the time; the opponent's coach did not contest it. The family says the referee said she thought she saw it hit. The fencer made a formal appeal. The Head Referee came over and ruled that it was the referee's call. The fencer lost the bout by one touch. Pools had no video replay.
+The light went on, and the argument started. In a pool bout at a national tournament two years ago, an Elite FC fencer's opponent scored a touch that, the fencer's family says, landed off the strip. The fencer said the blade never hit him.
 
-**The rule.** If the blade missed, the touch shouldn't count, whether it hit the floor or the metal strip. In épée, touches "made on the ground where it is not insulated" are disregarded (t.93), and a touch on the strip that registers is annulled (t.94.1). But whether a hit landed is a "point of fact," and "no appeal can be made" against one (t.172.1). Appeals cover only a misapplied rule, and the Head Referee settles them (t.172.2, t.174). The rules give an opponent's signal no formal weight.
+By the family's account, the opponent waved a hand to signal no touch, the Elite FC coach pointed that out on the spot, and the opponent's coach didn't dispute it. The referee, the family says, said she thought she saw it hit. The fencer made a formal appeal, and the Head Referee came over and ruled that it was the referee's call. Pools had no video replay. The fencer lost the bout by one touch.
 
-**Both sides (opinion).** For the call: the referee judges from where she stands, and finality keeps bouts from being re-argued. Against: when the opponent signals a miss, an uncertain sighting is a thin basis for a decisive touch.
+On paper, a hit that misses the fencer shouldn't count. In epee, touches "made on the ground where it is not insulated" are disregarded (t.93), and a touch that lands on the strip and registers is annulled (t.94.1). The catch is who decides whether it landed. That is a "point of fact," and against a point of fact "no appeal can be made" (t.172.1). An appeal can challenge only how a rule was applied, and the Head Referee settles it (t.172.2, t.174). No rule we found gives an opponent's signal any formal weight.
 
-**The verdict.** Judgment call. The Head Referee applied the rules correctly: a referee's view of a hit can't be appealed.
+**Both sides (opinion).** For the call: the referee judges from where she stands, and making her view final keeps bouts from being re-argued touch by touch. Against it: when the fencer who scored signals a miss, a referee who only thought she saw a hit has a thin basis for a decisive touch.
 
-**For parents.** You can't appeal what a referee saw, only how she applied a rule. Only the fencer can appeal, right away, before the next touch. At national tournaments today, video replay is guaranteed only in later direct-elimination rounds (from the round of 16 or 8, depending on the event), never in pools. Phone video doesn't count.
+**The verdict: judgment call.** On the family's own account, the Head Referee applied the rules correctly. A referee's view of a hit can't be appealed, no matter how differently it looked from the side of the strip.
+
+**For parents,** the lesson is narrow but useful. You can't appeal what a referee saw, only how a rule was applied. Only the fencer can appeal, and it has to happen right away, before the next touch. At national tournaments today, video replay is guaranteed only in later direct-elimination rounds (from the round of 16 or 8, depending on the event), not in pools. And a parent's phone video doesn't count.

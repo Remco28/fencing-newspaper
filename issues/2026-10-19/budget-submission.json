@@ -1,0 +1,219 @@
+{
+  "publishDate": "2026-10-19",
+  "practice": false,
+  "pretend": false,
+  "targetWeek": "next",
+  "issue": {
+    "number": 3,
+    "label": "Issue No. 3",
+    "week": "Week of Oct. 19, 2026"
+  },
+  "includedSlots": [
+    {
+      "slot": "lead",
+      "name": "Lead story — Controversial Calls",
+      "headline": "Controversial Calls: The Touch Nobody Saw Land, Except the Referee",
+      "itemId": "chat-controversial-calls-off-strip-2026-10-13",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-a",
+      "name": "Secondary A — Vet Worlds, part two",
+      "headline": "Vet Worlds, Part Two: Two World Titles for U.S. Women",
+      "itemId": "x-fie-vet-worlds-women-epee-2026-10-13",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-b",
+      "name": "Secondary B — World No. 1's message to himself",
+      "headline": "World No. 1's Message to His Future Self",
+      "itemId": "x-lead-elsayed-world-no1-epee-feature",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-results",
+      "name": "Club results",
+      "headline": "Club results — waiting on today's NJ JO qualifier",
+      "itemId": "askfred-nj-jo-qualifier-2026-10-18",
+      "vetted": true,
+      "stale": true
+    },
+    {
+      "slot": "signup",
+      "name": "Nearby Tournaments — Morris Cup",
+      "headline": "Morris Cup RYC/RJCC — Suffern, N.Y., Oct. 24–25",
+      "itemId": "email-agentmail-morris-cup-entries-2026-10-07",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-2",
+      "name": "Nearby Tournaments — Ultimate Cup",
+      "headline": "Ultimate Cup RJCC — Hillsborough, N.J., Oct. 31–Nov. 1",
+      "itemId": "ft-ultimate-cup-efc-registrations-2026-10-12",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-3",
+      "name": "Nearby Tournaments — Medeo Youth Challenges #4 + #5 (one line)",
+      "headline": "Medeo Youth Challenges — Bound Brook, N.J.",
+      "itemId": "fencingapi-medeo-yc4-entries-2026-10-14",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines box",
+      "headline": "Deadlines box — No. 3",
+      "itemId": "desk-deadlines-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "camp",
+      "name": "Club events — Winter Camp",
+      "headline": "Winter Camp: Sign Up Now",
+      "itemId": "chat-winter-camp-reminder",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "classes",
+      "name": "Club notes — classes (one-liners)",
+      "headline": "Club notes: Saturday and Friday classes",
+      "itemId": "desk-class-notes-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ high-school roundup (3 one-liners)",
+      "headline": "NJ High School Fencing: 2026–27 Dates Are Set",
+      "itemId": "web-njsiaa-fencing-2026-27-dates",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "by-the-book",
+      "name": "By the Book",
+      "headline": "By the Book: You Can't Appeal What the Referee Saw",
+      "itemId": "chat-by-the-book-placeholder-2026-10-13",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "for-parents",
+      "name": "For the Parents (optional)",
+      "headline": "For the Parents: Qualifying Isn't Registering",
+      "itemId": "desk-for-the-parents-jo-registration-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tv",
+      "name": "Epee on Screen",
+      "headline": "Epee on Screen — No. 3",
+      "itemId": "desk-epee-on-screen-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "overheard",
+      "name": "Overheard on Reddit (optional)",
+      "headline": "After the Split: What Fencers Said",
+      "itemId": "reddit-challenger-elite-split-2026-10-18",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "weekly-classes",
+      "name": "Weekly classes table",
+      "headline": "Elite FC weekly class schedule (club website)",
+      "itemId": "web-efc-standing-schedule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "gear",
+      "name": "Gear note (one-liner)",
+      "headline": "Second Life for Broken Blades",
+      "itemId": "web-gear-recycling-blades-cords",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "ratings",
+      "name": "Ratings earned",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "qa",
+      "name": "Parent Q&A",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "comic",
+      "name": "Comic",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    }
+  ],
+  "photoIncludes": [],
+  "notes": "",
+  "slotNotes": {
+    "lead": "This shouldn't be the lead.  It also needs to read a bit better.  It felt like a rushed article.",
+    "club-results": "I have no idea who Charles Young is...but I guess we include him anyway?\n\nWe will only use this article if either of them qualified.  I don't want to embarass anyone."
+  },
+  "answers": [
+    {
+      "slot": "camp",
+      "itemId": "chat-winter-camp-reminder",
+      "question": "Print the club email (elitefencersclub@gmail.com, public on the website) as the sign-up contact, or leave it at 'contact the club'?",
+      "answer": "leave it at contact the club."
+    },
+    {
+      "slot": "overheard",
+      "itemId": "reddit-challenger-elite-split-2026-10-18",
+      "question": "Run it this week (about +8% fill), or hold for No. 4?",
+      "answer": "run this week."
+    }
+  ],
+  "order": [
+    "lead",
+    "secondary-a",
+    "secondary-b",
+    "club-results",
+    "signup",
+    "signup-2",
+    "signup-3",
+    "deadlines",
+    "camp",
+    "classes",
+    "weekly-classes",
+    "nj-hs",
+    "by-the-book",
+    "for-parents",
+    "tv",
+    "gear",
+    "overheard"
+  ],
+  "pageVersion": "budget-v2",
+  "submittedAt": "2026-10-18T09:13:10-04:00"
+}

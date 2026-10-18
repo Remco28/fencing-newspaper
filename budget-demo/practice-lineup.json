@@ -60,7 +60,7 @@
   "tip-public-chatham-dual"
  ],
  "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below ('practice' = rehearsal). Judgment lives here (slot → staging item ids, plain-English summary, questions for Frank). budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Any staging item this file doesn't mention still shows up (auto-placed by slot_hint, not proposed). Table rows are transcribed from the cited staging items (no new facts).",
- "generated": "2026-10-18T09:05:00-04:00",
+ "generated": "2026-10-18T09:45:00-04:00",
  "target_week": "next",
  "issue": {
   "number": 3,
@@ -71,67 +71,65 @@
   "date": "2026-10-19",
   "label": "Monday, October 19, 2026",
   "alt": "2026-10-20",
-  "why": "voice: Frank 2026-10-18 — budget built Sunday instead of Monday 8:50; publish Mon or Tue, later OK. Today's NJ JO qualifier results (two Elite FC cadets) can go in either way.",
+  "why": "Frank 2026-10-18 9:13 budget: slow week, Frank adding content; compose waits for his additions.",
   "note": "Mon or Tue, Frank deciding"
  },
  "desk_summary": [
-  "Built Sunday at your request. Lead: your Controversial Call (324 words), running long enough to take the lead and secondary space.",
-  "Checked on fie.org this morning: all four U.S. Vet Worlds women's medals hold, and the U.S. women also won the veterans team event (45-31 over France). Team names stay out because FIE and Wikipedia list different teams.",
-  "Elsayed is in as Secondary B: FIE's own ranking shows him No. 1 and the FIE article backs every line. By the Book is written from the October 2026 rulebook (unjustified appeals, t.172/t.174/t.165).",
-  "Club results: nothing new through Saturday. Two Elite FC cadets fence today's NJ Junior Olympics qualifier. The Monday pass adds them if they finish strong; otherwise they go on the 'also fenced' line.",
-  "Boards refreshed: Morris Cup still has 20 fencers and 30 entries; Ultimate Cup adds Anayaa Sheth (13 entries); Medeo #4/#5 is one line, pending entries included. Fill is about 69% with everything vetted. Optional add-ons: Overheard on Reddit (+8%), For the Parents (+4.5%), and the JO results (+1%); with all three it's about 82% (No. 2 printed at about 78%). The Winter Camp flyer photo would add about 6% more.",
-  "New at 8:49 a.m.: Overheard on Reddit, 'After the Split: What Fencers Said' (150 words with the fact-check line). It's optional and needs your Vet."
+  "Your budget (9:13 a.m.) is applied. New lead: Vet Worlds, Part Two (165 words, all fie.org facts). That was my call; override it if you like.",
+  "The Controversial Call is rewritten for flow (same facts, same structure, about 385 words) and runs as the page-1 feature. Please take a look at the new wording.",
+  "Club Results runs only if Aaditya Jaising or Charles Young qualified for Junior Olympics today; otherwise the box is dropped, with no 'also fenced' line.",
+  "Overheard runs; gear and the weekly class table are out; Winter Camp stays at 'contact the club'.",
+  "New step: Claude Code read the Vet Worlds lead, the Controversial Call, By the Book, For the Parents and Overheard as a second copy checker (no facts added). Fixes taken are noted on each card.",
+  "Fill is about 84%, leaving room for about 330 words, for the content you said you'd add. Nothing gets composed until you send it."
  ],
  "slots": [
   {
    "key": "lead",
    "section": "lead",
-   "slot": "Lead story — Controversial Calls",
-   "budget": "~325w (takes lead + secondary space)",
-   "item": "chat-controversial-calls-off-strip-2026-10-13",
-   "proposed": true,
-   "cost": {
-    "type": "prose",
-    "span": 2,
-    "feature": true
-   },
-   "title": "Controversial Calls: The Touch Nobody Saw Land, Except the Referee",
-   "summary": "Your son's pool bout from two years ago: the touch the family says landed off the strip, the appeal and the Head Referee's ruling, what t.93, t.94.1 and t.172 say, both sides labeled as opinion, and the verdict: judgment call. It carries the editor's note and a short For Parents coda.",
-   "flags": [
-    {
-     "level": "info",
-     "text": "Vetted as-is Oct. 13. Its 324 words are about double a normal lead, so it fills the Secondary A space too (your space-saving call)."
-    },
-    {
-     "level": "info",
-     "text": "No referee is named. Bout facts are attributed to the family. Rule cites are checked against the October 2026 rulebook."
-    }
-   ]
-  },
-  {
-   "key": "secondary-a",
-   "section": "lead",
-   "slot": "Secondary A — Vet Worlds, part two",
-   "budget": "80–100w",
+   "slot": "Lead story — Vet Worlds, part two",
+   "budget": "~165w",
    "item": "x-fie-vet-worlds-women-epee-2026-10-13",
    "proposed": true,
    "cost": {
     "type": "prose",
     "span": 1
    },
-   "summary": "Follow-up to No. 2's men's item. Leslie Marx won Veteran 50 (10-4 final); Cassandra Bates took silver (10-9 final) and Lacey Biniak bronze in Veteran 40; Charlotta Bowie took bronze in Veteran 70. The U.S. also won the women's veterans team event. Every result is from fie.org, checked this morning.",
+   "title": "Vet Worlds, Part Two: Two World Titles for U.S. Women",
+   "summary": "New lead (Desk's call after your note; override if you'd rather). Same fie.org facts, expanded a little: Marx's Veteran 50 title (10-4 final, 83 fencers, her first since 2017 per the FIE); Veteran 40's one-touch gold final, with Bates silver and Biniak bronze; Bowie's Veteran 70 bronze; and team gold over Italy (45-40) and France (45-31) among 19 teams. 1,273 athletes from 65 nations.",
    "flags": [
     {
      "level": "warn",
-     "text": "Team names left out: the FIE entry list shows Biniak, Buechel, Exum, Marchant and Martinez Hansen, but Wikipedia shows Bates, Biniak, Exum, Foellmer and Marx. The story says only 'the U.S. won'."
+     "text": "Team names are still left out because the FIE entry list and Wikipedia disagree."
     },
     {
      "level": "info",
-     "text": "The FIE lists dates only, no start or end times. The women's events ran Oct. 12–14."
+     "text": "Claude Code copy check: 'clean.' Two wording nits taken."
     }
-   ],
-   "answered": [
-    "Conditional vet from Frank, condition met (fie.org check 2026-10-18)."
+   ]
+  },
+  {
+   "key": "secondary-a",
+   "section": "lead",
+   "slot": "Page-1 feature — Controversial Calls (rewritten)",
+   "budget": "~385w",
+   "item": "chat-controversial-calls-off-strip-2026-10-13",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "feature": true
+   },
+   "title": "Controversial Calls: The Touch Nobody Saw Land, Except the Referee",
+   "summary": "Rewritten per your note ('felt like a rushed article'): opens on the touch itself, flows from the call to the rule to both sides to the verdict, and ends with what parents can take from it, with fewer checklist labels. The facts, rule cites (t.93, t.94.1, t.172, t.174) and editor's note are the same, with no referee named. Its length now follows the content; it no longer fills lead space.",
+   "flags": [
+    {
+     "level": "warn",
+     "text": "This is new wording, so please give it a look. 'Read the draft' shows the full text. v1 is kept for comparison."
+    },
+    {
+     "level": "info",
+     "text": "Claude Code flagged attribution drift and the absence-check line; both are fixed. The headline is kept as you vetted it. Claude Code suggested 'The Touch Only the Referee Thought She Saw' if you want it."
+    }
    ]
   },
   {
@@ -165,16 +163,12 @@
     "type": "table_rows",
     "rows": 2
    },
-   "title": "Club results — waiting on today's NJ JO qualifier",
-   "summary": "No new Elite FC results Oct. 13–18 on FencingTracker, Frank's API or AskFRED (the NAC and Artdu results already ran in No. 2). Aaditya Jaising and Charles Young are entered in Cadet Men at today's NJ Division Junior Olympics qualifier at Medeo (1:30 p.m. check-in, 9 fencers). Their results come in Monday morning: a row each if they finish strong, otherwise one 'also fenced' line.",
+   "title": "Club results — only if a JO qualifier qualified",
+   "summary": "Your rule: this box runs ONLY if Aaditya Jaising or Charles Young qualified for Junior Olympics at today's NJ Division qualifier (Cadet Men, Medeo). Otherwise it's dropped entirely, with no 'also fenced' line. Results land after today's event; the Monday pass checks AskFRED and USA Fencing.",
    "flags": [
     {
      "level": "info",
-     "text": "Neither name is in our roster yet. Under your standing rule they print as AskFRED lists them."
-    },
-    {
-     "level": "info",
-     "text": "If nothing strong comes in, the box runs a single line or folds away. It is never filled with old results."
+     "text": "Charles Young is included under the official-names rule (your OK, 9:13 a.m.)."
     }
    ]
   },
@@ -441,8 +435,9 @@
     "span": 1
    },
    "summary": "Dec. 27–31, 9:30 a.m.–2 p.m., all levels. It's pitched as a tune-up for the second half of the season, with your joke about escaping visiting relatives. Price is still unpublished, so the copy says 'contact the club for price and sign-up', which is what the club's website says.",
-   "questions": [
-    "Print the club email (elitefencersclub@gmail.com, public on the website) as the sign-up contact, or leave it at 'contact the club'?"
+   "questions": [],
+   "answered": [
+    "Leave it at 'contact the club' (Frank, 9:13 a.m.)."
    ]
   },
   {
@@ -506,14 +501,14 @@
    "flags": [
     {
      "level": "info",
-     "text": "Desk-written from the October 2026 rulebook and penalty chart (your call, Oct. 18). Approve it or cut it here."
+     "text": "Claude Code: accurate. Punctuation fix taken."
     }
    ]
   },
   {
    "key": "for-parents",
    "section": "shorts",
-   "slot": "For the Parents (optional)",
+   "slot": "For the Parents",
    "budget": "50–80w",
    "item": "desk-for-the-parents-jo-registration-2026-10-18",
    "proposed": true,
@@ -525,7 +520,7 @@
    "flags": [
     {
      "level": "info",
-     "text": "This would be the first For the Parents box. Desk picked it, so it needs your Vet. Skip it and the sheet just has a little more white space."
+     "text": "Vetted by you, 9:11 a.m. One Claude Code rewording taken (deadline sentence)."
     }
    ]
   },
@@ -573,31 +568,12 @@
    "summary": "From the FIE calendar. Manama and Vancouver are new, and San José and Berne/Wuxi carry over from No. 2 (still upcoming). The FIE lists no start times or prices, so none print."
   },
   {
-   "key": "gear",
-   "section": "shorts",
-   "slot": "Gear note (one-liner)",
-   "budget": "~40w",
-   "item": "web-gear-recycling-blades-cords",
-   "proposed": true,
-   "cost": {
-    "type": "prose",
-    "span": 1
-   },
-   "summary": "Broken blades get a second life: the Takamatsu City World Cup ran the first broken-blade collection at an FIE event, for Kazuyasu Minobe's Re-blade 2028. The body-cord half is cut to keep it to one line.",
-   "flags": [
-    {
-     "level": "info",
-     "text": "The Takamatsu event is foil, but the recycling angle works for any weapon."
-    }
-   ]
-  },
-  {
    "key": "overheard",
    "section": "shorts",
-   "slot": "Overheard on Reddit (optional)",
+   "slot": "Overheard on Reddit",
    "budget": "130–170w",
    "item": "reddit-challenger-elite-split-2026-10-18",
-   "proposed": false,
+   "proposed": true,
    "cost": {
     "type": "prose",
     "span": 1
@@ -607,15 +583,31 @@
    "flags": [
     {
      "level": "info",
-     "text": "Cut as unverified: Challenger 'handing out A's', and Challenger points not counting toward Legacy lists (USA Fencing doesn't say)."
-    },
-    {
-     "level": "info",
-     "text": "Not in the lineup by default. Frank earlier said to skip Overheard this week; tick Include to run it."
+     "text": "Claude Code caught that 'one Elite DE win' could be a bye, so it's now 'an Elite top-64 finish.' A few wording smooths were taken too."
     }
    ],
-   "questions": [
-    "Run it this week (about +8% fill), or hold for No. 4?"
+   "questions": [],
+   "answered": [
+    "Run this week (Frank, 9:13 a.m.)."
+   ]
+  },
+  {
+   "key": "gear",
+   "section": "shorts",
+   "slot": "Gear note (one-liner)",
+   "budget": "~40w",
+   "item": "web-gear-recycling-blades-cords",
+   "proposed": false,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "Excluded by you (budget, 9:13 a.m.).",
+   "flags": [
+    {
+     "level": "info",
+     "text": "The Takamatsu event is foil, but the recycling angle works for any weapon."
+    }
    ]
   },
   {
