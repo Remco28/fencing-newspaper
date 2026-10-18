@@ -2,6 +2,13 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.35 — 2026-10-18
+- **No. 3 budget built Sunday** (voice: Frank 2026-10-18 ~8:26 ET) instead of the Monday 8:50 routine. The No. 2 lineup is archived at `budget-demo/archive/practice-lineup-issue2-2026-10-13.json`, and the new `budget-demo/practice-lineup.json` is No. 3 (fill about 69% vetted, 74% with For the Parents).
+- **By the Book is now Desk-written from the rulebook** (`reference/usa-fencing/`), so Frank's material isn't needed first (CONTENT-HIERARCHY row 12). First item: unjustified appeals (t.172 / t.174 / t.165).
+- **Names rule:** official club/tournament pages are the source of truth, so the Desk stops asking Frank about names (STAGING § Names + pending entries, roster/README, STYLE-GUIDE §0b). Roster adds Samuel SarroWaite, Nora Li, Owen Li and Christina Jiang (AskFRED spellings). Nora/Owen relation is recorded as unknown.
+- **Pending entries print** on the Nearby Tournaments board (CONTENT-HIERARCHY row 8, STAGING).
+- Vets applied per Frank's voice instructions: Vet Worlds women (conditional on the fie.org check; met: US team gold confirmed), Elsayed (conditional on an authoritative source; met: FIE ranking + FIE article), Medeo #4/#5 combined line, gear one-liner, NJ HS one-liners, By the Book.
+
 ## v3.34 — 2026-10-13
 - **fencing-api is supplemental** (chat: Frank 2026-10-13 22:57 ET): it does not replace direct AskFRED / FencingTracker / USA Fencing / email checks. Removed the "use it instead of scraping" wording. Cadence locked as an extra cross-check in each pass (daily quick look, Wednesday skim, Monday full pass, pre-budget) in SOURCES.md § fencing-api and STAGING ops cadence (0b). API-vs-direct disagreements are flagged for Frank.
 

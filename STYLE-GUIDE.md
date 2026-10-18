@@ -56,6 +56,7 @@ Layout samples may use labeled fiction. **A real issue may not.**
 - Do not invent names, results, ratings, dates, entries, or quotes about real people.
 - Compose only from vetted, provenance-backed staging (and the approved budget). Every printed fact must be traceable in issue `sources.json`.
 - Never treat sample / PRETEND / demo copy as club or competition fact.
+- **Names (v3.35, Frank 2026-10-18):** print fencers' names as the official club or tournament page lists them (capitalization included, e.g. "SarroWaite"), unless Frank's chat or the roster house form says otherwise. No birth years, ever. See STAGING.md § Names + pending entries and roster/README.
 - Full rule: PLAN §1c + §2 Sourcing rules; STAGING.md provenance fields.
 
 ## 0c. Epee is assumed — no weapon labels in club context (locked 2026-10-07, plan v3.20)

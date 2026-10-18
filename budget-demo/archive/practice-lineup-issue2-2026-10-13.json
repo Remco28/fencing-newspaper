@@ -1,0 +1,605 @@
+{
+ "schema": 2,
+ "mode": "real",
+ "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below ('practice' = rehearsal). Judgment lives here (slot → staging item ids, plain-English summary, questions for Frank). budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Any staging item this file doesn't mention still shows up (auto-placed by slot_hint, not proposed). Table rows are transcribed from the cited staging items (no new facts).",
+ "capacity": {
+  "note": "Template A, US Letter, 3 columns (~2.42in each, 9pt gaps). Usable column height = 10.1in page minus furniture measured on the issues/2026-10-14 sample render: page 1 masthead 0.98in + dateline 0.55in + footer ~0.25in; page 2 dateline 0.52in + footer ~0.25in.",
+  "page1_col_in": 24.96,
+  "page2_col_in": 27.99,
+  "wpi": 40,
+  "wpi_feature": 36,
+  "oversupply": 1.15,
+  "head_short": 0.35,
+  "head_feature": 0.65,
+  "gap": 0.12,
+  "table_head": 0.35,
+  "row_rail": 0.24,
+  "row_full": 0.17,
+  "col_width_in": 2.42,
+  "span2_width_in": 4.96,
+  "photo_ceiling_in": 2.2,
+  "caption_in": 0.15
+ },
+ "sections": [
+  {
+   "key": "lead",
+   "title": "Lead & features",
+   "hint": "Top of page 1 and the back-page feature"
+  },
+  {
+   "key": "club",
+   "title": "Club",
+   "hint": "Results, Nearby Tournaments, classes, events"
+  },
+  {
+   "key": "shorts",
+   "title": "Shorts & fill",
+   "hint": "Secondaries, Q&A, Desk fill — first to go if tight"
+  },
+  {
+   "key": "photos",
+   "title": "Photos",
+   "hint": "Thumbnails shown B&W as printed"
+  },
+  {
+   "key": "held",
+   "title": "Held, merged & next week",
+   "hint": "Not proposed for this issue"
+  }
+ ],
+ "seed_ids": [
+  "draft-lead-vancouver",
+  "result-ratings-invented",
+  "tip-tv-replay",
+  "draft-secondary-usa",
+  "pretend-photo-b",
+  "pretend-photo-c",
+  "tip-comic",
+  "tip-deadlines-invented",
+  "draft-secondary-nj",
+  "photo-public-strip-cand",
+  "tip-public-chatham-dual"
+ ],
+ "generated": "2026-10-12T09:50:00-04:00",
+ "target_week": "next",
+ "issue": {
+  "number": 2,
+  "label": "Issue No. 2",
+  "week": "Week of Oct. 12, 2026"
+ },
+ "publish": {
+  "date": "2026-10-13",
+  "label": "Tuesday, October 13, 2026",
+  "alt": "2026-10-12",
+  "why": "Tue or Wed, Frank deciding. chat: Frank 2026-10-12: Frank may push to Wednesday while he looks for more content. Date field stays at Tue 10/13 for now; Penny's Y14 result (fenced today) can be added either way.",
+  "note": "Tue or Wed, Frank deciding"
+ },
+ "desk_summary": [
+  "Real issue this week. Lead (OK'd by Frank): Maksim Milinkovic finished 12th of 121 in Cadet Elite at the October NAC, winning three straight elimination bouts from the 49th seed.",
+  "Vetted from your chat answers: the NAC lead and results, the Ultimate Cup board, Christina Jiang's 5th at Medeo, and late NJFA lines for Bradley Tsai and Brendan Mendez. Still unvetted website items: the Elite/Challenger explainer, Veteran Worlds, NJ high-school dates, the TV box and gear.",
+  "Results refreshed Oct. 13: Maksim's 12th of 121 holds; Penny's Y14 (54th of 113) is on the \"also fenced\" line; Adela Sullivan's 2nd at the Artdu open is in the box (vetted). NJFA lines stay out.",
+  "Winter Camp is held for No. 3. THE WEAPON fills the back page at two columns. Both Overheard pieces run (etiquette + Princess Bride).",
+  "Footwork-class note vetted and in. Class schedule box stays out."
+ ],
+ "slots": [
+  {
+   "key": "lead",
+   "section": "lead",
+   "slot": "Lead story",
+   "budget": "150–180w",
+   "item": "ft-nac-results-efc-2026-10-12",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 2,
+    "feature": true
+   },
+   "title": "Milinkovic Climbs to 12th at the First 'Elite' NAC",
+   "summary": "Maksim Milinkovic went from the 49th seed to 12th of 121 in Cadet Elite Men's Epee, winning DE bouts 15-14, 15-12 and 15-11 before a 10-15 loss in the round of 16. The day before, he went 6-0 in pools in a 233-fencer Div I Challenger field. Our three cadet women round out the story.",
+   "questions": [],
+   "flags": [
+    {
+     "level": "info",
+     "text": "The Div I Elite winner's club is Elite Fencing Academy, not us. The copy will keep the two apart."
+    }
+   ],
+   "answered": [
+    "chat: Frank 2026-10-12: OK to lead with Maksim (FencingTracker stays the source)."
+   ]
+  },
+  {
+   "key": "secondary-a",
+   "section": "lead",
+   "slot": "Secondary A — Elite vs. Challenger",
+   "budget": "80–100w",
+   "item": "web-usaf-elite-challenger-explainer",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 95
+   },
+   "summary": "A short parent explainer on why NAC fields now say Elite or Challenger: big Cadet and Div I events split at 112 by national points. It explains why Maksim fenced Elite in Cadet and Challenger in Div I. From USA Fencing's Sept. 19 and 28 posts."
+  },
+  {
+   "key": "overheard",
+   "section": "lead",
+   "slot": "Overheard on Reddit",
+   "budget": "130–170w",
+   "item": "reddit-rfencing-etiquette-thread",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "First-tournament etiquette tips from an r/Fencing thread, with no usernames. Only rule-checked facts print; everything else runs as attributed opinion. You vetted it Oct. 7.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "Claim check done against the USA Fencing Oct. 2026 rulebook. Handshake and pants claims left out."
+    }
+   ]
+  },
+  {
+   "key": "overheard-2",
+   "section": "lead",
+   "slot": "Overheard on Reddit #2 — Princess Bride duel",
+   "budget": "130–160w",
+   "item": "reddit-rfencing-princess-bride-2026-10-12",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "The r/Fencing Princess Bride duel thread: the masters it names are real, Bob Anderson choreographed it, and the forum called it great theatrical fencing. Vetted Oct. 12; back in No. 2 per your Oct. 13 call.",
+   "answered": [
+    "Moved back to No. 2 (chat, Oct. 13)."
+   ]
+  },
+  {
+   "key": "weapon",
+   "section": "lead",
+   "slot": "Back-page figure — THE WEAPON",
+   "budget": "2-column figure",
+   "item": "chat-asset-weapon-epee",
+   "proposed": true,
+   "cost": {
+    "type": "figure",
+    "span": 2,
+    "w": 2880,
+    "h": 2040
+   },
+   "thumb": "weapon-epee-exploded.png",
+   "summary": "Your exploded-epee diagram: the parts of the weapon and how a touch scores. It runs two columns wide on the back page."
+  },
+  {
+   "key": "club-results",
+   "section": "club",
+   "slot": "Club results — October NAC",
+   "budget": "5–6 rows",
+   "item": "ft-nac-results-efc-2026-10-12",
+   "proposed": true,
+   "cost": {
+    "type": "table_rows",
+    "rows": 5
+   },
+   "title": "Club results",
+   "table": {
+    "head": [
+     "Fencer",
+     "Event",
+     "Place"
+    ],
+    "rows": [
+     [
+      "Maksim Milinkovic",
+      "Cadet Elite Men (Oct. NAC)",
+      "12th of 121"
+     ],
+     [
+      "Christina Jiang",
+      "Y12 Mixed (Medeo Youth Challenge #3)",
+      "5th"
+     ],
+     [
+      "Adela Sullivan",
+      "Junior Women (Artdu Open, Oct. 11)",
+      "2nd"
+     ],
+     [
+      "Also fenced at the NAC",
+      "Maksim Milinkovic (Div. I Challenger, 6-0 in pools); Anayaa Sheth, Amina Gore (Cadet Challenger Women); Penny Young (Cadet Challenger Women, Y14 Women)",
+      ""
+     ]
+    ]
+   },
+   "summary": "One results box: Maksim's NAC finish, Christina's 5th at Medeo and Adela's 2nd at the Artdu open. Other NAC fencers, including Penny's Y14 (54th of 113), are on the \"also fenced\" line.",
+   "items": [
+    "ft-nac-results-efc-2026-10-12",
+    "email-agentmail-medeo-results-watch-2026-10-11",
+    "ft-artdu-sullivan-jnrwe-2026-10-11"
+   ],
+   "flags": [
+    {
+     "level": "info",
+     "text": "Results tone is house policy (Oct. 12): places only for strong finishes, everyone else on the \"also fenced\" line. Penny's Y14 posted: 54th of 113, so she stays on that line."
+    },
+    {
+     "level": "info",
+     "text": "The NJFA late lines (Tsai, Mendez) are out, as in your approved budget."
+    }
+   ]
+  },
+  {
+   "key": "medeo",
+   "section": "club",
+   "slot": "Club results — Medeo Youth Challenge #3",
+   "budget": "in results box",
+   "item": "email-agentmail-medeo-results-watch-2026-10-11",
+   "proposed": true,
+   "cost": {
+    "type": "table_rows",
+    "rows": 0
+   },
+   "summary": "Christina Jiang finished 5th in Y12 Mixed (your word). Medeo combined the men's and women's events, so AskFRED's 'Y12 Women's Epee' is just her registration. Her row sits in the club results box above.",
+   "answered": [
+    "Event: Y12 Mixed (chat, Oct. 12)."
+   ]
+  },
+  {
+   "key": "ratings",
+   "section": "club",
+   "slot": "Ratings earned",
+   "budget": "2–5 rows",
+   "empty": true,
+   "why": "No NAC ratings are posted anywhere yet, and nothing came in by email.",
+   "questions": [
+    "Any new ratings you know of from the NAC or Medeo?"
+   ]
+  },
+  {
+   "key": "signup",
+   "section": "club",
+   "slot": "Nearby Tournaments — Morris Cup who's entered",
+   "budget": "all entries (your exception to the 8-row cap)",
+   "item": "email-agentmail-morris-cup-entries-2026-10-07",
+   "proposed": true,
+   "merged": [
+    "gather-morris-cup-ryc-oct25"
+   ],
+   "cost": {
+    "type": "table",
+    "rows": 10,
+    "span": 3
+   },
+   "title": "Morris Cup RYC/RJCC — Suffern, N.Y., Oct. 24–25",
+   "summary": "19 Elite FC fencers with 29 entries over two days, refreshed from today's club digest. Olivia Hayes was added to Cadet Women, and Rahi Shah-Mirani is off Y10 Men (FencingTracker also shows him withdrawn).",
+   "panels": {
+    "head": [
+     "Time",
+     "Event",
+     "Elite FC entered",
+     "#"
+    ],
+    "panels": [
+     {
+      "title": "Saturday, Oct. 24",
+      "rows": [
+       [
+        "8:00 a.m.",
+        "Junior Women",
+        "Amina Gore, Olivia Hayes",
+        "2"
+       ],
+       [
+        "8:00 a.m.",
+        "Y12 Men",
+        "Kian Jaising, Joshua Jeong, Remy Ng",
+        "3"
+       ],
+       [
+        "12:30 p.m.",
+        "Cadet Men",
+        "Pablo Aguirre, Connor Anderson, Nico Ng, Caden Wu",
+        "4"
+       ],
+       [
+        "3:00 p.m.",
+        "Y14 Women",
+        "Stella Kuo, Mila Siu",
+        "2"
+       ]
+      ]
+     },
+     {
+      "title": "Sunday, Oct. 25",
+      "rows": [
+       [
+        "8:00 a.m.",
+        "Cadet Women",
+        "Amina Gore, Olivia Hayes, Adela Sullivan, Penny Young",
+        "4"
+       ],
+       [
+        "8:00 a.m.",
+        "Junior Men",
+        "Pablo Aguirre, Nico Ng",
+        "2"
+       ],
+       [
+        "10:00 a.m.",
+        "Y8 Women",
+        "Madeline Siu",
+        "1"
+       ],
+       [
+        "10:30 a.m.",
+        "Y12 Women",
+        "Christina Jiang, Stella Kuo, Mila Siu",
+        "3"
+       ],
+       [
+        "1:30 p.m.",
+        "Y14 Men",
+        "Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani",
+        "5"
+       ],
+       [
+        "3:30 p.m.",
+        "Y10 Men",
+        "Bryce Cheng, Joshua Jeong, Maximus Siu",
+        "3"
+       ]
+      ]
+     }
+    ]
+   },
+   "questions": [],
+   "answered": [
+    "chat: Frank 2026-10-12: Ash prints as Shah-Mirani (roster resolved for Ash)."
+   ]
+  },
+  {
+   "key": "signup-2",
+   "section": "club",
+   "slot": "Nearby Tournaments — Ultimate Cup who's entered",
+   "budget": "4 rows",
+   "item": "ft-ultimate-cup-efc-registrations-2026-10-12",
+   "proposed": true,
+   "cost": {
+    "type": "table",
+    "rows": 4,
+    "span": 1
+   },
+   "title": "Ultimate Cup RJCC — Hillsborough, N.J., Oct. 31–Nov. 1",
+   "table": {
+    "head": [
+     "Day",
+     "Event",
+     "Elite FC entered"
+    ],
+    "rows": [
+     [
+      "Sat.",
+      "Junior Women",
+      "Olivia Hayes, Adela Sullivan"
+     ],
+     [
+      "Sat.",
+      "Cadet Men",
+      "Maksim Milinkovic, Caden Wu"
+     ],
+     [
+      "Sun.",
+      "Junior Men",
+      "Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng"
+     ],
+     [
+      "Sun.",
+      "Cadet Women",
+      "Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young"
+     ]
+    ]
+   },
+   "summary": "Nine Elite FC fencers with 12 entries at a nearby N.J. regional, per FencingTracker's registration lists. Scraped names can't print until you confirm them.",
+   "questions": [],
+   "answered": [
+    "chat: Frank 2026-10-12: Dieko Johnson and Lillian Liu confirmed Elite FC; board vetted."
+   ]
+  },
+  {
+   "key": "classes",
+   "section": "club",
+   "slot": "Weekly classes",
+   "budget": "cut (no change)",
+   "item": "web-efc-standing-schedule",
+   "proposed": false,
+   "cost": {
+    "type": "table",
+    "rows": 9,
+    "span": 1
+   },
+   "summary": "The regular class table stays out under the cut rule because nothing has changed. The Mini Musketeers move to Friday at 4:15 already ran in No. 1."
+  },
+  {
+   "key": "nj-hs",
+   "section": "shorts",
+   "slot": "NJ high-school roundup",
+   "budget": "60–90w",
+   "item": "web-njsiaa-fencing-2026-27-dates",
+   "proposed": false,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 65
+   },
+   "summary": "The season is still weeks away, so this is a calendar note from NJSIAA: tryouts Nov. 23–25, competition from Dec. 7, team finals Feb. 25 at Morris Hills, and individual states Feb. 27 at Hunterdon Central.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "Left out of your approved budget (Oct. 12)."
+    }
+   ]
+  },
+  {
+   "key": "secondary-b",
+   "section": "shorts",
+   "slot": "Secondary B — Veteran Worlds",
+   "budget": "80–100w",
+   "item": "web-fie-vet-worlds-epee-2026-10-11",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 90
+   },
+   "summary": "U.S. men's epee veterans in Tbilisi won silver in the 60s (a 9-8 overtime final) and in the 70s, plus bronze in both team events. It's a fencing-is-for-life angle for parents. Women's epee runs this week. From FIE. This is the first story to drop if space is tight."
+  },
+  {
+   "key": "tv",
+   "section": "shorts",
+   "slot": "TV / streaming",
+   "budget": "3–5 rows",
+   "item": "web-fie-epee-tv-calendar-2026-10-12",
+   "proposed": true,
+   "cost": {
+    "type": "table",
+    "rows": 4,
+    "span": 1
+   },
+   "table": {
+    "head": [
+     "Dates",
+     "Event",
+     "Watch"
+    ],
+    "rows": [
+     [
+      "Oct. 12–14",
+      "Veteran Worlds, women (Tbilisi)",
+      "FencingTV"
+     ],
+     [
+      "Oct. 15–18",
+      "Senior World Cup, men + women (Casablanca)",
+      "FencingTV"
+     ],
+     [
+      "Oct. 22–25",
+      "Junior/Cadet World Cup (San José, Costa Rica)",
+      "No stream listed"
+     ],
+     [
+      "Nov. 12–15",
+      "Senior World Cups: Berne (men), Wuxi (women)",
+      "FencingTV"
+     ]
+    ]
+   },
+   "summary": "Upcoming epee from the FIE calendar. The FIE doesn't list start times or say whether it's free, so neither prints."
+  },
+  {
+   "key": "deadlines",
+   "section": "shorts",
+   "slot": "Deadlines box",
+   "budget": "3–5 rows",
+   "empty": true,
+   "why": "No verified entry-close times for Morris Cup or Ultimate Cup yet."
+  },
+  {
+   "key": "gear",
+   "section": "shorts",
+   "slot": "Desk fill — Second life for broken gear",
+   "budget": "~60w",
+   "item": "web-gear-recycling-blades-cords",
+   "proposed": false,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 60
+   },
+   "summary": "The FIE's first broken-blade collection, and a volunteer project that has repaired 334 body cords for nonprofit clubs. Spare fill if the sheet runs short."
+  },
+  {
+   "key": "qa",
+   "section": "shorts",
+   "slot": "Parent Q&A",
+   "budget": "40–70w",
+   "empty": true,
+   "why": "No parent question this week.",
+   "questions": [
+    "Any parent question worth answering this week?"
+   ]
+  },
+  {
+   "key": "comic",
+   "section": "shorts",
+   "slot": "Comic",
+   "budget": "1 panel",
+   "empty": true,
+   "why": "None from you this week."
+  },
+  {
+   "key": "footwork",
+   "section": "shorts",
+   "slot": "Club note — Footwork class",
+   "budget": "~35w",
+   "item": "chat-footwork-class-2026-10-13",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "Short note from your call: the Wednesday footwork class (6:30–7:15 p.m., right after the 5:00 group class). Informative only, no names. Times match the club website and the Oct. 7 club email.",
+   "answered": [
+    "Vetted for No. 2, text unchanged (chat, Oct. 13)."
+   ]
+  }
+ ],
+ "photos": [],
+ "held": [
+  {
+   "id": "chat-winter-camp-reminder",
+   "label": "Winter Camp reminder (held for No. 3)",
+   "note": "chat: Frank 2026-10-12: skip it this week. Moved to staging/weeks/after-next. Price and sign-up link are still open."
+  }
+ ],
+ "not_proposed": [
+  {
+   "item": "ft-nac-efc-registrations-2026-10-07",
+   "why": "The event is over; folded into the NAC results."
+  },
+  {
+   "item": "x-lead-nac-oct-results-watch",
+   "why": "Stale: the results it was watching for are in."
+  },
+  {
+   "item": "x-lead-veteran-worlds-tbilisi",
+   "why": "Merged into the Veteran Worlds story (FIE results)."
+  },
+  {
+   "item": "gather-morris-cup-ryc-oct25",
+   "why": "Merged into the Morris Cup board."
+  },
+  {
+   "item": "gather-college-path-shamel-epee",
+   "why": "Stale: a March story with a new date. Shamel finished 20th in Div I Elite this weekend."
+  },
+  {
+   "item": "x-lead-passivity-p-black-explainer",
+   "why": "Stale: the Asian Games angle has aged."
+  },
+  {
+   "item": "x-lead-elsayed-world-no1-epee-feature",
+   "why": "Unvetted X lead, no room this week."
+  },
+  {
+   "item": "x-lead-usafencing-nfl-radio-ad",
+   "why": "Unvetted X chatter, no room this week."
+  },
+  {
+   "item": "ft-njfa-sep29-possible-efc-results",
+   "why": "You left the NJFA late lines out of the approved budget (Oct. 12)."
+  }
+ ]
+}

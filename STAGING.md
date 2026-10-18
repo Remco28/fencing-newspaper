@@ -170,6 +170,11 @@ Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or 
 - No model memory as a source for names, results, ratings, dates, entries, or claims about real people.
 - Narrative home: PLAN §1c; compose checklist: STYLE-GUIDE §0b.
 
+### Names + pending entries (v3.35 — voice: Frank 2026-10-18)
+- **Official pages are the source of truth for names.** Print a fencer's name exactly as the official club or tournament page lists it (AskFRED, USA Fencing/member.usafencing.org entrant lists, the club's own pages and emails). Don't ask Frank about names. Order of precedence: a spelling Frank gives in chat, then an existing roster house form, then the official page. FencingTracker is a mirror, not an official page: if it disagrees with an official page, use the official spelling. New names go into `roster/people.json` with the official spelling and provenance "Frank (standing rule)".
+- **Pending entries print.** An entry that AskFRED shows as pending (not yet paid or confirmed) counts as an entry for the Nearby Tournaments board.
+- Never stage birth years / DOBs (some API and registration payloads carry them; drop on ingest).
+
 ### Related
 - Source checklists → **SOURCES.md**
 - Labels / media extract / item schema → sections above

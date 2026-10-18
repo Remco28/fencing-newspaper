@@ -20,6 +20,7 @@ future reports spell names consistently.
 - **Chat beats scrape (v3.20):** a spelling Frank gives in chat overrides scraped
   registration forms (FencingTracker, AskFRED). Keep the scraped form in `aliases`
   as a scrape variant so Clean maps it to Frank’s spelling.
+- **Names rule (v3.35, voice: Frank 2026-10-18):** official club/tournament pages (AskFRED, USA Fencing entrant lists, club pages/emails) are the source of truth. Add new fencers with the spelling the official page shows (e.g. Samuel SarroWaite, Nora Li, Owen Li, Christina Jiang), provenance "Frank (standing rule)", and **don't ask Frank**. A Frank chat spelling or an existing house form still wins. A shared surname is **not** a family link: record a relation only when it's confirmed (Nora/Owen Li: relation unknown).
 - **Unresolved spelling:** set `spelling_unresolved: true` and print each person
   as registered until Frank picks a house form.
 - **New confusion:** ask Frank once in chat, then record the answer here (and

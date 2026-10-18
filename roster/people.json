@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-10-12",
-  "note": "Frank-confirmed club-people facts only. No ratings, ages, birthdays, or invented data. See roster/README.md.",
+  "updated": "2026-10-18",
+  "note": "Frank-confirmed club-people facts only (plus names cleared by Frank's 2026-10-18 standing rule: official club/tournament pages are the source of truth for name spellings). No ratings, ages, birthdays, or invented data. See roster/README.md.",
   "people": [
     {
       "id": "penny-young",
@@ -167,6 +167,66 @@
         "when": "2026-10-12",
         "via": "chat",
         "basis": "FencingTracker club listing + Frank's belief ('probably is')"
+      }
+    },
+    {
+      "id": "samuel-sarrowaite",
+      "canonical": "Samuel SarroWaite",
+      "aliases": [
+        "SarroWaite, Samuel"
+      ],
+      "relations": [],
+      "notes": "Elite FC per AskFRED prereg + club-schedule digest (Medeo Youth Challenge #5, Nov 8). Spelling as AskFRED prints it (camel-case 'SarroWaite'); cleared under the official-pages rule — don't re-ask Frank.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule)",
+        "when": "2026-10-18",
+        "via": "voice (relayed): names on official club/tournament pages print as listed"
+      }
+    },
+    {
+      "id": "nora-li",
+      "canonical": "Nora Li",
+      "aliases": [
+        "Li, Nora"
+      ],
+      "relations": [],
+      "notes": "Elite FC per AskFRED prereg (Medeo Youth Challenge #4 and #5). Relation to Owen Li UNKNOWN (same surname only) — don't assume or print as siblings.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule)",
+        "when": "2026-10-18",
+        "via": "voice (relayed): names on official club/tournament pages print as listed"
+      }
+    },
+    {
+      "id": "owen-li",
+      "canonical": "Owen Li",
+      "aliases": [
+        "Li, Owen"
+      ],
+      "relations": [],
+      "notes": "Elite FC per AskFRED prereg (Medeo Youth Challenge #5). Relation to Nora Li UNKNOWN — don't assume.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule)",
+        "when": "2026-10-18",
+        "via": "voice (relayed): names on official club/tournament pages print as listed"
+      }
+    },
+    {
+      "id": "christina-jiang",
+      "canonical": "Christina Jiang",
+      "aliases": [
+        "Jiang, Christina"
+      ],
+      "relations": [],
+      "notes": "Elite FC (Medeo #3 5th, printed No. 2; Morris Cup + Medeo #5 entries). Form as on AskFRED/digest.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule)",
+        "when": "2026-10-18",
+        "via": "voice (relayed): names on official club/tournament pages print as listed"
       }
     }
   ]

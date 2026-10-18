@@ -1,7 +1,6 @@
 {
  "schema": 2,
  "mode": "real",
- "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below ('practice' = rehearsal). Judgment lives here (slot → staging item ids, plain-English summary, questions for Frank). budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Any staging item this file doesn't mention still shows up (auto-placed by slot_hint, not proposed). Table rows are transcribed from the cited staging items (no new facts).",
  "capacity": {
   "note": "Template A, US Letter, 3 columns (~2.42in each, 9pt gaps). Usable column height = 10.1in page minus furniture measured on the issues/2026-10-14 sample render: page 1 masthead 0.98in + dateline 0.55in + footer ~0.25in; page 2 dateline 0.52in + footer ~0.25in.",
   "page1_col_in": 24.96,
@@ -60,190 +59,122 @@
   "photo-public-strip-cand",
   "tip-public-chatham-dual"
  ],
- "generated": "2026-10-12T09:50:00-04:00",
+ "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below ('practice' = rehearsal). Judgment lives here (slot → staging item ids, plain-English summary, questions for Frank). budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Any staging item this file doesn't mention still shows up (auto-placed by slot_hint, not proposed). Table rows are transcribed from the cited staging items (no new facts).",
+ "generated": "2026-10-18T08:55:00-04:00",
  "target_week": "next",
  "issue": {
-  "number": 2,
-  "label": "Issue No. 2",
-  "week": "Week of Oct. 12, 2026"
+  "number": 3,
+  "label": "Issue No. 3",
+  "week": "Week of Oct. 19, 2026"
  },
  "publish": {
-  "date": "2026-10-13",
-  "label": "Tuesday, October 13, 2026",
-  "alt": "2026-10-12",
-  "why": "Tue or Wed, Frank deciding. chat: Frank 2026-10-12: Frank may push to Wednesday while he looks for more content. Date field stays at Tue 10/13 for now; Penny's Y14 result (fenced today) can be added either way.",
-  "note": "Tue or Wed, Frank deciding"
+  "date": "2026-10-19",
+  "label": "Monday, October 19, 2026",
+  "alt": "2026-10-20",
+  "why": "voice: Frank 2026-10-18 — budget built Sunday instead of Monday 8:50; publish Mon or Tue, later OK. Today's NJ JO qualifier results (two Elite FC cadets) can go in either way.",
+  "note": "Mon or Tue, Frank deciding"
  },
  "desk_summary": [
-  "Real issue this week. Lead (OK'd by Frank): Maksim Milinkovic finished 12th of 121 in Cadet Elite at the October NAC, winning three straight elimination bouts from the 49th seed.",
-  "Vetted from your chat answers: the NAC lead and results, the Ultimate Cup board, Christina Jiang's 5th at Medeo, and late NJFA lines for Bradley Tsai and Brendan Mendez. Still unvetted website items: the Elite/Challenger explainer, Veteran Worlds, NJ high-school dates, the TV box and gear.",
-  "Results refreshed Oct. 13: Maksim's 12th of 121 holds; Penny's Y14 (54th of 113) is on the \"also fenced\" line; Adela Sullivan's 2nd at the Artdu open is in the box (vetted). NJFA lines stay out.",
-  "Winter Camp is held for No. 3. THE WEAPON fills the back page at two columns. Both Overheard pieces run (etiquette + Princess Bride).",
-  "Footwork-class note vetted and in. Class schedule box stays out."
+  "Built Sunday at your request. Lead: your Controversial Call (324 words), running long enough to take the lead and secondary space.",
+  "Checked on fie.org this morning: all four U.S. Vet Worlds women's medals hold, and the U.S. women also won the veterans team event (45-31 over France). Team names stay out because FIE and Wikipedia list different teams.",
+  "Elsayed is in as Secondary B: FIE's own ranking shows him No. 1 and the FIE article backs every line. By the Book is written from the October 2026 rulebook (unjustified appeals, t.172/t.174/t.165).",
+  "Club results: nothing new through Saturday. Two Elite FC cadets fence today's NJ Junior Olympics qualifier. The Monday pass adds them if they finish strong; otherwise they go on the 'also fenced' line.",
+  "Boards refreshed: Morris Cup still has 20 fencers and 30 entries; Ultimate Cup adds Anayaa Sheth (13 entries); Medeo #4/#5 is one line, pending entries included. Fill is about 69% with everything vetted, 74% with For the Parents, and about 75% once the JO results are in (No. 2 printed at about 78%). Stretch option: the Winter Camp flyer photo adds about 6%."
  ],
  "slots": [
   {
    "key": "lead",
    "section": "lead",
-   "slot": "Lead story",
-   "budget": "150–180w",
-   "item": "ft-nac-results-efc-2026-10-12",
+   "slot": "Lead story — Controversial Calls",
+   "budget": "~325w (takes lead + secondary space)",
+   "item": "chat-controversial-calls-off-strip-2026-10-13",
    "proposed": true,
    "cost": {
     "type": "prose",
     "span": 2,
     "feature": true
    },
-   "title": "Milinkovic Climbs to 12th at the First 'Elite' NAC",
-   "summary": "Maksim Milinkovic went from the 49th seed to 12th of 121 in Cadet Elite Men's Epee, winning DE bouts 15-14, 15-12 and 15-11 before a 10-15 loss in the round of 16. The day before, he went 6-0 in pools in a 233-fencer Div I Challenger field. Our three cadet women round out the story.",
-   "questions": [],
+   "title": "Controversial Calls: The Touch Nobody Saw Land, Except the Referee",
+   "summary": "Your son's pool bout from two years ago: the touch the family says landed off the strip, the appeal and the Head Referee's ruling, what t.93, t.94.1 and t.172 say, both sides labeled as opinion, and the verdict: judgment call. It carries the editor's note and a short For Parents coda.",
    "flags": [
     {
      "level": "info",
-     "text": "The Div I Elite winner's club is Elite Fencing Academy, not us. The copy will keep the two apart."
+     "text": "Vetted as-is Oct. 13. Its 324 words are about double a normal lead, so it fills the Secondary A space too (your space-saving call)."
+    },
+    {
+     "level": "info",
+     "text": "No referee is named. Bout facts are attributed to the family. Rule cites are checked against the October 2026 rulebook."
     }
-   ],
-   "answered": [
-    "chat: Frank 2026-10-12: OK to lead with Maksim (FencingTracker stays the source)."
    ]
   },
   {
    "key": "secondary-a",
    "section": "lead",
-   "slot": "Secondary A — Elite vs. Challenger",
+   "slot": "Secondary A — Vet Worlds, part two",
    "budget": "80–100w",
-   "item": "web-usaf-elite-challenger-explainer",
-   "proposed": true,
-   "cost": {
-    "type": "prose",
-    "span": 1,
-    "words": 95
-   },
-   "summary": "A short parent explainer on why NAC fields now say Elite or Challenger: big Cadet and Div I events split at 112 by national points. It explains why Maksim fenced Elite in Cadet and Challenger in Div I. From USA Fencing's Sept. 19 and 28 posts."
-  },
-  {
-   "key": "overheard",
-   "section": "lead",
-   "slot": "Overheard on Reddit",
-   "budget": "130–170w",
-   "item": "reddit-rfencing-etiquette-thread",
+   "item": "x-fie-vet-worlds-women-epee-2026-10-13",
    "proposed": true,
    "cost": {
     "type": "prose",
     "span": 1
    },
-   "summary": "First-tournament etiquette tips from an r/Fencing thread, with no usernames. Only rule-checked facts print; everything else runs as attributed opinion. You vetted it Oct. 7.",
+   "summary": "Follow-up to No. 2's men's item. Leslie Marx won Veteran 50 (10-4 final); Cassandra Bates took silver (10-9 final) and Lacey Biniak bronze in Veteran 40; Charlotta Bowie took bronze in Veteran 70. The U.S. also won the women's veterans team event. Every result is from fie.org, checked this morning.",
+   "flags": [
+    {
+     "level": "warn",
+     "text": "Team names left out: the FIE entry list shows Biniak, Buechel, Exum, Marchant and Martinez Hansen, but Wikipedia shows Bates, Biniak, Exum, Foellmer and Marx. The story says only 'the U.S. won'."
+    },
+    {
+     "level": "info",
+     "text": "The FIE lists dates only, no start or end times. The women's events ran Oct. 12–14."
+    }
+   ],
+   "answered": [
+    "Conditional vet from Frank, condition met (fie.org check 2026-10-18)."
+   ]
+  },
+  {
+   "key": "secondary-b",
+   "section": "lead",
+   "slot": "Secondary B — World No. 1's message to himself",
+   "budget": "80–100w",
+   "item": "x-lead-elsayed-world-no1-epee-feature",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "Egypt's Mohamed Elsayed recorded a video promise to himself after Tokyo and kept it with a Paris 2024 bronze. He tells Ari Simmons the story on the FIE's 'Will to Win' podcast. The FIE ranking shows him No. 1 in men's epee.",
    "flags": [
     {
      "level": "info",
-     "text": "Claim check done against the USA Fencing Oct. 2026 rulebook. Handshake and pants claims left out."
+     "text": "Written from the FIE's own article and ranking page only. Desk didn't listen to the episode. This is the first story to drop if space is tight."
     }
    ]
-  },
-  {
-   "key": "overheard-2",
-   "section": "lead",
-   "slot": "Overheard on Reddit #2 — Princess Bride duel",
-   "budget": "130–160w",
-   "item": "reddit-rfencing-princess-bride-2026-10-12",
-   "proposed": true,
-   "cost": {
-    "type": "prose",
-    "span": 1
-   },
-   "summary": "The r/Fencing Princess Bride duel thread: the masters it names are real, Bob Anderson choreographed it, and the forum called it great theatrical fencing. Vetted Oct. 12; back in No. 2 per your Oct. 13 call.",
-   "answered": [
-    "Moved back to No. 2 (chat, Oct. 13)."
-   ]
-  },
-  {
-   "key": "weapon",
-   "section": "lead",
-   "slot": "Back-page figure — THE WEAPON",
-   "budget": "2-column figure",
-   "item": "chat-asset-weapon-epee",
-   "proposed": true,
-   "cost": {
-    "type": "figure",
-    "span": 2,
-    "w": 2880,
-    "h": 2040
-   },
-   "thumb": "weapon-epee-exploded.png",
-   "summary": "Your exploded-epee diagram: the parts of the weapon and how a touch scores. It runs two columns wide on the back page."
   },
   {
    "key": "club-results",
    "section": "club",
-   "slot": "Club results — October NAC",
-   "budget": "5–6 rows",
-   "item": "ft-nac-results-efc-2026-10-12",
-   "proposed": true,
+   "slot": "Club results",
+   "budget": "3–5 rows + also fenced",
+   "item": "askfred-nj-jo-qualifier-2026-10-18",
+   "proposed": false,
+   "waiting": true,
    "cost": {
     "type": "table_rows",
-    "rows": 5
+    "rows": 2
    },
-   "title": "Club results",
-   "table": {
-    "head": [
-     "Fencer",
-     "Event",
-     "Place"
-    ],
-    "rows": [
-     [
-      "Maksim Milinkovic",
-      "Cadet Elite Men (Oct. NAC)",
-      "12th of 121"
-     ],
-     [
-      "Christina Jiang",
-      "Y12 Mixed (Medeo Youth Challenge #3)",
-      "5th"
-     ],
-     [
-      "Adela Sullivan",
-      "Junior Women (Artdu Open, Oct. 11)",
-      "2nd"
-     ],
-     [
-      "Also fenced at the NAC",
-      "Maksim Milinkovic (Div. I Challenger, 6-0 in pools); Anayaa Sheth, Amina Gore (Cadet Challenger Women); Penny Young (Cadet Challenger Women, Y14 Women)",
-      ""
-     ]
-    ]
-   },
-   "summary": "One results box: Maksim's NAC finish, Christina's 5th at Medeo and Adela's 2nd at the Artdu open. Other NAC fencers, including Penny's Y14 (54th of 113), are on the \"also fenced\" line.",
-   "items": [
-    "ft-nac-results-efc-2026-10-12",
-    "email-agentmail-medeo-results-watch-2026-10-11",
-    "ft-artdu-sullivan-jnrwe-2026-10-11"
-   ],
+   "title": "Club results — waiting on today's NJ JO qualifier",
+   "summary": "No new Elite FC results Oct. 13–18 on FencingTracker, Frank's API or AskFRED (the NAC and Artdu results already ran in No. 2). Aaditya Jaising and Charles Young are entered in Cadet Men at today's NJ Division Junior Olympics qualifier at Medeo (1:30 p.m. check-in, 9 fencers). Their results come in Monday morning: a row each if they finish strong, otherwise one 'also fenced' line.",
    "flags": [
     {
      "level": "info",
-     "text": "Results tone is house policy (Oct. 12): places only for strong finishes, everyone else on the \"also fenced\" line. Penny's Y14 posted: 54th of 113, so she stays on that line."
+     "text": "Neither name is in our roster yet. Under your standing rule they print as AskFRED lists them."
     },
     {
      "level": "info",
-     "text": "The NJFA late lines (Tsai, Mendez) are out, as in your approved budget."
+     "text": "If nothing strong comes in, the box runs a single line or folds away. It is never filled with old results."
     }
-   ]
-  },
-  {
-   "key": "medeo",
-   "section": "club",
-   "slot": "Club results — Medeo Youth Challenge #3",
-   "budget": "in results box",
-   "item": "email-agentmail-medeo-results-watch-2026-10-11",
-   "proposed": true,
-   "cost": {
-    "type": "table_rows",
-    "rows": 0
-   },
-   "summary": "Christina Jiang finished 5th in Y12 Mixed (your word). Medeo combined the men's and women's events, so AskFRED's 'Y12 Women's Epee' is just her registration. Her row sits in the club results box above.",
-   "answered": [
-    "Event: Y12 Mixed (chat, Oct. 12)."
    ]
   },
   {
@@ -252,28 +183,21 @@
    "slot": "Ratings earned",
    "budget": "2–5 rows",
    "empty": true,
-   "why": "No NAC ratings are posted anywhere yet, and nothing came in by email.",
-   "questions": [
-    "Any new ratings you know of from the NAC or Medeo?"
-   ]
+   "why": "None posted on FencingTracker, AskFRED or by email."
   },
   {
    "key": "signup",
    "section": "club",
-   "slot": "Nearby Tournaments — Morris Cup who's entered",
-   "budget": "all entries (your exception to the 8-row cap)",
+   "slot": "Nearby Tournaments — Morris Cup",
+   "budget": "all 30 entries (your big-turnout exception)",
    "item": "email-agentmail-morris-cup-entries-2026-10-07",
    "proposed": true,
-   "merged": [
-    "gather-morris-cup-ryc-oct25"
-   ],
    "cost": {
     "type": "table",
     "rows": 10,
     "span": 3
    },
    "title": "Morris Cup RYC/RJCC — Suffern, N.Y., Oct. 24–25",
-   "summary": "19 Elite FC fencers with 29 entries over two days, refreshed from today's club digest. Olivia Hayes was added to Cadet Women, and Rahi Shah-Mirani is off Y10 Men (FencingTracker also shows him withdrawn).",
    "panels": {
     "head": [
      "Time",
@@ -288,8 +212,8 @@
        [
         "8:00 a.m.",
         "Junior Women",
-        "Amina Gore, Olivia Hayes",
-        "2"
+        "Amina Gore, Olivia Hayes, Anayaa Sheth",
+        "3"
        ],
        [
         "8:00 a.m.",
@@ -354,15 +278,18 @@
      }
     ]
    },
-   "questions": [],
-   "answered": [
-    "chat: Frank 2026-10-12: Ash prints as Shah-Mirani (roster resolved for Ash)."
+   "summary": "20 Elite FC fencers with 30 entries. Anayaa Sheth was added to Saturday's Junior Women on Oct. 16. The Oct. 17 and 18 digests haven't changed, and USA Fencing's entrant list (6:01 a.m. today) agrees.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "Times are the close of check-in, as USA Fencing lists them, the same as No. 2's board."
+    }
    ]
   },
   {
    "key": "signup-2",
    "section": "club",
-   "slot": "Nearby Tournaments — Ultimate Cup who's entered",
+   "slot": "Nearby Tournaments — Ultimate Cup",
    "budget": "4 rows",
    "item": "ft-ultimate-cup-efc-registrations-2026-10-12",
    "proposed": true,
@@ -382,7 +309,7 @@
      [
       "Sat.",
       "Junior Women",
-      "Olivia Hayes, Adela Sullivan"
+      "Olivia Hayes, Anayaa Sheth, Adela Sullivan"
      ],
      [
       "Sat.",
@@ -401,16 +328,145 @@
      ]
     ]
    },
-   "summary": "Nine Elite FC fencers with 12 entries at a nearby N.J. regional, per FencingTracker's registration lists. Scraped names can't print until you confirm them.",
-   "questions": [],
+   "summary": "10 Elite FC fencers with 13 entries. New since No. 2: Anayaa Sheth in Saturday's Junior Women (USA Fencing entrant list, 8:33 a.m. today).",
+   "flags": [
+    {
+     "level": "info",
+     "text": "The Sheth add comes only from USA Fencing's list through your API. FencingTracker wasn't re-checked for this board, and the club digest doesn't watch this tournament."
+    }
+   ]
+  },
+  {
+   "key": "signup-3",
+   "section": "club",
+   "slot": "Nearby Tournaments — Medeo Youth Challenges #4 + #5 (one line)",
+   "budget": "2 rows",
+   "item": "fencingapi-medeo-yc4-entries-2026-10-14",
+   "merged": [
+    "email-agentmail-medeo-yc5-entries-2026-10-14"
+   ],
+   "proposed": true,
+   "cost": {
+    "type": "table",
+    "rows": 2,
+    "span": 1
+   },
+   "title": "Medeo Youth Challenges — Bound Brook, N.J.",
+   "table": {
+    "head": [
+     "Date",
+     "Event",
+     "Elite FC entered"
+    ],
+    "rows": [
+     [
+      "Sun. Oct. 25 (#4)",
+      "Y10 Mixed",
+      "Nora Li"
+     ],
+     [
+      "Sun. Nov. 8 (#5)",
+      "Y12 Men · Y12 Women · Y10 Mixed · Y14 Men",
+      "Samuel SarroWaite, Christina Jiang, Nora Li, Owen Li"
+     ]
+    ]
+   },
+   "summary": "One combined line: #4 (Oct. 25, the same day as Morris Cup Sunday) has Nora Li; #5 (Nov. 8) has four. AskFRED shows all of these entries as pending (not yet paid or confirmed), and pending entries print.",
    "answered": [
-    "chat: Frank 2026-10-12: Dieko Johnson and Lillian Liu confirmed Elite FC; board vetted."
+    "Names cleared by your standing rule (official pages are the source of truth)."
+   ]
+  },
+  {
+   "key": "deadlines",
+   "section": "club",
+   "slot": "Deadlines box",
+   "budget": "3–5 rows",
+   "item": "desk-deadlines-2026-10-18",
+   "proposed": true,
+   "cost": {
+    "type": "table",
+    "rows": 5,
+    "span": 1
+   },
+   "table": {
+    "head": [
+     "Date",
+     "Deadline"
+    ],
+    "rows": [
+     [
+      "Oct. 22",
+      "Morris Cup — late entry closes"
+     ],
+     [
+      "Oct. 29",
+      "Ultimate Cup — late entry closes"
+     ],
+     [
+      "Nov. 1",
+      "Cobra Challenge (Secaucus, Nov. 27–29) — regular entry; late to Nov. 7"
+     ],
+     [
+      "Nov. 11",
+      "Junior Olympics — regular-fee deadline"
+     ],
+     [
+      "Jan. 8",
+      "N.J. high school — independent fencers' entries close"
+     ]
+    ]
+   },
+   "summary": "I dropped the Oct. 19 Ultimate Cup regular fee because it ends on issue day. Morris (Oct. 22) and Ultimate (Oct. 29) late closes carry over. New: Cobra Challenge in Secaucus, the Junior Olympics regular fee and the NJSIAA independents close. All come from USA Fencing and NJSIAA pages.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "Ultimate Cup's fee text on USA Fencing is garbled (it says regular fees ended Oct. 12), and its structured dates say Oct. 19. Moot now that the line is dropped."
+    },
+    {
+     "level": "info",
+     "text": "For Cobra, AskFRED says Nov. 2 and USA Fencing says Nov. 1 (11:59 p.m. PT). I used USA Fencing. No Elite FC entries are known there yet."
+    }
+   ]
+  },
+  {
+   "key": "camp",
+   "section": "club",
+   "slot": "Club events — Winter Camp",
+   "budget": "~70w",
+   "item": "chat-winter-camp-reminder",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "Dec. 27–31, 9:30 a.m.–2 p.m., all levels. It's pitched as a tune-up for the second half of the season, with your joke about escaping visiting relatives. Price is still unpublished, so the copy says 'contact the club for price and sign-up', which is what the club's website says.",
+   "questions": [
+    "Print the club email (elitefencersclub@gmail.com, public on the website) as the sign-up contact, or leave it at 'contact the club'?"
    ]
   },
   {
    "key": "classes",
    "section": "club",
-   "slot": "Weekly classes",
+   "slot": "Club notes — classes (one-liners)",
+   "budget": "~25w",
+   "item": "desk-class-notes-2026-10-18",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "Two one-liners from the club's Oct. 16 email and website: Saturday Musketeers class at 11 a.m. and Advanced at 1 p.m.; Fridays, Mini Musketeers at 4:15 p.m., then open bouting. The full class table stays out (cut rule).",
+   "flags": [
+    {
+     "level": "info",
+     "text": "No open-bouting start time prints: the website says 6:00 and the email says 'around 6:30'."
+    }
+   ]
+  },
+  {
+   "key": "weekly-classes",
+   "section": "club",
+   "slot": "Weekly classes table",
    "budget": "cut (no change)",
    "item": "web-efc-standing-schedule",
    "proposed": false,
@@ -419,48 +475,65 @@
     "rows": 9,
     "span": 1
    },
-   "summary": "The regular class table stays out under the cut rule because nothing has changed. The Mini Musketeers move to Friday at 4:15 already ran in No. 1."
+   "summary": "Folded into the one-line notes above. The table runs only when something changes."
   },
   {
    "key": "nj-hs",
    "section": "shorts",
-   "slot": "NJ high-school roundup",
-   "budget": "60–90w",
+   "slot": "NJ high-school roundup (3 one-liners)",
+   "budget": "~40w",
    "item": "web-njsiaa-fencing-2026-27-dates",
-   "proposed": false,
+   "proposed": true,
    "cost": {
     "type": "prose",
-    "span": 1,
-    "words": 65
+    "span": 1
    },
-   "summary": "The season is still weeks away, so this is a calendar note from NJSIAA: tryouts Nov. 23–25, competition from Dec. 7, team finals Feb. 25 at Morris Hills, and individual states Feb. 27 at Hunterdon Central.",
+   "summary": "From NJSIAA, re-checked today: tryouts Nov. 23–25, first practice Nov. 30, competition from Dec. 7; independents close Jan. 8; team finals Feb. 25 at Morris Hills; individual states Feb. 27 at Hunterdon Central."
+  },
+  {
+   "key": "by-the-book",
+   "section": "shorts",
+   "slot": "By the Book",
+   "budget": "50–80w",
+   "item": "chat-by-the-book-placeholder-2026-10-13",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1
+   },
+   "summary": "Unjustified appeals: arguing a point of fact (t.172), or an appeal the Head Referee rejects (t.174), is a First Group offense, a yellow card and then a red each time after (t.165). It picks up where the Controversial Call stops without repeating it.",
    "flags": [
     {
      "level": "info",
-     "text": "Left out of your approved budget (Oct. 12)."
+     "text": "Desk-written from the October 2026 rulebook and penalty chart (your call, Oct. 18). Approve it or cut it here."
     }
    ]
   },
   {
-   "key": "secondary-b",
+   "key": "for-parents",
    "section": "shorts",
-   "slot": "Secondary B — Veteran Worlds",
-   "budget": "80–100w",
-   "item": "web-fie-vet-worlds-epee-2026-10-11",
+   "slot": "For the Parents (optional)",
+   "budget": "50–80w",
+   "item": "desk-for-the-parents-jo-registration-2026-10-18",
    "proposed": true,
    "cost": {
     "type": "prose",
-    "span": 1,
-    "words": 90
+    "span": 1
    },
-   "summary": "U.S. men's epee veterans in Tbilisi won silver in the 60s (a 9-8 overtime final) and in the 70s, plus bronze in both team events. It's a fencing-is-for-life angle for parents. Women's epee runs this week. From FIE. This is the first story to drop if space is tight."
+   "summary": "Qualifying for the Junior Olympics isn't the same as registering. USA Fencing doesn't auto-register anyone, and the regular-fee deadline is Nov. 11, even if a fencer qualifies later. It's timely because of today's NJ qualifier. From USA Fencing's help article and event page.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "This would be the first For the Parents box. Desk picked it, so it needs your Vet. Skip it and the sheet just has a little more white space."
+    }
+   ]
   },
   {
    "key": "tv",
    "section": "shorts",
-   "slot": "TV / streaming",
+   "slot": "Epee on Screen",
    "budget": "3–5 rows",
-   "item": "web-fie-epee-tv-calendar-2026-10-12",
+   "item": "desk-epee-on-screen-2026-10-18",
    "proposed": true,
    "cost": {
     "type": "table",
@@ -475,50 +548,55 @@
     ],
     "rows": [
      [
-      "Oct. 12–14",
-      "Veteran Worlds, women (Tbilisi)",
-      "FencingTV"
-     ],
-     [
-      "Oct. 15–18",
-      "Senior World Cup, men + women (Casablanca)",
-      "FencingTV"
-     ],
-     [
       "Oct. 22–25",
       "Junior/Cadet World Cup (San José, Costa Rica)",
+      "No stream listed"
+     ],
+     [
+      "Nov. 5–8",
+      "Junior/Cadet World Cup (Manama, Bahrain)",
       "No stream listed"
      ],
      [
       "Nov. 12–15",
       "Senior World Cups: Berne (men), Wuxi (women)",
       "FencingTV"
+     ],
+     [
+      "Dec. 3–6",
+      "Senior World Cup, men + women (Vancouver)",
+      "FencingTV"
      ]
     ]
    },
-   "summary": "Upcoming epee from the FIE calendar. The FIE doesn't list start times or say whether it's free, so neither prints."
-  },
-  {
-   "key": "deadlines",
-   "section": "shorts",
-   "slot": "Deadlines box",
-   "budget": "3–5 rows",
-   "empty": true,
-   "why": "No verified entry-close times for Morris Cup or Ultimate Cup yet."
+   "summary": "From the FIE calendar. Manama and Vancouver are new, and San José and Berne/Wuxi carry over from No. 2 (still upcoming). The FIE lists no start times or prices, so none print."
   },
   {
    "key": "gear",
    "section": "shorts",
-   "slot": "Desk fill — Second life for broken gear",
-   "budget": "~60w",
+   "slot": "Gear note (one-liner)",
+   "budget": "~40w",
    "item": "web-gear-recycling-blades-cords",
-   "proposed": false,
+   "proposed": true,
    "cost": {
     "type": "prose",
-    "span": 1,
-    "words": 60
+    "span": 1
    },
-   "summary": "The FIE's first broken-blade collection, and a volunteer project that has repaired 334 body cords for nonprofit clubs. Spare fill if the sheet runs short."
+   "summary": "Broken blades get a second life: the Takamatsu City World Cup ran the first broken-blade collection at an FIE event, for Kazuyasu Minobe's Re-blade 2028. The body-cord half is cut to keep it to one line.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "The Takamatsu event is foil, but the recycling angle works for any weapon."
+    }
+   ]
+  },
+  {
+   "key": "overheard",
+   "section": "shorts",
+   "slot": "Overheard on Reddit",
+   "budget": "130–170w",
+   "empty": true,
+   "why": "Skipped this issue (Frank, Oct. 18)."
   },
   {
    "key": "qa",
@@ -526,10 +604,7 @@
    "slot": "Parent Q&A",
    "budget": "40–70w",
    "empty": true,
-   "why": "No parent question this week.",
-   "questions": [
-    "Any parent question worth answering this week?"
-   ]
+   "why": "Skipped this issue (Frank, Oct. 18)."
   },
   {
    "key": "comic",
@@ -537,69 +612,28 @@
    "slot": "Comic",
    "budget": "1 panel",
    "empty": true,
-   "why": "None from you this week."
+   "why": "Skipped this issue (Frank, Oct. 18). Ling's comic could start with No. 4."
+  }
+ ],
+ "photos": [
+  {
+   "id": "efc-winter-camp-2026-flyer-email",
+   "proposed": false,
+   "span": 1,
+   "note": "Stretch option: the club's own flyer adds about 3.4 column-inches (about 6% fill). Its 'Epee camp' wording can't be edited out of a photo."
   },
   {
-   "key": "footwork",
-   "section": "shorts",
-   "slot": "Club note — Footwork class",
-   "budget": "~35w",
-   "item": "chat-footwork-class-2026-10-13",
-   "proposed": true,
-   "cost": {
-    "type": "prose",
-    "span": 1
-   },
-   "summary": "Short note from your call: the Wednesday footwork class (6:30–7:15 p.m., right after the 5:00 group class). Informative only, no names. Times match the club website and the Oct. 7 club email.",
-   "answered": [
-    "Vetted for No. 2, text unchanged (chat, Oct. 13)."
-   ]
+   "id": "efc-winter-camp-2026-flyer",
+   "proposed": false,
+   "span": 1,
+   "note": "Website copy of the same flyer (unvetted). Not proposed."
   }
  ],
- "photos": [],
- "held": [
-  {
-   "id": "chat-winter-camp-reminder",
-   "label": "Winter Camp reminder (held for No. 3)",
-   "note": "chat: Frank 2026-10-12: skip it this week. Moved to staging/weeks/after-next. Price and sign-up link are still open."
-  }
- ],
+ "held": [],
  "not_proposed": [
   {
-   "item": "ft-nac-efc-registrations-2026-10-07",
-   "why": "The event is over; folded into the NAC results."
-  },
-  {
-   "item": "x-lead-nac-oct-results-watch",
-   "why": "Stale: the results it was watching for are in."
-  },
-  {
-   "item": "x-lead-veteran-worlds-tbilisi",
-   "why": "Merged into the Veteran Worlds story (FIE results)."
-  },
-  {
-   "item": "gather-morris-cup-ryc-oct25",
-   "why": "Merged into the Morris Cup board."
-  },
-  {
-   "item": "gather-college-path-shamel-epee",
-   "why": "Stale: a March story with a new date. Shamel finished 20th in Div I Elite this weekend."
-  },
-  {
-   "item": "x-lead-passivity-p-black-explainer",
-   "why": "Stale: the Asian Games angle has aged."
-  },
-  {
-   "item": "x-lead-elsayed-world-no1-epee-feature",
-   "why": "Unvetted X lead, no room this week."
-  },
-  {
-   "item": "x-lead-usafencing-nfl-radio-ad",
-   "why": "Unvetted X chatter, no room this week."
-  },
-  {
-   "item": "ft-njfa-sep29-possible-efc-results",
-   "why": "You left the NJFA late lines out of the approved budget (Oct. 12)."
+   "item": "email-mailchimp-group-class-2026-10-14",
+   "why": "Its Oct. 14 day sheet is stale. The class notes use the Oct. 16 email instead."
   }
  ]
 }

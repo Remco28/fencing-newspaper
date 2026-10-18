@@ -1,0 +1,40 @@
+{
+  "target_week": "next",
+  "extracted_at": "2026-10-18T08:50:00-04:00",
+  "note": "Media for Issue No. 3 (week of Oct 19). Winter Camp flyers copied back from staging/weeks/2026-10-13/media (held item moved to No. 3; the files had rolled with No. 2's week).",
+  "items": [
+    {
+      "id": "efc-winter-camp-2026-flyer",
+      "kind": "photo",
+      "filename": "efc-winter-camp-2026-flyer.jpg",
+      "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer.jpg",
+      "caption": "Winter Camp 2026 flyer — December 27–31, 9:30 AM–2:00 PM (club website)",
+      "source": "web",
+      "url": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
+      "retrieved_at": "2026-10-07T18:55:00-04:00",
+      "vetted": false,
+      "parent_item_id": "chat-winter-camp-reminder",
+      "note": "Reference/source copy of the club's own flyer; not necessarily for print. Flyer text says 'Epee camp' — drop label in print (§0c).",
+      "carried_from": "staging/weeks/2026-10-13/media",
+      "carried_at": "2026-10-18T08:50:00-04:00"
+    },
+    {
+      "id": "efc-winter-camp-2026-flyer-email",
+      "kind": "photo",
+      "filename": "efc-winter-camp-2026-flyer-email.png",
+      "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
+      "caption": "Winter Camp 2026 flyer as embedded in club Mailchimp 'Group Class! + Winter Camp❄️' (Sep 30, 2026)",
+      "source": "email",
+      "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
+      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
+      "from": "frankcng@gmail.com (fwd of elitefencersclub@111617670.mailchimpapp.com)",
+      "retrieved_at": "2026-10-07T19:16:00-04:00",
+      "vetted": true,
+      "vetted_by": "auto-club-mailchimp",
+      "parent_item_id": "chat-winter-camp-reminder",
+      "note": "Same flyer content as website jpg; email copy is source of truth. Not necessarily for print; flyer says 'Epee camp' — drop label in print (§0c).",
+      "carried_from": "staging/weeks/2026-10-13/media",
+      "carried_at": "2026-10-18T08:50:00-04:00"
+    }
+  ]
+}
