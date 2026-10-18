@@ -1,0 +1,25 @@
+# Photo from History: reusable pile
+
+Epee photos with ready captions, blurbs, credits and licenses. The pile is shared across issues, not tied to one week. Each `NN-slug.md` sits next to its `NN-slug.jpg`, resized to ≤1600 px on the long side, JPEG q82, EXIF stripped, still in color. Grayscale is decided at compose. Distilled 2026-10-18 from Frank's research library; the full research and evidence folders stay on Frank's machine.
+
+**Print-ready:** "yes" means at least 730 px wide (2 columns, about 3.3 in at 220 dpi). "1-col only" means at least 355 px wide.
+
+| ID | Story | Photo date | License | Print-ready | Used in issue |
+|---|---|---|---|---|---|
+| 01 | [The teenager who put Cuba on the Olympic epee map](01-ramon-fonst.md) | 1900 | Public domain (US) | no (315×447) | |
+| 02 | [Paul Anspach: winning epee gold, then building the sport](02-paul-anspach.md) | July 1912 according to Commons | Public domain (US) | 1-col only (378×826) | |
+| 03 | [The forbidden weapon in Nedo Nadi’s five-gold summer](03-nedo-nadi.md) | July 1912 according to Commons | Public domain (US) | 1-col only (380×799) | |
+| 04 | [Lucien Gaudin and the Olympic “extra-final”](04-lucien-gaudin.md) | 1928 Olympic context | Public domain (US) | yes (732×511) | |
+| 05 | [1936: When epee learned to light up](05-electric-epee-1936.md) | 2016-06-22 (modern photo of an artifact) | CC BY-SA 3.0 France | yes (1280×1280) | |
+| 06 | [1965: Club epee, with everyone close enough to watch](06-dutch-team-epee-1965.md) | 1965-11-21 | CC0 1.0 Universal | yes (1055×1600) | |
+| 07 | [1976: The light came on—but there was no touch](07-epee-fair-play-1976.md) | 2006-05-25 (modern illustration) | Public domain (author) | 1-col only (640×480) | |
+| 08 | [1980: Johan Harmenberg’s gold—and a different way forward](08-harmenberg-moscow-1980.md) | 1980, Moscow Olympics | CC BY-SA 3.0 Unported | yes (885×682) | |
+| 09 | [Laura Flessel: two golds at the start of an Olympic era](09-laura-flessel.md) | 2013-03-03 | CC BY 2.5 | yes (1092×1600) | |
+| 10 | [Tímea Nagy: the champion who came back for another chapter](10-timea-nagy.md) | 2013-08-11 | CC BY 3.0 | yes (1068×1600) | |
+| 11 | [Britta Heidemann: a golden triple, with a Beijing connection](11-britta-heidemann.md) | 2013-08-08 | CC BY 3.0 | yes (1068×1600) | |
+| 12 | [Nathalie Moellhausen: a world champion who makes room for art](12-nathalie-moellhausen.md) | 2014-09-07 | CC BY 2.5 | yes (1068×1600) | |
+
+**Rights, in brief:**
+1. Paste each entry's credit exactly. Keep the exact license version and URL (CC BY 2.5 or 3.0 stays 2.5 or 3.0, never "4.0").
+2. CC BY and BY-SA images need a change notice in the credit if cropped or converted to grayscale ("Cropped and converted to grayscale for this issue."). BY-SA adaptations stay under the same license. Public-domain claims are US-only, as stated in each entry.
+3. A license covers copyright only. Never imply that a pictured athlete or photographer endorses Elite FC. After an issue runs, fill in "Used in issue" here.

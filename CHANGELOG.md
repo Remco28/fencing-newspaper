@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.37 — 2026-10-18
+- **New recurring optional section: Photo from History** (Frank 2026-10-18, relayed by Grok Bot): one epee photo per issue, caption + credit mandatory, about 100–150 words including the caption (SECTIONS-MENU). New cross-issue pile `staging/history-photos/`: 12 entries distilled from Frank's research library (one compact .md each, plus a resized ≤1600 px JPEG), INDEX.md and a 3-line rights note. All 11 Commons licenses were spot-checked and match; 04 (LA84) is public domain by its 1928 publication date (US). Not yet in a budget; Frank picks.
+
 ## v3.36 — 2026-10-18
 - **Claude Code is an optional second reviewer** (Frank 2026-10-18, relayed by Grok Bot): (a) copy check after vetting, before budget/compose; (b) proof check of rendered PNGs alongside Desk's own visual QA; (c) site and code work. Desk stays the writer and source-of-truth keeper; Claude Code never adds facts. Skip it if it's unavailable. PLAN §6, STAGING § Claude Code. First run: No. 3 copy check (Opus); taken/rejected fixes are logged in each item's `vet_notes`.
 - **No. 3 budget feedback applied** (`issues/2026-10-19/budget-submission.json`, Frank 09:13 ET): Vet Worlds is now the lead (165w); the Controversial Call is rewritten for flow (v2, no new facts; v1 kept) and becomes the page-1 feature; Club Results runs only if a club fencer qualified at the NJ JO qualifier, otherwise the box is dropped (no "also fenced"); Overheard runs; gear and the weekly class table are out; Winter Camp stays "contact the club". Fill is about 84%; compose waits for Frank's additions.

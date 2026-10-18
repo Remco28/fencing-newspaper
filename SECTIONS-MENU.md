@@ -5,6 +5,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 > **No fixed lengths (v3.28, chat: Frank 2026-10-13):** word counts in this menu are historical ideas only.
 > **Canonical lineup = CONTENT-HIERARCHY.md** (reviewed v3.27, 2026-10-13). This file is the idea menu and history; where they differ, the hierarchy wins. Locked verdicts below override the per-item ✅ marks (e.g. crossword, quiz, jokes and weather are **cut**).
 > Added since the menu was written: **Overheard on Reddit** (No. 1+), **Nearby Tournaments** board (formerly "Go Cheer"; v3.29), **THE WEAPON** back-page figure, **By the Book** (v3.25), **For the Parents** (v3.26; name final v3.28). Comics: Frank, and Ling may draw from No. 3 or later.
+> **Photo from History** (v3.37, Frank 2026-10-18): 🔶 recurring and optional, **one photo per issue**, epee-focused, free-to-use images only. Caption + credit are **mandatory**; about 100–150 words including the caption. The pile lives in `staging/history-photos/` (INDEX.md lists license, print-readiness and used-in-issue). The exact credit and license version print with the photo, plus a change notice if cropped or grayscaled.
 
 ## LOCKED VERDICTS — Frank, 2026-10-06 (v1 lineup)
 - News: BEEFIER — a few interesting articles per issue, not just results. Weighting: club newsletter news first (personal), then national/regional tournaments, locals last. Results matter but aren't everything.
