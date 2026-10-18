@@ -5,7 +5,7 @@ Why CDP and not `chrome --print-to-pdf`: newer Chrome ignores
 --print-to-pdf-no-header, stamping date/URL/title chrome on every page.
 Page.printToPDF with displayHeaderFooter=false never does. (Style guide section 1.)
 
-Usage: render.py input.html [output.pdf]
+Usage: render.py input.html [output.pdf] [--allow-flag] [--author=NAME]
 """
 import base64
 import hashlib
@@ -93,6 +93,44 @@ def cdp_call(s, msg_id, method, params=None):
             return msg.get("result", {})
 
 
+
+DEFAULT_AUTHOR = "Nico's Dad"  # STYLE-GUIDE: PDF Author field = Frank's joke byline
+
+
+def set_pdf_author(path, author):
+    """Set /Author in the PDF Info dict via a stdlib incremental update (classic xref only).
+    Chrome's printToPDF has no metadata parameters. Returns True on success."""
+    import re as _re
+    data = open(path, "rb").read()
+    tail = data[-2048:]
+    m_sx = _re.search(rb"startxref\s+(\d+)\s+%%EOF\s*$", tail)
+    m_tr = list(_re.finditer(rb"trailer\s*<<(.*?)>>", data[-8192:], _re.S))
+    if not m_sx or not m_tr:
+        return False  # xref streams etc.: leave untouched
+    trailer = m_tr[-1].group(1)
+    m_info = _re.search(rb"/Info\s+(\d+)\s+(\d+)\s+R", trailer)
+    m_root = _re.search(rb"/Root\s+(\d+)\s+(\d+)\s+R", trailer)
+    m_size = _re.search(rb"/Size\s+(\d+)", trailer)
+    if not (m_info and m_root and m_size):
+        return False
+    num, gen = int(m_info.group(1)), int(m_info.group(2))
+    m_obj = _re.search(rb"(?<![0-9])%d %d obj\s*<<(.*?)>>\s*endobj" % (num, gen), data, _re.S)
+    body = m_obj.group(1) if m_obj else b""
+    body = _re.sub(rb"/Author\s*\((?:\\.|[^\\)])*\)", b"", body)
+    esc = author.replace("\\", "\\\\").replace("(", "\\(").replace(")", "\\)").encode("latin-1")
+    new_obj = b"%d %d obj\n<<" % (num, gen) + body + b"/Author (" + esc + b")>>\nendobj\n"
+    out = bytearray(data)
+    if not out.endswith(b"\n"):
+        out += b"\n"
+    off = len(out)
+    out += new_obj
+    xref_off = len(out)
+    out += b"xref\n%d 1\n%010d %05d n \n" % (num, off, gen)
+    out += (b"trailer\n<</Size " + m_size.group(1) + b" /Root " + m_root.group(1) + b" " + m_root.group(2)
+            + b" R /Info %d %d R /Prev " % (num, gen) + m_sx.group(1) + b">>\nstartxref\n%d\n%%%%EOF\n" % xref_off)
+    open(path, "wb").write(bytes(out))
+    return True
+
 def main():
     src = sys.argv[1] if len(sys.argv) > 1 else "prototype/monday-v2.html"
     out = sys.argv[2] if len(sys.argv) > 2 else (
@@ -157,6 +195,16 @@ def main():
         with open(out, "wb") as f:
             f.write(base64.b64decode(res["data"]))
         print(f"wrote {out}")
+        # PDF Author (STYLE-GUIDE § PDF filename): --author=NAME, else <meta name="author">, else default
+        author = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--author=")), None)
+        if author is None:
+            try:
+                import re as _re
+                m = _re.search(r'<meta\s+name="author"\s+content="([^"]*)"', open(src, encoding="utf-8").read())
+                author = m.group(1) if m else DEFAULT_AUTHOR
+            except Exception:
+                author = DEFAULT_AUTHOR
+        print("pdf Author set: " + author if set_pdf_author(out, author) else "pdf Author NOT set (unsupported xref)")
         flags = []  # any FLAG fails the build unless --allow-flag is passed (V7)
         # --- whitespace instrument: footers are pinned to page bottom, so the
         # honest slack is the GAP ABOVE each footer (dead zone between last

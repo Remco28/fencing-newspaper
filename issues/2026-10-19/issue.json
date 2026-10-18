@@ -1,0 +1,64 @@
+{
+ "issue": 3,
+ "vol": "I",
+ "date": "2026-10-19",
+ "dateline": "Monday Edition · Vol. I — No. 3 · Chatham, N.J. · October 19, 2026",
+ "status": "PROOF v1 — not published, not printed; awaiting Frank",
+ "composed_at": "2026-10-18T15:50:00-04:00",
+ "approval": "Frank 2026-10-18 15:23 ET: budget approved with one change (cut Epee on Screen)",
+ "pdf": "issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf",
+ "previews": [
+  "issues/2026-10-19/preview-p1.png",
+  "issues/2026-10-19/preview-p2.png"
+ ],
+ "pdf_metadata": {
+  "Title": "En Garde Gazette — Vol. I No. 3 — October 19, 2026",
+  "Author": "Nico's Dad"
+ },
+ "build": "python3 issues/2026-10-19/build/compose.py x && python3 prototype/render.py issues/2026-10-19/issue.html issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf --allow-flag",
+ "pages": {
+  "1": [
+   "Vet Worlds, Part Two (lead)",
+   "Controversial Calls (feature)",
+   "World No. 1’s Message to His Future Self",
+   "Photo from History 06 (cropped)"
+  ],
+  "2": [
+   "Nearby Tournaments (Morris, Ultimate, Medeo)",
+   "Deadlines",
+   "N.J. High School Fencing",
+   "By the Book",
+   "For the Parents",
+   "Class Notes",
+   "Overheard on Reddit",
+   "Winter Camp"
+  ]
+ },
+ "cut": [
+  "Epee on Screen (Frank)",
+  "Club Results box (no official NJ JO qualifier results posted on AskFRED as of ~15:24 ET)"
+ ],
+ "instruments": {
+  "p1_gap_in": 0.74,
+  "p2_gap_in": 0.96,
+  "p2_gap_flag": "over 0.75in; issue is short, not tight",
+  "row1_spread_in": 0.07,
+  "row2_spread_in": 0.47,
+  "pages": 2
+ },
+ "claude_code_proof_check": {
+  "taken": [
+   "caption/blurb redundancy: blurb cut to one line",
+   "credit date Nov. 21, 1965",
+   "non-breaking space in 9:30 a.m. etc."
+  ],
+  "rejected": [
+   "AM/PM in tables (house style since No. 2)",
+   "left-align/hyphenate narrow justified text (STYLE-GUIDE: justified)",
+   "SarroWaite spelling (AskFRED official spelling)",
+   "p2 bottom band (needs content, not filler)",
+   "Medeo #5 3rd line (minor)"
+  ],
+  "note": "footer apostrophe already curly in source (glyph renders straight in small caps)"
+ }
+}

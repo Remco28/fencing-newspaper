@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>En Garde Gazette — Vol. I No. 3 — October 19, 2026</title>
+<meta name="author" content="Nico's Dad">
+<style>
+  @page { size: Letter; margin: 0.5in 0.5in 0.4in 0.5in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt; line-height: 1.26; color: #000;
+    font-variant-numeric: tabular-nums; }
+  .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
+  .page:last-child { page-break-after: auto; }
+  .page .footer { margin-top: auto; }
+
+  .masthead { display: flex; align-items: center; gap: 18pt; }
+  /* margin on img clears hairlines from PNG flourishes (art runs to image edges) */
+  .masthead img { display: block; width: 50%; height: auto; margin: 0 10pt; flex: none; }
+  /* Flanks: newspaper ears — clear air from logo (hairlines must not kiss masthead) */
+  .flank { flex: 1; min-width: 0; padding: 5pt 7pt; margin: 0;
+    border-top: 0.75pt solid #000; border-bottom: 0.75pt solid #000;
+    line-height: 1.22; }
+  .flank.left {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.5pt; font-variant: small-caps; letter-spacing: 0.06em;
+    text-align: center; font-weight: 400; }
+  .flank.right {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.8pt; font-style: italic; letter-spacing: 0.01em;
+    text-align: center; font-weight: 400; }
+
+  /* Dateline: centered edition word (display face) + single meta line under it — not three-span */
+  .dateline { text-align: center;
+    border-top: 3pt double #000; border-bottom: 2pt solid #000;
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+  .dateline .edition {
+    font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
+    font-weight: 700; font-size: 12.5pt; line-height: 1.02;
+    letter-spacing: 0.16em; text-transform: uppercase; }
+  .dateline .meta {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.5pt; letter-spacing: 0.05em; margin-top: 1.5pt;
+    font-variant: small-caps; font-weight: 400; }
+
+  .cols3 { display: flex; gap: 9pt; }
+  .cols3 > .c { flex: 1; min-width: 0; }
+  .cols3 > .span2 { flex: 2.06; }
+  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: 9pt; }
+  .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
+
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
+  /* Prose furniture: title + text ONLY — never wrap in .box (STYLE-GUIDE §8) */
+  .rail-block { margin-bottom: 6pt; padding: 0; border: none; }
+  .rail-block + .rail-block { margin-top: 2pt; } /* spacing only — no HR between stacked rails */
+  /* Shared title type; underline ONLY inside .box (tabular utilities) */
+  .boxtitle, .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 0.5pt;
+    padding-bottom: 2pt; margin-bottom: 3pt; }
+  .box > .boxtitle { border-bottom: 1pt solid #000; }
+  .rail-title { border: none; border-bottom: none; padding-bottom: 0; margin-bottom: 2pt; }
+
+  /* Per-slot type scale (STYLE-GUIDE §4) */
+  h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 18.5pt; line-height: 1.02; letter-spacing: -0.35pt; margin-bottom: 2pt; }
+  .span2 > p { font-size: 9pt; } /* lead body +0.5pt vs shorts */
+  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; } /* lead only */
+  h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; } /* shorts default */
+  .slot-a h2.head { font-size: 12pt; } /* Secondary A / page-2 featured */
+  .slot-a > p { font-size: 8.8pt; }
+  .slot-b h2.head { font-size: 10.5pt; } /* Secondary B / NJ HS */
+  .slot-feature h2.head { font-size: 13pt; line-height: 1.04; } /* page-2 span2 featured */
+  .slot-feature > p { font-size: 8.8pt; }
+  /* Byline ONLY for real guest authors — never "Gazette Staff" (PLAN §1b) */
+  .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; margin-bottom: 3pt; }
+  p { margin-bottom: 3pt; text-align: justify; hyphens: auto; }
+  p:last-child { margin-bottom: 0; }
+  .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
+  /* Page 2: vertical rhythm — no HRs, no rail-title underlines */
+  .page:last-child > .cols3 { margin-bottom: 6pt; }
+  .page:last-child > .cols3:last-of-type { margin-bottom: 0; }
+
+  table.board { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 8.5pt; }
+  table.board th { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; text-align: left; border-bottom: 1.5pt solid #000; padding: 1pt 4pt 1pt 0; }
+  table.board td { border-bottom: 0.5pt solid #000; padding: 1pt 4pt 1pt 0; vertical-align: top; }
+  table.board tr:last-child td { border-bottom: none; }
+  td.r, th.r { text-align: right; }
+  table.board th.r { text-align: right; }
+  td.num { text-align: right; white-space: nowrap; }
+
+  .photo { margin-bottom: 3pt; }
+  .photo img { display: block; width: 100%; height: auto; /* no silent crop — full frame */
+    filter: grayscale(100%); }
+  .caption { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; margin-top: 2pt;
+    text-align: left; line-height: 1.3; }
+
+  .footer { border-top: 2.5pt solid #000; margin-top: 1pt; padding-top: 2pt;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt;
+    display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: 0.3pt; }
+  .foot-archive { text-transform: none; letter-spacing: 0; font-size: 6.5pt; color: #444; }
+  /* ---- Issue 2026-10-08 composition additions (no furniture changes) ---- */
+  /* Parent Q&A pattern (STYLE-GUIDE §8a; prototype/qa-block.html) */
+  .qa .q { font-style: italic; font-weight: bold; margin-bottom: 2pt; text-align: left; }
+  .qa .q::before { content: "Q. "; font-style: normal; font-weight: 900;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  .qa .a { margin-bottom: 0; text-align: justify; hyphens: auto; }
+  .qa .a::before { content: "A. "; font-family: "Arial", "Liberation Sans", sans-serif;
+    font-weight: 900; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  /* Lead run-in labels */
+  .span2 p b.run { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 8pt; letter-spacing: 0.2pt; }
+  /* Big signup board: two tables side by side inside one tabular .box */
+  .board-split { display: flex; gap: 12pt; }
+  .board-split > div { flex: 1; min-width: 0; }
+  .board-cap { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 3pt 0 1pt 0; }
+  .board-cap:first-child { margin-top: 0; }
+  .board-cap span { font-weight: 400; text-transform: none; letter-spacing: 0; font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  .boxnote { margin-top: 3pt; }
+  /* Stacked articles/rails inside one column: air between pieces (margin only, never an HR) */
+  .c > .slot-b + .slot-b, .c > .box + .slot-b, .c > .photo + .slot-b { margin-top: 5pt; }
+  .c > .slot-b + .rail-block { margin-top: 6pt; }
+  .c > .photo + .rail-block { margin-top: 6pt; }
+  .boxnote { text-align: left; }
+  /* Weekly classes: times left-aligned in a fixed column with clear air before the class name (proof v2) */
+  table.board th.t, table.board td.t { text-align: left; white-space: nowrap; padding-right: 8pt; }
+  /* ---- Issue 2026-10-13 composition additions (no furniture changes) ---- */
+  .figure img { display: block; width: 100%; height: auto; }
+  .figure .caption { margin-top: 3pt; }
+  .factcheck { font-style: italic; }
+  /* ---- Issue 2026-10-19 composition additions (no furniture changes) ---- */
+  .credit { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; color: #333; margin-top: 2pt; text-align: left; line-height: 1.25; overflow-wrap: anywhere; text-align: left !important; hyphens: none; }
+  .c > .rail-block + .slot-b, .c > .slot-b + .box { margin-top: 6pt; }
+  .eds-note { font-style: italic; }
+  p, td { text-wrap: pretty; }
+  h1.head, h2.head { text-wrap: balance; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 (FRONT) ==================== -->
+<div class="page">
+  <div class="masthead">
+    <div class="flank left">Published by a fencing parent with a bot.</div>
+    <img src="../../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly">
+    <div class="flank right">It is better to deserve a rating than to have one.</div>
+  </div>
+  <div class="dateline">
+    <div class="edition">Monday Edition</div>
+    <div class="meta">Vol. I — No. 3 &nbsp;·&nbsp; Chatham, N.J. &nbsp;·&nbsp; October 19, 2026</div>
+  </div>
+
+  <div class="cols3 ruled">
+    <div class="c span2">
+      <h1 class="head">Vet Worlds, Part Two: Two World Titles for U.S. Women</h1>
+      
+      <p>The U.S. women’s epee veterans left the Veteran World Championships in Tbilisi, Georgia, with two world titles and four individual medals.</p>
+<p>Leslie Marx led the way in Veteran 50, working through an 83-fencer field and beating Belgium’s Nathalie Vandewalle 10-4 in the final. The FIE says it was her first title in the event since 2017.</p>
+<p>The Veteran 40 gold came down to one touch. Cassandra Bates lost the final 10-9 to Julia Ashchuk and took silver, and Lacey Biniak, who fell to Ashchuk 10-8 in the semifinals, took bronze. That gave the U.S. two of the four medals in a 63-fencer field. In Veteran 70, Charlotta Bowie won bronze after a 10-7 semifinal loss to Germany’s Astrid Kircheis, the eventual champion.</p>
+<p>Then came the team event. In a field of 19 teams, the U.S. beat Italy 45-40 in the semifinals and France 45-31 in the final for gold.</p>
+<p>The championships, held Oct.&nbsp;9–17, drew 1,273 athletes from 65 nations. The women’s epee events ran Oct.&nbsp;12–14.</p>
+
+      <div class="slot-a" style="margin-top:6pt;">
+        <h2 class="head">Controversial Calls: The Touch Only the Referee Thought She Saw</h2>
+        <p class="eds-note"><i>Editor’s note: The fencer in this story is the editor’s son.</i></p>
+<p>The light went on, and the argument started. In a pool bout at a national tournament two years ago, an Elite FC fencer’s opponent scored a touch that, the fencer’s family says, landed off the strip. The fencer said the blade never hit him.</p>
+<p>By the family’s account, the opponent waved a hand to signal no touch, the Elite FC coach pointed that out on the spot, and neither the opponent’s coach nor family said a word in the touch’s defense. The only person who thought it was a touch, the family says, was the referee, who said she thought she saw it hit. The fencer made a formal appeal, and the Head Referee came over and ruled that it was the referee’s call. Pools had no video replay. The fencer lost the bout by one touch.</p>
+<p>On paper, a hit that misses the fencer shouldn’t count. In epee, touches “made on the ground where it is not insulated” are disregarded (t.93), and a touch that lands on the strip and registers is annulled (t.94.1). The catch is who decides whether it landed. That is a “point of fact,” and against a point of fact “no appeal can be made” (t.172.1). An appeal can challenge only how a rule was applied, and the Head Referee settles it (t.172.2, t.174). No rule we found gives an opponent’s signal any formal weight.</p>
+<p><b class="run">Both sides (opinion).</b> For the call: the referee judges from where she stands, and making her view final keeps bouts from being re-argued touch by touch. Against it: when the fencer who scored signals a miss, a referee who only thought she saw a hit has a thin basis for a decisive touch.</p>
+<p><b class="run">The verdict: judgment call.</b> On the family’s own account, the Head Referee applied the rules correctly. A referee’s view of a hit can’t be appealed, no matter how differently it looked from the side of the strip.</p>
+<p><b class="run">For parents,</b> the lesson is narrow but useful. You can’t appeal what a referee saw, only how a rule was applied. Only the fencer can appeal, and it has to happen right away, before the next touch. At national tournaments today, video replay is guaranteed only in later direct-elimination rounds (from the round of 16 or 8, depending on the event), not in pools. And a parent’s phone video doesn’t count.</p>
+      </div>
+    </div>
+    <div class="c">
+      <div class="slot-b"><h2 class="head">World No.&nbsp;1’s Message to His Future Self</h2><p>After a quarterfinal loss at the Tokyo Olympics, Egypt’s Mohamed Elsayed recorded a private video message to himself: a promise that came true with a bronze medal at Paris 2024, Egypt’s first Olympic fencing medal in 12 years. Now ranked No. 1 in the world in men’s epee, he tells Team USA epeeist Ari Simmons the story on the FIE’s podcast “The Will to Win” (Episode 3). His advice: “Fencing is like life. There’s always a comeback in life, and there’s always a comeback in fencing.” Listen on the FIE’s YouTube channel.</p></div><div class="rail-block"><div class="rail-title">Photo from History</div><h2 class="head">1965: Club Epee, With Everyone Close Enough to Watch</h2><div class="photo"><img src="media/06-dutch-team-epee-1965-crop.jpg" alt="Black-and-white photograph of two masked epee fencers: Van Tiggele at left, seen from behind in a forward movement, and Popken at right in a low stance with his free arm raised; spectators and another bout are behind them."><p class="caption">Laurens van Tiggele, left, faces Raoul Popken at the Dutch national team epee championship in Amsterdam’s Oude RAI on Nov.&nbsp;21, 1965. The winning club was Zaal Abrahamse of The Hague; spectators and another bout fill the space behind the two fencers.</p></div><p>Look closely and a body cord trails from the nearest fencer.</p><p class="credit">Photo: unknown photographer / Anefo, Nationaal Archief, collection 2.24.01.05, no. 918-4711 (Nov. 21, 1965). CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Full-resolution JPEG converted from the archive’s original TIFF. Cropped. Source: https://commons.wikimedia.org/wiki/File:Duel_tussen_Van_Tiggele_(links)_en_Popken,_Bestanddeelnr_918-4711.jpg.</p></div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 3</span>
+    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>
+    <span>For fun only — facts aren’t guaranteed accurate.</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 (BACK) ==================== -->
+<div class="page">
+  <div class="dateline" style="margin-top:0;">
+    <div class="edition">Page Two</div>
+    <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 3</div>
+  </div>
+
+  <div class="box w3">
+    <div class="boxtitle">Nearby Tournaments — Elite FC Entries</div>
+    <div class="board-split">
+      <div>
+        <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sat., Oct.&nbsp;24</span></div>
+        <table class="board"><colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr><td class="num">8:00 AM</td><td>Junior Women</td><td>Amina Gore, Olivia Hayes, Anayaa Sheth</td></tr><tr><td class="num">8:00 AM</td><td>Y12 Men</td><td>Kian Jaising, Joshua Jeong, Remy Ng</td></tr><tr><td class="num">12:30 PM</td><td>Cadet Men</td><td>Pablo Aguirre, Connor Anderson, Nico Ng, Caden Wu</td></tr><tr><td class="num">3:00 PM</td><td>Y14 Women</td><td>Stella Kuo, Mila Siu</td></tr></table>
+        <div class="board-cap">Ultimate Cup RJCC <span>· Hillsborough, N.J. · Oct.&nbsp;31–Nov.&nbsp;1</span></div>
+        <table class="board"><colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup><tr><th class="r">Day</th><th>Event</th><th>Elite FC</th></tr><tr><td class="num">Sat 10/31</td><td>Junior Women</td><td>Olivia Hayes, Anayaa Sheth, Adela Sullivan</td></tr><tr><td class="num">Sat 10/31</td><td>Cadet Men</td><td>Maksim Milinkovic, Caden Wu</td></tr><tr><td class="num">Sun 11/1</td><td>Junior Men</td><td>Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng</td></tr><tr><td class="num">Sun 11/1</td><td>Cadet Women</td><td>Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young</td></tr></table>
+      </div>
+      <div>
+        <div class="board-cap">Morris Cup RYC/RJCC <span>· Suffern, N.Y. · Sun., Oct.&nbsp;25</span></div>
+        <table class="board"><colgroup><col style="width:0.62in"><col style="width:0.78in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr><td class="num">8:00 AM</td><td>Cadet Women</td><td>Amina Gore, Olivia Hayes, Adela Sullivan, Penny Young</td></tr><tr><td class="num">8:00 AM</td><td>Junior Men</td><td>Pablo Aguirre, Nico Ng</td></tr><tr><td class="num">10:00 AM</td><td>Y8 Women</td><td>Madeline Siu</td></tr><tr><td class="num">10:30 AM</td><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu</td></tr><tr><td class="num">1:30 PM</td><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, <span style="white-space:nowrap">Ash Shah-Mirani</span></td></tr><tr><td class="num">3:30 PM</td><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong, Maximus Siu</td></tr></table>
+        <div class="board-cap">Medeo Youth Challenges <span>· Bound Brook, N.J.</span></div>
+        <table class="board"><colgroup><col style="width:0.62in"><col style="width:0.4in"><col></colgroup><tr><th class="r">Day</th><th>No.</th><th>Elite FC</th></tr><tr><td class="num">Sun 10/25</td><td>#4</td><td>Nora Li (Y10 Mixed)</td></tr><tr><td class="num">Sun 11/8</td><td>#5</td><td>Samuel SarroWaite (Y12 Men), Christina Jiang (Y12 Women), Nora Li (Y10 Mixed), Owen Li (Y14 Men)</td></tr></table>
+      </div>
+    </div>
+    <p class="boxnote">Morris Cup is at Rockland Community College’s Eugene Levy Field House: 20 Elite FC fencers, 30 entries. Ultimate Cup is at Iron Peak Sports &amp; Events in Hillsborough: 10 Elite FC fencers, 13 entries. The Medeo Youth Challenges are at Medeo Fencing Club in Bound Brook.</p>
+  </div>
+
+  <div class="cols3 ruled">
+    <div class="c"><div class="box"><div class="boxtitle">Deadlines</div><table class="board"><colgroup><col style="width:0.62in"><col></colgroup><tr><th class="r">Date</th><th>What closes</th></tr><tr><td class="num">Thu 10/22</td><td>Morris Cup: last day to enter (late fees)</td></tr><tr><td class="num">Thu 10/29</td><td>Ultimate Cup: last day to enter (late fees)</td></tr><tr><td class="num">Sun 11/1</td><td>Cobra Challenge (Secaucus, Nov.&nbsp;27–29): regular entry closes; late entry to Nov.&nbsp;7</td></tr><tr><td class="num">Wed 11/11</td><td>Junior Olympics: regular-fee deadline</td></tr><tr><td class="num">Fri 1/8</td><td>N.J. high school: independent fencers’ entries close</td></tr></table><p class="boxnote">Tournament deadlines are 11:59 p.m. Pacific (2:59 a.m. Eastern the next day), from the USA Fencing pages.</p></div><div class="slot-b"><h2 class="head">N.J. High School Fencing: <span style="white-space:nowrap">2026–27</span> Dates Are Set</h2><p>High-school season: tryouts Nov.&nbsp;23–25, first practice Nov.&nbsp;30, and competition may begin Dec.&nbsp;7.</p>
+<p>Independent fencers’ entries close Jan.&nbsp;8, 2027.</p>
+<p>Team state finals are Feb.&nbsp;25 at Morris Hills; individual states are Feb.&nbsp;27 at Hunterdon Central.</p></div></div><div class="c"><div class="rail-block"><div class="rail-title">By the Book</div><h2 class="head">You Can’t Appeal What the Referee Saw</h2><p>A referee’s ruling on what happened on the strip, like whether a hit landed or a fencer stepped off the side, is a “point of fact,” and it can’t be appealed (t.172). Argue a point of fact during the bout, or make an appeal the Head Referee finds unjustified (t.174), and it’s a First Group offense: a yellow card the first time, then a red card (a penalty touch) for each repeat in that bout (t.165). Appeal the rule, not the call.</p></div><div class="rail-block"><div class="rail-title">For the Parents</div><h2 class="head">Qualifying Isn’t Registering</h2><p>Qualifying isn’t the same as registering. A fencer who earns a Junior Olympics spot, including through a division qualifier, still has to sign up; USA Fencing says it does not register anyone automatically. Register by the Nov.&nbsp;11 regular-fee deadline, even if a fencer’s qualifier comes later; the entry stays “pending” until qualification is confirmed. Division results can take two to five days to reach USA Fencing. The 2027 Junior Olympics run Jan.&nbsp;8–11 in Oklahoma City.</p></div><div class="slot-b"><h2 class="head">Class Notes</h2><p>Saturday group classes: Musketeers at 11&nbsp;a.m., Advanced at 1&nbsp;p.m.</p>
+<p>Fridays: Mini Musketeers at 4:15&nbsp;p.m., then open bouting in the evening.</p></div></div><div class="c"><div class="slot-b"><h2 class="head">Overheard on Reddit: After the Split</h2><p>After October’s NAC, the first with fields split into Elite and Challenger, r/Fencing compared notes. The top-voted take came from a fan of the change: top fencers used to get easy pools and early DEs, and now they meet strong opponents every round. One fencer placed in Elite called it the most concentrated U.S. event they’d seen. Another put it simply: “Pools was tough but it was a lot more fun.” Not everyone was sold. One poster said coaches found the day brutal, for them and for referees, and another argued the tiers reflect how active a fencer is more than how strong. Others said it’s too early to judge from one event, and several want the 20% pool cut dropped in Challenger.</p><p class="factcheck"><b class="run">Fact check:</b> Fields are set by Unified Points List rank 15 days out. In Cadet, an Elite top-64 finish (51.6 points) outscores a Challenger top-16 finish (49.2).</p></div><div class="slot-b"><h2 class="head">Winter Camp: Sign Up Now</h2><p>Elite FC Winter Camp runs Dec.&nbsp;27–31, 9:30&nbsp;a.m. to 2&nbsp;p.m., and it’s open to all levels: footwork, technical and tactical drills, strength and conditioning, and games. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. The club asks campers to register as soon as possible; contact the club for price and sign-up.</p></div></div>
+  </div>
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 3</span>
+    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>
+    <span>For fun only — facts aren’t guaranteed accurate.</span>
+  </div>
+</div>
+
+</body>
+</html>

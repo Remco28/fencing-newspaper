@@ -81,7 +81,8 @@
   "Overheard runs; gear and the weekly class table are out; Winter Camp stays at 'contact the club'.",
   "New step: Claude Code read the Vet Worlds lead, the Controversial Call, By the Book, For the Parents and Overheard as a second copy checker (no facts added). Fixes taken are noted on each card.",
   "Fill is about 84%, leaving room for about 330 words, for the content you said you'd add. Nothing gets composed until you send it.",
-  "New at 3:15 p.m.: Photo from History, entry 06 (1965 Dutch team championship, CC0), on page 2 in one column. Fill is now about 101%, over by about 30 words. The rough estimate tolerates up to 108%. Trimming the empty floor from the photo (see the card) brings it to about 99%. Any additions from you would now need a cut."
+  "New at 3:15 p.m.: Photo from History, entry 06 (1965 Dutch team championship, CC0), on page 2 in one column. Fill is now about 101%, over by about 30 words. The rough estimate tolerates up to 108%. Trimming the empty floor from the photo (see the card) brings it to about 99%. Any additions from you would now need a cut.",
+  "3:23 p.m.: Frank approved the budget with one change: Epee on Screen is cut. Photo 06 is cropped (bottom ~25% of empty floor; credit says 'Cropped.'). Club Results box dropped: AskFRED showed no results posted for the NJ JO qualifier as of ~3:24 p.m. Proof PDF composed (not published or printed)."
  ],
  "slots": [
   {
@@ -534,7 +535,7 @@
    "slot": "Epee on Screen",
    "budget": "3–5 rows",
    "item": "desk-epee-on-screen-2026-10-18",
-   "proposed": true,
+   "proposed": false,
    "cost": {
     "type": "table",
     "rows": 4,
@@ -569,7 +570,8 @@
      ]
     ]
    },
-   "summary": "From the FIE calendar. Manama and Vancouver are new, and San José and Berne/Wuxi carry over from No. 2 (still upcoming). The FIE lists no start times or prices, so none print."
+   "summary": "From the FIE calendar. Manama and Vancouver are new, and San José and Berne/Wuxi carry over from No. 2 (still upcoming). The FIE lists no start times or prices, so none print.",
+   "cut": "Frank 2026-10-18 15:23 ET: cut from No. 3 (budget approval with this change)."
   },
   {
    "key": "overheard",
@@ -606,7 +608,7 @@
     "type": "figure",
     "span": 1,
     "w": 1055,
-    "h": 1600,
+    "h": 1200,
     "words": 170,
     "head": true,
     "note": "words = caption 42 + blurb 99 + credit 29 (caption_in covers spacing only)"

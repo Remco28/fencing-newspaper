@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.38 — 2026-10-18
+- **No. 3 proof composed** (Frank 15:23 ET: budget approved, Epee on Screen cut): `issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf` + `preview-p1/p2.png`, PROOF v1, not published or printed. Photo 06 cropped (bottom ~25% of floor; credit says "Cropped."); Club Results box dropped (no NJ JO qualifier results posted on AskFRED at ~15:24 ET). Composer and overrides in `issues/2026-10-19/build/`. Claude Code (Opus) proof check run; taken/rejected fixes in `issue.json`.
+- **render.py sets PDF Author** (STYLE-GUIDE: "Nico's Dad"): stdlib incremental update of the Info dict after printToPDF (Chrome can't set it). Order: `--author=NAME`, else `<meta name="author">`, else "Nico's Dad". Title still comes from `<title>`.
+
 ## v3.37 — 2026-10-18
 - **New recurring optional section: Photo from History** (Frank 2026-10-18, relayed by Grok Bot): one epee photo per issue, caption + credit mandatory, about 100–150 words including the caption (SECTIONS-MENU). New cross-issue pile `staging/history-photos/`: 12 entries distilled from Frank's research library (one compact .md each, plus a resized ≤1600 px JPEG), INDEX.md and a 3-line rights note. All 11 Commons licenses were spot-checked and match; 04 (LA84) is public domain by its 1928 publication date (US). Not yet in a budget; Frank picks. **Update 15:15 ET:** Frank approved 06 for No. 3 (page 2, 1 col, grayscale OK; INDEX marked). The budget page's figure cost now also counts caption/blurb/credit words (`cost.words`, optional `cost.head`).
 
