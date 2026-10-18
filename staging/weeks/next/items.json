@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-18T09:32:00-04:00",
+ "updated_at": "2026-10-18T15:20:00-04:00",
  "note": "Hold pile for Issue No. 3 (week of Oct 19). Created empty 2026-10-07 at the roll-forward after Issue No. 1; No. 2 rolled 2026-10-13. Budget for No. 3 built Sun 2026-10-18 (Frank, voice) instead of the Monday 8:50 routine.",
  "items": [
   {
@@ -1703,6 +1703,48 @@
    "vetted_at": "2026-10-18T09:12:59-04:00",
    "vetted_by": "frank",
    "vet_notes": "Claude Code copy check 2026-10-18 ~09:35 ET (claude -p, Opus; no facts added); Desk applied: 'one Elite DE win' -> 'an Elite top-64 finish' (T64 can come via bye); 'coast' -> 'get'; coaches line de-duplicated; 'how often you compete' line recast; 'too early' line smoothed. Rejected: drop '20%' (posters' wording, true for Cadet/Junior). Frank vetted 09:12 ET; answer: run this week."
+  },
+  {
+   "id": "history-photo-06-dutch-team-epee-1965",
+   "kind": "photo_feature",
+   "section": "Photo from History",
+   "headline": "Photo from History: 1965: Club epee, with everyone close enough to watch",
+   "body": "The Oude RAI in Amsterdam was the setting for the Dutch national team epee championship on 21 November 1965. In this photograph, Laurens van Tiggele is at left and Raoul Popken at right; the archive records Zaal Abrahamse of The Hague as the winning club. Around their exchange, the hall is busy: a spectator sits close behind them, another bout continues in the background, and a body cord trails from the nearest fencer. The tight framing keeps all of that activity together, with the two masked opponents in the foreground and the people watching and competing close behind them.",
+   "caption": "Laurens van Tiggele, left, faces Raoul Popken at the Dutch national team epee championship in Amsterdam’s Oude RAI on 21 November 1965. The winning club was Zaal Abrahamse of The Hague; spectators and another bout fill the space behind the two fencers.",
+   "credit": "Photo: unknown photographer / Anefo, Nationaal Archief, collection 2.24.01.05, no. 918-4711 (21 November 1965). CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Full-resolution JPEG converted from the archive’s original TIFF; no crop. Source: https://commons.wikimedia.org/wiki/File:Duel_tussen_Van_Tiggele_(links)_en_Popken,_Bestanddeelnr_918-4711.jpg.",
+   "alt_text": "Black-and-white photograph of two masked epee fencers: Van Tiggele at left, seen from behind in a forward movement, and Popken at right in a low stance with his free arm raised; spectators and another bout are behind them.",
+   "word_count": 170,
+   "media_path": "staging/weeks/next/media/06-dutch-team-epee-1965.jpg",
+   "media_id": "media-history-06-dutch-team-epee-1965",
+   "image_px": [
+    1055,
+    1600
+   ],
+   "layout": {
+    "span": 1,
+    "page": 2,
+    "grayscale": "ok (CC0: no change notice required; add 'Converted to grayscale' to the credit as good practice)"
+   },
+   "license": "CC0 1.0 Universal",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "source": "history-photos",
+   "pile_entry": "staging/history-photos/06-dutch-team-epee-1965.md",
+   "provenance": {
+    "commons": "https://commons.wikimedia.org/wiki/File:Duel_tussen_Van_Tiggele_(links)_en_Popken,_Bestanddeelnr_918-4711.jpg",
+    "archive": "https://www.nationaalarchief.nl/onderzoeken/fotocollectie/aaceb3c0-d0b4-102d-bcf8-003048976d84",
+    "license_check": "2026-10-18: Commons says CC0, matches"
+   },
+   "cautions": [
+    "Names and left/right order come from the archive record (historical figures, not Elite FC); don't infer the winner of the exchange.",
+    "Keep the archive's 'Zaal Abrahamse' spelling for the winning club."
+   ],
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "frank",
+   "vetted_at": "2026-10-18T15:15:00-04:00",
+   "vet_notes": "Frank approved 2026-10-18 ~15:15 ET (relayed by Grok Bot): add entry 06 as Photo from History, 1 column, grayscale OK, caption + blurb + credit + alt from the card.",
+   "slot_hint": "photo-history",
+   "created_at": "2026-10-18T15:20:00-04:00"
   }
  ],
  "rolled_forward": {

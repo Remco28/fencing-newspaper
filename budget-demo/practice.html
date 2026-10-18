@@ -449,7 +449,7 @@ textarea#globalNotes{width:100%;min-height:96px;padding:10px 12px;border:1px sol
     if (c.type === "table") return (C.table_head + (c.rows || 0) * (span >= 3 ? C.row_full : C.row_rail) + C.gap) * span;
     if (c.type === "table_rows") return (c.rows || 0) * C.row_rail;
     if (c.type === "qa") return C.head_short + (itemWords(it) || 40) / C.wpi + C.gap;
-    if (c.type === "figure") { var wIn = span >= 2 ? C.span2_width_in : C.col_width_in; return (wIn * (c.h / c.w) + C.caption_in + C.gap) * span; }
+    if (c.type === "figure") { var wIn = span >= 2 ? C.span2_width_in : C.col_width_in; return (wIn * (c.h / c.w) + C.caption_in + C.gap) * span + (c.words ? c.words / C.wpi : 0) + (c.head ? C.head_short : 0); }
     return 0;
   }
   function updateTotals() {

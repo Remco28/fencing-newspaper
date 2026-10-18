@@ -60,7 +60,7 @@
   "tip-public-chatham-dual"
  ],
  "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below ('practice' = rehearsal). Judgment lives here (slot → staging item ids, plain-English summary, questions for Frank). budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Any staging item this file doesn't mention still shows up (auto-placed by slot_hint, not proposed). Table rows are transcribed from the cited staging items (no new facts).",
- "generated": "2026-10-18T09:32:00-04:00",
+ "generated": "2026-10-18T15:20:00-04:00",
  "target_week": "next",
  "issue": {
   "number": 3,
@@ -80,7 +80,8 @@
   "Club Results runs only if Aaditya Jaising or Charles Young qualified for Junior Olympics today; otherwise the box is dropped, with no 'also fenced' line.",
   "Overheard runs; gear and the weekly class table are out; Winter Camp stays at 'contact the club'.",
   "New step: Claude Code read the Vet Worlds lead, the Controversial Call, By the Book, For the Parents and Overheard as a second copy checker (no facts added). Fixes taken are noted on each card.",
-  "Fill is about 84%, leaving room for about 330 words, for the content you said you'd add. Nothing gets composed until you send it."
+  "Fill is about 84%, leaving room for about 330 words, for the content you said you'd add. Nothing gets composed until you send it.",
+  "New at 3:15 p.m.: Photo from History, entry 06 (1965 Dutch team championship, CC0), on page 2 in one column. Fill is now about 101%, over by about 30 words. The rough estimate tolerates up to 108%. Trimming the empty floor from the photo (see the card) brings it to about 99%. Any additions from you would now need a cut."
  ],
  "slots": [
   {
@@ -592,6 +593,39 @@
    "questions": [],
    "answered": [
     "Run this week (Frank, 9:13 a.m.)."
+   ]
+  },
+  {
+   "key": "photo-history",
+   "section": "shorts",
+   "slot": "Photo from History (page 2, 1 column)",
+   "budget": "photo + ~140w + credit",
+   "item": "history-photo-06-dutch-team-epee-1965",
+   "proposed": true,
+   "cost": {
+    "type": "figure",
+    "span": 1,
+    "w": 1055,
+    "h": 1600,
+    "words": 170,
+    "head": true,
+    "note": "words = caption 42 + blurb 99 + credit 29 (caption_in covers spacing only)"
+   },
+   "thumb": "06-dutch-team-epee-1965.jpg",
+   "title": "Photo from History: 1965: Club epee, with everyone close enough to watch",
+   "summary": "Dutch national team championship, Amsterdam, Nov. 21, 1965: Laurens van Tiggele (left) and Raoul Popken, with spectators and another bout close behind. 42-word caption, 99-word blurb and the exact CC0 credit, all from the card. Placed on page 2 in one column, near By the Book and Overheard. Grayscale is fine (the photo is already black and white).",
+   "flags": [
+    {
+     "level": "warn",
+     "text": "Photo height: at one column (2.42 in wide) the uncropped portrait prints about 3.7 in tall, above the 2.2 in soft ceiling (STYLE-GUIDE §19). Budgeted uncropped. Option: trim the empty floor at the bottom (about 25%) on the photo desk, to about 2.8 in, saving about 0.9 in (about 35 words). CC0 needs no change notice, but add 'Cropped' to the credit as good practice."
+    },
+    {
+     "level": "info",
+     "text": "Names and left/right come from the Nationaal Archief record (historical, not Elite FC)."
+    }
+   ],
+   "answered": [
+    "Frank approved entry 06, 1 column, grayscale OK (3:15 p.m.)."
    ]
   },
   {

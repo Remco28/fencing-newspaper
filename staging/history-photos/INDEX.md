@@ -11,7 +11,7 @@ Epee photos with ready captions, blurbs, credits and licenses. The pile is share
 | 03 | [The forbidden weapon in Nedo Nadi’s five-gold summer](03-nedo-nadi.md) | July 1912 according to Commons | Public domain (US) | 1-col only (380×799) | |
 | 04 | [Lucien Gaudin and the Olympic “extra-final”](04-lucien-gaudin.md) | 1928 Olympic context | Public domain (US) | yes (732×511) | |
 | 05 | [1936: When epee learned to light up](05-electric-epee-1936.md) | 2016-06-22 (modern photo of an artifact) | CC BY-SA 3.0 France | yes (1280×1280) | |
-| 06 | [1965: Club epee, with everyone close enough to watch](06-dutch-team-epee-1965.md) | 1965-11-21 | CC0 1.0 Universal | yes (1055×1600) | |
+| 06 | [1965: Club epee, with everyone close enough to watch](06-dutch-team-epee-1965.md) | 1965-11-21 | CC0 1.0 Universal | yes (1055×1600) | No. 3 (2026-10-19) |
 | 07 | [1976: The light came on—but there was no touch](07-epee-fair-play-1976.md) | 2006-05-25 (modern illustration) | Public domain (author) | 1-col only (640×480) | |
 | 08 | [1980: Johan Harmenberg’s gold—and a different way forward](08-harmenberg-moscow-1980.md) | 1980, Moscow Olympics | CC BY-SA 3.0 Unported | yes (885×682) | |
 | 09 | [Laura Flessel: two golds at the start of an Olympic era](09-laura-flessel.md) | 2013-03-03 | CC BY 2.5 | yes (1092×1600) | |
