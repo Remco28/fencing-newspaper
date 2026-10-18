@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-18T09:40:00-04:00",
+ "updated_at": "2026-10-18T09:32:00-04:00",
  "note": "Hold pile for Issue No. 3 (week of Oct 19). Created empty 2026-10-07 at the roll-forward after Issue No. 1; No. 2 rolled 2026-10-13. Budget for No. 3 built Sun 2026-10-18 (Frank, voice) instead of the Monday 8:50 routine.",
  "items": [
   {
@@ -855,7 +855,7 @@
   {
    "id": "chat-controversial-calls-off-strip-2026-10-13",
    "kind": "article",
-   "headline": "Controversial Calls: The Touch Nobody Saw Land, Except the Referee",
+   "headline": "Controversial Calls: The Touch Only the Referee Thought She Saw",
    "draft": "drafts/controversial-calls-off-strip-touch.md",
    "source": "chat",
    "from": "Frank (chat, 2026-10-13 11:43 & 11:44 ET)",
@@ -864,7 +864,7 @@
    "vetted_by": "Frank",
    "vetted_at": "2026-10-13T11:55:00-04:00",
    "status": "vetted for No. 3",
-   "vet_notes": "Revised per Frank's answers 2026-10-13 11:52 ET: two years ago; landing spot unknown (off the strip; t.93/t.94.1 either way); formal appeal, Head Referee ruled point of fact (t.172/t.174); lost by one touch; ref 'thought she saw it hit' (attributed); opponent waved no-touch (attributed); verdict Judgment call. Second disputed touch deliberately excluded (fuzzy). | v2 rewrite 2026-10-18 (Desk, per Frank's budget note): no new facts. Claude Code copy check 2026-10-18 ~09:35 ET (claude -p, Opus; no facts added); Desk applied: family attribution kept across the coach/opponent lines; 'said she thought she saw it hit'; 'No rule we found...' (absence check); verdict 'On the family's own account...'; generic 'how a rule was applied'; replay 'not in pools'; dropped 'even'; t.94.1 status. Rejected: headline change (Frank-vetted), cutting 'national tournament' (in v1), editor's note question (Frank's own disclosure). Re-vet of v2 wording: Frank.",
+   "vet_notes": "Revised per Frank's answers 2026-10-13 11:52 ET: two years ago; landing spot unknown (off the strip; t.93/t.94.1 either way); formal appeal, Head Referee ruled point of fact (t.172/t.174); lost by one touch; ref 'thought she saw it hit' (attributed); opponent waved no-touch (attributed); verdict Judgment call. Second disputed touch deliberately excluded (fuzzy). | v2 rewrite 2026-10-18 (Desk, per Frank's budget note): no new facts. Claude Code copy check 2026-10-18 ~09:35 ET (claude -p, Opus; no facts added); Desk applied: family attribution kept across the coach/opponent lines; 'said she thought she saw it hit'; 'No rule we found...' (absence check); verdict 'On the family's own account...'; generic 'how a rule was applied'; replay 'not in pools'; dropped 'even'; t.94.1 status. Rejected: headline change (Frank-vetted), cutting 'national tournament' (in v1), editor's note question (Frank's own disclosure). Re-vet of v2 wording: Frank. | Frank chat 2026-10-18 09:30 ET: headline -> 'The Touch Only the Referee Thought She Saw' (Claude Code's suggestion); 'opponent's coach didn't dispute it' -> neither coach nor family defended the touch; only the referee thought it was a touch (attributed to the family).",
    "claim_check": [
     {
      "claim": "Off-strip/floor touch in épée is disregarded where floor not insulated",
@@ -935,6 +935,11 @@
      "claim": "No penalty card given for the appeal",
      "citation": "chat: Frank 2026-10-13 11:55 ET",
      "status": "confirmed by Frank (not in print)"
+    },
+    {
+     "claim": "Only the referee thought it was a touch; opponent's coach and family said nothing in its defense while Elite FC protested",
+     "citation": "chat: Frank 2026-10-18 09:30 ET",
+     "status": "Frank-confirmed; printed attributed to the family"
     }
    ],
    "provenance": [
@@ -959,6 +964,10 @@
     {
      "source": "chat: Frank 2026-10-13",
      "note": "11:55 ET: vetted as-is; confirmed no card was given for the appeal."
+    },
+    {
+     "source": "chat: Frank 2026-10-18",
+     "note": "09:30 ET: take headline 'The Touch Only the Referee Thought She Saw'; only the referee thought it was a legitimate touch; no one was pushing for it; while Elite FC's side protested, the opponent's family and coach said nothing."
     }
    ],
    "slot_hint": "feature",
@@ -968,12 +977,12 @@
     "controversial-calls"
    ],
    "created_at": "2026-10-13T11:45:00-04:00",
-   "revised_at": "2026-10-18T09:40:00-04:00",
-   "body": "*Editor's note: The fencer in this story is the editor's son.*\n\nThe light went on, and the argument started. In a pool bout at a national tournament two years ago, an Elite FC fencer's opponent scored a touch that, the fencer's family says, landed off the strip. The fencer said the blade never hit him.\n\nBy the family's account, the opponent waved a hand to signal no touch, the Elite FC coach pointed that out on the spot, and the opponent's coach didn't dispute it. The referee, the family says, said she thought she saw it hit. The fencer made a formal appeal, and the Head Referee came over and ruled that it was the referee's call. Pools had no video replay. The fencer lost the bout by one touch.\n\nOn paper, a hit that misses the fencer shouldn't count. In epee, touches \"made on the ground where it is not insulated\" are disregarded (t.93), and a touch that lands on the strip and registers is annulled (t.94.1). The catch is who decides whether it landed. That is a \"point of fact,\" and against a point of fact \"no appeal can be made\" (t.172.1). An appeal can challenge only how a rule was applied, and the Head Referee settles it (t.172.2, t.174). No rule we found gives an opponent's signal any formal weight.\n\n**Both sides (opinion).** For the call: the referee judges from where she stands, and making her view final keeps bouts from being re-argued touch by touch. Against it: when the fencer who scored signals a miss, a referee who only thought she saw a hit has a thin basis for a decisive touch.\n\n**The verdict: judgment call.** On the family's own account, the Head Referee applied the rules correctly. A referee's view of a hit can't be appealed, no matter how differently it looked from the side of the strip.\n\n**For parents,** the lesson is narrow but useful. You can't appeal what a referee saw, only how a rule was applied. Only the fencer can appeal, and it has to happen right away, before the next touch. At national tournaments today, video replay is guaranteed only in later direct-elimination rounds (from the round of 16 or 8, depending on the event), not in pools. And a parent's phone video doesn't count.",
-   "word_count": 384,
+   "revised_at": "2026-10-18T09:32:00-04:00",
+   "body": "*Editor's note: The fencer in this story is the editor's son.*\n\nThe light went on, and the argument started. In a pool bout at a national tournament two years ago, an Elite FC fencer's opponent scored a touch that, the fencer's family says, landed off the strip. The fencer said the blade never hit him.\n\nBy the family's account, the opponent waved a hand to signal no touch, the Elite FC coach pointed that out on the spot, and neither the opponent's coach nor family said a word in the touch's defense. The only person who thought it was a touch, the family says, was the referee, who said she thought she saw it hit. The fencer made a formal appeal, and the Head Referee came over and ruled that it was the referee's call. Pools had no video replay. The fencer lost the bout by one touch.\n\nOn paper, a hit that misses the fencer shouldn't count. In epee, touches \"made on the ground where it is not insulated\" are disregarded (t.93), and a touch that lands on the strip and registers is annulled (t.94.1). The catch is who decides whether it landed. That is a \"point of fact,\" and against a point of fact \"no appeal can be made\" (t.172.1). An appeal can challenge only how a rule was applied, and the Head Referee settles it (t.172.2, t.174). No rule we found gives an opponent's signal any formal weight.\n\n**Both sides (opinion).** For the call: the referee judges from where she stands, and making her view final keeps bouts from being re-argued touch by touch. Against it: when the fencer who scored signals a miss, a referee who only thought she saw a hit has a thin basis for a decisive touch.\n\n**The verdict: judgment call.** On the family's own account, the Head Referee applied the rules correctly. A referee's view of a hit can't be appealed, no matter how differently it looked from the side of the strip.\n\n**For parents,** the lesson is narrow but useful. You can't appeal what a referee saw, only how a rule was applied. Only the fencer can appeal, and it has to happen right away, before the next touch. At national tournaments today, video replay is guaranteed only in later direct-elimination rounds (from the round of 16 or 8, depending on the event), not in pools. And a parent's phone video doesn't count.",
+   "word_count": 402,
    "draft_path": "staging/weeks/next/drafts/controversial-calls-off-strip-touch.md",
    "budget_note": "Frank budget 2026-10-18 09:13 ET: not the lead; 'needs to read a bit better... felt like a rushed article.' Rewritten for flow (same facts, same structure), runs as page-1 feature. v1 kept at drafts/controversial-calls-off-strip-touch.v1-2026-10-13.md.",
-   "rewrite_needs_frank_look": true
+   "rewrite_needs_frank_look": false
   },
   {
    "id": "email-agentmail-medeo-yc5-entries-2026-10-14",

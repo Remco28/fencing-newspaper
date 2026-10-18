@@ -60,7 +60,7 @@
   "tip-public-chatham-dual"
  ],
  "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below ('practice' = rehearsal). Judgment lives here (slot → staging item ids, plain-English summary, questions for Frank). budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json. Any staging item this file doesn't mention still shows up (auto-placed by slot_hint, not proposed). Table rows are transcribed from the cited staging items (no new facts).",
- "generated": "2026-10-18T09:45:00-04:00",
+ "generated": "2026-10-18T09:32:00-04:00",
  "target_week": "next",
  "issue": {
   "number": 3,
@@ -111,7 +111,7 @@
    "key": "secondary-a",
    "section": "lead",
    "slot": "Page-1 feature — Controversial Calls (rewritten)",
-   "budget": "~385w",
+   "budget": "~402w",
    "item": "chat-controversial-calls-off-strip-2026-10-13",
    "proposed": true,
    "cost": {
@@ -119,17 +119,20 @@
     "span": 1,
     "feature": true
    },
-   "title": "Controversial Calls: The Touch Nobody Saw Land, Except the Referee",
+   "title": "Controversial Calls: The Touch Only the Referee Thought She Saw",
    "summary": "Rewritten per your note ('felt like a rushed article'): opens on the touch itself, flows from the call to the rule to both sides to the verdict, and ends with what parents can take from it, with fewer checklist labels. The facts, rule cites (t.93, t.94.1, t.172, t.174) and editor's note are the same, with no referee named. Its length now follows the content; it no longer fills lead space.",
    "flags": [
     {
-     "level": "warn",
-     "text": "This is new wording, so please give it a look. 'Read the draft' shows the full text. v1 is kept for comparison."
+     "level": "info",
+     "text": "Your 9:30 a.m. changes are in: Claude Code's headline, plus the line that only the referee thought it was a touch and that neither the opponent's coach nor family defended it (attributed to the family)."
     },
     {
      "level": "info",
-     "text": "Claude Code flagged attribution drift and the absence-check line; both are fixed. The headline is kept as you vetted it. Claude Code suggested 'The Touch Only the Referee Thought She Saw' if you want it."
+     "text": "Claude Code's attribution and absence-check fixes are applied."
     }
+   ],
+   "answered": [
+    "Headline: take 'The Touch Only the Referee Thought She Saw' (Frank, 9:30 a.m.)."
    ]
   },
   {
