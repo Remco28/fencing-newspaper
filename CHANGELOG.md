@@ -9,6 +9,9 @@ Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status 
 - **No. 3 approved and published** (Frank 16:08 ET, proof v2): on newsletter.teamremco.org, newest on the desk. `issues/2026-10-19/issue.json` marked approved/published; new `issues/PUBLICATION-LOG.md`.
 - **`scripts/publish_issue.py <date>`**: copies the issue PDF to `site/`, renders page images (220 dpi; 1870 px + 1200 px WebP), upserts `site/issues.json` newest-first, syncs `site/` → `docs/` safely (never empty). Idempotent. No commit/push.
 
+## v3.40 — 2026-10-18
+- **Photo from History pile: batch 2 (13–18) added as backup** (Frank's photo agent, 19:26 ET): 13 Haiti fencers 1898, 14 Roland Losert 1964, 15 Pavel Kolobkov 2007, 16 Nikolai Novosjolov 2012, 17 Kauter v Confalonieri 2012, 18 Fiedler v Nikishyn 2013. Compact cards in the batch-1 format. No resize was needed (all ≤1600 px); metadata stripped losslessly. All six licenses spot-checked on Commons, and all match. Flags (INDEX): 15–18 are modern, not period photos; 14 and 16 are weak (no fencing in frame); 13's epee link is indirect. Pile is now 18 entries.
+
 ## v3.39 — 2026-10-18
 - **Nearby Tournaments: one block per tournament** (Frank 15:58 ET, reader feedback on the split Morris board): name · town · dates once, days as sub-rows in date order, `Time · Event · Elite FC` only when times are sourced. New default in `prototype/template-a-v2.css` (`.tourney`, `.tourney-head`, `tr.day`) and STYLE-GUIDE §10a.
 - **Footer archive line integrated:** the footer is a trio in the same 7pt sans caps (no smaller muted line). Template A reference sheet (`issues/2026-10-14`) and the Nos. 1–2 sources carry the rule for any re-render; they weren't re-rendered.
