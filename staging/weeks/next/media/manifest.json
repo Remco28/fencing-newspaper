@@ -1,0 +1,20 @@
+{
+ "target_week": "next",
+ "extracted_at": "2026-10-19T09:30:00-04:00",
+ "note": "Media for Issue No. 4 (week of Oct 26). Photo from History candidate copied from staging/history-photos (cross-issue pile).",
+ "items": [
+  {
+   "id": "media-history-07-epee-fair-play-1976",
+   "kind": "photo",
+   "filename": "07-epee-fair-play-1976.jpg",
+   "media_path": "staging/weeks/next/media/07-epee-fair-play-1976.jpg",
+   "caption": "At Montreal in 1976, Boris Onishchenko was disqualified from modern pentathlon after officials found that his epee could register touches without hitting an opponent. This 2006 photograph shows an ordinary electric epee grip and connector, not Onishchenko’s weapon.",
+   "source": "history-photos",
+   "url": "https://commons.wikimedia.org/wiki/File:Pistolgrip.jpg",
+   "license": "Public domain (author)",
+   "vetted": false,
+   "parent_item_id": "history-photo-07-epee-fair-play-1976",
+   "note": "From staging/history-photos; Photo from History candidate for No. 4. 640x480: 1 column only."
+  }
+ ]
+}

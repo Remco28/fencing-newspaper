@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "updated": "2026-10-18",
-  "note": "Frank-confirmed club-people facts only (plus names cleared by Frank's 2026-10-18 standing rule: official club/tournament pages are the source of truth for name spellings). No ratings, ages, birthdays, or invented data. See roster/README.md.",
+  "updated": "2026-10-19",
+  "note": "Frank-confirmed club-people facts only (plus names cleared by Frank's 2026-10-18 standing rule: official club/tournament pages are the source of truth for name spellings). No ratings, ages, birthdays, or invented data. See roster/README.md. | 2026-10-19: added Morris/Ultimate/Cobra/JO names from USA Fencing / AskFRED under the official-pages standing rule.",
   "people": [
     {
       "id": "penny-young",
@@ -227,6 +227,276 @@
         "who": "Frank (standing rule)",
         "when": "2026-10-18",
         "via": "voice (relayed): names on official club/tournament pages print as listed"
+      }
+    },
+    {
+      "id": "connor-anderson",
+      "canonical": "Connor Anderson",
+      "aliases": [
+        "Anderson, Connor"
+      ],
+      "relations": [],
+      "notes": "USA Fencing / AskFRED Morris+Cobra entries 2026-10-19",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "noah-gore",
+      "canonical": "Noah Gore",
+      "aliases": [
+        "Gore, Noah"
+      ],
+      "relations": [],
+      "notes": "USA Fencing Cobra/Morris",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "kian-jaising",
+      "canonical": "Kian Jaising",
+      "aliases": [
+        "Jaising, Kian"
+      ],
+      "relations": [],
+      "notes": "USA Fencing / AskFRED",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "remy-ng",
+      "canonical": "Remy Ng",
+      "aliases": [
+        "Ng, Remy"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "amina-gore",
+      "canonical": "Amina Gore",
+      "aliases": [
+        "Gore, Amina"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "olivia-hayes",
+      "canonical": "Olivia Hayes",
+      "aliases": [
+        "Hayes, Olivia"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "stella-kuo",
+      "canonical": "Stella Kuo",
+      "aliases": [
+        "Kuo, Stella"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "mila-siu",
+      "canonical": "Mila Siu",
+      "aliases": [
+        "Siu, Mila"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "joshua-jeong",
+      "canonical": "Joshua Jeong",
+      "aliases": [
+        "Jeong, Joshua"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "nico-ng",
+      "canonical": "Nico Ng",
+      "aliases": [
+        "Ng, Nico"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "maksim-milinkovic",
+      "canonical": "Maksim Milinkovic",
+      "aliases": [
+        "Milinkovic, Maksim"
+      ],
+      "relations": [],
+      "notes": "USA Fencing Ultimate Cup",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "adela-sullivan",
+      "canonical": "Adela Sullivan",
+      "aliases": [
+        "Sullivan, Adela"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "pablo-aguirre",
+      "canonical": "Pablo Aguirre",
+      "aliases": [
+        "Aguirre, Pablo"
+      ],
+      "relations": [],
+      "notes": "USA Fencing",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "madeline-siu",
+      "canonical": "Madeline Siu",
+      "aliases": [
+        "Siu, Madeline"
+      ],
+      "relations": [],
+      "notes": "USA Fencing Morris",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "bryce-cheng",
+      "canonical": "Bryce Cheng",
+      "aliases": [
+        "Cheng, Bryce"
+      ],
+      "relations": [],
+      "notes": "USA Fencing Morris",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "maximus-siu",
+      "canonical": "Maximus Siu",
+      "aliases": [
+        "Siu, Maximus"
+      ],
+      "relations": [],
+      "notes": "USA Fencing Morris",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "aaditya-jaising",
+      "canonical": "Aaditya Jaising",
+      "aliases": [
+        "Jaising, Aaditya"
+      ],
+      "relations": [],
+      "notes": "AskFRED NJ JO Qualifier entries",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "charles-young",
+      "canonical": "Charles Young",
+      "aliases": [
+        "Young, Charles"
+      ],
+      "relations": [],
+      "notes": "AskFRED NJ JO Qualifier (club listed Elite Fencers Club)",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-10-19",
+        "via": "Desk Monday full pass; print as official list"
       }
     }
   ]
