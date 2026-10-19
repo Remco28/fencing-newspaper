@@ -1,6 +1,6 @@
 import json,re,html,sys
 R='/workspace/fencing-newspaper/'
-D={i['id']:i for i in json.load(open(R+'staging/weeks/next/items.json'))['items']}
+D={i['id']:i for i in json.load(open(R+'staging/weeks/2026-10-19/items.json'))['items']}
 L=json.load(open(R+'budget-demo/practice-lineup.json')); S={s['key']:s for s in L['slots']}
 def ty(t):
     t=html.escape(t,quote=False)
