@@ -2,7 +2,7 @@
 
 ## What I built
 - **One desk engine** (`js/desk-engine.js`). A small 2D rigid-body world in desk-photo pixels (1520×1012; about 14 units = 1 cm). The whole wooden top is the play area, frame included: `bounds` = 36–1504 × 33–996, measured from the alpha of `desk.webp`.
-  - The scene is a single CSS-transformed layer. On tall or portrait screens the desk is turned 90°, so phones get a full-height desk instead of a list.
+  - The scene is a single CSS-transformed layer (one scale + translation, never rotated). Phones get a zoomed-in landscape desk; see the v5 section below.
   - Pointer coordinates go through the inverse transform. Hit testing is done in world space, not with DOM targets.
 - **Gestures (shared by all objects):**
   - *Drag:* the grab point stays under the finger.
@@ -68,6 +68,7 @@ desk.add('stapler', { x: 400, y: 300, a: 0.3, drop: 0.5 });   // e.g. in js/desk
   - `friction(b, dt)`: custom motion, as the pencils' rolling does
   - `draw(b, desk)`: custom-drawn faces, e.g. a canvas or a WebGL model rendered into a canvas
   - `onScale`, `onDrag`, `onTap`, `onGone`
+- **Boundaries:** use `desk.play` (the visible part of the wood), not `desk.bounds`. The engine already keeps every registered kind inside it (placement clamping, bounces, tipping, re-layout), so a new prop needs no edge code of its own.
 - **Rotation** is planar on the desk. 3D only happens when something goes over the edge, and then the engine animates `b.face` itself.
 
 ## Verified (headless Chrome, `python -m http.server`)
@@ -89,3 +90,40 @@ desk.add('stapler', { x: 400, y: 300, a: 0.3, drop: 0.5 });   // e.g. in js/desk
 
 ## Which issues land on the desk (Frank, 2026-10-18)
 `js/pick-issues.js` (`EGG.pickDeskIssues`): newest always on top (centred, near-upright); the next 2 issues (1 on small screens) always in the pile; remaining slots of 7 (5 small) sampled uniformly without replacement from all older issues; duplicates only when there are fewer issues than slots (older first, never a second newest on top). Tests: `node site/tests/pick-issues.test.js`.
+
+## v5 mobile: landscape zoom + play area (2026-10-19)
+- **No more 90° turn.** The desk is always landscape. `js/desk-view.js` (`EGG.deskView`, pure) maps the fixed world (desk.webp 1520×1012, `bounds` unchanged) to the screen with one scale plus a translation.
+  - Wide screens fit the whole wood exactly as before (1440×900 and the 780×360 landscape phone are unchanged).
+  - Portrait screens zoom until about 820 world units span the screen width. A small-screen paper (360 units) comes out at ~158 px on a 360 px phone, ~173 px on 393 and ~181 px on 412. The desk is centred and the left and right sides are cropped.
+  - The zoom is capped so the whole wood height plus 40 units above and below always fits, so the real top and bottom rims are always on screen.
+  - The zoom blends in between aspect 1.0 and 0.75, so tablets get part of it and a resize across square doesn't jump.
+- **Play area.** `desk.play = {x0, y0, x1, y1, edges: {left, right, top, bottom}}` is the visible part of the wood, recomputed on every layout. Each edge is either:
+  - `'rim'`: the real wood edge is on screen; `play` equals `bounds` on that side.
+  - `'wall'`: the screen crops the wood there; `play` sits 6 screen px inside the screen edge.
+  - When the whole wood is visible, `play == bounds` and every edge is a rim, so desktop behaves as before.
+- **All boundary logic uses `desk.play`:**
+  - placement in `mess()`
+  - `constrain()` for every kind
+  - rim bounces
+  - tipping, including a pencil sliding along a rim while it tips: it can't pass a wall
+- **Walls are invisible.** Everything bounces off them or stops there; nothing tips over them. Real rims work as before.
+- **Re-layout.** On rotate, resize or header wrap (`resize` + `ResizeObserver`), every body that isn't falling is re-constrained into the new play area, so nothing is stranded off screen.
+- **Behaviour change:** on phones, pencils only roll off the top and bottom edges. The side edges are walls.
+- **Cropped edges fade.** A soft gradient covers each cropped side (`.desk-fade.crop-l` / `.crop-r`, `pointer-events: none`), so the crop reads as intentional.
+- **`upright()` is 0 and the light is constant** (from the screen's upper left). `rot`, `screenVec` and `upright` remain as trivial API.
+- **Placement (`js/desk.js`):** the top sheet's spot is picked first, and the others spread out around it.
+  - On small screens the spread box is inset by half a paper.
+  - A repair pass moves any lower sheet with less than 15% showing to the best of a few other spots.
+  - The `pickDeskIssues` rule is unchanged: 5 papers on small screens, 7 on desktop.
+- **Tests:** `node site/tests/desk-view.test.js` checks:
+  - fit is unchanged on wide screens, with `play == bounds`;
+  - phones get walls on the sides, rims on screen, and the paper size range;
+  - a short window caps the zoom.
+
+  `pick-issues.test.js` still passes.
+- **Verified (headless Chromium):**
+  - At 360×780, 393×852, 412×915, 780×360 and 1440×900, every paper was fully on screen and the top sheet ≥94% exposed after 30 Re-messes each. The least-exposed lower sheet was 10% (phone) to 54% (desktop), counting props lying on top. No console errors.
+  - On the phone, sideways pencil and tin flicks stay on screen, and a downward pencil flick falls off the bottom rim. On desktop, pencils still fall off the left and right rims.
+  - Rotating 780×360 → 360×780 → 412×915 → back, with objects parked at the far ends of the wood, leaves everything on screen.
+  - Keyboard arrows stop at the wall. A touch tap opens the reader, and drag works.
+

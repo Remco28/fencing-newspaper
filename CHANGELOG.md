@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.42 — 2026-10-19
+- **Site top bar (phones):** under 400 px the bar is tighter and can wrap (min-height, not fixed height), so Archive/Re-mess drop to a second row instead of being cut off under large system fonts (Frank's S25 report). The desk re-lays out when its area resizes (ResizeObserver).
+- **Site v5 mobile desk (Frank-approved approach B, built by Claude Code Opus 5.5):** no more 90° portrait rotation. The desk is always landscape in one world coordinate space with one scale; portrait phones zoom in (~158 px papers on a 360 px phone) and crop the sides with a soft fade. A visible play area (`desk.play`, edges 'rim' or 'wall') drives placement, clamping, bounces and tipping for every object, so future props get it for free. **Behaviour change:** on phones the cropped left/right sides are walls; pencils only roll off the top and bottom edges. Desktop and landscape phones unchanged. Placement now avoids burying lower sheets. Code: `site/js/desk-view.js` (+ `site/tests/desk-view.test.js`), `desk-engine.js`, `desk.js`; notes in `site/REPORT.md`.
+
 ## v3.41 — 2026-10-18
 - **Desk issue selection** (Frank 17:41 ET): newest on top as before; the next 2 issues (1 on small screens) always in the pile; other slots filled at random without repeats from the whole back catalogue; duplicates only when there are fewer issues than slots (never a second newest on top). Count stays 7 / 5. Code: `site/js/pick-issues.js`; tests `node site/tests/pick-issues.test.js`. `publish_issue.py` keeps `tests/` out of `docs/`.
 

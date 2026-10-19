@@ -18,7 +18,9 @@
   var BASE = {
     layer: 'prop',        // 'paper': flat sheets, always under props | 'prop': things that sit on top
     solid: false,         // collides with other solid bodies
-    edge: 'contain',      // 'contain': bounces off the desk rim | 'fall': tips over the rim and drops
+    edge: 'contain',      // 'contain': bounces off the desk rim | 'fall': tips over a real rim and drops
+                          // (screen-cropped sides are walls for every kind; the engine handles all of this
+                          //  from desk.play, so a prop never needs its own boundary code)
     density: 1,           // mass = density * w * h (only ratios matter)
     slide: 900,           // sliding friction, as a deceleration (units/s^2)
     spin: 8,              // spin friction, as an angular deceleration (rad/s^2)
@@ -34,10 +36,12 @@
          build(b, opts, desk)  create b.w, b.h and the content of b.face (required)
          friction(b, dt)       replace the default isotropic friction; return true while still settling
          draw(b, desk)         called before each render (custom-drawn faces, e.g. a canvas)
-         onScale(b, desk)      the on-screen scale or view rotation changed
+         onScale(b, desk)      the on-screen scale changed
          onDrag(b, dx, dy)     the body was moved by the user by (dx, dy) world units
          onTap(b, desk)        tap / click / Enter
-         onGone(b, desk)       it fell off the desk and was removed */
+         onGone(b, desk)       it fell off the desk and was removed
+       Boundaries: use desk.play (the visible part of the wood, with play.edges.left/right/top/bottom =
+       'rim' | 'wall'), not desk.bounds (the whole wood, partly off screen on phones). */
   };
 
   function merge(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
@@ -85,13 +89,14 @@
     var self = this;
     this.vp = viewport;
     this.size = o.size;
-    this.bounds = o.bounds;               // the wood surface, world units
+    this.bounds = o.bounds;               // the wood surface, world units (may be partly off screen)
+    this.play = null;                     // the visible part of it; set by layout(), used by all boundary logic
     this.P = o.perspective || 2200;       // camera height above the desk (for things that fall)
     this.floor = o.floor || 1100;         // how far below the desk the floor is
     this.bodies = [];
     this.zc = { paper: 10, prop: 10 };
     this.ptrs = {};
-    this.scale = 1; this.rot = 0; this.portrait = false;
+    this.scale = 1;
     this.running = false;
     this.onLayout = o.onLayout || null;
 
@@ -109,6 +114,8 @@
     fx.style.cssText = 'left:' + b.x0 + 'px;top:' + b.y0 + 'px;width:' + (b.x1 - b.x0) + 'px;height:' + (b.y1 - b.y0) + 'px';
     [this.under, img, this.layers.paper, this.layers.prop, fx].forEach(function (n) { scene.appendChild(n); });
     viewport.appendChild(scene);
+    this.fade = el('div', 'desk-fade'); // soft edges where the screen crops the desk
+    viewport.appendChild(this.fade);
 
     this.layout();
     window.addEventListener('resize', function () { self.layout(); });
@@ -147,42 +154,37 @@
 
   var D = Desk.prototype;
 
-  /* ---------- view: fit the wood to the viewport; tall screens turn the desk sideways ---------- */
+  /* ---------- view: always landscape; narrow screens zoom in and crop the sides (js/desk-view.js) ---------- */
   D.layout = function () {
     var W = this.vp.clientWidth, H = this.vp.clientHeight;
     if (!W || !H) return;
-    var b = this.bounds, m = 10, bw = b.x1 - b.x0 + 2 * m, bh = b.y1 - b.y0 + 2 * m;
-    var portrait = W / H < 0.95, s, tx, ty;
-    if (portrait) {
-      s = Math.min(W / bh, H / bw);
-      tx = (W - bh * s) / 2 + (b.y1 + m) * s;
-      ty = (H - bw * s) / 2 - (b.x0 - m) * s;
-    } else {
-      s = Math.min(W / bw, H / bh);
-      tx = (W - bw * s) / 2 - (b.x0 - m) * s;
-      ty = (H - bh * s) / 2 - (b.y0 - m) * s;
-    }
-    var changed = s !== this.scale || portrait !== this.portrait;
-    this.scale = s; this.tx = tx; this.ty = ty; this.portrait = portrait; this.rot = portrait ? Math.PI / 2 : 0;
-    this.scene.style.transform = 'translate(' + tx + 'px,' + ty + 'px)' + (portrait ? ' rotate(90deg)' : '') + ' scale(' + s + ')';
-    // light comes from the screen's upper left whichever way the desk is turned
-    var lx = -0.45, ly = -0.55, c = Math.cos(-this.rot), sn = Math.sin(-this.rot);
-    this.light = { x: lx * c - ly * sn, y: lx * sn + ly * c, z: 0.85 };
-    var n = Math.hypot(this.light.x, this.light.y, this.light.z);
-    this.light.x /= n; this.light.y /= n; this.light.z /= n;
-    var self = this;
-    if (changed) this.bodies.forEach(function (bd) { if (bd.def.onScale) bd.def.onScale(bd, self); self._render(bd); });
-    if (this.onLayout && changed) this.onLayout(this);
+    var v = EGG.deskView(W, H, this.bounds), p = v.play, q = this.play, self = this;
+    var changed = v.s !== this.scale, moved = !q || p.x0 !== q.x0 || p.x1 !== q.x1 || p.y0 !== q.y0 || p.y1 !== q.y1;
+    this.scale = v.s; this.tx = v.tx; this.ty = v.ty; this.play = p;
+    this.scene.style.transform = 'translate(' + v.tx + 'px,' + v.ty + 'px) scale(' + v.s + ')';
+    this.fade.className = 'desk-fade' + (p.edges.left === 'wall' ? ' crop-l' : '') + (p.edges.right === 'wall' ? ' crop-r' : '');
+    // the play area moved (rotate, resize, header wrap): bring everything back into view
+    if (moved) this.bodies.forEach(function (bd) {
+      if (bd.mode === 'tip' || bd.mode === 'fall' || bd.mode === 'gone') return;
+      self.constrain(bd);
+      if (!bd.held && bd.mode === 'rest') { bd.mode = 'move'; self.wake(); }
+    });
+    if (changed || moved) this.bodies.forEach(function (bd) { if (changed && bd.def.onScale) bd.def.onScale(bd, self); self._render(bd); });
+    if (this.onLayout && (changed || moved)) this.onLayout(this);
   };
 
-  // screen-space offset (px) -> world vector; used for light and shadows
-  D.screenVec = function (x, y) { var c = Math.cos(-this.rot), s = Math.sin(-this.rot); return { x: x * c - y * s, y: x * s + y * c }; };
+  // the desk is never turned, so screen and world axes agree; kept as API for props
+  D.light = (function () { var l = { x: -0.45, y: -0.55, z: 0.85 }, n = Math.hypot(l.x, l.y, l.z); return { x: l.x / n, y: l.y / n, z: l.z / n }; })(); // from the screen's upper left
+  D.rot = 0;
+  D.portrait = false;
+  // screen-space offset (px direction) -> world vector; used for light and shadows
+  D.screenVec = function (x, y) { return { x: x, y: y }; };
   // angle (world) that looks upright on screen
-  D.upright = function () { return -this.rot; };
+  D.upright = function () { return 0; };
 
   D.toWorld = function (cx, cy) {
-    var r = this.vp.getBoundingClientRect(), lx = cx - r.left - this.tx, ly = cy - r.top - this.ty, s = this.scale;
-    return this.portrait ? { x: ly / s, y: -lx / s } : { x: lx / s, y: ly / s };
+    var r = this.vp.getBoundingClientRect(), s = this.scale;
+    return { x: (cx - r.left - this.tx) / s, y: (cy - r.top - this.ty) / s };
   };
 
   /* ---------- bodies ---------- */
@@ -258,20 +260,20 @@
     return this.bodies.some(function (o) { return o !== b && o.def.solid && b.def.solid && sat(b, o, pad || 0); });
   };
 
-  // Keep the body on the wood: contained kinds keep their whole outline on it; falling kinds keep their centre on it.
+  /* Keep the body in the play area. Contained kinds keep their whole outline in it; falling kinds keep
+     their centre inside a real rim (they may overhang it) but their whole outline inside a wall. */
   D.constrain = function (b) {
-    var B = this.bounds;
-    if (b.def.edge === 'fall') {
-      var mg = Math.min(b.w, b.h) / 2 + 2;
-      b.x = clamp(b.x, B.x0 + mg, B.x1 - mg); b.y = clamp(b.y, B.y0 + mg, B.y1 - mg);
-      return;
-    }
+    var P = this.play, E = P.edges, fall = b.def.edge === 'fall', mg = Math.min(b.w, b.h) / 2 + 2;
     var cs = cornersOf(b), minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity;
     cs.forEach(function (p) { minx = Math.min(minx, p.x); maxx = Math.max(maxx, p.x); miny = Math.min(miny, p.y); maxy = Math.max(maxy, p.y); });
-    if (maxx - minx > B.x1 - B.x0) b.x += (B.x0 + B.x1) / 2 - (minx + maxx) / 2;
-    else if (minx < B.x0) b.x += B.x0 - minx; else if (maxx > B.x1) b.x -= maxx - B.x1;
-    if (maxy - miny > B.y1 - B.y0) b.y += (B.y0 + B.y1) / 2 - (miny + maxy) / 2;
-    else if (miny < B.y0) b.y += B.y0 - miny; else if (maxy > B.y1) b.y -= maxy - B.y1;
+    function lo(e) { return fall && E[e] === 'rim'; } // only the centre is held back on this side
+    function axis(c, mn, mx, a0, a1, e0, e1) {
+      var l0 = lo(e0) ? c - mg : mn, l1 = lo(e1) ? c + mg : mx; // the extent that must stay inside
+      if (l1 - l0 > a1 - a0) return (a0 + a1) / 2 - (l0 + l1) / 2;
+      return l0 < a0 ? a0 - l0 : l1 > a1 ? a1 - l1 : 0;
+    }
+    b.x += axis(b.x, minx, maxx, P.x0, P.x1, 'left', 'right');
+    b.y += axis(b.y, miny, maxy, P.y0, P.y1, 'top', 'bottom');
   };
 
   D.hit = function (x, y, coarse) {
@@ -502,7 +504,8 @@
         b.va = toward0(b.va, b.def.spin * h);
       }
       b.x += b.vx * h; b.y += b.vy * h; b.a += b.va * h;
-      if (b.def.edge === 'contain') this._rim(b); else this._checkTip(b);
+      this._rim(b, b.def.edge !== 'contain'); // walls stop everything; real rims stop contained kinds
+      if (b.def.edge === 'fall') this._checkTip(b);
       if (!busy && b.mode === 'move' && Math.abs(b.vx) + Math.abs(b.vy) < 1.5 && Math.abs(b.va) < 0.01) { b.vx = b.vy = b.va = 0; b.mode = 'rest'; }
     }
     for (i = 0; i < bs.length; i++) for (j = i + 1; j < bs.length; j++) {
@@ -525,13 +528,14 @@
     b.va += (rn * j + rt * jt) * iI;
   }
 
-  // bounce off the rim of the desk
-  D._rim = function (b) {
-    var B = this.bounds, cs = cornersOf(b), sides = [
-      { nx: 1, ny: 0, d: function (p) { return B.x0 - p.x; } }, { nx: -1, ny: 0, d: function (p) { return p.x - B.x1; } },
-      { nx: 0, ny: 1, d: function (p) { return B.y0 - p.y; } }, { nx: 0, ny: -1, d: function (p) { return p.y - B.y1; } }];
+  // bounce off the edges of the play area (wallsOnly: leave the real rims to tipping)
+  D._rim = function (b, wallsOnly) {
+    var B = this.play, E = B.edges, cs = cornersOf(b), sides = [
+      { e: 'left', nx: 1, ny: 0, d: function (p) { return B.x0 - p.x; } }, { e: 'right', nx: -1, ny: 0, d: function (p) { return p.x - B.x1; } },
+      { e: 'top', nx: 0, ny: 1, d: function (p) { return B.y0 - p.y; } }, { e: 'bottom', nx: 0, ny: -1, d: function (p) { return p.y - B.y1; } }];
     var e = b.def.restitution;
     sides.forEach(function (sd) {
+      if (wallsOnly && E[sd.e] !== 'wall') return;
       var best = null, bd = 0;
       cs.forEach(function (p) { var d = sd.d(p); if (d > bd) { bd = d; best = p; } });
       if (!best) return;
@@ -544,10 +548,10 @@
   /* Tipping over the rim: once the centre of mass passes the edge, the body pivots about the rim
      line under gravity (rod about a pivot), keeps sliding outward, and leaves the rim when its inner
      end gets past it. Then it is in free fall, tumbling, until it hits the floor out of sight. */
-  D._checkTip = function (b) {
-    var B = this.bounds, over = [[b.x - B.x1, 1, 0, B.x1], [B.x0 - b.x, -1, 0, -B.x0], [b.y - B.y1, 0, 1, B.y1], [B.y0 - b.y, 0, -1, -B.y0]];
+  D._checkTip = function (b) { // only over a real rim (play edge == wood edge there); walls never tip
+    var B = this.play, E = B.edges, over = [[b.x - B.x1, 1, 0, B.x1, 'right'], [B.x0 - b.x, -1, 0, -B.x0, 'left'], [b.y - B.y1, 0, 1, B.y1, 'bottom'], [B.y0 - b.y, 0, -1, -B.y0, 'top']];
     var best = null;
-    over.forEach(function (o) { if (o[0] > 0 && (!best || o[0] > best[0])) best = o; });
+    over.forEach(function (o) { if (E[o[4]] === 'rim' && o[0] > 0 && (!best || o[0] > best[0])) best = o; });
     if (!best) return;
     var nx = best[1], ny = best[2], tx = -ny, ty = nx;
     b.tip = { nx: nx, ny: ny, tx: tx, ty: ty, c: best[3], d: best[0], dd: b.vx * nx + b.vy * ny,
@@ -582,6 +586,12 @@
     t.dd = acc > 0 || t.dd > 0 ? Math.max(0, t.dd + acc * h) : 0;
     t.d += t.dd * h;
     t.s += t.vs * h; t.vs *= 1 - 2 * h;
+    // sliding along a real rim it still can't pass a wall (the screen-cropped side) at the end of that rim
+    var P = this.play, ex = this._extentAlong(b, t.tx, t.ty), lo, hi;
+    if (t.tx) { lo = t.tx > 0 ? P.edges.left === 'wall' && P.x0 : P.edges.right === 'wall' && -P.x1; hi = t.tx > 0 ? P.edges.right === 'wall' && P.x1 : P.edges.left === 'wall' && -P.x0; }
+    else { lo = t.ty > 0 ? P.edges.top === 'wall' && P.y0 : P.edges.bottom === 'wall' && -P.y1; hi = t.ty > 0 ? P.edges.bottom === 'wall' && P.y1 : P.edges.top === 'wall' && -P.y0; }
+    if (lo !== false && t.s < lo + ex) { t.s = lo + ex; t.vs = Math.max(0, t.vs); }
+    if (hi !== false && t.s > hi - ex) { t.s = hi - ex; t.vs = Math.min(0, t.vs); }
     b.a += b.va * h; b.va *= 1 - 4 * h;
     if (t.d > en + 1 || t.phi > 2) this._beginFall(b);
   };

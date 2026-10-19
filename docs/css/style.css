@@ -88,6 +88,11 @@ body.desk-page { height: 100vh; height: 100dvh; overflow: hidden; }
     radial-gradient(ellipse 75% 70% at 24% 18%, rgba(255,226,170,.13), transparent 70%),
     radial-gradient(ellipse 85% 85% at 45% 42%, transparent 52%, rgba(12,6,0,.34) 100%);
 }
+.desk-fade { position: absolute; inset: 0; z-index: 5; pointer-events: none; } /* phones: the cropped sides fade into the room */
+.desk-fade::before, .desk-fade::after { content: ""; position: absolute; top: 0; bottom: 0; width: 26px; opacity: 0; transition: opacity .2s; }
+.desk-fade::before { left: 0; background: linear-gradient(to right, rgba(14,21,17,.8), rgba(14,21,17,.35) 45%, transparent); }
+.desk-fade::after { right: 0; background: linear-gradient(to left, rgba(14,21,17,.8), rgba(14,21,17,.35) 45%, transparent); }
+.desk-fade.crop-l::before, .desk-fade.crop-r::after { opacity: 1; }
 .obj { position: absolute; left: 0; top: 0; }
 .obj.dropping { animation: appear .35s ease-out backwards; }
 @keyframes appear { from { opacity: 0; } }
