@@ -112,6 +112,8 @@
 
     this.layout();
     window.addEventListener('resize', function () { self.layout(); });
+    // the header can wrap (large system fonts, font loading), resizing the desk area without a window resize
+    if (window.ResizeObserver) new ResizeObserver(function () { self.layout(); }).observe(viewport);
     this._bindPointers();
     this._tick = this._tick.bind(this);
   }
