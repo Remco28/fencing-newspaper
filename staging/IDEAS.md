@@ -18,3 +18,7 @@ Frank's trigger words: "shelve it" / "idea bank".
 - Short by default; an in-depth review only if exceptionally good.
 - Frank may share a screenshot to include. Semi-regular, as he watches these anyway.
 - Note: credit/link the video; check usage terms for any screenshot printed.
+
+### 3. Tip screw figure (added 2026-10-20)
+- Educational figure: how to change a tip screw, plus the tip screw types.
+- Runs in the Educational Figure rotation (2 columns, line art).

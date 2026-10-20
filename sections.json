@@ -1,5 +1,5 @@
 {
-  "_about": "Master section registry for En Garde Gazette (Frank 2026-10-20). Being configured section by section with Frank; CONTENT-HIERARCHY.md remains canonical until migration is complete. Readable table will be generated from this file.",
+  "_about": "Master section registry for En Garde Gazette (Frank 2026-10-20). Walkthrough complete 2026-10-20; supersedes CONTENT-HIERARCHY.md for per-section settings.",
   "fields": {
     "priority": "core | high | medium | low (words, not numbers). core = never cut; low = first cut when long, first pulled in to fill when short. Within a tier, Desk uses judgment on the week. | dynamic (see priority_rule)",
     "frequency": "every_issue | when_available | rotation | triggered",
@@ -462,6 +462,33 @@
         "Fencers named only with the family's OK"
       ],
       "last_ran": 3
+    },
+    {
+      "id": "educational-figure",
+      "name": "Educational Figure (name pending; Desk suggests 'The Anatomy Page')",
+      "status": "configured 2026-10-20",
+      "priority": "low",
+      "role": "filler; can absorb slack within its span",
+      "frequency": "rotation",
+      "frequency_detail": "when a good figure exists; figures may repeat from time to time (Frank 2026-10-20)",
+      "size": {
+        "min": "2 columns",
+        "typical": "2 columns + short caption",
+        "max": "2 columns unless Frank says otherwise"
+      },
+      "shelf_life": "evergreen; repeats allowed",
+      "supplier": "frank art (e.g. exploded epee) or desk-built diagram from sourced facts; frank vets",
+      "lead_time": "a week+ if art must be made",
+      "placement": "usually page 2",
+      "rules": [
+        "Line art preferred (cheap B&W print)",
+        "Labels fact-checked"
+      ],
+      "examples": [
+        "THE WEAPON (exploded epee)",
+        "Planned: changing a tip screw + tip screw types (idea bank)"
+      ],
+      "last_ran": null
     }
   ],
   "house_rules_global": [
@@ -469,5 +496,13 @@
     "No birth years",
     "Names as on official pages",
     "No Reddit/X usernames; no minors' personal accounts"
+  ],
+  "dropped_maybes_2026_10_20": [
+    "Dear Ref",
+    "College path notes",
+    "Gear care tips",
+    "Corrections line",
+    "Fencing science/fitness",
+    "Lost and found / used gear"
   ]
 }
