@@ -273,6 +273,29 @@
       "last_ran": null
     },
     {
+      "id": "for-the-parents",
+      "name": "For the Parents",
+      "status": "configured 2026-10-20",
+      "priority": "medium",
+      "frequency": "when_available",
+      "frequency_detail": "every issue when there's a good topic; never forced",
+      "size": {
+        "min": "~50w",
+        "typical": "~80-120w",
+        "max": "~180w for a meaty topic"
+      },
+      "shelf_life": "mostly evergreen; seasonal topics (HS season, first NAC) time-sensitive",
+      "supplier": "desk researches; frank vets; Frank's ideas and club observations welcome",
+      "lead_time": "a day or two",
+      "placement": "any page, 1 column",
+      "rules": [
+        "For non-fencing parents: plain words, explain any jargon",
+        "One practical topic per piece, sourced",
+        "Proactive (nobody asked), unlike Parent Q&A"
+      ],
+      "last_ran": null
+    },
+    {
       "id": "featured-bout",
       "name": "Featured Bout",
       "status": "new (2026-10-20), configuring",
