@@ -63,11 +63,48 @@
     {
       "id": "ratings-earned",
       "name": "Ratings Earned",
-      "status": "stays its own box (Frank 2026-10-20); full config pending",
-      "priority": null,
+      "status": "configured 2026-10-20",
+      "priority": "high",
       "frequency": "when_available",
+      "frequency_detail": "whenever any rating was earned",
+      "size": {
+        "min": "1 row",
+        "typical": "~2-5 rows",
+        "max": "~8 rows"
+      },
+      "shelf_life": "time_sensitive: ~2 weeks; late-posted ratings still count",
+      "supplier": "desk from FencingTracker/AskFRED; Frank's tips count",
+      "lead_time": "as ratings post; checked until compose",
+      "placement": "page 1 near Club Results, 1 column",
       "rules": [
-        "Separate from Club Results: worth celebrating on its own"
+        "Separate box from Club Results: worth celebrating on its own",
+        "Ratings earned ANYWHERE count (USA Fencing ratings are national)",
+        "Name the event the rating came from",
+        "Celebrate step-ups only; never mention drops",
+        "Names as on official pages"
+      ],
+      "last_ran": null
+    },
+    {
+      "id": "secondary-articles",
+      "name": "Secondary Articles",
+      "status": "configured 2026-10-20; merges old Secondary A and B",
+      "priority": "medium",
+      "frequency": "every_issue",
+      "frequency_detail": "1-2 pieces per issue",
+      "size": {
+        "min": "~60w",
+        "typical": "~80-120w",
+        "max": "~200w when earned"
+      },
+      "shelf_life": "mostly time_sensitive; evergreen explainers can sit on the bench",
+      "supplier": "desk finds and writes; frank vets at budget",
+      "lead_time": "picked in Monday pass; Wednesday-skim leads carry over",
+      "placement": "any page, 1 column or 2 for a bigger piece",
+      "rules": [
+        "First piece usually holds; a second is first to go when tight",
+        "Real news or a clear explainer, not just scores",
+        "Verified facts only; opinions labeled"
       ],
       "last_ran": null
     },
