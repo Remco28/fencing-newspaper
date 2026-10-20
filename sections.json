@@ -417,10 +417,49 @@
     {
       "id": "photo-from-history",
       "name": "Photo from History",
-      "status": "existing (v3.37); full config pending walkthrough",
-      "priority": null,
+      "status": "configured 2026-10-20",
+      "priority": "low",
+      "role": "filler: cheap content that looks deliberate",
+      "frequency": "rotation",
+      "frequency_detail": "when there's room; at most one per issue",
+      "size": {
+        "min": "1-column photo + one-line caption",
+        "typical": "~100-150w incl. caption",
+        "max": "2-column photo for a striking shot"
+      },
+      "shelf_life": "evergreen; 18 on the bench (staging/history-photos/)",
+      "supplier": "Frank's research agent finds; desk picks, crops, captions; frank vets at budget",
+      "lead_time": "none: ready to drop in",
+      "placement": "any page",
       "rules": [
-        "Attribution kept SHORT (Frank 2026-10-20): one line, e.g. 'Photo: Author / Source, CC BY-SA 3.0 (cropped)'. Author, source, license and a change note only; no file names or long URLs"
+        "Credit ONE short line: author/source, license+version, '(cropped)' if changed",
+        "Re-check blurb facts before printing",
+        "Photo need not show fencing (Frank 2026-10-18)",
+        "Keep the fair-play image (07) away from cheating stories"
+      ],
+      "last_ran": 3
+    },
+    {
+      "id": "controversial-calls",
+      "name": "Controversial Calls",
+      "status": "configured 2026-10-20",
+      "priority": "medium",
+      "priority_rule": "rises to high when the call involved our club or drew real attention",
+      "frequency": "triggered",
+      "frequency_detail": "only a real disputed call; never manufactured",
+      "size": {
+        "min": "~150w",
+        "typical": "~200-300w",
+        "max": "2-column feature when earned"
+      },
+      "shelf_life": "time_sensitive: ~1-2 weeks after the event",
+      "supplier": "desk researches from rulebook + verified facts; frank vets",
+      "lead_time": "a few days",
+      "placement": "any page; 2 columns as a feature",
+      "rules": [
+        "Structure: the call / the rule / both sides (opinion labeled) / the verdict",
+        "Never name referees critically",
+        "Fencers named only with the family's OK"
       ],
       "last_ran": 3
     }
