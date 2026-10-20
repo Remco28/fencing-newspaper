@@ -1,7 +1,7 @@
 {
   "_about": "Master section registry for En Garde Gazette (Frank 2026-10-20). Being configured section by section with Frank; CONTENT-HIERARCHY.md remains canonical until migration is complete. Readable table will be generated from this file.",
   "fields": {
-    "priority": "core | high | medium | low (words, not numbers). core = never cut; low = first cut when long, first pulled in to fill when short. Within a tier, Desk uses judgment on the week.",
+    "priority": "core | high | medium | low (words, not numbers). core = never cut; low = first cut when long, first pulled in to fill when short. Within a tier, Desk uses judgment on the week. | dynamic (see priority_rule)",
     "frequency": "every_issue | when_available | rotation | triggered",
     "frequency_detail": "plain-words cadence / trigger",
     "size": "min / typical / max that still reads well",
@@ -152,6 +152,54 @@
         "Optional one-line 'Fact check:'"
       ],
       "last_ran": null
+    },
+    {
+      "id": "nearby-tournaments",
+      "name": "Nearby Tournaments",
+      "status": "configured 2026-10-20",
+      "priority": "core",
+      "frequency": "every_issue",
+      "frequency_detail": "every issue; shrinks, never dropped",
+      "size": {
+        "min": "1 tournament",
+        "typical": "2-3 tournaments",
+        "max": "4 tournaments"
+      },
+      "shelf_life": "time_sensitive: events very soon, nearby",
+      "supplier": "desk from club schedule digest, FencingTracker registrations, AskFRED",
+      "lead_time": "refreshed daily; locked at compose",
+      "placement": "any page, adjacent to Deadlines",
+      "rules": [
+        "Elite FC entries only",
+        "Pending (unpaid/unconfirmed) entries print like confirmed",
+        "When tight: fewer tournaments before fewer names",
+        "Multi-day tournament = one block, days in order",
+        "No '(Epee)' labels"
+      ],
+      "last_ran": 3
+    },
+    {
+      "id": "deadlines",
+      "name": "Deadlines",
+      "status": "configured 2026-10-20 (replaces 'runs every issue')",
+      "priority": "dynamic",
+      "priority_rule": "rises as deadlines approach: high if a deadline is within ~3 weeks, medium within ~6 weeks, low beyond; far-off deadlines print only if there's room",
+      "frequency": "when_available",
+      "frequency_detail": "skips in quiet stretches (e.g. summer); a lone far-off deadline can ride as one line elsewhere (e.g. under Nearby Tournaments)",
+      "size": {
+        "min": "1 row",
+        "typical": "follows how many deadlines are near",
+        "max": "~7 rows"
+      },
+      "shelf_life": "time_sensitive until each deadline passes",
+      "supplier": "desk from AskFRED, email, USA Fencing",
+      "lead_time": "refreshed each weekly pass",
+      "placement": "adjacent to Nearby Tournaments when both run",
+      "rules": [
+        "Entry closes and renewals (e.g. USA Fencing membership)",
+        "Dates checked against the official page"
+      ],
+      "last_ran": 3
     },
     {
       "id": "featured-bout",
