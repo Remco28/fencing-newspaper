@@ -249,6 +249,30 @@
       "last_ran": null
     },
     {
+      "id": "by-the-book",
+      "name": "By the Book",
+      "status": "configured 2026-10-20 (filler, per Frank)",
+      "priority": "low",
+      "priority_rule": "low filler by default; may rise to medium when a rule is relevant that week (e.g. a controversial call)",
+      "frequency": "rotation",
+      "frequency_detail": "filler: runs when there's space, no every-issue slot",
+      "size": {
+        "min": "~40w",
+        "typical": "~50-80w",
+        "max": "~120w with a worked example"
+      },
+      "shelf_life": "evergreen; keep a few on the bench",
+      "role": "filler",
+      "supplier": "desk from USA Fencing rulebook + penalty chart (reference/usa-fencing/), FIE when different; frank vets at budget; never wait on Frank for material",
+      "lead_time": "about an hour",
+      "placement": "any page, 1 column",
+      "rules": [
+        "Cite rule numbers; brief quotes; epee only",
+        "Never takes sides on a real call (that's Controversial Calls)"
+      ],
+      "last_ran": null
+    },
+    {
       "id": "featured-bout",
       "name": "Featured Bout",
       "status": "new (2026-10-20), configuring",
