@@ -9,9 +9,67 @@
     "supplier": "desk | frank | desk+frank_vet | other",
     "lead_time": "how early work must start",
     "placement": "page / column-span hints (priority, not page assignment)",
-    "last_ran": "issue number or null"
+    "last_ran": "issue number or null",
+    "rules": "house rules: section-specific notes and lines not to cross that other fields don't cover"
   },
   "sections": [
+    {
+      "id": "lead-story",
+      "name": "Lead Story",
+      "status": "configured 2026-10-20",
+      "priority": "core",
+      "frequency": "every_issue",
+      "frequency_detail": "every issue",
+      "size": {
+        "min": "~120w",
+        "typical": "~150-180w",
+        "max": "~300w when earned"
+      },
+      "shelf_life": "time_sensitive: the week's biggest epee news",
+      "supplier": "desk finds and writes; frank vets at budget; Frank's tips count as sources",
+      "lead_time": "picked Monday after the weekend; can swap late if a bigger result posts",
+      "placement": "page 1 top, 2 columns, biggest type",
+      "rules": [
+        "Pick order: strong club result first, then national/NJ",
+        "A late big club result bumps the planned lead to a page-1 feature"
+      ],
+      "last_ran": 3
+    },
+    {
+      "id": "club-results",
+      "name": "Club Results",
+      "status": "configured 2026-10-20",
+      "priority": "core",
+      "frequency": "when_available",
+      "frequency_detail": "only when there's a strong result or a qualification",
+      "size": {
+        "min": "1 row",
+        "typical": "~3-5 rows",
+        "max": "~8 rows"
+      },
+      "shelf_life": "time_sensitive: ~1 week, 2 if posted late",
+      "supplier": "desk from FencingTracker/AskFRED; Frank's chat tips count; names as on official pages",
+      "lead_time": "as results post; keep checking until compose",
+      "placement": "page 1 near the lead, 1 column",
+      "rules": [
+        "Strong results only (podium, top 8, notable climb)",
+        "Qualifying is the result (Frank 2026-10-20): whether someone qualified matters most, and it's sensitive; print 'qualified for X', placement not the headline (omit by default)",
+        "No 'also fenced' line; nobody embarrassed",
+        "No birth years; no fencer schools"
+      ],
+      "last_ran": 2
+    },
+    {
+      "id": "ratings-earned",
+      "name": "Ratings Earned",
+      "status": "stays its own box (Frank 2026-10-20); full config pending",
+      "priority": null,
+      "frequency": "when_available",
+      "rules": [
+        "Separate from Club Results: worth celebrating on its own"
+      ],
+      "last_ran": null
+    },
     {
       "id": "featured-bout",
       "name": "Featured Bout",
