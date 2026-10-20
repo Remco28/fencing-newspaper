@@ -343,6 +343,30 @@
       "last_ran": 2
     },
     {
+      "id": "club-photos",
+      "name": "Club Photos (working name)",
+      "status": "configured 2026-10-20; source approved by coach",
+      "priority": "medium",
+      "frequency": "when_available",
+      "frequency_detail": "ideally paired with a story (camp, tournament, club event); or one standalone 'from the club' photo",
+      "size": {
+        "min": "one small photo + caption",
+        "typical": "one photo, 1-2 columns",
+        "max": "2-3 photos for a big event"
+      },
+      "shelf_life": "event photos time_sensitive; club-life shots evergreen",
+      "supplier": "club Instagram @elitefencersclub (coach approved 2026-10-20); desk fetches or Frank sends; desk picks, crops, B&W, captions",
+      "lead_time": "a few days before compose",
+      "placement": "any page; beside the related story when there is one",
+      "rules": [
+        "Source: club's own Instagram (instagram.com/elitefencersclub); kids' faces OK since the club posted them publicly",
+        "Credit one short line (e.g. 'Photo: Elite FC Instagram')",
+        "Names only from Frank or the post itself",
+        "No minors' personal accounts"
+      ],
+      "last_ran": null
+    },
+    {
       "id": "featured-bout",
       "name": "Featured Bout",
       "status": "new (2026-10-20), configuring",
