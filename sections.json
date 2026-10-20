@@ -57,7 +57,8 @@
         "No 'also fenced' line; nobody embarrassed",
         "No birth years; no fencer schools"
       ],
-      "last_ran": 2
+      "last_ran": null,
+      "last_ran_note": "to verify from published issues"
     },
     {
       "id": "ratings-earned",
