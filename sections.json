@@ -55,7 +55,7 @@
         "Strong results only (podium, top 8, notable climb)",
         "Qualifying is the result (Frank 2026-10-20): whether someone qualified matters most, and it's sensitive; print 'qualified for X', placement not the headline (omit by default)",
         "No 'also fenced' line; nobody embarrassed",
-        "No birth years; no fencer schools"
+        "No birth years; schools per global school rule"
       ],
       "last_ran": null,
       "last_ran_note": "to verify from published issues"
@@ -105,6 +105,51 @@
         "First piece usually holds; a second is first to go when tight",
         "Real news or a clear explainer, not just scores",
         "Verified facts only; opinions labeled"
+      ],
+      "last_ran": null
+    },
+    {
+      "id": "nj-high-school",
+      "name": "NJ High School Roundup",
+      "status": "configured 2026-10-20",
+      "priority": "medium",
+      "frequency": "when_available",
+      "frequency_detail": "every issue in the winter HS season; off-season only for real news (preseason primer, rule change)",
+      "size": {
+        "min": "1 line",
+        "typical": "~60-90w or 3-5 one-liners",
+        "max": "~150w for a big meet"
+      },
+      "shelf_life": "time_sensitive: ~1 week",
+      "supplier": "desk from NJ.com, NJSIAA, school athletics pages; frank vets at budget",
+      "lead_time": "Monday pass covers the week's meets",
+      "placement": "any page, 1 column",
+      "rules": [
+        "Whole-state coverage",
+        "Schools print per the global school rule (official results, relevant)"
+      ],
+      "last_ran": null
+    },
+    {
+      "id": "overheard-reddit",
+      "name": "Overheard on Reddit",
+      "status": "configured 2026-10-20",
+      "priority": "low",
+      "frequency": "when_available",
+      "frequency_detail": "best at one per issue, never forced; most of Reddit is junk",
+      "size": {
+        "min": "~80w",
+        "typical": "~130-170w",
+        "max": "~220w for a great thread"
+      },
+      "shelf_life": "mostly evergreen",
+      "supplier": "frank shares Reddit threads as PDFs; desk picks and writes",
+      "lead_time": "whenever Frank sends; good ones wait on the bench",
+      "placement": "any page, 1 column",
+      "rules": [
+        "No usernames",
+        "Opinions labeled as opinions; factual claims checked first",
+        "Optional one-line 'Fact check:'"
       ],
       "last_ran": null
     },
@@ -166,5 +211,11 @@
       ],
       "last_ran": 3
     }
+  ],
+  "house_rules_global": [
+    "Schools (Frank 2026-10-20): a high schooler's school may print when it appears on an official results page and is relevant (e.g. NJ HS roundup); otherwise leave it out. Never print a middle/elementary schooler's school. (Replaces the old 'Brendan's school never prints' caution, which was only about an unverified school.)",
+    "No birth years",
+    "Names as on official pages",
+    "No Reddit/X usernames; no minors' personal accounts"
   ]
 }
