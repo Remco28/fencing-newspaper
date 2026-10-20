@@ -1,0 +1,19 @@
+{
+  "retrieved_by": "Gazette Desk daily FT quick look",
+  "date": "2026-10-20",
+  "retrieved_at": "2026-10-20T07:51:03-04:00",
+  "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+  "method": "one curl fetch; club page only; no event deep-fetch",
+  "page_summary": {
+    "tournament_count": 161,
+    "row_count": 1208,
+    "newest_tournament": "Artdu Fencing Juniors/Cadets/Senior Open Epee",
+    "diff_vs_2026-10-19": "no change"
+  },
+  "fencingapi_crosscheck": {
+    "club_results_since_2026-10-19": {"source": "cache", "rows": 0},
+    "askfred_results_nj_jo_qualifier": {"endpoint": "/v1/askfred/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d/results?live=true", "fetched_at": "2026-10-20T11:51:27Z", "items": 0, "final": false},
+    "usfa_morris_cup_entries": {"endpoint": "/v1/usfa/tournaments/12095/entries (cached)", "fetched_at": "2026-10-20T10:02:01Z", "elite_fc_entries": 31, "elite_fc_fencers": 20, "matches_digest": true}
+  },
+  "new_elite_fc_results": []
+}

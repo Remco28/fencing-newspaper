@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-19T09:30:00-04:00",
+  "updated_at": "2026-10-20T07:53:00-04:00",
   "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
   "items": [
     {
@@ -270,11 +270,11 @@
       "id": "email-agentmail-morris-cup-entries-2026-10-07",
       "kind": "signup_row",
       "headline": "Morris Cup RYC/RJCC — EFC who's entered",
-      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Fri Oct 16; +1 vs Thu Oct 15): Sat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia, Sheth Anayaà; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila. Sun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
+      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Tue Oct 20; +1 vs Mon Oct 19): Sat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia, Sheth Anayaà; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila, Young Penelope. Sun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
       "source": "email",
-      "message_id": "<010001a1445eaeec-e84be129-3374-44ff-827f-7ab0b857583d-000000@email.amazonses.com>",
+      "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
-      "subject": "Club schedule · Friday, October 16",
+      "subject": "Club schedule · Tuesday, October 20",
       "target_week": "next",
       "vetted": true,
       "created_at": "2026-10-07T13:15:05-04:00",
@@ -455,6 +455,24 @@
           "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
           "retrieved_at": "2026-10-19T09:03:00-04:00",
           "note": "Direct cross-check agrees: 30 active entries from 20 club members; Rahi Shah Mirani's Y10ME entry shows Withdrawn (not counted). No API-vs-direct mismatch."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
+          "from": "chunkymonkey@agentmail.to",
+          "subject": "Club schedule · Tuesday, October 20",
+          "received_at": "2026-10-20T07:00:01-04:00",
+          "retrieved_at": "2026-10-20T07:53:00-04:00",
+          "note": "CHANGE: Young, Penelope added to Y14WE (Sat Oct 24, 3:00 PM). Now 20 fencers / 31 entries (Sat 13, Sun 18). Digest data as of Oct 19 6:00 AM (could not refresh)."
+        },
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
+          "fetched_at": "2026-10-20T10:02:01Z",
+          "fetched_at_et": "2026-10-20 6:02 AM ET",
+          "note": "Cross-check agrees: 31 Elite FC entries / 20 fencers, all 'approved'; Young, Penelope listed in Y14WE (event capped, 98 entrants, 0 open spots). No mismatch."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -468,7 +486,7 @@
       "overlap_note": "Richer than gather-morris-cup-ryc-oct25 (event-only); this is the full EFC entry list.",
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-10-07T13:20:00-04:00",
-      "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board. Name tidy (Desk, 2026-10-07): print First Last like the club newsletter. 'WU Caden' → 'Caden Wu' (casing only; FencingTracker CDTME shows 'WU, Caden' — registration caps). 'Shah-Mirani Ash' (Y14ME) vs 'Shah Mirani Rahi' (Y10ME): FencingTracker shows the same split ('Shah-Mirani, Ash' / 'Shah Mirani, Rahi'), so no authoritative single form — kept source forms per fencer and FLAGGED for Frank. Frank approved showing ALL 29 entries (20 fencers) — exception to the 8-row signup soft cap for big turnouts. | Desk 2026-10-12: list refreshed from Oct 11/12 digests (Olivia Hayes added CDTWE; Rahi Shah-Mirani dropped from Y10ME, now 19 fencers / 29 entries). Shah-Mirani hyphen flag now only matters for Ash on this board; Rahi's spelling still unresolved in roster. | chat: Frank 2026-10-12: Rahi also prints 'Shah-Mirani' (roster resolved). | Desk 2026-10-16: Fri digest adds Anayaà Sheth to Sat JNRWE (print Anayaa Sheth per roster); list now 20 fencers / 30 entries.",
+      "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board. Name tidy (Desk, 2026-10-07): print First Last like the club newsletter. 'WU Caden' → 'Caden Wu' (casing only; FencingTracker CDTME shows 'WU, Caden' — registration caps). 'Shah-Mirani Ash' (Y14ME) vs 'Shah Mirani Rahi' (Y10ME): FencingTracker shows the same split ('Shah-Mirani, Ash' / 'Shah Mirani, Rahi'), so no authoritative single form — kept source forms per fencer and FLAGGED for Frank. Frank approved showing ALL 29 entries (20 fencers) — exception to the 8-row signup soft cap for big turnouts. | Desk 2026-10-12: list refreshed from Oct 11/12 digests (Olivia Hayes added CDTWE; Rahi Shah-Mirani dropped from Y10ME, now 19 fencers / 29 entries). Shah-Mirani hyphen flag now only matters for Ash on this board; Rahi's spelling still unresolved in roster. | chat: Frank 2026-10-12: Rahi also prints 'Shah-Mirani' (roster resolved). | Desk 2026-10-16: Fri digest adds Anayaà Sheth to Sat JNRWE (print Anayaa Sheth per roster); list now 20 fencers / 30 entries. | Desk 2026-10-20: Tue digest adds Penelope Young (prints Penny Young) to Sat Y14WE; USA Fencing entries cache agrees; list now 20 fencers / 31 entries.",
       "name_aliases": {
         "Penny Young": [
           "Young Penelope"
@@ -483,7 +501,7 @@
       "carried_from": "staging/weeks/2026-10-19",
       "carried_at": "2026-10-07T18:46:27-04:00",
       "carry_note": "Morris Cup is Oct 24–25: becomes a results watch for No. 4.",
-      "entries_last_confirmed": "2026-10-18T08:32:00-04:00",
+      "entries_last_confirmed": "2026-10-20T07:53:00-04:00",
       "entries_change_log": [
         {
           "seen_in": "Club schedule · Sunday, October 11",
@@ -502,14 +520,20 @@
           "message_id": "<010001a1445eaeec-e84be129-3374-44ff-827f-7ab0b857583d-000000@email.amazonses.com>",
           "change": "ADD Sheth, Anayaà — JNRWE (Sat Oct 24, 8:00 AM). Print as Anayaa Sheth (roster).",
           "noted_at": "2026-10-16T08:00:00-04:00"
+        },
+        {
+          "seen_in": "Club schedule · Tuesday, October 20",
+          "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
+          "change": "ADD Young, Penelope — Y14WE (Sat Oct 24, 3:00 PM). Print as Penny Young (roster). She now fences both days (Y14WE Sat, CDTWE Sun).",
+          "noted_at": "2026-10-20T07:53:00-04:00"
         }
       ],
-      "entries_count": "20 fencers / 30 entries (Fri Oct 16 digest; was 19 / 29 through Thu Oct 15)",
+      "entries_count": "20 fencers / 31 entries (Tue Oct 20 digest + USA Fencing cache; was 20 / 30 through Mon Oct 19)",
       "board": "Nearby Tournaments",
       "slot_hint": "club_results",
       "waiting": true,
       "no4_role": "Results watch for No. 4 (Oct 24-25 is before No. 4's publish). Likely lead: strong Elite FC finishes only (STYLE-GUIDE 0d); everyone else on the 'also fenced' line. Check FencingTracker / USA Fencing results Sun Oct 25 night and Mon Oct 26 morning.",
-      "updated_at": "2026-10-19T09:30:00-04:00"
+      "updated_at": "2026-10-20T07:53:00-04:00"
     },
     {
       "id": "web-efc-standing-schedule",
@@ -639,6 +663,17 @@
           "type": "chat",
           "note": "Frank: Mini Musketeers Fridays moved to 4:15 PM; website outdated",
           "retrieved_at": "2026-10-07T17:32:59-04:00"
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261019164521.c57d267f1a.f5dcd7cc@mail150.atl241.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class!",
+          "received_at": "2026-10-19T12:45:27-04:00",
+          "retrieved_at": "2026-10-20T07:53:00-04:00",
+          "vetted_by": "auto-mailchimp",
+          "note": "Club Mailchimp (Mon Oct 19): all lessons Mon+Tue; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. Matches standing schedule; no change."
         }
       ],
       "suggested_slot": "club-events",
@@ -654,7 +689,8 @@
       "carried_from": "staging/weeks/2026-10-19",
       "carried_at": "2026-10-07T18:46:27-04:00",
       "carry_note": "Standing reference.",
-      "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET."
+      "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
+      "updated_at": "2026-10-20T07:53:00-04:00"
     },
     {
       "id": "ft-ultimate-cup-efc-registrations-2026-10-12",
@@ -866,6 +902,16 @@
           "fetched_at": "2026-10-19T13:06:44Z",
           "fetched_at_et": "2026-10-19 9:06 AM ET",
           "note": "Monday full pass: unchanged, 4 Elite FC (SarroWaite Y12ME, Jiang Y12WE, Owen Li Y14ME, Nora Li Y10 Mixed); AskFRED shows them pending (entrant_count excludes them). Prereg closes Nov 7 (AskFRED catalog)."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
+          "from": "chunkymonkey@agentmail.to",
+          "subject": "Club schedule · Tuesday, October 20",
+          "received_at": "2026-10-20T07:00:01-04:00",
+          "retrieved_at": "2026-10-20T07:53:00-04:00",
+          "note": "Unchanged: 4 entries / 4 fencers (data as of Oct 19 6:00 AM)."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -878,14 +924,14 @@
         "nearby-tournaments"
       ],
       "entries_count": "4 fencers / 4 entries",
-      "entries_last_confirmed": "2026-10-18T08:32:00-04:00",
+      "entries_last_confirmed": "2026-10-20T07:53:00-04:00",
       "name_flags": [
         "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2."
       ],
       "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
       "carried_from": "staging/weeks/2026-10-19",
       "carry_note": "Medeo YC #5 Nov 8: upcoming board row.",
-      "updated_at": "2026-10-19T09:30:00-04:00"
+      "updated_at": "2026-10-20T07:53:00-04:00"
     },
     {
       "id": "fencingapi-medeo-yc4-entries-2026-10-14",
