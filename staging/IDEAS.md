@@ -21,4 +21,4 @@ Frank's trigger words: "shelve it" / "idea bank".
 
 ### 3. Tip screw figure (added 2026-10-20)
 - Educational figure: how to change a tip screw, plus the tip screw types.
-- Runs in the Educational Figure rotation (2 columns, line art).
+- Runs in The Vault rotation (2 columns, line art).

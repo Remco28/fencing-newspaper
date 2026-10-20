@@ -464,31 +464,35 @@
       "last_ran": 3
     },
     {
-      "id": "educational-figure",
-      "name": "Educational Figure (name pending; Desk suggests 'The Anatomy Page')",
-      "status": "configured 2026-10-20",
+      "id": "the-vault",
+      "name": "The Vault",
+      "status": "configured 2026-10-20; named by Frank",
       "priority": "low",
       "role": "filler; can absorb slack within its span",
       "frequency": "rotation",
-      "frequency_detail": "when a good figure exists; figures may repeat from time to time (Frank 2026-10-20)",
+      "frequency_detail": "when a good piece exists; pieces repeat from time to time",
       "size": {
-        "min": "2 columns",
-        "typical": "2 columns + short caption",
+        "min": "1 column",
+        "typical": "2 columns (figures default 2-col)",
         "max": "2 columns unless Frank says otherwise"
       },
       "shelf_life": "evergreen; repeats allowed",
-      "supplier": "frank art (e.g. exploded epee) or desk-built diagram from sourced facts; frank vets",
+      "supplier": "frank (art, interviews) or desk (diagrams, explainers from sourced facts); frank vets",
       "lead_time": "a week+ if art must be made",
       "placement": "usually page 2",
       "rules": [
-        "Line art preferred (cheap B&W print)",
+        "First run prints normally; a rerun carries a small tag, e.g. 'From the Vault · first ran in No. 2'",
+        "Re-check facts before any rerun",
+        "Line art preferred for figures (cheap B&W)",
         "Labels fact-checked"
       ],
       "examples": [
         "THE WEAPON (exploded epee)",
-        "Planned: changing a tip screw + tip screw types (idea bank)"
+        "Planned: changing a tip screw + tip screw types (idea bank)",
+        "First-hand interviews"
       ],
-      "last_ran": null
+      "last_ran": null,
+      "about": "Reusable, high-value content that can reprint months or years later: diagrams, explainers, first-hand interviews, anything worth keeping (Frank 2026-10-20)"
     }
   ],
   "house_rules_global": [
