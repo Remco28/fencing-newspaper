@@ -296,6 +296,53 @@
       "last_ran": null
     },
     {
+      "id": "comic",
+      "name": "Comic",
+      "status": "configured 2026-10-20",
+      "priority": "low",
+      "role": "filler unless Frank specifies otherwise",
+      "frequency": "when_available",
+      "frequency_detail": "sparingly, only when Frank or Ling send one",
+      "size": {
+        "min": "single panel, 1 column",
+        "typical": "single panel",
+        "max": "2-column strip"
+      },
+      "shelf_life": "evergreen",
+      "supplier": "frank or Ling draw and email it; desk never draws or writes it",
+      "lead_time": "whenever it arrives",
+      "placement": "any page",
+      "rules": [
+        "Guest artist (Ling) gets a credit line; Frank no byline",
+        "Must print well in B&W",
+        "Ling's credit wording still open"
+      ],
+      "last_ran": null
+    },
+    {
+      "id": "epee-on-screen",
+      "name": "Epee on Screen",
+      "status": "configured 2026-10-20",
+      "priority": "low",
+      "role": "filler",
+      "frequency": "when_available",
+      "frequency_detail": "major epee events streaming soon (World Cups, Grand Prix, Worlds, NACs)",
+      "size": {
+        "min": "1 row",
+        "typical": "2-3 rows",
+        "max": "~5 rows"
+      },
+      "shelf_life": "time_sensitive: the week ahead",
+      "supplier": "desk from FIE calendar, FencingTV, USA Fencing",
+      "lead_time": "Monday pass",
+      "placement": "any page, 1 column",
+      "rules": [
+        "Where to watch only; no start times/prices unless the official page lists them",
+        "Short links only"
+      ],
+      "last_ran": 2
+    },
+    {
       "id": "featured-bout",
       "name": "Featured Bout",
       "status": "new (2026-10-20), configuring",
