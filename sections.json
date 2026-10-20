@@ -1,7 +1,7 @@
 {
   "_about": "Master section registry for En Garde Gazette (Frank 2026-10-20). Being configured section by section with Frank; CONTENT-HIERARCHY.md remains canonical until migration is complete. Readable table will be generated from this file.",
   "fields": {
-    "priority": "rank in cut order (1 = last cut); null = not yet ranked",
+    "priority": "core | high | medium | low (words, not numbers). core = never cut; low = first cut when long, first pulled in to fill when short. Within a tier, Desk uses judgment on the week.",
     "frequency": "every_issue | when_available | rotation | triggered",
     "frequency_detail": "plain-words cadence / trigger",
     "size": "min / typical / max that still reads well",
@@ -16,33 +16,59 @@
       "id": "featured-bout",
       "name": "Featured Bout",
       "status": "new (2026-10-20), configuring",
-      "priority": null,
+      "priority": "low",
       "frequency": "rotation",
       "frequency_detail": "semi-regular, roughly every 2-3 issues, when Frank has watched a bout worth recommending; never forced",
-      "size": {"min": "~60w + screenshot (short 'why watch')", "typical": "~80-120w + screenshot", "max": "~250w in-depth review, only when the bout is exceptional"},
+      "size": {
+        "min": "~60w + screenshot (short 'why watch')",
+        "typical": "~80-120w + screenshot",
+        "max": "~250w in-depth review, only when the bout is exceptional"
+      },
       "shelf_life": "evergreen while the video stays online",
       "supplier": "frank (bout link + optional screenshot + his take); desk writes",
       "lead_time": "a few days; can sit on the bench ready to fill",
       "placement": "any page; 1 column, 2 if review-length with a screenshot",
       "role": "good filler: size-flexible and evergreen",
-      "rules": ["Credit and link the video every time", "Screenshot only from Frank; check the video's usage terms before printing", "Insights stay grounded in what's on the video; opinions labeled"],
+      "rules": [
+        "Credit the video every time with a SHORTENED link (e.g. youtu.be/<id>), never the long URL",
+        "Screenshot only from Frank; check the video's usage terms before printing",
+        "Insights stay grounded in what's on the video; opinions labeled"
+      ],
       "last_ran": null
     },
     {
       "id": "road-trip",
-      "name": "Road Trip (working name)",
+      "name": "Travel Tournaments (working name; Road Trip dropped since half the trips are flights; Frank still choosing)",
       "status": "new (2026-10-20), configuring; deliberate revival of travel, limited to national tournaments (the 2026-10-06 cut of general travel stands)",
-      "priority": null,
+      "priority": "low",
       "frequency": "triggered",
-      "frequency_detail": "when a national tournament (NAC, Summer Nationals, etc.) is ~4-8 weeks out",
-      "size": {"min": "~120w", "typical": "~180-250w", "max": "~350w feature"},
+      "frequency_detail": "every national tournament (NACs, March NAC, Summer Nationals), ~4-8 weeks out; most club kids attend only Summer Nationals and the March NAC, older kids go to more, so those two get the fullest treatment",
+      "size": {
+        "min": "~120w",
+        "typical": "~180-250w",
+        "max": "~350w feature"
+      },
       "shelf_life": "time_sensitive: stale once the tournament passes",
       "supplier": "desk researches; frank vets",
       "lead_time": "start ~6-8 weeks before the event so it can run 4-8 weeks out",
       "placement": "feature-size; page 1 or 2, 2 columns",
       "role": "occasional feature; encourages families to travel to nationals",
-      "rules": ["Season/weather-appropriate things to do in the host city", "Venue basics and practical tips for families", "Facts sourced; no paid placements"],
+      "rules": [
+        "Be very selective with places: skip anything a quick Google search would surface; favor few, non-obvious, season/weather-appropriate picks that fit a tournament schedule",
+        "Venue basics and practical tips for families",
+        "Facts sourced; no paid placements"
+      ],
       "last_ran": null
+    },
+    {
+      "id": "photo-from-history",
+      "name": "Photo from History",
+      "status": "existing (v3.37); full config pending walkthrough",
+      "priority": null,
+      "rules": [
+        "Attribution kept SHORT (Frank 2026-10-20): one line, e.g. 'Photo: Author / Source, CC BY-SA 3.0 (cropped)'. Author, source, license and a change note only; no file names or long URLs"
+      ],
+      "last_ran": 3
     }
   ]
 }
