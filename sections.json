@@ -202,6 +202,53 @@
       "last_ran": 3
     },
     {
+      "id": "club-events",
+      "name": "Club Events",
+      "status": "configured 2026-10-20",
+      "priority": "dynamic",
+      "priority_rule": "by item type: club-hosted tournament = core (early heads-up ~4-6 weeks out, grows toward the date; real write-up or lead-size); urgent announcement (schedule change, closure) = high, print ASAP as a one-liner, drop once old news; camp/clinic = low 'save the date' early, rising to medium then high as signup closes (may repeat over issues); routine notes (regular class schedule) = low, one line at most",
+      "frequency": "when_available",
+      "frequency_detail": "camps, special classes, schedule changes, club-hosted tournaments",
+      "size": {
+        "min": "one line",
+        "typical": "2-4 short notes",
+        "max": "small box with class table only when the schedule changes; club-hosted tournament can be lead-size"
+      },
+      "shelf_life": "time_sensitive until the event; camp reminders can repeat",
+      "supplier": "desk from club Mailchimp, Frank's forwards, chat",
+      "lead_time": "varies by type (see priority_rule); refreshed each weekly pass",
+      "placement": "any page, 1 column (club-hosted tournament can go bigger)",
+      "rules": [
+        "Regular class schedule never as a table unless changed; one-line note preferred",
+        "No unpublished prices",
+        "Only the club's public contact details"
+      ],
+      "last_ran": null
+    },
+    {
+      "id": "parent-qa",
+      "name": "Parent Q&A",
+      "status": "configured 2026-10-20",
+      "priority": "medium",
+      "frequency": "when_available",
+      "frequency_detail": "when Frank passes along a real parent's question",
+      "size": {
+        "min": "~40w, one Q&A",
+        "typical": "~50-70w",
+        "max": "two Q&As if room after cuts"
+      },
+      "shelf_life": "mostly evergreen",
+      "supplier": "frank passes the question; desk answers from official sources",
+      "lead_time": "a day or two",
+      "placement": "any page, 1 column",
+      "rules": [
+        "Anonymous by default; name only if the parent asks",
+        "No Frank byline",
+        "Distinct from For the Parents (nobody asked)"
+      ],
+      "last_ran": null
+    },
+    {
       "id": "featured-bout",
       "name": "Featured Bout",
       "status": "new (2026-10-20), configuring",
