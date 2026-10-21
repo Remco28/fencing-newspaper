@@ -1,1584 +1,1598 @@
 {
-  "target_week": "next",
-  "updated_at": "2026-10-20T07:53:00-04:00",
-  "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
-  "items": [
+ "target_week": "next",
+ "updated_at": "2026-10-21T10:05:00-04:00",
+ "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
+ "items": [
+  {
+   "id": "chat-become-a-referee-placeholder-2026-10-13",
+   "kind": "article",
+   "headline": "Want to Referee? Start at the Club",
+   "body": "USA Fencing's advice for would-be referees starts small: at your own club, when two fencers are bouting, offer to referee. Practice every chance you get, ideally with an experienced referee or a coach as a mentor, and read the rulebook. Even if you never ref a tournament, USA Fencing says, knowing the rules makes you a better fencer, one who can speak up when a rule is misapplied.\n\nCertification comes in steps. Download the Referee Study Guide, take a referee seminar, then take the online exam: a general section plus at least one weapon section, and you need 90 percent on each. There's a fee, and a failed exam can be retaken within 48 hours. Pass, and you hold a P rating.\n\nAfter that, ratings are earned on the strip. A practical exam from a Referee Examiner is the step to a local or regional rating, and the ladder runs from L2 and L1 (local events) to R2 and R1 (regional) and N2 and N1 (national). Examiners look for consistency: the same call at 14-14 as at 1-1.\n\nYou don't have to be an adult. Referees as young as 13 with a P rating may work regional tournaments, and at those events anyone who referees more than a single round of pools must be paid. Every referee needs a current USA Fencing membership; referees 18 and older also need a background check and SafeSport training. To keep a rating, retake the exam every two years, attend a seminar, and referee at your level at least once every two years.\n\nFriday open bouting at Elite FC is a good place to start.",
+   "source": "usafencing-web",
+   "from": "Frank (call, 2026-10-13 08:02 ET)",
+   "target_week": "after-next",
+   "vetted": false,
+   "vetted_by": null,
+   "vetted_at": null,
+   "vet_notes": "Planning note only, not print copy.",
+   "status": "drafted by Desk 2026-10-19 from USA Fencing pages (Frank picked No. 4, 2026-10-13)",
+   "open_questions": [],
+   "provenance": [
     {
-      "id": "chat-become-a-referee-placeholder-2026-10-13",
-      "kind": "article",
-      "headline": "Want to Referee? Start at the Club",
-      "body": "USA Fencing's advice for would-be referees starts small: at your own club, when two fencers are bouting, offer to referee. Practice every chance you get, ideally with an experienced referee or a coach as a mentor, and read the rulebook. Even if you never ref a tournament, USA Fencing says, knowing the rules makes you a better fencer, one who can speak up when a rule is misapplied.\n\nCertification comes in steps. Download the Referee Study Guide, take a referee seminar, then take the online exam: a general section plus at least one weapon section, and you need 90 percent on each. There's a fee, and a failed exam can be retaken within 48 hours. Pass, and you hold a P rating.\n\nAfter that, ratings are earned on the strip. A practical exam from a Referee Examiner is the step to a local or regional rating, and the ladder runs from L2 and L1 (local events) to R2 and R1 (regional) and N2 and N1 (national). Examiners look for consistency: the same call at 14-14 as at 1-1.\n\nYou don't have to be an adult. Referees as young as 13 with a P rating may work regional tournaments, and at those events anyone who referees more than a single round of pools must be paid. Every referee needs a current USA Fencing membership; referees 18 and older also need a background check and SafeSport training. To keep a rating, retake the exam every two years, attend a seminar, and referee at your level at least once every two years.\n\nFriday open bouting at Elite FC is a good place to start.",
-      "source": "usafencing-web",
-      "from": "Frank (call, 2026-10-13 08:02 ET)",
-      "target_week": "after-next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
-      "vet_notes": "Planning note only, not print copy.",
-      "status": "drafted by Desk 2026-10-19 from USA Fencing pages (Frank picked No. 4, 2026-10-13)",
-      "open_questions": [],
-      "provenance": [
-        {
-          "source": "chat: Frank 2026-10-13",
-          "note": "Planned piece; Frank personally interested; picked for No. 4."
-        },
-        {
-          "type": "url",
-          "url": "https://www.usafencing.org/become-a-referee",
-          "retrieved_at": "2026-10-19T09:20:00-04:00"
-        },
-        {
-          "type": "url",
-          "url": "https://www.usafencing.org/referees-ratings-process",
-          "retrieved_at": "2026-10-19T09:20:00-04:00",
-          "note": "via search result text; same text appears on become-a-referee page"
-        },
-        {
-          "type": "url",
-          "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt818eb721a8cdafac/69432277e99cb75077675f73/Regional_Tournament_Requirements_(2026-28).pdf",
-          "retrieved_at": "2026-10-19T09:22:00-04:00"
-        }
-      ],
-      "slot_hint": "feature",
-      "tags": [
-        "placeholder",
-        "referee",
-        "planning"
-      ],
-      "created_at": "2026-10-13T08:02:00-04:00",
-      "answered_questions": [
-        {
-          "q": "No. 3 or No. 4?",
-          "a": "No. 4",
-          "source": "chat: Frank 2026-10-13",
-          "at": "2026-10-13T08:02:30-04:00"
-        }
-      ],
-      "word_count": 271,
-      "facts": [
-        {
-          "claim": "Start by refereeing informal bouts at your local club; practice, find a mentor (experienced referee or coach); read the rulebook; knowing rules lets you advocate for yourself if a referee misapplies a rule",
-          "source": "https://www.usafencing.org/become-a-referee (retrieved 2026-10-19 9:20 AM ET)",
-          "status": "verified-usafencing"
-        },
-        {
-          "claim": "Steps: study guide, referee seminar, online exam (general + at least one weapon) for a P rating; fee; retake within 48 hours if failed",
-          "source": "same",
-          "status": "verified-usafencing"
-        },
-        {
-          "claim": "90 percent required in the general section and each weapon tested; exam once every two years; attend a rules seminar; referee at level at least every two years",
-          "source": "https://www.usafencing.org/referees-ratings-process (same text on become-a-referee page)",
-          "status": "verified-usafencing"
-        },
-        {
-          "claim": "Practical exam by a Referee Examiner needed for a local/regional rating; ratings P, L2, L1, R2, R1, N2, N1; consistency 'same call at 14-14 as at 1-1'",
-          "source": "same",
-          "status": "verified-usafencing"
-        },
-        {
-          "claim": "Referees at least 13 with a P rating may officiate at a regional tournament; referees working more than a single round of pools must be compensated",
-          "source": "USA Fencing Regional Tournament Requirements 2026-28 PDF, Referee Requirements (p.10) https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt818eb721a8cdafac/69432277e99cb75077675f73/Regional_Tournament_Requirements_(2026-28).pdf (retrieved 2026-10-19 9:22 AM ET)",
-          "status": "verified-usafencing"
-        },
-        {
-          "claim": "Current USA Fencing membership for all referees; 18+ must buy +CheckEd for background check and SafeSport; under 18 not required",
-          "source": "https://www.usafencing.org/become-a-referee",
-          "status": "verified-usafencing; NOTE the Regional Tournament Requirements PDF says all referees need a background check — the draft uses the become-a-referee wording (18 and older)"
-        },
-        {
-          "claim": "Friday open bouting at Elite FC",
-          "source": "web-efc-standing-schedule (club website; vetted)",
-          "status": "verified-club"
-        }
-      ],
-      "cautions": [
-        "The ratings-review section of the USA Fencing page still uses the old 1-10 numeric scale; not used in the draft.",
-        "Don't name any referee; no Elite FC person is claimed to be a referee."
-      ],
-      "need": [
-        "Frank: any personal angle you want in it (you said you're interested), or keep it a plain how-to?"
-      ],
-      "updated_at": "2026-10-19T09:30:00-04:00"
+     "source": "chat: Frank 2026-10-13",
+     "note": "Planned piece; Frank personally interested; picked for No. 4."
     },
     {
-      "id": "chat-winter-camp-reminder",
-      "kind": "graf",
-      "headline": "Winter Camp: Sign Up Now",
-      "body": "Elite FC Winter Camp runs Dec. 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels: footwork, technical and tactical drills, strength and conditioning, and games. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. The club asks campers to register as soon as possible; contact the club for price and sign-up.",
-      "source": "chat",
-      "from": "frank",
-      "target_week": "next",
-      "vetted": true,
-      "vetted_at": "2026-10-07T18:53:00-04:00",
-      "vetted_by": "frank",
-      "vet_scope": "angle_tone_only",
-      "facts_status": "verified (price omitted)",
-      "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed).",
-      "facts": [
-        {
-          "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
-          "source": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
-          "where": "email body + embedded flyer",
-          "status": "verified-email"
-        },
-        {
-          "claim": "Daily hours 9:30 AM – 2:00 PM",
-          "source": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
-          "where": "flyer embedded in email",
-          "status": "verified-email; body says day-to-day schedule still to be announced"
-        },
-        {
-          "claim": "Open to all levels; train with high-level fencers",
-          "source": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
-          "where": "flyer embedded in email",
-          "status": "verified-email"
-        },
-        {
-          "claim": "Activities: footwork, technical/tactical drills, professional strength/conditioning, creative games",
-          "source": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
-          "where": "flyer embedded in email",
-          "status": "verified-email"
-        },
-        {
-          "claim": "Register as soon as possible",
-          "source": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
-          "where": "email body",
-          "status": "verified-email"
-        },
-        {
-          "claim": "Day-to-day schedule to be announced once a few things are finalized",
-          "source": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
-          "where": "email body",
-          "status": "verified-email (not printed)"
-        },
-        {
-          "claim": "Website (elitefencersclub.com/camps + flyer jpg): Dec 27–31, 9:30–2:00, contact club for pricing/registration",
-          "source": "https://www.elitefencersclub.com/camps",
-          "status": "consistent with email; secondary"
-        },
-        {
-          "claim": "Sign-up = contact the club: camps page 'Register' button links to /contact; page says 'For current camp dates, pricing, and registration details, please contact Elite Fencers Club directly.'",
-          "source": "https://www.elitefencersclub.com/camps",
-          "status": "verified-web 2026-10-18"
-        }
-      ],
-      "need": [
-        "price (not published anywhere we can see; prints as 'contact the club')",
-        "optional: print the club email elitefencersclub@gmail.com? (public on the club website)"
-      ],
-      "email_search": "Read-only 2026-10-07: AgentMail efc.weekly (4 messages incl. club Mailchimp 'Group Class! + Footwork Class' Oct 7 and Frank fwd of Oct 5 'Group Class! + Congrats!') — no Winter Camp mention. Connected Gmail is seventyfourwaldo@gmail.com (not Frank's frankcng@gmail.com) — 0 hits. | Re-check 2026-10-07 ~19:14 ET: found Frank's fwd in AgentMail efc.weekly (5 messages listed). Gmail seventyfourwaldo: 'newer_than:2d (camp OR winter OR elitefencersclub OR Fwd)' and 'in:anywhere (camp OR winter OR \"Elite Fencers\")' — 0 hits.",
-      "provenance": [
-        {
-          "type": "chat",
-          "note": "chat: Frank 2026-10-07 — Winter Camp reminder angle + family joke",
-          "retrieved_at": "2026-10-07T18:53:00-04:00"
-        },
-        {
-          "type": "web",
-          "url": "https://www.elitefencersclub.com/camps",
-          "retrieved_at": "2026-10-07T18:55:00-04:00"
-        },
-        {
-          "type": "web",
-          "url": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
-          "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer.jpg",
-          "retrieved_at": "2026-10-07T18:55:00-04:00"
-        },
-        {
-          "type": "email",
-          "from": "Frank Ng <frankcng@gmail.com> (fwd of Elite Fencers Club Mailchimp, Sep 30 2026 10:04 AM)",
-          "subject": "Fwd: Group Class! + Winter Camp❄️",
-          "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
-          "original_message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20260930140307.ef8c3004dd.9c8898df@mail67.atl91.mcsv.net>",
-          "retrieved_at": "2026-10-07T19:15:00-04:00",
-          "note": "source of truth for camp facts (Frank, 2026-10-07)"
-        },
-        {
-          "type": "email-image",
-          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
-          "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
-          "retrieved_at": "2026-10-07T19:16:00-04:00"
-        },
-        {
-          "type": "chat",
-          "note": "chat: Frank 2026-10-12 — skip Winter Camp this week; hold for No. 3",
-          "retrieved_at": "2026-10-12T09:45:00-04:00"
-        },
-        {
-          "type": "web",
-          "url": "https://www.elitefencersclub.com/camps",
-          "retrieved_at": "2026-10-18T08:37:00-04:00",
-          "note": "Re-check: no price; Register → Contact page"
-        }
-      ],
-      "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
-      "slot_hint": "club_events",
-      "suggested_slot": "club_events",
-      "tags": [
-        "winter-camp",
-        "club-event",
-        "reminder",
-        "facts-pending",
-        "frank-idea"
-      ],
-      "draft_path": "staging/weeks/next/drafts/winter-camp.md",
-      "word_count": 68,
-      "created_at": "2026-10-07T19:05:00-04:00",
-      "facts_source_of_truth": "email (Frank, chat via parent 2026-10-07 ~19:12 ET): club Mailchimp email overrides website on conflict",
-      "conflicts_with_website": "None on dates, hours, levels or activities (email embeds the same flyer). Email body: day-to-day schedule not final yet. Email doesn't address the Sunday Dec 27 start vs. club closed Sundays; it does confirm 12/27 as the start.",
-      "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
-      "email": {
-        "subject": "Fwd: Group Class! + Winter Camp❄️",
-        "from": "Frank Ng <frankcng@gmail.com>",
-        "to": "efc.weekly@agentmail.to",
-        "received_at": "2026-10-07T19:11:40-04:00",
-        "agentmail_thread_id": "62bf7319-bc62-4c0c-8143-866e04cfe0e3",
-        "forward_chain": [
-          {
-            "step": 1,
-            "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
-            "to": "frankcng@gmail.com",
-            "date": "2026-09-30T10:04:00-04:00",
-            "subject": "Group Class! + Winter Camp❄️",
-            "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20260930140307.ef8c3004dd.9c8898df@mail67.atl91.mcsv.net>",
-            "web_version": "https://mailchi.mp/966e788d812f/group-class-winter-camp?e=f656c71db1"
-          },
-          {
-            "step": 2,
-            "from": "Frank Ng <frankcng@gmail.com>",
-            "to": "efc.weekly@agentmail.to",
-            "date": "2026-10-07T19:11:40-04:00",
-            "subject": "Fwd: Group Class! + Winter Camp❄️",
-            "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>"
-          }
-        ],
-        "text_copy": "staging/weeks/next/sources/email-fwd-winter-camp-2026-10-07.txt"
-      },
-      "updated_at": "2026-10-07T19:20:00-04:00",
-      "ingest_notes": [
-        "2026-10-08 daily email pass: Frank's 'Fwd: Group Class! + Winter Camp' (<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>) was already ingested 2026-10-07 ~19:20 ET; it had just not been labeled processed. Labeled now; no new facts (price and sign-up method still pending)."
-      ],
-      "held_for": "Issue No. 3",
-      "hold_note": "chat: Frank 2026-10-12: skip Winter Camp this week; hold for No. 3.",
-      "moved_from": "staging/weeks/next",
-      "moved_at": "2026-10-12T09:45:00-04:00",
-      "carried_from": "staging/weeks/2026-10-19",
-      "carry_note": "Printed in No. 3; carried as reference only for a possible later reminder (camp Dec 27–31). Do not re-run without Frank."
+     "type": "url",
+     "url": "https://www.usafencing.org/become-a-referee",
+     "retrieved_at": "2026-10-19T09:20:00-04:00"
     },
     {
-      "id": "email-agentmail-morris-cup-entries-2026-10-07",
-      "kind": "signup_row",
-      "headline": "Morris Cup RYC/RJCC — EFC who's entered",
-      "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Tue Oct 20; +1 vs Mon Oct 19): Sat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia, Sheth Anayaà; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila, Young Penelope. Sun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
-      "source": "email",
-      "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
-      "from": "chunkymonkey@agentmail.to",
-      "subject": "Club schedule · Tuesday, October 20",
-      "target_week": "next",
-      "vetted": true,
-      "created_at": "2026-10-07T13:15:05-04:00",
-      "provenance": [
-        {
-          "type": "email",
-          "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "retrieved_at": "2026-10-07T13:15:05-04:00"
-        },
-        {
-          "type": "url",
-          "url": "https://fencingtracker.com/tournament/1706",
-          "retrieved_at": "2026-10-07T17:15:00-04:00",
-          "note": "Name-spelling cross-check only (CDTME 'WU, Caden'; CDTWE 'Young, Penelope'; Y14ME 'Shah-Mirani, Ash'; Y10ME 'Shah Mirani, Rahi')"
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a11b2b8c68-4461f351-6dc4-4fa1-9fc5-15934438e225-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Thursday, October 8",
-          "retrieved_at": "2026-10-08T08:05:00-04:00",
-          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7 digest (same 20 fencers / 29 entries, same events and times). No adds or drops."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a12051e7f7-12b87cb6-16d2-4ea6-8f7d-51d06e20d5a5-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Friday, October 9",
-          "retrieved_at": "2026-10-09T08:10:00-04:00",
-          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7/8 digests (same 20 fencers / 29 entries, same events and times). No adds or drops."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a12578450c-c9092bce-80c6-4ffc-acc7-6a1213b75b5e-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Saturday, October 10",
-          "retrieved_at": "2026-10-12T08:10:00-04:00",
-          "note": "Daily refresh: identical to Oct 7/8/9 (20 fencers / 29 entries)."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Sunday, October 11",
-          "retrieved_at": "2026-10-12T08:10:00-04:00",
-          "note": "CHANGE: Olivia Hayes added to CDTWE Sun Oct 25 8:00 AM (now 20 fencers / 30 entries)."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Monday, October 12",
-          "retrieved_at": "2026-10-12T08:10:00-04:00",
-          "note": "CHANGE: Rahi Shah Mirani no longer listed in Y10ME Sun Oct 25 (now 19 fencers / 29 entries). Latest list."
-        },
-        {
-          "type": "fetch_log",
-          "path": "staging/weeks/next/gather-2026-10-12-web.json",
-          "retrieved_at": "2026-10-12T09:17:00-04:00",
-          "note": "FencingTracker cross-check 2026-10-12: 29 entries / 19 fencers; Rahi Shah Mirani shown WITHDRAWN from Y10ME — matches the Oct 12 digest."
-        },
-        {
-          "source": "chat: Frank 2026-10-12",
-          "note": "Rahi prints as Shah-Mirani, matching Ash (roster resolved). Registration text keeps 'Shah Mirani'."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a134eb584c-cb652784-f44c-42f7-b69c-6ffef15336a5-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Tuesday, October 13",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-13T08:05:00-04:00",
-          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 12 digest (19 fencers / 29 entries, same events and times). No adds or drops. Medeo no longer in the digest's watched list (event past)."
-        },
-        {
-          "source": "chat: Frank 2026-10-13",
-          "note": "Board name: 'Nearby Tournaments' (formerly 'Go Cheer'), 11:29 ET."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Wednesday, October 14",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-14T07:55:00-04:00",
-          "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 12/13 digests (19 fencers / 29 entries, same events and times). No adds or drops. Digest also newly lists Medeo Youth Challenge #5 (Nov 8) and empty Wanglei Oct 25 / Nov 8 cups — staged separately."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
-          "fetched_at": "2026-10-14T10:01:55Z",
-          "fetched_at_et": "2026-10-14 6:01 AM ET",
-          "retrieved_at": "2026-10-14T09:58:30-04:00",
-          "note": "Wednesday skim cross-check: USA Fencing entrants agree with the digest — 29 Elite FC entries, same events/days/names. No mismatch."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a13b822abc-9dbbae8b-e3b6-4fde-a0dd-8b79d813d25f-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Wednesday, October 14",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-15T07:55:00-04:00",
-          "note": "Evening re-send (17:42 UTC Oct 14 / 1:42 PM ET) left unread overnight. Morris Cup EFC list identical to morning Oct 14 digest (19 fencers / 29 entries). Medeo #5 same 4 entries. Wanglei still empty."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a13f3811b2-d601d953-845a-4828-8c23-f32c502c14e9-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Thursday, October 15",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-15T07:55:00-04:00",
-          "note": "Daily refresh: Morris Cup identical (19 fencers / 29 entries; data stamped Oct 14 10:00 PM, could not refresh). Medeo #5 same 4. Wanglei Oct 25 / Nov 8 still nobody signed up."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a1445eaeec-e84be129-3374-44ff-827f-7ab0b857583d-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Friday, October 16",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-16T08:00:00-04:00",
-          "ingested_at": "2026-10-16T08:00:00-04:00",
-          "note": "Daily refresh: Morris Cup CHANGED — ADD Anayaà Sheth (print Anayaa Sheth) to Sat JNRWE 8:00 AM. Now 20 fencers / 30 entries (was 19/29). Data stamped Oct 15, 12:05 PM (could not refresh). Wanglei Oct 25 / Nov 8 still empty."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a14984c86c-8b7d6847-5bd0-4cf2-a579-e3b28408f522-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Saturday, October 17",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-18T08:32:00-04:00",
-          "note": "Pre-budget pass: Morris Cup list identical to Oct 16 (20 fencers / 30 entries; data as of Oct 16, 6:00 AM)."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a14eab241e-7693f9dd-e426-46a7-9684-f9b4bee38823-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Sunday, October 18",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-18T08:32:00-04:00",
-          "note": "Pre-budget pass: Morris Cup list identical to Oct 16 (20 fencers / 30 entries; data as of Oct 17, 6:00 PM)."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
-          "fetched_at": "2026-10-18T10:01:55Z",
-          "fetched_at_et": "2026-10-18 6:01 AM ET",
-          "note": "Pre-budget cross-check: 30 Elite FC entries, same events/days/times as digest. Fee periods: late registration Oct 6–22 (11:59 PM PT); no online registration from Oct 23. No mismatch."
-        },
-        {
-          "type": "email",
-          "source": "agentmail",
-          "message_id": "<010001a153d1804e-4307504b-d0ea-4133-bb42-c1930d8fba76-000000@email.amazonses.com>",
-          "from": "chunkymonkey@agentmail.to",
-          "subject": "Club schedule · Monday, October 19",
-          "received_at": "2026-10-19T07:00:01-04:00",
-          "note": "Unchanged: 30 Elite FC entries (Sat 12, Sun 18). Digest data as of Oct 18 6:01 PM (could not refresh)."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
-          "fetched_at": "2026-10-19T10:02:31Z",
-          "fetched_at_et": "2026-10-19 6:02 AM ET",
-          "note": "Monday full pass: 30 Elite FC entries / 20 fencers, all 'approved'. Same list as the Oct 16-19 digests."
-        },
-        {
-          "type": "url",
-          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
-          "retrieved_at": "2026-10-19T09:03:00-04:00",
-          "note": "Direct cross-check agrees: 30 active entries from 20 club members; Rahi Shah Mirani's Y10ME entry shows Withdrawn (not counted). No API-vs-direct mismatch."
-        },
-        {
-          "type": "email",
-          "source": "agentmail",
-          "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
-          "from": "chunkymonkey@agentmail.to",
-          "subject": "Club schedule · Tuesday, October 20",
-          "received_at": "2026-10-20T07:00:01-04:00",
-          "retrieved_at": "2026-10-20T07:53:00-04:00",
-          "note": "CHANGE: Young, Penelope added to Y14WE (Sat Oct 24, 3:00 PM). Now 20 fencers / 31 entries (Sat 13, Sun 18). Digest data as of Oct 19 6:00 AM (could not refresh)."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
-          "fetched_at": "2026-10-20T10:02:01Z",
-          "fetched_at_et": "2026-10-20 6:02 AM ET",
-          "note": "Cross-check agrees: 31 Elite FC entries / 20 fencers, all 'approved'; Young, Penelope listed in Y14WE (event capped, 98 entrants, 0 open spots). No mismatch."
-        }
-      ],
-      "suggested_slot": "whos_entered",
-      "tags": [
-        "club",
-        "morris-cup",
-        "signup",
-        "epee",
-        "unvetted"
-      ],
-      "overlap_note": "Richer than gather-morris-cup-ryc-oct25 (event-only); this is the full EFC entry list.",
-      "vetted_by": "auto-chunkymonkey",
-      "vetted_at": "2026-10-07T13:20:00-04:00",
-      "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board. Name tidy (Desk, 2026-10-07): print First Last like the club newsletter. 'WU Caden' → 'Caden Wu' (casing only; FencingTracker CDTME shows 'WU, Caden' — registration caps). 'Shah-Mirani Ash' (Y14ME) vs 'Shah Mirani Rahi' (Y10ME): FencingTracker shows the same split ('Shah-Mirani, Ash' / 'Shah Mirani, Rahi'), so no authoritative single form — kept source forms per fencer and FLAGGED for Frank. Frank approved showing ALL 29 entries (20 fencers) — exception to the 8-row signup soft cap for big turnouts. | Desk 2026-10-12: list refreshed from Oct 11/12 digests (Olivia Hayes added CDTWE; Rahi Shah-Mirani dropped from Y10ME, now 19 fencers / 29 entries). Shah-Mirani hyphen flag now only matters for Ash on this board; Rahi's spelling still unresolved in roster. | chat: Frank 2026-10-12: Rahi also prints 'Shah-Mirani' (roster resolved). | Desk 2026-10-16: Fri digest adds Anayaà Sheth to Sat JNRWE (print Anayaa Sheth per roster); list now 20 fencers / 30 entries. | Desk 2026-10-20: Tue digest adds Penelope Young (prints Penny Young) to Sat Y14WE; USA Fencing entries cache agrees; list now 20 fencers / 31 entries.",
-      "name_aliases": {
-        "Penny Young": [
-          "Young Penelope"
-        ],
-        "Caden Wu": [
-          "WU Caden"
-        ]
-      },
-      "name_flags": [
-        "Ash Shah-Mirani vs Rahi Shah Mirani — hyphen differs by registration (FencingTracker matches digest); confirm family spelling | RESOLVED chat: Frank 2026-10-12: both print 'Shah-Mirani'."
-      ],
-      "carried_from": "staging/weeks/2026-10-19",
-      "carried_at": "2026-10-07T18:46:27-04:00",
-      "carry_note": "Morris Cup is Oct 24–25: becomes a results watch for No. 4.",
-      "entries_last_confirmed": "2026-10-20T07:53:00-04:00",
-      "entries_change_log": [
-        {
-          "seen_in": "Club schedule · Sunday, October 11",
-          "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
-          "change": "ADD Hayes, Olivia — CDTWE (Sun Oct 25, 8:00 AM)",
-          "noted_at": "2026-10-12T08:10:00-04:00"
-        },
-        {
-          "seen_in": "Club schedule · Monday, October 12",
-          "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
-          "change": "DROP Shah Mirani, Rahi — Y10ME (Sun Oct 25, 3:30 PM) no longer listed; reason unknown (withdrawal vs digest/registration glitch). Don't print as a withdrawal; just reflect the current list.",
-          "noted_at": "2026-10-12T08:10:00-04:00"
-        },
-        {
-          "seen_in": "Club schedule · Friday, October 16",
-          "message_id": "<010001a1445eaeec-e84be129-3374-44ff-827f-7ab0b857583d-000000@email.amazonses.com>",
-          "change": "ADD Sheth, Anayaà — JNRWE (Sat Oct 24, 8:00 AM). Print as Anayaa Sheth (roster).",
-          "noted_at": "2026-10-16T08:00:00-04:00"
-        },
-        {
-          "seen_in": "Club schedule · Tuesday, October 20",
-          "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
-          "change": "ADD Young, Penelope — Y14WE (Sat Oct 24, 3:00 PM). Print as Penny Young (roster). She now fences both days (Y14WE Sat, CDTWE Sun).",
-          "noted_at": "2026-10-20T07:53:00-04:00"
-        }
-      ],
-      "entries_count": "20 fencers / 31 entries (Tue Oct 20 digest + USA Fencing cache; was 20 / 30 through Mon Oct 19)",
-      "board": "Nearby Tournaments",
-      "slot_hint": "club_results",
-      "waiting": true,
-      "no4_role": "Results watch for No. 4 (Oct 24-25 is before No. 4's publish). Likely lead: strong Elite FC finishes only (STYLE-GUIDE 0d); everyone else on the 'also fenced' line. Check FencingTracker / USA Fencing results Sun Oct 25 night and Mon Oct 26 morning.",
-      "updated_at": "2026-10-20T07:53:00-04:00"
+     "type": "url",
+     "url": "https://www.usafencing.org/referees-ratings-process",
+     "retrieved_at": "2026-10-19T09:20:00-04:00",
+     "note": "via search result text; same text appears on become-a-referee page"
     },
     {
-      "id": "web-efc-standing-schedule",
-      "kind": "fact",
-      "headline": "Elite FC weekly class schedule (club website)",
-      "body": "Club website 'Class times and activities' (regular weekly schedule): Mon 4:30–6:00 PM Group Class (Little Musketeers); Tue 6:00–7:30 PM Group Class; Wed 5:00–6:30 PM Group Class (Little Musketeers), 6:30–7:15 PM Footwork Class; Thu 6:00–7:30 PM Group Class; Fri 4:15 PM Mini Musketeers (Ages 5–7), 6:00–10:00 PM Open Bouting; Sat 11:00 AM–12:30 PM Group Class (Little Musketeers), 1:00–2:30 PM Group Class; Sun closed. Private lessons fill the other weekday/Sat. windows.",
-      "schedule_rows": [
-        [
-          "Monday",
-          "3:00 PM–10:00 PM",
-          "Private Lessons"
-        ],
-        [
-          "Monday",
-          "4:30 PM–6:00 PM",
-          "Group Class (Little Musketeers)"
-        ],
-        [
-          "Tuesday",
-          "3:00 PM–6:00 PM",
-          "Private Lessons"
-        ],
-        [
-          "Tuesday",
-          "6:00 PM–7:30 PM",
-          "Group Class"
-        ],
-        [
-          "Tuesday",
-          "7:30 PM–10:00 PM",
-          "Private Lessons"
-        ],
-        [
-          "Wednesday",
-          "3:00 PM–10:00 PM",
-          "Private Lessons"
-        ],
-        [
-          "Wednesday",
-          "5:00 PM–6:30 PM",
-          "Group Class (Little Musketeers)"
-        ],
-        [
-          "Wednesday",
-          "6:30 PM–7:15 PM",
-          "Footwork Class"
-        ],
-        [
-          "Thursday",
-          "3:00 PM–6:00 PM",
-          "Private Lessons"
-        ],
-        [
-          "Thursday",
-          "6:00 PM–7:30 PM",
-          "Group Class"
-        ],
-        [
-          "Thursday",
-          "7:30 PM–10:00 PM",
-          "Private Lessons"
-        ],
-        [
-          "Friday",
-          "3:00 PM–10:00 PM",
-          "Private Lessons"
-        ],
-        [
-          "Friday",
-          "4:15 PM",
-          "Mini Musketeers (Ages 5–7)"
-        ],
-        [
-          "Friday",
-          "6:00 PM–10:00 PM",
-          "Open Bouting"
-        ],
-        [
-          "Saturday",
-          "9:00 AM–11:00 AM",
-          "Private Lessons"
-        ],
-        [
-          "Saturday",
-          "11:00 AM–12:30 PM",
-          "Group Class (Little Musketeers)"
-        ],
-        [
-          "Saturday",
-          "1:00 PM–2:30 PM",
-          "Group Class"
-        ],
-        [
-          "Sunday",
-          "CLOSED",
-          ""
-        ]
-      ],
-      "row_count": 9,
-      "source": "club-website",
-      "from": null,
-      "target_week": "next",
-      "vetted": true,
-      "vetted_by": "frank",
-      "vetted_at": "2026-10-07T17:18:05-04:00",
-      "vet_notes": "Desk gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.' | Frank chat 2026-10-07T17:32: Friday Mini Musketeers moved to 4:15 PM (likely permanent; website not updated). End time not confirmed — print start time only unless Frank confirms.",
-      "provenance": [
-        {
-          "type": "url",
-          "url": "https://www.elitefencersclub.com/programs",
-          "retrieved_at": "2026-10-07T17:15:00-04:00",
-          "note": "'Class times and activities' table — regular weekly schedule"
-        },
-        {
-          "type": "url",
-          "url": "https://www.elitefencersclub.com/location-hours",
-          "retrieved_at": "2026-10-07T17:15:00-04:00",
-          "note": "Operating hours Mon–Fri 3–9 PM, Sat 8:30–3, Sun closed; 'contact us for the most up-to-date class times'"
-        },
-        {
-          "type": "url",
-          "url": "https://www.elitefencersclub.com/",
-          "retrieved_at": "2026-10-07T17:15:00-04:00",
-          "note": "Homepage — no schedule"
-        },
-        {
-          "type": "chat",
-          "note": "Frank: Mini Musketeers Fridays moved to 4:15 PM; website outdated",
-          "retrieved_at": "2026-10-07T17:32:59-04:00"
-        },
-        {
-          "type": "email",
-          "source": "agentmail",
-          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261019164521.c57d267f1a.f5dcd7cc@mail150.atl241.mcsv.net>",
-          "from": "elitefencersclub@111617670.mailchimpapp.com",
-          "subject": "Group Class!",
-          "received_at": "2026-10-19T12:45:27-04:00",
-          "retrieved_at": "2026-10-20T07:53:00-04:00",
-          "vetted_by": "auto-mailchimp",
-          "note": "Club Mailchimp (Mon Oct 19): all lessons Mon+Tue; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. Matches standing schedule; no change."
-        }
-      ],
-      "suggested_slot": "club-events",
-      "slot_hint": "club-events",
-      "tags": [
-        "club",
-        "schedule",
-        "standing",
-        "website",
-        "freshness-unknown"
-      ],
-      "created_at": "2026-10-07T17:15:00-04:00",
-      "carried_from": "staging/weeks/2026-10-19",
-      "carried_at": "2026-10-07T18:46:27-04:00",
-      "carry_note": "Standing reference.",
-      "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
-      "updated_at": "2026-10-20T07:53:00-04:00"
-    },
-    {
-      "id": "ft-ultimate-cup-efc-registrations-2026-10-12",
-      "kind": "signup_row",
-      "headline": "Ultimate Cup RJCC (Hillsborough, N.J., Oct. 31–Nov. 1) — Elite FC registrations per FencingTracker",
-      "body": "USA Fencing entrants (via fencing-api live, Oct 19 9:05 AM ET), Ultimate Cup RJCC, Iron Peak Sports & Events, Hillsborough Township NJ, Oct 31–Nov 1 — 13 entries / 10 Elite FC fencers (check-in close in parentheses): Sat Oct 31 JNRWE (8:00 AM) Olivia Hayes, Anayaa Sheth, Adela Sullivan; CDTME (1:00 PM) Maksim Milinkovic, Caden Wu. Sun Nov 1 JNRME (8:00 AM) Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng; CDTWE (1:00 PM) Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young.",
-      "source": "fencingtracker",
-      "from": null,
-      "target_week": "next",
-      "vetted": true,
-      "vetted_by": "frank",
-      "vetted_at": "2026-10-12T09:45:00-04:00",
-      "vet_notes": "Desk Monday full pass 2026-10-12. Scraped registrations: unvetted until Frank confirms (STAGING v3.20). Not on the chunkymonkey watched list yet. New names to the Gazette: Dieko Johnson, Lillian Liu (check spelling/membership). Event times not captured; close time unverified. | chat: Frank 2026-10-12 09:45 ET: Dieko Johnson and Lillian Liu confirmed Elite FC members (added to roster); Ultimate Cup board vetted. Source stays FencingTracker registrations.",
-      "slot_hint": "signup",
-      "panels_rows": [
-        [
-          "Sat. Oct. 31",
-          "Junior Women",
-          "Olivia Hayes, Anayaa Sheth, Adela Sullivan",
-          "3"
-        ],
-        [
-          "Sat. Oct. 31",
-          "Cadet Men",
-          "Maksim Milinkovic, Caden Wu",
-          "2"
-        ],
-        [
-          "Sun. Nov. 1",
-          "Junior Men",
-          "Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng",
-          "4"
-        ],
-        [
-          "Sun. Nov. 1",
-          "Cadet Women",
-          "Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young",
-          "4"
-        ]
-      ],
-      "provenance": [
-        {
-          "type": "fetch_log",
-          "path": "staging/weeks/next/gather-2026-10-12-web.json",
-          "retrieved_at": "2026-10-12T09:17:00-04:00",
-          "note": "FencingTracker EFC club page / tournament registrations (URL in gather JSON)"
-        },
-        {
-          "type": "chat",
-          "note": "chat: Frank 2026-10-12 — Dieko Johnson + Lillian Liu confirmed Elite FC; Ultimate Cup board vetted",
-          "retrieved_at": "2026-10-12T09:45:00-04:00"
-        },
-        {
-          "source": "chat: Frank 2026-10-13",
-          "note": "Board name: 'Nearby Tournaments' (formerly 'Go Cheer'), 11:29 ET."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/tournaments (AskFRED catalog, live)",
-          "fetched_at": "2026-10-14T13:58:09Z",
-          "note": "Wednesday skim: catalog lists Ultimate Cup RJCC (usfa 12158) prereg_close 2026-10-13 — registration likely closed; entrant list not re-checked (live entries job hit the client call cap). Re-check Monday."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12158/entries?live=true",
-          "fetched_at": "2026-10-18T12:33:15Z",
-          "fetched_at_et": "2026-10-18 8:33 AM ET",
-          "underlying": "member.usafencing.org tournament 12158",
-          "note": "Pre-budget refresh: Anayaa Sheth added to Junior Women; all 13 entries status 'approved'. Fee periods (structured): open registration through Oct 19; late Oct 20–29. Fees text on the page is garbled (says regular until Oct 12) — Oct 19 regular-fee line dropped from Deadlines anyway (expires on issue day). FencingTracker not re-fetched for this board (gentle use) — API is the only source for the Sheth add; flagged."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12158/entries?live=true",
-          "fetched_at": "2026-10-19T13:05:00Z",
-          "fetched_at_et": "2026-10-19 9:05 AM ET",
-          "note": "Monday full pass: unchanged, 13 entries / 10 Elite FC fencers, all approved. USA Fencing page lists check-in close times: Sat JNRWE 8:00 AM, CDTME 1:00 PM; Sun JNRME 8:00 AM, CDTWE 1:00 PM ('All times are Close of Check-in'). Equipment check Fri Oct 30 4:00-6:30 PM and event days from 6:30 AM."
-        },
-        {
-          "type": "url",
-          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
-          "retrieved_at": "2026-10-19T09:03:00-04:00",
-          "note": "FencingTracker agrees: 13 active entries from 10 club members."
-        }
-      ],
-      "tags": [
-        "club",
-        "signup",
-        "scraped"
-      ],
-      "created_at": "2026-10-12T09:35:00-04:00",
-      "carried_from": "staging/weeks/2026-10-19",
-      "board": "Nearby Tournaments",
-      "entries_change_log": [
-        {
-          "seen_in": "fencing-api live USA Fencing entrants 2026-10-18T12:33:15Z",
-          "change": "ADD Sheth, Anayaà — JNRWE Sat Oct 31 (status approved). Print Anayaa Sheth (roster).",
-          "noted_at": "2026-10-18T08:34:00-04:00"
-        }
-      ],
-      "entries_count": "10 fencers / 13 entries (USA Fencing via fencing-api live, Oct 18; was 9 / 12)",
-      "entries_last_confirmed": "2026-10-18T08:33:00-04:00",
-      "carry_note": "Ultimate Cup Oct 31–Nov 1: still an upcoming board row for No. 4; refresh entrants.",
-      "checkin_close": {
-        "Sat Oct 31": {
-          "Junior Women": "8:00 AM",
-          "Cadet Men": "1:00 PM"
-        },
-        "Sun Nov 1": {
-          "Junior Men": "8:00 AM",
-          "Cadet Women": "1:00 PM"
-        }
-      },
-      "updated_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "email-agentmail-medeo-yc5-entries-2026-10-14",
-      "kind": "signup_row",
-      "headline": "Medeo Youth Challenge #5 (Nov. 8) — EFC entries",
-      "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 9:30 AM Y12 Women's Epee: Jiang, Christina. 11:30 AM Y10 Mixed Epee: Li, Nora. 11:30 AM Y14 Men's Epee: Li, Owen. (AgentMail club-schedule digest Wed Oct 14; 4 entries / 4 fencers.)",
-      "source": "email",
-      "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
-      "from": "chunkymonkey@agentmail.to",
-      "subject": "Club schedule · Wednesday, October 14",
-      "target_week": "next",
-      "vetted": true,
-      "vetted_by": "auto-chunkymonkey",
-      "vetted_at": "2026-10-14T07:55:00-04:00",
-      "created_at": "2026-10-14T07:55:00-04:00",
-      "provenance": [
-        {
-          "type": "email",
-          "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Wednesday, October 14",
-          "retrieved_at": "2026-10-14T07:55:00-04:00",
-          "note": "First appearance of Medeo YC #5 on the watched list in this inbox."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/askfred/tournaments/b30b6f24-2ecf-494b-99af-4cfba0c6b76e/entries?live=true",
-          "fetched_at": "2026-10-14T13:58:28Z",
-          "fetched_at_et": "2026-10-14 9:58 AM ET",
-          "note": "Wednesday skim cross-check: AskFRED prereg agrees — SarroWaite Samuel Y12ME, Jiang Christina Y12WE, Li Owen Y14ME, Li Nora Y10 Mixed; club 'Elite Fencers Club'. Field sizes so far: Y12ME 3, Y12WE 2, Y14ME 2, Y10 Mixed 3."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a13b822abc-9dbbae8b-e3b6-4fde-a0dd-8b79d813d25f-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Wednesday, October 14",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-15T07:55:00-04:00",
-          "note": "Evening re-send: Medeo #5 list identical (4 fencers / 4 entries)."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a13f3811b2-d601d953-845a-4828-8c23-f32c502c14e9-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Thursday, October 15",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-15T07:55:00-04:00",
-          "note": "Daily refresh: Medeo #5 identical (4 fencers / 4 entries; data as of Oct 14 10:00 PM)."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a1445eaeec-e84be129-3374-44ff-827f-7ab0b857583d-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Friday, October 16",
-          "vetted": true,
-          "vetted_by": "auto-chunkymonkey",
-          "retrieved_at": "2026-10-16T08:00:00-04:00",
-          "ingested_at": "2026-10-16T08:00:00-04:00",
-          "note": "Daily refresh: Medeo #5 identical (4 fencers / 4 entries; data as of Oct 16, 6:00 AM)."
-        },
-        {
-          "type": "email",
-          "message_id": "<010001a14eab241e-7693f9dd-e426-46a7-9684-f9b4bee38823-000000@email.amazonses.com>",
-          "from": "AgentMail <chunkymonkey@agentmail.to>",
-          "subject": "Club schedule · Sunday, October 18",
-          "retrieved_at": "2026-10-18T08:32:00-04:00",
-          "note": "Medeo #5 identical (4 fencers / 4 entries; data as of Oct 17 6:00 PM)."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/askfred/tournaments/b30b6f24-2ecf-494b-99af-4cfba0c6b76e/entries?live=true",
-          "fetched_at": "2026-10-18T12:32:33Z",
-          "fetched_at_et": "2026-10-18 8:32 AM ET",
-          "note": "AskFRED: all 4 EFC entries listed as pending (prereg not yet paid/confirmed). Pending entries print (policy). Prereg closes Nov 7."
-        },
-        {
-          "type": "email",
-          "source": "agentmail",
-          "message_id": "<010001a153d1804e-4307504b-d0ea-4133-bb42-c1930d8fba76-000000@email.amazonses.com>",
-          "from": "chunkymonkey@agentmail.to",
-          "subject": "Club schedule · Monday, October 19",
-          "received_at": "2026-10-19T07:00:01-04:00",
-          "note": "Unchanged: 4 entries / 4 fencers (data as of Oct 19 6:00 AM)."
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/askfred/tournaments/b30b6f24-2ecf-494b-99af-4cfba0c6b76e/entries?live=true",
-          "fetched_at": "2026-10-19T13:06:44Z",
-          "fetched_at_et": "2026-10-19 9:06 AM ET",
-          "note": "Monday full pass: unchanged, 4 Elite FC (SarroWaite Y12ME, Jiang Y12WE, Owen Li Y14ME, Nora Li Y10 Mixed); AskFRED shows them pending (entrant_count excludes them). Prereg closes Nov 7 (AskFRED catalog)."
-        },
-        {
-          "type": "email",
-          "source": "agentmail",
-          "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
-          "from": "chunkymonkey@agentmail.to",
-          "subject": "Club schedule · Tuesday, October 20",
-          "received_at": "2026-10-20T07:00:01-04:00",
-          "retrieved_at": "2026-10-20T07:53:00-04:00",
-          "note": "Unchanged: 4 entries / 4 fencers (data as of Oct 19 6:00 AM)."
-        }
-      ],
-      "suggested_slot": "whos_entered",
-      "board": "Nearby Tournaments",
-      "tags": [
-        "club",
-        "medeo",
-        "signup",
-        "epee",
-        "nearby-tournaments"
-      ],
-      "entries_count": "4 fencers / 4 entries",
-      "entries_last_confirmed": "2026-10-20T07:53:00-04:00",
-      "name_flags": [
-        "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2."
-      ],
-      "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
-      "carried_from": "staging/weeks/2026-10-19",
-      "carry_note": "Medeo YC #5 Nov 8: upcoming board row.",
-      "updated_at": "2026-10-20T07:53:00-04:00"
-    },
-    {
-      "id": "fencingapi-medeo-yc4-entries-2026-10-14",
-      "kind": "signup_row",
-      "headline": "Medeo Youth Challenge #4 (Sun. Oct. 25) — one EFC preregistration so far",
-      "body": "Y10/Y12/Y14 Youth Challenge #4 at Medeo (Medeo Fencing Club, NJ) — Sun Oct 25; AskFRED prereg closes Oct 24. Events: Y12 Men's / Y12 Women's Epee 9:30 AM; Y14 Men's, Y10 Mixed, Y14 Women's Epee 11:30 AM. Elite Fencers Club preregistrations (AskFRED via fencing-api live, 13:58 UTC = 9:58 AM ET Oct 14): Y10 Mixed Epee — Li, Nora (1 of 1 entrant). All five events have 0–1 entrants so far. Same day as Morris Cup Sunday (Oct 25). Not on the chunkymonkey club-schedule digest yet.",
-      "source": "fencingapi",
-      "from": null,
-      "target_week": "next",
-      "vetted": true,
-      "vetted_by": "frank (Medeo #4/#5 combined board line vetted, per Grok Bot relay 2026-10-18)",
-      "vetted_at": "2026-10-18T08:45:00-04:00",
-      "vet_notes": "Wednesday skim 2026-10-14. Scraped AskFRED preregistration (via Frank's API) — unvetted until Frank vets (STAGING v3.20). Nora Li not on roster (also flagged on Medeo #5). Tiny field so far; likely a one-liner on the Nearby Tournaments board or merge with Medeo #5 row. First time in staging: Monday's AskFRED call (per_page 10) didn't list it. | Combined Medeo #4 + #5 line on the Nearby Tournaments board; pending AskFRED entries print.",
-      "board": "Nearby Tournaments",
-      "slot_hint": "club_results",
-      "provenance": [
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/askfred/tournaments/f1cda118-6f22-46c7-81b0-cea867ae5aea/entries?live=true",
-          "fetched_at": "2026-10-14T13:58:22Z",
-          "fetched_at_et": "2026-10-14 9:58 AM ET",
-          "final": false,
-          "underlying": "https://www.askfred.net/tournaments/f1cda118-6f22-46c7-81b0-cea867ae5aea"
-        },
-        {
-          "type": "api",
-          "source": "askfred",
-          "endpoint": "scripts/askfred.py tournaments (Chatham NJ, 75 mi, epee)",
-          "retrieved_at": "2026-10-14T09:57:00-04:00",
-          "note": "Listed: 2026-10-25, close 2026-10-24"
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/askfred/tournaments/f1cda118-6f22-46c7-81b0-cea867ae5aea/entries?live=true",
-          "fetched_at": "2026-10-18T12:32:29Z",
-          "fetched_at_et": "2026-10-18 8:32 AM ET",
-          "note": "Still one EFC prereg: Li, Nora — Y10 Mixed (pending). Prereg closes Oct 24. Also linked from the club's Fri Oct 16 Mailchimp ('Local Competition')."
-        }
-      ],
-      "name_flags": [
-        "RESOLVED 2026-10-18 (standing rule): Nora Li prints as listed on AskFRED."
-      ],
-      "tags": [
-        "club",
-        "medeo",
-        "signup",
-        "epee",
-        "nearby-tournaments",
-        "scraped"
-      ],
-      "created_at": "2026-10-14T10:05:00-04:00",
-      "entries_last_confirmed": "2026-10-18T08:32:00-04:00",
-      "carried_from": "staging/weeks/2026-10-19",
-      "carry_note": "Medeo YC #4 is Oct 25: results watch for No. 4.",
-      "waiting": true,
-      "no4_role": "Results watch: Oct 25 is before No. 4's publish. Nora Li (Y10 Mixed). Strong finish only, else 'also fenced'.",
-      "updated_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "desk-deadlines-2026-10-18",
-      "kind": "fact",
-      "headline": "Deadlines box — No. 4",
-      "body": "Ultimate Cup late entry closes Thu Oct 29 (11:59 PM PT; no online entry from Oct 30). Cobra Challenge SYC/RCC (Secaucus, Nov 27–29): regular entry Sun Nov 1, late entry Sat Nov 7 (11:59 PM PT). Medeo Youth Challenge #5 (Nov 8): AskFRED preregistration closes Sat Nov 7. Junior Olympics (Jan 8–11, Oklahoma City): regular-fee deadline Wed Nov 11. NJSIAA independent fencers' entries close Fri Jan 8, 2027.",
-      "rows": [
-        [
-          "Oct. 29",
-          "Ultimate Cup — late entry closes"
-        ],
-        [
-          "Nov. 1",
-          "Cobra Challenge (Secaucus, Nov. 27–29) — regular entry; late entry to Nov. 7"
-        ],
-        [
-          "Nov. 7",
-          "Medeo Youth Challenge #5 — preregistration closes"
-        ],
-        [
-          "Nov. 11",
-          "Junior Olympics — regular-fee deadline"
-        ],
-        [
-          "Jan. 8",
-          "N.J. high school — independent fencers' entries close"
-        ]
-      ],
-      "row_count": 5,
-      "source": "usafencing+njsiaa",
-      "target_week": "next",
-      "slot_hint": "deadlines",
-      "facts": [
-        {
-          "claim": "Morris Cup late fees Oct 6–22, 11:59 PM PT; no online registration from Oct 23",
-          "source": "USA Fencing tournament 12095 via fencing-api cache (fetched 2026-10-18 6:01 AM ET)",
-          "status": "verified (USA Fencing page text)"
-        },
-        {
-          "claim": "Ultimate Cup late registration Oct 20–29; no online registration from Oct 30",
-          "source": "USA Fencing tournament 12158 via fencing-api live 2026-10-18 8:33 AM ET",
-          "status": "verified (structured fee periods; page fee text garbled)"
-        },
-        {
-          "claim": "Ultimate Cup regular fee through Oct 19",
-          "source": "same",
-          "status": "DROPPED: expires on issue day; page fee text contradicts (says Oct 12)"
-        },
-        {
-          "claim": "Cobra Challenge SYC/RCC, Meadowlands Expo Center, Secaucus NJ, Nov 27–29; Entry Deadline Nov 1 11:59pm PT; Late Entry Deadline Nov 7 11:59pm PT; waitlists in use",
-          "source": "https://member.usafencing.org/details/tournaments/12119 (retrieved 2026-10-18 08:42 ET)",
-          "status": "verified-usafencing; AskFRED shows prereg_close Nov 2 (minor mismatch, USA Fencing wins)"
-        },
-        {
-          "claim": "2027 Junior Olympics & January NAC, Jan 8–11, 2027, Oklahoma City; regular fee deadline Nov 11, 2026",
-          "source": "https://www.usafencing.org/2027-junior-olympics-january-nac (retrieved 2026-10-18 08:40 ET)",
-          "status": "verified-usafencing"
-        },
-        {
-          "claim": "NJSIAA independent entries close 01/08/2027",
-          "source": "https://www.njsiaa.org/sports/fencing (retrieved 2026-10-18 08:38 ET)",
-          "status": "verified-njsiaa"
-        },
-        {
-          "claim": "Ultimate Cup late registration Oct 20-29; no online registration from Oct 30",
-          "source": "USA Fencing tournament 12158 via fencing-api live 2026-10-19 9:05 AM ET (fee_periods + fees_text)",
-          "status": "re-verified"
-        },
-        {
-          "claim": "Cobra Challenge open registration Jun 10-Nov 1; late Nov 2-7",
-          "source": "USA Fencing tournament 12119 via fencing-api cache fetched 2026-10-19 9:06 AM ET (fee_periods)",
-          "status": "re-verified"
-        },
-        {
-          "claim": "Medeo YC #5 AskFRED prereg closes 2026-11-07",
-          "source": "scripts/askfred.py tournaments --start-date-gteq 2026-10-26 (2026-10-19 9:04 AM ET)",
-          "status": "verified-askfred"
-        }
-      ],
-      "provenance": [
-        {
-          "type": "url",
-          "url": "https://member.usafencing.org/details/tournaments/12119",
-          "retrieved_at": "2026-10-18T08:42:00-04:00"
-        },
-        {
-          "type": "url",
-          "url": "https://www.usafencing.org/2027-junior-olympics-january-nac",
-          "retrieved_at": "2026-10-18T08:40:00-04:00"
-        },
-        {
-          "type": "url",
-          "url": "https://www.njsiaa.org/sports/fencing",
-          "retrieved_at": "2026-10-18T08:38:00-04:00"
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12095/entries (cached) + /v1/usfa/tournaments/12158/entries?live=true",
-          "fetched_at": "2026-10-18T12:33:15Z"
-        },
-        {
-          "type": "api",
-          "source": "askfred",
-          "endpoint": "scripts/askfred.py tournaments --start-date-gteq 2026-10-16",
-          "retrieved_at": "2026-10-18T08:31:00-04:00"
-        }
-      ],
-      "vetted": true,
-      "vetted_by": "frank (voice 2026-10-18: refresh Deadlines box from USA Fencing/AskFRED)",
-      "vetted_at": "2026-10-18T08:45:00-04:00",
-      "vet_notes": "Desk build 2026-10-18 from official pages only. Morris/Ultimate late closes carry over from No. 2 (still valid). Medeo prereg closes (Oct 24 / Nov 7) left off: the Medeo line is on the board.",
-      "tags": [
-        "deadlines",
-        "desk-built"
-      ],
-      "created_at": "2026-10-18T08:45:00-04:00",
-      "carried_from": "staging/weeks/2026-10-19",
-      "carry_note": "Deadlines box: refresh before the No. 4 budget (drop passed dates).",
-      "dropped_for_no4": [
-        "Morris Cup late entry (Oct 22) — passes before No. 4 publishes"
-      ],
-      "updated_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "desk-epee-on-screen-2026-10-18",
-      "kind": "fact",
-      "headline": "Epee on Screen — No. 4",
-      "body": "Upcoming FIE epee: Nov 5–8 Junior/Cadet World Cup, Manama, Bahrain (no stream listed). Nov 12–15 Senior World Cups: Berne (men, Nov 12–14) and Wuxi (women, Nov 13–15) — FencingTV. Nov 26–29 Junior/Cadet World Cup, Novi Sad, Serbia (no stream listed). Dec 3–6 Senior World Cup, men + women, Vancouver — FencingTV.",
-      "rows": [
-        [
-          "Nov. 5–8",
-          "Junior/Cadet World Cup (Manama, Bahrain)",
-          "No stream listed"
-        ],
-        [
-          "Nov. 12–15",
-          "Senior World Cups: Berne (men), Wuxi (women)",
-          "FencingTV"
-        ],
-        [
-          "Nov. 26–29",
-          "Junior/Cadet World Cup (Novi Sad, Serbia)",
-          "No stream listed"
-        ],
-        [
-          "Dec. 3–6",
-          "Senior World Cup, men + women (Vancouver)",
-          "FencingTV"
-        ]
-      ],
-      "row_count": 4,
-      "source": "fie",
-      "target_week": "next",
-      "slot_hint": "tv",
-      "provenance": [
-        {
-          "type": "web",
-          "url": "https://fie.org/calendar",
-          "retrieved_at": "2026-10-18T08:41:00-04:00",
-          "note": "fie.org public JSON /api/fie/tournaments + /tournaments/{117,118,124,125,129}: epee events + isStreamed flag (true = FencingTV). No start times or prices listed, so none print."
-        },
-        {
-          "type": "web",
-          "url": "https://fie.org/calendar",
-          "retrieved_at": "2026-10-19T09:15:00-04:00",
-          "note": "fie.org public JSON /api/fie/tournaments (weapons E) + /tournaments/{118,126}: Manama 118 Nov 5-8 J/C isStreamed false; Novi Sad 126 (SRB) Nov 26-29 J/C epee isStreamed false; Berne 124 / Wuxi 125 / Vancouver 129 isStreamed true. San José (117, Oct 22-25) dropped: over before No. 4."
-        }
-      ],
-      "vetted": true,
-      "vetted_by": "frank (voice 2026-10-18: fresh 3–5 rows from FIE calendar/FencingTV)",
-      "vetted_at": "2026-10-18T08:45:00-04:00",
-      "vet_notes": "Rows 1 and 3 also ran in No. 2's box (still upcoming); rows 2 and 4 are new. Drop 1 and 3 if you want only new rows. | No. 4 refresh 2026-10-19: San José dropped (past), Novi Sad added (new). Rows 1, 2 and 4 were in the cut No. 3 box (never printed).",
-      "tags": [
-        "tv",
-        "desk-built"
-      ],
-      "created_at": "2026-10-18T08:45:00-04:00",
-      "carried_from": "staging/weeks/2026-10-19",
-      "carry_note": "Cut from No. 3; refresh before the No. 4 budget (Oct 22–25 dates will have passed).",
-      "updated_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "askfred-nj-jo-qualifier-2026-10-18",
-      "kind": "signup_row",
-      "headline": "NJ Division Junior Olympics Qualifier today (Oct 18) — 2 Elite FC in Cadet Men",
-      "body": "NJ Division Junior Olympics Qualifier, Sun Oct 18, Medeo Fencing Club, Bound Brook NJ. Elite FC entries (AskFRED via fencing-api live, 8:31 AM ET): Cadet Men's Epee (check-in 1:30 PM, 9 entrants) — Aaditya Jaising, Charles Young. No other Elite FC entries in the epee events. Results expected this afternoon/evening; check Monday morning.",
-      "source": "fencingapi",
-      "target_week": "next",
-      "slot_hint": "club_results",
-      "waiting": true,
-      "provenance": [
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/askfred/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d/entries?live=true",
-          "fetched_at": "2026-10-18T12:31:51Z",
-          "fetched_at_et": "2026-10-18 8:31 AM ET",
-          "final": false,
-          "underlying": "https://www.askfred.net/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d"
-        },
-        {
-          "type": "api",
-          "source": "askfred",
-          "endpoint": "scripts/askfred.py tournaments",
-          "retrieved_at": "2026-10-18T08:31:00-04:00",
-          "note": "Prereg closed Oct 12"
-        },
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/askfred/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d/results?live=true",
-          "fetched_at": "2026-10-19T12:00:04Z",
-          "fetched_at_et": "2026-10-19 8:00 AM ET",
-          "final": false,
-          "note": "No results posted yet (0 items). FencingTracker club page (7:59 AM ET) also shows nothing new. Still waiting."
-        },
-        {
-          "type": "url",
-          "url": "https://www.askfred.net/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d/results",
-          "retrieved_at": "2026-10-19T09:03:00-04:00",
-          "note": "Monday full pass: AskFRED results page still 'No Results Available' for every event (Cadet Men's Epee included). fencing-api returned the 8:00 AM cache (0 items, final false). FencingTracker club page unchanged (161 tournaments / 1208 results). Still waiting."
-        }
-      ],
-      "name_flags": [
-        "Aaditya Jaising and Charles Young are not in roster/people.json. Standing rule: print as listed on AskFRED (official tournament page). AskFRED lists Charles Young's club as 'Elite Fencers Club / Elite Fencers Club'. Any relation to Kian Jaising / Penny Young is unknown — don't assume."
-      ],
-      "vetted": true,
-      "vet_notes": "I have no idea who Charles Young is...but I guess we include him anyway?\n\nWe will only use this article if either of them qualified.  I don't want to embarass anyone. | Frank budget note 2026-10-18 09:13 ET: run Club Results ONLY if Aaditya Jaising or Charles Young QUALIFIED for Junior Olympics at the NJ Division JO qualifier (Oct 18). Otherwise drop the box entirely: no 'also fenced' line, no non-qualifying results. Charles Young included per the official-names rule (Frank doesn't know him; fine).",
-      "tags": [
-        "club",
-        "results-watch",
-        "jo-qualifier",
-        "scraped"
-      ],
-      "created_at": "2026-10-18T08:45:00-04:00",
-      "vetted_at": "2026-10-18T09:07:00-04:00",
-      "vetted_by": "frank",
-      "run_rule": "Frank budget note 2026-10-18 09:13 ET: run Club Results ONLY if Aaditya Jaising or Charles Young QUALIFIED for Junior Olympics at the NJ Division JO qualifier (Oct 18). Otherwise drop the box entirely: no 'also fenced' line, no non-qualifying results. Charles Young included per the official-names rule (Frank doesn't know him; fine).",
-      "carried_from": "staging/weeks/2026-10-19",
-      "carry_note": "Club Results box cut from No. 3 (no results posted by ~15:24 ET Oct 18). Frank's run rule still applies: print only if Aaditya Jaising or Charles Young qualified.",
-      "no4_role": "Frank's No. 3 rule carries: print only if Aaditya Jaising or Charles Young QUALIFIED for Junior Olympics; otherwise nothing (no also-fenced line).",
-      "updated_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "fencingapi-cobra-efc-entries-2026-10-19",
-      "kind": "signup_row",
-      "headline": "Cobra Challenge SYC/RCC (Secaucus, N.J., Nov. 27–29) — 25 Elite FC entries / 15 fencers",
-      "source": "fencingapi",
-      "from": null,
-      "target_week": "next",
-      "vetted": false,
-      "board": "Nearby Tournaments",
-      "slot_hint": "signup",
-      "body": "USA Fencing entrants (via fencing-api, cache fetched Oct 19 9:06 AM ET), Cobra Challenge SYC/RCC, Meadowlands Expo Center, Secaucus NJ, Nov 27–29 — 25 entries / 15 Elite FC fencers, all approved. Fri Nov 27: Y14ME Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani; CDTWE Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young; Y10ME Joshua Jeong. Sat Nov 28: Y12WE Christina Jiang, Stella Kuo, Mila Siu, Penny Young; Y12ME Kian Jaising, Joshua Jeong, Remy Ng. Sun Nov 29: Y14WE Stella Kuo, Mila Siu, Penny Young; CDTME Connor Anderson, Nico Ng, Caden Wu. No event times listed in the payload (clock: close of registration, no time).",
-      "panels_rows": [
-        [
-          "Fri. Nov. 27",
-          "Y14 Men",
-          "Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani",
-          "5"
-        ],
-        [
-          "Fri. Nov. 27",
-          "Cadet Women",
-          "Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young",
-          "6"
-        ],
-        [
-          "Fri. Nov. 27",
-          "Y10 Men",
-          "Joshua Jeong",
-          "1"
-        ],
-        [
-          "Sat. Nov. 28",
-          "Y12 Women",
-          "Christina Jiang, Stella Kuo, Mila Siu, Penny Young",
-          "4"
-        ],
-        [
-          "Sat. Nov. 28",
-          "Y12 Men",
-          "Kian Jaising, Joshua Jeong, Remy Ng",
-          "3"
-        ],
-        [
-          "Sun. Nov. 29",
-          "Y14 Women",
-          "Stella Kuo, Mila Siu, Penny Young",
-          "3"
-        ],
-        [
-          "Sun. Nov. 29",
-          "Cadet Men",
-          "Connor Anderson, Nico Ng, Caden Wu",
-          "3"
-        ]
-      ],
-      "row_count": 7,
-      "provenance": [
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12119/entries (live job, then cache)",
-          "fetched_at": "2026-10-19T13:06:21Z",
-          "fetched_at_et": "2026-10-19 9:06 AM ET",
-          "underlying": "https://member.usafencing.org/details/tournaments/12119",
-          "final": false
-        },
-        {
-          "type": "url",
-          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
-          "retrieved_at": "2026-10-19T09:03:00-04:00",
-          "note": "Direct cross-check agrees: 'Cobra Challenge SYC/RCC — 25 active entries from 15 club members', same names/events."
-        }
-      ],
-      "name_notes": "All names print in the official/roster form: 'Young, Penelope' -> Penny Young (roster); 'WU, Caden' -> Caden Wu (roster); Ash Shah-Mirani (roster). Others as USA Fencing lists them.",
-      "vet_notes": "Monday full pass 2026-10-19. New to staging. Official USA Fencing entrant list (via Frank's API) + FencingTracker agree. Stage unvetted per fencing-api rule; Frank vets on the budget page.",
-      "created_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "x-fie-casablanca-epee-wc-2026-10-18",
-      "kind": "graf",
-      "headline": "Italy, Hungary Win Epee Season Opener",
-      "source": "x",
-      "from": "@FIE_fencing (tier A, own event)",
-      "target_week": "next",
-      "vetted": false,
-      "slot_hint": "secondary_a",
-      "body": "The senior epee World Cup season opened in Casablanca, Morocco, Oct. 15–18, with 618 fencers from 67 nations. Italy's Roberta Marzani won the women's event, with Ukraine's Anna Maksymenko second and Aizanat Murtazaeva (Russia) and Alberta Santuccio (Italy) third. Hungary's Mate Tamas Koch won the men's title over Italy's Matteo Galassi; Gergely Kovacs (Hungary) and Kano Koki (Japan) took bronze. In the team events, Kazakhstan's men beat Russia 45-40, and Russia's women edged Italy 32-31. The next senior epee World Cups are Berne (men) and Wuxi (women), Nov. 12–15.",
-      "facts": [
-        {
-          "claim": "Women's podium: Marzani ITA gold, Maksymenko UKR silver, Murtazaeva RUS + Santuccio ITA bronze",
-          "source": "https://x.com/FIE_fencing/status/2111595652232733180 (2026-10-17 23:10 UTC = 7:10 PM ET)",
-          "status": "tier-A X (FIE on its own event)"
-        },
-        {
-          "claim": "Men's podium: Koch HUN gold, Galassi ITA silver, Kovacs HUN + Kano Koki JPN bronze",
-          "source": "https://x.com/FIE_fencing/status/2111591728264180198 (2026-10-17 22:54 UTC = 6:54 PM ET)",
-          "status": "tier-A X"
-        },
-        {
-          "claim": "Men's team: Kazakhstan d. Russia 45-40, France bronze",
-          "source": "https://x.com/FIE_fencing/status/2111898890228445632 (2026-10-18 19:15 UTC = 3:15 PM ET)",
-          "status": "tier-A X"
-        },
-        {
-          "claim": "Women's team: Russia d. Italy 32-31, Estonia bronze",
-          "source": "https://x.com/FIE_fencing/status/2112097128159830129 (2026-10-19 08:22 UTC = 4:22 AM ET)",
-          "status": "tier-A X"
-        },
-        {
-          "claim": "Casablanca World Cup 2026, Oct 15-18, epee senior, 618 fencers, 67 nations",
-          "source": "https://fie.org/api/fie/tournaments/115 (fie.org public JSON, retrieved 2026-10-19 9:12 AM ET)",
-          "status": "verified-fie"
-        },
-        {
-          "claim": "Berne (men) Nov 12-14, Wuxi (women) Nov 13-15",
-          "source": "fie.org /api/fie/tournaments 124, 125 (2026-10-19)",
-          "status": "verified-fie"
-        }
-      ],
-      "provenance": [
-        {
-          "type": "x_post",
-          "url": "https://x.com/FIE_fencing/status/2111595652232733180",
-          "author": "@FIE_fencing",
-          "author_id": "196195164",
-          "account_tier": "A",
-          "posted_at": "2026-10-17T23:10:09Z",
-          "retrieved_at": "2026-10-19T09:10:00-04:00"
-        },
-        {
-          "type": "x_post",
-          "url": "https://x.com/FIE_fencing/status/2111591728264180198",
-          "author": "@FIE_fencing",
-          "account_tier": "A",
-          "posted_at": "2026-10-17T22:54:34Z",
-          "retrieved_at": "2026-10-19T09:10:00-04:00"
-        },
-        {
-          "type": "x_post",
-          "url": "https://x.com/FIE_fencing/status/2111898890228445632",
-          "author": "@FIE_fencing",
-          "account_tier": "A",
-          "posted_at": "2026-10-18T19:15:07Z",
-          "retrieved_at": "2026-10-19T09:10:00-04:00"
-        },
-        {
-          "type": "x_post",
-          "url": "https://x.com/FIE_fencing/status/2112097128159830129",
-          "author": "@FIE_fencing",
-          "account_tier": "A",
-          "posted_at": "2026-10-19T08:22:50Z",
-          "retrieved_at": "2026-10-19T09:10:00-04:00"
-        },
-        {
-          "type": "web",
-          "url": "https://fie.org/tournaments/2027/115",
-          "retrieved_at": "2026-10-19T09:12:00-04:00",
-          "note": "public JSON: event-results empty at 9:12 AM ET (results not yet loaded); FIE news 1752 'Season opener' (Oct 15) is the preview."
-        }
-      ],
-      "need": [
-        "Pre-budget: re-check fie.org results once loaded for the best U.S. finishes (could add one line)."
-      ],
-      "vet_notes": "Monday full pass 2026-10-19. Tier-A FIE posts about its own event; field size from fie.org JSON. Unvetted until Frank vets (X rule).",
-      "created_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "fie-san-jose-jr-cadet-wc-watch-2026-10-19",
-      "kind": "tip",
-      "headline": "Results watch: San José Junior/Cadet Epee World Cup (Oct 22–25)",
-      "source": "fie",
-      "target_week": "next",
-      "vetted": false,
-      "slot_hint": "secondary_b",
-      "waiting": true,
-      "body": "FIE Junior/Cadet epee World Cup, San José, Costa Rica, Oct 22–25 (fie.org tournament 117, no stream listed). Check results Mon Oct 26 for U.S. podiums or a notable U.S. finish; possible Secondary B if there's a story.",
-      "provenance": [
-        {
-          "type": "web",
-          "url": "https://fie.org/tournaments/2027/117",
-          "retrieved_at": "2026-10-19T09:15:00-04:00"
-        }
-      ],
-      "created_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "desk-by-the-book-unwillingness-2026-10-19",
-      "kind": "graf",
-      "headline": "By the Book: One Quiet Minute",
-      "body": "In a direct-elimination bout, a full minute of fencing with no touch is \"unwillingness to fight\" (t.124), and the referee calls \"Halt!\" The first time, both fencers get a P-red card, a penalty hit. The second time, the fencer who is behind gets a P-black card and loses the bout; if the score is tied, the lower seed gets it. The minute restarts after every touch and at the start of each period, and no P-card can be given at 14-14 (or 9-9 in a 10-touch bout).",
-      "source": "usaf-rulebook",
-      "from": "Gazette Desk",
-      "target_week": "next",
-      "vetted": true,
-      "vetted_by": "standing rule (Frank voice 2026-10-18: Desk-written By the Book goes in; approve or cut at budget)",
-      "vetted_at": "2026-10-19T09:30:00-04:00",
-      "slot_hint": "by_the_book",
-      "tags": [
-        "recurring",
-        "rules",
-        "by-the-book",
-        "desk-written"
-      ],
-      "facts": [
-        {
-          "claim": "One minute of fencing without a hit (or off-target hit) = unwillingness to fight; referee calls Halt as a decision of fact",
-          "citation": "t.124 (USA Fencing Rules for Competition, Oct 2026, p.47-48)",
-          "status": "verified-rulebook"
-        },
-        {
-          "claim": "Individual DE: first time, P-red to both fencers simultaneously",
-          "citation": "t.124.1a",
-          "status": "verified-rulebook"
-        },
-        {
-          "claim": "Second time: P-black to the lower score (higher score wins); if equal, P-black to the lower initial seeding (higher seed wins)",
-          "citation": "t.124.1b i-ii",
-          "status": "verified-rulebook"
-        },
-        {
-          "claim": "P-red = penalty hit; P-black = possible loss of the bout",
-          "citation": "t.124.3a",
-          "status": "verified-rulebook"
-        },
-        {
-          "claim": "No P-card at 14-14; in USA Fencing competitions, none at 9-9 in 10-touch bouts",
-          "citation": "t.124.3a + USA Fencing note",
-          "status": "verified-rulebook"
-        },
-        {
-          "claim": "The minute restarts after each hit, off-target hit, annulled hit, penalty hit, and at the start of each period",
-          "citation": "t.124.3d",
-          "status": "verified-rulebook (draft says 'every touch' as shorthand)"
-        }
-      ],
-      "provenance": [
-        {
-          "source": "reference/usa-fencing/usaf-rules-for-competition-2026-10.pdf",
-          "note": "t.124"
-        },
-        {
-          "source": "voice: Frank 2026-10-18 8:26 ET (relayed by Grok Bot)",
-          "note": "Desk writes By the Book from the rulebook without asking Frank."
-        }
-      ],
-      "pairing_note": "Random pick (no specific incident this week). An unwillingness explainer lead (x-lead-passivity-p-black-explainer) was staged for No. 2 and marked stale without printing, so this is not a repeat. Sits well next to the referee feature.",
-      "vet_notes": "Desk-written 2026-10-19 from the Oct 2026 rulebook.",
-      "created_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "desk-for-the-parents-check-in-2026-10-19",
-      "kind": "graf",
-      "headline": "For the Parents: The Time Listed Is Check-In",
-      "body": "On a tournament schedule, the time next to an event is often when check-in closes, not when fencing starts. The Ultimate Cup page says it outright: \"All times are Close of Check-in,\" and organizers recommend arriving at least an hour before. Fencers check in every day they compete. Equipment check opens the Friday before, 4 to 6:30 p.m., and from 6:30 a.m. on event days. Spectators sit outside the barriers around the strips.",
-      "source": "usafencing-web",
-      "target_week": "next",
-      "vetted": false,
-      "slot_hint": "for_the_parents",
-      "facts": [
-        {
-          "claim": "'All times are Close of Check-in'; recommend arriving at least 1 hour before close of check-in; fencers must check in every day they compete; equipment check Fri Oct 30 4:00-6:30 PM and event days from 6:30 AM; spectators sit outside the stanchions",
-          "source": "USA Fencing tournament page 12158 (Ultimate Cup RJCC) details_text via fencing-api live 2026-10-19 9:05 AM ET; https://member.usafencing.org/details/tournaments/12158",
-          "status": "verified-usafencing"
-        }
-      ],
-      "provenance": [
-        {
-          "type": "api",
-          "source": "fencingapi",
-          "endpoint": "/v1/usfa/tournaments/12158/entries?live=true",
-          "fetched_at": "2026-10-19T13:05:00Z",
-          "underlying": "https://member.usafencing.org/details/tournaments/12158"
-        }
-      ],
-      "pairing_note": "Timely: 10 Elite FC fencers are at Ultimate Cup the weekend after No. 4. 'Often' is the Desk's hedge; the quoted line is Ultimate Cup's own.",
-      "vet_notes": "Desk-written 2026-10-19. Needs Frank's Vet (For the Parents start/rank still provisional).",
-      "created_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "history-photo-07-epee-fair-play-1976",
-      "kind": "photo_feature",
-      "section": "Photo from History",
-      "headline": "Photo from History: 1976: The light came on, but there was no touch",
-      "body": "During the epee round of the 1976 Olympic modern pentathlon, British competitors challenged touches credited to Boris Onishchenko. In his bout with Jim Fox, the scoring light registered a hit even though his weapon had not reached its target. Examination revealed deliberate tampering that allowed the epee to signal a touch without contact. Onishchenko was disqualified, ending the Soviet team’s medal chances, although his teammates could continue individually. Britain went on to win team gold. The incident occurred in modern pentathlon, not the separate Olympic fencing tournament. The accompanying 2006 equipment photograph shows a normal electric epee, not the weapon involved.",
-      "caption": "At Montreal in 1976, Boris Onishchenko was disqualified from modern pentathlon after officials found that his epee could register touches without hitting an opponent. This 2006 photograph shows an ordinary electric epee grip and connector, not Onishchenko’s weapon.",
-      "credit": "Illustrative equipment photo: Lord ignus, “Pistolgrip.jpg” (25 May 2006), via Wikimedia Commons. Public domain by the photographer. Not Onishchenko’s weapon. Release: https://commons.wikimedia.org/wiki/File:Pistolgrip.jpg#Licensing. Source: https://commons.wikimedia.org/wiki/File:Pistolgrip.jpg.",
-      "alt_text": "Color close-up of a normal electric epee on a wooden surface, showing a gray pistol grip inside a metal bell guard, a red pad and a three-socket connector.",
-      "media_path": "staging/weeks/next/media/07-epee-fair-play-1976.jpg",
-      "media_id": "media-history-07-epee-fair-play-1976",
-      "image_px": [
-        640,
-        480
-      ],
-      "layout": {
-        "span": 1,
-        "page": 2,
-        "grayscale": "ok (public domain; add 'Converted to grayscale' as good practice)"
-      },
-      "license": "Public domain (author)",
-      "source": "history-photos",
-      "pile_entry": "staging/history-photos/07-epee-fair-play-1976.md",
-      "cautions": [
-        "Modern 2006 illustration, not a 1976 photo or Onishchenko's weapon.",
-        "Say modern pentathlon's epee round, not an Olympic fencing bout.",
-        "No wiring diagram or how-to."
-      ],
-      "word_count": 163,
-      "target_week": "next",
-      "vetted": false,
-      "slot_hint": "photo-history",
-      "vet_notes": "Desk pick 2026-10-19 from the Photo from History pile (Frank's research library, batch 1; card sources: Commons, Guardian, SI, Wikipedia). Fits the referee feature (fair play / scoring). 1 column only (640 px wide). Alternate: 05 (1936 electric epee, 2-col OK, CC BY-SA 3.0 FR).",
-      "created_at": "2026-10-19T09:30:00-04:00"
-    },
-    {
-      "id": "x-lead-college-schedules-2026-27",
-      "kind": "tip",
-      "headline": "Lead: NJIT and Princeton post 2026–27 fencing schedules",
-      "source": "x",
-      "target_week": "next",
-      "vetted": false,
-      "slot_hint": "desk_fill",
-      "body": "@njitfencing (Oct 16) and @TigerFencing (Oct 15) posted their 2026–27 schedules (images/links, not read). Possible college-path one-liner later in the season; needs the schools' own pages for dates.",
-      "provenance": [
-        {
-          "type": "x_post",
-          "url": "https://x.com/njitfencing/status/2111121237971779775",
-          "account_tier": "A",
-          "posted_at": "2026-10-16T15:45:00Z",
-          "retrieved_at": "2026-10-19T09:11:00-04:00"
-        },
-        {
-          "type": "x_post",
-          "url": "https://x.com/TigerFencing/status/2110583567487213773",
-          "account_tier": "A",
-          "posted_at": "2026-10-15T04:08:29Z",
-          "retrieved_at": "2026-10-19T09:11:00-04:00"
-        }
-      ],
-      "created_at": "2026-10-19T09:30:00-04:00"
+     "type": "url",
+     "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt818eb721a8cdafac/69432277e99cb75077675f73/Regional_Tournament_Requirements_(2026-28).pdf",
+     "retrieved_at": "2026-10-19T09:22:00-04:00"
     }
-  ],
-  "rolled_forward": {
-    "from": "staging/weeks/after-next",
-    "at": "2026-10-19T08:02:00-04:00",
-    "why": "Issue No. 3 (2026-10-19) approved and published Oct 18; after-next became next (Issue No. 4, week of Oct 26). Roll done at the Oct 19 daily email check (it had not been done at publish)."
+   ],
+   "slot_hint": "feature",
+   "tags": [
+    "placeholder",
+    "referee",
+    "planning"
+   ],
+   "created_at": "2026-10-13T08:02:00-04:00",
+   "answered_questions": [
+    {
+     "q": "No. 3 or No. 4?",
+     "a": "No. 4",
+     "source": "chat: Frank 2026-10-13",
+     "at": "2026-10-13T08:02:30-04:00"
+    }
+   ],
+   "word_count": 271,
+   "facts": [
+    {
+     "claim": "Start by refereeing informal bouts at your local club; practice, find a mentor (experienced referee or coach); read the rulebook; knowing rules lets you advocate for yourself if a referee misapplies a rule",
+     "source": "https://www.usafencing.org/become-a-referee (retrieved 2026-10-19 9:20 AM ET)",
+     "status": "verified-usafencing"
+    },
+    {
+     "claim": "Steps: study guide, referee seminar, online exam (general + at least one weapon) for a P rating; fee; retake within 48 hours if failed",
+     "source": "same",
+     "status": "verified-usafencing"
+    },
+    {
+     "claim": "90 percent required in the general section and each weapon tested; exam once every two years; attend a rules seminar; referee at level at least every two years",
+     "source": "https://www.usafencing.org/referees-ratings-process (same text on become-a-referee page)",
+     "status": "verified-usafencing"
+    },
+    {
+     "claim": "Practical exam by a Referee Examiner needed for a local/regional rating; ratings P, L2, L1, R2, R1, N2, N1; consistency 'same call at 14-14 as at 1-1'",
+     "source": "same",
+     "status": "verified-usafencing"
+    },
+    {
+     "claim": "Referees at least 13 with a P rating may officiate at a regional tournament; referees working more than a single round of pools must be compensated",
+     "source": "USA Fencing Regional Tournament Requirements 2026-28 PDF, Referee Requirements (p.10) https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt818eb721a8cdafac/69432277e99cb75077675f73/Regional_Tournament_Requirements_(2026-28).pdf (retrieved 2026-10-19 9:22 AM ET)",
+     "status": "verified-usafencing"
+    },
+    {
+     "claim": "Current USA Fencing membership for all referees; 18+ must buy +CheckEd for background check and SafeSport; under 18 not required",
+     "source": "https://www.usafencing.org/become-a-referee",
+     "status": "verified-usafencing; NOTE the Regional Tournament Requirements PDF says all referees need a background check — the draft uses the become-a-referee wording (18 and older)"
+    },
+    {
+     "claim": "Friday open bouting at Elite FC",
+     "source": "web-efc-standing-schedule (club website; vetted)",
+     "status": "verified-club"
+    }
+   ],
+   "cautions": [
+    "The ratings-review section of the USA Fencing page still uses the old 1-10 numeric scale; not used in the draft.",
+    "Don't name any referee; no Elite FC person is claimed to be a referee."
+   ],
+   "need": [
+    "Frank: any personal angle you want in it (you said you're interested), or keep it a plain how-to?"
+   ],
+   "updated_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "chat-winter-camp-reminder",
+   "kind": "graf",
+   "headline": "Winter Camp: Sign Up Now",
+   "body": "Elite FC Winter Camp runs Dec. 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels: footwork, technical and tactical drills, strength and conditioning, and games. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. The club asks campers to register as soon as possible; contact the club for price and sign-up.",
+   "source": "chat",
+   "from": "frank",
+   "target_week": "next",
+   "vetted": true,
+   "vetted_at": "2026-10-07T18:53:00-04:00",
+   "vetted_by": "frank",
+   "vet_scope": "angle_tone_only",
+   "facts_status": "verified (price omitted)",
+   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed).",
+   "facts": [
+    {
+     "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
+     "source": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
+     "where": "email body + embedded flyer",
+     "status": "verified-email"
+    },
+    {
+     "claim": "Daily hours 9:30 AM – 2:00 PM",
+     "source": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
+     "where": "flyer embedded in email",
+     "status": "verified-email; body says day-to-day schedule still to be announced"
+    },
+    {
+     "claim": "Open to all levels; train with high-level fencers",
+     "source": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
+     "where": "flyer embedded in email",
+     "status": "verified-email"
+    },
+    {
+     "claim": "Activities: footwork, technical/tactical drills, professional strength/conditioning, creative games",
+     "source": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
+     "where": "flyer embedded in email",
+     "status": "verified-email"
+    },
+    {
+     "claim": "Register as soon as possible",
+     "source": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
+     "where": "email body",
+     "status": "verified-email"
+    },
+    {
+     "claim": "Day-to-day schedule to be announced once a few things are finalized",
+     "source": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
+     "where": "email body",
+     "status": "verified-email (not printed)"
+    },
+    {
+     "claim": "Website (elitefencersclub.com/camps + flyer jpg): Dec 27–31, 9:30–2:00, contact club for pricing/registration",
+     "source": "https://www.elitefencersclub.com/camps",
+     "status": "consistent with email; secondary"
+    },
+    {
+     "claim": "Sign-up = contact the club: camps page 'Register' button links to /contact; page says 'For current camp dates, pricing, and registration details, please contact Elite Fencers Club directly.'",
+     "source": "https://www.elitefencersclub.com/camps",
+     "status": "verified-web 2026-10-18"
+    }
+   ],
+   "need": [
+    "price (not published anywhere we can see; prints as 'contact the club')",
+    "optional: print the club email elitefencersclub@gmail.com? (public on the club website)"
+   ],
+   "email_search": "Read-only 2026-10-07: AgentMail efc.weekly (4 messages incl. club Mailchimp 'Group Class! + Footwork Class' Oct 7 and Frank fwd of Oct 5 'Group Class! + Congrats!') — no Winter Camp mention. Connected Gmail is seventyfourwaldo@gmail.com (not Frank's frankcng@gmail.com) — 0 hits. | Re-check 2026-10-07 ~19:14 ET: found Frank's fwd in AgentMail efc.weekly (5 messages listed). Gmail seventyfourwaldo: 'newer_than:2d (camp OR winter OR elitefencersclub OR Fwd)' and 'in:anywhere (camp OR winter OR \"Elite Fencers\")' — 0 hits.",
+   "provenance": [
+    {
+     "type": "chat",
+     "note": "chat: Frank 2026-10-07 — Winter Camp reminder angle + family joke",
+     "retrieved_at": "2026-10-07T18:53:00-04:00"
+    },
+    {
+     "type": "web",
+     "url": "https://www.elitefencersclub.com/camps",
+     "retrieved_at": "2026-10-07T18:55:00-04:00"
+    },
+    {
+     "type": "web",
+     "url": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
+     "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer.jpg",
+     "retrieved_at": "2026-10-07T18:55:00-04:00"
+    },
+    {
+     "type": "email",
+     "from": "Frank Ng <frankcng@gmail.com> (fwd of Elite Fencers Club Mailchimp, Sep 30 2026 10:04 AM)",
+     "subject": "Fwd: Group Class! + Winter Camp❄️",
+     "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
+     "original_message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20260930140307.ef8c3004dd.9c8898df@mail67.atl91.mcsv.net>",
+     "retrieved_at": "2026-10-07T19:15:00-04:00",
+     "note": "source of truth for camp facts (Frank, 2026-10-07)"
+    },
+    {
+     "type": "email-image",
+     "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
+     "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
+     "retrieved_at": "2026-10-07T19:16:00-04:00"
+    },
+    {
+     "type": "chat",
+     "note": "chat: Frank 2026-10-12 — skip Winter Camp this week; hold for No. 3",
+     "retrieved_at": "2026-10-12T09:45:00-04:00"
+    },
+    {
+     "type": "web",
+     "url": "https://www.elitefencersclub.com/camps",
+     "retrieved_at": "2026-10-18T08:37:00-04:00",
+     "note": "Re-check: no price; Register → Contact page"
+    }
+   ],
+   "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
+   "slot_hint": "club_events",
+   "suggested_slot": "club_events",
+   "tags": [
+    "winter-camp",
+    "club-event",
+    "reminder",
+    "facts-pending",
+    "frank-idea"
+   ],
+   "draft_path": "staging/weeks/next/drafts/winter-camp.md",
+   "word_count": 68,
+   "created_at": "2026-10-07T19:05:00-04:00",
+   "facts_source_of_truth": "email (Frank, chat via parent 2026-10-07 ~19:12 ET): club Mailchimp email overrides website on conflict",
+   "conflicts_with_website": "None on dates, hours, levels or activities (email embeds the same flyer). Email body: day-to-day schedule not final yet. Email doesn't address the Sunday Dec 27 start vs. club closed Sundays; it does confirm 12/27 as the start.",
+   "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
+   "email": {
+    "subject": "Fwd: Group Class! + Winter Camp❄️",
+    "from": "Frank Ng <frankcng@gmail.com>",
+    "to": "efc.weekly@agentmail.to",
+    "received_at": "2026-10-07T19:11:40-04:00",
+    "agentmail_thread_id": "62bf7319-bc62-4c0c-8143-866e04cfe0e3",
+    "forward_chain": [
+     {
+      "step": 1,
+      "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+      "to": "frankcng@gmail.com",
+      "date": "2026-09-30T10:04:00-04:00",
+      "subject": "Group Class! + Winter Camp❄️",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20260930140307.ef8c3004dd.9c8898df@mail67.atl91.mcsv.net>",
+      "web_version": "https://mailchi.mp/966e788d812f/group-class-winter-camp?e=f656c71db1"
+     },
+     {
+      "step": 2,
+      "from": "Frank Ng <frankcng@gmail.com>",
+      "to": "efc.weekly@agentmail.to",
+      "date": "2026-10-07T19:11:40-04:00",
+      "subject": "Fwd: Group Class! + Winter Camp❄️",
+      "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>"
+     }
+    ],
+    "text_copy": "staging/weeks/next/sources/email-fwd-winter-camp-2026-10-07.txt"
+   },
+   "updated_at": "2026-10-07T19:20:00-04:00",
+   "ingest_notes": [
+    "2026-10-08 daily email pass: Frank's 'Fwd: Group Class! + Winter Camp' (<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>) was already ingested 2026-10-07 ~19:20 ET; it had just not been labeled processed. Labeled now; no new facts (price and sign-up method still pending)."
+   ],
+   "held_for": "Issue No. 3",
+   "hold_note": "chat: Frank 2026-10-12: skip Winter Camp this week; hold for No. 3.",
+   "moved_from": "staging/weeks/next",
+   "moved_at": "2026-10-12T09:45:00-04:00",
+   "carried_from": "staging/weeks/2026-10-19",
+   "carry_note": "Printed in No. 3; carried as reference only for a possible later reminder (camp Dec 27–31). Do not re-run without Frank."
+  },
+  {
+   "id": "email-agentmail-morris-cup-entries-2026-10-07",
+   "kind": "signup_row",
+   "headline": "Morris Cup RYC/RJCC — EFC who's entered",
+   "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Tue Oct 20; +1 vs Mon Oct 19): Sat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia, Sheth Anayaà; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila, Young Penelope. Sun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
+   "source": "email",
+   "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
+   "from": "chunkymonkey@agentmail.to",
+   "subject": "Club schedule · Tuesday, October 20",
+   "target_week": "next",
+   "vetted": true,
+   "created_at": "2026-10-07T13:15:05-04:00",
+   "provenance": [
+    {
+     "type": "email",
+     "message_id": "<010001a11738c252-d1061e21-2ca0-4b6a-9d63-f81177b84494-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "retrieved_at": "2026-10-07T13:15:05-04:00"
+    },
+    {
+     "type": "url",
+     "url": "https://fencingtracker.com/tournament/1706",
+     "retrieved_at": "2026-10-07T17:15:00-04:00",
+     "note": "Name-spelling cross-check only (CDTME 'WU, Caden'; CDTWE 'Young, Penelope'; Y14ME 'Shah-Mirani, Ash'; Y10ME 'Shah Mirani, Rahi')"
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a11b2b8c68-4461f351-6dc4-4fa1-9fc5-15934438e225-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Thursday, October 8",
+     "retrieved_at": "2026-10-08T08:05:00-04:00",
+     "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7 digest (same 20 fencers / 29 entries, same events and times). No adds or drops."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a12051e7f7-12b87cb6-16d2-4ea6-8f7d-51d06e20d5a5-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Friday, October 9",
+     "retrieved_at": "2026-10-09T08:10:00-04:00",
+     "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 7/8 digests (same 20 fencers / 29 entries, same events and times). No adds or drops."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a12578450c-c9092bce-80c6-4ffc-acc7-6a1213b75b5e-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Saturday, October 10",
+     "retrieved_at": "2026-10-12T08:10:00-04:00",
+     "note": "Daily refresh: identical to Oct 7/8/9 (20 fencers / 29 entries)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Sunday, October 11",
+     "retrieved_at": "2026-10-12T08:10:00-04:00",
+     "note": "CHANGE: Olivia Hayes added to CDTWE Sun Oct 25 8:00 AM (now 20 fencers / 30 entries)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Monday, October 12",
+     "retrieved_at": "2026-10-12T08:10:00-04:00",
+     "note": "CHANGE: Rahi Shah Mirani no longer listed in Y10ME Sun Oct 25 (now 19 fencers / 29 entries). Latest list."
+    },
+    {
+     "type": "fetch_log",
+     "path": "staging/weeks/next/gather-2026-10-12-web.json",
+     "retrieved_at": "2026-10-12T09:17:00-04:00",
+     "note": "FencingTracker cross-check 2026-10-12: 29 entries / 19 fencers; Rahi Shah Mirani shown WITHDRAWN from Y10ME — matches the Oct 12 digest."
+    },
+    {
+     "source": "chat: Frank 2026-10-12",
+     "note": "Rahi prints as Shah-Mirani, matching Ash (roster resolved). Registration text keeps 'Shah Mirani'."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a134eb584c-cb652784-f44c-42f7-b69c-6ffef15336a5-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Tuesday, October 13",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-13T08:05:00-04:00",
+     "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 12 digest (19 fencers / 29 entries, same events and times). No adds or drops. Medeo no longer in the digest's watched list (event past)."
+    },
+    {
+     "source": "chat: Frank 2026-10-13",
+     "note": "Board name: 'Nearby Tournaments' (formerly 'Go Cheer'), 11:29 ET."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Wednesday, October 14",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-14T07:55:00-04:00",
+     "note": "Daily refresh: Morris Cup EFC entry list identical to the Oct 12/13 digests (19 fencers / 29 entries, same events and times). No adds or drops. Digest also newly lists Medeo Youth Challenge #5 (Nov 8) and empty Wanglei Oct 25 / Nov 8 cups — staged separately."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
+     "fetched_at": "2026-10-14T10:01:55Z",
+     "fetched_at_et": "2026-10-14 6:01 AM ET",
+     "retrieved_at": "2026-10-14T09:58:30-04:00",
+     "note": "Wednesday skim cross-check: USA Fencing entrants agree with the digest — 29 Elite FC entries, same events/days/names. No mismatch."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a13b822abc-9dbbae8b-e3b6-4fde-a0dd-8b79d813d25f-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Wednesday, October 14",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-15T07:55:00-04:00",
+     "note": "Evening re-send (17:42 UTC Oct 14 / 1:42 PM ET) left unread overnight. Morris Cup EFC list identical to morning Oct 14 digest (19 fencers / 29 entries). Medeo #5 same 4 entries. Wanglei still empty."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a13f3811b2-d601d953-845a-4828-8c23-f32c502c14e9-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Thursday, October 15",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-15T07:55:00-04:00",
+     "note": "Daily refresh: Morris Cup identical (19 fencers / 29 entries; data stamped Oct 14 10:00 PM, could not refresh). Medeo #5 same 4. Wanglei Oct 25 / Nov 8 still nobody signed up."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a1445eaeec-e84be129-3374-44ff-827f-7ab0b857583d-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Friday, October 16",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-16T08:00:00-04:00",
+     "ingested_at": "2026-10-16T08:00:00-04:00",
+     "note": "Daily refresh: Morris Cup CHANGED — ADD Anayaà Sheth (print Anayaa Sheth) to Sat JNRWE 8:00 AM. Now 20 fencers / 30 entries (was 19/29). Data stamped Oct 15, 12:05 PM (could not refresh). Wanglei Oct 25 / Nov 8 still empty."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a14984c86c-8b7d6847-5bd0-4cf2-a579-e3b28408f522-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Saturday, October 17",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-18T08:32:00-04:00",
+     "note": "Pre-budget pass: Morris Cup list identical to Oct 16 (20 fencers / 30 entries; data as of Oct 16, 6:00 AM)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a14eab241e-7693f9dd-e426-46a7-9684-f9b4bee38823-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Sunday, October 18",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-18T08:32:00-04:00",
+     "note": "Pre-budget pass: Morris Cup list identical to Oct 16 (20 fencers / 30 entries; data as of Oct 17, 6:00 PM)."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
+     "fetched_at": "2026-10-18T10:01:55Z",
+     "fetched_at_et": "2026-10-18 6:01 AM ET",
+     "note": "Pre-budget cross-check: 30 Elite FC entries, same events/days/times as digest. Fee periods: late registration Oct 6–22 (11:59 PM PT); no online registration from Oct 23. No mismatch."
+    },
+    {
+     "type": "email",
+     "source": "agentmail",
+     "message_id": "<010001a153d1804e-4307504b-d0ea-4133-bb42-c1930d8fba76-000000@email.amazonses.com>",
+     "from": "chunkymonkey@agentmail.to",
+     "subject": "Club schedule · Monday, October 19",
+     "received_at": "2026-10-19T07:00:01-04:00",
+     "note": "Unchanged: 30 Elite FC entries (Sat 12, Sun 18). Digest data as of Oct 18 6:01 PM (could not refresh)."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
+     "fetched_at": "2026-10-19T10:02:31Z",
+     "fetched_at_et": "2026-10-19 6:02 AM ET",
+     "note": "Monday full pass: 30 Elite FC entries / 20 fencers, all 'approved'. Same list as the Oct 16-19 digests."
+    },
+    {
+     "type": "url",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+     "retrieved_at": "2026-10-19T09:03:00-04:00",
+     "note": "Direct cross-check agrees: 30 active entries from 20 club members; Rahi Shah Mirani's Y10ME entry shows Withdrawn (not counted). No API-vs-direct mismatch."
+    },
+    {
+     "type": "email",
+     "source": "agentmail",
+     "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
+     "from": "chunkymonkey@agentmail.to",
+     "subject": "Club schedule · Tuesday, October 20",
+     "received_at": "2026-10-20T07:00:01-04:00",
+     "retrieved_at": "2026-10-20T07:53:00-04:00",
+     "note": "CHANGE: Young, Penelope added to Y14WE (Sat Oct 24, 3:00 PM). Now 20 fencers / 31 entries (Sat 13, Sun 18). Digest data as of Oct 19 6:00 AM (could not refresh)."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12095/entries (cached)",
+     "fetched_at": "2026-10-20T10:02:01Z",
+     "fetched_at_et": "2026-10-20 6:02 AM ET",
+     "note": "Cross-check agrees: 31 Elite FC entries / 20 fencers, all 'approved'; Young, Penelope listed in Y14WE (event capped, 98 entrants, 0 open spots). No mismatch."
+    }
+   ],
+   "suggested_slot": "whos_entered",
+   "tags": [
+    "club",
+    "morris-cup",
+    "signup",
+    "epee",
+    "unvetted"
+   ],
+   "overlap_note": "Richer than gather-morris-cup-ryc-oct25 (event-only); this is the full EFC entry list.",
+   "vetted_by": "auto-chunkymonkey",
+   "vetted_at": "2026-10-07T13:20:00-04:00",
+   "vet_notes": "Frank 2026-10-07 17:08 ET: 'Penny Young' (club newsletter / SYC) and 'Young, Penelope' (Morris Cup registration digest; FencingTracker CDTWE) are the SAME fencer, Penelope Young. Print form: 'Penny Young' (how the club newsletter prints her), used consistently on every board. Name tidy (Desk, 2026-10-07): print First Last like the club newsletter. 'WU Caden' → 'Caden Wu' (casing only; FencingTracker CDTME shows 'WU, Caden' — registration caps). 'Shah-Mirani Ash' (Y14ME) vs 'Shah Mirani Rahi' (Y10ME): FencingTracker shows the same split ('Shah-Mirani, Ash' / 'Shah Mirani, Rahi'), so no authoritative single form — kept source forms per fencer and FLAGGED for Frank. Frank approved showing ALL 29 entries (20 fencers) — exception to the 8-row signup soft cap for big turnouts. | Desk 2026-10-12: list refreshed from Oct 11/12 digests (Olivia Hayes added CDTWE; Rahi Shah-Mirani dropped from Y10ME, now 19 fencers / 29 entries). Shah-Mirani hyphen flag now only matters for Ash on this board; Rahi's spelling still unresolved in roster. | chat: Frank 2026-10-12: Rahi also prints 'Shah-Mirani' (roster resolved). | Desk 2026-10-16: Fri digest adds Anayaà Sheth to Sat JNRWE (print Anayaa Sheth per roster); list now 20 fencers / 30 entries. | Desk 2026-10-20: Tue digest adds Penelope Young (prints Penny Young) to Sat Y14WE; USA Fencing entries cache agrees; list now 20 fencers / 31 entries.",
+   "name_aliases": {
+    "Penny Young": [
+     "Young Penelope"
+    ],
+    "Caden Wu": [
+     "WU Caden"
+    ]
+   },
+   "name_flags": [
+    "Ash Shah-Mirani vs Rahi Shah Mirani — hyphen differs by registration (FencingTracker matches digest); confirm family spelling | RESOLVED chat: Frank 2026-10-12: both print 'Shah-Mirani'."
+   ],
+   "carried_from": "staging/weeks/2026-10-19",
+   "carried_at": "2026-10-07T18:46:27-04:00",
+   "carry_note": "Morris Cup is Oct 24–25: becomes a results watch for No. 4.",
+   "entries_last_confirmed": "2026-10-20T07:53:00-04:00",
+   "entries_change_log": [
+    {
+     "seen_in": "Club schedule · Sunday, October 11",
+     "message_id": "<010001a12a9e9fd9-1821d571-a3c9-46a2-ac7c-abdb58312942-000000@email.amazonses.com>",
+     "change": "ADD Hayes, Olivia — CDTWE (Sun Oct 25, 8:00 AM)",
+     "noted_at": "2026-10-12T08:10:00-04:00"
+    },
+    {
+     "seen_in": "Club schedule · Monday, October 12",
+     "message_id": "<010001a12fc4fc3a-3b5e7180-6c28-4ce7-82bc-1bb8cb35a38c-000000@email.amazonses.com>",
+     "change": "DROP Shah Mirani, Rahi — Y10ME (Sun Oct 25, 3:30 PM) no longer listed; reason unknown (withdrawal vs digest/registration glitch). Don't print as a withdrawal; just reflect the current list.",
+     "noted_at": "2026-10-12T08:10:00-04:00"
+    },
+    {
+     "seen_in": "Club schedule · Friday, October 16",
+     "message_id": "<010001a1445eaeec-e84be129-3374-44ff-827f-7ab0b857583d-000000@email.amazonses.com>",
+     "change": "ADD Sheth, Anayaà — JNRWE (Sat Oct 24, 8:00 AM). Print as Anayaa Sheth (roster).",
+     "noted_at": "2026-10-16T08:00:00-04:00"
+    },
+    {
+     "seen_in": "Club schedule · Tuesday, October 20",
+     "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
+     "change": "ADD Young, Penelope — Y14WE (Sat Oct 24, 3:00 PM). Print as Penny Young (roster). She now fences both days (Y14WE Sat, CDTWE Sun).",
+     "noted_at": "2026-10-20T07:53:00-04:00"
+    }
+   ],
+   "entries_count": "20 fencers / 31 entries (Tue Oct 20 digest + USA Fencing cache; was 20 / 30 through Mon Oct 19)",
+   "board": "Nearby Tournaments",
+   "slot_hint": "club_results",
+   "waiting": true,
+   "no4_role": "Results watch for No. 4 (Oct 24-25 is before No. 4's publish). Likely lead: strong Elite FC finishes only (STYLE-GUIDE 0d); everyone else on the 'also fenced' line. Check FencingTracker / USA Fencing results Sun Oct 25 night and Mon Oct 26 morning.",
+   "updated_at": "2026-10-20T07:53:00-04:00"
+  },
+  {
+   "id": "web-efc-standing-schedule",
+   "kind": "fact",
+   "headline": "Elite FC weekly class schedule (club website)",
+   "body": "Club website 'Class times and activities' (regular weekly schedule): Mon 4:30–6:00 PM Group Class (Little Musketeers); Tue 6:00–7:30 PM Group Class; Wed 5:00–6:30 PM Group Class (Little Musketeers), 6:30–7:15 PM Footwork Class; Thu 6:00–7:30 PM Group Class; Fri 4:15 PM Mini Musketeers (Ages 5–7), 6:00–10:00 PM Open Bouting; Sat 11:00 AM–12:30 PM Group Class (Little Musketeers), 1:00–2:30 PM Group Class; Sun closed. Private lessons fill the other weekday/Sat. windows.",
+   "schedule_rows": [
+    [
+     "Monday",
+     "3:00 PM–10:00 PM",
+     "Private Lessons"
+    ],
+    [
+     "Monday",
+     "4:30 PM–6:00 PM",
+     "Group Class (Little Musketeers)"
+    ],
+    [
+     "Tuesday",
+     "3:00 PM–6:00 PM",
+     "Private Lessons"
+    ],
+    [
+     "Tuesday",
+     "6:00 PM–7:30 PM",
+     "Group Class"
+    ],
+    [
+     "Tuesday",
+     "7:30 PM–10:00 PM",
+     "Private Lessons"
+    ],
+    [
+     "Wednesday",
+     "3:00 PM–10:00 PM",
+     "Private Lessons"
+    ],
+    [
+     "Wednesday",
+     "5:00 PM–6:30 PM",
+     "Group Class (Little Musketeers)"
+    ],
+    [
+     "Wednesday",
+     "6:30 PM–7:15 PM",
+     "Footwork Class"
+    ],
+    [
+     "Thursday",
+     "3:00 PM–6:00 PM",
+     "Private Lessons"
+    ],
+    [
+     "Thursday",
+     "6:00 PM–7:30 PM",
+     "Group Class"
+    ],
+    [
+     "Thursday",
+     "7:30 PM–10:00 PM",
+     "Private Lessons"
+    ],
+    [
+     "Friday",
+     "3:00 PM–10:00 PM",
+     "Private Lessons"
+    ],
+    [
+     "Friday",
+     "4:15 PM",
+     "Mini Musketeers (Ages 5–7)"
+    ],
+    [
+     "Friday",
+     "6:00 PM–10:00 PM",
+     "Open Bouting"
+    ],
+    [
+     "Saturday",
+     "9:00 AM–11:00 AM",
+     "Private Lessons"
+    ],
+    [
+     "Saturday",
+     "11:00 AM–12:30 PM",
+     "Group Class (Little Musketeers)"
+    ],
+    [
+     "Saturday",
+     "1:00 PM–2:30 PM",
+     "Group Class"
+    ],
+    [
+     "Sunday",
+     "CLOSED",
+     ""
+    ]
+   ],
+   "row_count": 9,
+   "source": "club-website",
+   "from": null,
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "frank",
+   "vetted_at": "2026-10-07T17:18:05-04:00",
+   "vet_notes": "Desk gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.' | Frank chat 2026-10-07T17:32: Friday Mini Musketeers moved to 4:15 PM (likely permanent; website not updated). End time not confirmed — print start time only unless Frank confirms.",
+   "provenance": [
+    {
+     "type": "url",
+     "url": "https://www.elitefencersclub.com/programs",
+     "retrieved_at": "2026-10-07T17:15:00-04:00",
+     "note": "'Class times and activities' table — regular weekly schedule"
+    },
+    {
+     "type": "url",
+     "url": "https://www.elitefencersclub.com/location-hours",
+     "retrieved_at": "2026-10-07T17:15:00-04:00",
+     "note": "Operating hours Mon–Fri 3–9 PM, Sat 8:30–3, Sun closed; 'contact us for the most up-to-date class times'"
+    },
+    {
+     "type": "url",
+     "url": "https://www.elitefencersclub.com/",
+     "retrieved_at": "2026-10-07T17:15:00-04:00",
+     "note": "Homepage — no schedule"
+    },
+    {
+     "type": "chat",
+     "note": "Frank: Mini Musketeers Fridays moved to 4:15 PM; website outdated",
+     "retrieved_at": "2026-10-07T17:32:59-04:00"
+    },
+    {
+     "type": "email",
+     "source": "agentmail",
+     "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261019164521.c57d267f1a.f5dcd7cc@mail150.atl241.mcsv.net>",
+     "from": "elitefencersclub@111617670.mailchimpapp.com",
+     "subject": "Group Class!",
+     "received_at": "2026-10-19T12:45:27-04:00",
+     "retrieved_at": "2026-10-20T07:53:00-04:00",
+     "vetted_by": "auto-mailchimp",
+     "note": "Club Mailchimp (Mon Oct 19): all lessons Mon+Tue; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. Matches standing schedule; no change."
+    }
+   ],
+   "suggested_slot": "club-events",
+   "slot_hint": "club-events",
+   "tags": [
+    "club",
+    "schedule",
+    "standing",
+    "website",
+    "freshness-unknown"
+   ],
+   "created_at": "2026-10-07T17:15:00-04:00",
+   "carried_from": "staging/weeks/2026-10-19",
+   "carried_at": "2026-10-07T18:46:27-04:00",
+   "carry_note": "Standing reference.",
+   "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
+   "updated_at": "2026-10-20T07:53:00-04:00"
+  },
+  {
+   "id": "ft-ultimate-cup-efc-registrations-2026-10-12",
+   "kind": "signup_row",
+   "headline": "Ultimate Cup RJCC (Hillsborough, N.J., Oct. 31–Nov. 1) — Elite FC registrations per FencingTracker",
+   "body": "USA Fencing entrants (via fencing-api live, Oct 19 9:05 AM ET), Ultimate Cup RJCC, Iron Peak Sports & Events, Hillsborough Township NJ, Oct 31–Nov 1 — 13 entries / 10 Elite FC fencers (check-in close in parentheses): Sat Oct 31 JNRWE (8:00 AM) Olivia Hayes, Anayaa Sheth, Adela Sullivan; CDTME (1:00 PM) Maksim Milinkovic, Caden Wu. Sun Nov 1 JNRME (8:00 AM) Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng; CDTWE (1:00 PM) Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young.",
+   "source": "fencingtracker",
+   "from": null,
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "frank",
+   "vetted_at": "2026-10-12T09:45:00-04:00",
+   "vet_notes": "Desk Monday full pass 2026-10-12. Scraped registrations: unvetted until Frank confirms (STAGING v3.20). Not on the chunkymonkey watched list yet. New names to the Gazette: Dieko Johnson, Lillian Liu (check spelling/membership). Event times not captured; close time unverified. | chat: Frank 2026-10-12 09:45 ET: Dieko Johnson and Lillian Liu confirmed Elite FC members (added to roster); Ultimate Cup board vetted. Source stays FencingTracker registrations.",
+   "slot_hint": "signup",
+   "panels_rows": [
+    [
+     "Sat. Oct. 31",
+     "Junior Women",
+     "Olivia Hayes, Anayaa Sheth, Adela Sullivan",
+     "3"
+    ],
+    [
+     "Sat. Oct. 31",
+     "Cadet Men",
+     "Maksim Milinkovic, Caden Wu",
+     "2"
+    ],
+    [
+     "Sun. Nov. 1",
+     "Junior Men",
+     "Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng",
+     "4"
+    ],
+    [
+     "Sun. Nov. 1",
+     "Cadet Women",
+     "Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young",
+     "4"
+    ]
+   ],
+   "provenance": [
+    {
+     "type": "fetch_log",
+     "path": "staging/weeks/next/gather-2026-10-12-web.json",
+     "retrieved_at": "2026-10-12T09:17:00-04:00",
+     "note": "FencingTracker EFC club page / tournament registrations (URL in gather JSON)"
+    },
+    {
+     "type": "chat",
+     "note": "chat: Frank 2026-10-12 — Dieko Johnson + Lillian Liu confirmed Elite FC; Ultimate Cup board vetted",
+     "retrieved_at": "2026-10-12T09:45:00-04:00"
+    },
+    {
+     "source": "chat: Frank 2026-10-13",
+     "note": "Board name: 'Nearby Tournaments' (formerly 'Go Cheer'), 11:29 ET."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/tournaments (AskFRED catalog, live)",
+     "fetched_at": "2026-10-14T13:58:09Z",
+     "note": "Wednesday skim: catalog lists Ultimate Cup RJCC (usfa 12158) prereg_close 2026-10-13 — registration likely closed; entrant list not re-checked (live entries job hit the client call cap). Re-check Monday."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12158/entries?live=true",
+     "fetched_at": "2026-10-18T12:33:15Z",
+     "fetched_at_et": "2026-10-18 8:33 AM ET",
+     "underlying": "member.usafencing.org tournament 12158",
+     "note": "Pre-budget refresh: Anayaa Sheth added to Junior Women; all 13 entries status 'approved'. Fee periods (structured): open registration through Oct 19; late Oct 20–29. Fees text on the page is garbled (says regular until Oct 12) — Oct 19 regular-fee line dropped from Deadlines anyway (expires on issue day). FencingTracker not re-fetched for this board (gentle use) — API is the only source for the Sheth add; flagged."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12158/entries?live=true",
+     "fetched_at": "2026-10-19T13:05:00Z",
+     "fetched_at_et": "2026-10-19 9:05 AM ET",
+     "note": "Monday full pass: unchanged, 13 entries / 10 Elite FC fencers, all approved. USA Fencing page lists check-in close times: Sat JNRWE 8:00 AM, CDTME 1:00 PM; Sun JNRME 8:00 AM, CDTWE 1:00 PM ('All times are Close of Check-in'). Equipment check Fri Oct 30 4:00-6:30 PM and event days from 6:30 AM."
+    },
+    {
+     "type": "url",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+     "retrieved_at": "2026-10-19T09:03:00-04:00",
+     "note": "FencingTracker agrees: 13 active entries from 10 club members."
+    }
+   ],
+   "tags": [
+    "club",
+    "signup",
+    "scraped"
+   ],
+   "created_at": "2026-10-12T09:35:00-04:00",
+   "carried_from": "staging/weeks/2026-10-19",
+   "board": "Nearby Tournaments",
+   "entries_change_log": [
+    {
+     "seen_in": "fencing-api live USA Fencing entrants 2026-10-18T12:33:15Z",
+     "change": "ADD Sheth, Anayaà — JNRWE Sat Oct 31 (status approved). Print Anayaa Sheth (roster).",
+     "noted_at": "2026-10-18T08:34:00-04:00"
+    }
+   ],
+   "entries_count": "10 fencers / 13 entries (USA Fencing via fencing-api live, Oct 18; was 9 / 12)",
+   "entries_last_confirmed": "2026-10-18T08:33:00-04:00",
+   "carry_note": "Ultimate Cup Oct 31–Nov 1: still an upcoming board row for No. 4; refresh entrants.",
+   "checkin_close": {
+    "Sat Oct 31": {
+     "Junior Women": "8:00 AM",
+     "Cadet Men": "1:00 PM"
+    },
+    "Sun Nov 1": {
+     "Junior Men": "8:00 AM",
+     "Cadet Women": "1:00 PM"
+    }
+   },
+   "updated_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "email-agentmail-medeo-yc5-entries-2026-10-14",
+   "kind": "signup_row",
+   "headline": "Medeo Youth Challenge #5 (Nov. 8) — EFC entries",
+   "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 9:30 AM Y12 Women's Epee: Jiang, Christina. 11:30 AM Y10 Mixed Epee: Li, Nora. 11:30 AM Y14 Men's Epee: Li, Owen. (AgentMail club-schedule digest Wed Oct 14; 4 entries / 4 fencers.)",
+   "source": "email",
+   "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
+   "from": "chunkymonkey@agentmail.to",
+   "subject": "Club schedule · Wednesday, October 14",
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "auto-chunkymonkey",
+   "vetted_at": "2026-10-14T07:55:00-04:00",
+   "created_at": "2026-10-14T07:55:00-04:00",
+   "provenance": [
+    {
+     "type": "email",
+     "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Wednesday, October 14",
+     "retrieved_at": "2026-10-14T07:55:00-04:00",
+     "note": "First appearance of Medeo YC #5 on the watched list in this inbox."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/askfred/tournaments/b30b6f24-2ecf-494b-99af-4cfba0c6b76e/entries?live=true",
+     "fetched_at": "2026-10-14T13:58:28Z",
+     "fetched_at_et": "2026-10-14 9:58 AM ET",
+     "note": "Wednesday skim cross-check: AskFRED prereg agrees — SarroWaite Samuel Y12ME, Jiang Christina Y12WE, Li Owen Y14ME, Li Nora Y10 Mixed; club 'Elite Fencers Club'. Field sizes so far: Y12ME 3, Y12WE 2, Y14ME 2, Y10 Mixed 3."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a13b822abc-9dbbae8b-e3b6-4fde-a0dd-8b79d813d25f-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Wednesday, October 14",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-15T07:55:00-04:00",
+     "note": "Evening re-send: Medeo #5 list identical (4 fencers / 4 entries)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a13f3811b2-d601d953-845a-4828-8c23-f32c502c14e9-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Thursday, October 15",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-15T07:55:00-04:00",
+     "note": "Daily refresh: Medeo #5 identical (4 fencers / 4 entries; data as of Oct 14 10:00 PM)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a1445eaeec-e84be129-3374-44ff-827f-7ab0b857583d-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Friday, October 16",
+     "vetted": true,
+     "vetted_by": "auto-chunkymonkey",
+     "retrieved_at": "2026-10-16T08:00:00-04:00",
+     "ingested_at": "2026-10-16T08:00:00-04:00",
+     "note": "Daily refresh: Medeo #5 identical (4 fencers / 4 entries; data as of Oct 16, 6:00 AM)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a14eab241e-7693f9dd-e426-46a7-9684-f9b4bee38823-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Sunday, October 18",
+     "retrieved_at": "2026-10-18T08:32:00-04:00",
+     "note": "Medeo #5 identical (4 fencers / 4 entries; data as of Oct 17 6:00 PM)."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/askfred/tournaments/b30b6f24-2ecf-494b-99af-4cfba0c6b76e/entries?live=true",
+     "fetched_at": "2026-10-18T12:32:33Z",
+     "fetched_at_et": "2026-10-18 8:32 AM ET",
+     "note": "AskFRED: all 4 EFC entries listed as pending (prereg not yet paid/confirmed). Pending entries print (policy). Prereg closes Nov 7."
+    },
+    {
+     "type": "email",
+     "source": "agentmail",
+     "message_id": "<010001a153d1804e-4307504b-d0ea-4133-bb42-c1930d8fba76-000000@email.amazonses.com>",
+     "from": "chunkymonkey@agentmail.to",
+     "subject": "Club schedule · Monday, October 19",
+     "received_at": "2026-10-19T07:00:01-04:00",
+     "note": "Unchanged: 4 entries / 4 fencers (data as of Oct 19 6:00 AM)."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/askfred/tournaments/b30b6f24-2ecf-494b-99af-4cfba0c6b76e/entries?live=true",
+     "fetched_at": "2026-10-19T13:06:44Z",
+     "fetched_at_et": "2026-10-19 9:06 AM ET",
+     "note": "Monday full pass: unchanged, 4 Elite FC (SarroWaite Y12ME, Jiang Y12WE, Owen Li Y14ME, Nora Li Y10 Mixed); AskFRED shows them pending (entrant_count excludes them). Prereg closes Nov 7 (AskFRED catalog)."
+    },
+    {
+     "type": "email",
+     "source": "agentmail",
+     "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
+     "from": "chunkymonkey@agentmail.to",
+     "subject": "Club schedule · Tuesday, October 20",
+     "received_at": "2026-10-20T07:00:01-04:00",
+     "retrieved_at": "2026-10-20T07:53:00-04:00",
+     "note": "Unchanged: 4 entries / 4 fencers (data as of Oct 19 6:00 AM)."
+    }
+   ],
+   "suggested_slot": "whos_entered",
+   "board": "Nearby Tournaments",
+   "tags": [
+    "club",
+    "medeo",
+    "signup",
+    "epee",
+    "nearby-tournaments"
+   ],
+   "entries_count": "4 fencers / 4 entries",
+   "entries_last_confirmed": "2026-10-20T07:53:00-04:00",
+   "name_flags": [
+    "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2."
+   ],
+   "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
+   "carried_from": "staging/weeks/2026-10-19",
+   "carry_note": "Medeo YC #5 Nov 8: upcoming board row.",
+   "updated_at": "2026-10-20T07:53:00-04:00"
+  },
+  {
+   "id": "fencingapi-medeo-yc4-entries-2026-10-14",
+   "kind": "signup_row",
+   "headline": "Medeo Youth Challenge #4 (Sun. Oct. 25) — one EFC preregistration so far",
+   "body": "Y10/Y12/Y14 Youth Challenge #4 at Medeo (Medeo Fencing Club, NJ) — Sun Oct 25; AskFRED prereg closes Oct 24. Events: Y12 Men's / Y12 Women's Epee 9:30 AM; Y14 Men's, Y10 Mixed, Y14 Women's Epee 11:30 AM. Elite Fencers Club preregistrations (AskFRED via fencing-api live, 13:58 UTC = 9:58 AM ET Oct 14): Y10 Mixed Epee — Li, Nora (1 of 1 entrant). All five events have 0–1 entrants so far. Same day as Morris Cup Sunday (Oct 25). Not on the chunkymonkey club-schedule digest yet.",
+   "source": "fencingapi",
+   "from": null,
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "frank (Medeo #4/#5 combined board line vetted, per Grok Bot relay 2026-10-18)",
+   "vetted_at": "2026-10-18T08:45:00-04:00",
+   "vet_notes": "Wednesday skim 2026-10-14. Scraped AskFRED preregistration (via Frank's API) — unvetted until Frank vets (STAGING v3.20). Nora Li not on roster (also flagged on Medeo #5). Tiny field so far; likely a one-liner on the Nearby Tournaments board or merge with Medeo #5 row. First time in staging: Monday's AskFRED call (per_page 10) didn't list it. | Combined Medeo #4 + #5 line on the Nearby Tournaments board; pending AskFRED entries print.",
+   "board": "Nearby Tournaments",
+   "slot_hint": "club_results",
+   "provenance": [
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/askfred/tournaments/f1cda118-6f22-46c7-81b0-cea867ae5aea/entries?live=true",
+     "fetched_at": "2026-10-14T13:58:22Z",
+     "fetched_at_et": "2026-10-14 9:58 AM ET",
+     "final": false,
+     "underlying": "https://www.askfred.net/tournaments/f1cda118-6f22-46c7-81b0-cea867ae5aea"
+    },
+    {
+     "type": "api",
+     "source": "askfred",
+     "endpoint": "scripts/askfred.py tournaments (Chatham NJ, 75 mi, epee)",
+     "retrieved_at": "2026-10-14T09:57:00-04:00",
+     "note": "Listed: 2026-10-25, close 2026-10-24"
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/askfred/tournaments/f1cda118-6f22-46c7-81b0-cea867ae5aea/entries?live=true",
+     "fetched_at": "2026-10-18T12:32:29Z",
+     "fetched_at_et": "2026-10-18 8:32 AM ET",
+     "note": "Still one EFC prereg: Li, Nora — Y10 Mixed (pending). Prereg closes Oct 24. Also linked from the club's Fri Oct 16 Mailchimp ('Local Competition')."
+    }
+   ],
+   "name_flags": [
+    "RESOLVED 2026-10-18 (standing rule): Nora Li prints as listed on AskFRED."
+   ],
+   "tags": [
+    "club",
+    "medeo",
+    "signup",
+    "epee",
+    "nearby-tournaments",
+    "scraped"
+   ],
+   "created_at": "2026-10-14T10:05:00-04:00",
+   "entries_last_confirmed": "2026-10-18T08:32:00-04:00",
+   "carried_from": "staging/weeks/2026-10-19",
+   "carry_note": "Medeo YC #4 is Oct 25: results watch for No. 4.",
+   "waiting": true,
+   "no4_role": "Results watch: Oct 25 is before No. 4's publish. Nora Li (Y10 Mixed). Strong finish only, else 'also fenced'.",
+   "updated_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "desk-deadlines-2026-10-18",
+   "kind": "fact",
+   "headline": "Deadlines box — No. 4",
+   "body": "Ultimate Cup late entry closes Thu Oct 29 (11:59 PM PT; no online entry from Oct 30). Cobra Challenge SYC/RCC (Secaucus, Nov 27–29): regular entry Sun Nov 1, late entry Sat Nov 7 (11:59 PM PT). Medeo Youth Challenge #5 (Nov 8): AskFRED preregistration closes Sat Nov 7. Junior Olympics (Jan 8–11, Oklahoma City): regular-fee deadline Wed Nov 11. NJSIAA independent fencers' entries close Fri Jan 8, 2027.",
+   "rows": [
+    [
+     "Oct. 29",
+     "Ultimate Cup — late entry closes"
+    ],
+    [
+     "Nov. 1",
+     "Cobra Challenge (Secaucus, Nov. 27–29) — regular entry; late entry to Nov. 7"
+    ],
+    [
+     "Nov. 7",
+     "Medeo Youth Challenge #5 — preregistration closes"
+    ],
+    [
+     "Nov. 11",
+     "Junior Olympics — regular-fee deadline"
+    ],
+    [
+     "Jan. 8",
+     "N.J. high school — independent fencers' entries close"
+    ]
+   ],
+   "row_count": 5,
+   "source": "usafencing+njsiaa",
+   "target_week": "next",
+   "slot_hint": "deadlines",
+   "facts": [
+    {
+     "claim": "Morris Cup late fees Oct 6–22, 11:59 PM PT; no online registration from Oct 23",
+     "source": "USA Fencing tournament 12095 via fencing-api cache (fetched 2026-10-18 6:01 AM ET)",
+     "status": "verified (USA Fencing page text)"
+    },
+    {
+     "claim": "Ultimate Cup late registration Oct 20–29; no online registration from Oct 30",
+     "source": "USA Fencing tournament 12158 via fencing-api live 2026-10-18 8:33 AM ET",
+     "status": "verified (structured fee periods; page fee text garbled)"
+    },
+    {
+     "claim": "Ultimate Cup regular fee through Oct 19",
+     "source": "same",
+     "status": "DROPPED: expires on issue day; page fee text contradicts (says Oct 12)"
+    },
+    {
+     "claim": "Cobra Challenge SYC/RCC, Meadowlands Expo Center, Secaucus NJ, Nov 27–29; Entry Deadline Nov 1 11:59pm PT; Late Entry Deadline Nov 7 11:59pm PT; waitlists in use",
+     "source": "https://member.usafencing.org/details/tournaments/12119 (retrieved 2026-10-18 08:42 ET)",
+     "status": "verified-usafencing; AskFRED shows prereg_close Nov 2 (minor mismatch, USA Fencing wins)"
+    },
+    {
+     "claim": "2027 Junior Olympics & January NAC, Jan 8–11, 2027, Oklahoma City; regular fee deadline Nov 11, 2026",
+     "source": "https://www.usafencing.org/2027-junior-olympics-january-nac (retrieved 2026-10-18 08:40 ET)",
+     "status": "verified-usafencing"
+    },
+    {
+     "claim": "NJSIAA independent entries close 01/08/2027",
+     "source": "https://www.njsiaa.org/sports/fencing (retrieved 2026-10-18 08:38 ET)",
+     "status": "verified-njsiaa"
+    },
+    {
+     "claim": "Ultimate Cup late registration Oct 20-29; no online registration from Oct 30",
+     "source": "USA Fencing tournament 12158 via fencing-api live 2026-10-19 9:05 AM ET (fee_periods + fees_text)",
+     "status": "re-verified"
+    },
+    {
+     "claim": "Cobra Challenge open registration Jun 10-Nov 1; late Nov 2-7",
+     "source": "USA Fencing tournament 12119 via fencing-api cache fetched 2026-10-19 9:06 AM ET (fee_periods)",
+     "status": "re-verified"
+    },
+    {
+     "claim": "Medeo YC #5 AskFRED prereg closes 2026-11-07",
+     "source": "scripts/askfred.py tournaments --start-date-gteq 2026-10-26 (2026-10-19 9:04 AM ET)",
+     "status": "verified-askfred"
+    }
+   ],
+   "provenance": [
+    {
+     "type": "url",
+     "url": "https://member.usafencing.org/details/tournaments/12119",
+     "retrieved_at": "2026-10-18T08:42:00-04:00"
+    },
+    {
+     "type": "url",
+     "url": "https://www.usafencing.org/2027-junior-olympics-january-nac",
+     "retrieved_at": "2026-10-18T08:40:00-04:00"
+    },
+    {
+     "type": "url",
+     "url": "https://www.njsiaa.org/sports/fencing",
+     "retrieved_at": "2026-10-18T08:38:00-04:00"
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12095/entries (cached) + /v1/usfa/tournaments/12158/entries?live=true",
+     "fetched_at": "2026-10-18T12:33:15Z"
+    },
+    {
+     "type": "api",
+     "source": "askfred",
+     "endpoint": "scripts/askfred.py tournaments --start-date-gteq 2026-10-16",
+     "retrieved_at": "2026-10-18T08:31:00-04:00"
+    }
+   ],
+   "vetted": true,
+   "vetted_by": "frank (voice 2026-10-18: refresh Deadlines box from USA Fencing/AskFRED)",
+   "vetted_at": "2026-10-18T08:45:00-04:00",
+   "vet_notes": "Desk build 2026-10-18 from official pages only. Morris/Ultimate late closes carry over from No. 2 (still valid). Medeo prereg closes (Oct 24 / Nov 7) left off: the Medeo line is on the board.",
+   "tags": [
+    "deadlines",
+    "desk-built"
+   ],
+   "created_at": "2026-10-18T08:45:00-04:00",
+   "carried_from": "staging/weeks/2026-10-19",
+   "carry_note": "Deadlines box: refresh before the No. 4 budget (drop passed dates).",
+   "dropped_for_no4": [
+    "Morris Cup late entry (Oct 22) — passes before No. 4 publishes"
+   ],
+   "updated_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "desk-epee-on-screen-2026-10-18",
+   "kind": "fact",
+   "headline": "Epee on Screen — No. 4",
+   "body": "Upcoming FIE epee: Nov 5–8 Junior/Cadet World Cup, Manama, Bahrain (no stream listed). Nov 12–15 Senior World Cups: Berne (men, Nov 12–14) and Wuxi (women, Nov 13–15) — FencingTV. Nov 26–29 Junior/Cadet World Cup, Novi Sad, Serbia (no stream listed). Dec 3–6 Senior World Cup, men + women, Vancouver — FencingTV.",
+   "rows": [
+    [
+     "Nov. 5–8",
+     "Junior/Cadet World Cup (Manama, Bahrain)",
+     "No stream listed"
+    ],
+    [
+     "Nov. 12–15",
+     "Senior World Cups: Berne (men), Wuxi (women)",
+     "FencingTV"
+    ],
+    [
+     "Nov. 26–29",
+     "Junior/Cadet World Cup (Novi Sad, Serbia)",
+     "No stream listed"
+    ],
+    [
+     "Dec. 3–6",
+     "Senior World Cup, men + women (Vancouver)",
+     "FencingTV"
+    ]
+   ],
+   "row_count": 4,
+   "source": "fie",
+   "target_week": "next",
+   "slot_hint": "tv",
+   "provenance": [
+    {
+     "type": "web",
+     "url": "https://fie.org/calendar",
+     "retrieved_at": "2026-10-18T08:41:00-04:00",
+     "note": "fie.org public JSON /api/fie/tournaments + /tournaments/{117,118,124,125,129}: epee events + isStreamed flag (true = FencingTV). No start times or prices listed, so none print."
+    },
+    {
+     "type": "web",
+     "url": "https://fie.org/calendar",
+     "retrieved_at": "2026-10-19T09:15:00-04:00",
+     "note": "fie.org public JSON /api/fie/tournaments (weapons E) + /tournaments/{118,126}: Manama 118 Nov 5-8 J/C isStreamed false; Novi Sad 126 (SRB) Nov 26-29 J/C epee isStreamed false; Berne 124 / Wuxi 125 / Vancouver 129 isStreamed true. San José (117, Oct 22-25) dropped: over before No. 4."
+    }
+   ],
+   "vetted": true,
+   "vetted_by": "frank (voice 2026-10-18: fresh 3–5 rows from FIE calendar/FencingTV)",
+   "vetted_at": "2026-10-18T08:45:00-04:00",
+   "vet_notes": "Rows 1 and 3 also ran in No. 2's box (still upcoming); rows 2 and 4 are new. Drop 1 and 3 if you want only new rows. | No. 4 refresh 2026-10-19: San José dropped (past), Novi Sad added (new). Rows 1, 2 and 4 were in the cut No. 3 box (never printed).",
+   "tags": [
+    "tv",
+    "desk-built"
+   ],
+   "created_at": "2026-10-18T08:45:00-04:00",
+   "carried_from": "staging/weeks/2026-10-19",
+   "carry_note": "Cut from No. 3; refresh before the No. 4 budget (Oct 22–25 dates will have passed).",
+   "updated_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "askfred-nj-jo-qualifier-2026-10-18",
+   "kind": "signup_row",
+   "headline": "NJ Division Junior Olympics Qualifier today (Oct 18) — 2 Elite FC in Cadet Men",
+   "body": "NJ Division Junior Olympics Qualifier, Sun Oct 18, Medeo Fencing Club, Bound Brook NJ. Elite FC entries (AskFRED via fencing-api live, 8:31 AM ET): Cadet Men's Epee (check-in 1:30 PM, 9 entrants) — Aaditya Jaising, Charles Young. No other Elite FC entries in the epee events. Results expected this afternoon/evening; check Monday morning.",
+   "source": "fencingapi",
+   "target_week": "next",
+   "slot_hint": "club_results",
+   "waiting": true,
+   "provenance": [
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/askfred/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d/entries?live=true",
+     "fetched_at": "2026-10-18T12:31:51Z",
+     "fetched_at_et": "2026-10-18 8:31 AM ET",
+     "final": false,
+     "underlying": "https://www.askfred.net/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d"
+    },
+    {
+     "type": "api",
+     "source": "askfred",
+     "endpoint": "scripts/askfred.py tournaments",
+     "retrieved_at": "2026-10-18T08:31:00-04:00",
+     "note": "Prereg closed Oct 12"
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/askfred/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d/results?live=true",
+     "fetched_at": "2026-10-19T12:00:04Z",
+     "fetched_at_et": "2026-10-19 8:00 AM ET",
+     "final": false,
+     "note": "No results posted yet (0 items). FencingTracker club page (7:59 AM ET) also shows nothing new. Still waiting."
+    },
+    {
+     "type": "url",
+     "url": "https://www.askfred.net/tournaments/80d3cb52-6b0c-4c4e-a247-6b91bbb9945d/results",
+     "retrieved_at": "2026-10-19T09:03:00-04:00",
+     "note": "Monday full pass: AskFRED results page still 'No Results Available' for every event (Cadet Men's Epee included). fencing-api returned the 8:00 AM cache (0 items, final false). FencingTracker club page unchanged (161 tournaments / 1208 results). Still waiting."
+    }
+   ],
+   "name_flags": [
+    "Aaditya Jaising and Charles Young are not in roster/people.json. Standing rule: print as listed on AskFRED (official tournament page). AskFRED lists Charles Young's club as 'Elite Fencers Club / Elite Fencers Club'. Any relation to Kian Jaising / Penny Young is unknown — don't assume."
+   ],
+   "vetted": true,
+   "vet_notes": "I have no idea who Charles Young is...but I guess we include him anyway?\n\nWe will only use this article if either of them qualified.  I don't want to embarass anyone. | Frank budget note 2026-10-18 09:13 ET: run Club Results ONLY if Aaditya Jaising or Charles Young QUALIFIED for Junior Olympics at the NJ Division JO qualifier (Oct 18). Otherwise drop the box entirely: no 'also fenced' line, no non-qualifying results. Charles Young included per the official-names rule (Frank doesn't know him; fine).",
+   "tags": [
+    "club",
+    "results-watch",
+    "jo-qualifier",
+    "scraped"
+   ],
+   "created_at": "2026-10-18T08:45:00-04:00",
+   "vetted_at": "2026-10-18T09:07:00-04:00",
+   "vetted_by": "frank",
+   "run_rule": "Frank budget note 2026-10-18 09:13 ET: run Club Results ONLY if Aaditya Jaising or Charles Young QUALIFIED for Junior Olympics at the NJ Division JO qualifier (Oct 18). Otherwise drop the box entirely: no 'also fenced' line, no non-qualifying results. Charles Young included per the official-names rule (Frank doesn't know him; fine).",
+   "carried_from": "staging/weeks/2026-10-19",
+   "carry_note": "Club Results box cut from No. 3 (no results posted by ~15:24 ET Oct 18). Frank's run rule still applies: print only if Aaditya Jaising or Charles Young qualified.",
+   "no4_role": "Frank's No. 3 rule carries: print only if Aaditya Jaising or Charles Young QUALIFIED for Junior Olympics; otherwise nothing (no also-fenced line).",
+   "updated_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "fencingapi-cobra-efc-entries-2026-10-19",
+   "kind": "signup_row",
+   "headline": "Cobra Challenge SYC/RCC (Secaucus, N.J., Nov. 27–29) — 25 Elite FC entries / 15 fencers",
+   "source": "fencingapi",
+   "from": null,
+   "target_week": "next",
+   "vetted": false,
+   "board": "Nearby Tournaments",
+   "slot_hint": "signup",
+   "body": "USA Fencing entrants (via fencing-api, cache fetched Oct 19 9:06 AM ET), Cobra Challenge SYC/RCC, Meadowlands Expo Center, Secaucus NJ, Nov 27–29 — 25 entries / 15 Elite FC fencers, all approved. Fri Nov 27: Y14ME Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani; CDTWE Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young; Y10ME Joshua Jeong. Sat Nov 28: Y12WE Christina Jiang, Stella Kuo, Mila Siu, Penny Young; Y12ME Kian Jaising, Joshua Jeong, Remy Ng. Sun Nov 29: Y14WE Stella Kuo, Mila Siu, Penny Young; CDTME Connor Anderson, Nico Ng, Caden Wu. No event times listed in the payload (clock: close of registration, no time).",
+   "panels_rows": [
+    [
+     "Fri. Nov. 27",
+     "Y14 Men",
+     "Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani",
+     "5"
+    ],
+    [
+     "Fri. Nov. 27",
+     "Cadet Women",
+     "Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young",
+     "6"
+    ],
+    [
+     "Fri. Nov. 27",
+     "Y10 Men",
+     "Joshua Jeong",
+     "1"
+    ],
+    [
+     "Sat. Nov. 28",
+     "Y12 Women",
+     "Christina Jiang, Stella Kuo, Mila Siu, Penny Young",
+     "4"
+    ],
+    [
+     "Sat. Nov. 28",
+     "Y12 Men",
+     "Kian Jaising, Joshua Jeong, Remy Ng",
+     "3"
+    ],
+    [
+     "Sun. Nov. 29",
+     "Y14 Women",
+     "Stella Kuo, Mila Siu, Penny Young",
+     "3"
+    ],
+    [
+     "Sun. Nov. 29",
+     "Cadet Men",
+     "Connor Anderson, Nico Ng, Caden Wu",
+     "3"
+    ]
+   ],
+   "row_count": 7,
+   "provenance": [
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12119/entries (live job, then cache)",
+     "fetched_at": "2026-10-19T13:06:21Z",
+     "fetched_at_et": "2026-10-19 9:06 AM ET",
+     "underlying": "https://member.usafencing.org/details/tournaments/12119",
+     "final": false
+    },
+    {
+     "type": "url",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+     "retrieved_at": "2026-10-19T09:03:00-04:00",
+     "note": "Direct cross-check agrees: 'Cobra Challenge SYC/RCC — 25 active entries from 15 club members', same names/events."
+    }
+   ],
+   "name_notes": "All names print in the official/roster form: 'Young, Penelope' -> Penny Young (roster); 'WU, Caden' -> Caden Wu (roster); Ash Shah-Mirani (roster). Others as USA Fencing lists them.",
+   "vet_notes": "Monday full pass 2026-10-19. New to staging. Official USA Fencing entrant list (via Frank's API) + FencingTracker agree. Stage unvetted per fencing-api rule; Frank vets on the budget page.",
+   "created_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "x-fie-casablanca-epee-wc-2026-10-18",
+   "kind": "graf",
+   "headline": "Italy, Hungary Win Epee Season Opener",
+   "source": "x",
+   "from": "@FIE_fencing (tier A, own event)",
+   "target_week": "next",
+   "vetted": false,
+   "slot_hint": "secondary_a",
+   "body": "The senior epee World Cup season opened in Casablanca, Morocco, Oct. 15–18, with 618 fencers from 67 nations. Italy's Roberta Marzani won the women's event, with Ukraine's Anna Maksymenko second and Aizanat Murtazaeva (Russia) and Alberta Santuccio (Italy) third. Hungary's Mate Tamas Koch won the men's title over Italy's Matteo Galassi; Gergely Kovacs (Hungary) and Kano Koki (Japan) took bronze. In the team events, Kazakhstan's men beat Russia 45-40, and Russia's women edged Italy 32-31. The next senior epee World Cups are Berne (men) and Wuxi (women), Nov. 12–15.",
+   "facts": [
+    {
+     "claim": "Women's podium: Marzani ITA gold, Maksymenko UKR silver, Murtazaeva RUS + Santuccio ITA bronze",
+     "source": "https://x.com/FIE_fencing/status/2111595652232733180 (2026-10-17 23:10 UTC = 7:10 PM ET)",
+     "status": "tier-A X (FIE on its own event)"
+    },
+    {
+     "claim": "Men's podium: Koch HUN gold, Galassi ITA silver, Kovacs HUN + Kano Koki JPN bronze",
+     "source": "https://x.com/FIE_fencing/status/2111591728264180198 (2026-10-17 22:54 UTC = 6:54 PM ET)",
+     "status": "tier-A X"
+    },
+    {
+     "claim": "Men's team: Kazakhstan d. Russia 45-40, France bronze",
+     "source": "https://x.com/FIE_fencing/status/2111898890228445632 (2026-10-18 19:15 UTC = 3:15 PM ET)",
+     "status": "tier-A X"
+    },
+    {
+     "claim": "Women's team: Russia d. Italy 32-31, Estonia bronze",
+     "source": "https://x.com/FIE_fencing/status/2112097128159830129 (2026-10-19 08:22 UTC = 4:22 AM ET)",
+     "status": "tier-A X"
+    },
+    {
+     "claim": "Casablanca World Cup 2026, Oct 15-18, epee senior, 618 fencers, 67 nations",
+     "source": "https://fie.org/api/fie/tournaments/115 (fie.org public JSON, retrieved 2026-10-19 9:12 AM ET)",
+     "status": "verified-fie"
+    },
+    {
+     "claim": "Berne (men) Nov 12-14, Wuxi (women) Nov 13-15",
+     "source": "fie.org /api/fie/tournaments 124, 125 (2026-10-19)",
+     "status": "verified-fie"
+    },
+    {
+     "claim": "LEAD ONLY: Kazakhstan's men's epee team rose to No. 1 in the FIE team rankings for the first time after Casablanca",
+     "source": "https://x.com/kazinform_eng/status/2112453774417780784 (2026-10-20 08:00 UTC = 4:00 AM ET); https://x.com/aqorda_press/status/2112140560815546549 (Kazakh presidential press office, 2026-10-19 11:15 UTC = 7:15 AM ET); Google News: Times of Central Asia, AKIpress (Oct 20)",
+     "status": "unverified: not on @FIE_fencing; check fie.org team rankings before adding a clause to the body"
+    }
+   ],
+   "provenance": [
+    {
+     "type": "x_post",
+     "url": "https://x.com/FIE_fencing/status/2111595652232733180",
+     "author": "@FIE_fencing",
+     "author_id": "196195164",
+     "account_tier": "A",
+     "posted_at": "2026-10-17T23:10:09Z",
+     "retrieved_at": "2026-10-19T09:10:00-04:00"
+    },
+    {
+     "type": "x_post",
+     "url": "https://x.com/FIE_fencing/status/2111591728264180198",
+     "author": "@FIE_fencing",
+     "account_tier": "A",
+     "posted_at": "2026-10-17T22:54:34Z",
+     "retrieved_at": "2026-10-19T09:10:00-04:00"
+    },
+    {
+     "type": "x_post",
+     "url": "https://x.com/FIE_fencing/status/2111898890228445632",
+     "author": "@FIE_fencing",
+     "account_tier": "A",
+     "posted_at": "2026-10-18T19:15:07Z",
+     "retrieved_at": "2026-10-19T09:10:00-04:00"
+    },
+    {
+     "type": "x_post",
+     "url": "https://x.com/FIE_fencing/status/2112097128159830129",
+     "author": "@FIE_fencing",
+     "account_tier": "A",
+     "posted_at": "2026-10-19T08:22:50Z",
+     "retrieved_at": "2026-10-19T09:10:00-04:00"
+    },
+    {
+     "type": "web",
+     "url": "https://fie.org/tournaments/2027/115",
+     "retrieved_at": "2026-10-19T09:12:00-04:00",
+     "note": "public JSON: event-results empty at 9:12 AM ET (results not yet loaded); FIE news 1752 'Season opener' (Oct 15) is the preview."
+    },
+    {
+     "type": "x_post",
+     "url": "https://x.com/kazinform_eng/status/2112453774417780784",
+     "author": "@kazinform_eng",
+     "account_tier": "unlisted (news agency)",
+     "posted_at": "2026-10-20T08:00:01Z",
+     "retrieved_at": "2026-10-21T10:01:00-04:00",
+     "note": "Wednesday skim lead; not vetted"
+    }
+   ],
+   "need": [
+    "Pre-budget: re-check fie.org results once loaded for the best U.S. finishes (could add one line)."
+   ],
+   "vet_notes": "Monday full pass 2026-10-19. Tier-A FIE posts about its own event; field size from fie.org JSON. Unvetted until Frank vets (X rule).",
+   "created_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "fie-san-jose-jr-cadet-wc-watch-2026-10-19",
+   "kind": "tip",
+   "headline": "Results watch: San José Junior/Cadet Epee World Cup (Oct 22–25)",
+   "source": "fie",
+   "target_week": "next",
+   "vetted": false,
+   "slot_hint": "secondary_b",
+   "waiting": true,
+   "body": "FIE Junior/Cadet epee World Cup, San José, Costa Rica, Oct 22–25 (fie.org tournament 117, no stream listed). Check results Mon Oct 26 for U.S. podiums or a notable U.S. finish; possible Secondary B if there's a story.",
+   "provenance": [
+    {
+     "type": "web",
+     "url": "https://fie.org/tournaments/2027/117",
+     "retrieved_at": "2026-10-19T09:15:00-04:00"
+    }
+   ],
+   "created_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "desk-by-the-book-unwillingness-2026-10-19",
+   "kind": "graf",
+   "headline": "By the Book: One Quiet Minute",
+   "body": "In a direct-elimination bout, a full minute of fencing with no touch is \"unwillingness to fight\" (t.124), and the referee calls \"Halt!\" The first time, both fencers get a P-red card, a penalty hit. The second time, the fencer who is behind gets a P-black card and loses the bout; if the score is tied, the lower seed gets it. The minute restarts after every touch and at the start of each period, and no P-card can be given at 14-14 (or 9-9 in a 10-touch bout).",
+   "source": "usaf-rulebook",
+   "from": "Gazette Desk",
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "standing rule (Frank voice 2026-10-18: Desk-written By the Book goes in; approve or cut at budget)",
+   "vetted_at": "2026-10-19T09:30:00-04:00",
+   "slot_hint": "by_the_book",
+   "tags": [
+    "recurring",
+    "rules",
+    "by-the-book",
+    "desk-written"
+   ],
+   "facts": [
+    {
+     "claim": "One minute of fencing without a hit (or off-target hit) = unwillingness to fight; referee calls Halt as a decision of fact",
+     "citation": "t.124 (USA Fencing Rules for Competition, Oct 2026, p.47-48)",
+     "status": "verified-rulebook"
+    },
+    {
+     "claim": "Individual DE: first time, P-red to both fencers simultaneously",
+     "citation": "t.124.1a",
+     "status": "verified-rulebook"
+    },
+    {
+     "claim": "Second time: P-black to the lower score (higher score wins); if equal, P-black to the lower initial seeding (higher seed wins)",
+     "citation": "t.124.1b i-ii",
+     "status": "verified-rulebook"
+    },
+    {
+     "claim": "P-red = penalty hit; P-black = possible loss of the bout",
+     "citation": "t.124.3a",
+     "status": "verified-rulebook"
+    },
+    {
+     "claim": "No P-card at 14-14; in USA Fencing competitions, none at 9-9 in 10-touch bouts",
+     "citation": "t.124.3a + USA Fencing note",
+     "status": "verified-rulebook"
+    },
+    {
+     "claim": "The minute restarts after each hit, off-target hit, annulled hit, penalty hit, and at the start of each period",
+     "citation": "t.124.3d",
+     "status": "verified-rulebook (draft says 'every touch' as shorthand)"
+    }
+   ],
+   "provenance": [
+    {
+     "source": "reference/usa-fencing/usaf-rules-for-competition-2026-10.pdf",
+     "note": "t.124"
+    },
+    {
+     "source": "voice: Frank 2026-10-18 8:26 ET (relayed by Grok Bot)",
+     "note": "Desk writes By the Book from the rulebook without asking Frank."
+    }
+   ],
+   "pairing_note": "Random pick (no specific incident this week). An unwillingness explainer lead (x-lead-passivity-p-black-explainer) was staged for No. 2 and marked stale without printing, so this is not a repeat. Sits well next to the referee feature.",
+   "vet_notes": "Desk-written 2026-10-19 from the Oct 2026 rulebook.",
+   "created_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "desk-for-the-parents-check-in-2026-10-19",
+   "kind": "graf",
+   "headline": "For the Parents: The Time Listed Is Check-In",
+   "body": "On a tournament schedule, the time next to an event is often when check-in closes, not when fencing starts. The Ultimate Cup page says it outright: \"All times are Close of Check-in,\" and organizers recommend arriving at least an hour before. Fencers check in every day they compete. Equipment check opens the Friday before, 4 to 6:30 p.m., and from 6:30 a.m. on event days. Spectators sit outside the barriers around the strips.",
+   "source": "usafencing-web",
+   "target_week": "next",
+   "vetted": false,
+   "slot_hint": "for_the_parents",
+   "facts": [
+    {
+     "claim": "'All times are Close of Check-in'; recommend arriving at least 1 hour before close of check-in; fencers must check in every day they compete; equipment check Fri Oct 30 4:00-6:30 PM and event days from 6:30 AM; spectators sit outside the stanchions",
+     "source": "USA Fencing tournament page 12158 (Ultimate Cup RJCC) details_text via fencing-api live 2026-10-19 9:05 AM ET; https://member.usafencing.org/details/tournaments/12158",
+     "status": "verified-usafencing"
+    }
+   ],
+   "provenance": [
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12158/entries?live=true",
+     "fetched_at": "2026-10-19T13:05:00Z",
+     "underlying": "https://member.usafencing.org/details/tournaments/12158"
+    }
+   ],
+   "pairing_note": "Timely: 10 Elite FC fencers are at Ultimate Cup the weekend after No. 4. 'Often' is the Desk's hedge; the quoted line is Ultimate Cup's own.",
+   "vet_notes": "Desk-written 2026-10-19. Needs Frank's Vet (For the Parents start/rank still provisional).",
+   "created_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "history-photo-07-epee-fair-play-1976",
+   "kind": "photo_feature",
+   "section": "Photo from History",
+   "headline": "Photo from History: 1976: The light came on, but there was no touch",
+   "body": "During the epee round of the 1976 Olympic modern pentathlon, British competitors challenged touches credited to Boris Onishchenko. In his bout with Jim Fox, the scoring light registered a hit even though his weapon had not reached its target. Examination revealed deliberate tampering that allowed the epee to signal a touch without contact. Onishchenko was disqualified, ending the Soviet team’s medal chances, although his teammates could continue individually. Britain went on to win team gold. The incident occurred in modern pentathlon, not the separate Olympic fencing tournament. The accompanying 2006 equipment photograph shows a normal electric epee, not the weapon involved.",
+   "caption": "At Montreal in 1976, Boris Onishchenko was disqualified from modern pentathlon after officials found that his epee could register touches without hitting an opponent. This 2006 photograph shows an ordinary electric epee grip and connector, not Onishchenko’s weapon.",
+   "credit": "Illustrative equipment photo: Lord ignus, “Pistolgrip.jpg” (25 May 2006), via Wikimedia Commons. Public domain by the photographer. Not Onishchenko’s weapon. Release: https://commons.wikimedia.org/wiki/File:Pistolgrip.jpg#Licensing. Source: https://commons.wikimedia.org/wiki/File:Pistolgrip.jpg.",
+   "alt_text": "Color close-up of a normal electric epee on a wooden surface, showing a gray pistol grip inside a metal bell guard, a red pad and a three-socket connector.",
+   "media_path": "staging/weeks/next/media/07-epee-fair-play-1976.jpg",
+   "media_id": "media-history-07-epee-fair-play-1976",
+   "image_px": [
+    640,
+    480
+   ],
+   "layout": {
+    "span": 1,
+    "page": 2,
+    "grayscale": "ok (public domain; add 'Converted to grayscale' as good practice)"
+   },
+   "license": "Public domain (author)",
+   "source": "history-photos",
+   "pile_entry": "staging/history-photos/07-epee-fair-play-1976.md",
+   "cautions": [
+    "Modern 2006 illustration, not a 1976 photo or Onishchenko's weapon.",
+    "Say modern pentathlon's epee round, not an Olympic fencing bout.",
+    "No wiring diagram or how-to."
+   ],
+   "word_count": 163,
+   "target_week": "next",
+   "vetted": false,
+   "slot_hint": "photo-history",
+   "vet_notes": "Desk pick 2026-10-19 from the Photo from History pile (Frank's research library, batch 1; card sources: Commons, Guardian, SI, Wikipedia). Fits the referee feature (fair play / scoring). 1 column only (640 px wide). Alternate: 05 (1936 electric epee, 2-col OK, CC BY-SA 3.0 FR).",
+   "created_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "x-lead-college-schedules-2026-27",
+   "kind": "tip",
+   "headline": "Lead: NJIT and Princeton post 2026–27 fencing schedules",
+   "source": "x",
+   "target_week": "next",
+   "vetted": false,
+   "slot_hint": "desk_fill",
+   "body": "@njitfencing (Oct 16) and @TigerFencing (Oct 15) posted their 2026–27 schedules (images/links, not read). Possible college-path one-liner later in the season; needs the schools' own pages for dates.",
+   "provenance": [
+    {
+     "type": "x_post",
+     "url": "https://x.com/njitfencing/status/2111121237971779775",
+     "account_tier": "A",
+     "posted_at": "2026-10-16T15:45:00Z",
+     "retrieved_at": "2026-10-19T09:11:00-04:00"
+    },
+    {
+     "type": "x_post",
+     "url": "https://x.com/TigerFencing/status/2110583567487213773",
+     "account_tier": "A",
+     "posted_at": "2026-10-15T04:08:29Z",
+     "retrieved_at": "2026-10-19T09:11:00-04:00"
+    }
+   ],
+   "created_at": "2026-10-19T09:30:00-04:00"
   }
+ ],
+ "rolled_forward": {
+  "from": "staging/weeks/after-next",
+  "at": "2026-10-19T08:02:00-04:00",
+  "why": "Issue No. 3 (2026-10-19) approved and published Oct 18; after-next became next (Issue No. 4, week of Oct 26). Roll done at the Oct 19 daily email check (it had not been done at publish)."
+ }
 }
