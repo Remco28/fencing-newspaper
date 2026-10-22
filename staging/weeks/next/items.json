@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-21T10:05:00-04:00",
+ "updated_at": "2026-10-22T07:57:00-04:00",
  "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
  "items": [
   {
@@ -473,6 +473,16 @@
      "fetched_at": "2026-10-20T10:02:01Z",
      "fetched_at_et": "2026-10-20 6:02 AM ET",
      "note": "Cross-check agrees: 31 Elite FC entries / 20 fencers, all 'approved'; Young, Penelope listed in Y14WE (event capped, 98 entrants, 0 open spots). No mismatch."
+    },
+    {
+     "type": "email",
+     "source": "agentmail",
+     "message_id": "<010001a163449570-5d7cc390-fb6f-4584-a49e-e1f021820834-000000@email.amazonses.com>",
+     "from": "chunkymonkey@agentmail.to",
+     "subject": "Club schedule · Thursday, October 22",
+     "received_at": "2026-10-22T07:00:01-04:00",
+     "retrieved_at": "2026-10-22T07:57:00-04:00",
+     "note": "Unchanged: 30 Elite FC entries. Digest data as of Oct 21, 6:02 PM (could not refresh)."
     }
    ],
    "suggested_slot": "whos_entered",
@@ -501,7 +511,7 @@
    "carried_from": "staging/weeks/2026-10-19",
    "carried_at": "2026-10-07T18:46:27-04:00",
    "carry_note": "Morris Cup is Oct 24–25: becomes a results watch for No. 4.",
-   "entries_last_confirmed": "2026-10-20T07:53:00-04:00",
+   "entries_last_confirmed": "2026-10-22T07:57:00-04:00",
    "entries_change_log": [
     {
      "seen_in": "Club schedule · Sunday, October 11",
@@ -533,7 +543,7 @@
    "slot_hint": "club_results",
    "waiting": true,
    "no4_role": "Results watch for No. 4 (Oct 24-25 is before No. 4's publish). Likely lead: strong Elite FC finishes only (STYLE-GUIDE 0d); everyone else on the 'also fenced' line. Check FencingTracker / USA Fencing results Sun Oct 25 night and Mon Oct 26 morning.",
-   "updated_at": "2026-10-20T07:53:00-04:00"
+   "updated_at": "2026-10-22T07:57:00-04:00"
   },
   {
    "id": "web-efc-standing-schedule",
@@ -912,6 +922,16 @@
      "received_at": "2026-10-20T07:00:01-04:00",
      "retrieved_at": "2026-10-20T07:53:00-04:00",
      "note": "Unchanged: 4 entries / 4 fencers (data as of Oct 19 6:00 AM)."
+    },
+    {
+     "type": "email",
+     "source": "agentmail",
+     "message_id": "<010001a163449570-5d7cc390-fb6f-4584-a49e-e1f021820834-000000@email.amazonses.com>",
+     "from": "chunkymonkey@agentmail.to",
+     "subject": "Club schedule · Thursday, October 22",
+     "received_at": "2026-10-22T07:00:01-04:00",
+     "retrieved_at": "2026-10-22T07:57:00-04:00",
+     "note": "Unchanged: 4 entries / 4 fencers (data as of Oct 22, 6:00 AM)."
     }
    ],
    "suggested_slot": "whos_entered",
@@ -924,14 +944,14 @@
     "nearby-tournaments"
    ],
    "entries_count": "4 fencers / 4 entries",
-   "entries_last_confirmed": "2026-10-20T07:53:00-04:00",
+   "entries_last_confirmed": "2026-10-22T07:57:00-04:00",
    "name_flags": [
     "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2."
    ],
    "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
    "carried_from": "staging/weeks/2026-10-19",
    "carry_note": "Medeo YC #5 Nov 8: upcoming board row.",
-   "updated_at": "2026-10-20T07:53:00-04:00"
+   "updated_at": "2026-10-22T07:57:00-04:00"
   },
   {
    "id": "fencingapi-medeo-yc4-entries-2026-10-14",
@@ -1588,6 +1608,79 @@
     }
    ],
    "created_at": "2026-10-19T09:30:00-04:00"
+  },
+  {
+   "id": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
+   "kind": "signup_row",
+   "headline": "NYFA Youth Cup #1 (Nov. 8) — EFC entries",
+   "body": "NYFA Youth Cup #1 (NYFA Brooklyn) — Sun Nov 8. 9:00 AM Y10 Mixed Epee: Cheng, Bryce. (AgentMail club-schedule digest Thu Oct 22; 1 entry / 1 fencer. First Elite FC entry; the Oct 21 digest showed nobody signed up.)",
+   "source": "email",
+   "message_id": "<010001a163449570-5d7cc390-fb6f-4584-a49e-e1f021820834-000000@email.amazonses.com>",
+   "from": "chunkymonkey@agentmail.to",
+   "subject": "Club schedule · Thursday, October 22",
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "auto-chunkymonkey",
+   "vetted_at": "2026-10-22T07:57:00-04:00",
+   "created_at": "2026-10-22T07:57:00-04:00",
+   "provenance": [
+    {
+     "type": "email",
+     "message_id": "<010001a163449570-5d7cc390-fb6f-4584-a49e-e1f021820834-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Thursday, October 22",
+     "received_at": "2026-10-22T07:00:01-04:00",
+     "retrieved_at": "2026-10-22T07:57:00-04:00",
+     "note": "New entry vs Oct 21 digest (data as of Oct 22, 6:00 AM)."
+    }
+   ],
+   "suggested_slot": "whos_entered",
+   "board": "Nearby Tournaments",
+   "tags": [
+    "club",
+    "nyfa",
+    "signup",
+    "nearby-tournaments"
+   ],
+   "entries_count": "1 fencer / 1 entry",
+   "entries_last_confirmed": "2026-10-22T07:57:00-04:00",
+   "name_flags": [
+    "Bryce Cheng is in roster/people.json (canonical 'Bryce Cheng')."
+   ],
+   "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. Not yet cross-checked against AskFRED/fencing-api (next Wed skim or Monday pass)."
+  },
+  {
+   "id": "email-mailchimp-group-class-2026-10-21",
+   "kind": "fact",
+   "headline": "Club day sheet — Group Class (Wed Oct 21 newsletter)",
+   "body": "Elite FC Mailchimp Wed Oct 21: all lessons Wed and Thu; Musketeers Group Class Wed 5:00 PM; Footwork Class Wed 6:30 PM; Advanced Group Class Thu 6:00 PM. Local competition link: Y10/Y12/Y14 Youth Challenge #4 at Medeo registrations (AskFRED).",
+   "source": "email",
+   "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261021135332.5078c55e55.1b57c66b@mail150.atl241.mcsv.net>",
+   "from": "elitefencersclub@111617670.mailchimpapp.com",
+   "subject": "Group Class!",
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "auto-club-mailchimp",
+   "vetted_at": "2026-10-22T07:57:00-04:00",
+   "created_at": "2026-10-22T07:57:00-04:00",
+   "provenance": [
+    {
+     "type": "email",
+     "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261021135332.5078c55e55.1b57c66b@mail150.atl241.mcsv.net>",
+     "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+     "to": "frankcng@gmail.com",
+     "retrieved_at": "2026-10-22T07:57:00-04:00",
+     "note": "Landed Wed Oct 21 9:53 AM ET, after that morning's pass."
+    }
+   ],
+   "suggested_slot": "this_week_at_elite",
+   "tags": [
+    "club",
+    "schedule",
+    "mailchimp"
+   ],
+   "media_note": "Club logo (~100px) + social icons + tracking pixel only — no photos extracted.",
+   "vet_notes": "Routine day sheet; class times past by No. 4 print. Medeo YC #4 link is a stale carry-over (event already past per the digest's watched list); nothing new to stage from it."
   }
  ],
  "rolled_forward": {
