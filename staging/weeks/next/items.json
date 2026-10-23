@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-22T07:57:00-04:00",
+ "updated_at": "2026-10-23T07:58:00-04:00",
  "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
  "items": [
   {
@@ -114,7 +114,7 @@
    "vetted_by": "frank",
    "vet_scope": "angle_tone_only",
    "facts_status": "verified (price omitted)",
-   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed).",
+   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Desk 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder.",
    "facts": [
     {
      "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
@@ -161,6 +161,12 @@
      "claim": "Sign-up = contact the club: camps page 'Register' button links to /contact; page says 'For current camp dates, pricing, and registration details, please contact Elite Fencers Club directly.'",
      "source": "https://www.elitefencersclub.com/camps",
      "status": "verified-web 2026-10-18"
+    },
+    {
+     "claim": "Day-by-day schedule published: Dec 27 swag giveaway; Dec 28 strength & conditioning; Dec 29 yoga and lunch served; Dec 30 strength & conditioning; Dec 31 crepes catering to celebrate the end of camp and 2026. Email adds: yoga/breathing session led by a professional yoga instructor (breath control in competition); K2 Fitness back for 2 more S&C sessions; club asks attendees to tell them ASAP for an accurate headcount.",
+     "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261022161941.d06cea8344.71242e8f@mail150.atl241.mcsv.net>",
+     "where": "Mailchimp 'Winter Camp Schedule!' Oct 22 email body + schedule graphic https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/39390b91-c882-078d-7d6a-9b3a39e77765.png",
+     "status": "verified-email (allowlisted sender)"
     }
    ],
    "need": [
@@ -270,11 +276,11 @@
    "id": "email-agentmail-morris-cup-entries-2026-10-07",
    "kind": "signup_row",
    "headline": "Morris Cup RYC/RJCC — EFC who's entered",
-   "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Tue Oct 20; +1 vs Mon Oct 19): Sat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia, Sheth Anayaà; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila, Young Penelope. Sun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
+   "body": "Morris Cup RYC/RJCC — Rockland Community College, Eugene Levy Field House — Oct 24–25. EFC entries (AgentMail digest Fri Oct 23; data as of Oct 22 6:00 AM): Sat Oct 24: JNRWE 8:00 AM Gore Amina, Hayes Olivia, Sheth Anayaà; Y12ME 8:00 AM Jaising Kian, Jeong Joshua, Ng Remy; CDTME 12:30 PM Aguirre Pablo, Anderson Connor, Ng Nico, WU Caden; Y14WE 3:00 PM Kuo Stella, Siu Mila. Sun Oct 25: CDTWE 8:00 AM Gore Amina, Hayes Olivia, Sullivan Adela, Young Penelope; JNRME 8:00 AM Aguirre Pablo, Ng Nico; Y8WE 10:00 AM Siu Madeline; Y12WE 10:30 AM Jiang Christina, Kuo Stella, Siu Mila; Y14ME 1:30 PM Anderson Connor, Gore Noah, Jaising Kian, Ng Remy, Shah-Mirani Ash; Y10ME 3:30 PM Cheng Bryce, Jeong Joshua, Siu Maximus.",
    "source": "email",
-   "message_id": "<010001a158f7dc78-86d8064b-2a1b-431f-895a-106927bbe0ec-000000@email.amazonses.com>",
+   "message_id": "<010001a1686af11c-b270af9c-b5fd-4081-8f36-554c31e81ba9-000000@email.amazonses.com>",
    "from": "chunkymonkey@agentmail.to",
-   "subject": "Club schedule · Tuesday, October 20",
+   "subject": "Club schedule · Friday, October 23",
    "target_week": "next",
    "vetted": true,
    "created_at": "2026-10-07T13:15:05-04:00",
@@ -483,6 +489,15 @@
      "received_at": "2026-10-22T07:00:01-04:00",
      "retrieved_at": "2026-10-22T07:57:00-04:00",
      "note": "Unchanged: 30 Elite FC entries. Digest data as of Oct 21, 6:02 PM (could not refresh)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a1686af11c-b270af9c-b5fd-4081-8f36-554c31e81ba9-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Friday, October 23",
+     "received_at": "2026-10-23T07:00:01-04:00",
+     "retrieved_at": "2026-10-23T07:58:00-04:00",
+     "note": "CHANGE: Penelope Young no longer listed in Y14WE (Sat Oct 24, 3:00 PM); she remains in CDTWE Sun Oct 25. Now 20 fencers / 30 entries (Y14WE 2). Data as of Oct 22, 6:00 AM (digest says could not refresh)."
     }
    ],
    "suggested_slot": "whos_entered",
@@ -511,7 +526,7 @@
    "carried_from": "staging/weeks/2026-10-19",
    "carried_at": "2026-10-07T18:46:27-04:00",
    "carry_note": "Morris Cup is Oct 24–25: becomes a results watch for No. 4.",
-   "entries_last_confirmed": "2026-10-22T07:57:00-04:00",
+   "entries_last_confirmed": "2026-10-23T07:58:00-04:00",
    "entries_change_log": [
     {
      "seen_in": "Club schedule · Sunday, October 11",
@@ -538,7 +553,7 @@
      "noted_at": "2026-10-20T07:53:00-04:00"
     }
    ],
-   "entries_count": "20 fencers / 31 entries (Tue Oct 20 digest + USA Fencing cache; was 20 / 30 through Mon Oct 19)",
+   "entries_count": "20 fencers / 30 entries",
    "board": "Nearby Tournaments",
    "slot_hint": "club_results",
    "waiting": true,
@@ -932,6 +947,14 @@
      "received_at": "2026-10-22T07:00:01-04:00",
      "retrieved_at": "2026-10-22T07:57:00-04:00",
      "note": "Unchanged: 4 entries / 4 fencers (data as of Oct 22, 6:00 AM)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a1686af11c-b270af9c-b5fd-4081-8f36-554c31e81ba9-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Friday, October 23",
+     "retrieved_at": "2026-10-23T07:58:00-04:00",
+     "note": "Daily refresh: identical (data as of Oct 22, 6:00 AM)."
     }
    ],
    "suggested_slot": "whos_entered",
@@ -944,7 +967,7 @@
     "nearby-tournaments"
    ],
    "entries_count": "4 fencers / 4 entries",
-   "entries_last_confirmed": "2026-10-22T07:57:00-04:00",
+   "entries_last_confirmed": "2026-10-23T07:58:00-04:00",
    "name_flags": [
     "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2."
    ],
@@ -1632,6 +1655,14 @@
      "received_at": "2026-10-22T07:00:01-04:00",
      "retrieved_at": "2026-10-22T07:57:00-04:00",
      "note": "New entry vs Oct 21 digest (data as of Oct 22, 6:00 AM)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a1686af11c-b270af9c-b5fd-4081-8f36-554c31e81ba9-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Friday, October 23",
+     "retrieved_at": "2026-10-23T07:58:00-04:00",
+     "note": "Daily refresh: identical (data as of Oct 22, 6:00 AM)."
     }
    ],
    "suggested_slot": "whos_entered",
@@ -1643,7 +1674,7 @@
     "nearby-tournaments"
    ],
    "entries_count": "1 fencer / 1 entry",
-   "entries_last_confirmed": "2026-10-22T07:57:00-04:00",
+   "entries_last_confirmed": "2026-10-23T07:58:00-04:00",
    "name_flags": [
     "Bryce Cheng is in roster/people.json (canonical 'Bryce Cheng')."
    ],
@@ -1681,6 +1712,46 @@
    ],
    "media_note": "Club logo (~100px) + social icons + tracking pixel only — no photos extracted.",
    "vet_notes": "Routine day sheet; class times past by No. 4 print. Medeo YC #4 link is a stale carry-over (event already past per the digest's watched list); nothing new to stage from it."
+  },
+  {
+   "id": "email-mailchimp-winter-camp-schedule-2026-10-22",
+   "kind": "graf",
+   "headline": "Winter Camp schedule is out",
+   "body": "Elite FC posted its Winter Camp 2026 day-by-day schedule. Dec. 27: swag giveaway. Dec. 28: strength and conditioning. Dec. 29: yoga and lunch served. Dec. 30: strength and conditioning. Dec. 31: crepes catering to celebrate the end of camp and 2026. The email adds that a professional yoga instructor will lead a yoga/breathing session (how to control your breathing in competition) and K2 Fitness returns for two more strength-and-conditioning sessions. The club asks anyone planning to attend to let them know as soon as possible for an accurate headcount.",
+   "source": "email",
+   "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261022161941.d06cea8344.71242e8f@mail150.atl241.mcsv.net>",
+   "from": "elitefencersclub@111617670.mailchimpapp.com",
+   "subject": "Winter Camp Schedule!❄️",
+   "target_week": "next",
+   "vetted": true,
+   "vetted_by": "auto-allowlist (club Mailchimp)",
+   "vetted_at": "2026-10-23T07:58:00-04:00",
+   "created_at": "2026-10-23T07:58:00-04:00",
+   "provenance": [
+    {
+     "type": "email",
+     "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261022161941.d06cea8344.71242e8f@mail150.atl241.mcsv.net>",
+     "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+     "subject": "Winter Camp Schedule!❄️",
+     "received_at": "2026-10-22T12:19:47-04:00",
+     "retrieved_at": "2026-10-23T07:58:00-04:00",
+     "web_version": "https://mailchi.mp/7d99323d4ed8/winter-camp-schedule"
+    },
+    {
+     "type": "image",
+     "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/39390b91-c882-078d-7d6a-9b3a39e77765.png",
+     "media_path": "staging/weeks/next/media/winter-camp-schedule-2026-10-22.png",
+     "retrieved_at": "2026-10-23T07:58:00-04:00"
+    }
+   ],
+   "suggested_slot": "club_events",
+   "parent_item_id": "chat-winter-camp-reminder",
+   "tags": [
+    "club",
+    "camp",
+    "winter-camp"
+   ],
+   "vet_notes": "Allowlisted sender; facts auto-vetted. Raw fact sheet, not print copy: likely merges into the Winter Camp reminder (Frank's angle/tone). Club Events rule: camp priority rises as sign-up closes."
   }
  ],
  "rolled_forward": {
