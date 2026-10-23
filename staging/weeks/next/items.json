@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-23T07:58:00-04:00",
+ "updated_at": "2026-10-23T10:05:00-04:00",
  "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
  "items": [
   {
@@ -105,7 +105,7 @@
    "id": "chat-winter-camp-reminder",
    "kind": "graf",
    "headline": "Winter Camp: Sign Up Now",
-   "body": "Elite FC Winter Camp runs Dec. 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels: footwork, technical and tactical drills, strength and conditioning, and games. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. The club asks campers to register as soon as possible; contact the club for price and sign-up.",
+   "body": "Elite FC Winter Camp runs Dec. 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels: footwork, technical and tactical drills, and games. Dec. 27 starts with a swag giveaway. K2 Fitness runs strength and conditioning on Dec. 28 and 30. On Dec. 29, a professional instructor leads yoga and breath control for competition, and lunch is served. Crepes on Dec. 31 celebrate the end of camp and 2026. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. If you're going, let the club know as soon as possible for a headcount; contact the club for price and sign-up.",
    "source": "chat",
    "from": "frank",
    "target_week": "next",
@@ -114,7 +114,7 @@
    "vetted_by": "frank",
    "vet_scope": "angle_tone_only",
    "facts_status": "verified (price omitted)",
-   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Desk 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder.",
+   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Desk 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Desk 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md.",
    "facts": [
     {
      "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
@@ -216,6 +216,12 @@
      "url": "https://www.elitefencersclub.com/camps",
      "retrieved_at": "2026-10-18T08:37:00-04:00",
      "note": "Re-check: no price; Register → Contact page"
+    },
+    {
+     "type": "email",
+     "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261022161941.d06cea8344.71242e8f@mail150.atl241.mcsv.net>",
+     "note": "Oct 22 Mailchimp 'Winter Camp Schedule!' — source of v4 schedule facts (see item email-mailchimp-winter-camp-schedule-2026-10-22)",
+     "retrieved_at": "2026-10-23T07:58:00-04:00"
     }
    ],
    "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
@@ -229,7 +235,7 @@
     "frank-idea"
    ],
    "draft_path": "staging/weeks/next/drafts/winter-camp.md",
-   "word_count": 68,
+   "word_count": 115,
    "created_at": "2026-10-07T19:05:00-04:00",
    "facts_source_of_truth": "email (Frank, chat via parent 2026-10-07 ~19:12 ET): club Mailchimp email overrides website on conflict",
    "conflicts_with_website": "None on dates, hours, levels or activities (email embeds the same flyer). Email body: day-to-day schedule not final yet. Email doesn't address the Sunday Dec 27 start vs. club closed Sundays; it does confirm 12/27 as the start.",
@@ -261,7 +267,7 @@
     ],
     "text_copy": "staging/weeks/next/sources/email-fwd-winter-camp-2026-10-07.txt"
    },
-   "updated_at": "2026-10-07T19:20:00-04:00",
+   "updated_at": "2026-10-23T10:05:00-04:00",
    "ingest_notes": [
     "2026-10-08 daily email pass: Frank's 'Fwd: Group Class! + Winter Camp' (<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>) was already ingested 2026-10-07 ~19:20 ET; it had just not been labeled processed. Labeled now; no new facts (price and sign-up method still pending)."
    ],
@@ -270,7 +276,11 @@
    "moved_from": "staging/weeks/next",
    "moved_at": "2026-10-12T09:45:00-04:00",
    "carried_from": "staging/weeks/2026-10-19",
-   "carry_note": "Printed in No. 3; carried as reference only for a possible later reminder (camp Dec 27–31). Do not re-run without Frank."
+   "carry_note": "Printed in No. 3; carried as reference only for a possible later reminder (camp Dec 27–31). Do not re-run without Frank. | 2026-10-23: re-run approved in principle (Frank: fold in highlights); revised copy pending review.",
+   "body_prior": "Elite FC Winter Camp runs Dec. 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels: footwork, technical and tactical drills, strength and conditioning, and games. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. The club asks campers to register as soon as possible; contact the club for price and sign-up.",
+   "body_prior_note": "v3 as printed in No. 3 (Oct 19), 68 words. Kept for reference/rollback.",
+   "revision": "v4",
+   "revision_status": "pending Frank review"
   },
   {
    "id": "email-agentmail-morris-cup-entries-2026-10-07",
@@ -1751,7 +1761,7 @@
     "camp",
     "winter-camp"
    ],
-   "vet_notes": "Allowlisted sender; facts auto-vetted. Raw fact sheet, not print copy: likely merges into the Winter Camp reminder (Frank's angle/tone). Club Events rule: camp priority rises as sign-up closes."
+   "vet_notes": "Allowlisted sender; facts auto-vetted. Raw fact sheet, not print copy: likely merges into the Winter Camp reminder (Frank's angle/tone). Club Events rule: camp priority rises as sign-up closes. | 2026-10-23: merged into chat-winter-camp-reminder v4 (Frank approved folding highlights). Not printed on its own."
   }
  ],
  "rolled_forward": {

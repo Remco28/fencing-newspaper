@@ -393,14 +393,14 @@
       "key": "camp",
       "section": "club",
       "slot": "Club events — Winter Camp",
-      "budget": "~70w",
+      "budget": "~115w",
       "item": "chat-winter-camp-reminder",
       "proposed": true,
       "cost": {
         "type": "prose",
         "span": 1
       },
-      "summary": "Dec. 27–31, 9:30 a.m.–2 p.m., all levels. Still 'contact the club for price and sign-up' (your No. 3 call)."
+      "summary": "Revised (v4, pending your review): adds the Oct 22 day-by-day schedule (swag, K2 Fitness, yoga/breath control + lunch, crepes) and the headcount ask. Still 'contact the club for price and sign-up'; no email printed."
     },
     {
       "key": "classes",
