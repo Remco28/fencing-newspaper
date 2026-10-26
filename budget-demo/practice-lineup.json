@@ -48,7 +48,7 @@
   ],
   "seed_ids": [],
   "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
-  "generated": "2026-10-26T09:10:00-04:00",
+  "generated": "2026-10-26T10:20:00-04:00",
   "target_week": "next",
   "issue": {
     "number": 4,
@@ -63,12 +63,13 @@
     "note": "Mon or Tue; Desk waits for Morris / Medeo #4 results before compose."
   },
   "desk_summary": [
-    "No. 4 budget patched in Monday's full pass (not rebuilt). Your Oct 19 lineup stands, with this week's changes below.",
-    "Planned lead: still 'How to become a referee' (your pick). Needs your Vet and a yes/no on a personal angle.",
-    "Club results so far: Maksim Milinkovic 6th at the San José Cadet World Cup (Oct 22) and Brendan Mendez 3rd at the Freehold unrated (Oct 23), each its own row, both unvetted. Maksim's Junior WC 48th is dropped (below the strong-results bar; no 'also fenced' line). Morris Cup and Medeo #4 (Nora Li) results weren't posted as of ~9 a.m.; NJ JO qualifier still has no results after 8 days.",
-    "Nearby Tournaments: Ultimate Cup now 14 entries (Lillian Liu added, Junior Women); Cobra now 26 / 16 (Bryce Cheng added, Y10 Men; still needs your Vet); Medeo #5 unchanged.",
-    "San José watch resolved into Club Results, so Secondary B is free. Still proposed: Casablanca short, By the Book, For the Parents, Epee on Screen, Photo from History 07, Winter Camp v4.",
-    "Rough fill: about 1.6 of 2 pages before Morris results. The weekend rows and any trim of the referee draft set the final fit. Compose waits for your budget answers and Morris results."
+    "No. 4 budget patched Monday after your lead call (not rebuilt). Your Oct 19 lineup stands, with the changes below.",
+    "Lead: Morris Cup roundup (Oct 24–25, Suffern) — your call, for how many Elite FC fencers took part (20 fencers / 30 entries). Results aren't posted yet (checked ~10 a.m.), so it's a placeholder and compose waits for them. Strong results only; nothing invented.",
+    "'How to become a referee' moves to a page-1 feature (Secondary B). Still needs your Vet, a yes/no on a personal angle, and ~180 vs ~270 words.",
+    "Club Results opens with Maksim Milinkovic's 6th at the San José Cadet World Cup (Oct 22), placed by you; no field size or strength-of-field comparison. Brendan Mendez's 3rd (Freehold, Oct 23) waits on your Vet. Medeo #4 (Nora Li) and NJ JO results still not posted.",
+    "Nearby Tournaments: Ultimate Cup 14 entries; Cobra 26 / 16 (still needs your Vet); Medeo #5 unchanged.",
+    "Still proposed: Casablanca short, By the Book, For the Parents, Epee on Screen, Photo from History 07, Winter Camp v4.",
+    "Fill estimate excludes the Morris roundup until results post; see the meter."
   ],
   "photos": [
     {
@@ -93,29 +94,27 @@
     {
       "key": "lead",
       "section": "lead",
-      "slot": "Lead story — How to become a referee (Frank picked)",
-      "budget": "~200–270w (trim at compose)",
-      "item": "chat-become-a-referee-placeholder-2026-10-13",
+      "slot": "Lead story — Morris Cup roundup — awaiting results",
+      "budget": "~250–350w roundup + results once posted",
+      "item": "email-agentmail-morris-cup-entries-2026-10-07",
       "proposed": true,
+      "waiting": true,
       "cost": {
         "type": "prose",
         "span": 2,
         "feature": true
       },
-      "title": "Want to Referee? Start at the Club",
-      "summary": "Frank picked this for No. 4 (2026-10-13). Desk draft from USA Fencing's become-a-referee page and the Regional Tournament Requirements 2026–28 PDF: start at the club, study guide + seminar + online exam (90%) for a P rating, then a practical exam for L/R ratings; ages 13+ with a P can work regionals; paid for more than one pool round; membership and (18+) background check/SafeSport. Ends with Friday open bouting as a place to start. Unvetted until you Vet it.",
-      "questions": [
-        "Any personal angle you want in it (you said you're interested), or keep it a plain how-to?",
-        "Trim to ~180 words as the lead, or keep ~270 as a page-1 feature with Casablanca as the short lead?"
-      ],
+      "title": "Morris Cup roundup — awaiting results",
+      "summary": "Frank's call (Mon Oct 26): Morris Cup RYC/RJCC (Oct 24–25, Rockland Community College, Suffern, NY) leads No. 4 because of how many Elite FC fencers took part — 20 fencers / 30 entries on the staged entries board. Results are not posted yet (FencingTracker checked ~10 a.m. Mon; USA Fencing event 12095 still catalog-only, no results). Desk writes the roundup only from posted results: strong results only, no 'also fenced' line, names as printed on the official pages, nothing invented.",
+      "questions": [],
       "flags": [
         {
-          "level": "warn",
-          "text": "UNVETTED — Include locked until you Vet."
+          "level": "info",
+          "text": "Compose waits for Morris results. This slot stays out of the fill estimate until they post."
         },
         {
           "level": "info",
-          "text": "Morris Cup results weren't posted as of 9 a.m. Mon. Maksim's 6th at the San José Cadet World Cup is the strongest club result so far; Desk keeps your referee pick as lead and opens Club Results with Maksim. Say the word if you'd rather lead with Maksim."
+          "text": "Strong results only; no 'also fenced' line; invent nothing (sections.json)."
         }
       ]
     },
@@ -142,55 +141,60 @@
     {
       "key": "secondary-b",
       "section": "lead",
-      "slot": "Secondary B — San José Jr/Cadet WC (resolved)",
-      "budget": "60–80w if there's a story",
-      "item": "fie-san-jose-jr-cadet-wc-watch-2026-10-19",
-      "proposed": false,
+      "slot": "Page-1 feature — How to become a referee (Frank picked)",
+      "budget": "~180w secondary or ~270w fuller feature (your call)",
+      "item": "chat-become-a-referee-placeholder-2026-10-13",
+      "proposed": true,
       "waiting": false,
       "cost": {
         "type": "prose",
-        "span": 1
+        "span": 1,
+        "feature": true
       },
-      "summary": "Resolved Mon Oct 26: the club story from San José is Maksim Milinkovic's 6th (Cadet, Oct 22), which goes in Club Results. No separate story; slot freed.",
+      "title": "Want to Referee? Start at the Club",
+      "summary": "Moved off the lead (Morris Cup leads, Frank 2026-10-26); stays on page 1. Desk draft (271 words) from USA Fencing's become-a-referee page and the Regional Tournament Requirements 2026–28 PDF: start at the club, study guide + seminar + online exam (90%) for a P rating, then a practical exam for L/R ratings; ages 13+ with a P can work regionals; paid for more than one pool round; membership and (18+) background check/SafeSport. Ends with Friday open bouting as a place to start. Unvetted until you Vet it.",
+      "questions": [
+        "Any personal angle you want in it (you said you're interested), or keep it a plain how-to?",
+        "Now that it's a page-1 feature under the Morris lead: trim to ~180 words as a secondary, or keep ~270 as a fuller page-1 feature?"
+      ],
       "flags": [
         {
-          "level": "info",
-          "text": "Space returns to the page; no replacement proposed."
+          "level": "warn",
+          "text": "UNVETTED — Include locked until you Vet."
         }
       ]
     },
     {
       "key": "club-results",
       "section": "club",
-      "slot": "Club results — Morris Cup + Medeo #4 (+ JO if posted)",
-      "budget": "3–5 strong rows (strong results only; no 'also fenced' line)",
-      "item": "email-agentmail-morris-cup-entries-2026-10-07",
+      "slot": "Club results — San José WC + Medeo #4 (+ JO if posted)",
+      "budget": "strong rows only (no 'also fenced' line)",
+      "item": "ft-maksim-cadet-wc-6th-2026-10-22",
       "merged": [
+        "ft-mendez-freehold-unrated-3rd-2026-10-23",
         "fencingapi-medeo-yc4-entries-2026-10-14",
-        "askfred-nj-jo-qualifier-2026-10-18",
-        "ft-maksim-cadet-wc-6th-2026-10-22",
-        "ft-mendez-freehold-unrated-3rd-2026-10-23"
+        "askfred-nj-jo-qualifier-2026-10-18"
       ],
       "proposed": true,
-      "waiting": true,
+      "waiting": false,
       "cost": {
         "type": "table_rows",
-        "rows": 5
+        "rows": 1
       },
-      "title": "Club results — San José World Cup + weekend of Oct. 24–25 (Morris / Medeo #4 still waiting)",
-      "summary": "New this pass: Maksim Milinkovic 6th in Cadet Men at the FIE Cadet World Cup in San José, Costa Rica (Oct 22; FencingTracker, venue confirmed on fie.org; field size not readable) — stays a row here unless you move it to the lead. Brendan Mendez 3rd at the Freehold unrated Senior Open (Oct 23; small local event, field size unknown) — its own row. Maksim's 48th at the San José Junior World Cup (Oct 23) is dropped: below the strong-results bar (strong results only, no 'also fenced' line — sections.json). Still waiting as of ~9 a.m. Mon Oct 26: Morris Cup (30 Elite FC entries / 20 fencers) — no results on USA Fencing or FencingTracker yet; Medeo #4 — only Y14 Mixed posted, Nora Li's Y10 Mixed not up. NJ JO Qualifier (Oct 18) still shows no results on AskFRED, 8 days on; Frank's rule carries: JO line ONLY if Aaditya Jaising or Charles Young qualified.",
+      "title": "Club results — San José World Cup + weekend of Oct. 24–25",
+      "summary": "Opens with Maksim Milinkovic, 6th in Cadet Men at the FIE Cadet World Cup in San José, Costa Rica (Oct 22) — placed here by Frank (2026-10-26). Editorial note: print the placing as is; do NOT mention field size or compare the strength of competition, nothing that diminishes the result. Brendan Mendez 3rd at the Freehold unrated Senior Open (Oct 23) gets its own row once you Vet it. Maksim's 48th at the San José Junior World Cup is dropped (below the strong-results bar; no 'also fenced' line). Morris Cup results go in the lead roundup, not here. Still waiting as of ~10 a.m. Mon: Medeo #4 (Nora Li's Y10 Mixed not up); NJ JO Qualifier (Oct 18) still no results on AskFRED — JO line ONLY if Aaditya Jaising or Charles Young qualified.",
       "flags": [
         {
           "level": "warn",
-          "text": "UNVETTED: Maksim 6th and Mendez 3rd come from FencingTracker; Include locked until you Vet. The results API returned 0 rows for both (API/site mismatch) — FT is the only source."
+          "text": "Mendez 3rd (FencingTracker) is UNVETTED — row added only after you Vet it."
         },
         {
           "level": "info",
-          "text": "Placement pending your call: Maksim's Cadet World Cup 6th stays a Club Results row unless you want it as a lead/short."
+          "text": "Maksim row: no field size, no strength-of-field comparison (Frank, 2026-10-26)."
         },
         {
           "level": "info",
-          "text": "Morris rows get added when USA Fencing/FT post them; compose waits for that."
+          "text": "Medeo #4 / JO rows get added if strong results post; Morris results go to the lead."
         }
       ],
       "table": {
@@ -204,11 +208,6 @@
             "Maksim Milinkovic",
             "Cadet Men, FIE Cadet World Cup, San José, Costa Rica (Oct. 22)",
             "6th"
-          ],
-          [
-            "Brendan Mendez",
-            "Senior Open Men, Freehold Fencing Unrated (Oct. 23)",
-            "3rd"
           ]
         ]
       }

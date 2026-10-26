@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-26T09:08:00-04:00",
+  "updated_at": "2026-10-26T10:20:00-04:00",
   "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
   "items": [
     {
@@ -15,8 +15,11 @@
       "vetted_by": null,
       "vetted_at": null,
       "vet_notes": "Planning note only, not print copy.",
-      "status": "drafted by Desk 2026-10-19 from USA Fencing pages (Frank picked No. 4, 2026-10-13)",
-      "open_questions": [],
+      "status": "drafted by Desk 2026-10-19 from USA Fencing pages (Frank picked No. 4, 2026-10-13); moved from lead to page-1 feature (Secondary B) 2026-10-26 after Frank made Morris Cup the lead",
+      "open_questions": [
+        "Personal angle or plain how-to?",
+        "~180w secondary or ~270w fuller page-1 feature?"
+      ],
       "provenance": [
         {
           "source": "chat: Frank 2026-10-13",
@@ -39,7 +42,7 @@
           "retrieved_at": "2026-10-19T09:22:00-04:00"
         }
       ],
-      "slot_hint": "feature",
+      "slot_hint": "page1_feature",
       "tags": [
         "placeholder",
         "referee",
@@ -99,7 +102,7 @@
       "need": [
         "Frank: any personal angle you want in it (you said you're interested), or keep it a plain how-to?"
       ],
-      "updated_at": "2026-10-19T09:30:00-04:00"
+      "updated_at": "2026-10-26T10:20:00-04:00"
     },
     {
       "id": "chat-winter-camp-reminder",
@@ -574,10 +577,11 @@
       ],
       "entries_count": "20 fencers / 30 entries",
       "board": "Nearby Tournaments",
-      "slot_hint": "club_results",
+      "slot_hint": "lead",
       "waiting": true,
       "no4_role": "Results watch for No. 4 (Oct 24-25 is before No. 4's publish). Likely lead: strong Elite FC finishes only (STYLE-GUIDE 0d); no 'also fenced' line (sections.json). Check FencingTracker / USA Fencing results Sun Oct 25 night and Mon Oct 26 morning.",
-      "updated_at": "2026-10-22T07:57:00-04:00"
+      "updated_at": "2026-10-26T10:20:00-04:00",
+      "lead_note": "Frank 2026-10-26: Morris Cup is the No. 4 lead (club turnout: 20 fencers / 30 entries). Roundup waits for posted results; strong results only, no 'also fenced', invent nothing. Not posted as of 2026-10-26 ~10:00 ET (FT tournament 1706 + club page; USA Fencing 12095 catalog only)."
     },
     {
       "id": "web-efc-standing-schedule",
@@ -1814,7 +1818,7 @@
       "from": "FencingTracker club page",
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "club_results",
       "tags": [
         "club",
@@ -1838,13 +1842,13 @@
           "note": "FIE calendar: San-Jose World Cup 2026 (CRC), Oct 22–25; cadet men's epee individual Oct 22 (event 17018/competition 1472), junior men's epee individual Oct 23. 137 fencers / 24 nations across all six events. Per-event results page is a JS app; field size for cadet men not readable."
         }
       ],
-      "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged.",
+      "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged. Frank placed it in Club Results 2026-10-26 (counts as his vet). Field-size check dropped per his editorial note.",
       "strength": "strong — top 8 at an FIE Cadet World Cup",
-      "to_confirm": [
-        "field size",
-        "Frank vet"
-      ],
-      "updated_at": "2026-10-26T09:08:00-04:00"
+      "to_confirm": [],
+      "updated_at": "2026-10-26T10:20:00-04:00",
+      "vetted_by": "Frank (placement call, chat 2026-10-26)",
+      "vetted_at": "2026-10-26T10:20:00-04:00",
+      "editorial_note": "Frank 2026-10-26: do NOT mention field size or compare the strength of competition; nothing that diminishes the result. Print the 6th as is."
     },
     {
       "id": "ft-maksim-junior-wc-48th-2026-10-23",
