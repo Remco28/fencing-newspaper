@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.43 — 2026-10-26
+- **No "also fenced" line, docs reconciled** with `sections.json` (Frank 2026-10-20): Club Results prints strong results only; everyone else is not printed. Updated STYLE-GUIDE §0d, CONTENT-HIERARCHY (house rules + results row), PLAN. Earlier changelog entries below are history.
+- **No. 4 budget fix:** removed the also-fenced line and its question; Maksim Milinkovic's San José Junior WC 48th marked dropped (below strong-results bar); Brendan Mendez's Freehold 3rd is its own Club Results row; Maksim's Cadet WC 6th stays a row (placement pending Frank).
+
 ## v3.42 — 2026-10-19
 - **Site top bar (phones):** under 400 px the bar is tighter and can wrap (min-height, not fixed height), so Archive/Re-mess drop to a second row instead of being cut off under large system fonts (Frank's S25 report). The desk re-lays out when its area resizes (ResizeObserver).
 - **Site v5 mobile desk (Frank-approved approach B, built by Claude Code Opus 5.5):** no more 90° portrait rotation. The desk is always landscape in one world coordinate space with one scale; portrait phones zoom in (~158 px papers on a 360 px phone) and crop the sides with a soft fade. A visible play area (`desk.play`, edges 'rim' or 'wall') drives placement, clamping, bounces and tipping for every object, so future props get it for free. **Behaviour change:** on phones the cropped left/right sides are walls; pencils only roll off the top and bottom edges. Desktop and landscape phones unchanged. Placement now avoids burying lower sheets. Code: `site/js/desk-view.js` (+ `site/tests/desk-view.test.js`), `desk-engine.js`, `desk.js`; notes in `site/REPORT.md`.

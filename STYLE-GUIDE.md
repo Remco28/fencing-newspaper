@@ -81,9 +81,10 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
 **Never print a weak finish or place.** Policy from Frank (chat 2026-10-12), permanent.
 - Print a place only when it is **strong**: podium / top 8, a notable climb (seed → finish or
   rating jump), a personal best, or an unbeaten pool.
-- Everyone else who fenced gets an **"also fenced"** line (or **"also attended"**) with name
-  only — no place, no record — so nobody feels bad.
-- **When unsure, use "also fenced."** Never print a place to fill a row.
+- Everyone else is simply **not printed** — **no "also fenced" / "also attended" line**
+  (Frank, 2026-10-20; supersedes the 2026-10-12 also-fenced line). Nobody embarrassed.
+- **When unsure, leave it out.** Never print a place to fill a row.
+- Master for Club Results rules: `sections.json` (`club-results.rules`).
 - Applies to the club results box, captions, lead/secondary copy about our fencers, and boards.
 
 ## 1. Page

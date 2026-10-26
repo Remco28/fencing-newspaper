@@ -576,7 +576,7 @@
       "board": "Nearby Tournaments",
       "slot_hint": "club_results",
       "waiting": true,
-      "no4_role": "Results watch for No. 4 (Oct 24-25 is before No. 4's publish). Likely lead: strong Elite FC finishes only (STYLE-GUIDE 0d); everyone else on the 'also fenced' line. Check FencingTracker / USA Fencing results Sun Oct 25 night and Mon Oct 26 morning.",
+      "no4_role": "Results watch for No. 4 (Oct 24-25 is before No. 4's publish). Likely lead: strong Elite FC finishes only (STYLE-GUIDE 0d); no 'also fenced' line (sections.json). Check FencingTracker / USA Fencing results Sun Oct 25 night and Mon Oct 26 morning.",
       "updated_at": "2026-10-22T07:57:00-04:00"
     },
     {
@@ -1066,7 +1066,7 @@
       "carried_from": "staging/weeks/2026-10-19",
       "carry_note": "Medeo YC #4 is Oct 25: results watch for No. 4.",
       "waiting": true,
-      "no4_role": "Results watch: Oct 25 is before No. 4's publish. Nora Li (Y10 Mixed). Strong finish only, else 'also fenced'.",
+      "no4_role": "Results watch: Oct 25 is before No. 4's publish. Nora Li (Y10 Mixed). Strong finish only; otherwise not printed (no 'also fenced' line).",
       "updated_at": "2026-10-19T09:30:00-04:00"
     },
     {
@@ -1879,7 +1879,10 @@
         }
       ],
       "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged.",
-      "print_hint": "likely 'also fenced' or pair with Cadet 6th"
+      "print_hint": "dropped — below strong-results bar; Club Results prints strong results only, no 'also fenced' line (sections.json, Frank 2026-10-20)",
+      "dropped": true,
+      "drop_reason": "below strong-results bar",
+      "updated_at": "2026-10-26T09:20:00-04:00"
     },
     {
       "id": "ft-mendez-freehold-unrated-3rd-2026-10-23",
@@ -1906,7 +1909,8 @@
           "method": "daily FT quick look, one fetch"
         }
       ],
-      "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged."
+      "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged.",
+      "print_hint": "own Club Results row (unvetted)"
     }
   ],
   "rolled_forward": {
