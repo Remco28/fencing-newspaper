@@ -1,0 +1,62 @@
+{
+ "issue": 4,
+ "vol": "I",
+ "date": "2026-10-26",
+ "dateline": "Monday Edition · Vol. I — No. 4 · Chatham, N.J. · October 26, 2026",
+ "status": "PROOF v1 — awaiting Frank. Not published.",
+ "composed_at": "2026-10-26T17:05:00-04:00",
+ "approval": "Frank submitted budget 2026-10-26 16:21 ET (budget-submission.json). Not yet approved as a proof.",
+ "pdf": "issues/2026-10-26/en-garde-gazette-no-4-2026-10-26.pdf",
+ "previews": [
+  "issues/2026-10-26/preview-p1.png",
+  "issues/2026-10-26/preview-p2.png"
+ ],
+ "pdf_metadata": {
+  "Title": "En Garde Gazette — Vol. I No. 4 — October 26, 2026",
+  "Author": "Nico's Dad"
+ },
+ "build": "python3 issues/2026-10-26/build/compose.py x && python3 prototype/render.py issues/2026-10-26/issue.html issues/2026-10-26/en-garde-gazette-no-4-2026-10-26.pdf --allow-flag --author=\"Nico's Dad\"",
+ "pages": {
+  "1": [
+   "Morris Cup lead v2 (19 fencers / 29 entries) + club group photo [PENDING Frank OK]",
+   "Italy, Hungary Win Epee Season Opener (Casablanca)",
+   "Want to Referee? Start at the Club (full 271w + pull-quote)",
+   "Club Results (Maksim Milinkovic 6th, San José Cadet WC)"
+  ],
+  "2": [
+   "Nearby Tournaments (Cobra left + NYFA #1 under it; Ultimate + Medeo #5 right)",
+   "Deadlines",
+   "Winter Camp v4 (merges Oct 22 schedule)",
+   "Cobra Challenge: Still Time to Enter (answers Frank's slot note)",
+   "Y8 podium photo [PENDING Frank OK]",
+   "Epee on Screen (4 rows)",
+   "By the Book: One Quiet Minute"
+  ]
+ },
+ "cut": [
+  "Morris entries + Morris results items (Frank: redundant)",
+  "San José watch item (Frank: redundant)",
+  "Classes, For the Parents, Photo from History 07, Oct 21 day sheet (Frank excluded)",
+  "Mendez Freehold 3rd (unvetted)",
+  "Club newsletter group-class times (past/this-week day sheet)"
+ ],
+ "pending_frank": [
+  "Group photo (p1) and Y8 podium photo (p2) from club Mailchimp Oct 26 — not in budget",
+  "Lead add: club newsletter quote line (12w)",
+  "Cobra explainer + fees line (Desk, from USA Fencing page)",
+  "NYFA #1 under Cobra in left half (§10a deviation to fit page 2)",
+  "Mendez row (vet?)"
+ ],
+ "instruments": {
+  "p1_gap_in": 0.38,
+  "p2_gap_in": 0.15,
+  "row1_spread_in": 0.49,
+  "row2_spread_in": 0.15,
+  "pages": 2
+ },
+ "words": {
+  "total": 1417,
+  "p1": 660,
+  "p2": 761
+ }
+}

@@ -28,6 +28,45 @@
    "vetted": false,
    "parent_item_id": "email-mailchimp-winter-camp-schedule-2026-10-22",
    "note": "Club Mailchimp graphic (clip art + club logo). Reference/possible print use at Frank's call."
+  },
+  {
+   "id": "media-morris-cup-group-2026-10-26",
+   "kind": "photo",
+   "filename": "morris-cup-group-2026-10-26.jpg",
+   "media_path": "staging/weeks/next/media/morris-cup-group-2026-10-26.jpg",
+   "caption": "Elite FC group photo at the Morris Cup (club newsletter Oct 26), 640x480 landscape.",
+   "source": "email",
+   "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261026153832.5203bf9db3.dbcb2657@mail67.atl91.mcsv.net>",
+   "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f7bfb34b-4412-ba5c-e029-315a077679f2.jpeg",
+   "vetted": false,
+   "parent_item_id": "email-mailchimp-congrats-2026-10-26",
+   "note": "Club Mailchimp photo (club's own channel; coach-approved source). Print only with Frank's OK; names only from Frank or the post."
+  },
+  {
+   "id": "media-morris-cup-podium-a-2026-10-26",
+   "kind": "photo",
+   "filename": "morris-cup-podium-a-2026-10-26.jpg",
+   "media_path": "staging/weeks/next/media/morris-cup-podium-a-2026-10-26.jpg",
+   "caption": "Morris Cup podium shot (file rotated 90°), 640x480.",
+   "source": "email",
+   "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261026153832.5203bf9db3.dbcb2657@mail67.atl91.mcsv.net>",
+   "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/746b0553-6601-2392-e6f0-94c621a6546f.jpeg",
+   "vetted": false,
+   "parent_item_id": "email-mailchimp-congrats-2026-10-26",
+   "note": "Club Mailchimp photo (club's own channel; coach-approved source). Print only with Frank's OK; names only from Frank or the post."
+  },
+  {
+   "id": "media-morris-cup-podium-b-2026-10-26",
+   "kind": "photo",
+   "filename": "morris-cup-podium-b-2026-10-26.jpg",
+   "media_path": "staging/weeks/next/media/morris-cup-podium-b-2026-10-26.jpg",
+   "caption": "Morris Cup podium shot (file rotated 90°), 640x480.",
+   "source": "email",
+   "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261026153832.5203bf9db3.dbcb2657@mail67.atl91.mcsv.net>",
+   "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/200266ac-c82b-14ea-e3d8-3c1ed225a656.jpeg",
+   "vetted": false,
+   "parent_item_id": "email-mailchimp-congrats-2026-10-26",
+   "note": "Club Mailchimp photo (club's own channel; coach-approved source). Print only with Frank's OK; names only from Frank or the post."
   }
  ]
 }

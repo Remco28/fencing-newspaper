@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>En Garde Gazette — Vol. I No. 4 — October 26, 2026</title>
+<meta name="author" content="Nico's Dad">
+<style>
+  @page { size: Letter; margin: 0.5in 0.5in 0.4in 0.5in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt; line-height: 1.26; color: #000;
+    font-variant-numeric: tabular-nums; }
+  .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
+  .page:last-child { page-break-after: auto; }
+  .page .footer { margin-top: auto; }
+
+  .masthead { display: flex; align-items: center; gap: 18pt; }
+  /* margin on img clears hairlines from PNG flourishes (art runs to image edges) */
+  .masthead img { display: block; width: 50%; height: auto; margin: 0 10pt; flex: none; }
+  /* Flanks: newspaper ears — clear air from logo (hairlines must not kiss masthead) */
+  .flank { flex: 1; min-width: 0; padding: 5pt 7pt; margin: 0;
+    border-top: 0.75pt solid #000; border-bottom: 0.75pt solid #000;
+    line-height: 1.22; }
+  .flank.left {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.5pt; font-variant: small-caps; letter-spacing: 0.06em;
+    text-align: center; font-weight: 400; }
+  .flank.right {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.8pt; font-style: italic; letter-spacing: 0.01em;
+    text-align: center; font-weight: 400; }
+
+  /* Dateline: centered edition word (display face) + single meta line under it — not three-span */
+  .dateline { text-align: center;
+    border-top: 3pt double #000; border-bottom: 2pt solid #000;
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+  .dateline .edition {
+    font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
+    font-weight: 700; font-size: 12.5pt; line-height: 1.02;
+    letter-spacing: 0.16em; text-transform: uppercase; }
+  .dateline .meta {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.5pt; letter-spacing: 0.05em; margin-top: 1.5pt;
+    font-variant: small-caps; font-weight: 400; }
+
+  .cols3 { display: flex; gap: 9pt; }
+  .cols3 > .c { flex: 1; min-width: 0; }
+  .cols3 > .span2 { flex: 2.06; }
+  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: 9pt; }
+  .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
+
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
+  /* Prose furniture: title + text ONLY — never wrap in .box (STYLE-GUIDE §8) */
+  .rail-block { margin-bottom: 6pt; padding: 0; border: none; }
+  .rail-block + .rail-block { margin-top: 2pt; } /* spacing only — no HR between stacked rails */
+  /* Shared title type; underline ONLY inside .box (tabular utilities) */
+  .boxtitle, .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 0.5pt;
+    padding-bottom: 2pt; margin-bottom: 3pt; }
+  .box > .boxtitle { border-bottom: 1pt solid #000; }
+  .rail-title { border: none; border-bottom: none; padding-bottom: 0; margin-bottom: 2pt; }
+
+  /* Per-slot type scale (STYLE-GUIDE §4) */
+  h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 18.5pt; line-height: 1.02; letter-spacing: -0.35pt; margin-bottom: 2pt; }
+  .span2 > p { font-size: 9pt; } /* lead body +0.5pt vs shorts */
+  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; } /* lead only */
+  h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; } /* shorts default */
+  .slot-a h2.head { font-size: 12pt; } /* Secondary A / page-2 featured */
+  .slot-a > p { font-size: 8.8pt; }
+  .slot-b h2.head { font-size: 10.5pt; } /* Secondary B / NJ HS */
+  .slot-feature h2.head { font-size: 13pt; line-height: 1.04; } /* page-2 span2 featured */
+  .slot-feature > p { font-size: 8.8pt; }
+  /* Byline ONLY for real guest authors — never "Gazette Staff" (PLAN §1b) */
+  .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; margin-bottom: 3pt; }
+  p { margin-bottom: 3pt; text-align: justify; hyphens: auto; }
+  p:last-child { margin-bottom: 0; }
+  .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
+  /* Page 2: vertical rhythm — no HRs, no rail-title underlines */
+  .page:last-child > .cols3 { margin-bottom: 6pt; }
+  .page:last-child > .cols3:last-of-type { margin-bottom: 0; }
+
+  table.board { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 8.5pt; }
+  table.board th { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; text-align: left; border-bottom: 1.5pt solid #000; padding: 1pt 4pt 1pt 0; }
+  table.board td { border-bottom: 0.5pt solid #000; padding: 1pt 4pt 1pt 0; vertical-align: top; }
+  table.board tr:last-child td { border-bottom: none; }
+  td.r, th.r { text-align: right; }
+  table.board th.r { text-align: right; }
+  td.num { text-align: right; white-space: nowrap; }
+
+  .photo { margin-bottom: 3pt; }
+  .photo img { display: block; width: 100%; height: auto; /* no silent crop — full frame */
+    filter: grayscale(100%); }
+  .caption { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; margin-top: 2pt;
+    text-align: left; line-height: 1.3; }
+
+  .footer { border-top: 2.5pt solid #000; margin-top: 1pt; padding-top: 2pt;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt;
+    display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: 0.3pt; }
+  .foot-archive { text-transform: none; letter-spacing: 0; font-size: 6.5pt; color: #444; }
+  /* ---- Issue 2026-10-08 composition additions (no furniture changes) ---- */
+  /* Parent Q&A pattern (STYLE-GUIDE §8a; prototype/qa-block.html) */
+  .qa .q { font-style: italic; font-weight: bold; margin-bottom: 2pt; text-align: left; }
+  .qa .q::before { content: "Q. "; font-style: normal; font-weight: 900;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  .qa .a { margin-bottom: 0; text-align: justify; hyphens: auto; }
+  .qa .a::before { content: "A. "; font-family: "Arial", "Liberation Sans", sans-serif;
+    font-weight: 900; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  /* Lead run-in labels */
+  .span2 p b.run { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 8pt; letter-spacing: 0.2pt; }
+  /* Big signup board: two tables side by side inside one tabular .box */
+  .board-split { display: flex; gap: 12pt; }
+  .board-split > div { flex: 1; min-width: 0; }
+  .board-cap { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 3pt 0 1pt 0; }
+  .board-cap:first-child { margin-top: 0; }
+  .board-cap span { font-weight: 400; text-transform: none; letter-spacing: 0; font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  .boxnote { margin-top: 3pt; }
+  /* Stacked articles/rails inside one column: air between pieces (margin only, never an HR) */
+  .c > .slot-b + .slot-b, .c > .box + .slot-b, .c > .photo + .slot-b { margin-top: 5pt; }
+  .c > .slot-b + .rail-block { margin-top: 6pt; }
+  .c > .photo + .rail-block { margin-top: 6pt; }
+  .boxnote { text-align: left; }
+  /* Weekly classes: times left-aligned in a fixed column with clear air before the class name (proof v2) */
+  table.board th.t, table.board td.t { text-align: left; white-space: nowrap; padding-right: 8pt; }
+  /* ---- Issue 2026-10-13 composition additions (no furniture changes) ---- */
+  .figure img { display: block; width: 100%; height: auto; }
+  .figure .caption { margin-top: 3pt; }
+  .factcheck { font-style: italic; }
+  /* Footer v2 (2026-10-18, STYLE-GUIDE archive whisper): archive line matches footer type */
+  .footer { gap: 14pt; letter-spacing: 0.15pt; }
+  .footer .foot-archive { text-transform: inherit; letter-spacing: inherit; font-size: inherit; color: inherit; }
+  /* ---- Issue 2026-10-26 composition additions (no furniture changes) ---- */
+  .credit { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; color: #333; margin-top: 2pt; text-align: left; line-height: 1.25; overflow-wrap: anywhere; text-align: left !important; hyphens: none; }
+  .c > .rail-block + .slot-b, .c > .slot-b + .box { margin-top: 6pt; }
+  .eds-note { font-style: italic; }
+  p, td { text-wrap: pretty; }
+  .pullquote { font-style: italic; font-size: 11.5pt; line-height: 1.22; text-align: center !important; margin: 5pt 6pt 6pt; hyphens: none; }
+  h1.head, h2.head { text-wrap: balance; }
+  /* ---- Template A furniture v2 (2026-10-18, Frank) — STYLE-GUIDE §9b + §13a ---- */
+  /* Footer: the archive line is the centred member of the footer trio, in the same 7pt sans caps as its neighbours (no separate size/colour). */
+  .footer { gap: 14pt; letter-spacing: 0.15pt; }
+  .footer .foot-archive { text-transform: inherit; letter-spacing: inherit; font-size: inherit; color: inherit; }
+  /* Nearby Tournaments: one block per tournament (name · town · dates once), days as sub-rows inside. */
+  .tourney + .tourney { margin-top: 9pt; }
+  .tourney-head { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 0 0 1pt 0; }
+  .tourney-head span { font-weight: 400; text-transform: none; letter-spacing: 0;
+    font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  table.board tr.day td { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7pt;
+    letter-spacing: 0.3pt; text-transform: uppercase; padding-top: 3pt; padding-bottom: 1pt;
+    border-bottom: 0.5pt solid #000; text-align: left; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 (FRONT) ==================== -->
+<div class="page">
+  <div class="masthead">
+    <div class="flank left">Published by a fencing parent and his bot.</div>
+    <img src="../../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly">
+    <div class="flank right">It is better to deserve a rating than to have one.</div>
+  </div>
+  <div class="dateline">
+    <div class="edition">Monday Edition</div>
+    <div class="meta">Vol. I — No. 4 &nbsp;·&nbsp; Chatham, N.J. &nbsp;·&nbsp; October 26, 2026</div>
+  </div>
+
+  <div class="cols3 ruled">
+    <div class="c span2">
+      <h1 class="head">Elite FC Brings 19 to Morris Cup; Siu Wins, Jeong 2nd</h1>
+      <div class="photo" style="margin:3pt 0 4pt;"><img src="media/morris-cup-group.jpg" alt="Elite FC fencers and a coach in a group photo at the Morris Cup"><p class="caption">Elite FC fencers at the Morris Cup in Suffern, N.Y.</p><p class="credit">Photo: Elite FC newsletter.</p></div>
+      <p>Nineteen Elite FC fencers made the trip to Suffern, N.Y., for the Morris Cup on Oct.&nbsp;24–25, a regional youth, cadet and junior tournament at Rockland Community College’s Eugene Levy Field House. The tournament drew big fields: six of the 10 events the club entered had more than 80 fencers, led by 137 in Cadet Men and 115 in Y14 Men.</p>
+<p>Elite FC’s group spanned a wide range of ages, with entries in Y8, Y10, Y12, Y14, Cadet and Junior, 29 in all. The club’s first events started at 8&nbsp;a.m. Saturday; its last, Y10 Men, began at 3:30&nbsp;p.m. Sunday.</p>
+<p>Two Elite FC fencers reached the podium Sunday, both from the youngest age groups the club entered. Madeline Siu won Y8 Women, finishing first of 11. In Y10 Men, Joshua Jeong took 2nd of 30, and Maximus Siu placed 13th in the same field.</p>
+<p>On Saturday, Remy Ng finished 14th of 61 in Y12 Men.</p>
+<p>The club’s Monday newsletter summed up the weekend: “Our younger generation SHINED.”</p>
+
+      <div class="slot-a" style="margin-top:6pt;">
+        <h2 class="head">Italy, Hungary Win Epee Season Opener</h2>
+        <p>The senior epee World Cup season opened in Casablanca, Morocco, Oct.&nbsp;15–18, with 618 fencers from 67 nations. Italy’s Roberta Marzani won the women’s event, with Ukraine’s Anna Maksymenko second and Aizanat Murtazaeva (Russia) and Alberta Santuccio (Italy) third. Hungary’s Mate Tamas Koch won the men’s title over Italy’s Matteo Galassi; Gergely Kovacs (Hungary) and Kano Koki (Japan) took bronze. In the team events, Kazakhstan’s men beat Russia 45-40, and Russia’s women edged Italy 32-31. The next senior epee World Cups are Berne (men) and Wuxi (women), Nov.&nbsp;12–15.</p>
+      </div>
+    </div>
+    <div class="c">
+      <div class="slot-b"><h2 class="head">Want to Referee? Start at the Club</h2><p>USA Fencing’s advice for would-be referees starts small: at your own club, when two fencers are bouting, offer to referee. Practice every chance you get, ideally with an experienced referee or a coach as a mentor, and read the rulebook. Even if you never ref a tournament, USA Fencing says, knowing the rules makes you a better fencer, one who can speak up when a rule is misapplied.</p>
+<p>Certification comes in steps. Download the Referee Study Guide, take a referee seminar, then take the online exam: a general section plus at least one weapon section, and you need 90 percent on each. There’s a fee, and a failed exam can be retaken within 48 hours. Pass, and you hold a P rating.</p>
+<p class="pullquote">Examiners look for consistency: the same call at 14-14 as at 1-1.</p>
+<p>After that, ratings are earned on the strip. A practical exam from a Referee Examiner is the step to a local or regional rating, and the ladder runs from L2 and L1 (local events) to R2 and R1 (regional) and N2 and N1 (national). Examiners look for consistency: the same call at 14-14 as at 1-1.</p>
+<p>You don’t have to be an adult. Referees as young as 13 with a P rating may work regional tournaments, and at those events anyone who referees more than a single round of pools must be paid. Every referee needs a current USA Fencing membership; referees 18 and older also need a background check and SafeSport training. To keep a rating, retake the exam every two years, attend a seminar, and referee at your level at least once every two years.</p>
+<p>Friday open bouting at Elite FC is a good place to start.</p></div><div class="box"><div class="boxtitle">Club Results</div><table class="board"><colgroup><col style="width:0.78in"><col><col style="width:0.4in"></colgroup><tr><th>Fencer</th><th>Event</th><th>Place</th></tr><tr><td>Maksim Milinkovic</td><td>Cadet Men, FIE Cadet World Cup (San José, Costa Rica, Oct.&nbsp;22)</td><td>6th</td></tr></table><p class="boxnote">Morris Cup finishes are in the lead story.</p></div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 4</span>
+    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>
+    <span>For fun only — facts aren’t guaranteed accurate.</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 (BACK) ==================== -->
+<div class="page">
+  <div class="dateline" style="margin-top:0;">
+    <div class="edition">Page Two</div>
+    <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 4</div>
+  </div>
+
+  <div class="box w3">
+    <div class="boxtitle">Nearby Tournaments — Elite FC Entries</div>
+    <div class="board-split">
+      <div>
+        <div class="tourney"><div class="tourney-head">Cobra Challenge SYC/RCC <span>· Secaucus, N.J. · Nov.&nbsp;27–29</span></div><table class="board"><colgroup><col style="width:0.85in"><col></colgroup><tr><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="2">Friday, Nov.&nbsp;27</td></tr><tr><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, <span style="white-space:nowrap">Ash Shah-Mirani</span></td></tr><tr><td>Cadet Women</td><td>Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young</td></tr><tr><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong</td></tr><tr class="day"><td colspan="2">Saturday, Nov.&nbsp;28</td></tr><tr><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu, Penny Young</td></tr><tr><td>Y12 Men</td><td>Kian Jaising, Joshua Jeong, Remy Ng</td></tr><tr class="day"><td colspan="2">Sunday, Nov.&nbsp;29</td></tr><tr><td>Y14 Women</td><td>Stella Kuo, Mila Siu, Penny Young</td></tr><tr><td>Cadet Men</td><td>Connor Anderson, Nico Ng, Caden Wu</td></tr></table></div>
+        <div class="tourney"><div class="tourney-head">NYFA Youth Cup #1 <span>· Brooklyn, N.Y. · Nov.&nbsp;8</span></div><table class="board"><colgroup><col style="width:0.62in"><col style="width:0.85in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="3">Sunday, Nov.&nbsp;8</td></tr><tr><td class="num">9:00 AM</td><td>Y10 Mixed</td><td>Bryce Cheng</td></tr></table></div>
+      </div>
+      <div>
+        <div class="tourney"><div class="tourney-head">Ultimate Cup RJCC <span>· Hillsborough, N.J. · Oct.&nbsp;31–Nov.&nbsp;1</span></div><table class="board"><colgroup><col style="width:0.62in"><col style="width:0.85in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="3">Saturday, Oct.&nbsp;31</td></tr><tr><td class="num">8:00 AM</td><td>Junior Women</td><td>Olivia Hayes, Lillian Liu, Anayaa Sheth, Adela Sullivan</td></tr><tr><td class="num">1:00 PM</td><td>Cadet Men</td><td>Maksim Milinkovic, Caden Wu</td></tr><tr class="day"><td colspan="3">Sunday, Nov.&nbsp;1</td></tr><tr><td class="num">8:00 AM</td><td>Junior Men</td><td>Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng</td></tr><tr><td class="num">1:00 PM</td><td>Cadet Women</td><td>Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young</td></tr></table></div>
+        <div class="tourney"><div class="tourney-head">Medeo Youth Challenge #5 <span>· Bound Brook, N.J. · Nov.&nbsp;8</span></div><table class="board"><colgroup><col style="width:0.62in"><col style="width:0.85in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="3">Sunday, Nov.&nbsp;8</td></tr><tr><td class="num">9:30 AM</td><td>Y12 Men</td><td>Samuel SarroWaite</td></tr><tr><td class="num">9:30 AM</td><td>Y12 Women</td><td>Christina Jiang</td></tr><tr><td class="num">11:30 AM</td><td>Y10 Mixed</td><td>Nora Li</td></tr><tr><td class="num">11:30 AM</td><td>Y14 Men</td><td>Owen Li</td></tr></table></div>
+      </div>
+    </div>
+    <p class="boxnote">Cobra Challenge is at the Meadowlands Expo Center in Secaucus: 16 Elite FC fencers, 26 entries; check-in times post by Nov.&nbsp;1. Ultimate Cup is at Iron Peak Sports &amp; Events in Hillsborough: 10 Elite FC fencers, 14 entries.</p>
+  </div>
+
+  <div class="cols3 ruled">
+    <div class="c"><div class="box"><div class="boxtitle">Deadlines</div><table class="board"><colgroup><col style="width:0.62in"><col></colgroup><tr><th class="r">Date</th><th>What closes</th></tr><tr><td class="num">Thu 10/29</td><td>Ultimate Cup: last day to enter (late fees)</td></tr><tr><td class="num">Sun 11/1</td><td>Cobra Challenge: regular entry closes (late to Nov.&nbsp;7)</td></tr><tr><td class="num">Sat 11/7</td><td>Medeo #5: preregistration closes</td></tr><tr><td class="num">Wed 11/11</td><td>Junior Olympics: regular-fee deadline</td></tr><tr><td class="num">Fri 1/8</td><td>N.J. high school: independent fencers’ entries close</td></tr></table><p class="boxnote">USA Fencing deadlines are 11:59 p.m. Pacific (2:59 a.m. Eastern the next day).</p></div><div class="slot-b"><h2 class="head">Winter Camp: Sign Up Now</h2><p>Elite FC Winter Camp runs Dec.&nbsp;27–31, 9:30&nbsp;a.m. to 2&nbsp;p.m., and it’s open to all levels: footwork, technical and tactical drills, and games. Dec.&nbsp;27 starts with a swag giveaway. K2 Fitness runs strength and conditioning on Dec.&nbsp;28 and 30. On Dec.&nbsp;29, a professional instructor leads yoga and breath control for competition, and lunch is served. Crepes on Dec.&nbsp;31 celebrate the end of camp and 2026. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. If you’re going, let the club know as soon as possible for a headcount; contact the club for price and sign-up.</p></div></div><div class="c"><div class="slot-b"><h2 class="head">Cobra Challenge: Still Time to Enter</h2><p>Regular entry for the Cobra Challenge closes Sunday, Nov.&nbsp;1. Late entry, at higher fees, runs through Nov.&nbsp;7, when online entry closes. Every event has a cap; full events take a waitlist, which is free to join, but USA Fencing says you need a payment method on file to be officially on it.</p>
+<p>Check-in times will be posted by Nov.&nbsp;1. The Meadowlands Expo Center opens at 6:30&nbsp;a.m., parking in the adjacent garages is free, and there’s no Wi-Fi inside; results post only on FencingTimeLive. Medals go to the top 8.</p>
+<p>Regular fees are a $35 registration fee plus $90 per event; late entries pay $70 plus $180 per event.</p></div><div class="photo" style="margin-top:6pt;"><img src="media/morris-cup-y8-podium-crop.jpg" alt="Y8 Women medalists on the Morris Cup podium"><p class="caption">The Y8 Women medalists at the Morris Cup. Elite FC’s Madeline Siu won the event.</p><p class="credit">Photo: Elite FC newsletter (cropped).</p></div></div><div class="c"><div class="box"><div class="boxtitle">Epee on Screen</div><table class="board"><colgroup><col style="width:0.64in"><col><col style="width:0.56in"></colgroup><tr><th class="r">Dates</th><th>Event</th><th>Watch</th></tr><tr><td class="num">Nov. 5–8</td><td>Junior/Cadet World Cup (Manama, Bahrain)</td><td>No stream listed</td></tr><tr><td class="num">Nov. 12–15</td><td>Senior World Cups: Berne (men), Wuxi (women)</td><td>FencingTV</td></tr><tr><td class="num">Nov. 26–29</td><td>Junior/Cadet World Cup (Novi Sad, Serbia)</td><td>No stream listed</td></tr><tr><td class="num">Dec. 3–6</td><td>Senior World Cup, men + women (Vancouver)</td><td>FencingTV</td></tr></table><p class="boxnote">From the FIE calendar; no start times or prices listed.</p></div><div class="rail-block"><div class="rail-title">By the Book</div><h2 class="head">One Quiet Minute</h2><p>In a direct-elimination bout, a full minute of fencing with no touch is “unwillingness to fight” (t.124), and the referee calls “Halt!” The first time, both fencers get a P-red card, a penalty hit. The second time, the fencer who is behind gets a P-black card and loses the bout; if the score is tied, the lower seed gets it. The minute restarts after every touch and at the start of each period, and no P-card can be given at 14-14 (or 9-9 in a 10-touch bout).</p></div></div>
+  </div>
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 4</span>
+    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>
+    <span>For fun only — facts aren’t guaranteed accurate.</span>
+  </div>
+</div>
+
+</body>
+</html>

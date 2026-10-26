@@ -1,0 +1,254 @@
+{
+  "publishDate": "2026-10-26",
+  "practice": false,
+  "pretend": false,
+  "targetWeek": "next",
+  "issue": {
+    "number": 4,
+    "label": "Issue No. 4",
+    "week": "Week of Oct. 26, 2026"
+  },
+  "includedSlots": [
+    {
+      "slot": "lead",
+      "name": "Lead story — Morris Cup roundup",
+      "headline": "Elite FC Brings 19 to Morris Cup; Siu Wins, Jeong 2nd",
+      "itemId": "draft-morris-cup-lead-2026-10-26",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-a",
+      "name": "Secondary A — Casablanca World Cup",
+      "headline": "Italy, Hungary Win Epee Season Opener",
+      "itemId": "x-fie-casablanca-epee-wc-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-b",
+      "name": "Page-1 feature — How to become a referee (Frank picked)",
+      "headline": "Want to Referee? Start at the Club",
+      "itemId": "chat-become-a-referee-placeholder-2026-10-13",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-results",
+      "name": "Club results — San José WC + Medeo #4 (+ JO if posted)",
+      "headline": "Club results — San José World Cup + weekend of Oct. 24–25",
+      "itemId": "ft-maksim-cadet-wc-6th-2026-10-22",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup",
+      "name": "Nearby Tournaments — Ultimate Cup",
+      "headline": "Ultimate Cup RJCC — Hillsborough, N.J., Oct. 31–Nov. 1",
+      "itemId": "ft-ultimate-cup-efc-registrations-2026-10-12",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-2",
+      "name": "Nearby Tournaments — Medeo Youth Challenge #5",
+      "headline": "Medeo Youth Challenge #5 — Bound Brook, N.J., Sun. Nov. 8",
+      "itemId": "email-agentmail-medeo-yc5-entries-2026-10-14",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-3",
+      "name": "Nearby Tournaments — Cobra Challenge (new)",
+      "headline": "Cobra Challenge SYC/RCC — Secaucus, N.J., Nov. 27–29",
+      "itemId": "fencingapi-cobra-efc-entries-2026-10-19",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines box",
+      "headline": "Deadlines box — No. 4",
+      "itemId": "desk-deadlines-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "camp",
+      "name": "Club events — Winter Camp",
+      "headline": "Winter Camp: Sign Up Now",
+      "itemId": "chat-winter-camp-reminder",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "auto-email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
+      "name": "Not slotted yet (whos_entered)",
+      "headline": "NYFA Youth Cup #1 (Nov. 8) — EFC entries",
+      "itemId": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "auto-email-mailchimp-winter-camp-schedule-2026-10-22",
+      "name": "Not slotted yet (club_events)",
+      "headline": "Winter Camp schedule is out",
+      "itemId": "email-mailchimp-winter-camp-schedule-2026-10-22",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "by-the-book",
+      "name": "By the Book",
+      "headline": "By the Book: One Quiet Minute",
+      "itemId": "desk-by-the-book-unwillingness-2026-10-19",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tv",
+      "name": "Epee on Screen",
+      "headline": "Epee on Screen — No. 4",
+      "itemId": "desk-epee-on-screen-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "auto-fie-san-jose-jr-cadet-wc-watch-2026-10-19",
+      "name": "Not slotted yet (secondary_b)",
+      "headline": "Results watch: San José Junior/Cadet Epee World Cup (Oct 22–25)",
+      "itemId": "fie-san-jose-jr-cadet-wc-watch-2026-10-19",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "auto-email-agentmail-morris-cup-entries-2026-10-07",
+      "name": "Not slotted yet (lead)",
+      "headline": "Morris Cup RYC/RJCC — EFC who's entered",
+      "itemId": "email-agentmail-morris-cup-entries-2026-10-07",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "auto-ft-morris-cup-results-2026-10-26",
+      "name": "Not slotted yet (lead_source)",
+      "headline": "Morris Cup results: Elite FC placements (all 10 epee events)",
+      "itemId": "ft-morris-cup-results-2026-10-26",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "classes",
+      "name": "Weekly classes table",
+      "headline": "Elite FC weekly class schedule (club website)",
+      "itemId": "web-efc-standing-schedule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "for-parents",
+      "name": "For the Parents",
+      "headline": "For the Parents: The Time Listed Is Check-In",
+      "itemId": "desk-for-the-parents-check-in-2026-10-19",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "photo-history",
+      "name": "Photo from History (page 2, 1 column)",
+      "headline": "Photo from History: 1976 — The light came on, but there was no touch",
+      "itemId": "history-photo-07-epee-fair-play-1976",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "auto-email-mailchimp-group-class-2026-10-21",
+      "name": "Not slotted yet (this_week_at_elite)",
+      "headline": "Club day sheet — Group Class (Wed Oct 21 newsletter)",
+      "itemId": "email-mailchimp-group-class-2026-10-21",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "ratings",
+      "name": "Ratings earned",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ high-school roundup",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "overheard",
+      "name": "Overheard on Reddit",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "qa",
+      "name": "Parent Q&A",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "comic",
+      "name": "Comic",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    }
+  ],
+  "photoIncludes": [],
+  "notes": "",
+  "slotNotes": {
+    "auto-email-agentmail-morris-cup-entries-2026-10-07": "redundant",
+    "auto-ft-morris-cup-results-2026-10-26": "redundant",
+    "signup-3": "see if you can get more details on this one. did the deadline pass yet?",
+    "auto-email-mailchimp-winter-camp-schedule-2026-10-22": "combine with other winter camp stuff (if there are any)",
+    "auto-fie-san-jose-jr-cadet-wc-watch-2026-10-19": "redundant"
+  },
+  "answers": [],
+  "order": [
+    "lead",
+    "secondary-a",
+    "secondary-b",
+    "auto-email-agentmail-morris-cup-entries-2026-10-07",
+    "auto-ft-morris-cup-results-2026-10-26",
+    "club-results",
+    "signup",
+    "signup-2",
+    "signup-3",
+    "deadlines",
+    "camp",
+    "classes",
+    "auto-email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
+    "auto-email-mailchimp-winter-camp-schedule-2026-10-22",
+    "by-the-book",
+    "for-parents",
+    "tv",
+    "photo-history",
+    "auto-fie-san-jose-jr-cadet-wc-watch-2026-10-19",
+    "auto-email-mailchimp-group-class-2026-10-21"
+  ],
+  "pageVersion": "budget-v2",
+  "submittedAt": "2026-10-26T16:21:22-04:00"
+}

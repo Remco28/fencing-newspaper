@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-26T12:45:00-04:00",
+  "updated_at": "2026-10-26T16:40:00-04:00",
   "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
   "items": [
     {
@@ -11,9 +11,9 @@
       "source": "usafencing-web",
       "from": "Frank (call, 2026-10-13 08:02 ET)",
       "target_week": "after-next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-26T12:48:20-04:00",
       "vet_notes": "Planning note only, not print copy.",
       "status": "drafted by Desk 2026-10-19 from USA Fencing pages (Frank picked No. 4, 2026-10-13); moved from lead to page-1 feature (Secondary B) 2026-10-26 after Frank made Morris Cup the lead",
       "open_questions": [
@@ -1323,7 +1323,7 @@
       "source": "fencingapi",
       "from": null,
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "board": "Nearby Tournaments",
       "slot_hint": "signup",
       "body": "USA Fencing entrants (via fencing-api, live, Oct 26 9:00 AM ET), Cobra Challenge SYC/RCC, Meadowlands Expo Center, Secaucus NJ, Nov 27–29 — 26 entries / 16 Elite FC fencers, all approved. Fri Nov 27: Y14ME Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani; CDTWE Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young; Y10ME Bryce Cheng, Joshua Jeong. Sat Nov 28: Y12WE Christina Jiang, Stella Kuo, Mila Siu, Penny Young; Y12ME Kian Jaising, Joshua Jeong, Remy Ng. Sun Nov 29: Y14WE Stella Kuo, Mila Siu, Penny Young; CDTME Connor Anderson, Nico Ng, Caden Wu. No event times listed in the payload (clock: close of registration, no time).",
@@ -1400,7 +1400,9 @@
       "name_notes": "All names print in the official/roster form: 'Young, Penelope' -> Penny Young (roster); 'WU, Caden' -> Caden Wu (roster); Ash Shah-Mirani (roster). Others as USA Fencing lists them.",
       "vet_notes": "Monday full pass 2026-10-19. New to staging. Official USA Fencing entrant list (via Frank's API) + FencingTracker agree. Stage unvetted per fencing-api rule; Frank vets on the budget page.",
       "created_at": "2026-10-19T09:30:00-04:00",
-      "updated_at": "2026-10-26T09:08:00-04:00"
+      "updated_at": "2026-10-26T09:08:00-04:00",
+      "vetted_at": "2026-10-26T16:18:50-04:00",
+      "vetted_by": "frank"
     },
     {
       "id": "x-fie-casablanca-epee-wc-2026-10-18",
@@ -1409,7 +1411,7 @@
       "source": "x",
       "from": "@FIE_fencing (tier A, own event)",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "secondary_a",
       "body": "The senior epee World Cup season opened in Casablanca, Morocco, Oct. 15–18, with 618 fencers from 67 nations. Italy's Roberta Marzani won the women's event, with Ukraine's Anna Maksymenko second and Aizanat Murtazaeva (Russia) and Alberta Santuccio (Italy) third. Hungary's Mate Tamas Koch won the men's title over Italy's Matteo Galassi; Gergely Kovacs (Hungary) and Kano Koki (Japan) took bronze. In the team events, Kazakhstan's men beat Russia 45-40, and Russia's women edged Italy 32-31. The next senior epee World Cups are Berne (men) and Wuxi (women), Nov. 12–15.",
       "facts": [
@@ -1503,7 +1505,9 @@
         "Pre-budget: re-check fie.org results once loaded for the best U.S. finishes (could add one line)."
       ],
       "vet_notes": "Monday full pass 2026-10-19. Tier-A FIE posts about its own event; field size from fie.org JSON. Unvetted until Frank vets (X rule).",
-      "created_at": "2026-10-19T09:30:00-04:00"
+      "created_at": "2026-10-19T09:30:00-04:00",
+      "vetted_at": "2026-10-26T12:46:53-04:00",
+      "vetted_by": "frank"
     },
     {
       "id": "fie-san-jose-jr-cadet-wc-watch-2026-10-19",
@@ -1511,7 +1515,7 @@
       "headline": "Results watch: San José Junior/Cadet Epee World Cup (Oct 22–25)",
       "source": "fie",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "secondary_b",
       "waiting": false,
       "body": "FIE Junior/Cadet epee World Cup, San José, Costa Rica, Oct 22–25 (fie.org tournament 117, no stream listed). Check results Mon Oct 26 for U.S. podiums or a notable U.S. finish; possible Secondary B if there's a story.",
@@ -1531,7 +1535,10 @@
       "created_at": "2026-10-19T09:30:00-04:00",
       "update_2026-10-26": "FT club page now shows Maksim Milinkovic Cadet WC 6th (Oct 22, venue unconfirmed) and San Jose Junior WC 48th (Oct 23). See ft-maksim-* items. fie.org check left for Monday full pass.",
       "update_2026-10-26_full": "Resolved: club story is Maksim's 6th (Cadet, Oct 22) — goes to Club Results, not Secondary B. No U.S. podium story checked beyond that; FIE X feed (Oct 19–26) had no San José posts.",
-      "updated_at": "2026-10-26T09:08:00-04:00"
+      "updated_at": "2026-10-26T09:08:00-04:00",
+      "vetted_at": "2026-10-26T16:21:08-04:00",
+      "vetted_by": "frank",
+      "vet_notes": "redundant"
     },
     {
       "id": "desk-by-the-book-unwillingness-2026-10-19",
@@ -1924,7 +1931,7 @@
       "source": "web",
       "from": "FencingTracker event results pages",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "lead_source",
       "tags": [
         "club",
@@ -2013,11 +2020,13 @@
           "note": "FTL requires a free account to view results since 2026-04-14; not used"
         }
       ],
-      "vet_notes": "Unvetted until Frank vets. Names matched to staged entry list + roster/people.json (all 20 on roster; print forms per roster: Penny Young, Anayaa Sheth, Caden Wu, Ash Shah-Mirani). FT result pages carry no club column; matched by name only. Christina Jiang not in Y12WE final results (likely did not fence; do not mention unless confirmed). Lead NOT written; per Frank, Morris Cup is the lead. Club Results rule: strong results only, no 'also fenced'. Lead drafted 2026-10-26 as draft-morris-cup-lead-2026-10-26 (top-16 only per Frank: Madeline Siu, Joshua Jeong, Maximus Siu, Remy Ng). Christina Jiang withdrew (Frank) — not printed.",
+      "vet_notes": "redundant",
       "waiting": [
         "Ratings earned: confirm when USA Fencing posts results"
       ],
-      "updated_at": "2026-10-26T12:50:00-04:00"
+      "updated_at": "2026-10-26T12:50:00-04:00",
+      "vetted_at": "2026-10-26T12:50:29-04:00",
+      "vetted_by": "frank"
     },
     {
       "id": "draft-morris-cup-lead-2026-10-26",
@@ -2027,9 +2036,9 @@
       "source": "web",
       "from": "Desk draft from FencingTracker results + staged entries board; angle Frank (chat 2026-10-26)",
       "target_week": "next",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-26T12:46:20-04:00",
       "status": "v2 drafted by Desk 2026-10-26 (19 fencers / 29 entries — only who fenced) — pending Frank's review",
       "word_count": 156,
       "slot_hint": "lead",
@@ -2059,7 +2068,92 @@
         }
       ],
       "created_at": "2026-10-26T12:50:00-04:00",
-      "updated_at": "2026-10-26T12:45:00-04:00"
+      "updated_at": "2026-10-26T12:45:00-04:00",
+      "vet_notes": null
+    },
+    {
+      "id": "email-mailchimp-congrats-2026-10-26",
+      "kind": "graf",
+      "headline": "Club newsletter: Group Class + Morris Cup congrats",
+      "body": "Club Mailchimp (Mon Oct 26): all lessons Mon Oct 26 and Tue Oct 27; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. 'Congrats to everyone who competed this weekend at the Morris Cup regional!! Our younger generation SHINED this weekend! Huge shoutout to Madeline Siu for 1st PLACE in Y8!!! And Josh Jeong for 2nd PLACE in Y10!!!' Three photos: an Elite FC group shot at the venue and two podium shots (Morris Cup backdrop).",
+      "facts": [
+        {
+          "claim": "Madeline Siu 1st in Y8; Josh (Joshua) Jeong 2nd in Y10 at the Morris Cup",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261026153832.5203bf9db3.dbcb2657@mail67.atl91.mcsv.net>",
+          "status": "verified-email; matches FencingTracker (official name 'Joshua Jeong' prints)"
+        },
+        {
+          "claim": "Musketeers Group Class Mon Oct 26 4:30 PM; Advanced Group Class Tue Oct 27 6:00 PM; all lessons Mon+Tue",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261026153832.5203bf9db3.dbcb2657@mail67.atl91.mcsv.net>",
+          "status": "verified-email (day sheet; dates pass before most readers see No. 4)"
+        }
+      ],
+      "source": "email",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261026153832.5203bf9db3.dbcb2657@mail67.atl91.mcsv.net>",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "subject": "Group Class + CONGRATS!🏆",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "auto-allowlist (club Mailchimp)",
+      "vetted_at": "2026-10-26T16:40:00-04:00",
+      "created_at": "2026-10-26T16:40:00-04:00",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261026153832.5203bf9db3.dbcb2657@mail67.atl91.mcsv.net>",
+          "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+          "to": "frankcng@gmail.com (forwarded into efc.weekly@agentmail.to)",
+          "subject": "Group Class + CONGRATS!🏆",
+          "received_at": "2026-10-26T11:38:35-04:00",
+          "retrieved_at": "2026-10-26T16:40:00-04:00",
+          "web_version": "https://mailchi.mp/ca0188ef4751/group-class-congrats"
+        },
+        {
+          "type": "image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f7bfb34b-4412-ba5c-e029-315a077679f2.jpeg",
+          "media_path": "staging/weeks/next/media/morris-cup-group-2026-10-26.jpg",
+          "retrieved_at": "2026-10-26T16:40:00-04:00"
+        },
+        {
+          "type": "image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/746b0553-6601-2392-e6f0-94c621a6546f.jpeg",
+          "media_path": "staging/weeks/next/media/morris-cup-podium-a-2026-10-26.jpg",
+          "retrieved_at": "2026-10-26T16:40:00-04:00"
+        },
+        {
+          "type": "image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/200266ac-c82b-14ea-e3d8-3c1ed225a656.jpeg",
+          "media_path": "staging/weeks/next/media/morris-cup-podium-b-2026-10-26.jpg",
+          "retrieved_at": "2026-10-26T16:40:00-04:00"
+        }
+      ],
+      "suggested_slot": "club_photos",
+      "parent_item_id": "draft-morris-cup-lead-2026-10-26",
+      "tags": [
+        "club",
+        "morris-cup",
+        "photos"
+      ],
+      "vet_notes": "Allowlisted sender; facts auto-vetted. Confirms the lead's two podiums (no conflict). Group class times = past/this-week day sheet, not printed. Photos: club's own channel (coach-approved source); group photo placed in No. 4 proof v1 beside the lead PENDING Frank's OK (not in the approved budget). Podium photos rotated 90° in the file and individuals not identifiable -> not used."
+    },
+    {
+      "id": "fencingapi-cobra-details-2026-10-26",
+      "kind": "tip",
+      "headline": "Cobra Challenge details (Frank asked: more details; has the deadline passed?)",
+      "body": "USA Fencing tournament page 12119 (via fencing-api live, Oct 26 4:26 PM ET): Cobra Challenge SYC/RCC, hosted by Cobra Fencing Club, Meadowlands Expo Center, 355 Plaza Drive, Secaucus NJ. Regular-fee entry deadline Sun Nov 1 (NOT passed); late fee period Nov 2-7; online entry closes after Nov 7. All events capped; full events go to a waitlist (free, but a payment method is required to be officially on it; 'pending' = not on the waitlist). Cap adjustments from about Oct 29. Close-of-check-in times subject to change; final times posted no later than Nov 1. Venue opens 6:30 a.m. each day; arrive 1 hour before close of check-in. Free parking in adjacent garages. No Wi-Fi in the venue; results only on fencingtimelive.com. Event-fee refund requests by midnight Nov 20. Medals to top 8. Fees: regular $35 registration + $9 sanction + $3 admin + $90/event; late $70 + $9 + $9 + $180/event.",
+      "source": "fencingapi",
+      "target_week": "next",
+      "vetted": false,
+      "vet_notes": "Official USA Fencing page via Frank's API; detail for Frank's slot note on signup-3. Used only to answer his question + a boxnote under the approved Cobra board (fees not printed).",
+      "parent_item_id": "fencingapi-cobra-efc-entries-2026-10-19",
+      "provenance": [
+        {
+          "type": "web",
+          "url": "https://www.usafencing.org/ (tournament 12119) via fencingapi /v1/usfa/tournaments/12119?live=true",
+          "retrieved_at": "2026-10-26T16:26:00-04:00"
+        }
+      ],
+      "created_at": "2026-10-26T16:40:00-04:00"
     }
   ],
   "rolled_forward": {
