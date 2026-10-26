@@ -1,0 +1,411 @@
+{
+ "retrieved_by": "Gazette Desk (Morris results check)",
+ "retrieved_at": "2026-10-26T12:35:00-04:00",
+ "tournament": "Morris Cup RYC/RJCC, Rockland Community College (Eugene Levy Field House), Suffern NY, Oct 24-25, 2026 (USA Fencing 12095; FencingTracker 1706)",
+ "vetted": false,
+ "sources": {
+  "fencingtracker": "Final placements, all 10 Elite FC epee events posted (event results pages fetched 12:34-12:35 PM ET Oct 26). FT result pages do not show club or rating earned; Elite FC fencers matched by name against the staged entry list + roster/people.json (all 20 on roster).",
+  "usafencing": "https://member.usafencing.org/details/tournaments/12095 fetched 12:37 PM ET Oct 26: no results posted (CDTWE results endpoint returns 0 results). Ratings earned not yet available.",
+  "fencingtimelive": "Not public: FencingTimeLive requires a free account to view results since 2026-04-14 (homepage notice). Not used.",
+  "fencingtracker_club_page": "https://fencingtracker.com/club/100261977/Elite%20FC/results fetched 12:33 PM ET Oct 26: Morris Oct 2026 not yet listed on the club page (event pages are ahead of it).",
+  "fencingapi": "usfa entries cache (stale) used only for pre-event ratings/predicted classes; per-event results calls not made (script call cap reached)."
+ },
+ "event_pages": {
+  "Y12ME": {
+   "url": "https://fencingtracker.com/event/43941/results",
+   "finishers": 61,
+   "predicted_class": null
+  },
+  "JNRWE": {
+   "url": "https://fencingtracker.com/event/43944/results",
+   "finishers": 88,
+   "predicted_class": "A4"
+  },
+  "CDTME": {
+   "url": "https://fencingtracker.com/event/43952/results",
+   "finishers": 137,
+   "predicted_class": "A4"
+  },
+  "Y14WE": {
+   "url": "https://fencingtracker.com/event/43956/results",
+   "finishers": 97,
+   "predicted_class": "B2"
+  },
+  "CDTWE": {
+   "url": "https://fencingtracker.com/event/44060/results",
+   "finishers": 84,
+   "predicted_class": "A3"
+  },
+  "JNRME": {
+   "url": "https://fencingtracker.com/event/44061/results",
+   "finishers": 109,
+   "predicted_class": "A4"
+  },
+  "Y8WE": {
+   "url": "https://fencingtracker.com/event/44062/results",
+   "finishers": 11,
+   "predicted_class": null
+  },
+  "Y12WE": {
+   "url": "https://fencingtracker.com/event/44064/results",
+   "finishers": 75,
+   "predicted_class": "C2"
+  },
+  "Y14ME": {
+   "url": "https://fencingtracker.com/event/44068/results",
+   "finishers": 115,
+   "predicted_class": "B2"
+  },
+  "Y10ME": {
+   "url": "https://fencingtracker.com/event/44071/results",
+   "finishers": 30,
+   "predicted_class": null
+  }
+ },
+ "elite_fc_results": [
+  {
+   "fencer": "Kian Jaising",
+   "as_listed": "Jaising Kian",
+   "event": "Y12ME",
+   "date": "2026-10-24",
+   "place": 38,
+   "field": 61,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43941/results"
+  },
+  {
+   "fencer": "Joshua Jeong",
+   "as_listed": "Jeong Joshua",
+   "event": "Y12ME",
+   "date": "2026-10-24",
+   "place": 44,
+   "field": 61,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43941/results"
+  },
+  {
+   "fencer": "Remy Ng",
+   "as_listed": "Ng Remy",
+   "event": "Y12ME",
+   "date": "2026-10-24",
+   "place": 14,
+   "field": 61,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43941/results"
+  },
+  {
+   "fencer": "Amina Gore",
+   "as_listed": "Gore Amina",
+   "event": "JNRWE",
+   "date": "2026-10-24",
+   "place": 44,
+   "field": 88,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43944/results"
+  },
+  {
+   "fencer": "Olivia Hayes",
+   "as_listed": "Hayes Olivia",
+   "event": "JNRWE",
+   "date": "2026-10-24",
+   "place": 82,
+   "field": 88,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43944/results"
+  },
+  {
+   "fencer": "Anayaa Sheth",
+   "as_listed": "Sheth Anaya",
+   "event": "JNRWE",
+   "date": "2026-10-24",
+   "place": 74,
+   "field": 88,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43944/results"
+  },
+  {
+   "fencer": "Pablo Aguirre",
+   "as_listed": "Aguirre Pablo",
+   "event": "CDTME",
+   "date": "2026-10-24",
+   "place": 72,
+   "field": 137,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43952/results"
+  },
+  {
+   "fencer": "Connor Anderson",
+   "as_listed": "Anderson Connor",
+   "event": "CDTME",
+   "date": "2026-10-24",
+   "place": 91,
+   "field": 137,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43952/results"
+  },
+  {
+   "fencer": "Nico Ng",
+   "as_listed": "Ng Nico",
+   "event": "CDTME",
+   "date": "2026-10-24",
+   "place": 75,
+   "field": 137,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43952/results"
+  },
+  {
+   "fencer": "Caden Wu",
+   "as_listed": "Wu Caden",
+   "event": "CDTME",
+   "date": "2026-10-24",
+   "place": 102,
+   "field": 137,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43952/results"
+  },
+  {
+   "fencer": "Stella Kuo",
+   "as_listed": "Kuo Stella",
+   "event": "Y14WE",
+   "date": "2026-10-24",
+   "place": 49,
+   "field": 97,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43956/results"
+  },
+  {
+   "fencer": "Mila Siu",
+   "as_listed": "Siu Mila",
+   "event": "Y14WE",
+   "date": "2026-10-24",
+   "place": 31,
+   "field": 97,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/43956/results"
+  },
+  {
+   "fencer": "Amina Gore",
+   "as_listed": "Gore Amina",
+   "event": "CDTWE",
+   "date": "2026-10-25",
+   "place": 43,
+   "field": 84,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44060/results"
+  },
+  {
+   "fencer": "Olivia Hayes",
+   "as_listed": "Hayes Olivia",
+   "event": "CDTWE",
+   "date": "2026-10-25",
+   "place": 84,
+   "field": 84,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44060/results"
+  },
+  {
+   "fencer": "Adela Sullivan",
+   "as_listed": "Sullivan Adela",
+   "event": "CDTWE",
+   "date": "2026-10-25",
+   "place": 75,
+   "field": 84,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44060/results"
+  },
+  {
+   "fencer": "Penny Young",
+   "as_listed": "Young Penelope",
+   "event": "CDTWE",
+   "date": "2026-10-25",
+   "place": 53,
+   "field": 84,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44060/results"
+  },
+  {
+   "fencer": "Pablo Aguirre",
+   "as_listed": "Aguirre Pablo",
+   "event": "JNRME",
+   "date": "2026-10-25",
+   "place": 87,
+   "field": 109,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44061/results"
+  },
+  {
+   "fencer": "Nico Ng",
+   "as_listed": "Ng Nico",
+   "event": "JNRME",
+   "date": "2026-10-25",
+   "place": 38,
+   "field": 109,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44061/results"
+  },
+  {
+   "fencer": "Madeline Siu",
+   "as_listed": "Siu Madeline",
+   "event": "Y8WE",
+   "date": "2026-10-25",
+   "place": 1,
+   "field": 11,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44062/results"
+  },
+  {
+   "fencer": "Christina Jiang",
+   "as_listed": "Jiang Christina",
+   "event": "Y12WE",
+   "date": "2026-10-25",
+   "place": null,
+   "field": 75,
+   "status": "not in final results (did not fence / withdrew?)",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44064/results"
+  },
+  {
+   "fencer": "Stella Kuo",
+   "as_listed": "Kuo Stella",
+   "event": "Y12WE",
+   "date": "2026-10-25",
+   "place": 18,
+   "field": 75,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44064/results"
+  },
+  {
+   "fencer": "Mila Siu",
+   "as_listed": "Siu Mila",
+   "event": "Y12WE",
+   "date": "2026-10-25",
+   "place": 17,
+   "field": 75,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44064/results"
+  },
+  {
+   "fencer": "Connor Anderson",
+   "as_listed": "Anderson Connor",
+   "event": "Y14ME",
+   "date": "2026-10-25",
+   "place": 75,
+   "field": 115,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44068/results"
+  },
+  {
+   "fencer": "Noah Gore",
+   "as_listed": "Gore Noah",
+   "event": "Y14ME",
+   "date": "2026-10-25",
+   "place": 89,
+   "field": 115,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44068/results"
+  },
+  {
+   "fencer": "Kian Jaising",
+   "as_listed": "Jaising Kian",
+   "event": "Y14ME",
+   "date": "2026-10-25",
+   "place": 81,
+   "field": 115,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44068/results"
+  },
+  {
+   "fencer": "Remy Ng",
+   "as_listed": "Ng Remy",
+   "event": "Y14ME",
+   "date": "2026-10-25",
+   "place": 99,
+   "field": 115,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44068/results"
+  },
+  {
+   "fencer": "Ash Shah-Mirani",
+   "as_listed": "Shah-Mirani Ash",
+   "event": "Y14ME",
+   "date": "2026-10-25",
+   "place": 45,
+   "field": 115,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44068/results"
+  },
+  {
+   "fencer": "Bryce Cheng",
+   "as_listed": "Cheng Bryce",
+   "event": "Y10ME",
+   "date": "2026-10-25",
+   "place": 21,
+   "field": 30,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44071/results"
+  },
+  {
+   "fencer": "Joshua Jeong",
+   "as_listed": "Jeong Joshua",
+   "event": "Y10ME",
+   "date": "2026-10-25",
+   "place": 2,
+   "field": 30,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44071/results"
+  },
+  {
+   "fencer": "Maximus Siu",
+   "as_listed": "Siu Maximus",
+   "event": "Y10ME",
+   "date": "2026-10-25",
+   "place": 13,
+   "field": 30,
+   "status": "finished",
+   "rating_earned": null,
+   "url": "https://fencingtracker.com/event/44071/results"
+  }
+ ],
+ "summary": {
+  "entries": 30,
+  "finished": 29,
+  "fencers_who_fenced": 19,
+  "top8": [
+   "Madeline Siu 1 of 11 Y8WE",
+   "Joshua Jeong 2 of 30 Y10ME"
+  ],
+  "notes": [
+   "30 entries after Penny Young's pre-event Y14WE withdrawal (per digest); 29 finished, 19 of 20 fencers fenced.",
+   "Christina Jiang (Y12WE) not in the 75-finisher final results; Y12WE had 77 entrants pre-event. Likely did not fence; confirm before mentioning.",
+   "Ratings: none expected by placement (best rated-event finishes: Mila Siu 31/97 Y14WE, Nico Ng 38/109 JNRME, Remy Ng 14/61 Y12ME is a non-rated Y12 event); unconfirmed until USA Fencing posts results."
+  ]
+ }
+}

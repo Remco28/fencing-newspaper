@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-26T10:20:00-04:00",
+  "updated_at": "2026-10-26T12:40:00-04:00",
   "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
   "items": [
     {
@@ -1915,6 +1915,108 @@
       ],
       "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged.",
       "print_hint": "own Club Results row (unvetted)"
+    },
+    {
+      "id": "ft-morris-cup-results-2026-10-26",
+      "kind": "result_set",
+      "headline": "Morris Cup results: Elite FC placements (all 10 epee events)",
+      "body": "Morris Cup RYC/RJCC (Suffern NY, Oct 24-25) final placements, Elite FC epee (FencingTracker event pages, retrieved Oct 26 12:34-12:35 PM ET): Joshua Jeong 2 of 30 Y10ME; Madeline Siu 1 of 11 Y8WE; Mila Siu 17 of 75 Y12WE; Remy Ng 14 of 61 Y12ME; Stella Kuo 18 of 75 Y12WE; Mila Siu 31 of 97 Y14WE; Nico Ng 38 of 109 JNRME; Ash Shah-Mirani 45 of 115 Y14ME; Maximus Siu 13 of 30 Y10ME; Amina Gore 44 of 88 JNRWE; Stella Kuo 49 of 97 Y14WE; Amina Gore 43 of 84 CDTWE; Pablo Aguirre 72 of 137 CDTME; Nico Ng 75 of 137 CDTME; Kian Jaising 38 of 61 Y12ME; Penny Young 53 of 84 CDTWE; Connor Anderson 75 of 115 Y14ME; Connor Anderson 91 of 137 CDTME; Bryce Cheng 21 of 30 Y10ME; Kian Jaising 81 of 115 Y14ME; Joshua Jeong 44 of 61 Y12ME; Caden Wu 102 of 137 CDTME; Noah Gore 89 of 115 Y14ME; Pablo Aguirre 87 of 109 JNRME; Anayaa Sheth 74 of 88 JNRWE; Remy Ng 99 of 115 Y14ME; Adela Sullivan 75 of 84 CDTWE; Olivia Hayes 82 of 88 JNRWE; Olivia Hayes 84 of 84 CDTWE; Christina Jiang Y12WE not in final results. Ratings earned: not yet published (USA Fencing shows 0 results as of 12:37 PM ET); none expected by placement.",
+      "source": "web",
+      "from": "FencingTracker event results pages",
+      "target_week": "next",
+      "vetted": false,
+      "slot_hint": "lead_source",
+      "tags": [
+        "club",
+        "result",
+        "morris",
+        "lead-source",
+        "scraped"
+      ],
+      "created_at": "2026-10-26T12:40:00-04:00",
+      "detail_file": "staging/weeks/next/gather-2026-10-26-morris-results.json",
+      "strong_results": [
+        "Madeline Siu 1st of 11, Y8 Women's Epee (Sun Oct 25)",
+        "Joshua Jeong 2nd of 30, Y10 Men's Epee (Sun Oct 25)"
+      ],
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43941/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "Y12ME final, 61 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43944/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "JNRWE final, 88 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43952/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "CDTME final, 137 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/43956/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "Y14WE final, 97 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/44060/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "CDTWE final, 84 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/44061/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "JNRME final, 109 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/44062/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "Y8WE final, 11 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/44064/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "Y12WE final, 75 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/44068/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "Y14ME final, 115 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/event/44071/results",
+          "retrieved_at": "2026-10-26T12:35:00-04:00",
+          "note": "Y10ME final, 30 finishers"
+        },
+        {
+          "type": "url",
+          "url": "https://member.usafencing.org/details/tournaments/12095",
+          "retrieved_at": "2026-10-26T12:37:00-04:00",
+          "note": "USA Fencing: no results posted yet (0 results on CDTWE results endpoint)"
+        },
+        {
+          "type": "url",
+          "url": "https://www.fencingtimelive.com/",
+          "retrieved_at": "2026-10-26T12:33:00-04:00",
+          "note": "FTL requires a free account to view results since 2026-04-14; not used"
+        }
+      ],
+      "vet_notes": "Unvetted until Frank vets. Names matched to staged entry list + roster/people.json (all 20 on roster; print forms per roster: Penny Young, Anayaa Sheth, Caden Wu, Ash Shah-Mirani). FT result pages carry no club column; matched by name only. Christina Jiang not in Y12WE final results (likely did not fence; do not mention unless confirmed). Lead NOT written; per Frank, Morris Cup is the lead. Club Results rule: strong results only, no 'also fenced'.",
+      "waiting": [
+        "Ratings earned: confirm when USA Fencing posts results"
+      ]
     }
   ],
   "rolled_forward": {
