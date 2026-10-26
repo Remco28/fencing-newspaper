@@ -48,7 +48,7 @@
   ],
   "seed_ids": [],
   "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
-  "generated": "2026-10-19T09:35:00-04:00",
+  "generated": "2026-10-26T09:10:00-04:00",
   "target_week": "next",
   "issue": {
     "number": 4,
@@ -63,12 +63,12 @@
     "note": "Mon or Tue; Desk waits for Morris / Medeo #4 results before compose."
   },
   "desk_summary": [
-    "No. 4 budget built from the Monday full gather. No early No. 4 budget existed — this is a new lineup (No. 3 archived).",
-    "Planned lead: 'How to become a referee' (you picked it 2026-10-13). Desk drafted it from USA Fencing pages; needs your Vet and a yes/no on a personal angle.",
-    "Weekend club results are still waiting: Morris Cup (30 Elite FC) and Medeo #4 (Nora Li). Strong finishes only; everyone else on 'also fenced'. NJ JO qualifier results still not posted as of 9:03 a.m. today.",
-    "Nearby Tournaments: Ultimate Cup (13 entries, check-in closes now listed), Medeo #5 (4, pending OK), and NEW Cobra Challenge (25 entries / 15 fencers) — needs your Vet. One block per tournament, days in order.",
-    "Also proposed: Casablanca World Cup short, By the Book (unwillingness / P-cards), For the Parents (check-in times), Epee on Screen (Novi Sad added), Photo from History 07 (1976 fair play).",
-    "Rough fill without Morris results: about 1.5 of 2 pages of standing material; the weekend results + any trim of the referee draft will set the final fit. Compose waits for your budget answers and for Morris results."
+    "No. 4 budget patched in Monday's full pass (not rebuilt). Your Oct 19 lineup stands, with this week's changes below.",
+    "Planned lead: still 'How to become a referee' (your pick). Needs your Vet and a yes/no on a personal angle.",
+    "Club results so far: Maksim Milinkovic 6th at the San José Cadet World Cup (Oct 22) and Brendan Mendez 3rd at the Freehold unrated (Oct 23), both unvetted. Morris Cup and Medeo #4 (Nora Li) results weren't posted as of ~9 a.m.; NJ JO qualifier still has no results after 8 days.",
+    "Nearby Tournaments: Ultimate Cup now 14 entries (Lillian Liu added, Junior Women); Cobra now 26 / 16 (Bryce Cheng added, Y10 Men; still needs your Vet); Medeo #5 unchanged.",
+    "San José watch resolved into Club Results, so Secondary B is free. Still proposed: Casablanca short, By the Book, For the Parents, Epee on Screen, Photo from History 07, Winter Camp v4.",
+    "Rough fill: about 1.6 of 2 pages before Morris results. The weekend rows and any trim of the referee draft set the final fit. Compose waits for your budget answers and Morris results."
   ],
   "photos": [
     {
@@ -111,7 +111,7 @@
         },
         {
           "level": "info",
-          "text": "If Morris Cup produces a strong Elite FC finish (Oct 24–25), that result can replace this as the lead and the referee piece slides to Secondary A / page-1 feature."
+          "text": "Morris Cup results weren't posted as of 9 a.m. Mon. Maksim's 6th at the San José Cadet World Cup is the strongest club result so far; Desk keeps your referee pick as lead and opens Club Results with Maksim. Say the word if you'd rather lead with Maksim."
         }
       ]
     },
@@ -138,20 +138,20 @@
     {
       "key": "secondary-b",
       "section": "lead",
-      "slot": "Secondary B — San José Jr/Cadet WC (watch)",
+      "slot": "Secondary B — San José Jr/Cadet WC (resolved)",
       "budget": "60–80w if there's a story",
       "item": "fie-san-jose-jr-cadet-wc-watch-2026-10-19",
       "proposed": false,
-      "waiting": true,
+      "waiting": false,
       "cost": {
         "type": "prose",
         "span": 1
       },
-      "summary": "Junior/Cadet epee World Cup in San José, Costa Rica, Oct 22–25 (no stream). Check Mon Oct 26. Runs only if there's a U.S. podium or a notable U.S. finish.",
+      "summary": "Resolved Mon Oct 26: the club story from San José is Maksim Milinkovic's 6th (Cadet, Oct 22), which goes in Club Results. No separate story; slot freed.",
       "flags": [
         {
           "level": "info",
-          "text": "First drop if space is tight."
+          "text": "Space returns to the page; no replacement proposed."
         }
       ]
     },
@@ -163,22 +163,53 @@
       "item": "email-agentmail-morris-cup-entries-2026-10-07",
       "merged": [
         "fencingapi-medeo-yc4-entries-2026-10-14",
-        "askfred-nj-jo-qualifier-2026-10-18"
+        "askfred-nj-jo-qualifier-2026-10-18",
+        "ft-maksim-cadet-wc-6th-2026-10-22",
+        "ft-maksim-junior-wc-48th-2026-10-23",
+        "ft-mendez-freehold-unrated-3rd-2026-10-23"
       ],
       "proposed": true,
       "waiting": true,
       "cost": {
         "type": "table_rows",
-        "rows": 4
+        "rows": 5
       },
-      "title": "Club results — weekend of Oct. 24–25 (waiting)",
-      "summary": "Morris Cup (30 Elite FC entries / 20 fencers, Oct 24–25) and Medeo Youth Challenge #4 (Nora Li, Oct 25) are before No. 4 publishes — this is the weekend's club results box. Strong finishes only (podium / top 8 / notable climb / PB / unbeaten pool); everyone else on one 'also fenced' line. NJ JO Qualifier (Oct 18) still has no results posted as of 9:03 a.m. today; Frank's No. 3 rule carries: print a JO line ONLY if Aaditya Jaising or Charles Young qualified.",
+      "title": "Club results — San José World Cup + weekend of Oct. 24–25 (Morris / Medeo #4 still waiting)",
+      "summary": "New this pass: Maksim Milinkovic 6th in Cadet Men at the FIE Cadet World Cup in San José, Costa Rica (Oct 22; FencingTracker, venue confirmed on fie.org; field size not readable), and 48th at the San José Junior World Cup the next day (also-fenced line). Brendan Mendez 3rd at the Freehold unrated Senior Open (Oct 23; small local event, field size unknown). Still waiting as of ~9 a.m. Mon Oct 26: Morris Cup (30 Elite FC entries / 20 fencers) — no results on USA Fencing or FencingTracker yet; Medeo #4 — only Y14 Mixed posted, Nora Li's Y10 Mixed not up. NJ JO Qualifier (Oct 18) still shows no results on AskFRED, 8 days on; Frank's rule carries: JO line ONLY if Aaditya Jaising or Charles Young qualified.",
       "flags": [
         {
+          "level": "warn",
+          "text": "UNVETTED: Maksim 6th and Mendez 3rd come from FencingTracker; Include locked until you Vet. The results API returned 0 rows for both (API/site mismatch) — FT is the only source."
+        },
+        {
           "level": "info",
-          "text": "Check FencingTracker / USA Fencing Sun Oct 25 night and Mon Oct 26 morning before compose."
+          "text": "Mendez's 3rd is at an unrated local event; keep as a row, or move to 'also fenced'?"
+        },
+        {
+          "level": "info",
+          "text": "Morris rows get added when USA Fencing/FT post them; compose waits for that."
         }
-      ]
+      ],
+      "table": {
+        "head": [
+          "Fencer",
+          "Event",
+          "Finish"
+        ],
+        "rows": [
+          [
+            "Maksim Milinkovic",
+            "Cadet Men, FIE Cadet World Cup, San José, Costa Rica (Oct. 22)",
+            "6th"
+          ],
+          [
+            "Brendan Mendez",
+            "Senior Open Men, Freehold Fencing Unrated (Oct. 23)",
+            "3rd"
+          ]
+        ]
+      },
+      "also_fenced": "Maksim Milinkovic (Junior Men, San José Junior World Cup, 48th) — goes on the 'also fenced' line."
     },
     {
       "key": "ratings",
@@ -211,7 +242,7 @@
           [
             "Sat. · 8:00 a.m.",
             "Junior Women",
-            "Olivia Hayes, Anayaa Sheth, Adela Sullivan"
+            "Olivia Hayes, Lillian Liu, Anayaa Sheth, Adela Sullivan"
           ],
           [
             "Sat. · 1:00 p.m.",
@@ -230,7 +261,7 @@
           ]
         ]
       },
-      "summary": "10 Elite FC fencers / 13 entries, unchanged since Oct 18. Check-in close times are new (from the USA Fencing page: 'All times are Close of Check-in'). Late entry closes Oct 29.",
+      "summary": "CHANGE: Lillian Liu added to Junior Women — now 10 Elite FC fencers / 14 entries (USA Fencing live, Oct 26 8:59 a.m.). Check-in close times from the USA Fencing page ('All times are Close of Check-in'). Late entry closes Oct 29.",
       "flags": [
         {
           "level": "info",
@@ -270,7 +301,7 @@
           ]
         ]
       },
-      "summary": "Same four, still pending on AskFRED (pending entries print). Prereg closes Nov 7.",
+      "summary": "Same four, unchanged (AskFRED live Oct 26), still pending (pending entries print). Prereg closes Nov 7.",
       "flags": [
         {
           "level": "info",
@@ -311,7 +342,7 @@
           [
             "Fri. Nov. 27",
             "Y10 Men",
-            "Joshua Jeong"
+            "Bryce Cheng, Joshua Jeong"
           ],
           [
             "Sat. Nov. 28",
@@ -335,7 +366,7 @@
           ]
         ]
       },
-      "summary": "NEW: 25 entries / 15 Elite FC fencers (USA Fencing + FencingTracker agree). No event times in the payload yet. Unvetted until you Vet.",
+      "summary": "CHANGE: Bryce Cheng added to Y10 Men — now 26 entries / 16 Elite FC fencers (USA Fencing live, Oct 26 9:00 a.m.). No event times yet. Unvetted until you Vet.",
       "flags": [
         {
           "level": "warn",
