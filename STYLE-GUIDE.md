@@ -76,11 +76,13 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
   cleaned in v3.20 — do not reintroduce them when copying a past issue (the approved
   2026-10-08 issue still carries “(All Epee)” and “Finish (Epee)”; drop them when reusing it).
 
-## 0d. Results tone — strong finishes only (locked 2026-10-12, plan v3.23)
+## 0d. Results tone — strong finishes only (locked 2026-10-12, plan v3.23; inclusion bar 2026-10-26)
 
 **Never print a weak finish or place.** Policy from Frank (chat 2026-10-12), permanent.
-- Print a place only when it is **strong**: podium / top 8, a notable climb (seed → finish or
-  rating jump), a personal best, or an unbeaten pool.
+- **Inclusion bar by event level (Frank 2026-10-26; supersedes the vaguer podium/top-8/climb list):**
+  a finish prints if it is **top 32 at a national** (FIE/international events count as national or higher),
+  **top 16 at a regional**, or **top 8 at a local**. **Small fields** (under ~16 fencers): only top 8 or a medal counts.
+- **Always print, at any level:** a medal (top 3), a qualification, or a rating earned.
 - Everyone else is simply **not printed** — **no "also fenced" / "also attended" line**
   (Frank, 2026-10-20; supersedes the 2026-10-12 also-fenced line). Nobody embarrassed.
 - **When unsure, leave it out.** Never print a place to fill a row.

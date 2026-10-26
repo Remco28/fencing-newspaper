@@ -32,7 +32,7 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 | # | Slot | Rough guide | Source | Notes |
 |---|------|--------|--------|-------|
 | 1 | Lead story | ~150–180w | FT / Web / Email | Weekend's biggest epee result (club result if strong, else national/NJ). |
-| 2 | Club results box | ~3–5 strong rows | FT / Email / Chat | Elite FC finishes, always in. **Strong results only** (podium/top 8, notable climb, PB, unbeaten pool); everyone else is not printed — **no "also fenced" line** (Frank 2026-10-20) — STYLE-GUIDE §0d; master rules in `sections.json`. |
+| 2 | Club results box | ~3–5 strong rows | FT / Email / Chat | Elite FC finishes, always in. **Strong results only** — bar by level (Frank 2026-10-26): top 32 national (FIE/international = national+), top 16 regional, top 8 local; fields under ~16: top 8 or medal only; always a medal, qualification or rating earned; everyone else is not printed — **no "also fenced" line** (Frank 2026-10-20) — STYLE-GUIDE §0d; master rules in `sections.json`. |
 | 3 | Ratings earned | ~2–5 rows | FT / Email | Celebration; always in **when any were earned** (none posted for No. 2). |
 | 4 | Secondary article A | ~80–100w | Web (USA Fencing / national) | Beefier news or explainer, not just scores. |
 | 5 | Secondary article B | ~80–100w | Web (FIE / national / regional) | Drop first if tight. |

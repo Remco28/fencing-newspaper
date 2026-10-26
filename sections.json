@@ -38,10 +38,10 @@
     {
       "id": "club-results",
       "name": "Club Results",
-      "status": "configured 2026-10-20",
+      "status": "configured 2026-10-20; inclusion bar 2026-10-26",
       "priority": "core",
       "frequency": "when_available",
-      "frequency_detail": "only when there's a strong result or a qualification",
+      "frequency_detail": "only when a finish meets the inclusion bar (see rules), or a medal, qualification or rating earned",
       "size": {
         "min": "1 row",
         "typical": "~3-5 rows",
@@ -52,7 +52,7 @@
       "lead_time": "as results post; keep checking until compose",
       "placement": "page 1 near the lead, 1 column",
       "rules": [
-        "Strong results only (podium, top 8, notable climb)",
+        "Inclusion bar by event level (Frank 2026-10-26): a finish prints if it is top 32 at a national (FIE/international events count as national or higher), top 16 at a regional, or top 8 at a local. Small fields (under ~16 fencers): only top 8 or a medal counts. Always print, at any level: a medal (top 3), a qualification, or a rating earned. Anything below the bar is not printed.",
         "Qualifying is the result (Frank 2026-10-20): whether someone qualified matters most, and it's sensitive; print 'qualified for X', placement not the headline (omit by default)",
         "No 'also fenced' line; nobody embarrassed",
         "No birth years; schools per global school rule"
