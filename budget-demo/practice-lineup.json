@@ -48,7 +48,7 @@
   ],
   "seed_ids": [],
   "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
-  "generated": "2026-10-26T10:20:00-04:00",
+  "generated": "2026-10-26T12:50:00-04:00",
   "target_week": "next",
   "issue": {
     "number": 4,
@@ -64,12 +64,12 @@
   },
   "desk_summary": [
     "No. 4 budget patched Monday after your lead call (not rebuilt). Your Oct 19 lineup stands, with the changes below.",
-    "Lead: Morris Cup roundup (Oct 24–25, Suffern) — your call, for how many Elite FC fencers took part (20 fencers / 30 entries). Results aren't posted yet (checked ~10 a.m.), so it's a placeholder and compose waits for them. Strong results only; nothing invented.",
+    "Lead: Morris Cup roundup drafted (156 words), pending your review — turnout, big fields, Y8 through Junior; Madeline Siu's win and Joshua Jeong's 2nd headline; Maximus Siu 13th and Remy Ng 14th. Top-16 only.",
     "'How to become a referee' moves to a page-1 feature (Secondary B). Still needs your Vet, a yes/no on a personal angle, and ~180 vs ~270 words.",
     "Club Results opens with Maksim Milinkovic's 6th at the San José Cadet World Cup (Oct 22), placed by you; no field size or strength-of-field comparison. Brendan Mendez's 3rd (Freehold, Oct 23) waits on your Vet. Medeo #4 (Nora Li) and NJ JO results still not posted.",
     "Nearby Tournaments: Ultimate Cup 14 entries; Cobra 26 / 16 (still needs your Vet); Medeo #5 unchanged.",
     "Still proposed: Casablanca short, By the Book, For the Parents, Epee on Screen, Photo from History 07, Winter Camp v4.",
-    "Fill estimate excludes the Morris roundup until results post; see the meter."
+    "Fill: about 22% with vetted items only; about 78% if you Vet what Desk proposes, including the Morris lead (156 words)."
   ],
   "photos": [
     {
@@ -94,27 +94,27 @@
     {
       "key": "lead",
       "section": "lead",
-      "slot": "Lead story — Morris Cup roundup — awaiting results",
-      "budget": "~250–350w roundup + results once posted",
-      "item": "email-agentmail-morris-cup-entries-2026-10-07",
+      "slot": "Lead story — Morris Cup roundup",
+      "budget": "~150–180w typical (draft 156w)",
+      "item": "draft-morris-cup-lead-2026-10-26",
       "proposed": true,
-      "waiting": true,
+      "waiting": false,
       "cost": {
         "type": "prose",
         "span": 2,
         "feature": true
       },
-      "title": "Morris Cup roundup — awaiting results",
-      "summary": "Frank's call (Mon Oct 26): Morris Cup RYC/RJCC (Oct 24–25, Rockland Community College, Suffern, NY) leads No. 4 because of how many Elite FC fencers took part — 20 fencers / 30 entries on the staged entries board. Results are not posted yet (FencingTracker checked ~10 a.m. Mon; USA Fencing event 12095 still catalog-only, no results). Desk writes the roundup only from posted results: strong results only, no 'also fenced' line, names as printed on the official pages, nothing invented.",
+      "title": "Elite FC Brings 20 to Morris Cup; Siu Wins, Jeong 2nd",
+      "summary": "Desk draft (156 words) from FencingTracker results, pending your review. Angle per your call: the club's turnout (20 fencers, 30 entries, Y8 through Junior) at a well-attended tournament (six of the club's 10 events over 80 fencers; 137 in Cadet Men). Top-16 finishes only: Madeline Siu won Y8 Women (of 11), Joshua Jeong 2nd of 30 in Y10 Men, Maximus Siu 13th of 30, Remy Ng 14th of 61 in Y12 Men. No other placings, withdrawals, ratings or strength comparison. Full text: staging/weeks/next/drafts/morris-cup-lead.md.",
       "questions": [],
       "flags": [
         {
-          "level": "info",
-          "text": "Compose waits for Morris results. This slot stays out of the fill estimate until they post."
+          "level": "warn",
+          "text": "Pending your review: Vet it to put it in the fill."
         },
         {
           "level": "info",
-          "text": "Strong results only; no 'also fenced' line; invent nothing (sections.json)."
+          "text": "Top-16 only; no withdrawals, ratings or strength-of-field comparison (Frank 2026-10-26)."
         }
       ]
     },
