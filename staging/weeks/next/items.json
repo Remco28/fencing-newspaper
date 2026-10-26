@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-10-26T12:50:00-04:00",
+  "updated_at": "2026-10-26T12:45:00-04:00",
   "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
   "items": [
     {
@@ -2022,15 +2022,15 @@
     {
       "id": "draft-morris-cup-lead-2026-10-26",
       "kind": "article",
-      "headline": "Elite FC Brings 20 to Morris Cup; Siu Wins, Jeong 2nd",
-      "body": "Twenty Elite FC fencers made the trip to Suffern, N.Y., for the Morris Cup on Oct. 24–25, a regional youth, cadet and junior tournament at Rockland Community College's Eugene Levy Field House. The tournament drew big fields: six of the 10 events the club entered had more than 80 fencers, led by 137 in Cadet Men and 115 in Y14 Men.\n\nElite FC's group spanned a wide range of ages, with entries in Y8, Y10, Y12, Y14, Cadet and Junior, 30 in all. The club's first events started at 8 a.m. Saturday; its last, Y10 Men, began at 3:30 p.m. Sunday.\n\nTwo Elite FC fencers reached the podium Sunday, both from the youngest age groups the club entered. Madeline Siu won Y8 Women, finishing first of 11. In Y10 Men, Joshua Jeong took 2nd of 30, and Maximus Siu placed 13th in the same field.\n\nOn Saturday, Remy Ng finished 14th of 61 in Y12 Men.",
+      "headline": "Elite FC Brings 19 to Morris Cup; Siu Wins, Jeong 2nd",
+      "body": "Nineteen Elite FC fencers made the trip to Suffern, N.Y., for the Morris Cup on Oct. 24–25, a regional youth, cadet and junior tournament at Rockland Community College's Eugene Levy Field House. The tournament drew big fields: six of the 10 events the club entered had more than 80 fencers, led by 137 in Cadet Men and 115 in Y14 Men.\n\nElite FC's group spanned a wide range of ages, with entries in Y8, Y10, Y12, Y14, Cadet and Junior, 29 in all. The club's first events started at 8 a.m. Saturday; its last, Y10 Men, began at 3:30 p.m. Sunday.\n\nTwo Elite FC fencers reached the podium Sunday, both from the youngest age groups the club entered. Madeline Siu won Y8 Women, finishing first of 11. In Y10 Men, Joshua Jeong took 2nd of 30, and Maximus Siu placed 13th in the same field.\n\nOn Saturday, Remy Ng finished 14th of 61 in Y12 Men.",
       "source": "web",
       "from": "Desk draft from FencingTracker results + staged entries board; angle Frank (chat 2026-10-26)",
       "target_week": "next",
       "vetted": false,
       "vetted_by": null,
       "vetted_at": null,
-      "status": "drafted by Desk 2026-10-26 — pending Frank's review",
+      "status": "v2 drafted by Desk 2026-10-26 (19 fencers / 29 entries — only who fenced) — pending Frank's review",
       "word_count": 156,
       "slot_hint": "lead",
       "draft_file": "staging/weeks/next/drafts/morris-cup-lead.md",
@@ -2059,7 +2059,7 @@
         }
       ],
       "created_at": "2026-10-26T12:50:00-04:00",
-      "updated_at": "2026-10-26T12:50:00-04:00"
+      "updated_at": "2026-10-26T12:45:00-04:00"
     }
   ],
   "rolled_forward": {

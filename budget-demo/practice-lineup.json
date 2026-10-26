@@ -48,7 +48,7 @@
   ],
   "seed_ids": [],
   "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
-  "generated": "2026-10-26T12:50:00-04:00",
+  "generated": "2026-10-26T12:45:00-04:00",
   "target_week": "next",
   "issue": {
     "number": 4,
@@ -104,8 +104,8 @@
         "span": 2,
         "feature": true
       },
-      "title": "Elite FC Brings 20 to Morris Cup; Siu Wins, Jeong 2nd",
-      "summary": "Desk draft (156 words) from FencingTracker results, pending your review. Angle per your call: the club's turnout (20 fencers, 30 entries, Y8 through Junior) at a well-attended tournament (six of the club's 10 events over 80 fencers; 137 in Cadet Men). Top-16 finishes only: Madeline Siu won Y8 Women (of 11), Joshua Jeong 2nd of 30 in Y10 Men, Maximus Siu 13th of 30, Remy Ng 14th of 61 in Y12 Men. No other placings, withdrawals, ratings or strength comparison. Full text: staging/weeks/next/drafts/morris-cup-lead.md.",
+      "title": "Elite FC Brings 19 to Morris Cup; Siu Wins, Jeong 2nd",
+      "summary": "Desk draft (156 words) from FencingTracker results, pending your review. Angle per your call: the club's turnout (19 fencers, 29 entries, Y8 through Junior) at a well-attended tournament (six of the club's 10 events over 80 fencers; 137 in Cadet Men). Top-16 finishes only: Madeline Siu won Y8 Women (of 11), Joshua Jeong 2nd of 30 in Y10 Men, Maximus Siu 13th of 30, Remy Ng 14th of 61 in Y12 Men. No other placings, withdrawals, ratings or strength comparison. Full text: staging/weeks/next/drafts/morris-cup-lead.md.",
       "questions": [],
       "flags": [
         {
