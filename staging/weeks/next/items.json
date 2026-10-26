@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-23T10:05:00-04:00",
+ "updated_at": "2026-10-26T07:58:00-04:00",
  "note": "Hold pile for Issue No. 4 (week of Oct 26). Started as after-next at the No. 2 roll; became next at the No. 3 roll-forward 2026-10-19 (daily email check). Still-relevant upcoming/results-watch items copied from 2026-10-19 with carried_from.",
  "items": [
   {
@@ -508,6 +508,15 @@
      "received_at": "2026-10-23T07:00:01-04:00",
      "retrieved_at": "2026-10-23T07:58:00-04:00",
      "note": "CHANGE: Penelope Young no longer listed in Y14WE (Sat Oct 24, 3:00 PM); she remains in CDTWE Sun Oct 25. Now 20 fencers / 30 entries (Y14WE 2). Data as of Oct 22, 6:00 AM (digest says could not refresh)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a177de0708-50c398f5-e105-4579-a5ff-285b47c29955-000000@email.amazonses.com>",
+     "from": "chunkymonkey@agentmail.to",
+     "subject": "Club schedule · Monday, October 26",
+     "received_at": "2026-10-26T07:00:01-04:00",
+     "retrieved_at": "2026-10-26T07:58:00-04:00",
+     "note": "Entries unchanged vs Oct 23 digest; data as of Oct 25 6:00 AM (could not refresh). Results not yet on FT club page."
     }
    ],
    "suggested_slot": "whos_entered",
@@ -536,7 +545,7 @@
    "carried_from": "staging/weeks/2026-10-19",
    "carried_at": "2026-10-07T18:46:27-04:00",
    "carry_note": "Morris Cup is Oct 24–25: becomes a results watch for No. 4.",
-   "entries_last_confirmed": "2026-10-23T07:58:00-04:00",
+   "entries_last_confirmed": "2026-10-26T07:58:00-04:00",
    "entries_change_log": [
     {
      "seen_in": "Club schedule · Sunday, October 11",
@@ -977,7 +986,7 @@
     "nearby-tournaments"
    ],
    "entries_count": "4 fencers / 4 entries",
-   "entries_last_confirmed": "2026-10-23T07:58:00-04:00",
+   "entries_last_confirmed": "2026-10-26T07:58:00-04:00",
    "name_flags": [
     "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2."
    ],
@@ -1485,7 +1494,8 @@
      "retrieved_at": "2026-10-19T09:15:00-04:00"
     }
    ],
-   "created_at": "2026-10-19T09:30:00-04:00"
+   "created_at": "2026-10-19T09:30:00-04:00",
+   "update_2026-10-26": "FT club page now shows Maksim Milinkovic Cadet WC 6th (Oct 22, venue unconfirmed) and San Jose Junior WC 48th (Oct 23). See ft-maksim-* items. fie.org check left for Monday full pass."
   },
   {
    "id": "desk-by-the-book-unwillingness-2026-10-19",
@@ -1684,7 +1694,7 @@
     "nearby-tournaments"
    ],
    "entries_count": "1 fencer / 1 entry",
-   "entries_last_confirmed": "2026-10-23T07:58:00-04:00",
+   "entries_last_confirmed": "2026-10-26T07:58:00-04:00",
    "name_flags": [
     "Bryce Cheng is in roster/people.json (canonical 'Bryce Cheng')."
    ],
@@ -1762,6 +1772,97 @@
     "winter-camp"
    ],
    "vet_notes": "Allowlisted sender; facts auto-vetted. Raw fact sheet, not print copy: likely merges into the Winter Camp reminder (Frank's angle/tone). Club Events rule: camp priority rises as sign-up closes. | 2026-10-23: merged into chat-winter-camp-reminder v4 (Frank approved folding highlights). Not printed on its own."
+  },
+  {
+   "id": "ft-maksim-cadet-wc-6th-2026-10-22",
+   "kind": "result",
+   "headline": "Maksim Milinkovic 6th at FIE Cadet World Cup",
+   "body": "FencingTracker (Elite FC club page) lists Milinkovic, Maksim, 6th in Cadet Men's Epee (CDTME) at the Non-Designated FIE Cadet World Cup - Indiv, Men's Epee, dated Oct 22, 2026. Venue not shown on the club page; likely the San José, Costa Rica Junior/Cadet World Cup (staged watch item) but unconfirmed. Field size not shown.",
+   "source": "web",
+   "from": "FencingTracker club page",
+   "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+   "target_week": "next",
+   "vetted": false,
+   "slot_hint": "club_results",
+   "tags": [
+    "club",
+    "result",
+    "maksim",
+    "world-cup",
+    "strong-result"
+   ],
+   "created_at": "2026-10-26T07:58:00-04:00",
+   "provenance": [
+    {
+     "type": "web",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+     "retrieved_at": "2026-10-26T07:51:00-04:00",
+     "method": "daily FT quick look, one fetch"
+    }
+   ],
+   "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged.",
+   "strength": "strong — top 8 at an FIE Cadet World Cup",
+   "to_confirm": [
+    "venue (San José?)",
+    "field size",
+    "fie.org results page"
+   ]
+  },
+  {
+   "id": "ft-maksim-junior-wc-48th-2026-10-23",
+   "kind": "result",
+   "headline": "Maksim Milinkovic 48th at San José Junior World Cup",
+   "body": "FencingTracker lists Milinkovic, Maksim, 48th in Junior Men's Epee (JNRME) at the Designated FIE Junior World Cup - Indiv & Team, Men's Epee - San Jose, dated Oct 23, 2026.",
+   "source": "web",
+   "from": "FencingTracker club page",
+   "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+   "target_week": "next",
+   "vetted": false,
+   "slot_hint": "club_results",
+   "tags": [
+    "club",
+    "result",
+    "maksim",
+    "world-cup"
+   ],
+   "created_at": "2026-10-26T07:58:00-04:00",
+   "provenance": [
+    {
+     "type": "web",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+     "retrieved_at": "2026-10-26T07:51:00-04:00",
+     "method": "daily FT quick look, one fetch"
+    }
+   ],
+   "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged.",
+   "print_hint": "likely 'also fenced' or pair with Cadet 6th"
+  },
+  {
+   "id": "ft-mendez-freehold-unrated-3rd-2026-10-23",
+   "kind": "result",
+   "headline": "Brendan Mendez 3rd at Freehold Unrated",
+   "body": "FencingTracker lists Mendez, Brendan, 3rd in Senior Open Men's Epee (SNRME) at Freehold Fencing - Unrated Epee & Sabre, Oct 23, 2026. No rating earned listed.",
+   "source": "web",
+   "from": "FencingTracker club page",
+   "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+   "target_week": "next",
+   "vetted": false,
+   "slot_hint": "club_results",
+   "tags": [
+    "club",
+    "result",
+    "local"
+   ],
+   "created_at": "2026-10-26T07:58:00-04:00",
+   "provenance": [
+    {
+     "type": "web",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+     "retrieved_at": "2026-10-26T07:51:00-04:00",
+     "method": "daily FT quick look, one fetch"
+    }
+   ],
+   "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged."
   }
  ],
  "rolled_forward": {

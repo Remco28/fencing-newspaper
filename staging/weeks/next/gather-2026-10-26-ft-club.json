@@ -1,0 +1,42 @@
+{
+ "retrieved_by": "Gazette Desk daily FT quick look",
+ "date": "2026-10-26",
+ "retrieved_at": "2026-10-26T07:51:00-04:00",
+ "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+ "method": "one curl fetch; club page only; no event deep-fetch",
+ "page_summary": {
+  "tournament_count": 164,
+  "newest_tournament": "Freehold Fencing - Unrated Epee & Sabre",
+  "diff_vs_2026-10-23": "+3 tournaments (Freehold Unrated Oct 23; FIE Junior WC San Jose Oct 23; FIE Cadet WC Oct 22). Morris Cup Oct 24-25 and Medeo YC #4 Oct 25 not listed yet."
+ },
+ "fencingapi_crosscheck": {
+  "club_results_since_2026-10-22": {
+   "source": "cache",
+   "rows": 0
+  },
+  "mismatch": "API cache 0 rows vs FT 3 new results"
+ },
+ "new_elite_fc_results": [
+  {
+   "fencer": "Milinkovic, Maksim",
+   "tournament": "Non-Designated FIE Cadet World Cup - Indiv, Men's Epee",
+   "event": "CDTME",
+   "place": 6,
+   "date": "2026-10-22"
+  },
+  {
+   "fencer": "Milinkovic, Maksim",
+   "tournament": "Designated FIE Junior World Cup - Indiv & Team, Men's Epee - San Jose",
+   "event": "JNRME",
+   "place": 48,
+   "date": "2026-10-23"
+  },
+  {
+   "fencer": "Mendez, Brendan",
+   "tournament": "Freehold Fencing - Unrated Epee & Sabre",
+   "event": "SNRME",
+   "place": 3,
+   "date": "2026-10-23"
+  }
+ ]
+}
