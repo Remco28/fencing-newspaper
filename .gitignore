@@ -12,3 +12,5 @@ emails/
 
 budget-demo/submissions/
 budget-demo/.thumbs/
+# standalone budget pages (unvetted content + minors' names; scripts/build_budget_html.py)
+budget-demo/out/

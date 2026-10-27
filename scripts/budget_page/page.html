@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src data: blob:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; form-action 'none'; base-uri 'none'" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>@@TITLE@@</title>
+<style>
+@@CSS@@
+</style>
+</head>
+<body>
+<div id="bar">
+  <div class="bar-in">
+    <div class="bar-id" id="barId"></div>
+    <div class="fit" aria-live="polite">
+      <div class="meter" id="meter" aria-hidden="true"><div class="pend" id="mPend"></div><div class="fill" id="mFill"></div><div class="tick" id="mTick"></div></div>
+      <div class="fit-line" id="fitLine">—</div>
+      <div class="fit-proj" id="fitProj"></div>
+    </div>
+    <div class="counts">
+      <button type="button" class="cnt c-in" data-jump="in" title="Jump to the next included item"><b id="nIn">0</b> in <span class="arrow" aria-hidden="true">↓</span></button>
+      <button type="button" class="cnt c-vet" data-jump="vet" title="Jump to the next item that needs your Vet"><b id="nVet">0</b> <span class="long">need vet</span><span class="short">to vet</span> <span class="arrow" aria-hidden="true">↓</span></button>
+      <button type="button" class="cnt c-q" data-jump="q" title="Jump to the next open question"><b id="nQ">0</b> <span class="long">questions</span><span class="short">Qs</span> <span class="arrow" aria-hidden="true">↓</span></button>
+      <button type="button" class="cnt secs" id="secsBtn" aria-expanded="false" aria-controls="chips">Sections</button>
+    </div>
+    <button type="button" id="submitTop">Submit</button>
+  </div>
+  <div id="dirty" role="status"></div>
+  <div id="chips"><nav aria-label="Jump to section" id="jumpChips"></nav></div>
+</div>
+
+<div class="layout">
+  <aside id="side"><div class="lbl-h">Jump to</div><nav aria-label="Jump to section" id="jumpSide"></nav></aside>
+  <main>
+    <header class="top">
+      <div class="brand">En Garde Gazette · budget</div>
+      <h1 id="issueLabel">Issue</h1>
+      <div class="week" id="weekLabel"></div>
+      <span class="mode" id="modeTag"></span>
+      <p class="lede">Tick <b>Include</b> for what goes in. Answer the red questions where they are. Red-edged items need your <b>Vet</b> before they can go in. Hit <b>Submit</b> when you're done: it downloads a file and copies it, and you send that to the Gazette inbox or paste it in chat. Nothing leaves this page by itself.</p>
+      <div id="notices"></div>
+      <div class="toprow">
+        <div class="box">
+          <label class="box-h" for="publishDate">Publish day</label>
+          <input type="date" id="publishDate" />
+          <div class="pubday" id="publishDay"></div>
+          <div class="picks" id="datePicks"></div>
+          <p class="why" id="publishWhy"></p>
+        </div>
+        <details class="box desk" id="desk" open><summary><span class="box-h">Desk's read on this week</span></summary><ul id="deskList"></ul></details>
+      </div>
+    </header>
+    <div id="sections"></div>
+    <section class="sec" id="sec-notes">
+      <h2>Notes for Desk</h2>
+      <p class="sec-hint">Anything else. Goes with the submission.</p>
+      <label class="sr" for="globalNotes">Notes for Desk</label>
+      <textarea id="globalNotes" placeholder="e.g. Publish Monday instead; skip the figure this week…"></textarea>
+      <div class="submit-box">
+        <button type="button" id="submitBottom">Submit budget</button>
+        <div id="status" role="status" aria-live="polite">Submit downloads <code id="fileName"></code> and copies it. Send the file to the Gazette inbox or paste it in chat.</div>
+        <div class="row-btns">
+          <button type="button" class="btn2" data-act="show-json">Show JSON</button>
+          <button type="button" class="btn2 danger" data-act="reset">Reset this issue…</button>
+        </div>
+      </div>
+      <p class="foot" id="foot"></p>
+    </section>
+  </main>
+</div>
+
+<div id="jsonPanel" role="dialog" aria-modal="true" aria-labelledby="jpTitle">
+  <div class="jp">
+    <h2 id="jpTitle">Your budget submission</h2>
+    <p id="jpMsg">Copy this and paste it in chat, or save it and send it to the Gazette inbox.</p>
+    <label class="sr" for="jsonText">Submission JSON</label>
+    <textarea id="jsonText" readonly spellcheck="false"></textarea>
+    <div class="row-btns">
+      <button type="button" class="btn2" data-act="select-json">Select all</button>
+      <button type="button" class="btn2" data-act="copy-json">Copy</button>
+      <button type="button" class="btn2" data-act="download-json">Download file</button>
+      <button type="button" class="btn2" data-act="share-json" id="shareBtn" hidden>Share…</button>
+      <button type="button" class="btn2" data-act="close-json">Close</button>
+    </div>
+  </div>
+</div>
+<div id="toast" role="status" aria-live="polite"><span id="toastMsg"></span><button type="button" data-act="show-json">Show JSON</button><button type="button" data-act="close-toast" aria-label="Dismiss">✕</button></div>
+
+<script type="application/json" id="budget-data">@@DATA@@</script>
+<script>
+@@CORE_JS@@
+</script>
+<script>
+@@UI_JS@@
+</script>
+</body>
+</html>
