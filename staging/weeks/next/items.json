@@ -46,7 +46,8 @@
       "tags": [
         "placeholder",
         "referee",
-        "planning"
+        "planning",
+        "vault"
       ],
       "created_at": "2026-10-13T08:02:00-04:00",
       "answered_questions": [
@@ -102,7 +103,12 @@
       "need": [
         "Frank: any personal angle you want in it (you said you're interested), or keep it a plain how-to?"
       ],
-      "updated_at": "2026-10-26T10:20:00-04:00"
+      "updated_at": "2026-10-26T10:20:00-04:00",
+      "vault": {
+        "first_ran": 4,
+        "added": "2026-10-26",
+        "by": "Frank, chat 2026-10-26"
+      }
     },
     {
       "id": "chat-winter-camp-reminder",

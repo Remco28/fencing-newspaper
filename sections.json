@@ -484,15 +484,35 @@
         "First run prints normally; a rerun carries a small tag, e.g. 'From the Vault · first ran in No. 2'",
         "Re-check facts before any rerun",
         "Line art preferred for figures (cheap B&W)",
-        "Labels fact-checked"
+        "Labels fact-checked",
+        "Vault entries are listed in 'entries' with the issue they first ran in (rerun tag uses that number)"
       ],
       "examples": [
-        "THE WEAPON (exploded epee)",
+        "THE WEAPON (exploded epee) — first ran in No. 2",
+        "Want to Referee? Start at the Club (how to become a referee) — first ran in No. 4",
         "Planned: changing a tip screw + tip screw types (idea bank)",
         "First-hand interviews"
       ],
       "last_ran": null,
-      "about": "Reusable, high-value content that can reprint months or years later: diagrams, explainers, first-hand interviews, anything worth keeping (Frank 2026-10-20)"
+      "about": "Reusable, high-value content that can reprint months or years later: diagrams, explainers, first-hand interviews, anything worth keeping (Frank 2026-10-20)",
+      "entries": [
+        {
+          "title": "THE WEAPON (exploded epee)",
+          "kind": "figure",
+          "first_ran": 2,
+          "source_item": "chat-asset-weapon-epee",
+          "notes": "2-column line-art figure; Frank's asset"
+        },
+        {
+          "title": "Want to Referee? Start at the Club",
+          "kind": "explainer",
+          "first_ran": 4,
+          "source_item": "chat-become-a-referee-placeholder-2026-10-13",
+          "added": "2026-10-26",
+          "added_by": "Frank, chat 2026-10-26 ('should probably go in the vault')",
+          "notes": "~270 words from USA Fencing's become-a-referee page + Regional Tournament Requirements 2026-28. First run in No. 4 prints with no tag; reruns carry 'From the Vault · first ran in No. 4'. Re-check P/L/R steps, exam score, ages and pay facts before any rerun."
+        }
+      ]
     }
   ],
   "house_rules_global": [

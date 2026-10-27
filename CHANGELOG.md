@@ -3,6 +3,7 @@
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
 ## v3.43 — 2026-10-26
+- **The Vault entries list (Frank, chat 2026-10-26):** sections.json `the-vault.entries` now records each Vault piece with the issue it first ran in. THE WEAPON (No. 2) and the referee feature "Want to Referee? Start at the Club" (No. 4; Frank: "should probably go in the vault"). No. 4 prints it untagged; reruns carry "From the Vault · first ran in No. 4".
 - **Club Results inclusion bar (Frank, chat 2026-10-26):** a finish prints at top 32 national (FIE/international = national or higher), top 16 regional, top 8 local; small fields (under ~16) only top 8 or a medal; always print a medal (top 3), a qualification, or a rating earned. Replaces the podium/top-8/climb definition in sections.json `club-results.rules`, STYLE-GUIDE §0d, CONTENT-HIERARCHY, PLAN.
 - **No "also fenced" line, docs reconciled** with `sections.json` (Frank 2026-10-20): Club Results prints strong results only; everyone else is not printed. Updated STYLE-GUIDE §0d, CONTENT-HIERARCHY (house rules + results row), PLAN. Earlier changelog entries below are history.
 - **No. 4 budget fix:** removed the also-fenced line and its question; Maksim Milinkovic's San José Junior WC 48th marked dropped (below strong-results bar); Brendan Mendez's Freehold 3rd is its own Club Results row; Maksim's Cadet WC 6th stays a row (placement pending Frank).
