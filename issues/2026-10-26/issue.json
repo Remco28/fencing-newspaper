@@ -3,7 +3,7 @@
  "vol": "I",
  "date": "2026-10-26",
  "dateline": "Monday Edition · Vol. I — No. 4 · Chatham, N.J. · October 26, 2026",
- "status": "PROOF v1 — awaiting Frank. Not published.",
+ "status": "APPROVED — final, published (Frank, chat, 2026-10-26). Proof v1 with re-cropped Y8 podium photo is the print version.",
  "composed_at": "2026-10-26T16:35:00-04:00",
  "approval": "Frank submitted budget 2026-10-26 16:21 ET (budget-submission.json). Not yet approved as a proof.",
  "pdf": "issues/2026-10-26/en-garde-gazette-no-4-2026-10-26.pdf",
@@ -58,5 +58,10 @@
   "total": 1417,
   "p1": 660,
   "p2": 761
+ },
+ "published": {
+  "at": "2026-10-26",
+  "commit": "a824f42",
+  "via": "scripts/publish_issue.py 2026-10-26"
  }
 }
