@@ -183,11 +183,13 @@ def main() -> None:
         seen[v["id"].strip()] = (v.get("vet_notes") or "").strip()
     vets = list(seen.items())
     by_id = {i.get("id"): i for i in (items_doc or {}).get("items", []) if isinstance(i, dict)}
-    applied, not_found, log_entries = [], [], []
+    applied, not_found, photo_vets, log_entries = [], [], [], []
     for item_id, vet_notes in vets:
         found = by_id.get(item_id)
         if found is None:
-            not_found.append(item_id)
+            # Photo (media) ids aren't items: like the old page/server flow, nothing in items.json or the
+            # manifest is touched; the vet is recorded in approvals.json (the stored submission) only.
+            (photo_vets if item_id in manifest_ids else not_found).append(item_id)
             continue
         already = bool(found.get("vetted"))
         before = {k: found.get(k) for k in ("vetted", "vetted_at", "vetted_by", "vet_notes")}
@@ -195,7 +197,13 @@ def main() -> None:
         found["vetted_at"] = now_iso
         found["vetted_by"] = "frank"
         if vet_notes:
-            found["vet_notes"] = vet_notes
+            # append (never replace) so Desk's own history notes survive; skip an identical re-ingest
+            line = f"[{now_iso[:10]}] Frank: {vet_notes}"
+            old = found.get("vet_notes")
+            if not old:
+                found["vet_notes"] = line
+            elif line not in old.split("\n"):
+                found["vet_notes"] = old.rstrip("\n") + "\n" + line
         elif "vet_notes" not in found:
             found["vet_notes"] = None
         applied.append((item_id, already, before, vet_notes))
@@ -245,13 +253,13 @@ def main() -> None:
     print(f"  Excluded: {len(exc)} (+ {len(payload['excludedSlots']) - len(exc)} empty slots)")
     if payload.get("photoIncludes"):
         print(f"  Photos in: {', '.join(payload['photoIncludes'])}")
-    print(f"  Vets: {len(applied)} applied, {len(not_found)} not found")
+    print(f"  Vets: {len(applied)} applied, {len(not_found)} not found" +
+          (f" · {len(photo_vets)} photo vet(s) recorded in approvals.json" if photo_vets else ""))
     for item_id, already, before, notes in applied:
         print(f"    ✓ {item_id}: vetted {before['vetted']} -> True" + (" (already vetted; re-applied)" if already else "") +
               (f" · note: {notes}" if notes else ""))
     for item_id in not_found:
-        kind = "media id (photo) — " if item_id in manifest_ids else ""
-        print(f"    ? {item_id}: not found in items.json ({kind}recorded in approvals.json only)")
+        print(f"    ? {item_id}: not found in items.json (recorded in approvals.json only)")
     answers = payload.get("answers") or []
     if answers:
         print(f"  Answers ({len(answers)}):")

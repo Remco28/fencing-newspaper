@@ -187,7 +187,7 @@
     return (wIn * d[1] / d[0] + C.caption_in) * span;
   }
   function computeTotals(M, st) {
-    var C = M.cfg.capacity, cap = C.page1_col_in + C.page2_col_in, used = 0, pend = 0, nIn = 0, nVet = 0, nQ = 0, perSec = {};
+    var C = M.cfg.capacity, cap = C.page1_col_in + C.page2_col_in, used = 0, pend = 0, nIn = 0, nVet = 0, nVetPh = 0, nQ = 0, perSec = {};
     orderedSlots(M, st).forEach(function (s) {
       nQ += openQuestions(M, st, s);
       if (s.empty) return;
@@ -200,7 +200,7 @@
     M.photos.forEach(function (p) {
       ps.n++;
       if (photoIncluded(M, st, p)) { used += photoCost(M, p); nIn++; ps.inc++; }
-      if (photoPresent(M, p) && !isVetted(M, st, p.id)) nVet++;
+      if (photoPresent(M, p) && !isVetted(M, st, p.id)) nVetPh++;
     });
     var labels = {};
     M.sections.forEach(function (sec) {
@@ -211,7 +211,7 @@
       labels[sec.key] = t;
     });
     return {
-      cap: cap, used: used, pend: pend, nIn: nIn, nVet: nVet, nQ: nQ, perSec: perSec, labels: labels,
+      cap: cap, used: used, pend: pend, nIn: nIn, nVet: nVet, nVetPh: nVetPh, nQ: nQ, perSec: perSec, labels: labels,
       pct: Math.round(used / cap * 100), pctP: Math.round((used + pend) / cap * 100),
       room: Math.round((cap - used) * C.wpi / 10) * 10, over: used > cap * 1.08,
       fillPct: Math.min(100, used / (cap * 1.25) * 100), pendPct: Math.min(100, (used + pend) / (cap * 1.25) * 100), tickPct: 100 / 1.25

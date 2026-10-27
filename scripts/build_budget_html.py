@@ -12,7 +12,7 @@ Usage:
   python3 scripts/build_budget_html.py [--lineup FILE] [--staging-week DIR] [--out FILE|DIR]
                                        [--thumb-width 360] [--quality 70]
 Defaults: budget-demo/practice-lineup.json, staging/weeks/next,
-  budget-demo/out/budget-no-<N>-<publish-date>.html
+  budget-demo/out/budget-no-<N>-<publish-date>-<pile>.html
 Output holds unvetted content and minors' names: it must land somewhere gitignored
 (budget-demo/out/ is) or outside the repo.
 """
@@ -279,7 +279,8 @@ def main() -> None:
 
     out = args.out.resolve() if args.out else DEFAULT_OUT_DIR
     if out.suffix.lower() != ".html":
-        out = out / f"budget-no-{number}-{date}.html"
+        pile = re.sub(r"[^A-Za-z0-9._-]+", "-", week.name).strip("-") or "pile"
+        out = out / (f"budget-no-{number}-{date}.html" if pile == date else f"budget-no-{number}-{date}-{pile}.html")
     ensure_ignored(out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_bytes(html.encode("utf-8"))

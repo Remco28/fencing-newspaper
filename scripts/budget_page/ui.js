@@ -304,7 +304,8 @@
       '<span class="short"> full · ' + (T.room >= 0 ? "≈" + room + "w room" : '<span class="over">≈' + room + "w over</span>") +
       (T.pend ? ' <span class="proj">· ' + T.pctP + "% if vetted</span>" : "") + "</span>";
     $("fitProj").textContent = (T.pend ? T.pctP + "% if you Vet what Desk proposes · " : "") + "rough estimate · red tick = full";
-    [["nIn", T.nIn], ["nVet", T.nVet], ["nQ", T.nQ]].forEach(function (x) { $(x[0]).textContent = x[1]; $(x[0]).parentNode.classList.toggle("zero", !x[1]); });
+    [["nIn", T.nIn], ["nVet", T.nVet], ["nQ", T.nQ]].forEach(function (x) { $(x[0]).textContent = x[1]; $(x[0]).parentNode.classList.toggle("zero", !x[1] && !(x[0] === "nVet" && T.nVetPh)); });
+    $("nVetPh").textContent = T.nVetPh; $("nVetPhWrap").hidden = !T.nVetPh; $("nVetPhWrap").parentNode.classList.toggle("has-ph", !!T.nVetPh);
     Object.keys(T.labels).forEach(function (k) {
       var sc = document.querySelector('[data-sc="' + attrSel(k) + '"]'); if (sc) sc.textContent = T.labels[k];
       document.querySelectorAll('[data-jc="' + attrSel(k) + '"]').forEach(function (b) { b.textContent = T.labels[k]; });
