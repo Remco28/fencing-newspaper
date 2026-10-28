@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-27T07:53:00-04:00",
+ "updated_at": "2026-10-28T09:58:00-04:00",
  "note": "Hold pile for Issue No. 5 (week of Nov 2). Started as after-next at the No. 3 roll; became next at the No. 4 roll-forward 2026-10-26. Still-relevant upcoming/results-watch items copied from 2026-10-26 with carried_from.",
  "rolled_forward": {
   "from": "staging/weeks/after-next",
@@ -351,7 +351,7 @@
    "id": "ft-ultimate-cup-efc-registrations-2026-10-12",
    "kind": "signup_row",
    "headline": "Ultimate Cup RJCC (Hillsborough, N.J., Oct. 31–Nov. 1) — Elite FC registrations per FencingTracker",
-   "body": "USA Fencing entrants (via fencing-api live, Oct 26 8:59 AM ET), Ultimate Cup RJCC, Iron Peak Sports & Events, Hillsborough Township NJ, Oct 31–Nov 1 — 14 entries / 10 Elite FC fencers (check-in close in parentheses): Sat Oct 31 JNRWE (8:00 AM) Olivia Hayes, Lillian Liu, Anayaa Sheth, Adela Sullivan; CDTME (1:00 PM) Maksim Milinkovic, Caden Wu. Sun Nov 1 JNRME (8:00 AM) Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng; CDTWE (1:00 PM) Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young.",
+   "body": "USA Fencing entrants (via fencing-api live, Oct 28 9:56 AM ET; FencingTracker agrees), Ultimate Cup RJCC, Iron Peak Sports & Events, Hillsborough Township NJ, Oct 31–Nov 1 — 13 entries / 9 Elite FC fencers (check-in close in parentheses): Sat Oct 31 JNRWE (8:00 AM) Olivia Hayes, Lillian Liu, Adela Sullivan; CDTME (1:00 PM) Maksim Milinkovic, Caden Wu. Sun Nov 1 JNRME (8:00 AM) Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng; CDTWE (1:00 PM) Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young. (Anayaa Sheth is now withdrawn from JNRWE; don't print the withdrawal, just leave her off the board.)",
    "source": "fencingtracker",
    "from": null,
    "target_week": "next",
@@ -439,6 +439,20 @@
      "fetched_at": "2026-10-26T12:59:08Z",
      "fetched_at_et": "2026-10-26 8:59 AM ET",
      "note": "CHANGE: Lillian Liu added to JNRWE (Sat Oct 31). Now 14 entries / 10 Elite FC fencers, all approved (club field 'Elite Fencers Club' only; 'Elite Fencing Academy' excluded)."
+    },
+    {
+     "type": "api",
+     "source": "fencingapi",
+     "endpoint": "/v1/usfa/tournaments/12158/entries?live=true",
+     "fetched_at": "2026-10-28T13:56:44Z",
+     "fetched_at_et": "2026-10-28 9:56 AM ET",
+     "note": "Wednesday skim: CHANGE: Anayaa Sheth no longer in JNRWE entrant list. Now 13 entries / 9 Elite FC fencers, all approved."
+    },
+    {
+     "type": "url",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+     "retrieved_at": "2026-10-28T09:57:00-04:00",
+     "note": "Direct cross-check agrees: '13 active entries from 9 club members'; Sheth, Anayaa JNRWE status 'Withdrawn'. No API/direct mismatch."
     }
    ],
    "tags": [
@@ -469,7 +483,7 @@
      "Cadet Women": "1:00 PM"
     }
    },
-   "updated_at": "2026-10-26T09:08:00-04:00",
+   "updated_at": "2026-10-28T09:58:00-04:00",
    "carried_at": "2026-10-26T20:30:00-04:00"
   },
   {
@@ -1256,6 +1270,29 @@
      "note": "Same digest: NYFA Youth Cup #1 and Medeo YC #5 entries unchanged vs staging; Wanglei November Cup I Senior Epee (Nov 8) nobody signed up."
     }
    ]
+  },
+  {
+   "id": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+   "kind": "signup",
+   "headline": "Elite FC registrations beyond NJ, Nov.–Dec. (November NAC, Kiefer Meinhardt, December SJCC, Z1, Fairfax)",
+   "body": "FencingTracker club registrations page (Oct 28, 9:57 AM ET), active entries: November NAC (Columbus, OH, Greater Columbus Convention Center) — 4 entries / 3 fencers: Fri Nov 20 JNRWE Anayaa Sheth; Sat Nov 21 CDTME Nico Ng; Sun Nov 22 JNRME Athreya Aravind, Nico Ng. Kiefer Meinhardt Cup SYC/RJCC/Y8 (Glen Allen, VA, Henrico Sports and Events Center) — 4 / 2: Sat Nov 14 Y14WE Stella Kuo, Mila Siu; Sun Nov 15 Y12WE Stella Kuo, Mila Siu. December SJCC (Milwaukee, WI, Baird Center) — 5 / 3: Fri Dec 4 CDTME Nico Ng; Sat Dec 5 JNRWE Amina Gore, JNRME Nico Ng; Sun Dec 6 CDTWE Amina Gore, Anayaa Sheth. Z1 RYC/RJCC (Newtown, CT, NYA Sports & Fitness) — 7 / 5: Sat Dec 12 JNRWE Amina Gore, CDTME Noah Gore; Sun Dec 13 CDTWE Amina Gore, Y14ME Noah Gore, Ash Shah-Mirani, Y10ME Bryce Cheng, Rahi Shah-Mirani. Fairfax Challenge ROC/RJCC/RYC (Fredericksburg, VA) — 7 / 4: Fri Dec 18 Y14ME Connor Anderson; Sat Dec 19 CDTME Connor Anderson, Y14WE Sarah Sun, DV2ME Connor Anderson, Eric Anderson; Sun Dec 20 VETME Eric Anderson, Kang Sun. Not on roster yet: Athreya Aravind, Sarah Sun, Kang Sun, Eric Anderson (club attribution from registration can be wrong).",
+   "source": "fencingtracker",
+   "target_week": "next",
+   "vetted": false,
+   "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.",
+   "tags": [
+    "entries",
+    "travel"
+   ],
+   "provenance": [
+    {
+     "type": "url",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+     "retrieved_at": "2026-10-28T09:57:00-04:00",
+     "note": "Wednesday skim, 1 fetch"
+    }
+   ],
+   "created_at": "2026-10-28T09:58:00-04:00"
   }
  ]
 }
