@@ -17,7 +17,7 @@ A round called the final was not necessarily the end at the 1928 Olympic epee co
 Photo: photographer unidentified / Netherlands Olympic Committee, The Ninth Olympiad, English official report of Amsterdam 1928, unnumbered photo leaf (PDF p. 570) / LA84 Foundation digital copy. Public domain in the United States (pre-1931 publication; copyright expired). Extracted without alteration. Source: https://digital.la84.org/digital/api/singleitem/collection/p17103coll8/id/14068
 ```
 - **License:** Public domain in United States — English report published 1928 (catalogued); copyright term expired, https://commons.wikimedia.org/wiki/Template:PD-US-expired
-- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Not on Commons. The LA84 item page states no license; the public-domain basis is US publication in 1928 (pre-1931). Consistent, no mismatch.
 
 **Cautions**

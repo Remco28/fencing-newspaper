@@ -34,15 +34,15 @@ pasting it in chat; a script on the box then applies it.
      since a lineup can reference items that were rolled out of `next`. Media files missing -> no thumbnail.
    - Print the output path, size, counts to stdout. Exit non-zero with a clear message on bad input.
 2. The page itself (generated). Keep EVERY feature of the current page:
-   - Issue/week header; publish-date picker with Desk's suggested day + reason (`publish.date/alt/why/note`);
-     "Desk's read on this week" bullets (`desk_summary`).
+   - Issue/week header; publish-date picker with Clark's suggested day + reason (`publish.date/alt/why/note`);
+     "Clark's read on this week" bullets (`desk_summary`).
    - Fit meter: % of two pages, words of room/over, projected if proposals vetted (same cost model as practice.html).
    - Counters (in / need vet / open questions) with jump-to-next buttons.
    - Jump-to section list with "X of Y in".
    - Section-grouped cards (lineup `sections`): slot, size, budget, headline, summary, status badges
-     (vetted / unvetted / facts pending / waiting on results / needs Frank / Desk proposes / auto-placed),
+     (vetted / unvetted / facts pending / waiting on results / needs Frank / Clark proposes / auto-placed),
      expandable draft text or tables (tournament board `panels`, class schedule `table`) or figure description,
-     expandable source & provenance, thumbnail, Include checkbox LOCKED until vetted, note-to-Desk field,
+     expandable source & provenance, thumbnail, Include checkbox LOCKED until vetted, note-to-Clark field,
      Vet button, reorder up/down, "Questions for Frank" answer fields, empty slots with reason,
      unslotted staging items (auto-placed), Photos section (caption, vetted, size, source, include, vet),
      Held / not-proposed list with reasons, overall notes, Submit.
@@ -109,4 +109,4 @@ pasting it in chat; a script on the box then applies it.
   pass `--staging-week/--submissions`), and with `--dry-run` against the live paths. Never write to the live
   `staging/` or `budget-demo/submissions/` while testing.
 - Add `budget-demo/out/` to `.gitignore`.
-- Add a short `budget-demo/STANDALONE-README.md`: how Monday routine generates it, how Frank submits, how the Desk ingests.
+- Add a short `budget-demo/STANDALONE-README.md`: how Monday routine generates it, how Frank submits, how Clark ingests.

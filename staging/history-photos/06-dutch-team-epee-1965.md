@@ -17,7 +17,7 @@ The Oude RAI in Amsterdam was the setting for the Dutch national team epee champ
 Photo: unknown photographer / Anefo, Nationaal Archief, collection 2.24.01.05, no. 918-4711 (21 November 1965). CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Full-resolution JPEG converted from the archive’s original TIFF; no crop. Source: https://commons.wikimedia.org/wiki/File:Duel_tussen_Van_Tiggele_(links)_en_Popken,_Bestanddeelnr_918-4711.jpg.
 ```
 - **License:** CC0 1.0 Universal, https://creativecommons.org/publicdomain/zero/1.0/
-- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "CC0" (http://creativecommons.org/publicdomain/zero/1.0/deed.en). Matches.
 
 **Cautions**

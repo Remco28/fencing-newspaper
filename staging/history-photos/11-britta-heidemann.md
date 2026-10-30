@@ -17,7 +17,7 @@ Britta Heidemann knew Beijing long before she won Olympic individual epee gold t
 Photo: © Marie-Lan Nguyen / Wikimedia Commons, “Britta Heidemann podium 2013 Fencing WCH EFS-IN t214721.jpg”, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). Source: https://commons.wikimedia.org/wiki/File:Britta_Heidemann_podium_2013_Fencing_WCH_EFS-IN_t214721.jpg. Resized; no additional crop or retouching.
 ```
 - **License:** CC BY 3.0, https://creativecommons.org/licenses/by/3.0/
-- **Changes:** CC BY 3.0 needs a change notice: if you crop it or convert it to grayscale, replace the credit's closing change clause with "Cropped and converted to grayscale for this issue." The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** CC BY 3.0 needs a change notice: if you crop it or convert it to grayscale, replace the credit's closing change clause with "Cropped and converted to grayscale for this issue." Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "CC BY 3.0" (https://creativecommons.org/licenses/by/3.0). Matches.
 
 **Cautions**

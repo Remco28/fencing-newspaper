@@ -42,9 +42,9 @@ Open the file in any browser. On a phone, open it from Files/Downloads.
 - Answer the red **Questions for Frank** in place. Add notes per card and overall notes at the bottom.
   Use ↑/↓ to reorder within a section. Change the publish day at the top.
 - The sticky bar shows how full the issue is (percent of two pages, words of room or over, and the
-  projection if you vet what Desk proposes). Its **in / to vet / Qs** buttons jump to the next matching card.
+  projection if you vet what Clark proposes). Its **in / to vet / Qs** buttons jump to the next matching card.
 - Progress autosaves in the browser (localStorage) and is restored on reopen ("Restored your progress
-  from …"). If the Desk sends a rebuilt page for the same issue, your answers, notes, includes, order and
+  from …"). If Clark sends a rebuilt page for the same issue, your answers, notes, includes, order and
   vets are kept for items still on the page. **Reset this issue…** at the bottom clears it. In private
   mode the page still works but shows a notice that it can't save.
 - **Submit** downloads `budget-submission-no-<N>-<publish-date>.json` and copies the same JSON to the
@@ -57,7 +57,7 @@ The payload has the same shape as the server's `/submit` (publishDate, practice,
 issue, includedSlots, excludedSlots, photoIncludes, notes, slotNotes, answers, order, pageVersion
 `budget-standalone-v1`, and submittedAt with a local offset), plus `vets: [{id, vet_notes}]`.
 
-## 3. Desk: ingest the submission
+## 3. Clark: ingest the submission
 
 Save the file Frank sent, or paste his chat JSON into a file (code fences or chatter around it are fine;
 `-` reads stdin). Check it first:

@@ -1,7 +1,7 @@
 {
   "_about": "Master section registry for En Garde Gazette (Frank 2026-10-20). Walkthrough complete 2026-10-20; supersedes CONTENT-HIERARCHY.md for per-section settings.",
   "fields": {
-    "priority": "core | high | medium | low (words, not numbers). core = never cut; low = first cut when long, first pulled in to fill when short. Within a tier, Desk uses judgment on the week. | dynamic (see priority_rule)",
+    "priority": "core | high | medium | low (words, not numbers). core = never cut; low = first cut when long, first pulled in to fill when short. Within a tier, Clark uses judgment on the week. | dynamic (see priority_rule)",
     "frequency": "every_issue | when_available | rotation | triggered",
     "frequency_detail": "plain-words cadence / trigger",
     "size": "min / typical / max that still reads well",

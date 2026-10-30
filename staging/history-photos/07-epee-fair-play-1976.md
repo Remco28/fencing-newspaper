@@ -17,7 +17,7 @@ During the epee round of the 1976 Olympic modern pentathlon, British competitors
 Illustrative equipment photo: Lord ignus, “Pistolgrip.jpg” (25 May 2006), via Wikimedia Commons. Public domain by the photographer. Not Onishchenko’s weapon. Release: https://commons.wikimedia.org/wiki/File:Pistolgrip.jpg#Licensing. Source: https://commons.wikimedia.org/wiki/File:Pistolgrip.jpg.
 ```
 - **License:** Public domain by author; unrestricted-use fallback, https://commons.wikimedia.org/wiki/File:Pistolgrip.jpg#Licensing
-- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "Public domain". Matches.
 
 **Cautions**

@@ -33,7 +33,7 @@
     {
       "key": "shorts",
       "title": "Shorts & fill",
-      "hint": "Secondaries, Q&A, Desk fill — first to go if tight"
+      "hint": "Secondaries, Q&A, Clark fill — first to go if tight"
     },
     {
       "key": "photos",
@@ -47,7 +47,7 @@
     }
   ],
   "seed_ids": [],
-  "about": "Gazette Desk's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
+  "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
   "generated": "2026-10-26T12:45:00-04:00",
   "target_week": "next",
   "issue": {
@@ -60,7 +60,7 @@
     "label": "Monday, October 26, 2026",
     "alt": "2026-10-27",
     "why": "Target Mon/Tue after Morris Cup (Oct 24–25). Soft preference: hold for weekend club results when easy.",
-    "note": "Mon or Tue; Desk waits for Morris / Medeo #4 results before compose."
+    "note": "Mon or Tue; Clark waits for Morris / Medeo #4 results before compose."
   },
   "desk_summary": [
     "No. 4 budget patched Monday after your lead call (not rebuilt). Your Oct 19 lineup stands, with the changes below.",
@@ -69,7 +69,7 @@
     "Club Results opens with Maksim Milinkovic's 6th at the San José Cadet World Cup (Oct 22), placed by you; no field size or strength-of-field comparison. Brendan Mendez's 3rd (Freehold, Oct 23) waits on your Vet. Medeo #4 (Nora Li) and NJ JO results still not posted.",
     "Nearby Tournaments: Ultimate Cup 14 entries; Cobra 26 / 16 (still needs your Vet); Medeo #5 unchanged.",
     "Still proposed: Casablanca short, By the Book, For the Parents, Epee on Screen, Photo from History 07, Winter Camp v4.",
-    "Fill: about 22% with vetted items only; about 78% if you Vet what Desk proposes, including the Morris lead (156 words)."
+    "Fill: about 22% with vetted items only; about 78% if you Vet what Clark proposes, including the Morris lead (156 words)."
   ],
   "photos": [
     {
@@ -105,7 +105,7 @@
         "feature": true
       },
       "title": "Elite FC Brings 19 to Morris Cup; Siu Wins, Jeong 2nd",
-      "summary": "Desk draft (156 words) from FencingTracker results, pending your review. Angle per your call: the club's turnout (19 fencers, 29 entries, Y8 through Junior) at a well-attended tournament (six of the club's 10 events over 80 fencers; 137 in Cadet Men). Top-16 finishes only: Madeline Siu won Y8 Women (of 11), Joshua Jeong 2nd of 30 in Y10 Men, Maximus Siu 13th of 30, Remy Ng 14th of 61 in Y12 Men. No other placings, withdrawals, ratings or strength comparison. Full text: staging/weeks/next/drafts/morris-cup-lead.md.",
+      "summary": "Clark's draft (156 words) from FencingTracker results, pending your review. Angle per your call: the club's turnout (19 fencers, 29 entries, Y8 through Junior) at a well-attended tournament (six of the club's 10 events over 80 fencers; 137 in Cadet Men). Top-16 finishes only: Madeline Siu won Y8 Women (of 11), Joshua Jeong 2nd of 30 in Y10 Men, Maximus Siu 13th of 30, Remy Ng 14th of 61 in Y12 Men. No other placings, withdrawals, ratings or strength comparison. Full text: staging/weeks/next/drafts/morris-cup-lead.md.",
       "questions": [],
       "flags": [
         {
@@ -152,7 +152,7 @@
         "feature": true
       },
       "title": "Want to Referee? Start at the Club",
-      "summary": "Moved off the lead (Morris Cup leads, Frank 2026-10-26); stays on page 1. Desk draft (271 words) from USA Fencing's become-a-referee page and the Regional Tournament Requirements 2026–28 PDF: start at the club, study guide + seminar + online exam (90%) for a P rating, then a practical exam for L/R ratings; ages 13+ with a P can work regionals; paid for more than one pool round; membership and (18+) background check/SafeSport. Ends with Friday open bouting as a place to start. Unvetted until you Vet it.",
+      "summary": "Moved off the lead (Morris Cup leads, Frank 2026-10-26); stays on page 1. Clark's draft (271 words) from USA Fencing's become-a-referee page and the Regional Tournament Requirements 2026–28 PDF: start at the club, study guide + seminar + online exam (90%) for a P rating, then a practical exam for L/R ratings; ages 13+ with a P can work regionals; paid for more than one pool round; membership and (18+) background check/SafeSport. Ends with Friday open bouting as a place to start. Unvetted until you Vet it.",
       "questions": [
         "Any personal angle you want in it (you said you're interested), or keep it a plain how-to?",
         "Now that it's a page-1 feature under the Morris lead: trim to ~180 words as a secondary, or keep ~270 as a fuller page-1 feature?"
@@ -460,11 +460,11 @@
         "span": 1
       },
       "title": "By the Book: One Quiet Minute",
-      "summary": "Desk-written from the Oct 2026 rulebook (t.124): one minute without a touch is unwillingness to fight; first time both get a P-red, second time the trailing (or lower-seeded) fencer gets a P-black. No P-card at 14-14. Sits next to the referee feature.",
+      "summary": "Clark-written from the Oct 2026 rulebook (t.124): one minute without a touch is unwillingness to fight; first time both get a P-red, second time the trailing (or lower-seeded) fencer gets a P-black. No P-card at 14-14. Sits next to the referee feature.",
       "flags": [
         {
           "level": "info",
-          "text": "Standing rule: Desk writes it; you approve or cut at budget."
+          "text": "Standing rule: Clark writes it; you approve or cut at budget."
         }
       ]
     },
@@ -549,7 +549,7 @@
       },
       "thumb": "07-epee-fair-play-1976.jpg",
       "title": "Photo from History: 1976 — The light came on, but there was no touch",
-      "summary": "Desk pick from the history pile: Onishchenko's 1976 modern-pentathlon epee scandal, with an illustrative 2006 epee photo (public domain). Fits the referee feature (fair play / scoring). Unvetted. Alternate: 05 (1936 electric epee, 2-col OK, CC BY-SA 3.0 FR).",
+      "summary": "Clark's pick from the history pile: Onishchenko's 1976 modern-pentathlon epee scandal, with an illustrative 2006 epee photo (public domain). Fits the referee feature (fair play / scoring). Unvetted. Alternate: 05 (1936 electric epee, 2-col OK, CC BY-SA 3.0 FR).",
       "flags": [
         {
           "level": "warn",

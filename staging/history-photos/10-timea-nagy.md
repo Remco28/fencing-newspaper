@@ -17,7 +17,7 @@ Tímea Nagy met Laura Flessel at two decisive stages of her Olympic career. In S
 Photo: © Marie-Lan Nguyen / Wikimedia Commons, “Award ceremony EFS-EQ 2013 Fencing WCH t215801.jpg”, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). Source: https://commons.wikimedia.org/wiki/File:Award_ceremony_EFS-EQ_2013_Fencing_WCH_t215801.jpg. No changes.
 ```
 - **License:** CC BY 3.0, https://creativecommons.org/licenses/by/3.0/
-- **Changes:** CC BY 3.0 needs a change notice: if you crop it or convert it to grayscale, replace the credit's closing change clause with "Cropped and converted to grayscale for this issue." The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** CC BY 3.0 needs a change notice: if you crop it or convert it to grayscale, replace the credit's closing change clause with "Cropped and converted to grayscale for this issue." Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "CC BY 3.0" (https://creativecommons.org/licenses/by/3.0). Matches.
 
 **Cautions**

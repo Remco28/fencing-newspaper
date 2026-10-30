@@ -5,7 +5,7 @@ Pages:
   GET /            → practice.html (PRACTICE budget from REAL staging/weeks/next)
   GET /practice    → practice.html (alias)
   GET /demo        → index.html (old PRETEND demo, kept for reference)
-  GET /practice-lineup.json → Desk's proposed lineup config (judgment file)
+  GET /practice-lineup.json → Clark's proposed lineup config (judgment file)
   GET /api/media   → staging/weeks/next/media/manifest.json
   GET /api/lineup  → practice-lineup.json (alias)
   GET /thumb/<file>?w=320[&bw=1] → small cached JPEG of a staging media file (Pillow;

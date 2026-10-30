@@ -17,7 +17,7 @@ At the 1936 Dutch national epee championship, the action took place on the terra
 Photo: Rama, “Epee-IMG 1088-c-white.jpg,” Marco Lanzoni collection, Museo delle Grigne (22 June 2016), via Wikimedia Commons. CC BY-SA 3.0 France (https://creativecommons.org/licenses/by-sa/3.0/fr/). Resized Wikimedia derivative; no additional crop. Source: https://commons.wikimedia.org/wiki/File:Epee-IMG_1088-c-white.jpg.
 ```
 - **License:** CC BY-SA 3.0 France, https://creativecommons.org/licenses/by-sa/3.0/fr/
-- **Changes:** ShareAlike: if you crop it or convert it to grayscale, add "Cropped and converted to grayscale for this issue." to the credit, and the adapted image stays under CC BY-SA 3.0 France (https://creativecommons.org/licenses/by-sa/3.0/fr/). The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** ShareAlike: if you crop it or convert it to grayscale, add "Cropped and converted to grayscale for this issue." to the credit, and the adapted image stays under CC BY-SA 3.0 France (https://creativecommons.org/licenses/by-sa/3.0/fr/). Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "CC BY-SA 3.0 fr" (https://creativecommons.org/licenses/by-sa/3.0/fr/deed.en). Matches.
 
 **Cautions**

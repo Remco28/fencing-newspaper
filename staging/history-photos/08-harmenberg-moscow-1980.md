@@ -17,7 +17,7 @@ Johan Harmenberg’s route to Olympic epee gold included a close escape. At Mosc
 RIA Novosti archive, image #556150 / Boris Babanov / CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons. Commons version cropped and brightened by Materialscientist; no further edits. Source: https://commons.wikimedia.org/wiki/File:RIAN_archive_556150_Fencer_Johan_Harmenberg.jpg.
 ```
 - **License:** CC BY-SA 3.0 Unported, https://creativecommons.org/licenses/by-sa/3.0/
-- **Changes:** ShareAlike: if you crop it or convert it to grayscale, add "Cropped and converted to grayscale for this issue." to the credit, and the adapted image stays under CC BY-SA 3.0 Unported (https://creativecommons.org/licenses/by-sa/3.0/). The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** ShareAlike: if you crop it or convert it to grayscale, add "Cropped and converted to grayscale for this issue." to the credit, and the adapted image stays under CC BY-SA 3.0 Unported (https://creativecommons.org/licenses/by-sa/3.0/). Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "CC BY-SA 3.0" (https://creativecommons.org/licenses/by-sa/3.0). Matches.
 
 **Cautions**

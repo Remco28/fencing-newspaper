@@ -1,6 +1,6 @@
 # X (Twitter) accounts: vetted list
 
-Vetted 2026-10-08 by the Gazette Desk, using the built-in read-only `x` tools.
+Vetted 2026-10-08 by the Clark Kent, using the built-in read-only `x` tools.
 Every handle below came back from a real user lookup (`get_users_by_usernames`) or appeared as a post author
 in search results. **None are guessed.** "Last active" is the account's most recent post, dated from
 `most_recent_tweet_id` or the timeline (UTC date). Re-vet every few months. Accounts go quiet a lot,

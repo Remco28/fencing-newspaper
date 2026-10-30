@@ -21,7 +21,7 @@
    "vetted_by": "frank",
    "vet_scope": "angle_tone_only",
    "facts_status": "verified (price omitted)",
-   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Desk 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Desk 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Desk 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md.",
+   "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Clark 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Clark 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Clark 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md.",
    "facts": [
     {
      "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
@@ -294,7 +294,7 @@
    "vetted": true,
    "vetted_by": "frank",
    "vetted_at": "2026-10-07T17:18:05-04:00",
-   "vet_notes": "Desk gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.' | Frank chat 2026-10-07T17:32: Friday Mini Musketeers moved to 4:15 PM (likely permanent; website not updated). End time not confirmed — print start time only unless Frank confirms.",
+   "vet_notes": "Clark's gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.' | Frank chat 2026-10-07T17:32: Friday Mini Musketeers moved to 4:15 PM (likely permanent; website not updated). End time not confirmed — print start time only unless Frank confirms.",
    "provenance": [
     {
      "type": "url",
@@ -358,7 +358,7 @@
    "vetted": true,
    "vetted_by": "frank",
    "vetted_at": "2026-10-12T09:45:00-04:00",
-   "vet_notes": "Desk Monday full pass 2026-10-12. Scraped registrations: unvetted until Frank confirms (STAGING v3.20). Not on the chunkymonkey watched list yet. New names to the Gazette: Dieko Johnson, Lillian Liu (check spelling/membership). Event times not captured; close time unverified. | chat: Frank 2026-10-12 09:45 ET: Dieko Johnson and Lillian Liu confirmed Elite FC members (added to roster); Ultimate Cup board vetted. Source stays FencingTracker registrations.",
+   "vet_notes": "Clark's Monday full pass 2026-10-12. Scraped registrations: unvetted until Frank confirms (STAGING v3.20). Not on the chunkymonkey watched list yet. New names to the Gazette: Dieko Johnson, Lillian Liu (check spelling/membership). Event times not captured; close time unverified. | chat: Frank 2026-10-12 09:45 ET: Dieko Johnson and Lillian Liu confirmed Elite FC members (added to roster); Ultimate Cup board vetted. Source stays FencingTracker registrations.",
    "slot_hint": "signup",
    "panels_rows": [
     [
@@ -807,14 +807,14 @@
    "vetted": true,
    "vetted_by": "frank (voice 2026-10-18: refresh Deadlines box from USA Fencing/AskFRED)",
    "vetted_at": "2026-10-18T08:45:00-04:00",
-   "vet_notes": "Desk build 2026-10-18 from official pages only. Morris/Ultimate late closes carry over from No. 2 (still valid). Medeo prereg closes (Oct 24 / Nov 7) left off: the Medeo line is on the board.",
+   "vet_notes": "Clark's build 2026-10-18 from official pages only. Morris/Ultimate late closes carry over from No. 2 (still valid). Medeo prereg closes (Oct 24 / Nov 7) left off: the Medeo line is on the board.",
    "tags": [
     "deadlines",
     "desk-built"
    ],
    "created_at": "2026-10-18T08:45:00-04:00",
    "carried_from": "staging/weeks/2026-10-26",
-   "carry_note": "Ran in No. 4. Desk refreshes the Deadlines box each issue; drop passed dates.",
+   "carry_note": "Ran in No. 4. Clark refreshes the Deadlines box each issue; drop passed dates.",
    "dropped_for_no4": [
     "Morris Cup late entry (Oct 22) — passes before No. 4 publishes"
    ],
@@ -876,7 +876,7 @@
    ],
    "created_at": "2026-10-18T08:45:00-04:00",
    "carried_from": "staging/weeks/2026-10-26",
-   "carry_note": "Ran in No. 4. Desk refreshes rows for the week of Nov 2.",
+   "carry_note": "Ran in No. 4. Clark refreshes rows for the week of Nov 2.",
    "updated_at": "2026-10-19T09:30:00-04:00",
    "carried_at": "2026-10-26T20:30:00-04:00"
   },

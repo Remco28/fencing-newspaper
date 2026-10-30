@@ -17,7 +17,7 @@ Before Cuba became an Olympic fencing name, a teenager helped write its first ch
 Photo: photographer unidentified / La Vie au Grand Air, 24 June 1900, p. 536 / Wikimedia Commons (cropped). Public domain in the United States (published 1900; copyright expired). Source: https://commons.wikimedia.org/wiki/File:Ramon_Fonst,_champion_olympique_%C3%A0_l%27%C3%A9p%C3%A9e_aux_JO_de_Paris_1900.jpg
 ```
 - **License:** Public domain in United States — published 1900; copyright term expired, https://commons.wikimedia.org/wiki/Template:PD-US-expired
-- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "Public domain". Matches.
 
 **Cautions**

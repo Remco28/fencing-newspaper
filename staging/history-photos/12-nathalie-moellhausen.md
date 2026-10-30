@@ -17,7 +17,7 @@ Nathalie Moellhausen’s work has included fencing performances as well as world
 Photo: © Marie-Lan Nguyen / Wikimedia Commons, “Nathalie Moellhausen fencingmob 2014-09-07 n01.jpg”, CC BY 2.5 (https://creativecommons.org/licenses/by/2.5/). Source: https://commons.wikimedia.org/wiki/File:Nathalie_Moellhausen_fencingmob_2014-09-07_n01.jpg. No changes.
 ```
 - **License:** CC BY 2.5, https://creativecommons.org/licenses/by/2.5/
-- **Changes:** CC BY 2.5 needs a change notice: if you crop it or convert it to grayscale, replace the credit's closing change clause with "Cropped and converted to grayscale for this issue." The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** CC BY 2.5 needs a change notice: if you crop it or convert it to grayscale, replace the credit's closing change clause with "Cropped and converted to grayscale for this issue." Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "CC BY 2.5" (https://creativecommons.org/licenses/by/2.5). Matches.
 
 **Cautions**

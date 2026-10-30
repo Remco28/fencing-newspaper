@@ -17,7 +17,7 @@ Laura Flessel won the first Olympic women’s individual epee title in Atlanta i
 Photo: © Marie-Lan Nguyen / Wikimedia Commons, “Laura Flessel-Colovic.jpg”, CC BY 2.5 (https://creativecommons.org/licenses/by/2.5/). Source: https://commons.wikimedia.org/wiki/File:Laura_Flessel-Colovic.jpg. Commons portrait crop; no additional changes.
 ```
 - **License:** CC BY 2.5, https://creativecommons.org/licenses/by/2.5/
-- **Changes:** CC BY 2.5 needs a change notice: if you crop it or convert it to grayscale, replace the credit's closing change clause with "Cropped and converted to grayscale for this issue." The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** CC BY 2.5 needs a change notice: if you crop it or convert it to grayscale, replace the credit's closing change clause with "Cropped and converted to grayscale for this issue." Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "CC BY 2.5" (https://creativecommons.org/licenses/by/2.5). Matches.
 
 **Cautions**

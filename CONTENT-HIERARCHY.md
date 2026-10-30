@@ -41,8 +41,8 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 | 8 | **Nearby Tournaments** board (formerly "Go Cheer"; name picked v3.29, chat: Frank 2026-10-13) | ~2–8 rows, max 4 tournaments | Email digest / FT registrations / AskFRED | **Core.** Elite FC entries only; prefer all names on fewer tournaments (if ~20 fencers enter one event, show fewer tournaments). Events coming up very soon in our area. No "(All Epee)". Sits next to the Deadlines box. **Pending (unpaid / unconfirmed) AskFRED or USA Fencing entries print** like confirmed ones (v3.35, voice: Frank 2026-10-18). |
 | 9 | **Deadlines box** | ~3–5 rows | AskFRED / Email / Web | **Superseded 2026-10-20: priority rises as deadlines near; skips in quiet stretches — see sections.json** (was: runs every issue, v3.28). Entry deadlines and renewals, which can be months ahead. Separate from the Nearby Tournaments board (events very soon); place the two **adjacent**. |
 | 10 | Club events | ~3–5 items or one-line notes | Email (newsletter) / Chat | Camps (e.g. Winter Camp), special classes, class changes as **one-line notes** (e.g. footwork class) — see Weekly Classes rule in Cut order. |
-| 11 | **Parent Q&A** | ~40–70w (1 Q&A) | Chat (parent ask → Frank → Desk) | Answers a **real question a parent asked**. Anonymous; no Frank byline. `.rail-block.qa`. Default 1 per issue; second only if space after cuts. |
-| 12 | **By the Book** (provisional rank) | 1 snippet (~50–80w) | **Desk-written from the rulebook** (`reference/usa-fencing/`: USA Fencing Rules + penalty chart), with rule numbers cited (v3.35, voice: Frank 2026-10-18) | v3.25. One rule or penalty per issue; random by default, the relevant penalty when something happened that week. Desk drafts it without waiting for Frank's material; Frank vets it at budget. |
+| 11 | **Parent Q&A** | ~40–70w (1 Q&A) | Chat (parent ask → Frank → Clark) | Answers a **real question a parent asked**. Anonymous; no Frank byline. `.rail-block.qa`. Default 1 per issue; second only if space after cuts. |
+| 12 | **By the Book** (provisional rank) | 1 snippet (~50–80w) | **Written by Clark from the rulebook** (`reference/usa-fencing/`: USA Fencing Rules + penalty chart), with rule numbers cited (v3.35, voice: Frank 2026-10-18) | v3.25. One rule or penalty per issue; random by default, the relevant penalty when something happened that week. Clark drafts it without waiting for Frank's material; Frank vets it at budget. |
 | 13 | **For the Parents** (provisional rank) | 1 item | Web / Chat (sourced per item) | v3.26. Standing box for non-fencing parents: one practical, **proactive** topic (term decoded, tournament tip, what to expect). Unlike Parent Q&A, nobody asked. Start issue not set. |
 | 14 | Comic | 1 panel | Email (Frank; Ling may draw from No. 3 or later) | Sparingly. A guest artist gets a credit (guest-byline rule). |
 | 15 | TV / streaming box | ~3–5 rows | Web (FIE calendar / FencingTV) | "Epee on Screen": major events + where to watch; no start times/prices unless listed. |
@@ -74,16 +74,16 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 - 2026-10-06 late (v3.4): **Scoreboard strip** (big headlines + one-line blurbs) — hard to do well; could return as a "headline wire".
 
 ## Rules for the sorter (Frank)
-- **Parent Q&A** is a recurring content **category** (not a one-off): parent asks Frank → Frank briefs Gazette Desk → we print Q&A. Default anonymous; name only if they ask. No Frank byline. See STYLE-GUIDE §8a / `.qa`.
+- **Parent Q&A** is a recurring content **category** (not a one-off): parent asks Frank → Frank briefs Clark Kent → we print Q&A. Default anonymous; name only if they ask. No Frank byline. See STYLE-GUIDE §8a / `.qa`.
 - Masthead, dateline, footer are template furniture: never cut, never grow. No separate About/archive slot.
 - Tables shrink/grow by ROWS (width variant follows: few rows = rail, many = full).
 - Articles shrink/grow by WORDS; the rough guide is not a minimum or a target (v3.28) — length follows content quality.
   Lead = biggest type + 2-col; Secondary A = medium; Secondary B / NJ HS = smaller presence
   (locked in template — not a weekly dial).
 - **Stretch (when short):** grow lead → grow Secondary A → add TV/streaming or club-events
-  rows → **Desk fill** (v3.20): Gazette Desk may fill remaining space with **Frank-vetted**
-  staging items it picks (budget candidates / self-gather Frank already vetted). Desk fill is
-  listed in `issue.json` `desk_fill` and in the proof message; **Frank can veto any Desk-fill
+  rows → **Clark fill** (v3.20): Clark Kent may fill remaining space with **Frank-vetted**
+  staging items it picks (budget candidates / self-gather Frank already vetted). Clark fill is
+  listed in `issue.json` `desk_fill` and in the proof message; **Frank can veto any Clark fill
   piece at proof.** Never print unvetted items as fill. If still short, FLAG TO FRANK
   (inches/words). Never stretch type/leading.
 - **Cut (when long) — content-heavy weeks (v3.20, Frank 2026-10-07): standing / utility boxes
@@ -96,14 +96,14 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
      rows). Fewer tournaments before fewer names; the board shrinks, it is not dropped (core).
   3. **Other standing utility boxes** — TV/streaming, glance/explainer boxes, comic: trim rows,
      then drop. The **Deadlines box** trims rows but is not dropped (runs every issue, v3.28).
-  4. **Then stories:** Desk-fill and Secondary B first (a second Overheard counts as Desk-fill), then trim NJ HS, then trim Secondary A /
+  4. **Then stories:** Clark fill and Secondary B first (a second Overheard counts as Clark fill), then trim NJ HS, then trim Secondary A /
      lead toward minima. Keep Parent Q&A if printed — drop a second Q&A before the first.
   Club results + Ratings earned stay (always in; Ratings only when earned). This order overrides strict bottom-up table
   order for boxes. **Page 1 vs page 2 stays flexible** — cut order is priority, never a page
   assignment. Never cut furniture; never shrink type or cheat margins.
 - **Two-page overflow from a late add (v3.20):** if adding an item (e.g. a Frank-confirmed
-  board group at proof) would push the issue past 2 pages, **trim Desk-fill stories first**
-  (reflow columns, then cut words from Desk fill), then follow the cut order above — **before**
+  board group at proof) would push the issue past 2 pages, **trim Clark fill stories first**
+  (reflow columns, then cut words from Clark fill), then follow the cut order above — **before**
   any thought of shrinking type (which stays banned). Note every trim in `issue.json`.
 - If everything above the line still doesn't fit, the bot flags the overage in inches —
   it never shrinks type or cheats margins to force it.
@@ -115,4 +115,4 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 2. **Corrections:** SECTIONS-MENU marked a corrections box ✅, but corrections placeholders were killed 2026-10-06. Run a one-line correction only when needed, or never?
 3. **Comic by Ling:** credit line, and does Ling send via efc.weekly like Frank?
 
-Answered 2026-10-13 11:27 ET (chat: Frank 2026-10-13): no fixed lengths; Overheard one per issue when good, skip otherwise; Deadlines box every issue, next to the local board; "For the Parents" is final; "Dear Ref" was a Desk suggestion, not Frank's idea — later kept as a MAYBE (v3.30); "Go Cheer" being renamed → **"Nearby Tournaments"** (picked 11:29 ET).
+Answered 2026-10-13 11:27 ET (chat: Frank 2026-10-13): no fixed lengths; Overheard one per issue when good, skip otherwise; Deadlines box every issue, next to the local board; "For the Parents" is final; "Dear Ref" was the bot's suggestion, not Frank's idea — later kept as a MAYBE (v3.30); "Go Cheer" being renamed → **"Nearby Tournaments"** (picked 11:29 ET).

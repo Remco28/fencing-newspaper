@@ -33,12 +33,12 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    `photoIncludes` in the submit JSON. Submit → timestamped budget JSON + overwrite
    `approvals.json`. Vet → update `staging/weeks/next/items.json` + append
    `vet-log.jsonl`. Chat is doorbell only for budget/proof readiness.
-   **Budget server workflow (2026-10-07):** Gazette Desk serves the budget page on its own
+   **Budget server workflow (2026-10-07):** Clark Kent serves the budget page on its own
    computer: `cd budget-demo && nohup python3 server.py &` → `http://127.0.0.1:8766/` (keep port
-   8766; restart on the same port). Desk opens it in its desktop browser; Frank reviews / Vets /
-   Submits there via the Gazette Desk computer tab — or answers in chat and Desk applies the
+   8766; restart on the same port). Clark opens it in its desktop browser; Frank reviews / Vets /
+   Submits there via the Clark Kent computer tab — or answers in chat and Clark applies the
    answers to staging + the lineup. Chat stays doorbell ("budget ready").
-   **Practice budget v2 (v3.21, 2026-10-07):** `budget-demo/practice.html` renders Desk's proposed
+   **Practice budget v2 (v3.21, 2026-10-07):** `budget-demo/practice.html` renders Clark's proposed
    lineup (`budget-demo/practice-lineup.json`, `"schema": 2`) against live staging
    (`items.json` + `media/manifest.json`). Built for Frank's 1280×800 remote-desktop view: fixed
    left bar (issue, publish-day field, rough fit meter, Included / Need Vet / Questions counts,
@@ -71,14 +71,14 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
 4. **Proof** — rendered PDF; second approve gate. (Optional Claude Code copy check after vetting and PNG proof check: see § Claude Code, v3.36.) Nothing prints without both
    budget + proof approval.
    **Proof round (v3.20 — as run for Issue No. 1):**
-   proof **v1** → “proof ready” doorbell with previews + open flags (Desk-fill list Frank can
+   proof **v1** → “proof ready” doorbell with previews + open flags (Clark fill list Frank can
    veto, names to confirm) → **Frank’s answers** (chat) applied → proof **v2** (v3… if needed)
    → **Frank approves** → print. **Frank prints the PDF himself** (no auto-print yet).
    - **Proof status lives in `issue.json`** (`status`, `proof_version`, `proof_history`,
      `proof_approval`) and the HTML `<title>` only — never a PROOF stamp on the sheet.
      On approval also add `proofApproval` to the issue `approvals.json`. Approved PDFs are
      frozen: do not re-render or edit an approved issue.
-   - Before any proof is called done, Desk opens and inspects every page PNG (STYLE-GUIDE §7).
+   - Before any proof is called done, Clark opens and inspects every page PNG (STYLE-GUIDE §7).
    - Frank’s chat answers count as verified facts; provenance `chat: Frank YYYY-MM-DD`.
 
 ## Tips / mail
@@ -143,11 +143,11 @@ Chat does **not** hold approval state — **doorbell only** for budget/proof rea
 
 ## Ops cadence / gather loop (locked v3.15 — Frank 2026-10-07; wording v3.19)
 
-Canonical home for **when** Gazette Desk checks chat, email, and self-gather.
+Canonical home for **when** Clark Kent checks chat, email, and self-gather.
 SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Eastern.
 
 ### Chat → staging (anytime)
-- Frank tells Desk a fact/idea → stage for **next weekly issue** unless he names another week.
+- Frank tells Clark a fact/idea → stage for **next weekly issue** unless he names another week.
 - Same rule as § Chat → staging above; reaffirmed here so the gather loop is one place.
 
 ### Email (`efc.weekly@agentmail.to`) — two passes
@@ -161,7 +161,7 @@ SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Easte
 2. **Publish-morning full pass** (when Frank is aiming to ship — usually Mon/Tue morning; later OK): full SOURCES “Every run” checklist (incl. FencingTracker full sweep — club page + event results pages, v3.24; X full pass, ≈15–25 calls; X items stage `source: "x"`, unvetted, provenance `type: "x_post"` with post URL + UTC/ET time). Soft preference: if Elite FC members are fencing Monday, waiting for those results is nice when easy — not required.
 
 ### Publish gates (reminder)
-**Budget HTML → Frank approve → Gazette Desk compose → Proof PDF → Frank approve → print.**
+**Budget HTML → Frank approve → Clark Kent compose → Proof PDF → Frank approve → print.**
 Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or email/chat message-ID + date, or logged API/fetch). Chat is doorbell only for “budget ready” / “proof ready.”
 
 ### Reality / provenance (locked 2026-10-07 — plan v3.16)
@@ -171,9 +171,9 @@ Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or 
 - Narrative home: PLAN §1c; compose checklist: STYLE-GUIDE §0b.
 
 ### Claude Code — optional second reviewer (v3.36 — Frank 2026-10-18)
-Claude Code (`claude -p`, Opus or Sonnet, whichever is available on the runner) is an **optional second reviewer**. It never writes copy or adds facts. **Desk stays the writer and the keeper of sources.** If Claude Code isn't available, skip the step: nothing depends on it.
-- **(a) Copy check:** after vetting, before budget or compose. Give it the texts plus the house rules (STYLE-GUIDE §0a–0d: reality lock, no Epee labels in club context, opinions labeled, no usernames, strong results only, no birth years) and each item's provenance. Ask it to flag unsupported claims, opinion/fact drift, typos, awkward lines and house-rule slips. Desk takes the fixes it agrees with and notes taken/rejected fixes in the item's `vet_notes`. A fact Claude Code proposes never goes in.
-- **(b) Proof check:** run it on rendered page PNGs (overflow, orphans, gaps, alignment) alongside Desk's own STYLE-GUIDE §7 visual QA. It does not replace Desk's check.
+Claude Code (`claude -p`, Opus or Sonnet, whichever is available on the runner) is an **optional second reviewer**. It never writes copy or adds facts. **Clark stays the writer and the keeper of sources.** If Claude Code isn't available, skip the step: nothing depends on it.
+- **(a) Copy check:** after vetting, before budget or compose. Give it the texts plus the house rules (STYLE-GUIDE §0a–0d: reality lock, no Epee labels in club context, opinions labeled, no usernames, strong results only, no birth years) and each item's provenance. Ask it to flag unsupported claims, opinion/fact drift, typos, awkward lines and house-rule slips. Clark takes the fixes it agrees with and notes taken/rejected fixes in the item's `vet_notes`. A fact Claude Code proposes never goes in.
+- **(b) Proof check:** run it on rendered page PNGs (overflow, orphans, gaps, alignment) alongside Clark's own STYLE-GUIDE §7 visual QA. It does not replace Clark's check.
 - **(c) Site and code work:** reviews of budget page, site and scripts changes.
 - Never pass `.env` contents, API keys, raw email or DOBs into a Claude Code prompt.
 
@@ -193,7 +193,7 @@ Claude Code (`claude -p`, Opus or Sonnet, whichever is available on the runner) 
 
 Recurring **content category**, not a one-off layout trick.
 
-- **Flow:** A parent asks Frank → Frank tells Gazette Desk in chat (or email) → we stage + print.
+- **Flow:** A parent asks Frank → Frank tells Clark Kent in chat (or email) → we stage + print.
 - **Privacy default:** **no parent name**, **no Frank byline**. Name the asker only if they ask to be named; still no Frank byline unless he is explicitly guesting.
 - **Staging:** `kind: qa`, tags include `qa`, `suggested_slot` / `slot_hint`: `parent_qa`, `vetted` per normal trust rules (Frank chat = vetted).
 - **Print:** CONTENT-HIERARCHY slot **Parent Q&A** (40–70w); STYLE-GUIDE `.rail-block.qa`. Usually **one** per issue.

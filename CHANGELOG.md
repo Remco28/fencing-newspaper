@@ -2,6 +2,10 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.44 — 2026-10-30
+- **Bot renamed Gazette Desk → Clark Kent** (Frank, chat 2026-10-30). Live docs, scripts, the budget page labels ("Notes for Clark", "Clark's read on this week", "Clark proposes"), `sections.json`, the No. 5 pile, roster notes and the history-photo cards now say Clark / Clark Kent; "Desk fill" is now "Clark fill". Intentionally kept: JSON keys `desk_fill`, `desk_summary`, `desk_verification`, `hide_desk_notes`; budget-page element ids/classes `desk`/`deskList`; and the public site's `site/js/desk*.js` / `EGG.Desk` engine (that "desk" is the tabletop the papers sit on, not the bot). "Club Desk" stays as a banned-byline example. Past changelog entries, archived staging weeks, issue inputs, vet logs and `budget-demo/archive/` are history and keep the old name.
+- **Restored** `issues/2026-10-19/build/` and `issues/2026-10-26/build/` (`compose.py`, `overrides.json`), lost in the box restore of 2026-10-28 ~13:20 ET (every directory named `build`/`.build` on the box went missing; no repo script deletes them).
+
 ## v3.43 — 2026-10-26
 - **The Vault entries list (Frank, chat 2026-10-26):** sections.json `the-vault.entries` now records each Vault piece with the issue it first ran in. THE WEAPON (No. 2) and the referee feature "Want to Referee? Start at the Club" (No. 4; Frank: "should probably go in the vault"). No. 4 prints it untagged; reruns carry "From the Vault · first ran in No. 4".
 - **Club Results inclusion bar (Frank, chat 2026-10-26):** a finish prints at top 32 national (FIE/international = national or higher), top 16 regional, top 8 local; small fields (under ~16) only top 8 or a medal; always print a medal (top 3), a qualification, or a rating earned. Replaces the podium/top-8/climb definition in sections.json `club-results.rules`, STYLE-GUIDE §0d, CONTENT-HIERARCHY, PLAN.

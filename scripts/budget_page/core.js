@@ -93,7 +93,7 @@
     var out = (M.cfg.photos || []).filter(isObj).map(function (p) { listed[p.id] = 1; return p; });
     M.media.forEach(function (m) {
       if (listed[m.id] || m.kind !== "photo") return;
-      out.push({ id: m.id, proposed: false, span: 1, note: "Not reviewed by Desk yet." });
+      out.push({ id: m.id, proposed: false, span: 1, note: "Not reviewed by Clark yet." });
     });
     return out;
   }
@@ -296,7 +296,7 @@
     });
     each(saved.vets, function (id, v) {
       if (!vettable(M, id)) { res.dropped++; return; }
-      if (vettedOnFile(M, id)) return; // Desk already applied it
+      if (vettedOnFile(M, id)) return; // Clark already applied it
       st.vets[id] = { notes: isObj(v) && typeof v.notes === "string" ? v.notes : "", at: isObj(v) ? v.at || null : null };
     });
     return res;

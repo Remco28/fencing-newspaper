@@ -17,7 +17,7 @@ Paul Anspach’s fencing story has two kinds of achievement: winning, and helpin
 Photo: photographer unidentified / The Fifth Olympiad, Swedish Olympic Committee official report (Stockholm, 1913), plate 23 / Wikimedia Commons (extracted portrait). Public domain in the United States (published 1913; copyright expired). Source: https://commons.wikimedia.org/wiki/File:1912_Paul_Anspach.JPG
 ```
 - **License:** Public domain in United States — published 1913; copyright term expired, https://commons.wikimedia.org/wiki/Template:PD-US-expired
-- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. The Desk's resize to ≤1600 px isn't counted as a change.
+- **Changes:** Public domain/CC0, so no change notice is legally required. Still keep the source credit, and add "Converted to grayscale" if you do so, as good practice. Clark's resize to ≤1600 px isn't counted as a change.
 - **License check 2026-10-18:** Commons says "Public domain". Matches.
 
 **Cautions**

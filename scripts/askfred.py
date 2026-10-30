@@ -238,7 +238,7 @@ def cmd_events(client: AskFredClient, args: argparse.Namespace) -> Any:
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        description="Gentle AskFRED client for Gazette Desk gather (epee / Chatham defaults)."
+        description="Gentle AskFRED client for Clark Kent's gather (epee / Chatham defaults)."
     )
     p.add_argument(
         "--call-cap",

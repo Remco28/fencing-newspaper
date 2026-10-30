@@ -70,8 +70,8 @@
     if (nq && (missing || s.waiting || (!onFile && !local))) info.push(nq + (nq === 1 ? " question" : " questions") + " for you");
     else if (nqAll && !nq) info.push("questions answered");
     if (it && it.facts_status === "pending") info.push("facts pending");
-    if (s.proposed && !missing && !onFile && !local) info.push("Desk proposes — goes in once vetted");
-    else if (s.proposed && !missing) info.push("Desk proposes");
+    if (s.proposed && !missing && !onFile && !local) info.push("Clark proposes — goes in once vetted");
+    else if (s.proposed && !missing) info.push("Clark proposes");
     if (s.auto) info.push("auto-placed from staging");
     return pill + (info.length ? '<span class="sec-info">' + esc(info.join(" · ")) + "</span>" : "");
   }
@@ -89,7 +89,7 @@
     if (s.panels) return "See the board (" + s.panels.panels.reduce(function (n, p) { return n + p.rows.length; }, 0) + " events)";
     if (s.table && !it) return "See the table";
     if (it && it.schedule_rows) return "See the class table";
-    if (s.cost && s.cost.type === "figure") return "Read Desk's description of the figure";
+    if (s.cost && s.cost.type === "figure") return "Read Clark's description of the figure";
     if (it && /graf|qa|comic/.test(it.kind || "")) return "Read the draft · " + w + " words";
     if (s.table) return "See the table";
     return "Read the staging text";
@@ -141,7 +141,7 @@
     else if (it.message_id) h += "<div><code>" + esc(it.message_id) + "</code></div>";
     if (Array.isArray(it.facts) && it.facts.length) h += '<div class="lbl">Facts on file</div><ol>' + it.facts.map(function (f) { return "<li>" + esc(f && f.claim) + (f && f.status ? " — " + esc(f.status) : "") + "</li>"; }).join("") + "</ol>";
     if (it.claims_path) h += '<div><span class="lbl">Claim check</span> <code>' + esc(it.claims_path) + "</code></div>";
-    if (it.vet_notes) h += '<div style="margin-top:6px"><span class="lbl">Desk / vet notes</span> ' + esc(it.vet_notes) + "</div>";
+    if (it.vet_notes) h += '<div style="margin-top:6px"><span class="lbl">Clark / vet notes</span> ' + esc(it.vet_notes) + "</div>";
     if ((s.merged || []).length) h += '<div><span class="lbl">Merged</span> ' + s.merged.map(function (m) { return "<code>" + esc(m) + "</code>" + (M.byId[m] ? "" : " (not in staging)"); }).join(", ") + "</div>";
     return h + "</div>";
   }
@@ -200,7 +200,7 @@
         '<label class="inc' + (on ? " on" : "") + (locked ? " locked" : "") + '"><input type="checkbox" data-inc' + (on ? " checked" : "") + (locked ? " disabled" : "") + " /><span>" + esc(incLabel) + "</span></label>" +
         (!missing && !vetted ? '<button type="button" class="vet" data-vet="' + esc(s.item) + '">Vet this item</button>' : "") +
         (local ? vetBoxHtml(s.item, "item") : "") +
-        '<label class="sr" for="n-' + esc(s.key) + '">Note to Desk</label><textarea class="note" rows="2" id="n-' + esc(s.key) + '" data-note="' + esc(s.key) + '" placeholder="Note to Desk (optional)">' + esc(S.slotNotes[s.key] || "") + "</textarea>" +
+        '<label class="sr" for="n-' + esc(s.key) + '">Note to Clark</label><textarea class="note" rows="2" id="n-' + esc(s.key) + '" data-note="' + esc(s.key) + '" placeholder="Note to Clark (optional)">' + esc(S.slotNotes[s.key] || "") + "</textarea>" +
         moveHtml(s) +
       "</div></article>";
   }
@@ -212,7 +212,7 @@
     var pill = !present ? '<span class="pill missing">Not in staging</span>' : local ? '<span class="pill mine">✓ Vetted by you · not sent yet</span>' :
       vetted ? '<span class="pill ok">✓ Vetted</span>' : '<span class="pill vet">Needs your vet</span>';
     var info = [];
-    if (p.proposed) info.push(present && !vetted ? "Desk proposes — goes in once vetted" : "Desk proposes");
+    if (p.proposed) info.push(present && !vetted ? "Clark proposes — goes in once vetted" : "Clark proposes");
     var cls = "ph" + (on ? " is-in" : present && !vetted ? " needs-vet" : "");
     return '<div class="' + cls + '" id="p-' + esc(p.id) + '" data-photo="' + esc(p.id) + '" data-item-id="' + esc(p.id) + '"' +
       (present && !vetted ? ' data-needs-vet="1"' : "") + (on ? ' data-in="1"' : "") + ">" +
@@ -225,7 +225,7 @@
       '<label class="inc' + (on ? " on" : "") + (vetted && present ? "" : " locked") + '"><input type="checkbox" data-pinc="' + esc(p.id) + '"' + (on ? " checked" : "") + (vetted && present ? "" : " disabled") + " /><span>" +
         (on ? "In the issue" : !present ? "Not in staging" : vetted ? "Include photo" : "Include (Vet first)") + "</span></label>" +
       (present && !vetted ? '<button type="button" class="vet" data-vet="' + esc(p.id) + '">Vet this photo</button>' : "") +
-      (local ? vetBoxHtml(p.id, "photo") + (item ? "" : '<div class="hint">Media id — Desk records this vet from your submission.</div>') : "") +
+      (local ? vetBoxHtml(p.id, "photo") + (item ? "" : '<div class="hint">Media id — Clark records this vet from your submission.</div>') : "") +
       "</div>";
   }
 
@@ -303,7 +303,7 @@
       '<span class="long"> of two pages · ' + (T.room >= 0 ? "room for ≈ " + room + " words" : '<span class="over">over by ≈ ' + room + " words — cut from the bottom</span>") + "</span>" +
       '<span class="short"> full · ' + (T.room >= 0 ? "≈" + room + "w room" : '<span class="over">≈' + room + "w over</span>") +
       (T.pend ? ' <span class="proj">· ' + T.pctP + "% if vetted</span>" : "") + "</span>";
-    $("fitProj").textContent = (T.pend ? T.pctP + "% if you Vet what Desk proposes · " : "") + "rough estimate · red tick = full";
+    $("fitProj").textContent = (T.pend ? T.pctP + "% if you Vet what Clark proposes · " : "") + "rough estimate · red tick = full";
     [["nIn", T.nIn], ["nVet", T.nVet], ["nQ", T.nQ]].forEach(function (x) { $(x[0]).textContent = x[1]; $(x[0]).parentNode.classList.toggle("zero", !x[1] && !(x[0] === "nVet" && T.nVetPh)); });
     $("nVetPh").textContent = T.nVetPh; $("nVetPhWrap").hidden = !T.nVetPh; $("nVetPhWrap").parentNode.classList.toggle("has-ph", !!T.nVetPh);
     Object.keys(T.labels).forEach(function (k) {
@@ -326,7 +326,7 @@
   /* ---------- header ---------- */
   function showDay() {
     var v = $("publishDate").value, pub = M.cfg.publish || {};
-    $("publishDay").textContent = fmtDay(v) + (v && v === pub.date ? " · Desk's pick" : v && v === pub.alt ? " · Desk's alternate" : "");
+    $("publishDay").textContent = fmtDay(v) + (v && v === pub.date ? " · Clark's pick" : v && v === pub.alt ? " · Clark's alternate" : "");
     document.querySelectorAll("[data-pick]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-pick") === v)); });
     $("fileName").textContent = fileName(v);
   }
@@ -337,14 +337,14 @@
     $("weekLabel").textContent = iss.week || "";
     $("barId").innerHTML = esc(iss.label || "Budget") + "<small>" + esc(iss.week || "") + "</small>";
     document.title = "Budget — " + (iss.label || "next issue") + (real ? "" : " (practice)");
-    $("modeTag").textContent = real ? "Real budget · your submission goes to the Desk" : "Practice — not a real submission";
+    $("modeTag").textContent = real ? "Real budget · your submission goes to Clark" : "Practice — not a real submission";
     $("modeTag").className = "mode" + (real ? "" : " practice");
     var picks = [];
-    if (pub.date) picks.push('<button type="button" data-pick="' + esc(pub.date) + '">Desk\'s pick: ' + esc(fmtDay(pub.date)) + "</button>");
+    if (pub.date) picks.push('<button type="button" data-pick="' + esc(pub.date) + '">Clark\'s pick: ' + esc(fmtDay(pub.date)) + "</button>");
     if (pub.alt) picks.push('<button type="button" data-pick="' + esc(pub.alt) + '">Alternate: ' + esc(fmtDay(pub.alt)) + "</button>");
     $("datePicks").innerHTML = picks.join("");
     $("publishWhy").innerHTML = (pub.note ? esc(pub.note) : "") + (pub.why ? (pub.note ? "<br>" : "") + "<b>Why:</b> " + esc(pub.why) : "");
-    $("deskList").innerHTML = (cfg.desk_summary || []).map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") || "<li>No summary from Desk.</li>";
+    $("deskList").innerHTML = (cfg.desk_summary || []).map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") || "<li>No summary from Clark.</li>";
     $("publishDate").value = S.publishDate || pub.date || "";
     $("globalNotes").value = S.notes || "";
     var miss = (b.missing && b.missing.items) || [];
@@ -425,7 +425,7 @@
     S.vets[id] = { notes: "", at: Core.isoLocal(new Date()) };
     rerenderHosts(id);
     var inp = document.querySelector('[data-vnote="' + attrSel(id) + '"]'); if (inp) inp.focus({ preventScroll: true });
-    status("", "Vetted <code>" + esc(id) + "</code> on this page. It goes to the Desk with your submission.");
+    status("", "Vetted <code>" + esc(id) + "</code> on this page. It goes to Clark with your submission.");
     changed();
   }
   function unvet(id) {
@@ -532,7 +532,7 @@
     if (storage) { try { storage.removeItem(STORE_KEY); } catch (e) {} }
     S = Core.defaultState(M); ui.open = {};
     renderHeader(); render();
-    status("", "Reset. Back to Desk's proposed budget.");
+    status("", "Reset. Back to Clark's proposed budget.");
   }
 
   /* ---------- boot ---------- */
@@ -553,7 +553,7 @@
     if (!storage) notice("warn", "This browser won't save your progress here (private mode or file:// limits). The page still works — finish in one sitting, or Submit early.");
     else if (r.restored) {
       notice("", "Restored your progress from " + esc(fmtTime(S.savedAt) || "earlier") + "." +
-        (r.dataChanged ? " The Desk has updated this page since; your notes, answers, includes, order and vets were kept where they still match" +
+        (r.dataChanged ? " Clark has updated this page since; your notes, answers, includes, order and vets were kept where they still match" +
           (r.dropped ? " (" + r.dropped + " saved entr" + (r.dropped === 1 ? "y" : "ies") + " no longer match and were dropped)" : "") + "." : ""));
     }
     if (r.restored) saveNow();

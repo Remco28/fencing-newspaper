@@ -197,7 +197,7 @@ def main() -> None:
         found["vetted_at"] = now_iso
         found["vetted_by"] = "frank"
         if vet_notes:
-            # append (never replace) so Desk's own history notes survive; skip an identical re-ingest
+            # append (never replace) so Clark's own history notes survive; skip an identical re-ingest
             line = f"[{now_iso[:10]}] Frank: {vet_notes}"
             old = found.get("vet_notes")
             if not old:
