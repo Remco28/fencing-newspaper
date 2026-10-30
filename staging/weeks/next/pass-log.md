@@ -21,3 +21,8 @@
 - Email: 2 new. Chunkymonkey club-schedule digest (Oct 29): entries unchanged vs staging (NYFA #1, Medeo YC #5, Pizza RYC/RJCC as staged; Wanglei Nov Cup I still nobody signed up; Pizza data "could not refresh" since Oct 28 6:01 PM). Club Mailchimp "Group Class! + Footwork Class" (Oct 28): same-week class reminders (Wed Musketeers 5:00 PM, Footwork 6:30 PM; Thu "Advanced Group Class" 6:00 PM) matching the staged standing schedule, plus Medeo YC #5 registration link (already staged). Nothing to stage. Both labeled processed.
 - FencingTracker club page (1 fetch, 7:50 AM ET): 165 tournaments / 1240 results; newest rows still Morris Cup Oct 24–25, Freehold Unrated, San José WCs, Artdu Open, all already staged. Nothing new.
 - fencing-api cached club-results since Oct 27: 0 rows (cache-only; no mismatch). No live calls: no Elite FC events Wed Oct 28.
+
+## 2026-10-30 Fri 7:52 AM ET — daily email check + FT quick look
+- Email: 1 new (chunkymonkey club-schedule digest, Oct 30). Entries unchanged vs Oct 29 (only "data as of" timestamps moved): NYFA #1, Medeo YC #5, Pizza RYC/RJCC as staged (Pizza still "could not refresh", now as of Oct 29 6:00 AM); Wanglei Nov Cup I still nobody signed up. Nothing to stage. Labeled processed.
+- FencingTracker club page (1 fetch, 7:53 AM ET): 165 tournaments / 1240 results, unchanged; newest rows still Morris Cup Oct 24–25, Freehold Unrated, San José WCs, Artdu Open, all already staged. Nothing new.
+- fencing-api cached club-results since Oct 28: 0 rows (cache-only; no mismatch). No live calls: no Elite FC results posted for Thu Oct 29.
