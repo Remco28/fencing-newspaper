@@ -50,53 +50,25 @@
   "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
   "generated": "2026-10-26T12:45:00-04:00",
   "target_week": "next",
+  "generated_at": "2026-11-02T10:35:00-05:00",
   "issue": {
-    "number": 4,
-    "label": "Issue No. 4",
-    "week": "Week of Oct. 26, 2026"
+    "number": 5,
+    "label": "Issue No. 5",
+    "week": "Week of Nov. 2, 2026"
   },
   "publish": {
-    "date": "2026-10-26",
-    "label": "Monday, October 26, 2026",
-    "alt": "2026-10-27",
-    "why": "Target Mon/Tue after Morris Cup (Oct 24–25). Soft preference: hold for weekend club results when easy.",
-    "note": "Mon or Tue; Clark waits for Morris / Medeo #4 results before compose."
+    "date": "2026-11-03",
+    "label": "Tuesday, November 3, 2026",
+    "alt": "2026-11-04",
+    "why": "Mon/Tue target; results from the Oct 31–Nov 1 weekend are in. Nov 8 tournaments (NYFA #1, Medeo #5) make Tuesday the useful latest."
   },
-  "desk_summary": [
-    "No. 4 budget patched Monday after your lead call (not rebuilt). Your Oct 19 lineup stands, with the changes below.",
-    "Lead: Morris Cup roundup drafted (156 words), pending your review — turnout, big fields, Y8 through Junior; Madeline Siu's win and Joshua Jeong's 2nd headline; Maximus Siu 13th and Remy Ng 14th. Top-16 only.",
-    "'How to become a referee' moves to a page-1 feature (Secondary B). Still needs your Vet, a yes/no on a personal angle, and ~180 vs ~270 words.",
-    "Club Results opens with Maksim Milinkovic's 6th at the San José Cadet World Cup (Oct 22), placed by you; no field size or strength-of-field comparison. Brendan Mendez's 3rd (Freehold, Oct 23) waits on your Vet. Medeo #4 (Nora Li) and NJ JO results still not posted.",
-    "Nearby Tournaments: Ultimate Cup 14 entries; Cobra 26 / 16 (still needs your Vet); Medeo #5 unchanged.",
-    "Still proposed: Casablanca short, By the Book, For the Parents, Epee on Screen, Photo from History 07, Winter Camp v4.",
-    "Fill: about 22% with vetted items only; about 78% if you Vet what Clark proposes, including the Morris lead (156 words)."
-  ],
-  "photos": [
-    {
-      "id": "media-history-07-epee-fair-play-1976",
-      "proposed": true,
-      "span": 1,
-      "note": "Photo from History 07; 1 column only (640×480)."
-    }
-  ],
-  "held": [],
-  "not_proposed": [
-    {
-      "item": "x-lead-college-schedules-2026-27",
-      "why": "Schedule-image posts only; no dates verified. Hold for a college-path week."
-    },
-    {
-      "item": "ft-maksim-junior-wc-48th-2026-10-23",
-      "why": "Dropped: below strong-results bar (Club Results prints strong results only; no 'also fenced' line — sections.json, Frank 2026-10-20)."
-    }
-  ],
   "slots": [
     {
       "key": "lead",
       "section": "lead",
-      "slot": "Lead story — Morris Cup roundup",
-      "budget": "~150–180w typical (draft 156w)",
-      "item": "draft-morris-cup-lead-2026-10-26",
+      "slot": "Lead story — Ultimate Cup: Milinkovic's A",
+      "budget": "~150–180w typical (draft 130w)",
+      "item": "draft-ultimate-cup-lead-2026-11-02",
       "proposed": true,
       "waiting": false,
       "cost": {
@@ -104,99 +76,58 @@
         "span": 2,
         "feature": true
       },
-      "title": "Elite FC Brings 19 to Morris Cup; Siu Wins, Jeong 2nd",
-      "summary": "Clark's draft (156 words) from FencingTracker results, pending your review. Angle per your call: the club's turnout (19 fencers, 29 entries, Y8 through Junior) at a well-attended tournament (six of the club's 10 events over 80 fencers; 137 in Cadet Men). Top-16 finishes only: Madeline Siu won Y8 Women (of 11), Joshua Jeong 2nd of 30 in Y10 Men, Maximus Siu 13th of 30, Remy Ng 14th of 61 in Y12 Men. No other placings, withdrawals, ratings or strength comparison. Full text: staging/weeks/next/drafts/morris-cup-lead.md.",
-      "questions": [],
+      "title": "Milinkovic Earns His A at Ultimate Cup",
+      "summary": "Clark's draft (130 words) from FencingTracker: Maksim Milinkovic 5th of 83 in Cadet Men at the Ultimate Cup RJCC (Hillsborough Township, Oct 31), earning an A26, up from B26 in May. Nico Ng 10th in Junior Men (Nov 1). Recalls his San José 6th; closes on Cobra (16 entered). Top-16 only; nobody else characterized.",
+      "questions": [
+        "OK to lead with Maksim's A, or would you rather lead another way?",
+        "Nico's 10th is in the lead: fine to print your son's result here, or move it to Club Results only?"
+      ],
       "flags": [
         {
           "level": "warn",
-          "text": "Pending your review: Vet it to put it in the fill."
-        },
-        {
-          "level": "info",
-          "text": "Top-16 only; no withdrawals, ratings or strength-of-field comparison (Frank 2026-10-26)."
+          "text": "UNVETTED (scraped FencingTracker results). Vet to use."
         }
       ]
     },
     {
       "key": "secondary-a",
       "section": "lead",
-      "slot": "Secondary A — Casablanca World Cup",
-      "budget": "80–100w",
-      "item": "x-fie-casablanca-epee-wc-2026-10-18",
+      "slot": "Secondary — Youth Olympics in Dakar",
+      "budget": "~40–80w",
+      "item": "x-fie-dakar-yog-2026-11-02",
       "proposed": true,
       "cost": {
         "type": "prose",
         "span": 1
       },
-      "title": "Italy, Hungary Win Epee Season Opener",
-      "summary": "Casablanca senior epee World Cup (Oct 15–18): Marzani (ITA) and Koch (HUN) take the individual titles; Kazakhstan men and Russia women win the teams. Field size 618 / 67 nations from fie.org. Sourced from FIE's own X posts (tier A) plus the tournament JSON. Unvetted.",
-      "flags": [
-        {
-          "level": "warn",
-          "text": "UNVETTED. FIE event-results JSON was still empty at 9:12 a.m.; re-check before compose for any U.S. finish worth a one-liner."
-        }
-      ]
-    },
-    {
-      "key": "secondary-b",
-      "section": "lead",
-      "slot": "Page-1 feature — How to become a referee (Frank picked)",
-      "budget": "~180w secondary or ~270w fuller feature (your call)",
-      "item": "chat-become-a-referee-placeholder-2026-10-13",
-      "proposed": true,
-      "waiting": false,
-      "cost": {
-        "type": "prose",
-        "span": 1,
-        "feature": true
-      },
-      "title": "Want to Referee? Start at the Club",
-      "summary": "Moved off the lead (Morris Cup leads, Frank 2026-10-26); stays on page 1. Clark's draft (271 words) from USA Fencing's become-a-referee page and the Regional Tournament Requirements 2026–28 PDF: start at the club, study guide + seminar + online exam (90%) for a P rating, then a practical exam for L/R ratings; ages 13+ with a P can work regionals; paid for more than one pool round; membership and (18+) background check/SafeSport. Ends with Friday open bouting as a place to start. Unvetted until you Vet it.",
+      "title": "Youth Olympics Open in Dakar; Fencing Nov. 8–13",
+      "summary": "From FIE's own X posts: the Youth Olympic Games opened in Dakar Oct 31, Senegalese foil fencer Abdourahmane Marième Sy lit the cauldron, fencing runs Nov 8–13 at Dakar Expo Centre. 35 words now; Clark can add the epee days and any U.S. epee entries before compose.",
       "questions": [
-        "Any personal angle you want in it (you said you're interested), or keep it a plain how-to?",
-        "Now that it's a page-1 feature under the Morris lead: trim to ~180 words as a secondary, or keep ~270 as a fuller page-1 feature?"
+        "Worth a short here, or just the Epee on Screen row?"
       ],
       "flags": [
         {
           "level": "warn",
-          "text": "UNVETTED — Include locked until you Vet."
+          "text": "UNVETTED."
         }
       ]
     },
     {
       "key": "club-results",
       "section": "club",
-      "slot": "Club results — San José WC + Medeo #4 (+ JO if posted)",
+      "slot": "Club results — Ultimate Cup (+ Freehold, late)",
       "budget": "strong rows only (no 'also fenced' line)",
-      "item": "ft-maksim-cadet-wc-6th-2026-10-22",
+      "item": "ft-ultimate-cup-results-2026-11-02",
       "merged": [
-        "ft-mendez-freehold-unrated-3rd-2026-10-23",
-        "fencingapi-medeo-yc4-entries-2026-10-14",
-        "askfred-nj-jo-qualifier-2026-10-18"
+        "ft-mendez-freehold-unrated-3rd-2026-10-23"
       ],
       "proposed": true,
       "waiting": false,
       "cost": {
         "type": "table_rows",
-        "rows": 1
+        "rows": 3
       },
-      "title": "Club results — San José World Cup + weekend of Oct. 24–25",
-      "summary": "Opens with Maksim Milinkovic, 6th in Cadet Men at the FIE Cadet World Cup in San José, Costa Rica (Oct 22) — placed here by Frank (2026-10-26). Editorial note: print the placing as is; do NOT mention field size or compare the strength of competition, nothing that diminishes the result. Brendan Mendez 3rd at the Freehold unrated Senior Open (Oct 23) gets its own row once you Vet it. Maksim's 48th at the San José Junior World Cup is dropped (below the strong-results bar; no 'also fenced' line). Morris Cup results go in the lead roundup, not here. Still waiting as of ~10 a.m. Mon: Medeo #4 (Nora Li's Y10 Mixed not up); NJ JO Qualifier (Oct 18) still no results on AskFRED — JO line ONLY if Aaditya Jaising or Charles Young qualified.",
-      "flags": [
-        {
-          "level": "warn",
-          "text": "Mendez 3rd (FencingTracker) is UNVETTED — row added only after you Vet it."
-        },
-        {
-          "level": "info",
-          "text": "Maksim row: no field size, no strength-of-field comparison (Frank, 2026-10-26)."
-        },
-        {
-          "level": "info",
-          "text": "Medeo #4 / JO rows get added if strong results post; Morris results go to the lead."
-        }
-      ],
+      "title": "Club results — Ultimate Cup, Oct. 31–Nov. 1",
       "table": {
         "head": [
           "Fencer",
@@ -206,80 +137,130 @@
         "rows": [
           [
             "Maksim Milinkovic",
-            "Cadet Men, FIE Cadet World Cup, San José, Costa Rica (Oct. 22)",
-            "6th"
+            "Ultimate Cup RJCC, Cadet Men (Oct. 31)",
+            "5th of 83 · earned A26"
+          ],
+          [
+            "Nico Ng",
+            "Ultimate Cup RJCC, Junior Men (Nov. 1)",
+            "10th"
+          ],
+          [
+            "Brendan Mendez",
+            "Freehold Unrated, Senior Open Men (Oct. 23)",
+            "3rd"
           ]
         ]
-      }
+      },
+      "summary": "Two Ultimate Cup rows clear the regional top-16 bar (the other 13 Elite FC results don't, so they don't print). Mendez's Freehold 3rd (a medal, Oct 23) carried from No. 4 waiting on your Vet; drop it if it feels stale.",
+      "questions": [
+        "Keep Brendan Mendez's Oct 23 Freehold 3rd, or is it too old now?"
+      ],
+      "flags": [
+        {
+          "level": "warn",
+          "text": "UNVETTED (scraped). Vet each row."
+        },
+        {
+          "level": "info",
+          "text": "fencing-api's club-results cache returned 0 rows since Oct 30 (a cache gap, not a disagreement). FencingTracker is the only source."
+        }
+      ]
     },
     {
       "key": "ratings",
       "section": "club",
       "slot": "Ratings earned",
-      "budget": "2–5 rows",
-      "empty": true,
-      "why": "None posted yet. Check after Morris Cup / Medeo #4."
+      "budget": "1 row",
+      "item": "ft-maksim-a26-rating-2026-11-02",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 1,
+        "span": 1
+      },
+      "title": "Ratings Earned",
+      "table": {
+        "head": [
+          "Fencer",
+          "Rating",
+          "Where"
+        ],
+        "rows": [
+          [
+            "Maksim Milinkovic",
+            "A26 (from B26)",
+            "Ultimate Cup RJCC, Oct. 31"
+          ]
+        ]
+      },
+      "summary": "First Ratings Earned box. FT rating history confirms a step up (B26, May 7). Overlaps the lead; cut this box if you'd rather the lead carry it.",
+      "flags": [
+        {
+          "level": "warn",
+          "text": "UNVETTED."
+        }
+      ]
     },
     {
       "key": "signup",
       "section": "club",
-      "slot": "Nearby Tournaments — Ultimate Cup",
-      "budget": "4 rows",
-      "item": "ft-ultimate-cup-efc-registrations-2026-10-12",
+      "slot": "Nearby Tournaments — NYFA Youth Cup #1",
+      "budget": "5 rows",
+      "item": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
       "proposed": true,
       "cost": {
         "type": "table",
-        "rows": 4,
+        "rows": 5,
         "span": 1
       },
-      "title": "Ultimate Cup RJCC — Hillsborough, N.J., Oct. 31–Nov. 1",
+      "title": "NYFA Youth Cup #1 — Brooklyn, Sun. Nov. 8",
       "table": {
         "head": [
-          "Day · check-in close",
+          "Check-in",
           "Event",
           "Elite FC entered"
         ],
         "rows": [
           [
-            "Sat. · 8:00 a.m.",
-            "Junior Women",
-            "Olivia Hayes, Lillian Liu, Anayaa Sheth, Adela Sullivan"
+            "9:00 a.m.",
+            "Y10 Mixed",
+            "Bryce Cheng, Maximus Siu"
           ],
           [
-            "Sat. · 1:00 p.m.",
-            "Cadet Men",
-            "Maksim Milinkovic, Caden Wu"
+            "9:00 a.m.",
+            "Y8 Mixed",
+            "Madeline Siu"
           ],
           [
-            "Sun. · 8:00 a.m.",
-            "Junior Men",
-            "Pablo Aguirre, Dieko Johnson, Maksim Milinkovic, Nico Ng"
+            "12:30 p.m.",
+            "Y12 Men",
+            "Remy Ng"
           ],
           [
-            "Sun. · 1:00 p.m.",
-            "Cadet Women",
-            "Olivia Hayes, Lillian Liu, Adela Sullivan, Penny Young"
+            "12:30 p.m.",
+            "Y12 Women",
+            "Christina Jiang"
+          ],
+          [
+            "4:00 p.m.",
+            "Y14 Women",
+            "Mila Siu"
           ]
         ]
       },
-      "summary": "CHANGE: Lillian Liu added to Junior Women — now 10 Elite FC fencers / 14 entries (USA Fencing live, Oct 26 8:59 a.m.). Check-in close times from the USA Fencing page ('All times are Close of Check-in'). Late entry closes Oct 29.",
-      "flags": [
-        {
-          "level": "info",
-          "text": "One block, days in order (STYLE-GUIDE §10a)."
-        }
-      ]
+      "summary": "Grew from 1 to 6 entries (club digest Nov 2, data as of Nov 1). Christina Jiang is also entered at Medeo #5 the same day."
     },
     {
       "key": "signup-2",
       "section": "club",
       "slot": "Nearby Tournaments — Medeo Youth Challenge #5",
-      "budget": "1–2 rows",
+      "budget": "4 rows",
       "item": "email-agentmail-medeo-yc5-entries-2026-10-14",
       "proposed": true,
       "cost": {
         "type": "table",
-        "rows": 1,
+        "rows": 4,
         "span": 1
       },
       "title": "Medeo Youth Challenge #5 — Bound Brook, N.J., Sun. Nov. 8",
@@ -292,28 +273,71 @@
         "rows": [
           [
             "9:30 a.m.",
-            "Y12 Men · Y12 Women",
-            "Samuel SarroWaite, Christina Jiang"
+            "Y12 Men",
+            "Samuel SarroWaite"
+          ],
+          [
+            "9:30 a.m.",
+            "Y12 Women",
+            "Christina Jiang"
           ],
           [
             "11:30 a.m.",
-            "Y10 Mixed · Y14 Men",
-            "Nora Li, Owen Li"
+            "Y10 Mixed",
+            "Nora Li, Claire Widjaja"
+          ],
+          [
+            "11:30 a.m.",
+            "Y14 Men · Y14 Women",
+            "Owen Li, Mira Shukla"
           ]
         ]
       },
-      "summary": "Same four, unchanged (AskFRED live Oct 26), still pending (pending entries print). Prereg closes Nov 7.",
-      "flags": [
-        {
-          "level": "info",
-          "text": "Names as AskFRED lists them (Samuel SarroWaite, Christina Jiang, Nora Li, Owen Li)."
-        }
-      ]
+      "summary": "Grew from 4 to 6 (Claire Widjaja and Mira Shukla added; both new to the roster, names as the digest lists them). Prereg closes Nov 7."
     },
     {
       "key": "signup-3",
       "section": "club",
-      "slot": "Nearby Tournaments — Cobra Challenge (new)",
+      "slot": "Nearby Tournaments — Pizza RYC/RJCC",
+      "budget": "3 rows",
+      "item": "email-agentmail-pizza-ryc-entries-2026-10-27",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 3,
+        "span": 1
+      },
+      "title": "Pizza RYC/RJCC — New Haven, Conn., Nov. 14–15",
+      "table": {
+        "head": [
+          "Day · check-in",
+          "Event",
+          "Elite FC entered"
+        ],
+        "rows": [
+          [
+            "Sat. · 8:00 a.m.",
+            "Y14 Women",
+            "Penny Young"
+          ],
+          [
+            "Sat. · 1:00 p.m.",
+            "Junior Women",
+            "Amina Gore"
+          ],
+          [
+            "Sun. · 8:00 a.m. / noon",
+            "Cadet Women · Y12 Women",
+            "Amina Gore, Penny Young · Penny Young"
+          ]
+        ]
+      },
+      "summary": "New board: 5 entries / 2 fencers. Unchanged on FencingTracker Nov 2 (the club digest still says 'could not refresh' for this one)."
+    },
+    {
+      "key": "signup-4",
+      "section": "club",
+      "slot": "Nearby Tournaments — Cobra Challenge",
       "budget": "7 rows (one block, days in order)",
       "item": "fencingapi-cobra-efc-entries-2026-10-19",
       "proposed": true,
@@ -367,28 +391,19 @@
           ]
         ]
       },
-      "summary": "CHANGE: Bryce Cheng added to Y10 Men — now 26 entries / 16 Elite FC fencers (USA Fencing live, Oct 26 9:00 a.m.). No event times yet. Unvetted until you Vet.",
-      "flags": [
-        {
-          "level": "warn",
-          "text": "UNVETTED. One block with days in order; times blank until USA Fencing lists them."
-        },
-        {
-          "level": "info",
-          "text": "If the board is too big, keep Ultimate + Medeo #5 and drop Cobra to a one-line 'also entered' note, or cut to Cobra only (biggest turnout)."
-        }
-      ]
+      "summary": "Unchanged, 26 entries / 16 fencers (FencingTracker Nov 2). Regular entry closed Nov 1; late entry to Nov 7. Seven rows: first to trim if tight (fewer tournaments before fewer names).",
+      "flags": []
     },
     {
       "key": "deadlines",
       "section": "club",
       "slot": "Deadlines box",
-      "budget": "3–5 rows",
+      "budget": "4 rows",
       "item": "desk-deadlines-2026-10-18",
       "proposed": true,
       "cost": {
         "type": "table",
-        "rows": 5,
+        "rows": 4,
         "span": 1
       },
       "table": {
@@ -398,12 +413,8 @@
         ],
         "rows": [
           [
-            "Oct. 29",
-            "Ultimate Cup — late entry closes"
-          ],
-          [
-            "Nov. 1",
-            "Cobra Challenge (Secaucus, Nov. 27–29) — regular entry; late to Nov. 7"
+            "Nov. 7",
+            "Cobra Challenge (Secaucus, Nov. 27–29) — late entry closes"
           ],
           [
             "Nov. 7",
@@ -419,7 +430,7 @@
           ]
         ]
       },
-      "summary": "Morris late (Oct 22) dropped — it passes before No. 4. Ultimate late, Cobra, JO and NJSIAA carry; Medeo #5 prereg (Nov 7) is new."
+      "summary": "Ultimate (Oct 29) and Cobra regular (Nov 1) dropped as past; Cobra late entry now Nov 7."
     },
     {
       "key": "camp",
@@ -432,7 +443,10 @@
         "type": "prose",
         "span": 1
       },
-      "summary": "Revised (v4, pending your review): adds the Oct 22 day-by-day schedule (swag, K2 Fitness, yoga/breath control + lunch, crepes) and the headcount ask. Still 'contact the club for price and sign-up'; no email printed."
+      "summary": "Third run of the reminder (115 words, as in No. 4). Camp is Dec 27–31; still 'contact the club for price and sign-up'.",
+      "questions": [
+        "Run the full 115 words again, or shrink to a two-line reminder?"
+      ]
     },
     {
       "key": "classes",
@@ -446,47 +460,7 @@
         "rows": 9,
         "span": 1
       },
-      "summary": "No schedule change this week. Dropped per content-heavy cut order."
-    },
-    {
-      "key": "by-the-book",
-      "section": "shorts",
-      "slot": "By the Book",
-      "budget": "50–80w",
-      "item": "desk-by-the-book-unwillingness-2026-10-19",
-      "proposed": true,
-      "cost": {
-        "type": "prose",
-        "span": 1
-      },
-      "title": "By the Book: One Quiet Minute",
-      "summary": "Clark-written from the Oct 2026 rulebook (t.124): one minute without a touch is unwillingness to fight; first time both get a P-red, second time the trailing (or lower-seeded) fencer gets a P-black. No P-card at 14-14. Sits next to the referee feature.",
-      "flags": [
-        {
-          "level": "info",
-          "text": "Standing rule: Clark writes it; you approve or cut at budget."
-        }
-      ]
-    },
-    {
-      "key": "for-parents",
-      "section": "shorts",
-      "slot": "For the Parents",
-      "budget": "50–80w",
-      "item": "desk-for-the-parents-check-in-2026-10-19",
-      "proposed": true,
-      "cost": {
-        "type": "prose",
-        "span": 1
-      },
-      "title": "For the Parents: The Time Listed Is Check-In",
-      "summary": "From the Ultimate Cup page: listed times are close of check-in, arrive an hour early, check in every day you compete, equipment check Friday and from 6:30 a.m. Timely for the 10 Elite FC fencers at Ultimate the next weekend. Unvetted.",
-      "flags": [
-        {
-          "level": "warn",
-          "text": "UNVETTED."
-        }
-      ]
+      "summary": "No schedule change this week. Not proposed."
     },
     {
       "key": "tv",
@@ -513,6 +487,11 @@
             "No stream listed"
           ],
           [
+            "Nov. 8–13",
+            "Youth Olympic Games fencing (Dakar, Senegal)",
+            "No stream listed"
+          ],
+          [
             "Nov. 12–15",
             "Senior World Cups: Berne (men), Wuxi (women)",
             "FencingTV"
@@ -521,41 +500,52 @@
             "Nov. 26–29",
             "Junior/Cadet World Cup (Novi Sad, Serbia)",
             "No stream listed"
-          ],
-          [
-            "Dec. 3–6",
-            "Senior World Cup, men + women (Vancouver)",
-            "FencingTV"
           ]
         ]
       },
-      "summary": "San José dropped (past). Manama + Berne/Wuxi + Vancouver carry; Novi Sad is new. Cut first if the issue is heavy after Morris results land."
+      "summary": "Dakar YOG added (FIE X, Nov 2). Vancouver (Dec 3–6) held to next issue."
     },
     {
       "key": "photo-history",
       "section": "shorts",
-      "slot": "Photo from History (page 2, 1 column)",
-      "budget": "photo + ~140w + credit",
-      "item": "history-photo-07-epee-fair-play-1976",
+      "slot": "Photo from History",
+      "budget": "photo + ~146w + credit",
+      "item": "history-photo-09-laura-flessel",
       "proposed": true,
       "cost": {
         "type": "figure",
         "span": 1,
-        "w": 640,
-        "h": 480,
-        "words": 163,
+        "w": 1092,
+        "h": 1600,
+        "words": 190,
         "head": true,
-        "note": "words = caption + blurb + credit; 1-col only (640 px)"
+        "note": "portrait; 1 column fits"
       },
-      "thumb": "07-epee-fair-play-1976.jpg",
-      "title": "Photo from History: 1976 — The light came on, but there was no touch",
-      "summary": "Clark's pick from the history pile: Onishchenko's 1976 modern-pentathlon epee scandal, with an illustrative 2006 epee photo (public domain). Fits the referee feature (fair play / scoring). Unvetted. Alternate: 05 (1936 electric epee, 2-col OK, CC BY-SA 3.0 FR).",
+      "thumb": "09-laura-flessel.jpg",
+      "title": "Photo from History: 1996 — Two golds at the start of an Olympic era",
+      "summary": "Laura Flessel, first Olympic women's epee champion (Atlanta 1996), with a 2013 portrait. Fits the Olympics week. Unvetted. Alternates in the pile: 11 Heidemann, 15 Kolobkov.",
       "flags": [
         {
           "level": "warn",
-          "text": "UNVETTED. Cap must say this is not Onishchenko's weapon and not an Olympic fencing bout."
+          "text": "UNVETTED."
         }
       ]
+    },
+    {
+      "key": "by-the-book",
+      "section": "shorts",
+      "slot": "By the Book",
+      "budget": "50–80w",
+      "empty": true,
+      "why": "No new rule piece staged; the last one ran in No. 4. Clark can write one if you want filler."
+    },
+    {
+      "key": "for-parents",
+      "section": "shorts",
+      "slot": "For the Parents",
+      "budget": "50–80w",
+      "empty": true,
+      "why": "Nothing new staged."
     },
     {
       "key": "nj-hs",
@@ -563,7 +553,7 @@
       "slot": "NJ high-school roundup",
       "budget": "~40w",
       "empty": true,
-      "why": "Out of season. NJSIAA 2026–27 dates already ran in No. 3; no new NJ.com stories."
+      "why": "Out of season; no new NJ.com stories."
     },
     {
       "key": "overheard",
@@ -571,7 +561,7 @@
       "slot": "Overheard on Reddit",
       "budget": "skip",
       "empty": true,
-      "why": "Nothing new staged this week (skip when nothing good — v3.28)."
+      "why": "No new Reddit PDFs."
     },
     {
       "key": "qa",
@@ -587,7 +577,33 @@
       "slot": "Comic",
       "budget": "1 panel",
       "empty": true,
-      "why": "None staged. Ling still optional from No. 3+."
+      "why": "None staged."
     }
+  ],
+  "photos": [
+    {
+      "id": "media-history-09-laura-flessel",
+      "proposed": true,
+      "span": 1,
+      "note": "Photo from History 09; portrait, 1 column."
+    }
+  ],
+  "held": [],
+  "not_proposed": [
+    {
+      "item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+      "why": "Travel entries (November NAC Nov 20–22, Kiefer Meinhardt, December SJCC, Z1, Fairfax). Unvetted, and four names aren't on the roster. Could become an 'on the road' line next week, before the NAC."
+    },
+    {
+      "item": "web-efc-standing-schedule",
+      "why": "Reference only; no change."
+    }
+  ],
+  "desk_summary": [
+    "Issue No. 5 (week of Nov. 2), target Tue Nov 3.",
+    "Lead: Maksim Milinkovic 5th of 83 at the Ultimate Cup with an A rating (up from B), Nico Ng 10th; Clark's 130-word draft, waiting on your Vet.",
+    "Club: Ultimate Cup results + Ratings Earned box; four Nearby Tournaments boards (NYFA #1 and Medeo #5 on Nov 8, Pizza, Cobra); Deadlines; Winter Camp.",
+    "Shorts: Dakar Youth Olympics short, Epee on Screen, Photo from History 09 (Laura Flessel). No By the Book or For the Parents staged.",
+    "Fill: about 28% with vetted items only; about 60% if you Vet what Clark proposes. That's light (room for roughly 1,500 more words). Clark can write a By the Book and a For the Parents (what a rating letter means) to bring it to about 75–80%."
   ]
 }

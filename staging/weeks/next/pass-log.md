@@ -32,3 +32,14 @@
 - FencingTracker club page (1 fetch, 7:52 AM ET): 166 tournaments / 1255 results (was 165 / 1240). New: Ultimate Cup RJCC (Oct 31–Nov 1), 15 Elite FC results. Maksim Milinkovic 5th CDTME with A26 listed as rating earned; Nico Ng 10th JNRME. Rest outside the regional top 16. Staged unvetted (ft-ultimate-cup-results-2026-11-02).
 - fencing-api cached club-results since Oct 30: 0 rows (cache-only; no mismatch). No live calls.
 - Repo: issues/2026-10-19/build and 2026-10-26/build files (compose.py, overrides.json) were showing as deleted again in the working tree; restored from git, nothing committed as deleted.
+
+## 2026-11-02 Mon ~9:00–10:40 AM ET — Monday full pass + No. 5 budget
+- Email (second pass): nothing new since 7:52 AM.
+- FencingTracker (club results, registrations, event 20410, Maksim's profile; gentle): Ultimate Cup rows unchanged (15); Maksim 5th of 83 CDTME, A26 is a step up from B26 (May 7, 2026); Nico Ng 10th JNRME (field size not fetched). Venue Iron Peak Sports & Events, Hillsborough Township. Registrations unchanged: Cobra 26/16, Pizza 5/2, travel boards as staged.
+- fencing-api: club-results since Oct 30 = 0 rows (cache gap). Live Cobra entries hit the client call cap while polling; used FT instead.
+- AskFRED (1 call): nothing new (NJFA Tue locals Nov 10, Dec 1/8/29; Medeo YC #5 Nov 8; Ari Simmons clinic Nov 7–8; Medeo winter camp Dec 27–31; far-off HS events Jan 10 and Feb 20, 2027 not staged).
+- Google News RSS, USA Fencing epee page, fie.org news: nothing to stage.
+- X (1 call, @FIE_fencing): Dakar 2026 YOG opened Oct 31, fencing Nov 8–13; staged x-fie-dakar-yog-2026-11-02 (unvetted) and an Epee on Screen row.
+- Staged: ft-maksim-a26-rating-2026-11-02, draft-ultimate-cup-lead-2026-11-02 (130w), history-photo-09-laura-flessel (+ media). Updated deadlines and Epee on Screen for No. 5; refreshed provenance on Cobra, Pizza, travel.
+- Dropped from next/ (stale or already ran): Ultimate registrations, Medeo YC #4 entries, NJ JO qualifier, Morris Cup results, Cobra details (listed in items.json dropped_2026_11_02).
+- Budget: archived the No. 4 lineup; wrote No. 5 lineup; built budget-demo/out/budget-no-5-2026-11-03-next.html (not committed). Fill ~28% vetted / ~60% if proposed items are vetted.

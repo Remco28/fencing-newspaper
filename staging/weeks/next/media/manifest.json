@@ -1,0 +1,20 @@
+{
+  "target_week": "next",
+  "extracted_at": "2026-11-02T10:30:00-05:00",
+  "note": "Media for Issue No. 5 (week of Nov 2). Photo from History candidate copied from staging/history-photos.",
+  "items": [
+    {
+      "id": "media-history-09-laura-flessel",
+      "kind": "photo",
+      "filename": "09-laura-flessel.jpg",
+      "media_path": "staging/weeks/next/media/09-laura-flessel.jpg",
+      "caption": "Women’s epee made its Olympic debut in Atlanta in 1996, and Laura Flessel won both available gold medals for France: individual and team. This later portrait shows her at a women’s epee World Cup trophy presentation in Saint-Maur in 2013.",
+      "source": "history-photos",
+      "url": "https://commons.wikimedia.org/wiki/File:Laura_Flessel-Colovic.jpg",
+      "license": "CC BY 2.5",
+      "vetted": false,
+      "parent_item_id": "history-photo-09-laura-flessel",
+      "note": "1092x1600 portrait; 1 or 2 columns."
+    }
+  ]
+}
