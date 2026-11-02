@@ -1,6 +1,6 @@
 {
  "target_week": "next",
- "updated_at": "2026-10-28T09:58:00-04:00",
+ "updated_at": "2026-11-02T07:55:00-05:00",
  "note": "Hold pile for Issue No. 5 (week of Nov 2). Started as after-next at the No. 3 roll; became next at the No. 4 roll-forward 2026-10-26. Still-relevant upcoming/results-watch items copied from 2026-10-26 with carried_from.",
  "rolled_forward": {
   "from": "staging/weeks/after-next",
@@ -490,7 +490,7 @@
    "id": "email-agentmail-medeo-yc5-entries-2026-10-14",
    "kind": "signup_row",
    "headline": "Medeo Youth Challenge #5 (Nov. 8) — EFC entries",
-   "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 9:30 AM Y12 Women's Epee: Jiang, Christina. 11:30 AM Y10 Mixed Epee: Li, Nora. 11:30 AM Y14 Men's Epee: Li, Owen. (AgentMail club-schedule digest Wed Oct 14; 4 entries / 4 fencers.)",
+   "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 9:30 AM Y12 Women's Epee: Jiang, Christina. 11:30 AM Y10 Mixed Epee: Li, Nora; Widjaja, Claire. 11:30 AM Y14 Men's Epee: Li, Owen. 11:30 AM Y14 Women's Epee: Shukla, Mira. (AgentMail club-schedule digest Mon Nov 2, data as of Nov 1 6:00 AM; 6 entries / 6 fencers.)",
    "source": "email",
    "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
    "from": "chunkymonkey@agentmail.to",
@@ -615,6 +615,15 @@
      "endpoint": "/v1/askfred/tournaments/b30b6f24-2ecf-494b-99af-4cfba0c6b76e/entries?live=true",
      "fetched_at": "2026-10-26T13:00:27Z",
      "note": "Monday full pass: unchanged, same 4 Elite FC entries."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a19c217744-7f9b728f-9759-4287-b414-d7ffcca7102a-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Monday, November 2",
+     "received_at": "2026-11-02T07:00:01-05:00",
+     "retrieved_at": "2026-11-02T07:55:00-05:00",
+     "note": "Grew from 4 to 6 entries (new: Claire Widjaja Y10 Mixed, Mira Shukla Y14WE). Neither is in roster/people.json; standing rule prints names as listed on official pages."
     }
    ],
    "suggested_slot": "whos_entered",
@@ -626,15 +635,16 @@
     "epee",
     "nearby-tournaments"
    ],
-   "entries_count": "4 fencers / 4 entries",
-   "entries_last_confirmed": "2026-10-26T07:58:00-04:00",
+   "entries_count": "6 fencers / 6 entries",
+   "entries_last_confirmed": "2026-11-02T07:55:00-05:00",
    "name_flags": [
-    "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2."
+    "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2.",
+    "2026-11-02: Claire Widjaja and Mira Shukla not in roster/people.json (print as listed per standing rule)."
    ],
    "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
    "carried_from": "staging/weeks/2026-10-26",
    "carry_note": "Ran in No. 4. Event Sun Nov 8 still upcoming for No. 5; refresh entries.",
-   "updated_at": "2026-10-22T07:57:00-04:00",
+   "updated_at": "2026-11-02T07:55:00-05:00",
    "carried_at": "2026-10-26T20:30:00-04:00"
   },
   {
@@ -1038,7 +1048,7 @@
    "id": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
    "kind": "signup_row",
    "headline": "NYFA Youth Cup #1 (Nov. 8) — EFC entries",
-   "body": "NYFA Youth Cup #1 (NYFA Brooklyn) — Sun Nov 8. 9:00 AM Y10 Mixed Epee: Cheng, Bryce. (AgentMail club-schedule digest Thu Oct 22; 1 entry / 1 fencer. First Elite FC entry; the Oct 21 digest showed nobody signed up.)",
+   "body": "NYFA Youth Cup #1 (NYFA Brooklyn) — Sun Nov 8. 9:00 AM Y10 Mixed Epee: Cheng, Bryce; Siu, Maximus. 9:00 AM Y8 Mixed Epee: Siu, Madeline. 12:30 PM Y12 Men's Epee: Ng, Remy. 12:30 PM Y12 Women's Epee: Jiang, Christina. 4:00 PM Y14 Women's Epee: Siu, Mila. (AgentMail club-schedule digest Mon Nov 2, data as of Nov 1 6:00 AM; 6 entries / 6 fencers.)",
    "source": "email",
    "message_id": "<010001a163449570-5d7cc390-fb6f-4584-a49e-e1f021820834-000000@email.amazonses.com>",
    "from": "chunkymonkey@agentmail.to",
@@ -1065,6 +1075,15 @@
      "subject": "Club schedule · Friday, October 23",
      "retrieved_at": "2026-10-23T07:58:00-04:00",
      "note": "Daily refresh: identical (data as of Oct 22, 6:00 AM)."
+    },
+    {
+     "type": "email",
+     "message_id": "<010001a19c217744-7f9b728f-9759-4287-b414-d7ffcca7102a-000000@email.amazonses.com>",
+     "from": "AgentMail <chunkymonkey@agentmail.to>",
+     "subject": "Club schedule · Monday, November 2",
+     "received_at": "2026-11-02T07:00:01-05:00",
+     "retrieved_at": "2026-11-02T07:55:00-05:00",
+     "note": "Grew from 1 to 6 entries (new: Maximus Siu Y10 Mixed, Madeline Siu Y8 Mixed, Remy Ng Y12ME, Christina Jiang Y12WE, Mila Siu Y14WE). All five on roster/people.json. Christina Jiang is also entered at Medeo YC #5 the same day (9:30 AM Y12WE)."
     }
    ],
    "suggested_slot": "whos_entered",
@@ -1075,15 +1094,17 @@
     "signup",
     "nearby-tournaments"
    ],
-   "entries_count": "1 fencer / 1 entry",
-   "entries_last_confirmed": "2026-10-26T07:58:00-04:00",
+   "entries_count": "6 fencers / 6 entries",
+   "entries_last_confirmed": "2026-11-02T07:55:00-05:00",
    "name_flags": [
-    "Bryce Cheng is in roster/people.json (canonical 'Bryce Cheng')."
+    "Bryce Cheng is in roster/people.json (canonical 'Bryce Cheng').",
+    "2026-11-02: Maximus, Madeline and Mila Siu, Remy Ng and Christina Jiang all in roster/people.json."
    ],
    "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. Not yet cross-checked against AskFRED/fencing-api (next Wed skim or Monday pass).",
    "carried_from": "staging/weeks/2026-10-26",
    "carried_at": "2026-10-26T20:30:00-04:00",
-   "carry_note": "Ran in No. 4. Event Nov 8 still upcoming for No. 5; refresh entries."
+   "carry_note": "Ran in No. 4. Event Nov 8 still upcoming for No. 5; refresh entries.",
+   "updated_at": "2026-11-02T07:55:00-05:00"
   },
   {
    "id": "ft-mendez-freehold-unrated-3rd-2026-10-23",
@@ -1293,6 +1314,35 @@
     }
    ],
    "created_at": "2026-10-28T09:58:00-04:00"
+  },
+  {
+   "id": "ft-ultimate-cup-results-2026-11-02",
+   "kind": "result_set",
+   "headline": "Ultimate Cup RJCC (Oct. 31–Nov. 1): Maksim Milinkovic 5th in Cadet Men's, earns A26; Nico Ng 10th in Junior Men's",
+   "body": "FencingTracker Elite FC club page (retrieved Nov 2, 7:52 AM ET) lists 15 Elite FC results at Ultimate Cup RJCC, Oct 31–Nov 1, 2026. Clearing the regional bar (top 16): Milinkovic, Maksim, 5th, Cadet Men's Epee (CDTME), Oct 31, rating earned A26; Ng, Nico, 10th, Junior Men's Epee (JNRME), Nov 1, no rating listed. Below the bar (not printed under the inclusion rule, no 'also fenced' line): JNRWE Oct 31 Liu, Lillian 28; Gore, Amina 33; Hayes, Olivia 45; Sullivan, Adela 48. CDTME Oct 31 WU, Caden 70; Young, Charles 82. JNRME Nov 1 Johnson, Dieko 69; Aguirre, Pablo 80. CDTWE Nov 1 Gore, Amina 20; Liu, Lillian 23; Sullivan, Adela 36; Young, Penelope 40; Hayes, Olivia 55. Field sizes and venue not fetched on the daily look; Monday full pass can open the event pages.",
+   "source": "web",
+   "target_week": "next",
+   "vetted": false,
+   "vet_notes": "Scraped (FencingTracker) — unvetted until Frank vets. Regional event: top 16 prints; a rating earned always prints. Verify A26 is a new rating for Maksim before calling it a rating earned in copy beyond what FT lists. Cross-check club attribution against roster/people.json. fencing-api club-results cache since Oct 30 returned 0 rows (cache gap, not a mismatch).",
+   "suggested_slot": "club_results",
+   "tags": [
+    "club",
+    "results",
+    "ultimate-cup",
+    "rjcc",
+    "regional",
+    "scraped"
+   ],
+   "provenance": [
+    {
+     "type": "web",
+     "source": "fencingtracker",
+     "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+     "retrieved_at": "2026-11-02T07:52:00-05:00",
+     "note": "Daily quick look, 1 fetch. Club page now 166 tournaments / 1255 results (was 165 / 1240 on Oct 30)."
+    }
+   ],
+   "created_at": "2026-11-02T07:55:00-05:00"
   }
  ]
 }
