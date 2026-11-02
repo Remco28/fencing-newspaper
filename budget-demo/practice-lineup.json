@@ -50,7 +50,7 @@
   "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
   "generated": "2026-10-26T12:45:00-04:00",
   "target_week": "next",
-  "generated_at": "2026-11-02T10:35:00-05:00",
+  "generated_at": "2026-11-02T11:40:00-05:00",
   "issue": {
     "number": 5,
     "label": "Issue No. 5",
@@ -109,6 +109,35 @@
         {
           "level": "warn",
           "text": "UNVETTED."
+        }
+      ]
+    },
+    {
+      "key": "overheard",
+      "section": "lead",
+      "slot": "Page 2 feature — Overheard on Reddit: FIE vs. WFL",
+      "budget": "~240w (section max ~220w; Frank allowed a bigger box)",
+      "item": "draft-overheard-fie-wfl-2026-11-02",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 1,
+        "feature": true
+      },
+      "title": "Overheard on Reddit: Can the FIE Tell You Where Not to Fence?",
+      "summary": "Your r/Fencing thread, with the official side filled in: the FIE's Oct 22 warning about the World Fencing League (wording via the South China Morning Post; the full text isn't public), the exact rule (FIE Statutes 1.2.6(b)), what the WFL is, both sides labeled as opinion, and what it means for club fencers. USA Fencing has a WFL partnership (Jan 2026) and hasn't commented. It fills this week's feature gap as page 2's big read, one column.",
+      "questions": [
+        "Run it at ~240 words, or cut the 'What the WFL is' paragraph (~45 words) to fit the usual size?"
+      ],
+      "flags": [
+        {
+          "level": "warn",
+          "text": "Your idea, but the text isn't vetted yet. Vet to use."
+        },
+        {
+          "level": "info",
+          "text": "FIE statement wording is from SCMP; we couldn't find the primary text. The box says so."
         }
       ]
     },
@@ -534,18 +563,47 @@
     {
       "key": "by-the-book",
       "section": "shorts",
-      "slot": "By the Book",
-      "budget": "50–80w",
-      "empty": true,
-      "why": "No new rule piece staged; the last one ran in No. 4. Clark can write one if you want filler."
+      "slot": "By the Book — pitch",
+      "budget": "50–80w (planned 70)",
+      "item": "pitch-by-the-book-double-touch-2026-11-02",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 1
+      },
+      "title": "By the Book: The 40-Millisecond Double",
+      "summary": "Pitch only (Clark writes it, ~70 words): why both lights go on in épée. t.92 double touch, plus the scoring box's 40–50 ms window. It pairs with the WFL's '40ms' rule in the Reddit box. Vet = go ahead and write it.",
+      "flags": [
+        {
+          "level": "info",
+          "text": "Pitch only: no text yet. Fill estimate uses the planned length."
+        }
+      ],
+      "questions": [
+        "Want this topic, or a different rule?"
+      ]
     },
     {
       "key": "for-parents",
       "section": "shorts",
-      "slot": "For the Parents",
-      "budget": "50–80w",
-      "empty": true,
-      "why": "Nothing new staged."
+      "slot": "For the Parents — pitch",
+      "budget": "80–120w (planned 110)",
+      "item": "pitch-for-parents-rating-letters-2026-11-02",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 1
+      },
+      "title": "For the Parents: What a Rating Letter Means",
+      "summary": "Pitch only (Clark writes it, ~110 words): ratings A–E and U, what the year means (A26 = earned in 2026), how one is earned, and how long it lasts. Tied to Maksim's A26. Vet = go ahead and write it.",
+      "flags": [
+        {
+          "level": "info",
+          "text": "Pitch only: no text yet. Fill estimate uses the planned length."
+        }
+      ]
     },
     {
       "key": "nj-hs",
@@ -554,14 +612,6 @@
       "budget": "~40w",
       "empty": true,
       "why": "Out of season; no new NJ.com stories."
-    },
-    {
-      "key": "overheard",
-      "section": "shorts",
-      "slot": "Overheard on Reddit",
-      "budget": "skip",
-      "empty": true,
-      "why": "No new Reddit PDFs."
     },
     {
       "key": "qa",
@@ -602,8 +652,9 @@
   "desk_summary": [
     "Issue No. 5 (week of Nov. 2), target Tue Nov 3.",
     "Lead: Maksim Milinkovic 5th of 83 at the Ultimate Cup with an A rating (up from B), Nico Ng 10th; Clark's 130-word draft, waiting on your Vet.",
+    "Page 2 feature: Overheard on Reddit, FIE vs. World Fencing League (~240 words, your thread with the official side filled in).",
     "Club: Ultimate Cup results + Ratings Earned box; four Nearby Tournaments boards (NYFA #1 and Medeo #5 on Nov 8, Pizza, Cobra); Deadlines; Winter Camp.",
-    "Shorts: Dakar Youth Olympics short, Epee on Screen, Photo from History 09 (Laura Flessel). No By the Book or For the Parents staged.",
-    "Fill: about 28% with vetted items only; about 60% if you Vet what Clark proposes. That's light (room for roughly 1,500 more words). Clark can write a By the Book and a For the Parents (what a rating letter means) to bring it to about 75–80%."
+    "Shorts: Dakar Youth Olympics short, Epee on Screen, Photo from History 09 (Laura Flessel), plus two pitches Clark would write: By the Book (the 40-millisecond double) and For the Parents (what a rating letter means).",
+    "Fill: see the meter. Running over? Untick Include and write 'next week' in the card's note; Clark moves it to the after-next pile."
   ]
 }

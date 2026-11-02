@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-02T10:20:00-05:00",
+  "updated_at": "2026-11-02T11:40:00-05:00",
   "note": "Hold pile for Issue No. 5 (week of Nov 2). Started as after-next at the No. 3 roll; became next at the No. 4 roll-forward 2026-10-26. Still-relevant upcoming/results-watch items copied from 2026-10-26 with carried_from.",
   "rolled_forward": {
     "from": "staging/weeks/after-next",
@@ -1072,6 +1072,131 @@
       "vet_notes": "Cross-issue history pile, unvetted. Cautions: non-action 2013 portrait (not Atlanta); no endorsement implied; Guadeloupe is French territory. If converted to grayscale, change the credit's closing clause per CC BY 2.5.",
       "slot_hint": "photo_history",
       "created_at": "2026-11-02T10:30:00-05:00"
+    },
+    {
+      "id": "draft-overheard-fie-wfl-2026-11-02",
+      "kind": "draft",
+      "section": "Overheard on Reddit",
+      "kicker": "OVERHEARD ON REDDIT",
+      "headline": "Can the FIE tell you where not to fence?",
+      "body": "*The debate this fall on r/Fencing:* the world federation's warning about the new World Fencing League set off a 50-comment argument.\n\n**What the FIE actually said.** According to the South China Morning Post, a statement signed by FIE Secretary General Gulnora Saidova on Oct. 22 said the league is not an official competition, and none of its planned events is sanctioned. It pointed to rules that allow bans. (We couldn't find the full text posted publicly.) The rule, Article 1.2.6(b), bars federation members from events run by anyone \"not recognised by the national federation of their country,\" unless that federation specially authorizes them.\n\n**What the WFL is.** It's a made-for-TV team league started by U.S. Olympian Miles Chamley-Watson. Its one event so far, in Los Angeles in April, offered a $100,000 prize pool. In épée, a 45-second clock punishes passive fencing.\n\n**Opinion: it's overreach.** Running your own championships is fine, but banning members from someone else's show isn't. And \"event\" is never defined.\n\n**Opinion: you signed up for it.** Joining a federation means accepting its rules. The FIE is worried about rivals, not club tournaments.\n\n**What it means for club fencers.** By the rule's own wording, USA Fencing tournaments and events run by recognized clubs are unaffected. One wrinkle: USA Fencing itself signed a partnership with the WFL in January, and it hasn't commented publicly.\n\n*Fact check:* Seven weeks before the warning, the FIE hosted Chamley-Watson in Lausanne for \"positive discussions.\"",
+      "word_count": 241,
+      "source": "desk",
+      "from": "frank (Reddit PDF)",
+      "target_week": "next",
+      "vetted": false,
+      "idea_vetted": true,
+      "idea_vetted_by": "frank",
+      "idea_vetted_at": "2026-11-02T09:25:00-05:00",
+      "facts_status": "verified (sources below); FIE statement wording via SCMP only",
+      "vet_notes": "Frank's idea: he sent the r/Fencing PDF and asked Clark to fill in the official side (chat, Nov 2). Text not yet vetted by Frank. Facts verified 2026-11-02 9:00-9:15 AM ET; see staging/research/fie-vs-wfl-2026-11-02.md. The FIE statement's full text isn't public; its wording is credited to the South China Morning Post. ~241 words, over the section's ~220w max. Cut option: drop the 'What the WFL is' paragraph (~45w). Opinions are labeled; no usernames.",
+      "facts": [
+        {
+          "claim": "FIE statement signed by Sec. Gen. Gulnora Saidova, Oct 22: WFL not an official competition, none of its events sanctioned; pointed to statutes allowing bans",
+          "source": "https://www.scmp.com/sport/other-sport/article/3371889/fencing-risks-global-divide-top-official-fires-world-league-threats",
+          "status": "verified-press (SCMP Oct 23); primary text not found on fie.org"
+        },
+        {
+          "claim": "FIE Statutes Art. 1.2.6(b) text (members forbidden from events by bodies 'not recognised by the national federation of their country' unless specially authorised)",
+          "source": "https://static.fie.org/uploads/39/196968-FIE%20Statutes%20ang.pdf",
+          "status": "verified-primary (April 2026 edition, p. 7)"
+        },
+        {
+          "claim": "WFL founded by Miles Chamley-Watson; LA debut Apr 25, 2026; $100,000 prize pool",
+          "source": "https://worldfencingleague.org/about",
+          "status": "verified (WFL site + SCMP)"
+        },
+        {
+          "claim": "Epee: 45-second passivity clock",
+          "source": "https://worldfencingleague.org/event-format",
+          "status": "verified-primary"
+        },
+        {
+          "claim": "USA Fencing-WFL MOU, Jan 7, 2026",
+          "source": "https://www.usafencing.org/news/2026/january/07/usa-fencing-world-fencing-league-sign-mou-designed-to-grow-the-sport-across-the-u-s-and-around-the-world",
+          "status": "verified-primary"
+        },
+        {
+          "claim": "No USA Fencing public comment on the FIE warning",
+          "source": "usafencing.org news search 2026-11-02",
+          "status": "not found (absence)"
+        },
+        {
+          "claim": "FIE hosted Chamley-Watson in Lausanne for 'positive discussions' (~Sept 4, 2026)",
+          "source": "https://www.linkedin.com/posts/fie---international-fencing-federation_fencing-escrime-esgrima-activity-7501662758019588096--iHi",
+          "status": "verified-primary (FIE LinkedIn)"
+        }
+      ],
+      "provenance": [
+        {
+          "type": "chat",
+          "note": "Frank sent r/Fencing thread 'The FIE positions itself against World Fencing League' (~Oct 22, 2026) as a PDF and asked for the official side",
+          "retrieved_at": "2026-11-02T09:25:00-05:00"
+        },
+        {
+          "type": "research",
+          "path": "staging/research/fie-vs-wfl-2026-11-02.md",
+          "note": "sources + verification"
+        },
+        {
+          "type": "draft",
+          "path": "staging/research/overheard-fie-wfl-draft.md"
+        }
+      ],
+      "need": [],
+      "slot_hint": "overheard",
+      "draft_path": "staging/research/overheard-fie-wfl-draft.md",
+      "tags": [
+        "overheard-reddit",
+        "fie",
+        "wfl",
+        "frank-idea"
+      ],
+      "created_at": "2026-11-02T11:40:00-05:00"
+    },
+    {
+      "id": "pitch-by-the-book-double-touch-2026-11-02",
+      "kind": "pitch",
+      "section": "By the Book",
+      "headline": "By the Book: The 40-Millisecond Double",
+      "summary": "Pitch: why both lights go on in épée. A double touch scores for both (t.92), and the box calls it a double only if the hits land within 1/25 to 1/20 of a second (40–50 ms, scoring-apparatus specs). It ties into the WFL's '40ms' rule in the Reddit box. About 70 words, written by Clark from the Oct 2026 USA Fencing rulebook.",
+      "body": "",
+      "word_count": 70,
+      "planned_words": 70,
+      "source": "desk",
+      "target_week": "next",
+      "vetted": false,
+      "facts_status": "rule text located: USA Fencing Rules for Competition Oct 2026, t.92 (p. 38) and épée apparatus timing (p. 180)",
+      "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate.",
+      "slot_hint": "by_the_book",
+      "tags": [
+        "by-the-book",
+        "pitch",
+        "filler"
+      ],
+      "created_at": "2026-11-02T11:40:00-05:00"
+    },
+    {
+      "id": "pitch-for-parents-rating-letters-2026-11-02",
+      "kind": "pitch",
+      "section": "For the Parents",
+      "headline": "For the Parents: What a Rating Letter Means",
+      "summary": "Pitch: a plain-words guide to USA Fencing ratings (A through E, U for unrated), what the year means (A26 = earned in 2026), how a fencer earns one (finish high enough at a big enough, strong enough event), and how long it lasts. Ties into Maksim's A26. About 110 words, sourced from USA Fencing's rules and Athlete Handbook.",
+      "body": "",
+      "word_count": 110,
+      "planned_words": 110,
+      "source": "desk",
+      "target_week": "next",
+      "vetted": false,
+      "facts_status": "to research from reference/usa-fencing/ (Athlete Handbook 2026-27, Rules for Competition) before writing",
+      "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate. If the lead or Ratings Earned is cut, this still stands alone.",
+      "slot_hint": "for_the_parents",
+      "tags": [
+        "for-the-parents",
+        "pitch",
+        "ratings"
+      ],
+      "created_at": "2026-11-02T11:40:00-05:00"
     }
   ],
   "dropped_2026_11_02": [
