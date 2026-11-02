@@ -13,7 +13,7 @@ After the lineup (`budget-demo/practice-lineup.json`, schema 2, unchanged) is wr
 
 ```sh
 python3 scripts/build_budget_html.py
-# -> budget-demo/out/budget-no-<N>-<publish-date>-<pile>.html   (prints size, counts, missing items)
+# -> budget-demo/out/budget-no-<N>-<publish-date>-v<K>.html   (prints version, size, counts, missing items; --preview = unnumbered)
 ```
 
 Defaults: lineup `budget-demo/practice-lineup.json`, staging `staging/weeks/next` (items.json + media/).
@@ -97,4 +97,4 @@ python3 scripts/ingest_budget_submission.py sub.json --staging-week /tmp/wk --su
 - The headline counter counts items only ("3 need vet"); photos are shown separately ("4 photos"). Photos can still be vetted on the page.
 - Ingest: photo vets (media ids) are recorded in `approvals.json` and the vet log; like the old `/vet` flow, `items.json` and the media manifest are not changed for photos.
 - Ingest appends vet notes to an item's existing `vet_notes` as `[YYYY-MM-DD] Frank: <note>` on a new line instead of replacing them.
-- Output name: `budget-no-<N>-<date>-<pile>.html` (pile = staging-week folder name, omitted when it equals the date). `--out` still overrides.
+- Output name: `budget-no-<N>-<date>-v<K>.html`. K is the per-week budget version, kept with Frank's decision log in `<staging-week>/budget-versions.json`. The page starts from the latest ingested decisions and shows "Budget vK · decisions captured through <time ET>". Rebuilding unchanged data keeps K. `--preview` writes `-preview.html` without a number. `--out` still overrides. The build stops if a submission JSON for this issue is waiting un-ingested (uploads, ~/Downloads, `budget-demo/submissions/inbox/`).

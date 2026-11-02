@@ -339,6 +339,7 @@
     document.title = "Budget — " + (iss.label || "next issue") + (real ? "" : " (practice)");
     $("modeTag").textContent = real ? "Real budget · your submission goes to Clark" : "Practice — not a real submission";
     $("modeTag").className = "mode" + (real ? "" : " practice");
+    $("verTag").textContent = b.versionLabel || "";
     var picks = [];
     if (pub.date) picks.push('<button type="button" data-pick="' + esc(pub.date) + '">Clark\'s pick: ' + esc(fmtDay(pub.date)) + "</button>");
     if (pub.alt) picks.push('<button type="button" data-pick="' + esc(pub.alt) + '">Alternate: ' + esc(fmtDay(pub.alt)) + "</button>");
@@ -532,7 +533,7 @@
     if (storage) { try { storage.removeItem(STORE_KEY); } catch (e) {} }
     S = Core.defaultState(M); ui.open = {};
     renderHeader(); render();
-    status("", "Reset. Back to Clark's proposed budget.");
+    status("", M.decisions ? "Reset. Back to this version: Clark's budget with your captured decisions." : "Reset. Back to Clark's proposed budget.");
   }
 
   /* ---------- boot ---------- */
@@ -551,6 +552,7 @@
     measureBar();
     if (window.ResizeObserver) new ResizeObserver(measureBar).observe($("bar")); else window.addEventListener("resize", measureBar);
     if (!storage) notice("warn", "This browser won't save your progress here (private mode or file:// limits). The page still works — finish in one sitting, or Submit early.");
+    else if (r.superseded) notice("", "Clark has captured your submission (" + esc(b.versionLabel || "") + "), so this page starts from it; earlier progress saved in this browser was set aside.");
     else if (r.restored) {
       notice("", "Restored your progress from " + esc(fmtTime(S.savedAt) || "earlier") + "." +
         (r.dataChanged ? " Clark has updated this page since; your notes, answers, includes, order and vets were kept where they still match" +

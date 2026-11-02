@@ -8,11 +8,18 @@ Frank opens the file on his laptop or phone, vets/includes/answers locally, and 
 copies a JSON file; scripts/ingest_budget_submission.py applies it on the box.
 See budget-demo/STANDALONE-README.md.
 
+Versions (Frank 2026-11-02): every build that Frank could see is numbered v1, v2, ... in
+<staging-week>/budget-versions.json, next to the decision log that ingest_budget_submission.py
+appends to. The page inlines the latest ingested decisions (includes, notes, answers, photo picks)
+as its starting state and shows "Budget vN · decisions captured through <time ET>". A rebuild with
+no change in lineup/items/media/decisions keeps its number; any change gets the next one.
+Refuses to build while a submission for this issue sits un-ingested in a drop folder (--allow-pending).
+
 Usage:
   python3 scripts/build_budget_html.py [--lineup FILE] [--staging-week DIR] [--out FILE|DIR]
-                                       [--thumb-width 360] [--quality 70]
+                                       [--thumb-width 360] [--quality 70] [--preview] [--allow-pending]
 Defaults: budget-demo/practice-lineup.json, staging/weeks/next,
-  budget-demo/out/budget-no-<N>-<publish-date>-<pile>.html
+  budget-demo/out/budget-no-<N>-<publish-date>-v<K>.html (--preview: ...-preview.html, not numbered)
 Output holds unvetted content and minors' names: it must land somewhere gitignored
 (budget-demo/out/ is) or outside the repo.
 """
@@ -38,6 +45,9 @@ RASTER = (".png", ".jpg", ".jpeg", ".gif", ".webp")
 CAPACITY_KEYS = ("page1_col_in", "page2_col_in", "wpi", "wpi_feature", "head_short", "head_feature", "gap",
                  "table_head", "row_rail", "row_full", "col_width_in", "span2_width_in", "caption_in")
 SIZE_TARGET = 2 * 1024 * 1024
+VERSIONS = "budget-versions.json"
+# where a downloaded/dropped submission can sit before it is ingested
+DROP_DIRS = (Path("/workspace/uploads"), Path.home() / "Downloads", REPO / "budget-demo" / "submissions" / "inbox")
 
 
 def die(msg: str, code: int = 1) -> None:
@@ -184,6 +194,42 @@ def self_check(html: str, data: dict) -> list[str]:
     return problems
 
 
+def load_versions(week: Path, number, date: str) -> dict:
+    """The week's version counter + decision log; a fresh one if absent or for another issue."""
+    path = week / VERSIONS
+    doc = load_json(path, VERSIONS) if path.is_file() else None
+    if not isinstance(doc, dict) or doc.get("issue") != number or doc.get("publish") != date:
+        if doc is not None:
+            print(f"  note: {rel(path)} was for issue {doc.get('issue')!r} {doc.get('publish')!r}; starting a new log")
+        doc = {"issue": number, "publish": date, "versions": [], "decisions": []}
+    doc.setdefault("versions", []); doc.setdefault("decisions", [])
+    return doc
+
+
+def et_label(iso: str | None) -> str:
+    if not iso:
+        return ""
+    from zoneinfo import ZoneInfo
+    d = datetime.fromisoformat(iso).astimezone(ZoneInfo("America/New_York"))
+    return d.strftime("%a %b ") + str(d.day) + ", " + d.strftime("%I:%M %p").lstrip("0") + " ET"
+
+
+def pending_submissions(number, decisions: list) -> list[Path]:
+    """Submission files for this issue in a drop folder that no decision-log entry came from."""
+    seen_at = {d.get("client_submitted_at") for d in decisions if d.get("client_submitted_at")}
+    seen_src = {d.get("source") for d in decisions}
+    out = []
+    for d in DROP_DIRS:
+        for f in (sorted(d.glob(f"budget-submission-no-{number}-*.json")) if d.is_dir() else []):
+            try:
+                at = json.loads(f.read_text(encoding="utf-8")).get("submittedAt")
+            except (OSError, ValueError, AttributeError):
+                at = None
+            if (at not in seen_at) if at else (f.name not in seen_src):
+                out.append(f)
+    return out
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Build the standalone (offline) Gazette budget page.")
     ap.add_argument("--lineup", type=Path, default=DEFAULT_LINEUP, help="lineup JSON (default budget-demo/practice-lineup.json)")
@@ -191,6 +237,8 @@ def main() -> None:
     ap.add_argument("--out", type=Path, help="output .html file or directory (default budget-demo/out/)")
     ap.add_argument("--thumb-width", type=int, default=360, help="thumbnail width px (default 360)")
     ap.add_argument("--quality", type=int, default=70, help="thumbnail JPEG quality (default 70)")
+    ap.add_argument("--preview", action="store_true", help="don't number or log this build (file ends -preview.html)")
+    ap.add_argument("--allow-pending", action="store_true", help="build even if an un-ingested submission is waiting")
     args = ap.parse_args()
     if not 64 <= args.thumb_width <= 1200:
         die("--thumb-width must be 64..1200")
@@ -250,17 +298,36 @@ def main() -> None:
         except Exception as exc:  # noqa: BLE001 — bad image: no thumbnail, keep going
             warnings.append(f"thumbnail failed for {src.name}: {exc}")
 
-    version = hashlib.sha256(json.dumps([cfg, items_doc, manifest], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
     number, date = cfg["issue"]["number"], cfg["publish"]["date"]
+    vdoc = load_versions(week, number, date)
+    decisions = vdoc["decisions"]
+    pending = pending_submissions(number, decisions)
+    if pending and not args.allow_pending:
+        die("un-ingested submission(s) for this issue: " + ", ".join(str(p) for p in pending) +
+            "\n  Dry-run + apply scripts/ingest_budget_submission.py first (or --allow-pending).")
+    last_dec = decisions[-1] if decisions else None
+    version = hashlib.sha256(json.dumps([cfg, items_doc, manifest, decisions], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
+    prev = vdoc["versions"][-1] if vdoc["versions"] else None
+    if args.preview:
+        budget_v = None
+    elif prev and prev.get("data") == version:
+        budget_v = prev["v"]  # same inputs: same version, just rebuilt
+    else:
+        budget_v = (prev["v"] if prev else 0) + 1
+    through = (last_dec.get("client_submitted_at") or last_dec.get("at")) if last_dec else None
+    ver_label = ((f"Budget v{budget_v}" if budget_v else "Preview (not numbered)") + " · " +
+                 (f"decisions captured through {et_label(through)}" if through else "no decisions from Frank captured yet"))
     data = {
         "build": {
             "generatedAt": datetime.now().astimezone().isoformat(timespec="seconds"),
             "generator": "scripts/build_budget_html.py",
             "lineupPath": rel(lineup_path), "stagingWeek": rel(week), "dataVersion": version,
-            "thumbWidth": args.thumb_width,
+            "thumbWidth": args.thumb_width, "budgetVersion": budget_v, "decisionsThrough": through,
+            "versionLabel": ver_label,
             "missing": {"items": missing_items, "merged": missing_merged, "photos": missing_photos, "media": missing_media},
         },
         "lineup": cfg, "items": items_doc, "media": manifest, "thumbs": thumbs,
+        "decisions": last_dec,  # the page starts from these (includes, notes, answers, photos)
     }
 
     page = (ASSETS / "page.html").read_text(encoding="utf-8")
@@ -279,15 +346,23 @@ def main() -> None:
 
     out = args.out.resolve() if args.out else DEFAULT_OUT_DIR
     if out.suffix.lower() != ".html":
-        pile = re.sub(r"[^A-Za-z0-9._-]+", "-", week.name).strip("-") or "pile"
-        out = out / (f"budget-no-{number}-{date}.html" if pile == date else f"budget-no-{number}-{date}-{pile}.html")
+        out = out / f"budget-no-{number}-{date}-{f'v{budget_v}' if budget_v else 'preview'}.html"
     ensure_ignored(out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_bytes(html.encode("utf-8"))
+    if budget_v is not None:
+        entry = {"v": budget_v, "built_at": data["build"]["generatedAt"], "data": version,
+                 "decisions_through": through, "decisions": len(decisions), "out": rel(out)}
+        if prev and prev["v"] == budget_v:
+            prev.update(entry)
+        else:
+            vdoc["versions"].append(entry)
+        (week / VERSIONS).write_text(json.dumps(vdoc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     size = out.stat().st_size
     auto = sum(1 for i in items if i["id"] not in {s.get("item") for s in slots})
     print(f"wrote {rel(out)}  ({size / 1024:.0f} KB)")
+    print(f"  {ver_label}" + (f" · {len(decisions)} submission(s) in the log" if decisions else ""))
     print(f"  issue No. {number} · publish {date} · lineup {rel(lineup_path)} · staging {rel(week)} · data {version}")
     print(f"  slots {len(slots)} ({sum(1 for s in slots if s.get('empty'))} empty) · items {len(items)} "
           f"(≤{auto} not in a lineup slot) · media {len(manifest['items'])} · thumbnails {len(thumbs)} "

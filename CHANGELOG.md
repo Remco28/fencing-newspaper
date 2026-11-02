@@ -2,6 +2,14 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.45 — 2026-11-02
+- **Budget versions with decisions captured (Frank, chat 2026-11-02):** the 9:21 ET No. 5 budget went out without the vetting from Frank's earlier upload. The submission JSON was never ingested (not on the box, no ingest record), and ingest only ever recorded vets: includes, notes and answers lived only in the page's browser storage, so any rebuilt page started from Clark's proposals. Fixes:
+  - `staging/weeks/<pile>/budget-versions.json` is the per-week counter plus decision log. `ingest_budget_submission.py` appends one decision entry per submission: includes/excludes, photo picks, slot notes, answers, notes, order, vets.
+  - `build_budget_html.py` numbers each build: `budget-no-<N>-<date>-v<K>.html`. It bumps K only when the data (lineup, items, media, decisions) changed. The page header shows "Budget vK · decisions captured through <time ET>". `--preview` builds an unnumbered `-preview.html`.
+  - The page starts from the latest decision entry (Reset returns to it). Browser progress saved before that submission is set aside with a notice.
+  - The build refuses to run while a `budget-submission-no-<N>-*.json` sits un-ingested in `/workspace/uploads`, `~/Downloads` or `budget-demo/submissions/inbox/`; `--allow-pending` overrides.
+  - No. 5's two earlier pages (9:06 and 9:21 ET, both `-next.html`) are logged retroactively as v1 and v2; the next build is v3.
+
 ## v3.44 — 2026-10-30
 - **Bot renamed Gazette Desk → Clark Kent** (Frank, chat 2026-10-30). Live docs, scripts, the budget page labels ("Notes for Clark", "Clark's read on this week", "Clark proposes"), `sections.json`, the No. 5 pile, roster notes and the history-photo cards now say Clark / Clark Kent; "Desk fill" is now "Clark fill". Intentionally kept: JSON keys `desk_fill`, `desk_summary`, `desk_verification`, `hide_desk_notes`; budget-page element ids/classes `desk`/`deskList`; and the public site's `site/js/desk*.js` / `EGG.Desk` engine (that "desk" is the tabletop the papers sit on, not the bot). "Club Desk" stays as a banned-byline example. Past changelog entries, archived staging weeks, issue inputs, vet logs and `budget-demo/archive/` are history and keep the old name.
 - **Restored** `issues/2026-10-19/build/` and `issues/2026-10-26/build/` (`compose.py`, `overrides.json`), lost in the box restore of 2026-10-28 ~13:20 ET (every directory named `build`/`.build` on the box went missing; no repo script deletes them).

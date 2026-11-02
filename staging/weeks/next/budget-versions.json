@@ -1,0 +1,10 @@
+{
+  "issue": 5,
+  "publish": "2026-11-03",
+  "note": "Budget version counter + decision log (Frank 2026-11-02). build_budget_html.py numbers each build vN and starts the page from the latest 'decisions' entry; ingest_budget_submission.py appends to 'decisions'. v1 and v2 were numbered after the fact: both went to Frank as budget-no-5-2026-11-03-next.html.",
+  "versions": [
+    {"v": 1, "built_at": "2026-11-02T09:06:02-05:00", "data": null, "decisions_through": null, "decisions": 0, "out": "budget-demo/out/budget-no-5-2026-11-03-next.html", "commit": "42111e2", "retro": true},
+    {"v": 2, "built_at": "2026-11-02T09:21:36-05:00", "data": null, "decisions_through": null, "decisions": 0, "out": "budget-demo/out/budget-no-5-2026-11-03-next.html", "commit": "b475c69", "retro": true}
+  ],
+  "decisions": []
+}

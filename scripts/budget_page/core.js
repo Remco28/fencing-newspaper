@@ -6,7 +6,7 @@
      node -e 'var C=require("./scripts/budget_page/core.js"); ...' */
 (function (root) {
   "use strict";
-  var PAGE_VERSION = "budget-standalone-v1";
+  var PAGE_VERSION = "budget-standalone-v2";
   var SECTION_GUESS = [
     [/lead|feature|back_page|overheard|secondary_a/i, "lead"],
     [/club|signup|whos|result|rating|deadline|class|schedule|event|go_cheer/i, "club"],
@@ -40,7 +40,8 @@
   /* ---------- model: inlined data -> lookups, slots, photos, sections ---------- */
   function makeModel(data) {
     var cfg = data.lineup, itemsDoc = isObj(data.items) ? data.items : {}, mediaDoc = isObj(data.media) ? data.media : {};
-    var M = { cfg: cfg, build: data.build || {}, thumbs: data.thumbs || {}, byId: {}, mediaById: {}, mediaByFile: {}, sizeByFile: {} };
+    var M = { cfg: cfg, build: data.build || {}, thumbs: data.thumbs || {}, byId: {}, mediaById: {}, mediaByFile: {}, sizeByFile: {},
+      decisions: isObj(data.decisions) ? data.decisions : null };
     M.items = (Array.isArray(itemsDoc.items) ? itemsDoc.items : []).filter(function (i) { return isObj(i) && i.id; });
     M.items.forEach(function (i) { M.byId[i.id] = i; });
     M.media = (Array.isArray(mediaDoc.items) ? mediaDoc.items : []).filter(function (m) { return isObj(m) && m.id; });
@@ -263,12 +264,36 @@
     return M.photos.some(function (p) { return p.id === id && photoPresent(M, p); });
   }
   function defaultState(M) {
-    return { v: M.build.dataVersion || "", savedAt: null, publishDate: (M.cfg.publish && M.cfg.publish.date) || "",
+    var st = { v: M.build.dataVersion || "", savedAt: null, publishDate: (M.cfg.publish && M.cfg.publish.date) || "",
       inc: {}, pinc: {}, notes: "", slotNotes: {}, answers: {}, order: {}, vets: {}, lastSubmit: null };
+    seedDecisions(M, st, M.decisions);
+    return st;
+  }
+  /* Start from Frank's latest ingested submission (budget-versions.json, inlined by the builder),
+     so a new budget version already shows what he decided: includes, photo picks, notes, answers, order. */
+  function seedDecisions(M, st, d) {
+    if (!isObj(d)) return;
+    var cards = {};
+    M.slots.forEach(function (s) { if (!s.empty) cards[s.key] = s; });
+    (d.included || []).forEach(function (k) { if (cards[k]) st.inc[k] = true; });
+    (d.excluded || []).forEach(function (k) { if (cards[k]) st.inc[k] = false; });
+    var pin = {}; (d.photoIncludes || []).forEach(function (id) { pin[id] = true; });
+    if (Array.isArray(d.photoIncludes)) M.photos.forEach(function (p) { if (photoPresent(M, p)) st.pinc[p.id] = !!pin[p.id]; });
+    if (isObj(d.slotNotes)) Object.keys(d.slotNotes).forEach(function (k) { if (cards[k] && typeof d.slotNotes[k] === "string") st.slotNotes[k] = d.slotNotes[k]; });
+    (d.answers || []).forEach(function (a) {
+      var s = isObj(a) && M.slotByKey[a.slot], i = s ? questionsFor(s, M.byId[s.item]).indexOf(a.question) : -1;
+      if (i >= 0 && String(a.answer || "").trim()) st.answers[a.slot + "|" + i] = { q: a.question, a: String(a.answer) };
+    });
+    if (typeof d.notes === "string") st.notes = d.notes;
+    if (typeof d.publishDate === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d.publishDate)) st.publishDate = d.publishDate;
+    (d.order || []).forEach(function (k) { var s = cards[k]; if (s) (st.order[s.section] = st.order[s.section] || []).push(k); });
   }
   function restoreState(M, saved) {
     var st = defaultState(M), res = { state: st, restored: false, dataChanged: false, dropped: 0 };
     if (!isObj(saved)) return res;
+    // progress saved in this browser before Clark ingested a later submission is superseded by it
+    var thr = M.decisions && Date.parse(M.decisions.client_submitted_at || M.decisions.at || ""), sv = Date.parse(saved.savedAt || "");
+    if (thr && (!sv || sv < thr)) { res.superseded = true; return res; }
     res.restored = true;
     res.dataChanged = saved.v !== st.v;
     var cardKeys = {}, photoIds = {};
@@ -309,7 +334,7 @@
     isIncluded: isIncluded, photoIncluded: photoIncluded, headlineOf: headlineOf, openQuestions: openQuestions, answerOf: answerOf,
     sectionList: sectionList, orderedSlots: orderedSlots, costOf: costOf, photoCost: photoCost, photoDims: photoDims,
     computeTotals: computeTotals, isoLocal: isoLocal, buildPayload: buildPayload, payloadSig: payloadSig,
-    defaultState: defaultState, restoreState: restoreState
+    defaultState: defaultState, restoreState: restoreState, seedDecisions: seedDecisions
   };
   if (typeof module === "object" && module.exports) module.exports = Core;
   else root.BudgetCore = Core;

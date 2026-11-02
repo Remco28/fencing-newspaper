@@ -9,6 +9,9 @@ Does exactly what budget-demo/server.py does for POST /submit and POST /vet:
     <staging-week>/items.json and appends the vet-log entry to <staging-week>/vet-log.jsonl AND
     <submissions>/vet-log.jsonl (source "budget-page-standalone"). Ids not in items.json (e.g. a
     photo's media id) are reported as not found, like the server's 404 — nothing else is touched.
+  - appends the decisions (includes/excludes, photo picks, slot notes, answers, notes, vets) to
+    <staging-week>/budget-versions.json "decisions"; build_budget_html.py starts the next numbered
+    budget (vN) from the latest entry, so a rebuild never drops what Frank already decided.
 
 Usage:
   python3 scripts/ingest_budget_submission.py SUBMISSION.json [--dry-run] [--force]
@@ -223,8 +226,33 @@ def main() -> None:
         if iid and iid not in vetted_now and not (by_id.get(iid) or {}).get("vetted"):
             warnings.append(f"included slot {e.get('slot')!r} item {iid} is " + ("not in staging" if iid not in by_id else "not vetted"))
 
+    # ---- decision log entry (budget versions; build_budget_html.py reads the latest) ----
+    versions_path = week / "budget-versions.json"
+    decision = {
+        "at": now_iso, "client_submitted_at": payload.get("submittedAt"), "source": src_name, "stored": rel(stamped),
+        "publishDate": payload["publishDate"],
+        "included": [e.get("slot") for e in payload["includedSlots"]],
+        # unticked on purpose (vetted but left out); unvetted-and-out isn't a decision to keep it out
+        "excluded": [e.get("slot") for e in payload["excludedSlots"] if not e.get("empty") and e.get("vetted")],
+        "photoIncludes": payload.get("photoIncludes") or [], "slotNotes": payload.get("slotNotes") or {},
+        "answers": payload.get("answers") or [], "notes": payload.get("notes") or "", "order": payload.get("order") or [],
+        "vets": [v[0] for v in vets],
+    }
+    vdoc = None
+    if versions_path.is_file():
+        try:
+            vdoc = json.loads(versions_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            die(f"{versions_path} is not valid JSON: {exc}")
+    iss_n, pub_d = (lineup.get("issue") or {}).get("number"), (lineup.get("publish") or {}).get("date")
+    if not isinstance(vdoc, dict) or (iss_n is not None and vdoc.get("issue") != iss_n):
+        vdoc = {"issue": iss_n, "publish": pub_d, "versions": [], "decisions": []}
+    vdoc.setdefault("versions", []); vdoc.setdefault("decisions", [])
+    vdoc["decisions"].append(decision)
+
     # ---- write ----
     if not args.dry_run:
+        versions_path.write_text(json.dumps(vdoc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         subs.mkdir(parents=True, exist_ok=True)
         stamped.write_text(stored_text, encoding="utf-8")
         approvals.write_text(stored_text, encoding="utf-8")
@@ -272,7 +300,7 @@ def main() -> None:
     for w in warnings:
         print(f"  warning: {w}")
     verb = "would write" if args.dry_run else "wrote"
-    print(f"  {verb}: {rel(stamped)}, {rel(approvals)}" +
+    print(f"  {verb}: {rel(versions_path)} (decision #{len(vdoc['decisions'])}; next build is the next budget version), {rel(stamped)}, {rel(approvals)}" +
           (f", {rel(items_path)}, {rel(week / 'vet-log.jsonl')}, {rel(subs / 'vet-log.jsonl')} (+{len(log_entries)} lines)" if applied else ""))
 
 
