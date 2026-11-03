@@ -50,7 +50,7 @@
   "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
   "generated": "2026-10-26T12:45:00-04:00",
   "target_week": "next",
-  "generated_at": "2026-11-02T21:05:00-05:00",
+  "generated_at": "2026-11-02T20:58:00-05:00",
   "issue": {
     "number": 5,
     "label": "Issue No. 5",

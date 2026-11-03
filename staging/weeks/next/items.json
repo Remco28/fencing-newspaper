@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-02T21:05:00-05:00",
+  "updated_at": "2026-11-02T20:58:00-05:00",
   "note": "Hold pile for Issue No. 5 (week of Nov 2). Started as after-next at the No. 3 roll; became next at the No. 4 roll-forward 2026-10-26. Still-relevant upcoming/results-watch items copied from 2026-10-26 with carried_from.",
   "rolled_forward": {
     "from": "staging/weeks/after-next",
@@ -174,7 +174,7 @@
         ],
         "text_copy": "staging/weeks/next/sources/email-fwd-winter-camp-2026-10-07.txt"
       },
-      "updated_at": "2026-11-02T21:05:00-05:00",
+      "updated_at": "2026-11-02T20:58:00-05:00",
       "ingest_notes": [
         "2026-10-08 daily email pass: Frank's 'Fwd: Group Class! + Winter Camp' (<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>) was already ingested 2026-10-07 ~19:20 ET; it had just not been labeled processed. Labeled now; no new facts (price and sign-up method still pending)."
       ],
@@ -996,7 +996,7 @@
         }
       ],
       "created_at": "2026-11-02T07:55:00-05:00",
-      "updated_at": "2026-11-02T21:05:00-05:00",
+      "updated_at": "2026-11-02T20:58:00-05:00",
       "vetted_at": "2026-11-02T20:14:09-05:00",
       "vetted_by": "frank"
     },
@@ -1172,7 +1172,7 @@
       "created_at": "2026-11-02T11:40:00-05:00",
       "vetted_at": "2026-11-02T20:14:09-05:00",
       "vetted_by": "frank",
-      "updated_at": "2026-11-02T21:05:00-05:00",
+      "updated_at": "2026-11-02T20:58:00-05:00",
       "frank_direction": "run in full (chat 2026-11-02 20:56 ET)"
     },
     {
@@ -1275,7 +1275,7 @@
           "submitted_at": "2026-11-02T20:21:38-05:00"
         }
       ],
-      "updated_at": "2026-11-02T21:05:00-05:00"
+      "updated_at": "2026-11-02T20:58:00-05:00"
     },
     {
       "id": "ft-christina-jiang-fencers-club-youth-cup-2026-11-01",
@@ -1298,7 +1298,7 @@
         {
           "claim": "Event = Fencers Club Youth Epee Cup, Y-12 Mixed Épée, Sun Nov 1 2026 1:00 PM, Fencers Club Inc., New York NY; 6 finishers; JIANG Christina T3",
           "source": "https://fencingtracker.com/event/44249/results",
-          "status": "verified-web 2026-11-02 ~21:00 ET"
+          "status": "verified-web 2026-11-02 ~8:57 PM ET"
         },
         {
           "claim": "Christina's FT profile: Nov 1, Fencers Club Youth Epee Cup, Y-12 Mixed Épée, 3 / 6, event class U; club Elite Fencers Club",
@@ -1324,20 +1324,20 @@
           "type": "email",
           "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102151507.4fe4c98358.65cc6cc0@mail67.atl91.mcsv.net>",
           "agentmail_thread_id": "7600701e-7fb7-434e-9c39-3c7804b3d8a1",
-          "retrieved_at": "2026-11-02T21:05:00-05:00",
+          "retrieved_at": "2026-11-02T20:58:00-05:00",
           "note": "read only; labeled processed"
         },
         {
           "type": "web",
           "source": "fencingtracker",
           "url": "https://fencingtracker.com/p/101308387/Christina-Jiang",
-          "retrieved_at": "2026-11-02T21:00:00-05:00"
+          "retrieved_at": "2026-11-02T20:57:00-05:00"
         },
         {
           "type": "web",
           "source": "fencingtracker",
           "url": "https://fencingtracker.com/event/44249/results",
-          "retrieved_at": "2026-11-02T21:00:00-05:00"
+          "retrieved_at": "2026-11-02T20:57:00-05:00"
         },
         {
           "type": "api",
@@ -1346,8 +1346,8 @@
           "retrieved_at": "2026-11-02T20:57:22-05:00"
         }
       ],
-      "created_at": "2026-11-02T21:05:00-05:00",
-      "updated_at": "2026-11-02T21:05:00-05:00"
+      "created_at": "2026-11-02T20:58:00-05:00",
+      "updated_at": "2026-11-02T20:58:00-05:00"
     }
   ],
   "dropped_2026_11_02": [
