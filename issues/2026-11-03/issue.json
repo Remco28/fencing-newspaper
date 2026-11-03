@@ -3,7 +3,7 @@
  "vol": "I",
  "date": "2026-11-03",
  "dateline": "Tuesday Edition · Vol. I — No. 5 · Chatham, N.J. · November 3, 2026",
- "status": "PROOF v2 — awaiting Frank approval",
+ "status": "APPROVED — final, published (Frank, chat, 2026-11-03 15:07 ET). Proof v2 is the print version; Frank sent it out himself.",
  "proof_version": 2,
  "proof_history": [
   {
@@ -18,7 +18,7 @@
   }
  ],
  "composed_at": "2026-11-02T21:20:00-05:00",
- "approval": "Frank directed composition in chat 2026-11-02 21:06 ET after budget v6 decisions (budget-submission.json = latest uploaded submission, 20:23 ET). Not yet approved as a proof.",
+ "approval": "Frank approved proof v2 in chat 2026-11-03 15:07 ET (\"Let's run with it. I already sent it out.\").",
  "pdf": "issues/2026-11-03/en-garde-gazette-no-5-2026-11-03.pdf",
  "previews": [
   "issues/2026-11-03/preview-p1.png",
@@ -72,5 +72,10 @@
   "total": 1535,
   "p1": 788,
   "p2": 747
+ },
+ "published": {
+  "at": "2026-11-03",
+  "commit": "PENDING",
+  "via": "scripts/publish_issue.py 2026-11-03"
  }
 }
