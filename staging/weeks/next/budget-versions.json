@@ -30,6 +30,14 @@
       "decisions_through": "2026-11-02T10:04:46-05:00",
       "decisions": 1,
       "out": "budget-demo/out/budget-no-5-2026-11-03-v3.html"
+    },
+    {
+      "v": 4,
+      "built_at": "2026-11-02T20:24:11-05:00",
+      "data": "82d999c530a9",
+      "decisions_through": "2026-11-02T20:21:38-05:00",
+      "decisions": 2,
+      "out": "budget-demo/out/budget-no-5-2026-11-03-v4.html"
     }
   ],
   "decisions": [
@@ -117,6 +125,77 @@
         "history-photo-09-laura-flessel",
         "pitch-by-the-book-double-touch-2026-11-02",
         "pitch-for-parents-rating-letters-2026-11-02"
+      ]
+    },
+    {
+      "at": "2026-11-02T20:23:48-05:00",
+      "client_submitted_at": "2026-11-02T20:21:38-05:00",
+      "source": "budget-submission-no-5-2026-11-03-2021.json",
+      "stored": "budget-demo/submissions/budget-20261102-202348.json",
+      "publishDate": "2026-11-03",
+      "included": [
+        "lead",
+        "secondary-a",
+        "overheard",
+        "ratings",
+        "signup",
+        "signup-2",
+        "signup-3",
+        "signup-4",
+        "deadlines",
+        "camp",
+        "tv",
+        "photo-history",
+        "by-the-book"
+      ],
+      "excluded": [
+        "club-results",
+        "classes",
+        "auto-ft-mendez-freehold-unrated-3rd-2026-10-23"
+      ],
+      "photoIncludes": [],
+      "slotNotes": {},
+      "answers": [
+        {
+          "slot": "lead",
+          "itemId": "draft-ultimate-cup-lead-2026-11-02",
+          "question": "OK to lead with Maksim's A, or would you rather lead another way?",
+          "answer": "yes, lead with this"
+        },
+        {
+          "slot": "lead",
+          "itemId": "draft-ultimate-cup-lead-2026-11-02",
+          "question": "Nico's 10th is in the lead: fine to print your son's result here, or move it to Club Results only?",
+          "answer": "yes, fine to print result.  10th at a Junior's of this level isn't super easy."
+        },
+        {
+          "slot": "secondary-a",
+          "itemId": "x-fie-dakar-yog-2026-11-02",
+          "question": "Worth a short here, or just the Epee on Screen row?",
+          "answer": "this can actually be expanded, i know nothing about Youth Olympic games."
+        }
+      ],
+      "notes": "There's a new email from the club.  It should have been forwarded to your email I hope.  There's a new intermediate class.  It's a step up from the beginner class and it's great for kids who want to start taking it more seriously, perhaps get tournament ready.  It's also scheduled on a Friday and ends right before open bouting.  They can stay afterwards and hone their skills further.",
+      "order": [
+        "lead",
+        "secondary-a",
+        "overheard",
+        "club-results",
+        "ratings",
+        "signup",
+        "signup-2",
+        "signup-3",
+        "signup-4",
+        "deadlines",
+        "camp",
+        "classes",
+        "auto-ft-mendez-freehold-unrated-3rd-2026-10-23",
+        "tv",
+        "photo-history",
+        "by-the-book"
+      ],
+      "vets": [
+        "ft-mendez-freehold-unrated-3rd-2026-10-23"
       ]
     }
   ]

@@ -50,7 +50,7 @@
   "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
   "generated": "2026-10-26T12:45:00-04:00",
   "target_week": "next",
-  "generated_at": "2026-11-02T20:20:00-05:00",
+  "generated_at": "2026-11-02T20:28:00-05:00",
   "issue": {
     "number": 5,
     "label": "Issue No. 5",
@@ -454,6 +454,35 @@
       ]
     },
     {
+      "key": "new-class",
+      "section": "club",
+      "slot": "Club news — New Youth Intermediate class",
+      "budget": "~80–100w (planned 90)",
+      "item": "email-mailchimp-youth-intermediate-class-2026-11-02",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 1,
+        "words": 90
+      },
+      "title": "New Friday Class: Youth Intermediate",
+      "summary": "Your content (from your Nov. 2 notes) plus the club's Nov. 2 email: a new Youth Intermediate group class, Fridays 5:00–6:30 PM, first class aimed for Fri. Nov. 6. A step up from the beginner class for kids getting more serious and tournament-ready; the club will contact eligible fencers. Clark writes it at compose time.",
+      "questions": [
+        "The email says 5:00–6:30 PM, but the club website lists Friday open bouting from 6:00 PM, so it doesn't quite end 'right before' open bouting. Print the email's times and just say open bouting follows?"
+      ],
+      "flags": [
+        {
+          "level": "info",
+          "text": "Pitch from your notes: no final text yet. Fill estimate uses the planned length."
+        },
+        {
+          "level": "warn",
+          "text": "Eligibility: the club says it will reach out to those eligible, so it's not open sign-up."
+        }
+      ]
+    },
+    {
       "key": "classes",
       "section": "club",
       "slot": "Weekly classes table",
@@ -613,6 +642,10 @@
     {
       "item": "web-efc-standing-schedule",
       "why": "Reference only; no change."
+    },
+    {
+      "item": "ft-mendez-freehold-unrated-3rd-2026-10-23",
+      "why": "Dropped (Frank, Nov. 2: 'drop this story')."
     }
   ],
   "desk_summary": [

@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-02T20:20:00-05:00",
+  "updated_at": "2026-11-02T20:28:00-05:00",
   "note": "Hold pile for Issue No. 5 (week of Nov 2). Started as after-next at the No. 3 roll; became next at the No. 4 roll-forward 2026-10-26. Still-relevant upcoming/results-watch items copied from 2026-10-26 with carried_from.",
   "rolled_forward": {
     "from": "staging/weeks/after-next",
@@ -862,7 +862,7 @@
       "from": "FencingTracker club page",
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "club_results",
       "tags": [
         "club",
@@ -878,14 +878,16 @@
           "method": "daily FT quick look, one fetch"
         }
       ],
-      "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged.",
+      "vet_notes": "Daily FT quick look 2026-10-26. Unvetted until Frank vets. fencing-api club-results cache (since 2026-10-22) returned 0 rows: API-vs-direct mismatch flagged.\n[2026-11-02] Frank: drop this story",
       "print_hint": "own Club Results row (unvetted)",
       "carried_from": "staging/weeks/2026-10-26",
       "carried_at": "2026-10-26T20:30:00-04:00",
       "carry_note": "Unprinted in No. 4 (unvetted, not budgeted). A medal (3rd) clears the Club Results bar at any level, so still eligible for No. 5 Club Results — needs Frank vet; dated Oct 23, so drop if Frank says stale.",
       "status": "dropped",
       "dropped_at": "2026-11-02T20:20:00-05:00",
-      "drop_note": "Frank (budget submission 2026-11-02 10:04:46 ET (ingested 20:14 ET, budget-versions.json decision #1)): \"Let's drop it. I'm also not convinced Brendan Mendez is really from our club... Did I ever confirm? Either way, let's drop it.\" Club membership was never hard-confirmed (roster: 'probably is', chat 2026-10-12)."
+      "drop_note": "Frank (budget submission 2026-11-02 10:04:46 ET (ingested 20:14 ET, budget-versions.json decision #1)): \"Let's drop it. I'm also not convinced Brendan Mendez is really from our club... Did I ever confirm? Either way, let's drop it.\" Club membership was never hard-confirmed (roster: 'probably is', chat 2026-10-12).",
+      "vetted_at": "2026-11-02T20:23:48-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "email-agentmail-pizza-ryc-entries-2026-10-27",
@@ -1193,6 +1195,83 @@
       "created_at": "2026-11-02T11:40:00-05:00",
       "vetted_at": "2026-11-02T20:14:09-05:00",
       "vetted_by": "frank"
+    },
+    {
+      "id": "email-mailchimp-youth-intermediate-class-2026-11-02",
+      "kind": "article",
+      "section": "Club events",
+      "headline": "New Friday Class: Youth Intermediate",
+      "summary": "New Youth Intermediate group class: Fridays 5:00–6:30 PM, first class planned for Fri Nov 6. A step up from the youth beginner class for kids getting more serious and tournament-ready; open bouting follows on Fridays. The club will contact eligible fencers.",
+      "body": "",
+      "frank_source_text": "There's a new email from the club.  It should have been forwarded to your email I hope.  There's a new intermediate class.  It's a step up from the beginner class and it's great for kids who want to start taking it more seriously, perhaps get tournament ready.  It's also scheduled on a Friday and ends right before open bouting.  They can stay afterwards and hone their skills further.",
+      "frank_source_note": "Frank's own words from the budget submission's Notes (submitted 2026-11-02 20:21:38 ET). Source material, not print copy: Clark writes the final copy at compose time.",
+      "facts": [
+        {
+          "claim": "New group class 'Youth Intermediate'; splits youth classes so beginners train with beginners and more experienced/competitive youth train together",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102180208.615892548a.af174e80@mail150.atl241.mcsv.net>",
+          "status": "verified-email (allowlisted club Mailchimp)"
+        },
+        {
+          "claim": "Every Friday, 5:00–6:30 PM",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102180208.615892548a.af174e80@mail150.atl241.mcsv.net>",
+          "status": "verified-email"
+        },
+        {
+          "claim": "Aiming for first class this Friday, 11/6",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102180208.615892548a.af174e80@mail150.atl241.mcsv.net>",
+          "status": "verified-email ('aiming': not certain)"
+        },
+        {
+          "claim": "Club will reach out to those eligible; questions to the club",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102180208.615892548a.af174e80@mail150.atl241.mcsv.net>",
+          "status": "verified-email"
+        },
+        {
+          "claim": "Ends right before open bouting; kids can stay after",
+          "source": "Frank, budget submission notes 2026-11-02",
+          "status": "CONFLICT: club website lists Friday Open Bouting 6:00–10:00 PM, so the 5:00–6:30 class overlaps it by 30 minutes. Check before printing."
+        }
+      ],
+      "email": {
+        "subject": "NEW CLASS - YOUTH INTERMEDIATE",
+        "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+        "to": "frankcng@gmail.com",
+        "received_at": "2026-11-02T13:02:14-05:00",
+        "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102180208.615892548a.af174e80@mail150.atl241.mcsv.net>",
+        "agentmail_thread_id": "49fa99cd-dbe8-496a-b4f6-d88ae69e58fc",
+        "web_version": "https://mailchi.mp/ab2b0e581373/new-class-youth-intermediate"
+      },
+      "source": "email",
+      "from": "Elite Fencers Club (Mailchimp) + Frank (budget notes)",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-02T20:21:38-05:00",
+      "vet_scope": "Frank supplied the content and asked for it in the issue; facts from the club email (allowlisted sender)",
+      "vet_notes": "Frank, budget submission 2026-11-02 20:21 ET: 'I have the content for the last section. It's in the response.'",
+      "planned_words": 90,
+      "word_count": 90,
+      "slot_hint": "club_events",
+      "tags": [
+        "club",
+        "class",
+        "schedule-change",
+        "youth"
+      ],
+      "created_at": "2026-11-02T20:28:00-05:00",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102180208.615892548a.af174e80@mail150.atl241.mcsv.net>",
+          "retrieved_at": "2026-11-02T20:28:00-05:00",
+          "note": "read only; not labeled"
+        },
+        {
+          "type": "budget-submission",
+          "source": "budget-submission-no-5-2026-11-03-2021.json",
+          "submitted_at": "2026-11-02T20:21:38-05:00"
+        }
+      ]
     }
   ],
   "dropped_2026_11_02": [
