@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-02T20:58:00-05:00",
+  "updated_at": "2026-11-02T21:07:51-05:00",
   "note": "Hold pile for Issue No. 5 (week of Nov 2). Started as after-next at the No. 3 roll; became next at the No. 4 roll-forward 2026-10-26. Still-relevant upcoming/results-watch items copied from 2026-10-26 with carried_from.",
   "rolled_forward": {
     "from": "staging/weeks/after-next",
@@ -958,11 +958,11 @@
       "id": "ft-ultimate-cup-results-2026-11-02",
       "kind": "result_set",
       "headline": "Ultimate Cup RJCC (Oct. 31–Nov. 1): Maksim Milinkovic 5th in Cadet Men's, earns A26; Nico Ng 10th in Junior Men's",
-      "body": "Ultimate Cup RJCC (USA Fencing tournament 12158), Iron Peak Sports & Events, Hillsborough Township, N.J., Oct 31–Nov 1, 2026. FencingTracker lists 15 Elite FC results. Clearing the regional bar (top 16): Milinkovic, Maksim, 5th of 83, Cadet Men's Epee (CDTME), Oct 31, rating earned A26 (FT rating history: previous rating B26, earned May 7, 2026, so this is a step up); Ng, Nico, 10th, Junior Men's Epee (JNRME), Nov 1, no rating listed (field size not fetched). Below the bar (not printed; no 'also fenced' line): JNRWE Lillian Liu 28, Amina Gore 33, Olivia Hayes 45, Adela Sullivan 48; CDTME Caden Wu 70, Charles Young 82; JNRME Dieko Johnson 69, Pablo Aguirre 80; CDTWE Amina Gore 20, Lillian Liu 23, Adela Sullivan 36, Penny Young 40, Olivia Hayes 55.",
+      "body": "Ultimate Cup RJCC (USA Fencing tournament 12158), Iron Peak Sports & Events, Hillsborough Township, N.J., Oct 31–Nov 1, 2026. FencingTracker lists 15 Elite FC results. Clearing the regional bar (top 16): Milinkovic, Maksim, 5th of 83, Cadet Men's Epee (CDTME), Oct 31, rating earned A26 (FT rating history: previous rating B26, earned May 7, 2026, so this is a step up); Ng, Nico, 10th of 87, Junior Men's Epee (JNRME), Nov 1, no rating earned (event class A4). Below the bar (not printed; no 'also fenced' line): JNRWE Lillian Liu 28, Amina Gore 33, Olivia Hayes 45, Adela Sullivan 48; CDTME Caden Wu 70, Charles Young 82; JNRME Dieko Johnson 69, Pablo Aguirre 80; CDTWE Amina Gore 20, Lillian Liu 23, Adela Sullivan 36, Penny Young 40, Olivia Hayes 55.",
       "source": "web",
       "target_week": "next",
       "vetted": true,
-      "vet_notes": "Scraped (FencingTracker), unvetted until Frank vets. Regional: top 16 prints; rating earned always prints. A26 confirmed as a step up from B26 via FT rating history (Nov 2). Names checked vs roster/people.json (WU, Caden = Caden Wu; Young, Penelope = Penny Young). fencing-api club-results since Oct 30 = 0 rows (cache gap, not a mismatch). | Frank chat 2026-11-02 20:56 ET (via Clark): Maksim and Nico stay in the lead only; Club Results table runs with Christina's row only.",
+      "vet_notes": "Scraped (FencingTracker), unvetted until Frank vets. Regional: top 16 prints; rating earned always prints. A26 confirmed as a step up from B26 via FT rating history (Nov 2). Names checked vs roster/people.json (WU, Caden = Caden Wu; Young, Penelope = Penny Young). fencing-api club-results since Oct 30 = 0 rows (cache gap, not a mismatch). | Frank chat 2026-11-02 20:56 ET (via Clark): Maksim and Nico stay in the lead only; Club Results table runs with Christina's row only. | Frank chat 2026-11-02 21:06 ET: 'you might as well put Nico and Max in the club results as well if you're going to add Christina.' Both rows print in Club Results and stay in the lead. Nico's field = 87 (FT profile, Nov 2 ~9:10 PM ET).",
       "suggested_slot": "club_results",
       "tags": [
         "club",
@@ -993,10 +993,17 @@
           "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
           "retrieved_at": "2026-11-02T08:59:00-05:00",
           "note": "Monday full pass re-check: same 15 rows."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/p/100330439/Nico-Ng",
+          "retrieved_at": "2026-11-02T21:07:51-05:00",
+          "note": "Nico's profile: Nov 1 Ultimate Cup RJCC, Junior Men's Épée, 10 / 87, no rating earned, event class A4 (event /event/44280/results)."
         }
       ],
       "created_at": "2026-11-02T07:55:00-05:00",
-      "updated_at": "2026-11-02T20:58:00-05:00",
+      "updated_at": "2026-11-02T21:07:51-05:00",
       "vetted_at": "2026-11-02T20:14:09-05:00",
       "vetted_by": "frank"
     },
@@ -1230,9 +1237,9 @@
           "status": "verified-email"
         },
         {
-          "claim": "Open bouting follows the class: realistically 6:30 PM until the club closes, usually around 9 or 9:30 PM; kids can stay after",
-          "source": "Frank, chat 2026-11-02 20:56 ET (+ budget notes 20:21 ET)",
-          "status": "Frank (club parent). Club website still lists Friday Open Bouting 6:00–10:00 PM; Frank's realistic times win. Print 'open bouting follows' rather than a clock time."
+          "claim": "Open bouting follows at 6:30 PM (print 6:30 PM; club closes around 9 or 9:30)",
+          "source": "Frank, chat 2026-11-02 21:06 ET ('Let's go with 6:30 for open bouting') + 20:56 ET",
+          "status": "Frank decision. Club website lists Friday Open Bouting 6:00–10:00 PM; Frank's 6:30 prints."
         }
       ],
       "email": {
@@ -1251,7 +1258,7 @@
       "vetted_by": "frank",
       "vetted_at": "2026-11-02T20:21:38-05:00",
       "vet_scope": "Frank supplied the content and asked for it in the issue; facts from the club email (allowlisted sender)",
-      "vet_notes": "Frank, budget submission 2026-11-02 20:21 ET: 'I have the content for the last section. It's in the response.' | Frank chat 2026-11-02 20:56 ET: 'realistically open bouting is 6:30 to whenever the club closes. That's usually 9 or 9:30 i think.' Overlap question closed.",
+      "vet_notes": "Frank, budget submission 2026-11-02 20:21 ET: 'I have the content for the last section. It's in the response.' | Frank chat 2026-11-02 20:56 ET: 'realistically open bouting is 6:30 to whenever the club closes. That's usually 9 or 9:30 i think.' Overlap question closed. | Frank chat 2026-11-02 21:06 ET: 'Let's go with 6:30 for open bouting.' Print 6:30 PM.",
       "planned_words": 90,
       "word_count": 90,
       "slot_hint": "club_events",
@@ -1275,7 +1282,7 @@
           "submitted_at": "2026-11-02T20:21:38-05:00"
         }
       ],
-      "updated_at": "2026-11-02T20:58:00-05:00"
+      "updated_at": "2026-11-02T21:07:51-05:00"
     },
     {
       "id": "ft-christina-jiang-fencers-club-youth-cup-2026-11-01",

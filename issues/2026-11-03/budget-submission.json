@@ -1,0 +1,220 @@
+{
+  "publishDate": "2026-11-03",
+  "practice": false,
+  "pretend": false,
+  "targetWeek": "next",
+  "issue": {
+    "number": 5,
+    "label": "Issue No. 5",
+    "week": "Week of Nov. 2, 2026"
+  },
+  "includedSlots": [
+    {
+      "slot": "lead",
+      "name": "Lead story — Ultimate Cup: Milinkovic's A",
+      "headline": "Milinkovic Earns His A at Ultimate Cup",
+      "itemId": "draft-ultimate-cup-lead-2026-11-02",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-a",
+      "name": "Secondary — Youth Olympics in Dakar",
+      "headline": "Youth Olympics Open in Dakar; Fencing Nov. 8–13",
+      "itemId": "x-fie-dakar-yog-2026-11-02",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "overheard",
+      "name": "Page 2 feature — Overheard on Reddit: FIE vs. WFL",
+      "headline": "Overheard on Reddit: Can the FIE Tell You Where Not to Fence?",
+      "itemId": "draft-overheard-fie-wfl-2026-11-02",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "ratings",
+      "name": "Ratings earned",
+      "headline": "Ratings Earned",
+      "itemId": "ft-maksim-a26-rating-2026-11-02",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup",
+      "name": "Nearby Tournaments — NYFA Youth Cup #1",
+      "headline": "NYFA Youth Cup #1 — Brooklyn, Sun. Nov. 8",
+      "itemId": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-2",
+      "name": "Nearby Tournaments — Medeo Youth Challenge #5",
+      "headline": "Medeo Youth Challenge #5 — Bound Brook, N.J., Sun. Nov. 8",
+      "itemId": "email-agentmail-medeo-yc5-entries-2026-10-14",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-3",
+      "name": "Nearby Tournaments — Pizza RYC/RJCC",
+      "headline": "Pizza RYC/RJCC — New Haven, Conn., Nov. 14–15",
+      "itemId": "email-agentmail-pizza-ryc-entries-2026-10-27",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-4",
+      "name": "Nearby Tournaments — Cobra Challenge",
+      "headline": "Cobra Challenge SYC/RCC — Secaucus, N.J., Nov. 27–29",
+      "itemId": "fencingapi-cobra-efc-entries-2026-10-19",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines box",
+      "headline": "Deadlines box — No. 4",
+      "itemId": "desk-deadlines-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "camp",
+      "name": "Club events — Winter Camp",
+      "headline": "Winter Camp: Sign Up Now",
+      "itemId": "chat-winter-camp-reminder",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tv",
+      "name": "Epee on Screen",
+      "headline": "Epee on Screen — No. 4",
+      "itemId": "desk-epee-on-screen-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "photo-history",
+      "name": "Photo from History",
+      "headline": "Photo from History: 1996 — Two golds at the start of an Olympic era",
+      "itemId": "history-photo-09-laura-flessel",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "by-the-book",
+      "name": "By the Book — pitch",
+      "headline": "By the Book: The 40-Millisecond Double",
+      "itemId": "pitch-by-the-book-double-touch-2026-11-02",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "club-results",
+      "name": "Club results — Ultimate Cup",
+      "headline": "Club results — Ultimate Cup, Oct. 31–Nov. 1",
+      "itemId": "ft-ultimate-cup-results-2026-11-02",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "classes",
+      "name": "Weekly classes table",
+      "headline": "Elite FC weekly class schedule (club website)",
+      "itemId": "web-efc-standing-schedule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "auto-ft-mendez-freehold-unrated-3rd-2026-10-23",
+      "name": "Not slotted yet (club_results)",
+      "headline": "Brendan Mendez 3rd at Freehold Unrated",
+      "itemId": "ft-mendez-freehold-unrated-3rd-2026-10-23",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ high-school roundup",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "qa",
+      "name": "Parent Q&A",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "comic",
+      "name": "Comic",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    }
+  ],
+  "photoIncludes": [],
+  "notes": "There's a new email from the club.  It should have been forwarded to your email I hope.  There's a new intermediate class.  It's a step up from the beginner class and it's great for kids who want to start taking it more seriously, perhaps get tournament ready.  It's also scheduled on a Friday and ends right before open bouting.  They can stay afterwards and hone their skills further.",
+  "slotNotes": {},
+  "answers": [
+    {
+      "slot": "lead",
+      "itemId": "draft-ultimate-cup-lead-2026-11-02",
+      "question": "OK to lead with Maksim's A, or would you rather lead another way?",
+      "answer": "yes, lead with this"
+    },
+    {
+      "slot": "lead",
+      "itemId": "draft-ultimate-cup-lead-2026-11-02",
+      "question": "Nico's 10th is in the lead: fine to print your son's result here, or move it to Club Results only?",
+      "answer": "yes, fine to print result.  10th at a Junior's of this level isn't super easy."
+    },
+    {
+      "slot": "secondary-a",
+      "itemId": "x-fie-dakar-yog-2026-11-02",
+      "question": "Worth a short here, or just the Epee on Screen row?",
+      "answer": "this can actually be expanded, i know nothing about Youth Olympic games."
+    }
+  ],
+  "order": [
+    "lead",
+    "secondary-a",
+    "overheard",
+    "club-results",
+    "ratings",
+    "signup",
+    "signup-2",
+    "signup-3",
+    "signup-4",
+    "deadlines",
+    "camp",
+    "classes",
+    "auto-ft-mendez-freehold-unrated-3rd-2026-10-23",
+    "tv",
+    "photo-history",
+    "by-the-book"
+  ],
+  "pageVersion": "budget-standalone-v2",
+  "submittedAt": "2026-11-02T20:23:48-05:00",
+  "vets": [
+    {
+      "id": "ft-mendez-freehold-unrated-3rd-2026-10-23",
+      "vet_notes": "drop this story"
+    }
+  ],
+  "clientSubmittedAt": "2026-11-02T20:21:38-05:00"
+}

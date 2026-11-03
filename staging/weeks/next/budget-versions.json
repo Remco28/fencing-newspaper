@@ -46,6 +46,14 @@
       "decisions_through": "2026-11-02T20:56:00-05:00",
       "decisions": 3,
       "out": "budget-demo/out/budget-no-5-2026-11-03-v5.html"
+    },
+    {
+      "v": 6,
+      "built_at": "2026-11-02T21:07:51-05:00",
+      "data": "c36a994fa5d3",
+      "decisions_through": "2026-11-02T21:06:00-05:00",
+      "decisions": 4,
+      "out": "budget-demo/out/budget-no-5-2026-11-03-v6.html"
     }
   ],
   "decisions": [
@@ -304,6 +312,105 @@
         "camp: question closed; full 115-word write-up",
         "club-results: included; table is Christina Jiang only (Fencers Club Youth Epee Cup, Y12 Mixed, Nov. 1, 3rd of 6); Maksim and Nico stay in the lead only; Mendez stays dropped",
         "new-class: included after camp; open bouting 6:30 PM to close (~9–9:30) per Frank; overlap question closed"
+      ]
+    },
+    {
+      "at": "2026-11-02T21:07:51-05:00",
+      "client_submitted_at": "2026-11-02T21:06:00-05:00",
+      "source": "chat:frank:2026-11-02T21:06:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-02T21:06:00-05:00",
+        "text": "you might as well put Nico and Max in the club results as well if you're going to add Christina.  Let's go with 6:30 for open bouting.  I think we're ready to compose that proof.  Thank you."
+      },
+      "carried_from": 3,
+      "publishDate": "2026-11-03",
+      "included": [
+        "lead",
+        "secondary-a",
+        "overheard",
+        "ratings",
+        "signup",
+        "signup-2",
+        "signup-3",
+        "signup-4",
+        "deadlines",
+        "camp",
+        "tv",
+        "photo-history",
+        "by-the-book",
+        "club-results",
+        "new-class"
+      ],
+      "excluded": [
+        "classes",
+        "auto-ft-mendez-freehold-unrated-3rd-2026-10-23"
+      ],
+      "photoIncludes": [],
+      "slotNotes": {},
+      "answers": [
+        {
+          "slot": "lead",
+          "itemId": "draft-ultimate-cup-lead-2026-11-02",
+          "question": "OK to lead with Maksim's A, or would you rather lead another way?",
+          "answer": "yes, lead with this"
+        },
+        {
+          "slot": "lead",
+          "itemId": "draft-ultimate-cup-lead-2026-11-02",
+          "question": "Nico's 10th is in the lead: fine to print your son's result here, or move it to Club Results only?",
+          "answer": "yes, fine to print result.  10th at a Junior's of this level isn't super easy."
+        },
+        {
+          "slot": "secondary-a",
+          "itemId": "x-fie-dakar-yog-2026-11-02",
+          "question": "Worth a short here, or just the Epee on Screen row?",
+          "answer": "this can actually be expanded, i know nothing about Youth Olympic games."
+        },
+        {
+          "slot": "overheard",
+          "question": "Run it at ~240 words, or cut the 'What the WFL is' paragraph (~45 words) to fit the usual size?",
+          "answer": "Run in full (~241 words).",
+          "via": "chat"
+        },
+        {
+          "slot": "camp",
+          "question": "Run the full 115 words again, or shrink to a two-line reminder?",
+          "answer": "Full write-up (115 words).",
+          "via": "chat"
+        },
+        {
+          "slot": "new-class",
+          "question": "The email says 5:00–6:30 PM, but the club website lists Friday open bouting from 6:00 PM, so it doesn't quite end 'right before' open bouting. Print the email's times and just say open bouting follows?",
+          "answer": "Open bouting is realistically 6:30 PM to close (usually 9 or 9:30).",
+          "via": "chat"
+        }
+      ],
+      "notes": "There's a new email from the club.  It should have been forwarded to your email I hope.  There's a new intermediate class.  It's a step up from the beginner class and it's great for kids who want to start taking it more seriously, perhaps get tournament ready.  It's also scheduled on a Friday and ends right before open bouting.  They can stay afterwards and hone their skills further.",
+      "order": [
+        "lead",
+        "secondary-a",
+        "overheard",
+        "club-results",
+        "ratings",
+        "signup",
+        "signup-2",
+        "signup-3",
+        "signup-4",
+        "deadlines",
+        "camp",
+        "new-class",
+        "classes",
+        "auto-ft-mendez-freehold-unrated-3rd-2026-10-23",
+        "tv",
+        "photo-history",
+        "by-the-book"
+      ],
+      "changes": [
+        "club-results: three rows (Maksim 5th of 83 + A26, Nico 10th of 87, Christina 3rd of 6); Maksim and Nico stay in the lead",
+        "new-class: open bouting prints as 6:30 PM",
+        "Frank: ready to compose the proof"
       ]
     }
   ]

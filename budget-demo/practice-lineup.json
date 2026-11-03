@@ -50,7 +50,7 @@
   "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
   "generated": "2026-10-26T12:45:00-04:00",
   "target_week": "next",
-  "generated_at": "2026-11-02T20:58:00-05:00",
+  "generated_at": "2026-11-02T21:07:51-05:00",
   "issue": {
     "number": 5,
     "label": "Issue No. 5",
@@ -139,7 +139,7 @@
       "waiting": false,
       "cost": {
         "type": "table_rows",
-        "rows": 1
+        "rows": 3
       },
       "title": "Club results",
       "table": {
@@ -150,13 +150,23 @@
         ],
         "rows": [
           [
+            "Maksim Milinkovic",
+            "Ultimate Cup RJCC, Cadet Men (Oct. 31)",
+            "5th of 83 · earned A26"
+          ],
+          [
+            "Nico Ng",
+            "Ultimate Cup RJCC, Junior Men (Nov. 1)",
+            "10th of 87"
+          ],
+          [
             "Christina Jiang",
             "Fencers Club Youth Epee Cup, Y12 Mixed (Nov. 1)",
             "3rd of 6"
           ]
         ]
       },
-      "summary": "One row, per your chat: Christina Jiang, 3rd of 6 in Y12 Mixed Epee at the Fencers Club Youth Epee Cup (Nov. 1, New York). The club's Nov. 2 email announced it; FencingTracker confirms the event, field and place. Maksim and Nico stay in the lead only.",
+      "summary": "Three rows, per your chat: Maksim Milinkovic 5th of 83 (earned A26) and Nico Ng 10th of 87 at the Ultimate Cup RJCC, plus Christina Jiang 3rd of 6 at the Fencers Club Youth Epee Cup (Nov. 1). Maksim and Nico are also in the lead.",
       "questions": [],
       "flags": [
         {
@@ -166,7 +176,11 @@
       ],
       "answered": [
         "Mendez's Freehold 3rd dropped (Frank, Nov. 2 submission). He also asked whether Mendez is really ours: never hard-confirmed.",
-        "Christina gets a mention; table runs with her row only (Frank, chat Nov. 2, 8:56 PM)."
+        "Christina gets a mention; table runs with her row only (Frank, chat Nov. 2, 8:56 PM).",
+        "Maksim and Nico go in the table too, and stay in the lead (Frank, chat Nov. 2, 9:06 PM)."
+      ],
+      "merged": [
+        "ft-ultimate-cup-results-2026-11-02"
       ]
     },
     {
@@ -465,7 +479,7 @@
         "words": 90
       },
       "title": "New Friday Class: Youth Intermediate",
-      "summary": "Your content (Nov. 2 notes) plus the club's Nov. 2 email: a new Youth Intermediate group class, Fridays 5:00–6:30 PM, first class aimed for Fri. Nov. 6. A step up from the beginner class for kids getting more serious and tournament-ready; open bouting follows, so they can stay after. The club will contact eligible fencers. Clark writes it at compose time.",
+      "summary": "Your content (Nov. 2 notes) plus the club's Nov. 2 email: a new Youth Intermediate group class, Fridays 5:00–6:30 PM, first class aimed for Fri. Nov. 6. A step up from the beginner class for kids getting more serious and tournament-ready; open bouting follows at 6:30, so they can stay after. The club will contact eligible fencers. Clark writes it at compose time.",
       "questions": [],
       "flags": [
         {
@@ -478,7 +492,8 @@
         }
       ],
       "answered": [
-        "Open bouting is realistically 6:30 PM to close, usually 9 or 9:30 (Frank, chat Nov. 2, 8:56 PM). Print the class as 5:00–6:30 PM and say open bouting follows."
+        "Open bouting is realistically 6:30 PM to close, usually 9 or 9:30 (Frank, chat Nov. 2, 8:56 PM). Print the class as 5:00–6:30 PM and say open bouting follows.",
+        "Print open bouting at 6:30 PM (Frank, chat Nov. 2, 9:06 PM)."
       ]
     },
     {
@@ -645,10 +660,6 @@
     {
       "item": "ft-mendez-freehold-unrated-3rd-2026-10-23",
       "why": "Dropped (Frank, Nov. 2: 'drop this story')."
-    },
-    {
-      "item": "ft-ultimate-cup-results-2026-11-02",
-      "why": "Maksim and Nico are in the lead only (Frank, Nov. 2)."
     }
   ],
   "desk_summary": [

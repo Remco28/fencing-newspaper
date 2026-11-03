@@ -1,0 +1,71 @@
+{
+ "issue": 5,
+ "vol": "I",
+ "date": "2026-11-03",
+ "dateline": "Tuesday Edition · Vol. I — No. 5 · Chatham, N.J. · November 3, 2026",
+ "status": "PROOF v1 — awaiting Frank approval",
+ "proof_version": 1,
+ "proof_history": [
+  {
+   "v": 1,
+   "at": "2026-11-02T21:20:00-05:00",
+   "note": "First proof from budget v6 (decisions through decision #4, chat 2026-11-02 21:06 ET)."
+  }
+ ],
+ "composed_at": "2026-11-02T21:20:00-05:00",
+ "approval": "Frank directed composition in chat 2026-11-02 21:06 ET after budget v6 decisions (budget-submission.json = latest uploaded submission, 20:23 ET). Not yet approved as a proof.",
+ "pdf": "issues/2026-11-03/en-garde-gazette-no-5-2026-11-03.pdf",
+ "previews": [
+  "issues/2026-11-03/preview-p1.png",
+  "issues/2026-11-03/preview-p2.png"
+ ],
+ "pdf_metadata": {
+  "Title": "En Garde Gazette — Vol. I No. 5 — November 3, 2026",
+  "Author": "Nico's Dad"
+ },
+ "build": "python3 issues/2026-11-03/build/compose.py x && python3 prototype/render.py issues/2026-11-03/issue.html issues/2026-11-03/en-garde-gazette-no-5-2026-11-03.pdf --allow-flag --author=\"Nico's Dad\"",
+ "pages": {
+  "1": [
+   "Lead: Milinkovic Earns His A at Ultimate Cup (Maksim 5th/83 → A26; Nico 10th/87)",
+   "The Youth Olympics, Explained (Dakar, 168w; U.S. entries omitted, unverified)",
+   "Photo from History 09: Laura Flessel, 1996 (photo floated in span)",
+   "Club Results (Maksim, Nico, Christina)",
+   "Ratings Earned (Maksim A26)",
+   "New Friday Class: Youth Intermediate (open bouting 6:30 p.m.)",
+   "By the Book: The 40-Millisecond Double (t.92 + 40/50 ms; WFL tie-in)"
+  ],
+  "2": [
+   "Nearby Tournaments (NYFA #1 + Pizza left; Medeo #5 + Cobra right)",
+   "Overheard on Reddit: Can the FIE Tell You Where Not to Fence? (full, jumps col 1→2)",
+   "Epee on Screen (4 rows, 2 columns; stream note in boxnote)",
+   "Deadlines (4 rows)",
+   "Winter Camp: Sign Up Now (full)"
+  ]
+ },
+ "cut": [
+  "Classes table (web standing schedule) — out per budget",
+  "For the Parents — held for No. 6",
+  "Mendez Freehold 3rd (dropped, unvetted)",
+  "U.S. Dakar épée entries (not verifiable from official sources)",
+  "Pizza venue sentence from board note (space)"
+ ],
+ "pending_frank": [
+  "Open bouting printed 6:30 p.m. (website still says 6:00–10:00)",
+  "Youth Intermediate eligibility: 'the club will reach out to eligible fencers' wording",
+  "Photo caption normalized 'epee' → 'épée'; Flessel photo cropped tighter",
+  "Epee on Screen reformatted to 2 columns",
+  "Overheard printed in full incl. WFL 40 ms tie-in in By the Book"
+ ],
+ "instruments": {
+  "p1_gap_in": 0.75,
+  "p2_gap_in": 0.29,
+  "row1_spread_in": 0.25,
+  "row2_spread_in": 0.25,
+  "pages": 2
+ },
+ "words": {
+  "total": 1535,
+  "p1": 788,
+  "p2": 747
+ }
+}

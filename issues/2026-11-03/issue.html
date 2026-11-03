@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>En Garde Gazette — Vol. I No. 5 — November 3, 2026</title>
+<meta name="author" content="Nico's Dad">
+<style>
+  @page { size: Letter; margin: 0.5in 0.5in 0.4in 0.5in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt; line-height: 1.26; color: #000;
+    font-variant-numeric: tabular-nums; }
+  .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
+  .page:last-child { page-break-after: auto; }
+  .page .footer { margin-top: auto; }
+
+  .masthead { display: flex; align-items: center; gap: 18pt; }
+  /* margin on img clears hairlines from PNG flourishes (art runs to image edges) */
+  .masthead img { display: block; width: 50%; height: auto; margin: 0 10pt; flex: none; }
+  /* Flanks: newspaper ears — clear air from logo (hairlines must not kiss masthead) */
+  .flank { flex: 1; min-width: 0; padding: 5pt 7pt; margin: 0;
+    border-top: 0.75pt solid #000; border-bottom: 0.75pt solid #000;
+    line-height: 1.22; }
+  .flank.left {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.5pt; font-variant: small-caps; letter-spacing: 0.06em;
+    text-align: center; font-weight: 400; }
+  .flank.right {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 6.8pt; font-style: italic; letter-spacing: 0.01em;
+    text-align: center; font-weight: 400; }
+
+  /* Dateline: centered edition word (display face) + single meta line under it — not three-span */
+  .dateline { text-align: center;
+    border-top: 3pt double #000; border-bottom: 2pt solid #000;
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+  .dateline .edition {
+    font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
+    font-weight: 700; font-size: 12.5pt; line-height: 1.02;
+    letter-spacing: 0.16em; text-transform: uppercase; }
+  .dateline .meta {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.5pt; letter-spacing: 0.05em; margin-top: 1.5pt;
+    font-variant: small-caps; font-weight: 400; }
+
+  .cols3 { display: flex; gap: 9pt; }
+  .cols3 > .c { flex: 1; min-width: 0; }
+  .cols3 > .span2 { flex: 2.06; }
+  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: 9pt; }
+  .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
+
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
+  /* Prose furniture: title + text ONLY — never wrap in .box (STYLE-GUIDE §8) */
+  .rail-block { margin-bottom: 6pt; padding: 0; border: none; }
+  .rail-block + .rail-block { margin-top: 2pt; } /* spacing only — no HR between stacked rails */
+  /* Shared title type; underline ONLY inside .box (tabular utilities) */
+  .boxtitle, .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 0.5pt;
+    padding-bottom: 2pt; margin-bottom: 3pt; }
+  .box > .boxtitle { border-bottom: 1pt solid #000; }
+  .rail-title { border: none; border-bottom: none; padding-bottom: 0; margin-bottom: 2pt; }
+
+  /* Per-slot type scale (STYLE-GUIDE §4) */
+  h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 18.5pt; line-height: 1.02; letter-spacing: -0.35pt; margin-bottom: 2pt; }
+  .span2 > p { font-size: 9pt; } /* lead body +0.5pt vs shorts */
+  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; } /* lead only */
+  h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; } /* shorts default */
+  .slot-a h2.head { font-size: 12pt; } /* Secondary A / page-2 featured */
+  .slot-a > p { font-size: 8.8pt; }
+  .slot-b h2.head { font-size: 10.5pt; } /* Secondary B / NJ HS */
+  .slot-feature h2.head { font-size: 13pt; line-height: 1.04; } /* page-2 span2 featured */
+  .slot-feature > p { font-size: 8.8pt; }
+  /* Byline ONLY for real guest authors — never "Gazette Staff" (PLAN §1b) */
+  .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; margin-bottom: 3pt; }
+  p { margin-bottom: 3pt; text-align: justify; hyphens: auto; }
+  p:last-child { margin-bottom: 0; }
+  .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
+  /* Page 2: vertical rhythm — no HRs, no rail-title underlines */
+  .page:last-child > .cols3 { margin-bottom: 6pt; }
+  .page:last-child > .cols3:last-of-type { margin-bottom: 0; }
+
+  table.board { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 8.5pt; }
+  table.board th { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; text-align: left; border-bottom: 1.5pt solid #000; padding: 1pt 4pt 1pt 0; }
+  table.board td { border-bottom: 0.5pt solid #000; padding: 1pt 4pt 1pt 0; vertical-align: top; }
+  table.board tr:last-child td { border-bottom: none; }
+  td.r, th.r { text-align: right; }
+  table.board th.r { text-align: right; }
+  td.num { text-align: right; white-space: nowrap; }
+
+  .photo { margin-bottom: 3pt; }
+  .photo img { display: block; width: 100%; height: auto; /* no silent crop — full frame */
+    filter: grayscale(100%); }
+  .caption { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; margin-top: 2pt;
+    text-align: left; line-height: 1.3; }
+
+  .footer { border-top: 2.5pt solid #000; margin-top: 1pt; padding-top: 2pt;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt;
+    display: flex; justify-content: space-between; text-transform: uppercase; letter-spacing: 0.3pt; }
+  .foot-archive { text-transform: none; letter-spacing: 0; font-size: 6.5pt; color: #444; }
+  /* ---- Issue 2026-10-08 composition additions (no furniture changes) ---- */
+  /* Parent Q&A pattern (STYLE-GUIDE §8a; prototype/qa-block.html) */
+  .qa .q { font-style: italic; font-weight: bold; margin-bottom: 2pt; text-align: left; }
+  .qa .q::before { content: "Q. "; font-style: normal; font-weight: 900;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  .qa .a { margin-bottom: 0; text-align: justify; hyphens: auto; }
+  .qa .a::before { content: "A. "; font-family: "Arial", "Liberation Sans", sans-serif;
+    font-weight: 900; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  /* Lead run-in labels */
+  .span2 p b.run { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 8pt; letter-spacing: 0.2pt; }
+  /* Big signup board: two tables side by side inside one tabular .box */
+  .board-split { display: flex; gap: 12pt; }
+  .board-split > div { flex: 1; min-width: 0; }
+  .board-cap { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 3pt 0 1pt 0; }
+  .board-cap:first-child { margin-top: 0; }
+  .board-cap span { font-weight: 400; text-transform: none; letter-spacing: 0; font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  .boxnote { margin-top: 3pt; }
+  /* Stacked articles/rails inside one column: air between pieces (margin only, never an HR) */
+  .c > .slot-b + .slot-b, .c > .box + .slot-b, .c > .photo + .slot-b { margin-top: 5pt; }
+  .c > .slot-b + .rail-block { margin-top: 6pt; }
+  .c > .photo + .rail-block { margin-top: 6pt; }
+  .boxnote { text-align: left; }
+  /* Weekly classes: times left-aligned in a fixed column with clear air before the class name (proof v2) */
+  table.board th.t, table.board td.t { text-align: left; white-space: nowrap; padding-right: 8pt; }
+  /* ---- Issue 2026-10-13 composition additions (no furniture changes) ---- */
+  .figure img { display: block; width: 100%; height: auto; }
+  .figure .caption { margin-top: 3pt; }
+  .factcheck { font-style: italic; }
+  /* Footer v2 (2026-10-18, STYLE-GUIDE archive whisper): archive line matches footer type */
+  .footer { gap: 14pt; letter-spacing: 0.15pt; }
+  .footer .foot-archive { text-transform: inherit; letter-spacing: inherit; font-size: inherit; color: inherit; }
+  /* ---- Issue 2026-11-03 composition additions (no furniture changes) ---- */
+  .credit { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; color: #333; margin-top: 2pt; text-align: left; line-height: 1.25; overflow-wrap: anywhere; text-align: left !important; hyphens: none; }
+  .c > .rail-block + .slot-b, .c > .slot-b + .box, .c > .box + .rail-block, .c > .rail-block + .rail-block, .c > .box + .slot-b { margin-top: 6pt; }
+  p, td { text-wrap: pretty; }
+  h1.head, h2.head { text-wrap: balance; }
+  .pfloat { float: left; width: 2.15in; margin: 2pt 9pt 3pt 0; }
+  .photowide::after { content: ""; display: block; clear: both; }
+  /* ---- Template A furniture v2 (2026-10-18, Frank) — STYLE-GUIDE §9b + §13a ---- */
+  /* Footer: the archive line is the centred member of the footer trio, in the same 7pt sans caps as its neighbours (no separate size/colour). */
+  .footer { gap: 14pt; letter-spacing: 0.15pt; }
+  .footer .foot-archive { text-transform: inherit; letter-spacing: inherit; font-size: inherit; color: inherit; }
+  /* Nearby Tournaments: one block per tournament (name · town · dates once), days as sub-rows inside. */
+  .tourney + .tourney { margin-top: 9pt; }
+  .tourney-head { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 0 0 1pt 0; }
+  .tourney-head span { font-weight: 400; text-transform: none; letter-spacing: 0;
+    font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  table.board tr.day td { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7pt;
+    letter-spacing: 0.3pt; text-transform: uppercase; padding-top: 3pt; padding-bottom: 1pt;
+    border-bottom: 0.5pt solid #000; text-align: left; }
+</style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1 (FRONT) ==================== -->
+<div class="page">
+  <div class="masthead">
+    <div class="flank left">Published by a fencing parent and his bot.</div>
+    <img src="../../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly">
+    <div class="flank right">It is better to deserve a rating than to have one.</div>
+  </div>
+  <div class="dateline">
+    <div class="edition">Tuesday Edition</div>
+    <div class="meta">Vol. I — No. 5 &nbsp;·&nbsp; Chatham, N.J. &nbsp;·&nbsp; November 3, 2026</div>
+  </div>
+
+  <div class="cols3 ruled">
+    <div class="c span2">
+      <h1 class="head">Milinkovic Earns His A at Ultimate Cup</h1>
+      <p>Maksim Milinkovic finished fifth of 83 in the Cadet Men’s event at the Ultimate Cup in Hillsborough Township, N.J., on Oct.&nbsp;31, and the result earned him an A rating, the highest rating USA Fencing awards. He had been a B since May.</p>
+<p>The two-day regional at Iron Peak Sports &amp; Events drew Elite FC fencers to Junior and Cadet events on both days. On Sunday, Nico Ng placed 10th of 87 in Junior Men.</p>
+<p>Milinkovic is having a busy fall. Last month he was sixth at the FIE Cadet World Cup in San José, Costa Rica. His new rating reads A26: the letter, plus the year it was earned.</p>
+<p>The club’s biggest weekend ahead is the Cobra Challenge in Secaucus, Nov.&nbsp;27–29, where 16 Elite FC fencers are entered.</p>
+
+      <div class="slot-a" style="margin-top:6pt;">
+        <h2 class="head">The Youth Olympics, Explained</h2>
+        <p>The Youth Olympic Games are an elite, multi-sport Olympics for athletes 17 and under, with an educational program built in. The fourth summer edition opened in Dakar, Senegal, on Oct.&nbsp;31 and runs through Nov.&nbsp;13. It’s the first Olympic sporting event ever held in Africa, with about 2,700 athletes in 25 sports.</p>
+<p>Fencing gets 84 places, 42 for young men and 42 for young women, with one individual event per weapon for each. No country may send more than one fencer per event, and there were no special qualifying tournaments: the federations set minimum standards, and national Olympic committees chose their athletes.</p>
+<p>A fencer was part of the show from the start. Senegalese foil fencer Abdourahmane Marième Sy lit the cauldron at the opening ceremony.</p>
+<p>Fencing runs Nov.&nbsp;8–13 at the Dakar Expo Centre in Diamniadio. Women’s épée is Nov.&nbsp;10 and men’s épée Nov.&nbsp;11, each a single day from pools to the gold-medal bout. Past Youth Olympians include sprinter Noah Lyles and diver Tom Daley.</p>
+      </div>
+      <div class="rail-block photowide" style="margin-top:7pt;"><div class="rail-title">Photo from History</div><h2 class="head">1996: Two Golds at the Start of an Olympic Era</h2><div class="photo pfloat"><img src="media/09-laura-flessel-crop.jpg" alt="Laura Flessel-Colovic in a black top and brown scarf, looking slightly to the side against a dark background."><p class="caption">Women’s épée made its Olympic debut in Atlanta in 1996, and Laura Flessel won both available gold medals for France: individual and team. This later portrait shows her at a women’s épée World Cup trophy presentation in Saint-Maur in 2013.</p></div><p>Laura Flessel won the first Olympic women’s individual epee title in Atlanta in 1996, then added team gold with France. The individual final was an all-French contest: she defeated Valérie Barlois 15–12. Born in Guadeloupe, Flessel began fencing at seven and became known as “The Wasp.” Her career stretched across five Olympics, with individual bronze in Sydney in 2000, individual silver and team bronze in Athens in 2004, and appearances in Beijing and London. She also won individual world titles in 1998 and 1999. This portrait was taken at the team trophy presentation of the 2013 Challenge international de Saint-Maur, a women’s epee World Cup event.</p><p class="credit">Photo: © Marie-Lan Nguyen / Wikimedia Commons, “Laura Flessel-Colovic.jpg”, CC BY 2.5 (creativecommons.org/licenses/by/2.5). Source: commons.wikimedia.org/wiki/File:Laura_Flessel-Colovic.jpg. Cropped.</p></div>
+    </div>
+    <div class="c">
+      <div class="box"><div class="boxtitle">Club Results</div><table class="board"><colgroup><col style="width:0.72in"><col><col style="width:0.62in"></colgroup><tr><th>Fencer</th><th>Event</th><th>Finish</th></tr><tr><td>Maksim Milinkovic</td><td>Ultimate Cup RJCC, Cadet Men (Oct.&nbsp;31)</td><td>5th of 83 · earned A26</td></tr><tr><td>Nico Ng</td><td>Ultimate Cup RJCC, Junior Men (Nov.&nbsp;1)</td><td>10th of 87</td></tr><tr><td>Christina Jiang</td><td>Fencers Club Youth Epee Cup, Y12 Mixed (Nov.&nbsp;1)</td><td>3rd of 6</td></tr></table></div><div class="box"><div class="boxtitle">Ratings Earned</div><table class="board"><colgroup><col style="width:0.72in"><col style="width:0.62in"><col></colgroup><tr><th>Fencer</th><th>Rating</th><th>Where</th></tr><tr><td>Maksim Milinkovic</td><td>A26 <span style="white-space:nowrap">(from B26)</span></td><td>Ultimate Cup RJCC, Oct.&nbsp;31</td></tr></table></div><div class="slot-b"><h2 class="head">New Friday Class: Youth Intermediate</h2><p>Elite FC is adding a Youth Intermediate group class on Fridays, 5:00–6:30&nbsp;p.m., and is aiming to hold the first one this Friday, Nov.&nbsp;6.</p>
+<p>It’s a step up from the beginner class. Beginners will keep training together, while more experienced youth fencers, the ones taking the sport more seriously and getting tournament-ready, get a class of their own.</p>
+<p>The timing is handy, too: open bouting follows at 6:30&nbsp;p.m., so fencers can stay afterward and keep sharpening their skills. The club will reach out to eligible fencers; questions go to the club.</p></div><div class="rail-block"><div class="rail-title">By the Book</div><h2 class="head">The 40-Millisecond Double</h2><p>Why do both lights go on? In épée, when both fencers are hit and the scoring box registers both touches, it’s a double touch, and each fencer gets a point (USA Fencing rule t.92).</p>
+<p>The box decides. If the second hit lands within 40&nbsp;milliseconds of the first (1/25 of a second), both lamps light. Past 50&nbsp;milliseconds (1/20), only the first counts; the box is allowed some leeway in between. The World Fencing League keeps the idea: “If both hit within 40ms, both score.”</p></div>
+    </div>
+  </div>
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 5</span>
+    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>
+    <span>For fun only — facts aren’t guaranteed accurate.</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 (BACK) ==================== -->
+<div class="page">
+  <div class="dateline" style="margin-top:0;">
+    <div class="edition">Page Two</div>
+    <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 5</div>
+  </div>
+
+  <div class="box w3">
+    <div class="boxtitle">Nearby Tournaments — Elite FC Entries</div>
+    <div class="board-split">
+      <div>
+        <div class="tourney"><div class="tourney-head">NYFA Youth Cup #1 <span>· Brooklyn, N.Y. · Sunday, Nov.&nbsp;8</span></div><table class="board"><colgroup><col style="width:0.62in"><col style="width:0.85in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr><td class="num">9:00 AM</td><td>Y10 Mixed</td><td>Bryce Cheng, Maximus Siu</td></tr><tr><td class="num">9:00 AM</td><td>Y8 Mixed</td><td>Madeline Siu</td></tr><tr><td class="num">12:30 PM</td><td>Y12 Men</td><td>Remy Ng</td></tr><tr><td class="num">12:30 PM</td><td>Y12 Women</td><td>Christina Jiang</td></tr><tr><td class="num">4:00 PM</td><td>Y14 Women</td><td>Mila Siu</td></tr></table></div>
+        <div class="tourney"><div class="tourney-head">Pizza RYC/RJCC <span>· New Haven, Conn. · Nov.&nbsp;14–15</span></div><table class="board"><colgroup><col style="width:0.62in"><col style="width:0.85in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="3">Saturday, Nov.&nbsp;14</td></tr><tr><td class="num">8:00 AM</td><td>Y14 Women</td><td>Penny Young</td></tr><tr><td class="num">1:00 PM</td><td>Junior Women</td><td>Amina Gore</td></tr><tr class="day"><td colspan="3">Sunday, Nov.&nbsp;15</td></tr><tr><td class="num">8:00 AM</td><td>Cadet Women</td><td>Amina Gore, Penny Young</td></tr><tr><td class="num">12:00 PM</td><td>Y12 Women</td><td>Penny Young</td></tr></table></div>
+      </div>
+      <div>
+        <div class="tourney"><div class="tourney-head">Medeo Youth Challenge #5 <span>· Bound Brook, N.J. · Sunday, Nov.&nbsp;8</span></div><table class="board"><colgroup><col style="width:0.62in"><col style="width:0.85in"><col></colgroup><tr><th class="r">Time</th><th>Event</th><th>Elite FC</th></tr><tr><td class="num">9:30 AM</td><td>Y12 Men</td><td>Samuel SarroWaite</td></tr><tr><td class="num">9:30 AM</td><td>Y12 Women</td><td>Christina Jiang</td></tr><tr><td class="num">11:30 AM</td><td>Y10 Mixed</td><td>Nora Li, Claire Widjaja</td></tr><tr><td class="num">11:30 AM</td><td>Y14 Men</td><td>Owen Li</td></tr><tr><td class="num">11:30 AM</td><td>Y14 Women</td><td>Mira Shukla</td></tr></table></div>
+        <div class="tourney"><div class="tourney-head">Cobra Challenge SYC/RCC <span>· Secaucus, N.J. · Nov.&nbsp;27–29</span></div><table class="board"><colgroup><col style="width:0.85in"><col></colgroup><tr><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="2">Friday, Nov.&nbsp;27</td></tr><tr><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, <span style="white-space:nowrap">Ash Shah-Mirani</span></td></tr><tr><td>Cadet Women</td><td>Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young</td></tr><tr><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong</td></tr><tr class="day"><td colspan="2">Saturday, Nov.&nbsp;28</td></tr><tr><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu, Penny Young</td></tr><tr><td>Y12 Men</td><td>Kian Jaising, Joshua Jeong, Remy Ng</td></tr><tr class="day"><td colspan="2">Sunday, Nov.&nbsp;29</td></tr><tr><td>Y14 Women</td><td>Stella Kuo, Mila Siu, Penny Young</td></tr><tr><td>Cadet Men</td><td>Connor Anderson, Nico Ng, Caden Wu</td></tr></table></div>
+      </div>
+    </div>
+    <p class="boxnote">Cobra Challenge is at the Meadowlands Expo Center: 16 Elite FC fencers, 26 entries.</p>
+  </div>
+
+  <div class="cols3 ruled">
+    <div class="c"><div class="rail-block"><div class="rail-title">Overheard on Reddit</div><h2 class="head">Can the FIE Tell You Where Not to Fence?</h2><p><i>The debate this fall on r/Fencing:</i> the world federation’s warning about the new World Fencing League set off a 50-comment argument.</p>
+<p><b class="run">What the FIE actually said.</b> According to the South China Morning Post, a statement signed by FIE Secretary General Gulnora Saidova on Oct.&nbsp;22 said the league is not an official competition, and none of its planned events is sanctioned. It pointed to rules that allow bans. (We couldn’t find the full text posted publicly.) The rule, Article 1.2.6(b), bars federation members from events run by anyone “not recognised by the national federation of their country,” unless that federation specially authorizes them.</p>
+<p><b class="run">What the WFL is.</b> It’s a made-for-TV team league started by U.S. Olympian Miles Chamley-Watson. Its one event so far, in Los Angeles in April, offered a $100,000 prize pool. In épée, a 45-second clock punishes passive fencing.</p>
+<p><b class="run">Opinion: it’s overreach.</b> Running your own championships is fine, but banning members from someone else’s show isn’t. And “event” is never defined.</p></div></div><div class="c"><div class="rail-block"><p><b class="run">Opinion: you signed up for it.</b> Joining a federation means accepting its rules. The FIE is worried about rivals, not club tournaments.</p>
+<p><b class="run">What it means for club fencers.</b> By the rule’s own wording, USA Fencing tournaments and events run by recognized clubs are unaffected. One wrinkle: USA Fencing itself signed a partnership with the WFL in January, and it hasn’t commented publicly.</p><p class="factcheck"><b class="run">Fact check:</b> Seven weeks before the warning, the FIE hosted Chamley-Watson in Lausanne for “positive discussions.”</p></div><div class="box"><div class="boxtitle">Epee on Screen</div><table class="board"><colgroup><col style="width:0.64in"><col></colgroup><tr><th class="r">Dates</th><th>Event</th></tr><tr><td class="num">Nov.&nbsp;5–8</td><td>Junior/Cadet World Cup, Manama, Bahrain</td></tr><tr><td class="num">Nov.&nbsp;8–13</td><td>Youth Olympic Games, Dakar, Senegal</td></tr><tr><td class="num">Nov.&nbsp;12–15</td><td>Senior World Cups: Berne (men), Wuxi (women) — FencingTV</td></tr><tr><td class="num">Nov.&nbsp;26–29</td><td>Junior/Cadet World Cup, Novi Sad, Serbia</td></tr></table><p class="boxnote">From the FIE calendar; only the senior World Cups list a stream.</p></div></div><div class="c"><div class="box"><div class="boxtitle">Deadlines</div><table class="board"><colgroup><col style="width:0.62in"><col></colgroup><tr><th class="r">Date</th><th>What closes</th></tr><tr><td class="num">Sat 11/7</td><td>Cobra Challenge: late entry closes</td></tr><tr><td class="num">Sat 11/7</td><td>Medeo #5: preregistration closes</td></tr><tr><td class="num">Wed 11/11</td><td>Junior Olympics: regular-fee deadline</td></tr><tr><td class="num">Fri 1/8</td><td>N.J. high school: independent fencers’ entries close</td></tr></table><p class="boxnote">USA Fencing deadlines are 11:59 p.m. Pacific (2:59 a.m. Eastern the next day).</p></div><div class="slot-b"><h2 class="head">Winter Camp: Sign Up Now</h2><p>Elite FC Winter Camp runs Dec.&nbsp;27–31, 9:30&nbsp;a.m. to 2&nbsp;p.m., and it’s open to all levels: footwork, technical and tactical drills, and games. Dec.&nbsp;27 starts with a swag giveaway. K2 Fitness runs strength and conditioning on Dec.&nbsp;28 and 30. On Dec.&nbsp;29, a professional instructor leads yoga and breath control for competition, and lunch is served. Crepes on Dec.&nbsp;31 celebrate the end of camp and 2026. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. If you’re going, let the club know as soon as possible for a headcount; contact the club for price and sign-up.</p></div></div>
+  </div>
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 5</span>
+    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>
+    <span>For fun only — facts aren’t guaranteed accurate.</span>
+  </div>
+</div>
+
+</body>
+</html>
