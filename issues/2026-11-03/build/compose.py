@@ -1,6 +1,6 @@
 import json,re,html,sys
 R='/workspace/fencing-newspaper/'
-WEEK='staging/weeks/next'   # No. 5's staging week (moves to staging/weeks/2026-11-03 on publish)
+WEEK='staging/weeks/2026-11-03'   # No. 5's staging week (history after the No. 5 roll-forward 2026-11-03)
 D={i['id']:i for i in json.load(open(R+WEEK+'/items.json'))['items']}
 L=json.load(open(R+'budget-demo/practice-lineup.json')); S={s['key']:s for s in L['slots']}
 def ty(t):

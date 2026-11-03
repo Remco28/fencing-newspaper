@@ -1,39 +1,6 @@
 {
   "target_week": "after-next",
-  "updated_at": "2026-11-02T20:20:00-05:00",
-  "note": "Fresh pile after Issue No. 4 roll-forward (2026-10-26). 2026-11-02: For the Parents rating-letters pitch moved here from next/ (Frank: hold for a larger feature; remind him next week).",
-  "items": [
-    {
-      "id": "pitch-for-parents-rating-letters-2026-11-02",
-      "kind": "pitch",
-      "section": "For the Parents",
-      "headline": "For the Parents: What a Rating Letter Means",
-      "summary": "Pitch: a plain-words guide to USA Fencing ratings (A through E, U for unrated), what the year means (A26 = earned in 2026), how a fencer earns one (finish high enough at a big enough, strong enough event), and how long it lasts. Ties into Maksim's A26. About 110 words, sourced from USA Fencing's rules and Athlete Handbook.",
-      "body": "",
-      "word_count": 110,
-      "planned_words": 110,
-      "source": "desk",
-      "target_week": "after-next",
-      "vetted": true,
-      "facts_status": "to research from reference/usa-fencing/ (Athlete Handbook 2026-27, Rules for Competition) before writing",
-      "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate. If the lead or Ratings Earned is cut, this still stands alone.",
-      "slot_hint": "for_the_parents",
-      "tags": [
-        "for-the-parents",
-        "pitch",
-        "ratings"
-      ],
-      "created_at": "2026-11-02T11:40:00-05:00",
-      "vetted_at": "2026-11-02T20:14:09-05:00",
-      "vetted_by": "frank",
-      "moved_from": "staging/weeks/next",
-      "moved_at": "2026-11-02T20:20:00-05:00",
-      "hold_note": "Frank, slot note (budget submission 2026-11-02 10:04:46 ET (ingested 20:14 ET, budget-versions.json decision #1)): \"Let's make this a larger feature for another week. Please put this one on hold. Remind me next week please.\" Plan it as a larger feature, not the ~110w short.",
-      "remind": {
-        "who": "frank",
-        "when": "next week's budget (Issue No. 6)",
-        "what": "Raise the For the Parents rating-letters feature again; Frank wants it larger."
-      }
-    }
-  ]
+  "updated_at": "2026-11-03T15:20:00-05:00",
+  "note": "Fresh pile after Issue No. 5 roll-forward (2026-11-03).",
+  "items": []
 }
