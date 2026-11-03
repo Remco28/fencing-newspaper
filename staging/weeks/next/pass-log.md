@@ -43,3 +43,8 @@
 - Staged: ft-maksim-a26-rating-2026-11-02, draft-ultimate-cup-lead-2026-11-02 (130w), history-photo-09-laura-flessel (+ media). Updated deadlines and Epee on Screen for No. 5; refreshed provenance on Cobra, Pizza, travel.
 - Dropped from next/ (stale or already ran): Ultimate registrations, Medeo YC #4 entries, NJ JO qualifier, Morris Cup results, Cobra details (listed in items.json dropped_2026_11_02).
 - Budget: archived the No. 4 lineup; wrote No. 5 lineup; built budget-demo/out/budget-no-5-2026-11-03-next.html (not committed). Fill ~28% vetted / ~60% if proposed items are vetted.
+
+## 2026-11-03 Tue 7:52 AM ET — daily email check + FT quick look
+- Email: 1 new (chunkymonkey club-schedule digest, Nov 3, data as of Nov 2 6:00 PM). Medeo YC #5 grew 6 → 8: added Ian Huang and Elle Peterfreund (both Y10 Mixed; neither on roster). No. 5 proof v1 prints the 6-entry Medeo list — flagged to Frank. NYFA #1 (6) and Pizza RYC/RJCC (5 / 2, still "could not refresh") unchanged; Wanglei Nov Cup I nobody signed up. Updated the Medeo item (vetted, allowlist). Labeled processed.
+- FencingTracker club page (1 fetch, 7:52 AM ET): 166 tournaments / 1255 results, unchanged; newest still Ultimate Cup RJCC (Oct 31–Nov 1), already staged. Nothing new.
+- fencing-api cached club-results since Nov 1: 0 rows (cache-only; no mismatch). No live calls.
