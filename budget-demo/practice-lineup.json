@@ -50,7 +50,7 @@
   "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
   "generated": "2026-10-26T12:45:00-04:00",
   "target_week": "next",
-  "generated_at": "2026-11-02T20:28:00-05:00",
+  "generated_at": "2026-11-02T21:05:00-05:00",
   "issue": {
     "number": 5,
     "label": "Issue No. 5",
@@ -107,7 +107,7 @@
       "key": "overheard",
       "section": "lead",
       "slot": "Page 2 feature — Overheard on Reddit: FIE vs. WFL",
-      "budget": "~240w (section max ~220w; Frank allowed a bigger box)",
+      "budget": "~241w (Frank: run in full)",
       "item": "draft-overheard-fie-wfl-2026-11-02",
       "proposed": true,
       "waiting": false,
@@ -118,29 +118,30 @@
       },
       "title": "Overheard on Reddit: Can the FIE Tell You Where Not to Fence?",
       "summary": "Your r/Fencing thread, with the official side filled in: the FIE's Oct 22 warning about the World Fencing League (wording via the South China Morning Post; the full text isn't public), the exact rule (FIE Statutes 1.2.6(b)), what the WFL is, both sides labeled as opinion, and what it means for club fencers. USA Fencing has a WFL partnership (Jan 2026) and hasn't commented. It fills this week's feature gap as page 2's big read, one column.",
-      "questions": [
-        "Run it at ~240 words, or cut the 'What the WFL is' paragraph (~45 words) to fit the usual size?"
-      ],
+      "questions": [],
       "flags": [
         {
           "level": "info",
           "text": "FIE statement wording is from SCMP; we couldn't find the primary text. The box says so."
         }
+      ],
+      "answered": [
+        "Run in full at ~241 words (Frank, chat Nov. 2, 8:56 PM)."
       ]
     },
     {
       "key": "club-results",
       "section": "club",
-      "slot": "Club results — Ultimate Cup",
+      "slot": "Club results",
       "budget": "strong rows only (no 'also fenced' line)",
-      "item": "ft-ultimate-cup-results-2026-11-02",
+      "item": "ft-christina-jiang-fencers-club-youth-cup-2026-11-01",
       "proposed": true,
       "waiting": false,
       "cost": {
         "type": "table_rows",
-        "rows": 2
+        "rows": 1
       },
-      "title": "Club results — Ultimate Cup, Oct. 31–Nov. 1",
+      "title": "Club results",
       "table": {
         "head": [
           "Fencer",
@@ -149,27 +150,23 @@
         ],
         "rows": [
           [
-            "Maksim Milinkovic",
-            "Ultimate Cup RJCC, Cadet Men (Oct. 31)",
-            "5th of 83 · earned A26"
-          ],
-          [
-            "Nico Ng",
-            "Ultimate Cup RJCC, Junior Men (Nov. 1)",
-            "10th"
+            "Christina Jiang",
+            "Fencers Club Youth Epee Cup, Y12 Mixed (Nov. 1)",
+            "3rd of 6"
           ]
         ]
       },
-      "summary": "Two Ultimate Cup rows clear the regional top-16 bar: Maksim Milinkovic 5th of 83 (earned A26) and Nico Ng 10th. Both are already in the lead story. You left this table out in your Nov. 2 submission.",
+      "summary": "One row, per your chat: Christina Jiang, 3rd of 6 in Y12 Mixed Epee at the Fencers Club Youth Epee Cup (Nov. 1, New York). The club's Nov. 2 email announced it; FencingTracker confirms the event, field and place. Maksim and Nico stay in the lead only.",
       "questions": [],
       "flags": [
         {
           "level": "info",
-          "text": "fencing-api's club-results cache returned 0 rows since Oct 30 (a cache gap, not a disagreement). FencingTracker is the only source."
+          "text": "Tied 3rd (fencing has two bronzes). Unrated local event."
         }
       ],
       "answered": [
-        "Mendez's Freehold 3rd dropped (Frank, Nov. 2 submission). He also asked whether Mendez is really ours: never hard-confirmed."
+        "Mendez's Freehold 3rd dropped (Frank, Nov. 2 submission). He also asked whether Mendez is really ours: never hard-confirmed.",
+        "Christina gets a mention; table runs with her row only (Frank, chat Nov. 2, 8:56 PM)."
       ]
     },
     {
@@ -441,16 +438,17 @@
       "key": "camp",
       "section": "club",
       "slot": "Club events — Winter Camp",
-      "budget": "~115w",
+      "budget": "~115w (full)",
       "item": "chat-winter-camp-reminder",
       "proposed": true,
       "cost": {
         "type": "prose",
         "span": 1
       },
-      "summary": "Third run of the reminder (115 words, as in No. 4). Camp is Dec 27–31; still 'contact the club for price and sign-up'.",
-      "questions": [
-        "Run the full 115 words again, or shrink to a two-line reminder?"
+      "summary": "Full write-up again (115 words, as in No. 4), since there's room. Camp is Dec 27–31; still 'contact the club for price and sign-up'.",
+      "questions": [],
+      "answered": [
+        "Full write-up, 115 words (Frank, chat Nov. 2, 8:56 PM)."
       ]
     },
     {
@@ -467,10 +465,8 @@
         "words": 90
       },
       "title": "New Friday Class: Youth Intermediate",
-      "summary": "Your content (from your Nov. 2 notes) plus the club's Nov. 2 email: a new Youth Intermediate group class, Fridays 5:00–6:30 PM, first class aimed for Fri. Nov. 6. A step up from the beginner class for kids getting more serious and tournament-ready; the club will contact eligible fencers. Clark writes it at compose time.",
-      "questions": [
-        "The email says 5:00–6:30 PM, but the club website lists Friday open bouting from 6:00 PM, so it doesn't quite end 'right before' open bouting. Print the email's times and just say open bouting follows?"
-      ],
+      "summary": "Your content (Nov. 2 notes) plus the club's Nov. 2 email: a new Youth Intermediate group class, Fridays 5:00–6:30 PM, first class aimed for Fri. Nov. 6. A step up from the beginner class for kids getting more serious and tournament-ready; open bouting follows, so they can stay after. The club will contact eligible fencers. Clark writes it at compose time.",
+      "questions": [],
       "flags": [
         {
           "level": "info",
@@ -480,6 +476,9 @@
           "level": "warn",
           "text": "Eligibility: the club says it will reach out to those eligible, so it's not open sign-up."
         }
+      ],
+      "answered": [
+        "Open bouting is realistically 6:30 PM to close, usually 9 or 9:30 (Frank, chat Nov. 2, 8:56 PM). Print the class as 5:00–6:30 PM and say open bouting follows."
       ]
     },
     {
@@ -646,6 +645,10 @@
     {
       "item": "ft-mendez-freehold-unrated-3rd-2026-10-23",
       "why": "Dropped (Frank, Nov. 2: 'drop this story')."
+    },
+    {
+      "item": "ft-ultimate-cup-results-2026-11-02",
+      "why": "Maksim and Nico are in the lead only (Frank, Nov. 2)."
     }
   ],
   "desk_summary": [

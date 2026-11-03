@@ -92,6 +92,23 @@ cp -r staging/weeks/next /tmp/wk && cp -r budget-demo/submissions /tmp/subs
 python3 scripts/ingest_budget_submission.py sub.json --staging-week /tmp/wk --submissions /tmp/subs
 ```
 
+### Decisions Frank gives in chat
+
+When Frank answers in chat instead of submitting the page, log it as the next decision so the page
+version and "decisions captured through" stay honest:
+
+```sh
+python3 scripts/record_chat_decision.py --at 2026-11-02T20:56:00-05:00 --text "his words, verbatim" \
+    --include club-results --answer camp "the question" "his answer" --change "what you applied" --dry-run
+```
+
+It copies the previous decision's page state (includes, excludes, order, photo picks, slot notes,
+answers, notes), applies `--include/--exclude/--after SLOT=PREV`, and appends an entry with
+`kind: "chat"`, `source: "chat:frank:<time>"`, `chat.text` verbatim and `changes[]`, plus one
+`chat-decision` line in the week's `vet-log.jsonl`. `--at` is when Frank said it; the page uses it as
+"decisions captured through" and drops browser-saved progress older than it. The script does not edit
+items or the lineup: close questions, add rows and update facts by hand, then rebuild.
+
 ## Notes (Oct 26 follow-up)
 
 - The headline counter counts items only ("3 need vet"); photos are shown separately ("4 photos"). Photos can still be vetted on the page.

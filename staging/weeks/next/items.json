@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-02T20:28:00-05:00",
+  "updated_at": "2026-11-02T21:05:00-05:00",
   "note": "Hold pile for Issue No. 5 (week of Nov 2). Started as after-next at the No. 3 roll; became next at the No. 4 roll-forward 2026-10-26. Still-relevant upcoming/results-watch items copied from 2026-10-26 with carried_from.",
   "rolled_forward": {
     "from": "staging/weeks/after-next",
@@ -21,7 +21,7 @@
       "vetted_by": "frank",
       "vet_scope": "angle_tone_only",
       "facts_status": "verified (price omitted)",
-      "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Clark 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Clark 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Clark 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md.",
+      "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Clark 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Clark 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Clark 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md. | Frank chat 2026-11-02 20:56 ET: 'the winter camp can get a full write up since we have space.' Runs in full (~115w, v4 body) in No. 5.",
       "facts": [
         {
           "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
@@ -174,7 +174,7 @@
         ],
         "text_copy": "staging/weeks/next/sources/email-fwd-winter-camp-2026-10-07.txt"
       },
-      "updated_at": "2026-10-23T10:05:00-04:00",
+      "updated_at": "2026-11-02T21:05:00-05:00",
       "ingest_notes": [
         "2026-10-08 daily email pass: Frank's 'Fwd: Group Class! + Winter Camp' (<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>) was already ingested 2026-10-07 ~19:20 ET; it had just not been labeled processed. Labeled now; no new facts (price and sign-up method still pending)."
       ],
@@ -187,8 +187,9 @@
       "body_prior": "Elite FC Winter Camp runs Dec. 27–31, 9:30 a.m. to 2 p.m., and it's open to all levels: footwork, technical and tactical drills, strength and conditioning, and games. Call it a tune-up for the second half of the season, or a good excuse to escape visiting relatives for a few hours. The club asks campers to register as soon as possible; contact the club for price and sign-up.",
       "body_prior_note": "v3 as printed in No. 3 (Oct 19), 68 words. Kept for reference/rollback.",
       "revision": "v4",
-      "revision_status": "pending Frank review",
-      "carried_at": "2026-10-26T20:30:00-04:00"
+      "revision_status": "approved for No. 5 at full length (Frank chat 2026-11-02 20:56 ET)",
+      "carried_at": "2026-10-26T20:30:00-04:00",
+      "frank_direction": "full write-up (chat 2026-11-02 20:56 ET)"
     },
     {
       "id": "web-efc-standing-schedule",
@@ -961,7 +962,7 @@
       "source": "web",
       "target_week": "next",
       "vetted": true,
-      "vet_notes": "Scraped (FencingTracker), unvetted until Frank vets. Regional: top 16 prints; rating earned always prints. A26 confirmed as a step up from B26 via FT rating history (Nov 2). Names checked vs roster/people.json (WU, Caden = Caden Wu; Young, Penelope = Penny Young). fencing-api club-results since Oct 30 = 0 rows (cache gap, not a mismatch).",
+      "vet_notes": "Scraped (FencingTracker), unvetted until Frank vets. Regional: top 16 prints; rating earned always prints. A26 confirmed as a step up from B26 via FT rating history (Nov 2). Names checked vs roster/people.json (WU, Caden = Caden Wu; Young, Penelope = Penny Young). fencing-api club-results since Oct 30 = 0 rows (cache gap, not a mismatch). | Frank chat 2026-11-02 20:56 ET (via Clark): Maksim and Nico stay in the lead only; Club Results table runs with Christina's row only.",
       "suggested_slot": "club_results",
       "tags": [
         "club",
@@ -995,7 +996,7 @@
         }
       ],
       "created_at": "2026-11-02T07:55:00-05:00",
-      "updated_at": "2026-11-02T10:20:00-05:00",
+      "updated_at": "2026-11-02T21:05:00-05:00",
       "vetted_at": "2026-11-02T20:14:09-05:00",
       "vetted_by": "frank"
     },
@@ -1105,7 +1106,7 @@
       "idea_vetted_by": "frank",
       "idea_vetted_at": "2026-11-02T09:25:00-05:00",
       "facts_status": "verified (sources below); FIE statement wording via SCMP only",
-      "vet_notes": "Frank's idea: he sent the r/Fencing PDF and asked Clark to fill in the official side (chat, Nov 2). Text not yet vetted by Frank. Facts verified 2026-11-02 9:00-9:15 AM ET; see staging/research/fie-vs-wfl-2026-11-02.md. The FIE statement's full text isn't public; its wording is credited to the South China Morning Post. ~241 words, over the section's ~220w max. Cut option: drop the 'What the WFL is' paragraph (~45w). Opinions are labeled; no usernames.",
+      "vet_notes": "Frank's idea: he sent the r/Fencing PDF and asked Clark to fill in the official side (chat, Nov 2). Text not yet vetted by Frank. Facts verified 2026-11-02 9:00-9:15 AM ET; see staging/research/fie-vs-wfl-2026-11-02.md. The FIE statement's full text isn't public; its wording is credited to the South China Morning Post. ~241 words, over the section's ~220w max. Cut option: drop the 'What the WFL is' paragraph (~45w). Opinions are labeled; no usernames. | Frank chat 2026-11-02 20:56 ET: 'The reddit box can run in full.' Runs at full length (~241w); the WFL paragraph stays.",
       "facts": [
         {
           "claim": "FIE statement signed by Sec. Gen. Gulnora Saidova, Oct 22: WFL not an official competition, none of its events sanctioned; pointed to statutes allowing bans",
@@ -1170,7 +1171,9 @@
       ],
       "created_at": "2026-11-02T11:40:00-05:00",
       "vetted_at": "2026-11-02T20:14:09-05:00",
-      "vetted_by": "frank"
+      "vetted_by": "frank",
+      "updated_at": "2026-11-02T21:05:00-05:00",
+      "frank_direction": "run in full (chat 2026-11-02 20:56 ET)"
     },
     {
       "id": "pitch-by-the-book-double-touch-2026-11-02",
@@ -1201,7 +1204,7 @@
       "kind": "article",
       "section": "Club events",
       "headline": "New Friday Class: Youth Intermediate",
-      "summary": "New Youth Intermediate group class: Fridays 5:00–6:30 PM, first class planned for Fri Nov 6. A step up from the youth beginner class for kids getting more serious and tournament-ready; open bouting follows on Fridays. The club will contact eligible fencers.",
+      "summary": "New Youth Intermediate group class: Fridays 5:00–6:30 PM (club email), first class planned for Fri Nov 6. A step up from the youth beginner class for kids getting more serious and tournament-ready. Open bouting follows (realistically 6:30 PM to close, ~9–9:30 PM, per Frank), so they can stay after. The club will contact eligible fencers.",
       "body": "",
       "frank_source_text": "There's a new email from the club.  It should have been forwarded to your email I hope.  There's a new intermediate class.  It's a step up from the beginner class and it's great for kids who want to start taking it more seriously, perhaps get tournament ready.  It's also scheduled on a Friday and ends right before open bouting.  They can stay afterwards and hone their skills further.",
       "frank_source_note": "Frank's own words from the budget submission's Notes (submitted 2026-11-02 20:21:38 ET). Source material, not print copy: Clark writes the final copy at compose time.",
@@ -1227,9 +1230,9 @@
           "status": "verified-email"
         },
         {
-          "claim": "Ends right before open bouting; kids can stay after",
-          "source": "Frank, budget submission notes 2026-11-02",
-          "status": "CONFLICT: club website lists Friday Open Bouting 6:00–10:00 PM, so the 5:00–6:30 class overlaps it by 30 minutes. Check before printing."
+          "claim": "Open bouting follows the class: realistically 6:30 PM until the club closes, usually around 9 or 9:30 PM; kids can stay after",
+          "source": "Frank, chat 2026-11-02 20:56 ET (+ budget notes 20:21 ET)",
+          "status": "Frank (club parent). Club website still lists Friday Open Bouting 6:00–10:00 PM; Frank's realistic times win. Print 'open bouting follows' rather than a clock time."
         }
       ],
       "email": {
@@ -1248,7 +1251,7 @@
       "vetted_by": "frank",
       "vetted_at": "2026-11-02T20:21:38-05:00",
       "vet_scope": "Frank supplied the content and asked for it in the issue; facts from the club email (allowlisted sender)",
-      "vet_notes": "Frank, budget submission 2026-11-02 20:21 ET: 'I have the content for the last section. It's in the response.'",
+      "vet_notes": "Frank, budget submission 2026-11-02 20:21 ET: 'I have the content for the last section. It's in the response.' | Frank chat 2026-11-02 20:56 ET: 'realistically open bouting is 6:30 to whenever the club closes. That's usually 9 or 9:30 i think.' Overlap question closed.",
       "planned_words": 90,
       "word_count": 90,
       "slot_hint": "club_events",
@@ -1271,7 +1274,80 @@
           "source": "budget-submission-no-5-2026-11-03-2021.json",
           "submitted_at": "2026-11-02T20:21:38-05:00"
         }
-      ]
+      ],
+      "updated_at": "2026-11-02T21:05:00-05:00"
+    },
+    {
+      "id": "ft-christina-jiang-fencers-club-youth-cup-2026-11-01",
+      "kind": "result_set",
+      "headline": "Christina Jiang 3rd in Y12 Mixed Epee at the Fencers Club Youth Epee Cup (Nov. 1)",
+      "body": "Fencers Club Youth Epee Cup, Fencers Club Inc., New York, N.Y., Sun Nov 1, 2026 (1:00 PM). Y-12 Mixed Épée, 6 finishers, unrated event (class U). Christina Jiang (Elite FC) tied for 3rd of 6 (bronze; two 3rds, no fence-off). Pools 3–2; won one DE, lost the next. Other fencers in the event are not Elite FC and are not printed.",
+      "source": "web+email",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-02T20:56:00-05:00",
+      "vet_notes": "Frank chat 2026-11-02 20:56 ET: 'Christina should get a mention!' Club email (allowlisted) announced it; FencingTracker confirms event, date, field and place. Local bar (top 8 / medal): clears. Name as on roster and FencingTracker (email misspells it 'Chirstina').",
+      "facts": [
+        {
+          "claim": "Congrats to Christina Jiang for taking 3rd place in FC Y12 competition",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102151507.4fe4c98358.65cc6cc0@mail67.atl91.mcsv.net>",
+          "where": "club Mailchimp 'Group Class + CONGRATS!' Nov 2 10:15 AM ET",
+          "status": "verified-email (allowlisted); name misspelled 'Chirstina' in email"
+        },
+        {
+          "claim": "Event = Fencers Club Youth Epee Cup, Y-12 Mixed Épée, Sun Nov 1 2026 1:00 PM, Fencers Club Inc., New York NY; 6 finishers; JIANG Christina T3",
+          "source": "https://fencingtracker.com/event/44249/results",
+          "status": "verified-web 2026-11-02 ~21:00 ET"
+        },
+        {
+          "claim": "Christina's FT profile: Nov 1, Fencers Club Youth Epee Cup, Y-12 Mixed Épée, 3 / 6, event class U; club Elite Fencers Club",
+          "source": "https://fencingtracker.com/p/101308387/Christina-Jiang",
+          "status": "verified-web"
+        }
+      ],
+      "table_row": [
+        "Christina Jiang",
+        "Fencers Club Youth Epee Cup, Y12 Mixed (Nov. 1)",
+        "3rd of 6"
+      ],
+      "suggested_slot": "club_results",
+      "tags": [
+        "club",
+        "results",
+        "local",
+        "youth",
+        "frank-request"
+      ],
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261102151507.4fe4c98358.65cc6cc0@mail67.atl91.mcsv.net>",
+          "agentmail_thread_id": "7600701e-7fb7-434e-9c39-3c7804b3d8a1",
+          "retrieved_at": "2026-11-02T21:05:00-05:00",
+          "note": "read only; labeled processed"
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/p/101308387/Christina-Jiang",
+          "retrieved_at": "2026-11-02T21:00:00-05:00"
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/event/44249/results",
+          "retrieved_at": "2026-11-02T21:00:00-05:00"
+        },
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "note": "tracker.search 'Christina Jiang' live (1 call): FT id 101308387, Elite Fencers Club. fetched_at 2026-11-03T01:57:22Z = 8:57 PM ET. Youth birth data not staged.",
+          "retrieved_at": "2026-11-02T20:57:22-05:00"
+        }
+      ],
+      "created_at": "2026-11-02T21:05:00-05:00",
+      "updated_at": "2026-11-02T21:05:00-05:00"
     }
   ],
   "dropped_2026_11_02": [
