@@ -3,13 +3,18 @@
  "vol": "I",
  "date": "2026-11-03",
  "dateline": "Tuesday Edition · Vol. I — No. 5 · Chatham, N.J. · November 3, 2026",
- "status": "PROOF v1 — awaiting Frank approval",
- "proof_version": 1,
+ "status": "PROOF v2 — awaiting Frank approval",
+ "proof_version": 2,
  "proof_history": [
   {
    "v": 1,
    "at": "2026-11-02T21:20:00-05:00",
    "note": "First proof from budget v6 (decisions through decision #4, chat 2026-11-02 21:06 ET)."
+  },
+  {
+   "v": 2,
+   "at": "2026-11-03T07:58:00-05:00",
+   "note": "Medeo YC #5 board: Y10 Mixed row now Ian Huang, Nora Li, Elle Peterfreund, Claire Widjaja (8 Elite FC entries, from 2026-11-03 club schedule email, daily pass 58b3090). Row wraps to two lines; no other layout change."
   }
  ],
  "composed_at": "2026-11-02T21:20:00-05:00",
@@ -35,7 +40,7 @@
    "By the Book: The 40-Millisecond Double (t.92 + 40/50 ms; WFL tie-in)"
   ],
   "2": [
-   "Nearby Tournaments (NYFA #1 + Pizza left; Medeo #5 + Cobra right)",
+   "Nearby Tournaments (NYFA #1 + Pizza left; Medeo #5 (8 entries) + Cobra right)",
    "Overheard on Reddit: Can the FIE Tell You Where Not to Fence? (full, jumps col 1→2)",
    "Epee on Screen (4 rows, 2 columns; stream note in boxnote)",
    "Deadlines (4 rows)",
@@ -58,7 +63,7 @@
  ],
  "instruments": {
   "p1_gap_in": 0.75,
-  "p2_gap_in": 0.29,
+  "p2_gap_in": 0.15,
   "row1_spread_in": 0.25,
   "row2_spread_in": 0.25,
   "pages": 2

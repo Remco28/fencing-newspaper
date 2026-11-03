@@ -472,6 +472,15 @@
           "received_at": "2026-11-02T07:00:01-05:00",
           "retrieved_at": "2026-11-02T07:55:00-05:00",
           "note": "Grew from 4 to 6 entries (new: Claire Widjaja Y10 Mixed, Mira Shukla Y14WE). Neither is in roster/people.json; standing rule prints names as listed on official pages."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1a147d310-6efe378b-abf5-4a40-a58f-15de6eb56ac5-000000@email.amazonses.com>",
+          "subject": "Club schedule · Tuesday, November 3",
+          "received_at": "2026-11-03T07:00:01-05:00",
+          "retrieved_at": "2026-11-03T07:53:00-05:00",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "note": "Grew from 6 to 8 entries (new: Ian Huang and Elle Peterfreund, both Y10 Mixed). Neither is in roster/people.json; print as listed per standing rule. No. 5 proof v1 prints the 6-entry list."
         }
       ],
       "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>"

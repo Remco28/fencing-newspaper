@@ -47,7 +47,7 @@ cob=[("Friday, Nov.&nbsp;27",[["Y14 Men","Connor Anderson, Noah Gore, Kian Jaisi
      ("Saturday, Nov.&nbsp;28",[["Y12 Women","Christina Jiang, Stella Kuo, Mila Siu, Penny Young"],["Y12 Men","Kian Jaising, Joshua Jeong, Remy Ng"]]),
      ("Sunday, Nov.&nbsp;29",[["Y14 Women","Stella Kuo, Mila Siu, Penny Young"],["Cadet Men","Connor Anderson, Nico Ng, Caden Wu"]])]
 nyfa=[("",[["9:00 AM","Y10 Mixed","Bryce Cheng, Maximus Siu"],["9:00 AM","Y8 Mixed","Madeline Siu"],["12:30 PM","Y12 Men","Remy Ng"],["12:30 PM","Y12 Women","Christina Jiang"],["4:00 PM","Y14 Women","Mila Siu"]])]
-med=[("",[["9:30 AM","Y12 Men","Samuel SarroWaite"],["9:30 AM","Y12 Women","Christina Jiang"],["11:30 AM","Y10 Mixed","Nora Li, Claire Widjaja"],["11:30 AM","Y14 Men","Owen Li"],["11:30 AM","Y14 Women","Mira Shukla"]])]
+med=[("",[["9:30 AM","Y12 Men","Samuel SarroWaite"],["9:30 AM","Y12 Women","Christina Jiang"],["11:30 AM","Y10 Mixed","Ian Huang, Nora Li, Elle\u00a0Peterfreund, Claire Widjaja"],["11:30 AM","Y14 Men","Owen Li"],["11:30 AM","Y14 Women","Mira Shukla"]])]
 piz=[("Saturday, Nov.&nbsp;14",[["8:00 AM","Y14 Women","Penny Young"],["1:00 PM","Junior Women","Amina Gore"]]),
      ("Sunday, Nov.&nbsp;15",[["8:00 AM","Cadet Women","Amina Gore, Penny Young"],["12:00 PM","Y12 Women","Penny Young"]])]
 dl=[["Sat 11/7","Cobra Challenge: late entry closes"],["Sat 11/7","Medeo #5: preregistration closes"],["Wed 11/11","Junior Olympics: regular-fee deadline"],["Fri 1/8","N.J. high school: independent fencers’ entries close"]]
