@@ -3,8 +3,121 @@
   "publish": "2026-11-03",
   "note": "Budget version counter + decision log (Frank 2026-11-02). build_budget_html.py numbers each build vN and starts the page from the latest 'decisions' entry; ingest_budget_submission.py appends to 'decisions'. v1 and v2 were numbered after the fact: both went to Frank as budget-no-5-2026-11-03-next.html.",
   "versions": [
-    {"v": 1, "built_at": "2026-11-02T09:06:02-05:00", "data": null, "decisions_through": null, "decisions": 0, "out": "budget-demo/out/budget-no-5-2026-11-03-next.html", "commit": "42111e2", "retro": true},
-    {"v": 2, "built_at": "2026-11-02T09:21:36-05:00", "data": null, "decisions_through": null, "decisions": 0, "out": "budget-demo/out/budget-no-5-2026-11-03-next.html", "commit": "b475c69", "retro": true}
+    {
+      "v": 1,
+      "built_at": "2026-11-02T09:06:02-05:00",
+      "data": null,
+      "decisions_through": null,
+      "decisions": 0,
+      "out": "budget-demo/out/budget-no-5-2026-11-03-next.html",
+      "commit": "42111e2",
+      "retro": true
+    },
+    {
+      "v": 2,
+      "built_at": "2026-11-02T09:21:36-05:00",
+      "data": null,
+      "decisions_through": null,
+      "decisions": 0,
+      "out": "budget-demo/out/budget-no-5-2026-11-03-next.html",
+      "commit": "b475c69",
+      "retro": true
+    },
+    {
+      "v": 3,
+      "built_at": "2026-11-02T20:15:05-05:00",
+      "data": "f0fb6a3f787b",
+      "decisions_through": "2026-11-02T10:04:46-05:00",
+      "decisions": 1,
+      "out": "budget-demo/out/budget-no-5-2026-11-03-v3.html"
+    }
   ],
-  "decisions": []
+  "decisions": [
+    {
+      "at": "2026-11-02T20:14:09-05:00",
+      "client_submitted_at": "2026-11-02T10:04:46-05:00",
+      "source": "budget-submission-no-5-2026-11-03.json",
+      "stored": "budget-demo/submissions/budget-20261102-201409.json",
+      "publishDate": "2026-11-03",
+      "included": [
+        "lead",
+        "secondary-a",
+        "overheard",
+        "ratings",
+        "signup",
+        "signup-2",
+        "signup-3",
+        "signup-4",
+        "deadlines",
+        "camp",
+        "tv",
+        "photo-history",
+        "by-the-book"
+      ],
+      "excluded": [
+        "club-results",
+        "classes",
+        "for-parents"
+      ],
+      "photoIncludes": [],
+      "slotNotes": {
+        "for-parents": "Let's make this a larger feature for another week.  Please put this one on hold.  Remind me next week please."
+      },
+      "answers": [
+        {
+          "slot": "lead",
+          "itemId": "draft-ultimate-cup-lead-2026-11-02",
+          "question": "OK to lead with Maksim's A, or would you rather lead another way?",
+          "answer": "yes, lead with this"
+        },
+        {
+          "slot": "lead",
+          "itemId": "draft-ultimate-cup-lead-2026-11-02",
+          "question": "Nico's 10th is in the lead: fine to print your son's result here, or move it to Club Results only?",
+          "answer": "yes, fine to print result.  10th at a Junior's of this level isn't super easy."
+        },
+        {
+          "slot": "secondary-a",
+          "itemId": "x-fie-dakar-yog-2026-11-02",
+          "question": "Worth a short here, or just the Epee on Screen row?",
+          "answer": "this can actually be expanded, i know nothing about Youth Olympic games."
+        },
+        {
+          "slot": "club-results",
+          "itemId": "ft-ultimate-cup-results-2026-11-02",
+          "question": "Keep Brendan Mendez's Oct 23 Freehold 3rd, or is it too old now?",
+          "answer": "Let's drop it.  I'm also not convinced Brendan Mendez is really from our club, is he?  Did I ever confirm?  Either way, let's drop it."
+        }
+      ],
+      "notes": "I'll hold off and publish Tuesday instead of today.  Let me think of something to add.",
+      "order": [
+        "lead",
+        "secondary-a",
+        "overheard",
+        "club-results",
+        "ratings",
+        "signup",
+        "signup-2",
+        "signup-3",
+        "signup-4",
+        "deadlines",
+        "camp",
+        "classes",
+        "tv",
+        "photo-history",
+        "by-the-book",
+        "for-parents"
+      ],
+      "vets": [
+        "draft-ultimate-cup-lead-2026-11-02",
+        "x-fie-dakar-yog-2026-11-02",
+        "draft-overheard-fie-wfl-2026-11-02",
+        "ft-ultimate-cup-results-2026-11-02",
+        "ft-maksim-a26-rating-2026-11-02",
+        "history-photo-09-laura-flessel",
+        "pitch-by-the-book-double-touch-2026-11-02",
+        "pitch-for-parents-rating-letters-2026-11-02"
+      ]
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-02T11:40:00-05:00",
+  "updated_at": "2026-11-02T20:20:00-05:00",
   "note": "Hold pile for Issue No. 5 (week of Nov 2). Started as after-next at the No. 3 roll; became next at the No. 4 roll-forward 2026-10-26. Still-relevant upcoming/results-watch items copied from 2026-10-26 with carried_from.",
   "rolled_forward": {
     "from": "staging/weeks/after-next",
@@ -882,7 +882,10 @@
       "print_hint": "own Club Results row (unvetted)",
       "carried_from": "staging/weeks/2026-10-26",
       "carried_at": "2026-10-26T20:30:00-04:00",
-      "carry_note": "Unprinted in No. 4 (unvetted, not budgeted). A medal (3rd) clears the Club Results bar at any level, so still eligible for No. 5 Club Results — needs Frank vet; dated Oct 23, so drop if Frank says stale."
+      "carry_note": "Unprinted in No. 4 (unvetted, not budgeted). A medal (3rd) clears the Club Results bar at any level, so still eligible for No. 5 Club Results — needs Frank vet; dated Oct 23, so drop if Frank says stale.",
+      "status": "dropped",
+      "dropped_at": "2026-11-02T20:20:00-05:00",
+      "drop_note": "Frank (budget submission 2026-11-02 10:04:46 ET (ingested 20:14 ET, budget-versions.json decision #1)): \"Let's drop it. I'm also not convinced Brendan Mendez is really from our club... Did I ever confirm? Either way, let's drop it.\" Club membership was never hard-confirmed (roster: 'probably is', chat 2026-10-12)."
     },
     {
       "id": "email-agentmail-pizza-ryc-entries-2026-10-27",
@@ -955,7 +958,7 @@
       "body": "Ultimate Cup RJCC (USA Fencing tournament 12158), Iron Peak Sports & Events, Hillsborough Township, N.J., Oct 31–Nov 1, 2026. FencingTracker lists 15 Elite FC results. Clearing the regional bar (top 16): Milinkovic, Maksim, 5th of 83, Cadet Men's Epee (CDTME), Oct 31, rating earned A26 (FT rating history: previous rating B26, earned May 7, 2026, so this is a step up); Ng, Nico, 10th, Junior Men's Epee (JNRME), Nov 1, no rating listed (field size not fetched). Below the bar (not printed; no 'also fenced' line): JNRWE Lillian Liu 28, Amina Gore 33, Olivia Hayes 45, Adela Sullivan 48; CDTME Caden Wu 70, Charles Young 82; JNRME Dieko Johnson 69, Pablo Aguirre 80; CDTWE Amina Gore 20, Lillian Liu 23, Adela Sullivan 36, Penny Young 40, Olivia Hayes 55.",
       "source": "web",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "vet_notes": "Scraped (FencingTracker), unvetted until Frank vets. Regional: top 16 prints; rating earned always prints. A26 confirmed as a step up from B26 via FT rating history (Nov 2). Names checked vs roster/people.json (WU, Caden = Caden Wu; Young, Penelope = Penny Young). fencing-api club-results since Oct 30 = 0 rows (cache gap, not a mismatch).",
       "suggested_slot": "club_results",
       "tags": [
@@ -990,7 +993,9 @@
         }
       ],
       "created_at": "2026-11-02T07:55:00-05:00",
-      "updated_at": "2026-11-02T10:20:00-05:00"
+      "updated_at": "2026-11-02T10:20:00-05:00",
+      "vetted_at": "2026-11-02T20:14:09-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "ft-maksim-a26-rating-2026-11-02",
@@ -999,7 +1004,7 @@
       "body": "FencingTracker lists rating earned A26 for Milinkovic, Maksim, 5th of 83 in Cadet Men's Epee at Ultimate Cup RJCC (Hillsborough Township, N.J.), Oct 31, 2026. FT rating history shows his previous rating as B26 (May 7, 2026): a step up.",
       "source": "web",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "vet_notes": "Scraped, unvetted until Frank vets. Ratings Earned box (step-ups only; name the event).",
       "slot_hint": "ratings",
       "tags": [
@@ -1021,7 +1026,9 @@
           "note": "Maksim Milinkovic profile, rating history",
           "retrieved_at": "2026-11-02T09:00:00-05:00"
         }
-      ]
+      ],
+      "vetted_at": "2026-11-02T20:14:09-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "draft-ultimate-cup-lead-2026-11-02",
@@ -1031,10 +1038,12 @@
       "word_count": 128,
       "source": "desk",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "vet_notes": "Clark's draft from ft-ultimate-cup-results + ft-maksim-a26-rating (FencingTracker, Nov 2) and No. 4's San José row (Frank-placed). Pending Frank's review.",
       "slot_hint": "lead",
-      "created_at": "2026-11-02T10:20:00-05:00"
+      "created_at": "2026-11-02T10:20:00-05:00",
+      "vetted_at": "2026-11-02T20:14:09-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "x-fie-dakar-yog-2026-11-02",
@@ -1043,7 +1052,7 @@
       "body": "The Youth Olympic Games opened in Dakar, Senegal, on Oct. 31, and a fencer lit the cauldron: Senegalese foil fencer Abdourahmane Marième Sy. Fencing runs Nov. 8–13 at the Dakar Expo Centre.",
       "source": "x",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "vet_notes": "FIE's own X posts (tier A) for the opening, cauldron and dates. No epee-specific detail yet (U.S. entries, event days); check before compose.",
       "slot_hint": "secondary",
       "created_at": "2026-11-02T10:20:00-05:00",
@@ -1054,7 +1063,10 @@
           "retrieved_at": "2026-11-02T09:05:00-05:00",
           "note": "1 call, posts since Oct 26: all Dakar YOG."
         }
-      ]
+      ],
+      "vetted_at": "2026-11-02T20:14:09-05:00",
+      "vetted_by": "frank",
+      "frank_direction": "Expand (Frank, budget submission 2026-11-02 10:04:46 ET (ingested 20:14 ET, budget-versions.json decision #1)): \"this can actually be expanded, i know nothing about Youth Olympic games.\" Write a fuller explainer of the Youth Olympic Games, not a 35-word short."
     },
     {
       "id": "history-photo-09-laura-flessel",
@@ -1068,10 +1080,12 @@
       "source": "history-photos",
       "pile_entry": "staging/history-photos/09-laura-flessel.md",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "vet_notes": "Cross-issue history pile, unvetted. Cautions: non-action 2013 portrait (not Atlanta); no endorsement implied; Guadeloupe is French territory. If converted to grayscale, change the credit's closing clause per CC BY 2.5.",
       "slot_hint": "photo_history",
-      "created_at": "2026-11-02T10:30:00-05:00"
+      "created_at": "2026-11-02T10:30:00-05:00",
+      "vetted_at": "2026-11-02T20:14:09-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "draft-overheard-fie-wfl-2026-11-02",
@@ -1084,7 +1098,7 @@
       "source": "desk",
       "from": "frank (Reddit PDF)",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "idea_vetted": true,
       "idea_vetted_by": "frank",
       "idea_vetted_at": "2026-11-02T09:25:00-05:00",
@@ -1152,7 +1166,9 @@
         "wfl",
         "frank-idea"
       ],
-      "created_at": "2026-11-02T11:40:00-05:00"
+      "created_at": "2026-11-02T11:40:00-05:00",
+      "vetted_at": "2026-11-02T20:14:09-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "pitch-by-the-book-double-touch-2026-11-02",
@@ -1165,7 +1181,7 @@
       "planned_words": 70,
       "source": "desk",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "facts_status": "rule text located: USA Fencing Rules for Competition Oct 2026, t.92 (p. 38) and épée apparatus timing (p. 180)",
       "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate.",
       "slot_hint": "by_the_book",
@@ -1174,29 +1190,9 @@
         "pitch",
         "filler"
       ],
-      "created_at": "2026-11-02T11:40:00-05:00"
-    },
-    {
-      "id": "pitch-for-parents-rating-letters-2026-11-02",
-      "kind": "pitch",
-      "section": "For the Parents",
-      "headline": "For the Parents: What a Rating Letter Means",
-      "summary": "Pitch: a plain-words guide to USA Fencing ratings (A through E, U for unrated), what the year means (A26 = earned in 2026), how a fencer earns one (finish high enough at a big enough, strong enough event), and how long it lasts. Ties into Maksim's A26. About 110 words, sourced from USA Fencing's rules and Athlete Handbook.",
-      "body": "",
-      "word_count": 110,
-      "planned_words": 110,
-      "source": "desk",
-      "target_week": "next",
-      "vetted": false,
-      "facts_status": "to research from reference/usa-fencing/ (Athlete Handbook 2026-27, Rules for Competition) before writing",
-      "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate. If the lead or Ratings Earned is cut, this still stands alone.",
-      "slot_hint": "for_the_parents",
-      "tags": [
-        "for-the-parents",
-        "pitch",
-        "ratings"
-      ],
-      "created_at": "2026-11-02T11:40:00-05:00"
+      "created_at": "2026-11-02T11:40:00-05:00",
+      "vetted_at": "2026-11-02T20:14:09-05:00",
+      "vetted_by": "frank"
     }
   ],
   "dropped_2026_11_02": [
