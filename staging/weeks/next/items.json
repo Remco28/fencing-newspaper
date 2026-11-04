@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-03T15:20:00-05:00",
+  "updated_at": "2026-11-04T08:00:00-05:00",
   "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from.",
   "items": [
     {
@@ -544,7 +544,15 @@
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5 board (8 entries). Event Sun Nov 8 is before No. 6: now a results watch for Club Results (bar per CONTENT-HIERARCHY).",
       "updated_at": "2026-11-03T07:53:00-05:00",
-      "carried_at": "2026-11-03T15:20:00-05:00"
+      "carried_at": "2026-11-03T15:20:00-05:00",
+      "rechecks": [
+        {
+          "at": "2026-11-04T07:59:00-05:00",
+          "source": "email",
+          "message_id": "<010001a1a66e2fbe-07a8abfb-a74f-4300-82c7-bc07be363707-000000@email.amazonses.com>",
+          "note": "Medeo YC #5: 8 entries, unchanged per chunkymonkey digest Nov 4 (data as of Nov 4 6:00 AM)."
+        }
+      ]
     },
     {
       "id": "desk-deadlines-2026-10-18",
@@ -898,7 +906,15 @@
       "carried_from": "staging/weeks/2026-11-03",
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Ran in No. 5 board. Event Sun Nov 8 is before No. 6: now a results watch for Club Results.",
-      "updated_at": "2026-11-02T07:55:00-05:00"
+      "updated_at": "2026-11-02T07:55:00-05:00",
+      "rechecks": [
+        {
+          "at": "2026-11-04T07:59:00-05:00",
+          "source": "email",
+          "message_id": "<010001a1a66e2fbe-07a8abfb-a74f-4300-82c7-bc07be363707-000000@email.amazonses.com>",
+          "note": "NYFA Youth Cup #1: 6 entries, unchanged per chunkymonkey digest Nov 4 (data as of Nov 4 6:00 AM)."
+        }
+      ]
     },
     {
       "id": "email-agentmail-pizza-ryc-entries-2026-10-27",
@@ -944,7 +960,15 @@
       "entries_last_confirmed": "2026-11-03T07:53:00-05:00",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5 board. Event Nov 14–15; refresh entries for No. 6 (or results watch if No. 6 publishes after).",
-      "carried_at": "2026-11-03T15:20:00-05:00"
+      "carried_at": "2026-11-03T15:20:00-05:00",
+      "rechecks": [
+        {
+          "at": "2026-11-04T07:59:00-05:00",
+          "source": "email",
+          "message_id": "<010001a1a66e2fbe-07a8abfb-a74f-4300-82c7-bc07be363707-000000@email.amazonses.com>",
+          "note": "Pizza RYC/RJCC: Penelope Young + Amina Gore, unchanged (feed still \"could not refresh\", data as of Nov 3 6:01 PM) per chunkymonkey digest Nov 4 (data as of Nov 4 6:00 AM)."
+        }
+      ]
     },
     {
       "id": "ft-efc-travel-registrations-nov-dec-2026-10-28",
