@@ -973,8 +973,8 @@
     {
       "id": "ft-efc-travel-registrations-nov-dec-2026-10-28",
       "kind": "signup",
-      "headline": "Elite FC registrations beyond NJ, Nov.–Dec. (November NAC, Kiefer Meinhardt, December SJCC, Z1, Fairfax)",
-      "body": "FencingTracker club registrations page (Oct 28, 9:57 AM ET), active entries: November NAC (Columbus, OH, Greater Columbus Convention Center) — 4 entries / 3 fencers: Fri Nov 20 JNRWE Anayaa Sheth; Sat Nov 21 CDTME Nico Ng; Sun Nov 22 JNRME Athreya Aravind, Nico Ng. Kiefer Meinhardt Cup SYC/RJCC/Y8 (Glen Allen, VA, Henrico Sports and Events Center) — 4 / 2: Sat Nov 14 Y14WE Stella Kuo, Mila Siu; Sun Nov 15 Y12WE Stella Kuo, Mila Siu. December SJCC (Milwaukee, WI, Baird Center) — 5 / 3: Fri Dec 4 CDTME Nico Ng; Sat Dec 5 JNRWE Amina Gore, JNRME Nico Ng; Sun Dec 6 CDTWE Amina Gore, Anayaa Sheth. Z1 RYC/RJCC (Newtown, CT, NYA Sports & Fitness) — 7 / 5: Sat Dec 12 JNRWE Amina Gore, CDTME Noah Gore; Sun Dec 13 CDTWE Amina Gore, Y14ME Noah Gore, Ash Shah-Mirani, Y10ME Bryce Cheng, Rahi Shah-Mirani. Fairfax Challenge ROC/RJCC/RYC (Fredericksburg, VA) — 7 / 4: Fri Dec 18 Y14ME Connor Anderson; Sat Dec 19 CDTME Connor Anderson, Y14WE Sarah Sun, DV2ME Connor Anderson, Eric Anderson; Sun Dec 20 VETME Eric Anderson, Kang Sun. Not on roster yet: Athreya Aravind, Sarah Sun, Kang Sun, Eric Anderson (club attribution from registration can be wrong).",
+      "headline": "Elite FC registrations beyond NJ, Nov.–Dec. (November NAC, Kiefer Meinhardt, December SJCC, Z1, Fairfax, Austin, Boston FC)",
+      "body": "FencingTracker club registrations page (Oct 28, 9:57 AM ET), active entries: November NAC (Columbus, OH, Greater Columbus Convention Center) — 4 entries / 3 fencers: Fri Nov 20 JNRWE Anayaa Sheth; Sat Nov 21 CDTME Nico Ng; Sun Nov 22 JNRME Athreya Aravind, Nico Ng. Kiefer Meinhardt Cup SYC/RJCC/Y8 (Glen Allen, VA, Henrico Sports and Events Center) — 4 / 2: Sat Nov 14 Y14WE Stella Kuo, Mila Siu; Sun Nov 15 Y12WE Stella Kuo, Mila Siu. December SJCC (Milwaukee, WI, Baird Center) — 5 / 3: Fri Dec 4 CDTME Nico Ng; Sat Dec 5 JNRWE Amina Gore, JNRME Nico Ng; Sun Dec 6 CDTWE Amina Gore, Anayaa Sheth. Z1 RYC/RJCC (Newtown, CT, NYA Sports & Fitness) — 7 / 5: Sat Dec 12 JNRWE Amina Gore, CDTME Noah Gore; Sun Dec 13 CDTWE Amina Gore, Y14ME Noah Gore, Ash Shah-Mirani, Y10ME Bryce Cheng, Rahi Shah-Mirani. Fairfax Challenge ROC/RJCC/RYC (Fredericksburg, VA) — 7 / 4: Fri Dec 18 Y14ME Connor Anderson; Sat Dec 19 CDTME Connor Anderson, Y14WE Sarah Sun, DV2ME Connor Anderson, Eric Anderson; Sun Dec 20 VETME Eric Anderson, Kang Sun. Not on roster yet: Athreya Aravind, Sarah Sun, Kang Sun, Eric Anderson (club attribution from registration can be wrong). Added Nov 4 (Wednesday skim, 9:58 AM ET): Austin Challenge SYC/RCC (Round Rock, TX, Round Rock Sports Center) — 3 / 1: Fri Dec 18 CDTWE, Sat Dec 19 Y14WE, Sun Dec 20 Y12WE Penelope Young. Boston Fencing Club RYC/RCC (Norton, MA, Wheaton College) — 1 / 1: Sat Dec 19 CDTME Maksim Milinkovic. Other counts unchanged vs Oct 28.",
       "source": "fencingtracker",
       "target_week": "next",
       "vetted": false,
@@ -996,10 +996,17 @@
           "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
           "retrieved_at": "2026-11-02T09:01:00-05:00",
           "note": "Monday full pass: unchanged vs staging."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-11-04T09:58:00-05:00",
+          "note": "Wednesday skim (2 fetches): Austin Challenge and Boston FC RYC/RCC entries new; Nov–Dec counts otherwise unchanged. Later 2027 entries (Neil Lazar ROC Jan 1, Junior Olympics + January NAC Jan 8–11, Capitol Clash Jan 16–18, Miles Chamley-Watson Cup Feb 5–6, Cherry Blossom Mar 14) logged in pass-log, not staged."
         }
       ],
       "created_at": "2026-10-28T09:58:00-04:00",
-      "updated_at": "2026-11-02T10:20:00-05:00",
+      "updated_at": "2026-11-04T10:00:00-05:00",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Unprinted in No. 5 (scraped, unvetted). November NAC Nov 20–22 still upcoming; candidate for No. 6.",
       "carried_at": "2026-11-03T15:20:00-05:00"
