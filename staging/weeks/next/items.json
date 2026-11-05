@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-04T08:00:00-05:00",
-  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from.",
+  "updated_at": "2026-11-05T09:28:13-05:00",
+  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat).",
   "items": [
     {
       "id": "pitch-for-parents-rating-letters-2026-11-02",
@@ -34,6 +34,34 @@
         "when": "next week's budget (Issue No. 6)",
         "what": "Raise the For the Parents rating-letters feature again; Frank wants it larger."
       }
+    },
+    {
+      "id": "pitch-medeo-yc5-next-gen-2026-11-05",
+      "kind": "pitch",
+      "section": "Feature",
+      "headline": "Next Generation at Medeo #5",
+      "summary": "Pitch (Frank chat 2026-11-05): short feature on Elite FC's big youth turnout at Medeo Youth Challenge #5 (Sun Nov 8) — \"the next generation,\" lots of Elite fencers on the board. Grounded in the existing signup row (9 entries / 9 fencers as of Nov 5 digest, data Nov 4 6:00 AM): Y12ME Samuel SarroWaite; Y12WE Christina Jiang; Y10 Mixed Ian Huang, Nora Li, Elle Peterfreund, Claire Widjaja, Roy Yoo; Y14ME Owen Li; Y14WE Mira Shukla. Roster check: already in people.json — Samuel SarroWaite, Christina Jiang, Nora Li, Owen Li; not yet on roster (print as listed) — Ian Huang, Elle Peterfreund, Claire Widjaja, Roy Yoo, Mira Shukla. Do NOT call anyone a \"debut\" in the draft without a FencingTracker / prior Elite FC results check; Christina Jiang already has a printed Medeo #3 result (5th, Issue No. 2) and a Nov 1 Fencers Club Youth Epee Cup bronze, so she is not a debut. About 150 words; can sit as a short Feature or fold into Club News beside the signup board.",
+      "body": "",
+      "word_count": 150,
+      "planned_words": 150,
+      "source": "chat",
+      "from": "frank",
+      "target_week": "next",
+      "vetted": true,
+      "facts_status": "entries verified via signup item email-agentmail-medeo-yc5-entries-2026-10-14 (Nov 5 digest). Debut/first-tournament claims NOT verified — do not print \"debut\" or \"first time\" for any of the 9 until checked against FencingTracker and prior Elite FC results in repo/issues. Known prior: Christina Jiang Medeo #3 5th (No. 2) + Fencers Club Youth Epee Cup Nov 1 3rd. Nora Li was prereg'd at Medeo #4. Others: no debut confirmation in repo.",
+      "vet_notes": "Frank chat 2026-11-05 (~9:27 AM ET after morning Medeo 8→9 note): \"Sounds like Medeo should get a feature of sorts. Lots of Elite fencers making their debut. The next generation.\" Vet = go-ahead to write the feature for No. 6 budget. Editorial angle from Frank (\"next generation\"); treat \"debut\" as his framing, not a verified fact — confirm per-fencer before compose. Related signup: email-agentmail-medeo-yc5-entries-2026-10-14. word_count is planned length for the fill estimate.",
+      "slot_hint": "feature",
+      "tags": [
+        "feature",
+        "pitch",
+        "medeo",
+        "youth",
+        "next-gen",
+        "related:email-agentmail-medeo-yc5-entries-2026-10-14"
+      ],
+      "created_at": "2026-11-05T09:28:13-05:00",
+      "vetted_at": "2026-11-05T09:28:13-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "chat-winter-camp-reminder",

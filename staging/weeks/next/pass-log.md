@@ -19,3 +19,9 @@
   - Club Mailchimp "Group Class!" (Nov 4): routine class reminder (Musketeers 5:00 PM and Footwork 6:30 PM Wed, Advanced Group Class 6:00 PM Thu) plus a link to Medeo YC #5 registrations. Nothing new to stage.
 - FencingTracker club page (1 fetch, 7:58 AM ET): 166 tournaments / 1255 results, unchanged; newest still Ultimate Cup RJCC. Nothing new.
 - fencing-api cached club-results since Nov 4: 0 rows (cache-only; no mismatch). No live calls.
+## 2026-11-05 Thu 9:28 AM ET — Frank chat: Medeo next-gen feature pitch
+- Frank (chat): Medeo YC #5 should get a feature — "Lots of Elite fencers making their debut. The next generation."
+- Staged pitch `pitch-medeo-yc5-next-gen-2026-11-05` (kind=pitch, slot_hint=feature, ~150w, vetted by frank). Grounded in signup `email-agentmail-medeo-yc5-entries-2026-10-14` (9 Elite FC). Framed as next-gen / big youth turnout; debut claims left unverified for compose-time FencingTracker check (Christina Jiang already has printed Medeo #3 + Nov 1 results).
+- Roster: on people.json — Samuel SarroWaite, Christina Jiang, Nora Li, Owen Li; not yet — Ian Huang, Elle Peterfreund, Claire Widjaja, Roy Yoo, Mira Shukla.
+- No compose / no budget rebuild this pass.
+
