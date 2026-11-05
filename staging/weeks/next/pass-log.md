@@ -12,3 +12,10 @@
 - AskFRED (1 call): nothing new vs staging (NJFA Tue Div 3/Y8–Y14 epee Nov 10, Dec 1/8/29; Medeo YC #5 Nov 8; Ari Simmons clinic Nov 7–8; Medeo winter camp Dec 27–31; Cobra closed Nov 2; Morris Knolls Fr/So Jan 10 and Columbia Cougar Clash Feb 20, 2027, far off).
 - Google News RSS (epee; NJ): college previews and SEA Games cuts, nothing NJ/epee to stage. USA Fencing epee page shows only old items. NJ HS season not started.
 - X (1 call): FIE timeline = Dakar YOG lead-up (already staged), Zagunis "Will to Win" episode (sabre). Nothing new.
+
+## 2026-11-05 Thu 7:58 AM ET — daily email check + FT quick look
+- Email: 2 new, both allowlisted, labeled processed.
+  - chunkymonkey club-schedule digest (Nov 5; data as of Nov 4 6:00 AM). Medeo YC #5 grew 8 → 9 (new: Roy Yoo, Y10 Mixed; not in roster, print as listed). NYFA Youth Cup #1 unchanged (6), Pizza RYC/RJCC unchanged (Penelope Young, Amina Gore; feed still "could not refresh"), Wanglei Nov Cup I nobody signed up. New on the watched list: Fencers Club Open, Senior Men's and Women's Epee, Nov 8 (Fencers Club Inc.), no Elite FC entrants listed, not staged.
+  - Club Mailchimp "Group Class!" (Nov 4): routine class reminder (Musketeers 5:00 PM and Footwork 6:30 PM Wed, Advanced Group Class 6:00 PM Thu) plus a link to Medeo YC #5 registrations. Nothing new to stage.
+- FencingTracker club page (1 fetch, 7:58 AM ET): 166 tournaments / 1255 results, unchanged; newest still Ultimate Cup RJCC. Nothing new.
+- fencing-api cached club-results since Nov 4: 0 rows (cache-only; no mismatch). No live calls.

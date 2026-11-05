@@ -379,7 +379,7 @@
       "id": "email-agentmail-medeo-yc5-entries-2026-10-14",
       "kind": "signup_row",
       "headline": "Medeo Youth Challenge #5 (Nov. 8) — EFC entries",
-      "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 9:30 AM Y12 Women's Epee: Jiang, Christina. 11:30 AM Y10 Mixed Epee: Huang, Ian; Li, Nora; Peterfreund, Elle; Widjaja, Claire. 11:30 AM Y14 Men's Epee: Li, Owen. 11:30 AM Y14 Women's Epee: Shukla, Mira. (AgentMail club-schedule digest Tue Nov 3, data as of Nov 2 6:00 PM; 8 entries / 8 fencers.)",
+      "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 9:30 AM Y12 Women's Epee: Jiang, Christina. 11:30 AM Y10 Mixed Epee: Huang, Ian; Li, Nora; Peterfreund, Elle; Widjaja, Claire; Yoo, Roy. 11:30 AM Y14 Men's Epee: Li, Owen. 11:30 AM Y14 Women's Epee: Shukla, Mira. (AgentMail club-schedule digest Thu Nov 5, data as of Nov 4 6:00 AM; 9 entries / 9 fencers.)",
       "source": "email",
       "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
@@ -522,6 +522,15 @@
           "retrieved_at": "2026-11-03T07:53:00-05:00",
           "from": "AgentMail <chunkymonkey@agentmail.to>",
           "note": "Grew from 6 to 8 entries (new: Ian Huang and Elle Peterfreund, both Y10 Mixed). Neither is in roster/people.json; print as listed per standing rule. No. 5 proof v1 prints the 6-entry list."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1ab948a63-6890ef1a-3ec4-40bb-a453-5bbcccf9c420-000000@email.amazonses.com>",
+          "subject": "Club schedule · Thursday, November 5",
+          "received_at": "2026-11-05T07:00:01-05:00",
+          "retrieved_at": "2026-11-05T07:59:00-05:00",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "note": "Grew from 8 to 9 entries (new: Roy Yoo, Y10 Mixed). Not in roster/people.json; print as listed per standing rule."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -533,17 +542,18 @@
         "epee",
         "nearby-tournaments"
       ],
-      "entries_count": "8 fencers / 8 entries",
-      "entries_last_confirmed": "2026-11-03T07:53:00-05:00",
+      "entries_count": 9,
+      "entries_last_confirmed": "2026-11-05T07:59:00-05:00",
       "name_flags": [
         "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2.",
         "2026-11-02: Claire Widjaja and Mira Shukla not in roster/people.json (print as listed per standing rule).",
-        "2026-11-03: Ian Huang and Elle Peterfreund not in roster/people.json (print as listed per standing rule)."
+        "2026-11-03: Ian Huang and Elle Peterfreund not in roster/people.json (print as listed per standing rule).",
+        "2026-11-05: Roy Yoo not in roster/people.json (print as listed per standing rule)."
       ],
       "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5 board (8 entries). Event Sun Nov 8 is before No. 6: now a results watch for Club Results (bar per CONTENT-HIERARCHY).",
-      "updated_at": "2026-11-03T07:53:00-05:00",
+      "updated_at": "2026-11-05T07:59:00-05:00",
       "carried_at": "2026-11-03T15:20:00-05:00",
       "rechecks": [
         {
