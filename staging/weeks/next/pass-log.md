@@ -25,3 +25,10 @@
 - Roster: on people.json — Samuel SarroWaite, Christina Jiang, Nora Li, Owen Li; not yet — Ian Huang, Elle Peterfreund, Claire Widjaja, Roy Yoo, Mira Shukla.
 - No compose / no budget rebuild this pass.
 
+
+## 2026-11-06 Fri 7:55 AM ET — daily email check + FT quick look
+- Email: 1 new (chunkymonkey club-schedule digest, Nov 6; data timestamps Nov 5). Labeled processed.
+  - **New entries staged:** Fencers Club Open — Senior Men and Women's Epee, Nov 8 (Fencers Club Inc.): Mixed Epee 10:00 AM — Krishnan, Skanda; Ng, Nico (2 / 2). First Elite FC names for this event (Nov 5 digest had it watched with nobody from the club). Item `email-agentmail-fencers-club-open-entries-2026-11-06`, auto-vetted.
+  - Medeo YC #5 unchanged (9), NYFA Youth Cup #1 unchanged (6), Pizza RYC/RJCC unchanged (Penelope Young, Amina Gore; feed still "could not refresh"), Wanglei Nov Cup I nobody signed up. Recheck noted on the three entry items.
+- FencingTracker club page (1 fetch, 7:55 AM ET): 166 tournaments / 1255 results, unchanged; newest still Ultimate Cup RJCC. Nothing new.
+- fencing-api cached club-results since Nov 5: 0 rows (cache-only; no mismatch). No live calls.
