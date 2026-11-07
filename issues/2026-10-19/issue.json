@@ -15,7 +15,7 @@
     "Title": "En Garde Gazette — Vol. I No. 3 — October 19, 2026",
     "Author": "Nico's Dad"
   },
-  "build": "python3 issues/2026-10-19/build/compose.py x && python3 prototype/render.py issues/2026-10-19/issue.html issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf --allow-flag",
+  "build": "python3 issues/2026-10-19/recipe/compose.py x && python3 prototype/render.py issues/2026-10-19/issue.html issues/2026-10-19/en-garde-gazette-no-3-2026-10-19.pdf --allow-flag",
   "pages": {
     "1": [
       "Vet Worlds, Part Two (lead)",

@@ -28,7 +28,7 @@
   "Title": "En Garde Gazette — Vol. I No. 5 — November 3, 2026",
   "Author": "Nico's Dad"
  },
- "build": "python3 issues/2026-11-03/build/compose.py x && python3 prototype/render.py issues/2026-11-03/issue.html issues/2026-11-03/en-garde-gazette-no-5-2026-11-03.pdf --allow-flag --author=\"Nico's Dad\"",
+ "build": "python3 issues/2026-11-03/recipe/compose.py x && python3 prototype/render.py issues/2026-11-03/issue.html issues/2026-11-03/en-garde-gazette-no-5-2026-11-03.pdf --allow-flag --author=\"Nico's Dad\"",
  "pages": {
   "1": [
    "Lead: Milinkovic Earns His A at Ultimate Cup (Maksim 5th/83 → A26; Nico 10th/87)",

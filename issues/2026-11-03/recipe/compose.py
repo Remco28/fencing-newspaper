@@ -13,7 +13,7 @@ def ty(t):
     t=re.sub(r'(\d) (milliseconds)','\\1&nbsp;\\2',t)
     return t
 def paras(t): return "\n".join(f"<p>{ty(p.strip())}</p>" for p in t.strip().split("\n\n") if p.strip())
-OV=json.load(open(R+'issues/2026-11-03/build/overrides.json')) if len(sys.argv)>1 else {}
+OV=json.load(open(R+'issues/2026-11-03/recipe/overrides.json')) if len(sys.argv)>1 else {}
 def body(k): return OV.get(k) or D[S[k]['item']]['body']
 TPL_CSS=open(R+'prototype/template-a-v2.css').read()
 FLANK=json.load(open(R+'flank-quotes.json'))

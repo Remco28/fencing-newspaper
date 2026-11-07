@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.46 — 2026-11-06
+- **Issue build folders renamed `build/` → `recipe/`** (Frank, chat 2026-11-06). `issues/<date>/build/` (`compose.py`, `overrides.json`) went missing from the working tree three times (found 2026-10-30, 11-02, 11-06) with no repo script, commit or teammate command responsible; the 10-28 box restore dropped every directory named `build`/`.build`, so the likely cause is something outside the repo treating `build` folders as disposable. Renamed for all three issues, updated the self-paths in each `compose.py`, the `build` command in each `issue.json`, and STYLE-GUIDE. Future issues keep their compose files in `issues/<date>/recipe/`. Earlier entries mentioning `build/` are history.
+
 ## v3.45 — 2026-11-02
 - **Budget versions with decisions captured (Frank, chat 2026-11-02):** the 9:21 ET No. 5 budget went out without the vetting from Frank's earlier upload. The submission JSON was never ingested (not on the box, no ingest record), and ingest only ever recorded vets: includes, notes and answers lived only in the page's browser storage, so any rebuilt page started from Clark's proposals. Fixes:
   - `staging/weeks/<pile>/budget-versions.json` is the per-week counter plus decision log. `ingest_budget_submission.py` appends one decision entry per submission: includes/excludes, photo picks, slot notes, answers, notes, order, vets.

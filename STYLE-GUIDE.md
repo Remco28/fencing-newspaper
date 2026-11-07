@@ -246,7 +246,7 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   biggest tournament takes the left half (or the full width if it is tall enough), smaller
   ones stack in the right half in date order. Venue/count note (`.boxnote`) stays under the board.
 - CSS: `prototype/template-a-v2.css` (append to Template A). Helper: `tourney()` in the issue composer
-  (`issues/2026-10-19/build/compose.py`).
+  (`issues/2026-10-19/recipe/compose.py`).
 
 ## 11. Word budgets — measure once, write to fit (locked 2026-10-06; stretch refresh 2026-10-07)
 - Each pattern slot carries a WORD BUDGET calibrated once per template. Current calibration

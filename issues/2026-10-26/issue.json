@@ -15,7 +15,7 @@
   "Title": "En Garde Gazette — Vol. I No. 4 — October 26, 2026",
   "Author": "Nico's Dad"
  },
- "build": "python3 issues/2026-10-26/build/compose.py x && python3 prototype/render.py issues/2026-10-26/issue.html issues/2026-10-26/en-garde-gazette-no-4-2026-10-26.pdf --allow-flag --author=\"Nico's Dad\"",
+ "build": "python3 issues/2026-10-26/recipe/compose.py x && python3 prototype/render.py issues/2026-10-26/issue.html issues/2026-10-26/en-garde-gazette-no-4-2026-10-26.pdf --allow-flag --author=\"Nico's Dad\"",
  "pages": {
   "1": [
    "Morris Cup lead v2 (19 fencers / 29 entries) + club group photo [PENDING Frank OK]",
