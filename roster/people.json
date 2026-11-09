@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-10-19",
+  "updated": "2026-11-09",
   "note": "Frank-confirmed club-people facts only (plus names cleared by Frank's 2026-10-18 standing rule: official club/tournament pages are the source of truth for name spellings). No ratings, ages, birthdays, or invented data. See roster/README.md. | 2026-10-19: added Morris/Ultimate/Cobra/JO names from USA Fencing / AskFRED under the official-pages standing rule.",
   "people": [
     {
@@ -496,6 +496,96 @@
       "provenance": {
         "who": "Frank (standing rule: official pages)",
         "when": "2026-10-19",
+        "via": "Clark's Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "roy-yoo",
+      "canonical": "Roy Yoo",
+      "aliases": [
+        "Yoo, Roy"
+      ],
+      "relations": [],
+      "notes": "Medeo YC #5 Y10 Mixed entry (club registration digest, club listed Elite Fencers Club)",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-11-09",
+        "via": "Clark's Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "ian-huang",
+      "canonical": "Ian Huang",
+      "aliases": [
+        "Huang, Ian"
+      ],
+      "relations": [],
+      "notes": "Medeo YC #5 Y10 Mixed entry (club registration digest, club listed Elite Fencers Club)",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-11-09",
+        "via": "Clark's Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "elle-peterfreund",
+      "canonical": "Elle Peterfreund",
+      "aliases": [
+        "Peterfreund, Elle"
+      ],
+      "relations": [],
+      "notes": "Medeo YC #5 Y10 Mixed entry (club registration digest, club listed Elite Fencers Club)",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-11-09",
+        "via": "Clark's Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "claire-widjaja",
+      "canonical": "Claire Widjaja",
+      "aliases": [
+        "Widjaja, Claire"
+      ],
+      "relations": [],
+      "notes": "Medeo YC #5 Y10 Mixed entry (club registration digest, club listed Elite Fencers Club)",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-11-09",
+        "via": "Clark's Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "mira-shukla",
+      "canonical": "Mira Shukla",
+      "aliases": [
+        "Shukla, Mira"
+      ],
+      "relations": [],
+      "notes": "Medeo YC #5 Y14 Women's Epee entry (club registration digest, club listed Elite Fencers Club)",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-11-09",
+        "via": "Clark's Monday full pass; print as official list"
+      }
+    },
+    {
+      "id": "skanda-krishnan",
+      "canonical": "Skanda Krishnan",
+      "aliases": [
+        "Krishnan, Skanda"
+      ],
+      "relations": [],
+      "notes": "Fencers Club Open Mixed Epee entry (club registration digest, club listed Elite Fencers Club)",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule: official pages)",
+        "when": "2026-11-09",
         "via": "Clark's Monday full pass; print as official list"
       }
     }

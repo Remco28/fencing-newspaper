@@ -1,0 +1,20 @@
+{
+  "target_week": "next",
+  "extracted_at": "2026-11-09T09:20:00-05:00",
+  "note": "Media for Issue No. 6. Photo from History candidate copied from staging/history-photos.",
+  "items": [
+    {
+      "id": "media-history-10-timea-nagy",
+      "kind": "photo",
+      "filename": "10-timea-nagy.jpg",
+      "media_path": "staging/weeks/next/media/10-timea-nagy.jpg",
+      "caption": "Hungary’s Tímea Nagy won Olympic individual epee gold in Sydney in 2000 and defended her title in Athens in 2004. After reversing a retirement announcement, she became individual world champion in 2006. This portrait comes from a 2013 ceremony in Budapest.",
+      "source": "history-photos",
+      "url": "https://commons.wikimedia.org/wiki/File:Award_ceremony_EFS-EQ_2013_Fencing_WCH_t215801.jpg",
+      "license": "CC BY 3.0",
+      "vetted": false,
+      "parent_item_id": "history-photo-10-timea-nagy",
+      "note": "1068x1600 portrait; 1 or 2 columns."
+    }
+  ]
+}

@@ -1,0 +1,673 @@
+{
+  "schema": 2,
+  "mode": "real",
+  "capacity": {
+    "note": "Template A, US Letter, 3 columns (~2.42in each, 9pt gaps). Usable column height = 10.1in page minus furniture measured on the issues/2026-10-14 sample render: page 1 masthead 0.98in + dateline 0.55in + footer ~0.25in; page 2 dateline 0.52in + footer ~0.25in.",
+    "page1_col_in": 24.96,
+    "page2_col_in": 27.99,
+    "wpi": 40,
+    "wpi_feature": 36,
+    "oversupply": 1.15,
+    "head_short": 0.35,
+    "head_feature": 0.65,
+    "gap": 0.12,
+    "table_head": 0.35,
+    "row_rail": 0.24,
+    "row_full": 0.17,
+    "col_width_in": 2.42,
+    "span2_width_in": 4.96,
+    "photo_ceiling_in": 2.2,
+    "caption_in": 0.15
+  },
+  "sections": [
+    {
+      "key": "lead",
+      "title": "Lead & features",
+      "hint": "Top of page 1 and the back-page feature"
+    },
+    {
+      "key": "club",
+      "title": "Club",
+      "hint": "Results, Nearby Tournaments, classes, events"
+    },
+    {
+      "key": "shorts",
+      "title": "Shorts & fill",
+      "hint": "Secondaries, Q&A, Clark fill — first to go if tight"
+    },
+    {
+      "key": "photos",
+      "title": "Photos",
+      "hint": "Thumbnails shown B&W as printed"
+    },
+    {
+      "key": "held",
+      "title": "Held, merged & next week",
+      "hint": "Not proposed for this issue"
+    }
+  ],
+  "seed_ids": [],
+  "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
+  "generated": "2026-10-26T12:45:00-04:00",
+  "target_week": "next",
+  "generated_at": "2026-11-02T21:07:51-05:00",
+  "issue": {
+    "number": 5,
+    "label": "Issue No. 5",
+    "week": "Week of Nov. 2, 2026"
+  },
+  "publish": {
+    "date": "2026-11-03",
+    "label": "Tuesday, November 3, 2026",
+    "alt": "2026-11-04",
+    "why": "Mon/Tue target; results from the Oct 31–Nov 1 weekend are in. Nov 8 tournaments (NYFA #1, Medeo #5) make Tuesday the useful latest."
+  },
+  "slots": [
+    {
+      "key": "lead",
+      "section": "lead",
+      "slot": "Lead story — Ultimate Cup: Milinkovic's A",
+      "budget": "~150–180w typical (draft 130w)",
+      "item": "draft-ultimate-cup-lead-2026-11-02",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 2,
+        "feature": true
+      },
+      "title": "Milinkovic Earns His A at Ultimate Cup",
+      "summary": "Clark's draft (130 words) from FencingTracker: Maksim Milinkovic 5th of 83 in Cadet Men at the Ultimate Cup RJCC (Hillsborough Township, Oct 31), earning an A26, up from B26 in May. Nico Ng 10th in Junior Men (Nov 1). Recalls his San José 6th; closes on Cobra (16 entered). Top-16 only; nobody else characterized.",
+      "questions": [
+        "OK to lead with Maksim's A, or would you rather lead another way?",
+        "Nico's 10th is in the lead: fine to print your son's result here, or move it to Club Results only?"
+      ],
+      "flags": []
+    },
+    {
+      "key": "secondary-a",
+      "section": "lead",
+      "slot": "Secondary — Youth Olympics in Dakar",
+      "budget": "~120–180w (expanded at Frank's request)",
+      "item": "x-fie-dakar-yog-2026-11-02",
+      "proposed": true,
+      "cost": {
+        "type": "prose",
+        "span": 1,
+        "words": 150
+      },
+      "title": "Youth Olympics Open in Dakar; Fencing Nov. 8–13",
+      "summary": "From FIE's own X posts: the Youth Olympic Games opened in Dakar Oct 31; fencing Nov 8–13 at Dakar Expo Centre. You asked for it expanded (\"I know nothing about Youth Olympic games\"), so Clark will write a fuller explainer: what the YOG are, who can compete, the epee days and any U.S. epee entries.",
+      "questions": [
+        "Worth a short here, or just the Epee on Screen row?"
+      ],
+      "flags": []
+    },
+    {
+      "key": "overheard",
+      "section": "lead",
+      "slot": "Page 2 feature — Overheard on Reddit: FIE vs. WFL",
+      "budget": "~241w (Frank: run in full)",
+      "item": "draft-overheard-fie-wfl-2026-11-02",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 1,
+        "feature": true
+      },
+      "title": "Overheard on Reddit: Can the FIE Tell You Where Not to Fence?",
+      "summary": "Your r/Fencing thread, with the official side filled in: the FIE's Oct 22 warning about the World Fencing League (wording via the South China Morning Post; the full text isn't public), the exact rule (FIE Statutes 1.2.6(b)), what the WFL is, both sides labeled as opinion, and what it means for club fencers. USA Fencing has a WFL partnership (Jan 2026) and hasn't commented. It fills this week's feature gap as page 2's big read, one column.",
+      "questions": [],
+      "flags": [
+        {
+          "level": "info",
+          "text": "FIE statement wording is from SCMP; we couldn't find the primary text. The box says so."
+        }
+      ],
+      "answered": [
+        "Run in full at ~241 words (Frank, chat Nov. 2, 8:56 PM)."
+      ]
+    },
+    {
+      "key": "club-results",
+      "section": "club",
+      "slot": "Club results",
+      "budget": "strong rows only (no 'also fenced' line)",
+      "item": "ft-christina-jiang-fencers-club-youth-cup-2026-11-01",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "table_rows",
+        "rows": 3
+      },
+      "title": "Club results",
+      "table": {
+        "head": [
+          "Fencer",
+          "Event",
+          "Finish"
+        ],
+        "rows": [
+          [
+            "Maksim Milinkovic",
+            "Ultimate Cup RJCC, Cadet Men (Oct. 31)",
+            "5th of 83 · earned A26"
+          ],
+          [
+            "Nico Ng",
+            "Ultimate Cup RJCC, Junior Men (Nov. 1)",
+            "10th of 87"
+          ],
+          [
+            "Christina Jiang",
+            "Fencers Club Youth Epee Cup, Y12 Mixed (Nov. 1)",
+            "3rd of 6"
+          ]
+        ]
+      },
+      "summary": "Three rows, per your chat: Maksim Milinkovic 5th of 83 (earned A26) and Nico Ng 10th of 87 at the Ultimate Cup RJCC, plus Christina Jiang 3rd of 6 at the Fencers Club Youth Epee Cup (Nov. 1). Maksim and Nico are also in the lead.",
+      "questions": [],
+      "flags": [
+        {
+          "level": "info",
+          "text": "Tied 3rd (fencing has two bronzes). Unrated local event."
+        }
+      ],
+      "answered": [
+        "Mendez's Freehold 3rd dropped (Frank, Nov. 2 submission). He also asked whether Mendez is really ours: never hard-confirmed.",
+        "Christina gets a mention; table runs with her row only (Frank, chat Nov. 2, 8:56 PM).",
+        "Maksim and Nico go in the table too, and stay in the lead (Frank, chat Nov. 2, 9:06 PM)."
+      ],
+      "merged": [
+        "ft-ultimate-cup-results-2026-11-02"
+      ]
+    },
+    {
+      "key": "ratings",
+      "section": "club",
+      "slot": "Ratings earned",
+      "budget": "1 row",
+      "item": "ft-maksim-a26-rating-2026-11-02",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 1,
+        "span": 1
+      },
+      "title": "Ratings Earned",
+      "table": {
+        "head": [
+          "Fencer",
+          "Rating",
+          "Where"
+        ],
+        "rows": [
+          [
+            "Maksim Milinkovic",
+            "A26 (from B26)",
+            "Ultimate Cup RJCC, Oct. 31"
+          ]
+        ]
+      },
+      "summary": "First Ratings Earned box. FT rating history confirms a step up (B26, May 7). Overlaps the lead; cut this box if you'd rather the lead carry it.",
+      "flags": [
+        {
+          "level": "warn",
+          "text": "UNVETTED."
+        }
+      ]
+    },
+    {
+      "key": "signup",
+      "section": "club",
+      "slot": "Nearby Tournaments — NYFA Youth Cup #1",
+      "budget": "5 rows",
+      "item": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 5,
+        "span": 1
+      },
+      "title": "NYFA Youth Cup #1 — Brooklyn, Sun. Nov. 8",
+      "table": {
+        "head": [
+          "Check-in",
+          "Event",
+          "Elite FC entered"
+        ],
+        "rows": [
+          [
+            "9:00 a.m.",
+            "Y10 Mixed",
+            "Bryce Cheng, Maximus Siu"
+          ],
+          [
+            "9:00 a.m.",
+            "Y8 Mixed",
+            "Madeline Siu"
+          ],
+          [
+            "12:30 p.m.",
+            "Y12 Men",
+            "Remy Ng"
+          ],
+          [
+            "12:30 p.m.",
+            "Y12 Women",
+            "Christina Jiang"
+          ],
+          [
+            "4:00 p.m.",
+            "Y14 Women",
+            "Mila Siu"
+          ]
+        ]
+      },
+      "summary": "Grew from 1 to 6 entries (club digest Nov 2, data as of Nov 1). Christina Jiang is also entered at Medeo #5 the same day."
+    },
+    {
+      "key": "signup-2",
+      "section": "club",
+      "slot": "Nearby Tournaments — Medeo Youth Challenge #5",
+      "budget": "4 rows",
+      "item": "email-agentmail-medeo-yc5-entries-2026-10-14",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 4,
+        "span": 1
+      },
+      "title": "Medeo Youth Challenge #5 — Bound Brook, N.J., Sun. Nov. 8",
+      "table": {
+        "head": [
+          "Check-in",
+          "Event",
+          "Elite FC entered"
+        ],
+        "rows": [
+          [
+            "9:30 a.m.",
+            "Y12 Men",
+            "Samuel SarroWaite"
+          ],
+          [
+            "9:30 a.m.",
+            "Y12 Women",
+            "Christina Jiang"
+          ],
+          [
+            "11:30 a.m.",
+            "Y10 Mixed",
+            "Nora Li, Claire Widjaja"
+          ],
+          [
+            "11:30 a.m.",
+            "Y14 Men · Y14 Women",
+            "Owen Li, Mira Shukla"
+          ]
+        ]
+      },
+      "summary": "Grew from 4 to 6 (Claire Widjaja and Mira Shukla added; both new to the roster, names as the digest lists them). Prereg closes Nov 7."
+    },
+    {
+      "key": "signup-3",
+      "section": "club",
+      "slot": "Nearby Tournaments — Pizza RYC/RJCC",
+      "budget": "3 rows",
+      "item": "email-agentmail-pizza-ryc-entries-2026-10-27",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 3,
+        "span": 1
+      },
+      "title": "Pizza RYC/RJCC — New Haven, Conn., Nov. 14–15",
+      "table": {
+        "head": [
+          "Day · check-in",
+          "Event",
+          "Elite FC entered"
+        ],
+        "rows": [
+          [
+            "Sat. · 8:00 a.m.",
+            "Y14 Women",
+            "Penny Young"
+          ],
+          [
+            "Sat. · 1:00 p.m.",
+            "Junior Women",
+            "Amina Gore"
+          ],
+          [
+            "Sun. · 8:00 a.m. / noon",
+            "Cadet Women · Y12 Women",
+            "Amina Gore, Penny Young · Penny Young"
+          ]
+        ]
+      },
+      "summary": "New board: 5 entries / 2 fencers. Unchanged on FencingTracker Nov 2 (the club digest still says 'could not refresh' for this one)."
+    },
+    {
+      "key": "signup-4",
+      "section": "club",
+      "slot": "Nearby Tournaments — Cobra Challenge",
+      "budget": "7 rows (one block, days in order)",
+      "item": "fencingapi-cobra-efc-entries-2026-10-19",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 7,
+        "span": 2
+      },
+      "title": "Cobra Challenge SYC/RCC — Secaucus, N.J., Nov. 27–29",
+      "table": {
+        "head": [
+          "Day",
+          "Event",
+          "Elite FC entered"
+        ],
+        "rows": [
+          [
+            "Fri. Nov. 27",
+            "Y14 Men",
+            "Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani"
+          ],
+          [
+            "Fri. Nov. 27",
+            "Cadet Women",
+            "Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young"
+          ],
+          [
+            "Fri. Nov. 27",
+            "Y10 Men",
+            "Bryce Cheng, Joshua Jeong"
+          ],
+          [
+            "Sat. Nov. 28",
+            "Y12 Women",
+            "Christina Jiang, Stella Kuo, Mila Siu, Penny Young"
+          ],
+          [
+            "Sat. Nov. 28",
+            "Y12 Men",
+            "Kian Jaising, Joshua Jeong, Remy Ng"
+          ],
+          [
+            "Sun. Nov. 29",
+            "Y14 Women",
+            "Stella Kuo, Mila Siu, Penny Young"
+          ],
+          [
+            "Sun. Nov. 29",
+            "Cadet Men",
+            "Connor Anderson, Nico Ng, Caden Wu"
+          ]
+        ]
+      },
+      "summary": "Unchanged, 26 entries / 16 fencers (FencingTracker Nov 2). Regular entry closed Nov 1; late entry to Nov 7. Seven rows: first to trim if tight (fewer tournaments before fewer names).",
+      "flags": []
+    },
+    {
+      "key": "deadlines",
+      "section": "club",
+      "slot": "Deadlines box",
+      "budget": "4 rows",
+      "item": "desk-deadlines-2026-10-18",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 4,
+        "span": 1
+      },
+      "table": {
+        "head": [
+          "Date",
+          "Deadline"
+        ],
+        "rows": [
+          [
+            "Nov. 7",
+            "Cobra Challenge (Secaucus, Nov. 27–29) — late entry closes"
+          ],
+          [
+            "Nov. 7",
+            "Medeo Youth Challenge #5 — preregistration closes"
+          ],
+          [
+            "Nov. 11",
+            "Junior Olympics — regular-fee deadline"
+          ],
+          [
+            "Jan. 8",
+            "N.J. high school — independent fencers' entries close"
+          ]
+        ]
+      },
+      "summary": "Ultimate (Oct 29) and Cobra regular (Nov 1) dropped as past; Cobra late entry now Nov 7."
+    },
+    {
+      "key": "camp",
+      "section": "club",
+      "slot": "Club events — Winter Camp",
+      "budget": "~115w (full)",
+      "item": "chat-winter-camp-reminder",
+      "proposed": true,
+      "cost": {
+        "type": "prose",
+        "span": 1
+      },
+      "summary": "Full write-up again (115 words, as in No. 4), since there's room. Camp is Dec 27–31; still 'contact the club for price and sign-up'.",
+      "questions": [],
+      "answered": [
+        "Full write-up, 115 words (Frank, chat Nov. 2, 8:56 PM)."
+      ]
+    },
+    {
+      "key": "new-class",
+      "section": "club",
+      "slot": "Club news — New Youth Intermediate class",
+      "budget": "~80–100w (planned 90)",
+      "item": "email-mailchimp-youth-intermediate-class-2026-11-02",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 1,
+        "words": 90
+      },
+      "title": "New Friday Class: Youth Intermediate",
+      "summary": "Your content (Nov. 2 notes) plus the club's Nov. 2 email: a new Youth Intermediate group class, Fridays 5:00–6:30 PM, first class aimed for Fri. Nov. 6. A step up from the beginner class for kids getting more serious and tournament-ready; open bouting follows at 6:30, so they can stay after. The club will contact eligible fencers. Clark writes it at compose time.",
+      "questions": [],
+      "flags": [
+        {
+          "level": "info",
+          "text": "Pitch from your notes: no final text yet. Fill estimate uses the planned length."
+        },
+        {
+          "level": "warn",
+          "text": "Eligibility: the club says it will reach out to those eligible, so it's not open sign-up."
+        }
+      ],
+      "answered": [
+        "Open bouting is realistically 6:30 PM to close, usually 9 or 9:30 (Frank, chat Nov. 2, 8:56 PM). Print the class as 5:00–6:30 PM and say open bouting follows.",
+        "Print open bouting at 6:30 PM (Frank, chat Nov. 2, 9:06 PM)."
+      ]
+    },
+    {
+      "key": "classes",
+      "section": "club",
+      "slot": "Weekly classes table",
+      "budget": "cut (no change)",
+      "item": "web-efc-standing-schedule",
+      "proposed": false,
+      "cost": {
+        "type": "table",
+        "rows": 9,
+        "span": 1
+      },
+      "summary": "No schedule change this week. Not proposed."
+    },
+    {
+      "key": "tv",
+      "section": "shorts",
+      "slot": "Epee on Screen",
+      "budget": "3–5 rows",
+      "item": "desk-epee-on-screen-2026-10-18",
+      "proposed": true,
+      "cost": {
+        "type": "table",
+        "rows": 4,
+        "span": 1
+      },
+      "table": {
+        "head": [
+          "Dates",
+          "Event",
+          "Watch"
+        ],
+        "rows": [
+          [
+            "Nov. 5–8",
+            "Junior/Cadet World Cup (Manama, Bahrain)",
+            "No stream listed"
+          ],
+          [
+            "Nov. 8–13",
+            "Youth Olympic Games fencing (Dakar, Senegal)",
+            "No stream listed"
+          ],
+          [
+            "Nov. 12–15",
+            "Senior World Cups: Berne (men), Wuxi (women)",
+            "FencingTV"
+          ],
+          [
+            "Nov. 26–29",
+            "Junior/Cadet World Cup (Novi Sad, Serbia)",
+            "No stream listed"
+          ]
+        ]
+      },
+      "summary": "Dakar YOG added (FIE X, Nov 2). Vancouver (Dec 3–6) held to next issue."
+    },
+    {
+      "key": "photo-history",
+      "section": "shorts",
+      "slot": "Photo from History",
+      "budget": "photo + ~146w + credit",
+      "item": "history-photo-09-laura-flessel",
+      "proposed": true,
+      "cost": {
+        "type": "figure",
+        "span": 1,
+        "w": 1092,
+        "h": 1600,
+        "words": 190,
+        "head": true,
+        "note": "portrait; 1 column fits"
+      },
+      "thumb": "09-laura-flessel.jpg",
+      "title": "Photo from History: 1996 — Two golds at the start of an Olympic era",
+      "summary": "Laura Flessel, first Olympic women's epee champion (Atlanta 1996), with a 2013 portrait. Fits the Olympics week. Unvetted. Alternates in the pile: 11 Heidemann, 15 Kolobkov.",
+      "flags": [
+        {
+          "level": "warn",
+          "text": "UNVETTED."
+        }
+      ]
+    },
+    {
+      "key": "by-the-book",
+      "section": "shorts",
+      "slot": "By the Book — pitch",
+      "budget": "50–80w (planned 70)",
+      "item": "pitch-by-the-book-double-touch-2026-11-02",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 1
+      },
+      "title": "By the Book: The 40-Millisecond Double",
+      "summary": "Pitch only (Clark writes it, ~70 words): why both lights go on in épée. t.92 double touch, plus the scoring box's 40–50 ms window. It pairs with the WFL's '40ms' rule in the Reddit box. Vet = go ahead and write it.",
+      "flags": [
+        {
+          "level": "info",
+          "text": "Pitch only: no text yet. Fill estimate uses the planned length."
+        },
+        {
+          "level": "warn",
+          "text": "Check before writing: the pitch says it ties into the WFL's '40ms' rule in the Reddit box, but the box doesn't mention 40 ms and that WFL rule isn't sourced."
+        }
+      ],
+      "questions": [],
+      "answered": [
+        "You vetted the pitch (Nov. 2 submission), so Clark writes it."
+      ]
+    },
+    {
+      "key": "nj-hs",
+      "section": "shorts",
+      "slot": "NJ high-school roundup",
+      "budget": "~40w",
+      "empty": true,
+      "why": "Out of season; no new NJ.com stories."
+    },
+    {
+      "key": "qa",
+      "section": "shorts",
+      "slot": "Parent Q&A",
+      "budget": "40–70w",
+      "empty": true,
+      "why": "No parent question this week."
+    },
+    {
+      "key": "comic",
+      "section": "shorts",
+      "slot": "Comic",
+      "budget": "1 panel",
+      "empty": true,
+      "why": "None staged."
+    }
+  ],
+  "photos": [
+    {
+      "id": "media-history-09-laura-flessel",
+      "proposed": true,
+      "span": 1,
+      "note": "Photo from History 09; portrait, 1 column."
+    }
+  ],
+  "held": [
+    {
+      "id": "pitch-for-parents-rating-letters-2026-11-02",
+      "label": "For the Parents: What a Rating Letter Means (held for a larger feature)",
+      "note": "Frank 2026-11-02 budget submission: hold, make it a larger feature another week, remind him next week. Moved to staging/weeks/after-next."
+    }
+  ],
+  "not_proposed": [
+    {
+      "item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+      "why": "Travel entries (November NAC Nov 20–22, Kiefer Meinhardt, December SJCC, Z1, Fairfax). Unvetted, and four names aren't on the roster. Could become an 'on the road' line next week, before the NAC."
+    },
+    {
+      "item": "web-efc-standing-schedule",
+      "why": "Reference only; no change."
+    },
+    {
+      "item": "ft-mendez-freehold-unrated-3rd-2026-10-23",
+      "why": "Dropped (Frank, Nov. 2: 'drop this story')."
+    }
+  ],
+  "desk_summary": [
+    "Issue No. 5 (week of Nov. 2), target Tue Nov 3.",
+    "Lead: Maksim Milinkovic 5th of 83 at the Ultimate Cup with an A rating (up from B), Nico Ng 10th; Clark's 130-word draft, waiting on your Vet.",
+    "Page 2 feature: Overheard on Reddit, FIE vs. World Fencing League (~240 words, your thread with the official side filled in).",
+    "Club: Ultimate Cup results + Ratings Earned box; four Nearby Tournaments boards (NYFA #1 and Medeo #5 on Nov 8, Pizza, Cobra); Deadlines; Winter Camp.",
+    "Shorts: Dakar Youth Olympics short, Epee on Screen, Photo from History 09 (Laura Flessel), plus two pitches Clark would write: By the Book (the 40-millisecond double) and For the Parents (what a rating letter means).",
+    "Fill: see the meter. Running over? Untick Include and write 'next week' in the card's note; Clark moves it to the after-next pile."
+  ]
+}

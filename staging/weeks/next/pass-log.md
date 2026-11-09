@@ -43,3 +43,16 @@
   - Club Mailchimp "Group Class! + Intermediate Class" (Fri Nov 6, 11:34 AM ET): first Intermediate Group Class that day 5:00–6:30 PM; Mini-Musketeers 4:15 PM; Open Bouting 6:30 PM (confirms Frank's start time). Sat classes as usual. Intermediate class already printed in No. 5; provenance added to the standing-schedule item, no new item. Logo-only image, no media extract.
 - FencingTracker club page (1 fetch, ~8:00 AM ET): newest tournament still Ultimate Cup RJCC (Oct 31–Nov 1). No Nov 8 results posted yet (Medeo YC #5, NYFA Youth Cup #1, Fencers Club Open absent from the page).
 - fencing-api cached club-results since Nov 6: 0 rows (cache-only; no mismatch with FT). No live calls (FT showed no new results; Monday full pass can scrape if results land).
+
+## 2026-11-09 Mon 9:00 AM ET — Monday full pass + No. 6 budget v1
+- Email second pass (pre-budget): nothing new since the 8:00 AM pass; all mail already labeled processed.
+- FencingTracker club page (1 fetch, ~8:56 AM ET): still 166 tournaments / 1255 results; no Nov 8 results (Medeo YC #5, NYFA Youth Cup #1, Fencers Club Open).
+- fencing-api: cached club-results since Nov 7 = 0 rows; live AskFRED results for Medeo YC #5 (b30b6f24…) = 0 rows, final=false. No mismatch with FT. Results watch noted on the three Nov 8 entry items.
+- FencingTracker registrations (1 fetch): Z1 RYC/RJCC 7/5 → 8/6 (new: Adela Sullivan JNRWE Dec 12). Pizza 5/2, Kiefer Meinhardt 4/2, November NAC 4/3, Cobra 26/16, December SJCC 5/3, Fairfax 7/4, Austin 3/1, Boston 1/1 unchanged.
+- AskFRED (1 call): new Bernards HS Winter Fencing Senior Open Fundraiser Dec 19 (close Dec 18), staged unvetted. NJFA Tue Nov 10 local closes today. James L. Melcher Epee Grand Prix Jun 20, 2027 (far off, not staged).
+- FIE calendar: Vancouver World Cup Dec 3–6, senior men's + women's epee, FencingTV (fie.org/tournaments/2027/129). Added to Epee on Screen.
+- X (2 calls): @FIE_fencing Dakar YOG schedule (WE Nov 10, ME Nov 11) → Epee on Screen; @njitfencing college opener posts → staged unvetted college-season short.
+- Google News RSS (epee; NJ) + USA Fencing epee page: college openers (Drew Invitational, Duke–UNC), nothing NJ/club epee. NJ HS season not started.
+- Clean: roster adds (official club registration digest, standing rule): Roy Yoo, Ian Huang, Elle Peterfreund, Claire Widjaja, Mira Shukla, Skanda Krishnan. Deadlines and Epee on Screen refreshed; past items dropped.
+- Staged Photo from History 10 (Tímea Nagy) from the history pile, unvetted; media copied with manifest. Winter-camp flyer copied into next/media so its thumbnail resolves.
+- Budget: No. 6 v1 built (budget-demo/out/budget-no-6-2026-11-10-v1.html, target Tue Nov 10, alt Wed Nov 11). Fill 46% as proposed-and-vetted, ~63% if Frank vets Clark's proposals. Light until Sunday's results post.
