@@ -32,3 +32,14 @@
   - Medeo YC #5 unchanged (9), NYFA Youth Cup #1 unchanged (6), Pizza RYC/RJCC unchanged (Penelope Young, Amina Gore; feed still "could not refresh"), Wanglei Nov Cup I nobody signed up. Recheck noted on the three entry items.
 - FencingTracker club page (1 fetch, 7:55 AM ET): 166 tournaments / 1255 results, unchanged; newest still Ultimate Cup RJCC. Nothing new.
 - fencing-api cached club-results since Nov 5: 0 rows (cache-only; no mismatch). No live calls.
+
+## 2026-11-09 Mon 8:00 AM ET — daily email check + FT quick look
+- Email: 4 new, all allowlisted, labeled processed.
+  - chunkymonkey club-schedule digests Sat Nov 7, Sun Nov 8, Mon Nov 9.
+    - **Fencers Club Open (Nov 8):** 2 → 3. New: Milinkovic, Maksim, Mixed Epee (with Krishnan, Skanda and Ng, Nico). First seen Sat Nov 7 digest (data as of Nov 6, 6:00 PM); unchanged Sun/Mon (data as of Nov 8, 6:00 AM).
+    - **NYFA Youth Cup #1 (Nov 8):** 6 → 7. New: Kuo, Stella, Y14WE (with Siu, Mila). Unchanged at 6 in Sat digest (data as of Nov 6, 6:00 PM); grew in Sun digest (data as of Nov 8, 6:00 AM); unchanged Mon.
+    - **Medeo YC #5 (Nov 8):** 9 → 8. Jiang, Christina dropped Y12WE (first seen Sat Nov 7 digest, data as of Nov 7 6:00 AM; confirmed Sun/Mon, Mon data as of Nov 8 6:00 PM). She remains listed at NYFA Y12WE the same day. Noted on the next-gen feature pitch so compose does not list her at Medeo.
+    - Pizza RYC/RJCC unchanged (Penelope Young, Amina Gore; feed still "could not refresh"). Wanglei Nov Cup I nobody signed up.
+  - Club Mailchimp "Group Class! + Intermediate Class" (Fri Nov 6, 11:34 AM ET): first Intermediate Group Class that day 5:00–6:30 PM; Mini-Musketeers 4:15 PM; Open Bouting 6:30 PM (confirms Frank's start time). Sat classes as usual. Intermediate class already printed in No. 5; provenance added to the standing-schedule item, no new item. Logo-only image, no media extract.
+- FencingTracker club page (1 fetch, ~8:00 AM ET): newest tournament still Ultimate Cup RJCC (Oct 31–Nov 1). No Nov 8 results posted yet (Medeo YC #5, NYFA Youth Cup #1, Fencers Club Open absent from the page).
+- fencing-api cached club-results since Nov 6: 0 rows (cache-only; no mismatch with FT). No live calls (FT showed no new results; Monday full pass can scrape if results land).

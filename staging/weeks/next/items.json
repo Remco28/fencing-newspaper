@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-06T07:55:28-05:00",
+  "updated_at": "2026-11-09T08:00:28-05:00",
   "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat).",
   "items": [
     {
@@ -48,7 +48,7 @@
       "from": "frank",
       "target_week": "next",
       "vetted": true,
-      "facts_status": "entries verified via signup item email-agentmail-medeo-yc5-entries-2026-10-14 (Nov 5 digest). Debut/first-tournament claims NOT verified — do not print \"debut\" or \"first time\" for any of the 9 until checked against FencingTracker and prior Elite FC results in repo/issues. Known prior: Christina Jiang Medeo #3 5th (No. 2) + Fencers Club Youth Epee Cup Nov 1 3rd. Nora Li was prereg'd at Medeo #4. Others: no debut confirmation in repo.",
+      "facts_status": "entries verified via signup item email-agentmail-medeo-yc5-entries-2026-10-14 (Nov 5 digest). Debut/first-tournament claims NOT verified — do not print \"debut\" or \"first time\" for any of the 9 until checked against FencingTracker and prior Elite FC results in repo/issues. Known prior: Christina Jiang Medeo #3 5th (No. 2) + Fencers Club Youth Epee Cup Nov 1 3rd. Nora Li was prereg'd at Medeo #4. Others: no debut confirmation in repo. | 2026-11-09 daily pass: Christina Jiang dropped Medeo Y12WE (visible Sat Nov 7 digest, data as of Nov 7 6:00 AM; confirmed Mon Nov 9 digest, data as of Nov 8 6:00 PM). Board is now 8 Elite FC, not 9. She remains on NYFA Youth Cup #1 Y12WE the same day. Do not list her at Medeo.",
       "vet_notes": "Frank chat 2026-11-05 (~9:27 AM ET after morning Medeo 8→9 note): \"Sounds like Medeo should get a feature of sorts. Lots of Elite fencers making their debut. The next generation.\" Vet = go-ahead to write the feature for No. 6 budget. Editorial angle from Frank (\"next generation\"); treat \"debut\" as his framing, not a verified fact — confirm per-fencer before compose. Related signup: email-agentmail-medeo-yc5-entries-2026-10-14. word_count is planned length for the fill estimate.",
       "slot_hint": "feature",
       "tags": [
@@ -61,7 +61,8 @@
       ],
       "created_at": "2026-11-05T09:28:13-05:00",
       "vetted_at": "2026-11-05T09:28:13-05:00",
-      "vetted_by": "frank"
+      "vetted_by": "frank",
+      "updated_at": "2026-11-09T08:00:28-05:00"
     },
     {
       "id": "chat-winter-camp-reminder",
@@ -385,6 +386,17 @@
           "retrieved_at": "2026-10-20T07:53:00-04:00",
           "vetted_by": "auto-mailchimp",
           "note": "Club Mailchimp (Mon Oct 19): all lessons Mon+Tue; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. Matches standing schedule; no change."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261106163453.e6c2663881.4c4d9edd@mail150.atl241.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class! + Intermediate Class",
+          "received_at": "2026-11-06T11:34:57-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Fri Nov 6 Mailchimp: Mini-Musketeers 4:15 PM; first Intermediate Group Class 5:00–6:30 PM; Open Bouting 6:30 PM (confirms Frank's start time, not the website's 6:00). Sat: Musketeers 11:00 AM, Advanced Group Class 1:00 PM. Link to Medeo YC #5 registrations. Intermediate class already printed in No. 5; no new item staged. Logo-only image, no media extract."
         }
       ],
       "suggested_slot": "club-events",
@@ -401,13 +413,13 @@
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Standing club schedule reference; not printed in No. 5 (classes table out). Note: new Youth Intermediate class Fridays 5:00–6:30 PM (No. 5); website still lists open bouting 6:00–10:00 vs Frank's 6:30.",
       "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
-      "updated_at": "2026-10-20T07:53:00-04:00"
+      "updated_at": "2026-11-09T08:00:28-05:00"
     },
     {
       "id": "email-agentmail-medeo-yc5-entries-2026-10-14",
       "kind": "signup_row",
       "headline": "Medeo Youth Challenge #5 (Nov. 8) — EFC entries",
-      "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 9:30 AM Y12 Women's Epee: Jiang, Christina. 11:30 AM Y10 Mixed Epee: Huang, Ian; Li, Nora; Peterfreund, Elle; Widjaja, Claire; Yoo, Roy. 11:30 AM Y14 Men's Epee: Li, Owen. 11:30 AM Y14 Women's Epee: Shukla, Mira. (AgentMail club-schedule digest Thu Nov 5, data as of Nov 4 6:00 AM; 9 entries / 9 fencers.)",
+      "body": "Y10/Y12/Y14 Youth Challenge #5 at Medeo (Medeo Fencing Club) — Sun Nov 8. 9:30 AM Y12 Men's Epee: SarroWaite, Samuel. 11:30 AM Y10 Mixed Epee: Huang, Ian; Li, Nora; Peterfreund, Elle; Widjaja, Claire; Yoo, Roy. 11:30 AM Y14 Men's Epee: Li, Owen. 11:30 AM Y14 Women's Epee: Shukla, Mira. (AgentMail club-schedule digest Mon Nov 9, data as of Nov 8 6:00 PM; 8 entries / 8 fencers.) Jiang, Christina dropped from Y12 Women's Epee after the Nov 6 digest; she remains listed at NYFA Youth Cup #1 Y12WE the same day.",
       "source": "email",
       "message_id": "<010001a13a11b326-b7bf8f7f-0ff0-42ea-86d9-aedc2de6961a-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
@@ -568,6 +580,33 @@
           "received_at": "2026-11-06T07:00:01-05:00",
           "retrieved_at": "2026-11-06T07:55:28-05:00",
           "note": "Daily refresh: unchanged at 9 entries / 9 fencers (data as of Nov 5, 6:00 PM)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1b5e14393-a77e46cc-f276-4c82-8ac4-f9f4c7841bdb-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, November 7",
+          "received_at": "2026-11-07T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Dropped from 9 to 8 entries (Jiang, Christina no longer listed in Y12WE). Data as of Nov 7, 6:00 AM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1bb079e94-6461c5a7-07bb-468a-9304-aa771de22b8a-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, November 8",
+          "received_at": "2026-11-08T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Unchanged at 8 entries / 8 fencers (data as of Nov 7, 6:00 AM); Christina Jiang still absent from Y12WE."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1c02dfadd-9eebc51a-1978-47ed-8453-e14e64075d6f-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, November 9",
+          "received_at": "2026-11-09T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Unchanged at 8 entries / 8 fencers (data as of Nov 8, 6:00 PM); Christina Jiang still absent from Y12WE."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -579,18 +618,19 @@
         "epee",
         "nearby-tournaments"
       ],
-      "entries_count": "9 fencers / 9 entries",
-      "entries_last_confirmed": "2026-11-06T07:55:28-05:00",
+      "entries_count": "8 fencers / 8 entries",
+      "entries_last_confirmed": "2026-11-09T08:00:28-05:00",
       "name_flags": [
         "RESOLVED 2026-10-18 (standing rule, Frank voice): names on official club/tournament pages print as listed — Samuel SarroWaite, Nora Li, Owen Li cleared. Christina Jiang already printed in No. 2.",
         "2026-11-02: Claire Widjaja and Mira Shukla not in roster/people.json (print as listed per standing rule).",
         "2026-11-03: Ian Huang and Elle Peterfreund not in roster/people.json (print as listed per standing rule).",
-        "2026-11-05: Roy Yoo not in roster/people.json (print as listed per standing rule)."
+        "2026-11-05: Roy Yoo not in roster/people.json (print as listed per standing rule).",
+        "2026-11-09: Jiang, Christina dropped Y12WE (9 -> 8). She remains on NYFA Youth Cup #1 Y12WE the same day."
       ],
       "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5 board (8 entries). Event Sun Nov 8 is before No. 6: now a results watch for Club Results (bar per CONTENT-HIERARCHY).",
-      "updated_at": "2026-11-06T07:55:28-05:00",
+      "updated_at": "2026-11-09T08:00:28-05:00",
       "carried_at": "2026-11-03T15:20:00-05:00",
       "rechecks": [
         {
@@ -888,7 +928,7 @@
       "id": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
       "kind": "signup_row",
       "headline": "NYFA Youth Cup #1 (Nov. 8) — EFC entries",
-      "body": "NYFA Youth Cup #1 (NYFA Brooklyn) — Sun Nov 8. 9:00 AM Y10 Mixed Epee: Cheng, Bryce; Siu, Maximus. 9:00 AM Y8 Mixed Epee: Siu, Madeline. 12:30 PM Y12 Men's Epee: Ng, Remy. 12:30 PM Y12 Women's Epee: Jiang, Christina. 4:00 PM Y14 Women's Epee: Siu, Mila. (AgentMail club-schedule digest Mon Nov 2, data as of Nov 1 6:00 AM; 6 entries / 6 fencers.)",
+      "body": "NYFA Youth Cup #1 (NYFA Brooklyn) — Sun Nov 8. 9:00 AM Y10 Mixed Epee: Cheng, Bryce; Siu, Maximus. 9:00 AM Y8 Mixed Epee: Siu, Madeline. 12:30 PM Y12 Men's Epee: Ng, Remy. 12:30 PM Y12 Women's Epee: Jiang, Christina. 4:00 PM Y14 Women's Epee: Kuo, Stella; Siu, Mila. (AgentMail club-schedule digest Mon Nov 9, data as of Nov 8 6:00 AM; 7 entries / 7 fencers.)",
       "source": "email",
       "message_id": "<010001a163449570-5d7cc390-fb6f-4584-a49e-e1f021820834-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
@@ -942,6 +982,33 @@
           "received_at": "2026-11-06T07:00:01-05:00",
           "retrieved_at": "2026-11-06T07:55:28-05:00",
           "note": "Daily refresh: unchanged at 6 entries / 6 fencers (data as of Nov 5, 12:04 PM)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1b5e14393-a77e46cc-f276-4c82-8ac4-f9f4c7841bdb-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, November 7",
+          "received_at": "2026-11-07T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Unchanged at 6 entries / 6 fencers (data as of Nov 6, 6:00 PM)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1bb079e94-6461c5a7-07bb-468a-9304-aa771de22b8a-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, November 8",
+          "received_at": "2026-11-08T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Grew from 6 to 7 entries (new: Kuo, Stella, Y14WE with Siu, Mila). Data as of Nov 8, 6:00 AM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1c02dfadd-9eebc51a-1978-47ed-8453-e14e64075d6f-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, November 9",
+          "received_at": "2026-11-09T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Unchanged at 7 entries / 7 fencers (data as of Nov 8, 6:00 AM)."
         }
       ],
       "suggested_slot": "whos_entered",
@@ -952,17 +1019,18 @@
         "signup",
         "nearby-tournaments"
       ],
-      "entries_count": "6 fencers / 6 entries",
-      "entries_last_confirmed": "2026-11-06T07:55:28-05:00",
+      "entries_count": "7 fencers / 7 entries",
+      "entries_last_confirmed": "2026-11-09T08:00:28-05:00",
       "name_flags": [
         "Bryce Cheng is in roster/people.json (canonical 'Bryce Cheng').",
-        "2026-11-02: Maximus, Madeline and Mila Siu, Remy Ng and Christina Jiang all in roster/people.json."
+        "2026-11-02: Maximus, Madeline and Mila Siu, Remy Ng and Christina Jiang all in roster/people.json.",
+        "2026-11-09: Stella Kuo added to Y14WE; she is in roster/people.json."
       ],
       "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. Not yet cross-checked against AskFRED/fencing-api (next Wed skim or Monday pass).",
       "carried_from": "staging/weeks/2026-11-03",
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Ran in No. 5 board. Event Sun Nov 8 is before No. 6: now a results watch for Club Results.",
-      "updated_at": "2026-11-06T07:55:28-05:00",
+      "updated_at": "2026-11-09T08:00:28-05:00",
       "rechecks": [
         {
           "at": "2026-11-04T07:59:00-05:00",
@@ -1021,8 +1089,8 @@
           "note": "Unchanged: 5 entries / 2 fencers (data as of Nov 5, 6:00 PM, 'could not refresh')."
         }
       ],
-      "updated_at": "2026-11-06T07:55:28-05:00",
-      "entries_last_confirmed": "2026-11-06T07:55:28-05:00",
+      "updated_at": "2026-11-09T08:00:28-05:00",
+      "entries_last_confirmed": "2026-11-09T08:00:28-05:00",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5 board. Event Nov 14–15; refresh entries for No. 6 (or results watch if No. 6 publishes after).",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -1032,6 +1100,24 @@
           "source": "email",
           "message_id": "<010001a1a66e2fbe-07a8abfb-a74f-4300-82c7-bc07be363707-000000@email.amazonses.com>",
           "note": "Pizza RYC/RJCC: Penelope Young + Amina Gore, unchanged (feed still \"could not refresh\", data as of Nov 3 6:01 PM) per chunkymonkey digest Nov 4 (data as of Nov 4 6:00 AM)."
+        },
+        {
+          "at": "2026-11-09T08:00:28-05:00",
+          "source": "email",
+          "message_id": "<010001a1b5e14393-a77e46cc-f276-4c82-8ac4-f9f4c7841bdb-000000@email.amazonses.com>",
+          "note": "Pizza RYC/RJCC: Penelope Young + Amina Gore, unchanged (feed still \"could not refresh\", data as of Nov 6 6:01 PM) per chunkymonkey digest Nov 7."
+        },
+        {
+          "at": "2026-11-09T08:00:28-05:00",
+          "source": "email",
+          "message_id": "<010001a1bb079e94-6461c5a7-07bb-468a-9304-aa771de22b8a-000000@email.amazonses.com>",
+          "note": "Pizza RYC/RJCC unchanged (feed still \"could not refresh\", data as of Nov 7 6:00 AM) per chunkymonkey digest Nov 8."
+        },
+        {
+          "at": "2026-11-09T08:00:28-05:00",
+          "source": "email",
+          "message_id": "<010001a1c02dfadd-9eebc51a-1978-47ed-8453-e14e64075d6f-000000@email.amazonses.com>",
+          "note": "Pizza RYC/RJCC unchanged (feed still \"could not refresh\", data as of Nov 8 6:00 PM) per chunkymonkey digest Nov 9."
         }
       ]
     },
@@ -1106,7 +1192,7 @@
       "id": "email-agentmail-fencers-club-open-entries-2026-11-06",
       "kind": "signup_row",
       "headline": "Fencers Club Open — Senior Men and Women's Epee (Nov. 8) — EFC entries",
-      "body": "Fencers Club Open - Senior Men and Women's Epee (Fencers Club Inc.) — Sun Nov 8. 10:00 AM Mixed Epee: Krishnan, Skanda; Ng, Nico. (AgentMail club-schedule digest Fri Nov 6, data as of Nov 5 9:46 AM; 2 entries / 2 fencers.) First Elite FC names on this event (Nov 5 digest had the tournament on the watched list with nobody from the club).",
+      "body": "Fencers Club Open - Senior Men and Women's Epee (Fencers Club Inc.) — Sun Nov 8. 10:00 AM Mixed Epee: Krishnan, Skanda; Milinkovic, Maksim; Ng, Nico. (AgentMail club-schedule digest Mon Nov 9, data as of Nov 8 6:00 AM; 3 entries / 3 fencers.) Maksim added after the Nov 6 digest (first seen Sat Nov 7 digest, data as of Nov 6 6:00 PM).",
       "source": "email",
       "message_id": "<010001a1b0bae7b3-5065ebdf-e646-4183-9384-c620089aa9bc-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
@@ -1116,8 +1202,8 @@
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-11-06T07:55:28-05:00",
       "created_at": "2026-11-06T07:55:28-05:00",
-      "updated_at": "2026-11-06T07:55:28-05:00",
-      "entries_last_confirmed": "2026-11-06T07:55:28-05:00",
+      "updated_at": "2026-11-09T08:00:28-05:00",
+      "entries_last_confirmed": "2026-11-09T08:00:28-05:00",
       "board": "Nearby Tournaments",
       "slot_hint": "signup",
       "tags": [
@@ -1134,8 +1220,36 @@
           "received_at": "2026-11-06T07:00:01-05:00",
           "retrieved_at": "2026-11-06T07:55:28-05:00",
           "note": "First Elite FC entrants for this event. Prior Nov 5 digest listed the Open on the watched list with no Elite FC names (not staged then)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1b5e14393-a77e46cc-f276-4c82-8ac4-f9f4c7841bdb-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, November 7",
+          "received_at": "2026-11-07T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Grew from 2 to 3 entries (new: Milinkovic, Maksim, Mixed Epee). Data as of Nov 6, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1bb079e94-6461c5a7-07bb-468a-9304-aa771de22b8a-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, November 8",
+          "received_at": "2026-11-08T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Unchanged at 3 entries / 3 fencers (data as of Nov 8, 6:00 AM)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1c02dfadd-9eebc51a-1978-47ed-8453-e14e64075d6f-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, November 9",
+          "received_at": "2026-11-09T07:00:01-05:00",
+          "retrieved_at": "2026-11-09T08:00:28-05:00",
+          "note": "Unchanged at 3 entries / 3 fencers (data as of Nov 8, 6:00 AM)."
         }
-      ]
+      ],
+      "entries_count": "3 fencers / 3 entries"
     }
   ],
   "rolled_forward": {
