@@ -56,3 +56,10 @@
 - Clean: roster adds (official club registration digest, standing rule): Roy Yoo, Ian Huang, Elle Peterfreund, Claire Widjaja, Mira Shukla, Skanda Krishnan. Deadlines and Epee on Screen refreshed; past items dropped.
 - Staged Photo from History 10 (Tímea Nagy) from the history pile, unvetted; media copied with manifest. Winter-camp flyer copied into next/media so its thumbnail resolves.
 - Budget: No. 6 v1 built (budget-demo/out/budget-no-6-2026-11-10-v1.html, target Tue Nov 10, alt Wed Nov 11). Fill 46% as proposed-and-vetted, ~63% if Frank vets Clark's proposals. Light until Sunday's results post.
+
+## 2026-11-10 Tue 7:56 AM ET — daily email check + FT quick look
+- Email: 2 new, both allowlisted, labeled processed.
+  - Club Mailchimp "Group Class + Congrats!" (Mon Nov 9, 10:44 AM ET): first posted Nov 8 results. NYFA Youth Cup #1 — Madeline Siu 3rd Y8; Maximus Siu 8th Y10; Remy Ng 8th Y12; Christina Jiang 5th Y12; Mila Siu 5th Y14; Stella Kuo 6th Y14. Fencers Club Senior Open — Maksim Milinkovic 7th, Nico Ng 8th. Email also noted many first-time competitors but listed no Medeo YC #5 placements. Five podium photos extracted (NYFA banners; identities not labeled); logo / social / tracking skipped. Staged `email-mailchimp-congrats-2026-11-09`, auto-vetted. Class times match the standing schedule (Musketeers Mon 4:30 PM; Advanced Group Class Tue 6:00 PM).
+  - chunkymonkey club-schedule digest (Tue Nov 10; data as of Nov 9, 6:01 PM, "could not refresh"): only Pizza RYC/RJCC still watched — Penelope Young and Amina Gore, unchanged. Past Nov 8 events dropped off the list as expected.
+- FencingTracker club page (1 fetch, 7:54 AM ET): newest tournament still Ultimate Cup RJCC (Oct 31–Nov 1). No Nov 8 results (Medeo YC #5, NYFA Youth Cup #1, Fencers Club Open absent). No mismatch with the club email — FT simply has not posted them yet.
+- fencing-api cached club-results since Nov 7: 0 rows (cache-only; no mismatch). No live calls (FT showed no new results).

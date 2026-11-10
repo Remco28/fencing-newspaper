@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-09T09:20:00-05:00",
-  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat).",
+  "updated_at": "2026-11-10T07:56:00-05:00",
+  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos.",
   "items": [
     {
       "id": "pitch-for-parents-rating-letters-2026-11-02",
@@ -49,7 +49,7 @@
       "target_week": "next",
       "vetted": true,
       "facts_status": "entries verified via signup item email-agentmail-medeo-yc5-entries-2026-10-14 (Nov 5 digest). Debut/first-tournament claims NOT verified — do not print \"debut\" or \"first time\" for any of the 9 until checked against FencingTracker and prior Elite FC results in repo/issues. Known prior: Christina Jiang Medeo #3 5th (No. 2) + Fencers Club Youth Epee Cup Nov 1 3rd. Nora Li was prereg'd at Medeo #4. Others: no debut confirmation in repo. | 2026-11-09 daily pass: Christina Jiang dropped Medeo Y12WE (visible Sat Nov 7 digest, data as of Nov 7 6:00 AM; confirmed Mon Nov 9 digest, data as of Nov 8 6:00 PM). Board is now 8 Elite FC, not 9. She remains on NYFA Youth Cup #1 Y12WE the same day. Do not list her at Medeo.",
-      "vet_notes": "Frank chat 2026-11-05 (~9:27 AM ET after morning Medeo 8→9 note): \"Sounds like Medeo should get a feature of sorts. Lots of Elite fencers making their debut. The next generation.\" Vet = go-ahead to write the feature for No. 6 budget. Editorial angle from Frank (\"next generation\"); treat \"debut\" as his framing, not a verified fact — confirm per-fencer before compose. Related signup: email-agentmail-medeo-yc5-entries-2026-10-14. word_count is planned length for the fill estimate.\n[2026-11-09] Clark: results not posted as of Mon 9 AM ET; feature can run on entries alone (8 Elite FC fencers) or wait for results.",
+      "vet_notes": "Frank chat 2026-11-05 (~9:27 AM ET after morning Medeo 8→9 note): \"Sounds like Medeo should get a feature of sorts. Lots of Elite fencers making their debut. The next generation.\" Vet = go-ahead to write the feature for No. 6 budget. Editorial angle from Frank (\"next generation\"); treat \"debut\" as his framing, not a verified fact — confirm per-fencer before compose. Related signup: email-agentmail-medeo-yc5-entries-2026-10-14. word_count is planned length for the fill estimate.\n[2026-11-09] Clark: results not posted as of Mon 9 AM ET; feature can run on entries alone (8 Elite FC fencers) or wait for results.\n[2026-11-10] Clark: club Mailchimp Nov 9 said \"we had a lot of kids participating in their very first competitions as well\" but listed only NYFA Youth Cup and Fencers Club Senior Open placements — no Medeo #5 results. Feature can still run on entries (8 Elite FC fencers) or wait. Christina Jiang's 5th at NYFA Y12 is a new printed-worthy result and she is not a debut (Medeo #3 5th + Nov 1 bronze already printed).",
       "slot_hint": "feature",
       "tags": [
         "feature",
@@ -62,7 +62,7 @@
       "created_at": "2026-11-05T09:28:13-05:00",
       "vetted_at": "2026-11-05T09:28:13-05:00",
       "vetted_by": "frank",
-      "updated_at": "2026-11-09T08:00:28-05:00"
+      "updated_at": "2026-11-10T07:56:00-05:00"
     },
     {
       "id": "chat-winter-camp-reminder",
@@ -398,6 +398,17 @@
           "retrieved_at": "2026-11-09T08:00:28-05:00",
           "vetted_by": "auto-club-mailchimp",
           "note": "Fri Nov 6 Mailchimp: Mini-Musketeers 4:15 PM; first Intermediate Group Class 5:00–6:30 PM; Open Bouting 6:30 PM (confirms Frank's start time, not the website's 6:00). Sat: Musketeers 11:00 AM, Advanced Group Class 1:00 PM. Link to Medeo YC #5 registrations. Intermediate class already printed in No. 5; no new item staged. Logo-only image, no media extract."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class + Congrats!🏆",
+          "received_at": "2026-11-09T10:44:37-05:00",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Mon Nov 9 Mailchimp: all lessons Mon+Tue; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. Matches standing schedule; no change. Same email carried NYFA + FC Open congrats (see email-mailchimp-congrats-2026-11-09)."
         }
       ],
       "suggested_slot": "club-events",
@@ -414,7 +425,7 @@
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Standing club schedule reference; not printed in No. 5 (classes table out). Note: new Youth Intermediate class Fridays 5:00–6:30 PM (No. 5); website still lists open bouting 6:00–10:00 vs Frank's 6:30.",
       "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
-      "updated_at": "2026-11-09T08:00:28-05:00"
+      "updated_at": "2026-11-10T07:56:00-05:00"
     },
     {
       "id": "email-agentmail-medeo-yc5-entries-2026-10-14",
@@ -631,7 +642,7 @@
       "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5 board (8 entries). Event Sun Nov 8 is before No. 6: now a results watch for Club Results (bar per CONTENT-HIERARCHY).",
-      "updated_at": "2026-11-09T09:20:00-05:00",
+      "updated_at": "2026-11-10T07:56:00-05:00",
       "carried_at": "2026-11-03T15:20:00-05:00",
       "rechecks": [
         {
@@ -641,7 +652,7 @@
           "note": "Medeo YC #5: 8 entries, unchanged per chunkymonkey digest Nov 4 (data as of Nov 4 6:00 AM)."
         }
       ],
-      "results_watch": "Nov 9 9:00 AM ET: no results posted yet (FencingTracker club page; fencing-api live AskFRED results for Medeo b30b6f24… returned 0 rows, final=false). Recheck before compose; strong results become Club Results rows."
+      "results_watch": "Nov 10 7:56 AM ET: still no Medeo YC #5 results. Not listed in the club's Nov 9 congrats email (that mail covered NYFA Youth Cup and Fencers Club Senior Open only). FencingTracker club page still shows Ultimate Cup RJCC as newest; fencing-api cached club-results since Nov 7 returned 0 rows."
     },
     {
       "id": "desk-deadlines-2026-10-18",
@@ -1062,7 +1073,7 @@
       "carried_from": "staging/weeks/2026-11-03",
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Ran in No. 5 board. Event Sun Nov 8 is before No. 6: now a results watch for Club Results.",
-      "updated_at": "2026-11-09T09:20:00-05:00",
+      "updated_at": "2026-11-10T07:56:00-05:00",
       "rechecks": [
         {
           "at": "2026-11-04T07:59:00-05:00",
@@ -1071,7 +1082,7 @@
           "note": "NYFA Youth Cup #1: 6 entries, unchanged per chunkymonkey digest Nov 4 (data as of Nov 4 6:00 AM)."
         }
       ],
-      "results_watch": "Nov 9 9:00 AM ET: no results posted yet (FencingTracker club page; fencing-api live AskFRED results for Medeo b30b6f24… returned 0 rows, final=false). Recheck before compose; strong results become Club Results rows."
+      "results_watch": "Nov 10 7:56 AM ET: club Mailchimp (Mon Nov 9 10:44 AM ET) published placements — Madeline Siu 3rd Y8; Maximus Siu 8th Y10; Remy Ng 8th Y12; Christina Jiang 5th Y12; Mila Siu 5th Y14; Stella Kuo 6th Y14. Staged as email-mailchimp-congrats-2026-11-09 (auto-vetted). Bryce Cheng (entered Y10 Mixed) was not named. FencingTracker club page still has no NYFA results (newest tournament remains Ultimate Cup RJCC). Field sizes unknown until an event page posts."
     },
     {
       "id": "email-agentmail-pizza-ryc-entries-2026-10-27",
@@ -1129,8 +1140,8 @@
           "note": "Monday full pass No. 6: unchanged (5 entries / 2 fencers, all Approved)."
         }
       ],
-      "updated_at": "2026-11-09T09:20:00-05:00",
-      "entries_last_confirmed": "2026-11-09T09:20:00-05:00",
+      "updated_at": "2026-11-10T07:56:00-05:00",
+      "entries_last_confirmed": "2026-11-10T07:56:00-05:00",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5 board. Event Nov 14–15; refresh entries for No. 6 (or results watch if No. 6 publishes after).",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -1158,6 +1169,12 @@
           "source": "email",
           "message_id": "<010001a1c02dfadd-9eebc51a-1978-47ed-8453-e14e64075d6f-000000@email.amazonses.com>",
           "note": "Pizza RYC/RJCC unchanged (feed still \"could not refresh\", data as of Nov 8 6:00 PM) per chunkymonkey digest Nov 9."
+        },
+        {
+          "at": "2026-11-10T07:56:00-05:00",
+          "source": "email",
+          "message_id": "<010001a1c554570c-7fd4460f-9423-48c6-ae8d-14e7cd1991a6-000000@email.amazonses.com>",
+          "note": "Pizza RYC/RJCC: Penelope Young + Amina Gore, unchanged (feed still \"could not refresh\", data as of Nov 9 6:01 PM) per chunkymonkey digest Nov 10. Past Nov 8 events dropped off the watched list as expected."
         }
       ]
     },
@@ -1249,7 +1266,7 @@
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-11-06T07:55:28-05:00",
       "created_at": "2026-11-06T07:55:28-05:00",
-      "updated_at": "2026-11-09T09:20:00-05:00",
+      "updated_at": "2026-11-10T07:56:00-05:00",
       "entries_last_confirmed": "2026-11-09T08:00:28-05:00",
       "board": "Nearby Tournaments",
       "slot_hint": "signup",
@@ -1297,7 +1314,107 @@
         }
       ],
       "entries_count": "3 fencers / 3 entries",
-      "results_watch": "Nov 9 9:00 AM ET: no results posted yet (FencingTracker club page; fencing-api live AskFRED results for Medeo b30b6f24… returned 0 rows, final=false). Recheck before compose; strong results become Club Results rows."
+      "results_watch": "Nov 10 7:56 AM ET: club Mailchimp (Mon Nov 9 10:44 AM ET) published placements — Maksim Milinkovic 7th and Nico Ng 8th (email: \"Maks Milinkovic\"; print Maksim via roster). Staged as email-mailchimp-congrats-2026-11-09 (auto-vetted). Skanda Krishnan was entered and was not named. FencingTracker club page still has no Fencers Club Open results. Field size unknown."
+    },
+    {
+      "id": "email-mailchimp-congrats-2026-11-09",
+      "kind": "graf",
+      "headline": "Club newsletter: Group Class + NYFA Youth Cup and Fencers Club Open congrats",
+      "body": "Club Mailchimp (Mon Nov 9, 10:44 AM ET): all lessons Mon Nov 9 and Tue Nov 10; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. \"Elite FC had a great weekend of local competitions! Congrats to everyone who fenced! Also, we had a lot of kids participating in their very first competitions as well!\" NYFA Youth Cup: Madeline Siu 3rd Y8; Maximus Siu 8th Y10; Remy Ng 8th Y12; Christina Jiang 5th Y12; Mila Siu 5th Y14; Stella Kuo 6th Y14. FC Senior Open: Maksim Milinkovic 7th (email: \"Maks Milinkovic\"); Nico Ng 8th. Five podium photos (NYFA banners visible); the email does not identify who is pictured. Not named: Bryce Cheng (entered NYFA Y10 Mixed) and Skanda Krishnan (entered FC Open Mixed Epee). No Medeo Youth Challenge #5 results in this mail. Field sizes not given; FencingTracker had not posted these events as of Tue Nov 10 7:54 AM ET.",
+      "facts": [
+        {
+          "claim": "Madeline Siu 3rd Y8; Maximus Siu 8th Y10; Remy Ng 8th Y12; Christina Jiang 5th Y12; Mila Siu 5th Y14; Stella Kuo 6th Y14 at NYFA Youth Cup #1 (Nov. 8)",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
+          "status": "verified-email (club Mailchimp allowlist); not yet on FencingTracker as of 2026-11-10 7:54 AM ET. Event letters match the staged NYFA signup row (Y8 Mixed, Y10 Mixed, Y12ME, Y12WE, Y14WE)."
+        },
+        {
+          "claim": "Maksim Milinkovic 7th and Nico Ng 8th at Fencers Club Senior Open (Nov. 8)",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
+          "status": "verified-email (club Mailchimp allowlist); email wrote \"Maks Milinkovic\" — print Maksim via roster. Not yet on FencingTracker as of 2026-11-10 7:54 AM ET."
+        },
+        {
+          "claim": "Musketeers Group Class Mon Nov 9 4:30 PM; Advanced Group Class Tue Nov 10 6:00 PM; all lessons Mon+Tue",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
+          "status": "verified-email (day sheet; matches standing schedule; dates pass before most readers see No. 6)"
+        }
+      ],
+      "strong_results": [
+        "Madeline Siu 3rd, Y8 (NYFA Youth Cup #1, Nov. 8)",
+        "Christina Jiang 5th, Y12 (NYFA Youth Cup #1, Nov. 8)",
+        "Mila Siu 5th, Y14 (NYFA Youth Cup #1, Nov. 8)",
+        "Stella Kuo 6th, Y14 (NYFA Youth Cup #1, Nov. 8)",
+        "Maximus Siu 8th, Y10 (NYFA Youth Cup #1, Nov. 8)",
+        "Remy Ng 8th, Y12 (NYFA Youth Cup #1, Nov. 8)",
+        "Maksim Milinkovic 7th (Fencers Club Senior Open, Nov. 8)",
+        "Nico Ng 8th (Fencers Club Senior Open, Nov. 8)"
+      ],
+      "source": "email",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "subject": "Group Class + Congrats!🏆",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "auto-club-mailchimp",
+      "vetted_at": "2026-11-10T07:56:00-05:00",
+      "created_at": "2026-11-10T07:56:00-05:00",
+      "updated_at": "2026-11-10T07:56:00-05:00",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
+          "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+          "to": "frankcng@gmail.com (forwarded into efc.weekly@agentmail.to)",
+          "subject": "Group Class + Congrats!🏆",
+          "received_at": "2026-11-09T10:44:37-05:00",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "web_version": "https://mailchi.mp/20e9a86ff2c7/group-class-congrats"
+        },
+        {
+          "type": "image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/60e358a9-eb3b-1845-532a-caf698720ead.jpg",
+          "media_path": "staging/weeks/next/media/nyfa-youth-cup1-podium-1-2026-11-08.jpg",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "note": "1600x1200. 1600x1200 landscape; downloaded from Mailchimp CDN. Older youth women's/girls podium by appearance only — do not name anyone without Frank."
+        },
+        {
+          "type": "image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/d44d0ffd-0559-863f-4e4a-8a109993e56c.jpg",
+          "media_path": "staging/weeks/next/media/nyfa-youth-cup1-podium-2-2026-11-08.jpg",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "note": "640x480. 640x480; youth men's/boys podium by appearance only — do not name anyone without Frank."
+        },
+        {
+          "type": "image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/caf42eab-0703-399f-3414-2600c0e10185.jpeg",
+          "media_path": "staging/weeks/next/media/nyfa-youth-cup1-podium-3-2026-11-08.jpg",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "note": "640x382. 640x382; youth women's/girls podium by appearance only — do not name anyone without Frank. Converted from iPhone MPO to JPEG."
+        },
+        {
+          "type": "image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/9644e55b-4084-3d11-7bf9-6717ebba873d.jpeg",
+          "media_path": "staging/weeks/next/media/nyfa-youth-cup1-podium-4-2026-11-08.jpg",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "note": "640x480. 640x480; EXIF orientation 3 (180°) honored and saved upright-as-EXIF. Converted from iPhone MPO to JPEG. EXIF DateTimeOriginal 2026-11-08 11:52:30 ET."
+        },
+        {
+          "type": "image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/1d0f0ea2-eeea-631d-956b-6878026bc5c3.jpeg",
+          "media_path": "staging/weeks/next/media/nyfa-youth-cup1-podium-5-2026-11-08.jpg",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "note": "640x480. 640x480; converted from iPhone MPO to JPEG. Possible Y8 podium (club email highlighted Madeline Siu 3rd in Y8) but identities not labeled."
+        }
+      ],
+      "suggested_slot": "club_results",
+      "slot_hint": "club_results",
+      "tags": [
+        "club",
+        "nyfa",
+        "fencers-club-open",
+        "results",
+        "photos"
+      ],
+      "vet_notes": "Allowlisted sender (club Mailchimp); facts auto-vetted. These are the first posted Nov 8 results — FencingTracker and fencing-api still show nothing for NYFA Youth Cup #1, Fencers Club Open, or Medeo YC #5. No field sizes. Club highlighted these placements only (not a complete results dump). Photos: club's own channel (coach-approved source); five NYFA podium shots staged for the photo desk. Do not caption named fencers onto a photo unless Frank IDs them. Budget v1 (Mon Nov 9) was built before this mail arrived; Club Results / photos would change the No. 6 lineup."
     },
     {
       "id": "history-photo-10-timea-nagy",
