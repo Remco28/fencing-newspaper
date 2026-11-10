@@ -156,6 +156,12 @@
           "path": "reference/usa-fencing/usaf-athlete-handbook-2026-27.pdf",
           "note": "USA Fencing Athlete Handbook 2026–27, §2.1 Ratings (2.1.1 letters and year suffix; 2.1.2 earned at sanctioned competitions, award depends on field size and ratings — see Appendices; 2.1.3 official only on the USA Fencing membership list; 2.1.4 valid four seasons, then drops one letter on Aug. 1, with the B20 → C24 example).",
           "retrieved_at": "2026-11-10T16:28:00-05:00"
+        },
+        {
+          "type": "file",
+          "path": "reference/usa-fencing/usaf-athlete-handbook-2026-27.pdf",
+          "note": "Proof v2 expansion also draws on §2.15.1 (seeding orders the field by relative strength, strongest to weakest; Table 2.15.1.1: local youth seeded by rating and year; many regional/national categories use national points, then rating and year; same class and year often randomized) and the Appendix classification table (Group E1: minimum six competitors, no rated fencers required, first place earns an E; larger groups can award higher letters and E’s further down).",
+          "retrieved_at": "2026-11-10T17:22:00-05:00"
         }
       ]
     },
@@ -357,7 +363,7 @@
           "underlying": "https://member.usafencing.org/details/tournaments/12316",
           "fetched_at": "2026-11-10T21:26:53Z",
           "fetched_at_et": "2026-11-10 4:26 PM ET",
-          "note": "November NAC, Greater Columbus Convention Center, Columbus, Ohio, Nov. 20–23. Elite Fencers Club approved: Sheth, Anayaà, Junior Women’s Epee, Fri Nov 20 (print Anayaa Sheth, roster house form); Ng, Nico, Cadet Men’s Epee, Sat Nov 21; Aravind, Athreya and Ng, Nico, Junior Men’s Epee, Sun Nov 22. Tournament dates are Nov. 20–23 (Cadet Women and Div I Men epee on Mon Nov 23; no Elite FC in those). Athreya Aravind is listed as Elite Fencers Club on the official entry list, approved, but is not on the club roster yet — flagged for Frank. Unchanged vs the Nov. 9 FencingTracker check (4 entries / 3 fencers)."
+          "note": "November NAC, Greater Columbus Convention Center, Columbus, Ohio, Nov. 20–23. Elite Fencers Club approved: Sheth, Anayaà, Junior Women’s Epee, Fri Nov 20 (print Anayaa Sheth, roster house form); Ng, Nico, Cadet Men’s Epee, Sat Nov 21; Aravind, Athreya and Ng, Nico, Junior Men’s Epee, Sun Nov 22. Tournament dates are Nov. 20–23 (Cadet Women and Div I Men epee on Mon Nov 23; no Elite FC in those). Athreya Aravind is listed as Elite Fencers Club on the official entry list, approved, but is not on the club roster yet — flagged for Frank. Unchanged vs the Nov. 9 FencingTracker check (4 entries / 3 fencers). [2026-11-10 5:21 PM ET] Frank confirmed Athreya is a club member ('He's an OG.'); added to roster/people.json. Confirm-before-print flag dropped."
         }
       ]
     },

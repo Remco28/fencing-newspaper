@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-10T16:28:00-05:00",
+  "updated_at": "2026-11-10T17:22:00-05:00",
   "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos. 2026-11-10 PM: First Bouts angle (Frank chat); official Medeo YC #5 CSVs staged; NYFA Youth Cup #1 and Fencers Club Senior Open Club Results from FencingTracker event pages + club Mailchimp; Overheard on Reddit (tennis/court shoes) staged from Frank's PDF. 2026-11-10 3:30 PM ET: also-on-the-calendar note for three local Nov 14–15 events (Revolution Y10/12/14, Freehold November Open, Wanglei November Cup II) from the chunkymonkey digest and Frank's chat; Tournament Day cartoon staged (re-sent 3:49 PM ET) as a page-2 visual.",
   "items": [
     {
@@ -9,14 +9,14 @@
       "section": "For the Parents",
       "headline": "For the Parents: What a Rating Letter Means",
       "summary": "Pitch: a plain-words guide to USA Fencing ratings (A through E, U for unrated), what the year means (A26 = earned in 2026), how a fencer earns one (finish high enough at a big enough, strong enough event), and how long it lasts. Ties into Maksim's A26. About 110 words, sourced from USA Fencing's rules and Athlete Handbook.",
-      "body": "A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U — unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026.\n\nRatings are earned, one weapon at a time, at USA Fencing-sanctioned competitions, from local events to national ones. What a competition can award depends on the size of the field and the ratings already in it. The official chart is in the USA Fencing Athlete Handbook (2026–27).\n\nA new rating is official only when it appears on USA Fencing’s membership list. It lasts four seasons. If it isn’t renewed in that time, it drops one letter at the start of the next season, on Aug. 1. A B earned in 2020 (B20) and not renewed became a C24 on Aug. 1, 2024.\n\nThe letter is a seeding tool, not a verdict. Every A in the club started as a U.",
-      "word_count": 160,
+      "body": "A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U — unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026. A rating is official only on USA Fencing’s membership list. It lasts four seasons; if it isn’t renewed, it drops one letter at the start of the next season, on Aug. 1.\n\nRatings are earned, one weapon at a time, at sanctioned competitions from local events to national ones. A competition’s classification — Group E1, D1, C1 and so on — depends on the size of the field and the ratings already in it, and that determines what can be awarded. Group E1, the smallest that awards a rating, needs at least six fencers, none of whom have to be rated already. First place earns an E.\n\nRatings also seed the field, ordering fencers from strongest to weakest at the start of a competition. At local youth events, seeding is by rating and the year it was last earned. At many regional and national events, national points come first, then rating and year. Only official membership-list ratings should be used when seeding. The letter is a seeding tool, not a verdict. Every A in the club started as a U.",
+      "word_count": 220,
       "planned_words": 110,
       "source": "desk",
       "target_week": "next",
       "vetted": true,
       "facts_status": "sourced",
-      "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate. If the lead or Ratings Earned is cut, this still stands alone.\n[2026-11-09] Clark: Frank asked (Nov 2) to be reminded this week; proposed as the larger page-2 feature (~220w planned).\n[2026-11-10 4:21 PM ET] Frank’s budget submission: include unless space is needed. Feature written from the 2026–27 Athlete Handbook §2.1 (~160w). Included in proof v1.",
+      "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate. If the lead or Ratings Earned is cut, this still stands alone.\n[2026-11-09] Clark: Frank asked (Nov 2) to be reminded this week; proposed as the larger page-2 feature (~220w planned).\n[2026-11-10 4:21 PM ET] Frank’s budget submission: include unless space is needed. Feature written from the 2026–27 Athlete Handbook §2.1 (~160w). Included in proof v1.\n[2026-11-10 5:21 PM ET] Frank’s proof-v1 review: page-2 white space. Feature expanded from the 2026–27 Athlete Handbook: §2.1.2 and the Appendices classification table (Group E1: 6 fencers, no rated fencers required, 1→E); §2.15.1 and Table 2.15.1.1 (seeding by rating/year at local youth events; points then rating/year at many regional/national events; same letter and year randomized in many categories); §2.1.3 (only membership-list ratings for seeding). Columns balanced for proof v2.",
       "slot_hint": "for_the_parents",
       "tags": [
         "for-the-parents",
@@ -34,7 +34,7 @@
         "when": "next week's budget (Issue No. 6)",
         "what": "Raise the For the Parents rating-letters feature again; Frank wants it larger."
       },
-      "updated_at": "2026-11-10T16:28:00-05:00",
+      "updated_at": "2026-11-10T17:22:00-05:00",
       "provenance": [
         {
           "type": "file",
@@ -1399,7 +1399,7 @@
       "source": "fencingtracker",
       "target_week": "next",
       "vetted": true,
-      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.",
+      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.\n[2026-11-10 5:21 PM ET] Frank (chat): 'Athreya is definitely a member of our club!  He's an OG.' Kept on On the Road; added to roster/people.json. Confirm-before-print flag dropped.",
       "tags": [
         "entries",
         "travel"
@@ -1448,11 +1448,11 @@
           "underlying": "https://member.usafencing.org/details/tournaments/12316",
           "fetched_at": "2026-11-10T21:26:53Z",
           "fetched_at_et": "2026-11-10 4:26 PM ET",
-          "note": "November NAC, Greater Columbus Convention Center, Columbus, Ohio, Nov. 20–23. Elite Fencers Club approved: Sheth, Anayaà, Junior Women’s Epee, Fri Nov 20 (print Anayaa Sheth, roster house form); Ng, Nico, Cadet Men’s Epee, Sat Nov 21; Aravind, Athreya and Ng, Nico, Junior Men’s Epee, Sun Nov 22. Tournament dates are Nov. 20–23 (Cadet Women and Div I Men epee on Mon Nov 23; no Elite FC in those). Athreya Aravind is listed as Elite Fencers Club on the official entry list, approved, but is not on the club roster yet — flagged for Frank. Unchanged vs the Nov. 9 FencingTracker check (4 entries / 3 fencers)."
+          "note": "November NAC, Greater Columbus Convention Center, Columbus, Ohio, Nov. 20–23. Elite Fencers Club approved: Sheth, Anayaà, Junior Women’s Epee, Fri Nov 20 (print Anayaa Sheth, roster house form); Ng, Nico, Cadet Men’s Epee, Sat Nov 21; Aravind, Athreya and Ng, Nico, Junior Men’s Epee, Sun Nov 22. Tournament dates are Nov. 20–23 (Cadet Women and Div I Men epee on Mon Nov 23; no Elite FC in those). Athreya Aravind is listed as Elite Fencers Club on the official entry list, approved, but is not on the club roster yet — flagged for Frank. Unchanged vs the Nov. 9 FencingTracker check (4 entries / 3 fencers). [2026-11-10 5:21 PM ET] Frank confirmed Athreya is a club member ('He's an OG.'); added to roster/people.json. Confirm-before-print flag dropped."
         }
       ],
       "created_at": "2026-10-28T09:58:00-04:00",
-      "updated_at": "2026-11-10T16:28:00-05:00",
+      "updated_at": "2026-11-10T17:22:00-05:00",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Unprinted in No. 5 (scraped, unvetted). November NAC Nov 20–22 still upcoming; candidate for No. 6.",
       "carried_at": "2026-11-03T15:20:00-05:00",

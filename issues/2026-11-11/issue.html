@@ -142,12 +142,17 @@
   .comicfig img { display: block; width: 100%; height: auto; }
   .under-comic { display: flex; gap: 8pt; margin-top: 6pt; align-items: stretch; }
   .under-comic > .box { flex: 1; min-width: 0; margin-bottom: 0; }
-  .parents-wide { margin-top: 7pt; }
+  .parents-wide { margin-top: 5pt; }
   .parents-wide .rail-title { margin-bottom: 0; }
-  .parents-wide .parent-cols { column-count: 3; column-gap: 12pt; margin-top: 2pt; }
-  .parents-wide .parent-cols p { margin: 0 0 5pt 0; break-inside: avoid-column; }
-  .comic-wide { margin-top: 8pt; }
-  .comic-wide img { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 3.45in; }
+  .parents-wide .parent-cols { display: flex; gap: 12pt; margin-top: 2pt; align-items: stretch; }
+  .parents-wide .parent-cols .col { flex: 1; min-width: 0; }
+  .parents-wide .parent-cols .col p { margin: 0 0 5pt 0; }
+  .parents-wide .parent-cols .col p:last-child { margin-bottom: 0; }
+  .comic-wide { margin-top: 5pt; }
+  .comic-wide, .comic-wide .comicfig { margin-left: 0; margin-right: 0; }
+  .comic-wide img, .comic-wide .comicfig img { display: block; width: auto; height: auto; max-width: 100%; max-height: 3.68in; margin: 0 auto; }
+  .page-2-tighten .box.w3 { margin-bottom: 2pt; padding: 3pt 5pt; }
+  .page-2-tighten .tourney + .tourney { margin-top: 5pt; }
   /* ---- Template A furniture v2 (2026-10-18, Frank) — STYLE-GUIDE §9b + §13a ---- */
   /* Footer: the archive line is the centred member of the footer trio, in the same 7pt sans caps as its neighbours (no separate size/colour). */
   .footer { gap: 14pt; letter-spacing: 0.15pt; }
@@ -218,7 +223,7 @@
 </div>
 
 <!-- ==================== PAGE 2 (BACK) ==================== -->
-<div class="page">
+<div class="page page-2-tighten">
   <div class="dateline" style="margin-top:0;">
     <div class="edition">Page Two</div>
     <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 6</div>
@@ -242,10 +247,7 @@
     <div class="rail-title">For the Parents</div>
     <h2 class="head">What a Rating Letter Means</h2>
     <div class="parent-cols">
-      <p>A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U — unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026.</p>
-<p>Ratings are earned, one weapon at a time, at USA Fencing-sanctioned competitions, from local events to national ones. What a competition can award depends on the size of the field and the ratings already in it. The official chart is in the USA Fencing Athlete Handbook (2026–27).</p>
-<p>A new rating is official only when it appears on USA Fencing’s membership list. It lasts four seasons. If it isn’t renewed in that time, it drops one letter at the start of the next season, on Aug. 1. A B earned in 2020 (B20) and not renewed became a C24 on Aug. 1, 2024.</p>
-<p>The letter is a seeding tool, not a verdict. Every A in the club started as a U.</p>
+      <div class="col"><p>A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U — unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026. A rating is official only on USA Fencing’s membership list. It lasts four seasons; if it isn’t renewed, it drops one letter at the start of the next season, on Aug. 1.</p></div><div class="col"><p>Ratings are earned, one weapon at a time, at sanctioned competitions from local events to national ones. A competition’s classification — Group E1, D1, C1 and so on — depends on the size of the field and the ratings already in it, and that determines what can be awarded. Group E1, the smallest that awards a rating, needs at least six fencers, none of whom have to be rated already. First place earns an E.</p></div><div class="col"><p>Ratings also seed the field, ordering fencers from strongest to weakest at the start of a competition. At local youth events, seeding is by rating and the year it was last earned. At many regional and national events, national points come first, then rating and year. Only official membership-list ratings should be used when seeding. The letter is a seeding tool, not a verdict. Every A in the club started as a U.</p></div>
     </div>
   </div>
   <div class="comic-wide">

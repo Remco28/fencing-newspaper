@@ -52,12 +52,17 @@ css+="""  /* ---- Issue 2026-11-11 composition additions (no furniture changes) 
   .comicfig img { display: block; width: 100%; height: auto; }
   .under-comic { display: flex; gap: 8pt; margin-top: 6pt; align-items: stretch; }
   .under-comic > .box { flex: 1; min-width: 0; margin-bottom: 0; }
-  .parents-wide { margin-top: 7pt; }
+  .parents-wide { margin-top: 5pt; }
   .parents-wide .rail-title { margin-bottom: 0; }
-  .parents-wide .parent-cols { column-count: 3; column-gap: 12pt; margin-top: 2pt; }
-  .parents-wide .parent-cols p { margin: 0 0 5pt 0; break-inside: avoid-column; }
-  .comic-wide { margin-top: 8pt; }
-  .comic-wide img { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 3.45in; }
+  .parents-wide .parent-cols { display: flex; gap: 12pt; margin-top: 2pt; align-items: stretch; }
+  .parents-wide .parent-cols .col { flex: 1; min-width: 0; }
+  .parents-wide .parent-cols .col p { margin: 0 0 5pt 0; }
+  .parents-wide .parent-cols .col p:last-child { margin-bottom: 0; }
+  .comic-wide { margin-top: 5pt; }
+  .comic-wide, .comic-wide .comicfig { margin-left: 0; margin-right: 0; }
+  .comic-wide img, .comic-wide .comicfig img { display: block; width: auto; height: auto; max-width: 100%; max-height: 3.68in; margin: 0 auto; }
+  .page-2-tighten .box.w3 { margin-bottom: 2pt; padding: 3pt 5pt; }
+  .page-2-tighten .tourney + .tourney { margin-top: 5pt; }
 """+TPL_CSS+OV.get('css_add','')
 
 # Boards: Pizza + Cobra unchanged since No. 5 / Nov. 9–10 checks. Times in the board's AM/PM house form.
@@ -99,6 +104,14 @@ cal_note=OV.get('calendar_note', body('signup-local'))
 if not OV.get('calendar_note') and cal_note.lower().startswith('also on the calendar'):
     cal_note='This weekend, three local events have no Elite FC entries yet. ' + cal_note.split('yet. ',1)[-1] if 'yet. ' in cal_note else cal_note
 boardnote=OV.get('boardnote',"Pizza is at the Floyd Little Athletic Center. Cobra is at the Meadowlands Expo Center. Entry lists last confirmed Nov. 9–10; Cobra lists no start times.")
+
+# Proof v2: three balanced columns, sourced from the 2026-27 Athlete Handbook.
+PARENTS_COLS=OV.get('parents_cols') or [
+"A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U \u2014 unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026. A rating is official only on USA Fencing\u2019s membership list. It lasts four seasons; if it isn\u2019t renewed, it drops one letter at the start of the next season, on Aug. 1.",
+"Ratings are earned, one weapon at a time, at sanctioned competitions from local events to national ones. A competition\u2019s classification \u2014 Group E1, D1, C1 and so on \u2014 depends on the size of the field and the ratings already in it, and that determines what can be awarded. Group E1, the smallest that awards a rating, needs at least six fencers, none of whom have to be rated already. First place earns an E.",
+"Ratings also seed the field, ordering fencers from strongest to weakest at the start of a competition. At local youth events, seeding is by rating and the year it was last earned. At many regional and national events, national points come first, then rating and year. Only official membership-list ratings should be used when seeding. The letter is a seeding tool, not a verdict. Every A in the club started as a U."
+]
+
 blocks={
  'results':f'<div class="box"><div class="boxtitle">Club Results</div>{table(["Fencer","Event","Finish"],res,["0.72in",None,"0.62in"],numcol=None)}<p class="boxnote">{ty(results_note)}</p></div>',
  'photo':f'<div class="rail-block" style="margin-top:6pt;"><div class="photo"><img src="media/nyfa-youth-cup1-podium-4-2026-11-08.jpg" alt="{html.escape(photo_alt)}"><p class="caption">{ty(photo_caption)}</p></div></div>',
@@ -173,7 +186,7 @@ h = """<!DOCTYPE html>
 </div>
 
 <!-- ==================== PAGE 2 (BACK) ==================== -->
-<div class="page">
+<div class="page page-2-tighten">
   <div class="dateline" style="margin-top:0;">
     <div class="edition">Page Two</div>
     <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 6</div>
@@ -197,7 +210,7 @@ h = """<!DOCTYPE html>
     <div class="rail-title">For the Parents</div>
     <h2 class="head">""" + ty(parents_head) + """</h2>
     <div class="parent-cols">
-      """ + paras(body("overheard")) + """
+      """ + "".join(f'<div class="col">{paras(c)}</div>' for c in PARENTS_COLS) + """
     </div>
   </div>
   <div class="comic-wide">

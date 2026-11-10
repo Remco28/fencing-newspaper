@@ -129,10 +129,10 @@
         "type": "prose",
         "span": 1,
         "feature": true,
-        "words": 160
+        "words": 220
       },
       "title": "For the Parents: What a Rating Letter Means",
-      "summary": "Approved as the page-2 feature unless space is needed (budget submission). Written from the 2026–27 USA Fencing Athlete Handbook §2.1, about 160 words. Pairs with First Bouts: every A started as a U.",
+      "summary": "Page-2 feature, expanded for proof v2 from the 2026–27 USA Fencing Athlete Handbook §2.1 and §2.15 / Appendix classification table (how letters are earned by event group, what a first E requires at Group E1, how ratings seed a field). 220 words in three balanced columns.",
       "flags": [
         {
           "level": "info",
@@ -388,12 +388,7 @@
       },
       "title": "On the Road",
       "summary": "Approved and rewritten as a compact board from official USA Fencing entries (fencing-api live, Nov. 10, 4:25–4:26 p.m. ET). Kiefer Meinhardt Cup (Glen Allen, Va., Nov. 14–15): Stella Kuo and Mila Siu, Y14 Women Saturday and Y12 Women Sunday. November NAC (Columbus, Ohio, Nov. 20–23): Anayaa Sheth, Junior Women Friday; Nico Ng, Cadet Men Saturday; Athreya Aravind and Nico Ng, Junior Men Sunday. Same counts as the Nov. 9 FencingTracker pass. Other travel events held. Official NAC spelling is Anayaà Sheth; printed Anayaa Sheth (roster house form).",
-      "flags": [
-        {
-          "level": "info",
-          "text": "Athreya Aravind is listed as Elite Fencers Club on the official November NAC entry list (approved) but is not on the club roster yet. Printed as registered; confirm before print."
-        }
-      ],
+      "flags": [],
       "table": {
         "head": [
           "Event",
@@ -692,6 +687,6 @@
     "Club Results: eight worthy rows from the Senior Open and NYFA Youth Cup #1, plus a light encouragement line. NYFA group photo (podium-4) in, caption featuring Maximus Siu, 8th of 17 in Y10.",
     "Page 2: For the Parents (rating letters, written from the Athlete Handbook); Tournament Day cartoon with no byline or caption; Overheard on Reddit shoes item; Pizza and Cobra boards; Also on the Calendar (rephrased); On the Road rewritten for Kiefer Meinhardt and November NAC from official entries.",
     "Out: Winter Camp, classes table, Photo from History, college season. By the Book, NJ HS, Parent Q&A, and the empty Comic slot stay empty.",
-    "Open flag: Athreya Aravind is on the official November NAC list as Elite Fencers Club but not on the club roster yet."
+    "Athreya Aravind confirmed as a club member (Frank, 2026-11-10) and added to the roster."
   ]
 }

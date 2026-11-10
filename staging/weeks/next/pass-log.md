@@ -101,3 +101,11 @@ On the Road check: Kiefer Meinhardt Cup (USFA 12117) — Stella Kuo, Mila Siu, Y
 Budget v5 built from this lineup. Proof v1 composed the same evening (real submission is the compose go-ahead, as with No. 5).
 
 Proof v1 rendered clean at 4:35 PM ET: 2 pages, no layout FLAGs (p1 gap 0.18in, p2 gap 0.27in, row-1 spread 0.32in). PDF Author Nico's Dad. File issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf.
+
+## 2026-11-10 Tue 5:28 PM ET — No. 6 proof v2 (page-2 white space; Athreya confirmed)
+
+- Frank chat 5:21 PM ET (t201u): confirmed Athreya Aravind is a club member (“He's an OG.”); asked to clean up page-2 white space (ragged gap under For the Parents columns 1–2; wide side margins around the centered Tournaments cartoon). Offered to find more content if needed.
+- Chat decision #7 recorded (`record_chat_decision.py`, --at 2026-11-10T17:21:00-05:00). Athreya kept on On the Road; added to `roster/people.json` (canonical Athreya Aravind; alias Aravind, Athreya; provenance Frank, 2026-11-10, chat). Confirm-before-print flag dropped from the lineup, items vet notes, and `issue.json` pending_frank.
+- Page 2: For the Parents rewritten into three explicit equal columns (220 words, ~72/75/73) from the 2026–27 Athlete Handbook — letters and year suffix, official membership-list listing, four-season life and Aug. 1 drop, event classification and Group E1 (six fencers, first place earns an E), and how ratings seed local youth vs. many regional/national events. No invented numbers. Columns now end even; the ragged under-col-1–2 hole is gone.
+- Cartoon: scaled up preserving 3:2, no crop or art change, `max-height: 3.68in` (~5.52in wide). Side gutters ~0.99in each (v1 was ~1.16–1.18in). A true full-content-width cartoon is 7.5 × 5.0in and will not fit on the same page as the approved Nearby board (Pizza + Cobra + calendar note) and this feature — the image cannot split, and page 1 has only a 0.18in footer gap. No excluded items were used. If Frank wants the gutters gone, the Nearby board would need to move or shrink by about 1.3in.
+- Proof v2 rendered clean at 5:28 PM ET: 2 pages, no layout FLAGs (p1 gap 0.18in, p2 gap 0.08in, row-1 spread 0.32in). Page 1 is pixel-identical to v1. PDF Author Nico's Dad. Same filename `issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf`.
