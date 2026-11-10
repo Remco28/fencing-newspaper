@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "extracted_at": "2026-11-10T07:56:00-05:00",
-  "note": "Media for Issue No. 6. Photo from History candidate copied from staging/history-photos. 2026-11-10: five NYFA Youth Cup #1 podium photos extracted from club Mailchimp (logo, social icons, and tracking pixel skipped).",
+  "extracted_at": "2026-11-10T15:50:00-05:00",
+  "note": "Media for Issue No. 6. Photo from History candidate copied from staging/history-photos. 2026-11-10: five NYFA Youth Cup #1 podium photos extracted from club Mailchimp (logo, social icons, and tracking pixel skipped). 2026-11-10 3:49 PM ET: Tournament Day cartoon (Frank, re-sent) added; no real names.",
   "items": [
     {
       "id": "media-history-10-timea-nagy",
@@ -100,6 +100,24 @@
       "vetted_at": "2026-11-10T07:56:00-05:00",
       "parent_item_id": "email-mailchimp-congrats-2026-11-09",
       "note": "640x480; converted from iPhone MPO to JPEG. Possible Y8 podium (club email highlighted Madeline Siu 3rd in Y8) but identities not labeled."
+    },
+    {
+      "id": "media-tournament-day-cartoon-2026-11-10",
+      "kind": "illustration",
+      "filename": "tournament-day-cartoon.png",
+      "media_path": "staging/weeks/next/media/tournament-day-cartoon.png",
+      "caption": "A first tournament day, clockwise from the evening sign-up: packing, an early start, the drive, check-in, bouting, and the ride home.",
+      "credit": "Illustration: Nico's Dad",
+      "credit_status": "proposed — Comic section rule is 'Frank no byline'; flagged as a question on the budget",
+      "source": "frank",
+      "from": "frank",
+      "w": 1536,
+      "h": 1024,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-10T15:49:00-05:00",
+      "parent_item_id": "frank-tournament-day-cartoon-2026-11-10",
+      "note": "1536x1024 landscape (3:2), black-and-white newspaper-comic. Title lettered 'Tournaments'. No real names. Made by Frank with AI image generation (three passes; first sent 3:25 PM ET, re-sent 3:49 PM ET). Packing scene: the bag holds something that looks like a tennis racket; Frank may replace it, not a blocker."
     }
   ]
 }

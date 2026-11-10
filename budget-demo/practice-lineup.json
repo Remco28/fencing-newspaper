@@ -48,9 +48,9 @@
   ],
   "seed_ids": [],
   "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
-  "generated": "2026-11-10T15:37:00-05:00",
+  "generated": "2026-11-10T15:50:00-05:00",
   "target_week": "next",
-  "generated_at": "2026-11-10T15:37:00-05:00",
+  "generated_at": "2026-11-10T15:50:00-05:00",
   "issue": {
     "number": 6,
     "label": "Issue No. 6",
@@ -144,6 +144,39 @@
       ],
       "questions": [
         "This week as the page-2 feature, or hold another week?"
+      ]
+    },
+    {
+      "key": "tournament-day",
+      "section": "lead",
+      "slot": "Page 2 visual — Tournament Day",
+      "budget": "half-page landscape, 2 columns (1536x1024, 3:2) + short caption",
+      "item": "frank-tournament-day-cartoon-2026-11-10",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "figure",
+        "span": 2,
+        "w": 1536,
+        "h": 1024,
+        "words": 21,
+        "head": true,
+        "note": "landscape 3:2; 2-column half-page"
+      },
+      "thumb": "tournament-day-cartoon.png",
+      "title": "Tournaments",
+      "summary": "Your newspaper-comic illustration of a parent and young fencer's tournament day, in a clockwise loop from the evening sign-up around to the ride home. Half-page landscape, two columns, on page 2 beside First Bouts and For the Parents — useful to new families. No real names. One known flaw: in the packing scene the bag holds something that looks like a tennis racket; you may replace it, not a blocker. Made by you with AI image generation (three passes; re-sent 3:49 PM ET).",
+      "questions": [
+        "The Comic section rule is 'Frank no byline.' There is no separate rule for AI-assisted art. Proposed credit: 'Illustration: Nico's Dad.' Accept that line, drop the credit, or reword it to mention AI?"
+      ],
+      "flags": [
+        {
+          "level": "info",
+          "text": "Packing-scene bag looks like it holds a tennis racket. Frank may replace the drawing; not a blocker for this budget."
+        }
+      ],
+      "answered": [
+        "Run as a page-2 visual (Frank sent the drawing 3:25 PM ET and re-sent it 3:49 PM ET)."
       ]
     },
     {
@@ -555,7 +588,7 @@
       "slot": "Comic",
       "budget": "1 panel",
       "empty": true,
-      "why": "None staged."
+      "why": "The Tournament Day illustration is in the page-2 visual slot, not the gag-panel comic slot."
     }
   ],
   "photos": [
@@ -635,6 +668,7 @@
     "Club: 8 Club Results rows (Senior Open + NYFA #1); Nearby Tournaments for Pizza (Nov 14–15) and Cobra (Nov 27–29, reprint optional); Deadlines (JO regular fee is Nov 11); short Winter Camp reminder.",
     "Shorts: Epee on Screen (Dakar YOG epee Nov 10–11, Berne/Wuxi, Novi Sad, Vancouver), Photo from History 10 (Tímea Nagy). Five unidentified NYFA podium photos are offered as options — caption cannot name anyone. Optional college-season short and On the Road board still unvetted.",
     "Fill: see the meter. Heavier than v1 now that Sunday's results are in.",
-    "Club add: a short 'Also on the Calendar' note for three local events this weekend with no Elite FC entries yet (Revolution Y10/Y12/Y14 on Saturday; Freehold Senior Open and Wanglei Cadet/Junior on Sunday)."
+    "Club add: a short 'Also on the Calendar' note for three local events this weekend with no Elite FC entries yet (Revolution Y10/Y12/Y14 on Saturday; Freehold Senior Open and Wanglei Cadet/Junior on Sunday).",
+    "Page 2 visual: Tournament Day cartoon (Frank, half-page landscape, two columns), pairing with First Bouts and For the Parents. Credit line 'Illustration: Nico's Dad' is proposed and still Frank's call."
   ]
 }

@@ -81,3 +81,11 @@
 - Frank chat 3:30 PM ET (t200u): mention those tournaments and who they are good for — local events for older kids, good practice, decently competitive fields.
 - Staged `email-agentmail-nov14-15-local-calendar-2026-11-10` (~87w). AskFRED (gentle, ~3:32–3:33 PM ET): Revolution is in West Chester, Pa., Y10/Y12/Y14 Mixed Epee, prereg closes Nov 14; Freehold Open is Senior Men's and Women's Epee in Freehold, N.J., prereg closes Nov 14; Wanglei Cup II is Cadet and Junior Epee in Plainsboro Township, N.J., prereg closes Nov 14. Copy describes each by its actual age groups and applies "older fencers" only to the Sunday pair. The mismatch with "older kids" is an open question. No fencers named.
 - Tournament Day cartoon: the source PNG was not on the box at the given attachment path (`…/attachments/6a2dab9c….png`) despite repeated checks, so it is not in this budget. Credit question (Comic section says "Frank no byline"; a modest 'Illustration: Nico's Dad' line is the alternative, given the AI assist) will be asked when the file can be staged. Known packing-scene tennis-racket flaw noted for then. No compose.
+
+## 2026-11-10 Tue 3:50 PM ET — No. 6 budget v4 (Tournament Day cartoon)
+
+- Frank re-sent the Tournament Day cartoon at 3:49 PM ET (t201ua0). Copied to `staging/weeks/next/media/tournament-day-cartoon.png` (1536x1024, 3:2, 2.8 MB, no real names).
+- Staged as a vetted page-2 visual (`frank-tournament-day-cartoon-2026-11-10`), two-column half-page landscape, pairing with First Bouts and For the Parents. Caption is a short clockwise-loop description; no one is named.
+- Known flaw noted (not a blocker): in the packing scene the bag holds something that looks like a tennis racket; Frank may replace it.
+- Credit question on the budget: Comic section rule is "Frank no byline"; proposed line is "Illustration: Nico's Dad."
+- Chat decision #5 recorded. Budget v4 rebuilt. No compose.

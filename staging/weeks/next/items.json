@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-10T15:37:00-05:00",
-  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos. 2026-11-10 PM: First Bouts angle (Frank chat); official Medeo YC #5 CSVs staged; NYFA Youth Cup #1 and Fencers Club Senior Open Club Results from FencingTracker event pages + club Mailchimp; Overheard on Reddit (tennis/court shoes) staged from Frank's PDF. 2026-11-10 3:30 PM ET: also-on-the-calendar note for three local Nov 14–15 events (Revolution Y10/12/14, Freehold November Open, Wanglei November Cup II) from the chunkymonkey digest and Frank's chat; Tournament Day cartoon pending the source PNG on the box.",
+  "updated_at": "2026-11-10T15:50:00-05:00",
+  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos. 2026-11-10 PM: First Bouts angle (Frank chat); official Medeo YC #5 CSVs staged; NYFA Youth Cup #1 and Fencers Club Senior Open Club Results from FencingTracker event pages + club Mailchimp; Overheard on Reddit (tennis/court shoes) staged from Frank's PDF. 2026-11-10 3:30 PM ET: also-on-the-calendar note for three local Nov 14–15 events (Revolution Y10/12/14, Freehold November Open, Wanglei November Cup II) from the chunkymonkey digest and Frank's chat; Tournament Day cartoon staged (re-sent 3:49 PM ET) as a page-2 visual.",
   "items": [
     {
       "id": "pitch-for-parents-rating-letters-2026-11-02",
@@ -34,6 +34,57 @@
         "when": "next week's budget (Issue No. 6)",
         "what": "Raise the For the Parents rating-letters feature again; Frank wants it larger."
       }
+    },
+    {
+      "id": "frank-tournament-day-cartoon-2026-11-10",
+      "kind": "other",
+      "section": "Illustration",
+      "headline": "Tournaments",
+      "body": "",
+      "caption": "A first tournament day, clockwise from the evening sign-up: packing, an early start, the drive, check-in, bouting, and the ride home.",
+      "credit": "Illustration: Nico's Dad",
+      "alt_text": "Black-and-white newspaper-comic illustration titled Tournaments, showing a parent and a young fencer's tournament day in a clockwise loop: evening sign-up, packing, bedtime, an early breakfast, the drive, arriving at the gym, check-in and entry fee, fencing, a hard loss, a snack, and going home with a medal.",
+      "word_count": 21,
+      "source": "frank",
+      "from": "frank",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-10T15:49:00-05:00",
+      "media_path": "staging/weeks/next/media/tournament-day-cartoon.png",
+      "slot_hint": "page2_visual",
+      "suggested_slot": "page2_visual",
+      "tags": [
+        "illustration",
+        "comic",
+        "parents",
+        "first-tournament",
+        "frank"
+      ],
+      "facts_status": "no factual claims; no real names in the drawing",
+      "vet_notes": "Frank chat 2026-11-10 3:25 PM ET (t199u): 'okay, after 3 passes this is what we came up with.' The source PNG was missing from the box at that pass. Re-sent 3:49 PM ET (t201ua0) and copied to staging/weeks/next/media/tournament-day-cartoon.png (1536x1024, 3:2, 2.8 MB). Staged as a vetted page-2 visual for new parents, pairing with First Bouts and For the Parents; half-page landscape, two columns. Known flaw: in the packing scene the bag holds something that looks like a tennis racket; Frank may replace it, not a blocker. Credit: Comic section rule is 'Guest artist (Ling) gets a credit line; Frank no byline.' There is no separate rule for AI-assisted art. Proposed modest line: 'Illustration: Nico's Dad.' Flagged as a question — accept, drop (follow the no-byline rule), or reword to mention AI.",
+      "provenance": [
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-10T15:25:00-05:00",
+          "note": "First send, after 3 passes. Attachment was not on the box for budget v3."
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-10T15:49:00-05:00",
+          "note": "Image re-sent: Tournaments cartoon. Staged as tournament-day-cartoon.png."
+        },
+        {
+          "type": "file",
+          "path": "staging/weeks/next/media/tournament-day-cartoon.png",
+          "retrieved_at": "2026-11-10T15:49:00-05:00",
+          "note": "1536x1024 RGB PNG, 2,819,788 bytes. No real names."
+        }
+      ],
+      "created_at": "2026-11-10T15:50:00-05:00",
+      "updated_at": "2026-11-10T15:50:00-05:00"
     },
     {
       "id": "pitch-medeo-yc5-next-gen-2026-11-05",

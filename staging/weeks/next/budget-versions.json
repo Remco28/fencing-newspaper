@@ -25,6 +25,14 @@
       "decisions_through": "2026-11-10T15:30:00-05:00",
       "decisions": 4,
       "out": "budget-demo/out/budget-no-6-2026-11-11-v3.html"
+    },
+    {
+      "v": 4,
+      "built_at": "2026-11-10T15:51:20-05:00",
+      "data": "1980facc14fd",
+      "decisions_through": "2026-11-10T15:49:00-05:00",
+      "decisions": 5,
+      "out": "budget-demo/out/budget-no-6-2026-11-11-v4.html"
     }
   ],
   "decisions": [
@@ -138,6 +146,34 @@
       "changes": [
         "Staged a names-free 'Also on the Calendar' Nearby Tournaments note for Revolution Y10/Y12/Y14 Mixed Epee (Nov. 14, West Chester, Pa.), Freehold November Open (Nov. 15, Senior Men's and Women's, Freehold, N.J.), and Wanglei November Cup II (Nov. 15, Cadet and Junior, Plainsboro Township, N.J.).",
         "Sunday's two events are framed as good practice with decently competitive fields for older fencers; Revolution is described by its actual youth age groups. The 'older kids' mismatch is an open question on the budget page."
+      ]
+    },
+    {
+      "at": "2026-11-10T15:50:00-05:00",
+      "client_submitted_at": "2026-11-10T15:49:00-05:00",
+      "source": "chat:frank:2026-11-10T15:49:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-10T15:49:00-05:00",
+        "text": "(image re-sent: Tournaments cartoon)"
+      },
+      "carried_from": 4,
+      "publishDate": "2026-11-11",
+      "included": [],
+      "excluded": [],
+      "answers": [
+        {
+          "slot": "lead",
+          "question": "Wait for Sunday's results before writing (publish Wed), or write it from the entries now?",
+          "answer": "I might push it to Wednesday this week to take some pressure off of us.",
+          "via": "chat"
+        }
+      ],
+      "order": [],
+      "changes": [
+        "Staged the Tournament Day cartoon as a vetted page-2 visual (2-column, half-page landscape, 1536x1024), pairing with First Bouts and For the Parents.",
+        "Credit line 'Illustration: Nico's Dad' is proposed and flagged as a question (Comic section rule is Frank no byline). Packing-scene tennis-racket flaw noted; Frank may replace it, not a blocker."
       ]
     }
   ]
