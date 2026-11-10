@@ -1,6 +1,6 @@
 {
   "issue": 6,
-  "publish": "2026-11-10",
+  "publish": "2026-11-11",
   "versions": [
     {
       "v": 1,
@@ -9,7 +9,72 @@
       "decisions_through": null,
       "decisions": 0,
       "out": "budget-demo/out/budget-no-6-2026-11-10-v1.html"
+    },
+    {
+      "v": 2,
+      "built_at": "2026-11-10T13:43:39-05:00",
+      "data": "1a84d0d66723",
+      "decisions_through": "2026-11-10T13:38:00-05:00",
+      "decisions": 2,
+      "out": "budget-demo/out/budget-no-6-2026-11-11-v2.html"
     }
   ],
-  "decisions": []
+  "decisions": [
+    {
+      "at": "2026-11-10T13:42:00-05:00",
+      "client_submitted_at": "2026-11-10T13:22:00-05:00",
+      "source": "chat:frank:2026-11-10T13:22:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-10T13:22:00-05:00",
+        "text": "I might push it to Wednesday this week to take some pressure off of us.  Haven't had time to fill in the blanks this week.  I think you'll have to go directly to the fencing-api to see if you can get the latest results.  \n\nI'm torn about what to do...  many elite kids at Medeo but they honestly did terrible.  Maybe the focus should be that they started their competitive paths?  For many it's their first tournament.  For others it's like their second?  But they got whooped badly.\n\nEven Remy's results wasn't that great.  He could have done much better.  \n\nStill...  these are kids and I want to be supportive.  \n\nI'm open to ideas here."
+      },
+      "carried_from": 0,
+      "included": [],
+      "excluded": [],
+      "order": [],
+      "answers": [
+        {
+          "slot": "lead",
+          "question": "Wait for Sunday's results before writing (publish Wed), or write it from the entries now?",
+          "answer": "I might push it to Wednesday this week to take some pressure off of us.",
+          "via": "chat"
+        }
+      ],
+      "changes": [
+        "Target publish day set to Wednesday, Nov. 11 (tentative; Frank hasn't submitted v1).",
+        "Sunday's results were pulled from FencingTracker event pages and, later, Frank's official Medeo CSVs. v1's other open questions stay open."
+      ],
+      "publishDate": "2026-11-11"
+    },
+    {
+      "at": "2026-11-10T13:42:30-05:00",
+      "client_submitted_at": "2026-11-10T13:38:00-05:00",
+      "source": "chat:frank:2026-11-10T13:38:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-10T13:38:00-05:00",
+        "text": "i would go with the \"first bouts\" angle and give it an encouraging tone."
+      },
+      "carried_from": 1,
+      "included": [],
+      "excluded": [],
+      "answers": [
+        {
+          "slot": "lead",
+          "question": "Wait for Sunday's results before writing (publish Wed), or write it from the entries now?",
+          "answer": "I might push it to Wednesday this week to take some pressure off of us.",
+          "via": "chat"
+        }
+      ],
+      "order": [],
+      "changes": [
+        "Medeo feature reframed as 'First Bouts' (encouraging tone; no placings, no pool records, never characterize results). Stays the planned lead.",
+        "Pitch pitch-medeo-yc5-next-gen-2026-11-05 retitled; names only the seven who fenced; first/second-tournament claims recorded from FT history."
+      ],
+      "publishDate": "2026-11-11"
+    }
+  ]
 }

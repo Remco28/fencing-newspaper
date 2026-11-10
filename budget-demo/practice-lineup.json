@@ -48,25 +48,25 @@
   ],
   "seed_ids": [],
   "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
-  "generated": "2026-11-09T09:30:00-05:00",
+  "generated": "2026-11-10T13:42:00-05:00",
   "target_week": "next",
-  "generated_at": "2026-11-09T09:30:00-05:00",
+  "generated_at": "2026-11-10T13:42:00-05:00",
   "issue": {
     "number": 6,
     "label": "Issue No. 6",
     "week": "Week of Nov. 9, 2026"
   },
   "publish": {
-    "date": "2026-11-10",
-    "label": "Tuesday, November 10, 2026",
-    "alt": "2026-11-11",
-    "why": "Mon/Tue target. Sunday's Medeo #5, NYFA #1 and Fencers Club Open results weren't posted as of Mon 9 AM; Wednesday gives them a day to land. Pizza and Kiefer Meinhardt are Nov 14–15, so either day still previews them."
+    "date": "2026-11-11",
+    "label": "Wednesday, November 11, 2026",
+    "alt": "2026-11-10",
+    "why": "Frank (chat Nov. 10, 1:22 PM ET) said he might push it to Wednesday to take some pressure off. Tentative — he hasn't submitted v1 yet. Sunday's results are in, so Wednesday is no longer about waiting for them. Pizza and Kiefer Meinhardt are still Nov. 14–15."
   },
   "slots": [
     {
       "key": "lead",
       "section": "lead",
-      "slot": "Lead story — Next Generation at Medeo #5",
+      "slot": "Lead story — First Bouts at Medeo #5",
       "budget": "~150–180w (planned 150)",
       "item": "pitch-medeo-yc5-next-gen-2026-11-05",
       "proposed": true,
@@ -77,11 +77,47 @@
         "feature": true,
         "words": 150
       },
-      "title": "Next Generation at Medeo #5",
-      "summary": "Your pitch (Nov. 5): Medeo Youth Challenge #5 (Bound Brook, Sun. Nov. 8) drew eight Elite FC fencers, five of them in Y10 Mixed (Ian Huang, Nora Li, Elle Peterfreund, Claire Widjaja, Roy Yoo), plus Samuel SarroWaite (Y12 Men), Owen Li (Y14 Men) and Mira Shukla (Y14 Women). Christina Jiang switched to NYFA #1 the same day. Clark writes it once you vet; strong finishes get named if results post before compose. 'Debut' is only said for fencers whose record confirms it.",
+      "title": "First Bouts at Medeo #5",
+      "summary": "Your call (Nov. 10): an encouraging 'First Bouts' piece about the club's kids starting their competitive paths at Medeo Youth Challenge #5 (Sun. Nov. 8). Seven Elite FC fencers took the step: Samuel SarroWaite, Roy Yoo, Elle Peterfreund, Nora Li, Claire Widjaja, Owen Li and Mira Shukla. For most, it was their first tournament (five confirmed firsts; Elle Peterfreund and Owen Li their second). Ian Huang was entered but has no result — we won't say he fenced. Christina Jiang withdrew and is in Club Results from NYFA the same day. No placings, no pool records, never characterize results. Clark writes it once you approve the budget. About 150 words.",
       "questions": [
-        "Lead with Medeo, or move it to the page-2 feature if a bigger result lands from Sunday (NYFA #1 or the Fencers Club Open, where Maksim, Nico and Skanda fenced)?",
+        "Sunday's results are in (Maksim 7th and Nico 8th at the Senior Open; six NYFA Youth Cup rows). Keep First Bouts as the lead, or lead with the Senior Open instead?",
         "Wait for Sunday's results before writing (publish Wed), or write it from the entries now?"
+      ],
+      "answered": [
+        "Publish day tentatively Wednesday, Nov. 11 (Frank, chat Nov. 10, 1:22 PM ET: 'I might push it to Wednesday').",
+        "Medeo feature is 'First Bouts,' encouraging tone, no placings (Frank, chat Nov. 10, 1:38 PM ET)."
+      ],
+      "flags": [
+        {
+          "level": "info",
+          "text": "Pitch only: no text yet. Fill estimate uses the planned 150 words. Official Medeo CSVs are in staging; first-tournament claims are verified."
+        }
+      ]
+    },
+    {
+      "key": "overheard-reddit",
+      "section": "lead",
+      "slot": "Overheard on Reddit — Do You Need Fencing Shoes?",
+      "budget": "~72w (short; Frank noted the thread is light)",
+      "item": "reddit-rfencing-tennis-shoes-2026-11-08",
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "prose",
+        "span": 1,
+        "words": 72
+      },
+      "title": "Overheard on Reddit: Do You Need Fencing Shoes?",
+      "summary": "Your r/Fencing thread (captured Nov. 10; posted ~Nov. 8): a beginner asked whether tennis shoes work as well as fencing shoes, at about half the price. Commenters there said indoor court shoes (squash or volleyball, e.g. ASICS Gel Rocket) do fine, and that entry fencing shoes, at about $80 to $100, wear out in a year or two. Some epee fencers prefer tennis shoes on aluminum strips. No usernames; attributed to r/Fencing commenters; labeled as opinion, not advice. Short on purpose — you flagged that the thread is light on content. Sits near First Bouts, where it's useful to new families buying gear.",
+      "flags": [
+        {
+          "level": "info",
+          "text": "72 words, under the section's typical 130–170w, per Frank's note that the thread is light."
+        }
+      ],
+      "questions": [],
+      "answered": [
+        "Frank sent the PDF and vetted it as the source (chat Nov. 10, 1:39 PM ET). He noted it's light on content."
       ]
     },
     {
@@ -99,11 +135,11 @@
         "words": 220
       },
       "title": "For the Parents: What a Rating Letter Means",
-      "summary": "Reminder you asked for on Nov. 2: the rating-letters piece, now as a larger feature. A to U, what the year means (A26), how a letter is earned from event size and finish, and why a kid's letter can drop. Clark writes it from the USA Fencing rules once you say go. Vet = go ahead.",
+      "summary": "Reminder you asked for on Nov. 2: the rating-letters piece, now as a larger feature. A to U, what the year means (A26), how a letter is earned from event size and finish, and why a kid's letter can drop. It pairs naturally with First Bouts: every A started at U, often in a Y10 pool at a Medeo-type event. Clark writes it from the USA Fencing rules once you say go. Vet = go ahead.",
       "flags": [
         {
           "level": "info",
-          "text": "Pitch only: no text yet. Fill estimate uses the planned length."
+          "text": "Pitch only: no text yet. Fill estimate uses the planned length. Still your call whether it runs this week."
         }
       ],
       "questions": [
@@ -114,9 +150,76 @@
       "key": "club-results",
       "section": "club",
       "slot": "Club results",
-      "budget": "strong rows only (no 'also fenced' line)",
-      "empty": true,
-      "why": "Nothing posted yet for Sunday's Medeo YC #5, NYFA Youth Cup #1 or Fencers Club Open (FencingTracker and AskFRED checked Mon ~9 AM ET). Strong finishes get added as rows before compose."
+      "budget": "8 strong rows (no 'also fenced' line)",
+      "item": "ft-fencers-club-senior-open-results-2026-11-08",
+      "merged": [
+        "ft-nyfa-youth-cup1-results-2026-11-08",
+        "email-mailchimp-congrats-2026-11-09"
+      ],
+      "proposed": true,
+      "waiting": false,
+      "cost": {
+        "type": "table_rows",
+        "rows": 8
+      },
+      "title": "Club results",
+      "table": {
+        "head": [
+          "Fencer",
+          "Event",
+          "Finish"
+        ],
+        "rows": [
+          [
+            "Maksim Milinkovic",
+            "Fencers Club Senior Open, Mixed Epee (Nov. 8)",
+            "7th of 31"
+          ],
+          [
+            "Nico Ng",
+            "Fencers Club Senior Open, Mixed Epee (Nov. 8)",
+            "8th of 31"
+          ],
+          [
+            "Madeline Siu",
+            "NYFA Youth Cup #1, Y8 Mixed (Nov. 8)",
+            "3rd of 4"
+          ],
+          [
+            "Maximus Siu",
+            "NYFA Youth Cup #1, Y10 Mixed (Nov. 8)",
+            "8th of 17"
+          ],
+          [
+            "Remy Ng",
+            "NYFA Youth Cup #1, Y12 Men (Nov. 8)",
+            "8th of 13"
+          ],
+          [
+            "Christina Jiang",
+            "NYFA Youth Cup #1, Y12 Women (Nov. 8)",
+            "5th of 9"
+          ],
+          [
+            "Mila Siu",
+            "NYFA Youth Cup #1, Y14 Women (Nov. 8)",
+            "5th of 10"
+          ],
+          [
+            "Stella Kuo",
+            "NYFA Youth Cup #1, Y14 Women (Nov. 8)",
+            "6th of 10"
+          ]
+        ]
+      },
+      "summary": "Eight rows, all over the local bar (top 8, or a medal in a small field). Fencers Club Senior Open (31 finishers, A2): Maksim Milinkovic 7th and Nico Ng 8th — each won a table-of-32 and a table-of-16 bout; no new ratings, both still A26. NYFA Youth Cup #1: Madeline Siu 3rd of 4 in Y8 Mixed (a medal, tied for 3rd); Maximus Siu 8th of 17 in Y10 Mixed; Remy Ng 8th of 13 in Y12 Men; Christina Jiang 5th of 9 in Y12 Women; Mila Siu 5th and Stella Kuo 6th of 10 in Y14 Women. Omitted (below the bar or no result): Bryce Cheng 14th of 17 at NYFA; Skanda Krishnan, entered at the Open, no result. Medeo placements stay out of this box — they belong in First Bouts only, and even there without places. Sources: club Mailchimp (Nov. 9) plus FencingTracker event pages (Nov. 10, 1:25–1:31 PM ET).",
+      "questions": [],
+      "flags": [
+        {
+          "level": "info",
+          "text": "Madeline's 3rd is a tie (two bronzes) in a field of 4. It prints because it is a medal."
+        }
+      ]
     },
     {
       "key": "signup",
@@ -272,7 +375,7 @@
           ]
         ]
       },
-      "summary": "Nov 7 Cobra and Medeo deadlines dropped as past. A new Dec 19 Bernards HS Senior Open is on AskFRED (unvetted, not added)."
+      "summary": "Nov. 7 Cobra and Medeo deadlines dropped as past. If we publish Wednesday, the Junior Olympics regular-fee deadline is that same day (Nov. 11). A new Dec. 19 Bernards HS Senior Open is on AskFRED (unvetted, not added)."
     },
     {
       "key": "camp",
@@ -348,7 +451,7 @@
           ]
         ]
       },
-      "summary": "Dakar's epee days come from FIE's own schedule post (Nov. 7). Vancouver added from the FIE calendar. Manama dropped, past."
+      "summary": "Dakar's epee days come from FIE's own schedule post (Nov. 7). If we publish Wednesday, women's epee (Nov. 10) will already have been fenced; men's epee is Nov. 11. Vancouver added from the FIE calendar. Manama dropped, past."
     },
     {
       "key": "photo-history",
@@ -436,21 +539,55 @@
       "proposed": true,
       "span": 1,
       "note": "Photo from History 10; portrait, 1 column."
+    },
+    {
+      "id": "media-nyfa-youth-cup1-podium-1-2026-11-08",
+      "proposed": false,
+      "span": 1,
+      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
+    },
+    {
+      "id": "media-nyfa-youth-cup1-podium-2-2026-11-08",
+      "proposed": false,
+      "span": 1,
+      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
+    },
+    {
+      "id": "media-nyfa-youth-cup1-podium-3-2026-11-08",
+      "proposed": false,
+      "span": 1,
+      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
+    },
+    {
+      "id": "media-nyfa-youth-cup1-podium-4-2026-11-08",
+      "proposed": false,
+      "span": 1,
+      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
+    },
+    {
+      "id": "media-nyfa-youth-cup1-podium-5-2026-11-08",
+      "proposed": false,
+      "span": 1,
+      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
     }
   ],
   "held": [],
   "not_proposed": [
     {
       "item": "email-agentmail-medeo-yc5-entries-2026-10-14",
-      "why": "Sunday's entries; folded into the Medeo lead. Results watch."
+      "why": "Sunday's entries; folded into the First Bouts lead. Official CSVs are in staging/weeks/next/sources/."
     },
     {
       "item": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
-      "why": "Sunday's entries (7 Elite FC). Results watch for Club Results."
+      "why": "Sunday's entries; results that clear the bar are in Club Results."
     },
     {
       "item": "email-agentmail-fencers-club-open-entries-2026-11-06",
-      "why": "Sunday's entries (Maksim Milinkovic, Nico Ng, Skanda Krishnan). Results watch for Club Results."
+      "why": "Sunday's entries; Maksim 7th and Nico 8th are in Club Results. Skanda had no result."
+    },
+    {
+      "item": "email-mailchimp-congrats-2026-11-09",
+      "why": "Source for the Club Results rows and the five unidentified NYFA podium photos; merged into those slots."
     },
     {
       "item": "x-fie-dakar-yog-2026-11-02",
@@ -466,11 +603,12 @@
     }
   ],
   "desk_summary": [
-    "Issue No. 6 (week of Nov. 9), target Tue Nov 10 (or Wed Nov 11 to wait for Sunday's results).",
-    "Lead: Next Generation at Medeo #5, your pitch: eight Elite FC fencers, mostly Y10/Y12, at Sunday's youth event. Results weren't posted yet at 9 AM.",
-    "Page 2 feature: For the Parents, What a Rating Letter Means, the larger version you asked me to remind you about (~220 words, Clark writes it).",
-    "Club: results row(s) once Sunday's results post (none yet); Nearby Tournaments for Pizza (Nov 14–15) and Cobra (Nov 27–29); Deadlines; short Winter Camp reminder.",
-    "Shorts: Epee on Screen (Dakar YOG epee Nov 10–11, Berne/Wuxi, Novi Sad, Vancouver), Photo from History 10 (Tímea Nagy, who beat Flessel twice), optional college-season short.",
-    "Fill: see the meter. Light without results; Club Results rows get added when they post."
+    "Issue No. 6 (week of Nov. 9), target Wed Nov 11, tentative (Frank, Nov. 10, 1:22 PM ET: might push to Wednesday).",
+    "Lead: First Bouts at Medeo #5 — your angle, encouraging tone, no placings. Seven Elite FC kids fenced; for most it was their first tournament.",
+    "Next to the lead: Overheard on Reddit, Do You Need Fencing Shoes? (your thread, short ~72w, opinion not advice).",
+    "Page 2 feature: For the Parents, What a Rating Letter Means, the larger version you asked to be reminded about (~220 words). Pairs with First Bouts (every A started at U). Still your call whether it runs this week.",
+    "Club: 8 Club Results rows (Senior Open + NYFA #1); Nearby Tournaments for Pizza (Nov 14–15) and Cobra (Nov 27–29, reprint optional); Deadlines (JO regular fee is Nov 11); short Winter Camp reminder.",
+    "Shorts: Epee on Screen (Dakar YOG epee Nov 10–11, Berne/Wuxi, Novi Sad, Vancouver), Photo from History 10 (Tímea Nagy). Five unidentified NYFA podium photos are offered as options — caption cannot name anyone. Optional college-season short and On the Road board still unvetted.",
+    "Fill: see the meter. Heavier than v1 now that Sunday's results are in."
   ]
 }

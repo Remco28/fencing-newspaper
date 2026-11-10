@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-10T07:56:00-05:00",
-  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos.",
+  "updated_at": "2026-11-10T13:42:00-05:00",
+  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos. 2026-11-10 PM: First Bouts angle (Frank chat); official Medeo YC #5 CSVs staged; NYFA Youth Cup #1 and Fencers Club Senior Open Club Results from FencingTracker event pages + club Mailchimp; Overheard on Reddit (tennis/court shoes) staged from Frank's PDF.",
   "items": [
     {
       "id": "pitch-for-parents-rating-letters-2026-11-02",
@@ -39,8 +39,8 @@
       "id": "pitch-medeo-yc5-next-gen-2026-11-05",
       "kind": "pitch",
       "section": "Feature",
-      "headline": "Next Generation at Medeo #5",
-      "summary": "Pitch (Frank chat 2026-11-05): short feature on Elite FC's big youth turnout at Medeo Youth Challenge #5 (Sun Nov 8) — \"the next generation,\" lots of Elite fencers on the board. Grounded in the existing signup row (9 entries / 9 fencers as of Nov 5 digest, data Nov 4 6:00 AM): Y12ME Samuel SarroWaite; Y12WE Christina Jiang; Y10 Mixed Ian Huang, Nora Li, Elle Peterfreund, Claire Widjaja, Roy Yoo; Y14ME Owen Li; Y14WE Mira Shukla. Roster check: already in people.json — Samuel SarroWaite, Christina Jiang, Nora Li, Owen Li; not yet on roster (print as listed) — Ian Huang, Elle Peterfreund, Claire Widjaja, Roy Yoo, Mira Shukla. Do NOT call anyone a \"debut\" in the draft without a FencingTracker / prior Elite FC results check; Christina Jiang already has a printed Medeo #3 result (5th, Issue No. 2) and a Nov 1 Fencers Club Youth Epee Cup bronze, so she is not a debut. About 150 words; can sit as a short Feature or fold into Club News beside the signup board.",
+      "headline": "First Bouts at Medeo #5",
+      "summary": "Pitch (Frank chat 2026-11-10, 'First Bouts,' encouraging tone): a short feature on Elite FC kids starting their competitive paths at Medeo Youth Challenge #5 (Medeo Fencing Club, Bound Brook, Sun. Nov. 8). Eight Elite FC fencers entered; seven actually fenced — Samuel SarroWaite (Y12 Mixed); Roy Yoo, Elle Peterfreund, Nora Li and Claire Widjaja (Y10 Mixed); Owen Li and Mira Shukla (Y14 Mixed). Ian Huang was entered in Y10 Mixed but has no result — do not say he fenced. Christina Jiang withdrew from Y12 (she fenced NYFA Youth Cup #1 the same day). Official events are mixed, per Medeo's result CSVs (not the gendered entry labels). Verified first posted tournament (FencingTracker history, Nov. 10, 1:30 PM ET): Samuel SarroWaite, Roy Yoo, Claire Widjaja, Mira Shukla, Nora Li. Second tournament: Elle Peterfreund, Owen Li. Phrase carefully (e.g. 'for most, their first tournament'). No placings, no pool records, never characterize results. None earned a rating (all still U). About 150 words; planned lead. Pairs naturally with the rating-letters For the Parents feature (every A started at U). Note: SHENOY Shankar V, 9th in Y12 Mixed, fences for Elite Fencing Academy — a different club, not ours.",
       "body": "",
       "word_count": 150,
       "planned_words": 150,
@@ -48,8 +48,8 @@
       "from": "frank",
       "target_week": "next",
       "vetted": true,
-      "facts_status": "entries verified via signup item email-agentmail-medeo-yc5-entries-2026-10-14 (Nov 5 digest). Debut/first-tournament claims NOT verified — do not print \"debut\" or \"first time\" for any of the 9 until checked against FencingTracker and prior Elite FC results in repo/issues. Known prior: Christina Jiang Medeo #3 5th (No. 2) + Fencers Club Youth Epee Cup Nov 1 3rd. Nora Li was prereg'd at Medeo #4. Others: no debut confirmation in repo. | 2026-11-09 daily pass: Christina Jiang dropped Medeo Y12WE (visible Sat Nov 7 digest, data as of Nov 7 6:00 AM; confirmed Mon Nov 9 digest, data as of Nov 8 6:00 PM). Board is now 8 Elite FC, not 9. She remains on NYFA Youth Cup #1 Y12WE the same day. Do not list her at Medeo.",
-      "vet_notes": "Frank chat 2026-11-05 (~9:27 AM ET after morning Medeo 8→9 note): \"Sounds like Medeo should get a feature of sorts. Lots of Elite fencers making their debut. The next generation.\" Vet = go-ahead to write the feature for No. 6 budget. Editorial angle from Frank (\"next generation\"); treat \"debut\" as his framing, not a verified fact — confirm per-fencer before compose. Related signup: email-agentmail-medeo-yc5-entries-2026-10-14. word_count is planned length for the fill estimate.\n[2026-11-09] Clark: results not posted as of Mon 9 AM ET; feature can run on entries alone (8 Elite FC fencers) or wait for results.\n[2026-11-10] Clark: club Mailchimp Nov 9 said \"we had a lot of kids participating in their very first competitions as well\" but listed only NYFA Youth Cup and Fencers Club Senior Open placements — no Medeo #5 results. Feature can still run on entries (8 Elite FC fencers) or wait. Christina Jiang's 5th at NYFA Y12 is a new printed-worthy result and she is not a debut (Medeo #3 5th + Nov 1 bronze already printed).",
+      "facts_status": "Entries and who fenced verified from official Medeo result CSVs Frank sent 2026-11-10 (Y10 Mixed 8, Y12 Mixed 12, Y14 Mixed 18) plus the signup row. Ian Huang entered, no result. Christina Jiang withdrew. First/second-tournament claims verified from FencingTracker history, Nov. 10, 1:30 PM ET, as listed in the summary. Do not print placings or pool records. Do not call SHENOY Shankar V (Elite Fencing Academy) one of ours.",
+      "vet_notes": "Frank chat 2026-11-05 (~9:27 AM ET after morning Medeo 8→9 note): \"Sounds like Medeo should get a feature of sorts. Lots of Elite fencers making their debut. The next generation.\" Vet = go-ahead to write the feature for No. 6 budget. Editorial angle from Frank (\"next generation\"); treat \"debut\" as his framing, not a verified fact — confirm per-fencer before compose. Related signup: email-agentmail-medeo-yc5-entries-2026-10-14. word_count is planned length for the fill estimate.\n[2026-11-09] Clark: results not posted as of Mon 9 AM ET; feature can run on entries alone (8 Elite FC fencers) or wait for results.\n[2026-11-10] Clark: club Mailchimp Nov 9 said \"we had a lot of kids participating in their very first competitions as well\" but listed only NYFA Youth Cup and Fencers Club Senior Open placements — no Medeo #5 results. Feature can still run on entries (8 Elite FC fencers) or wait. Christina Jiang's 5th at NYFA Y12 is a new printed-worthy result and she is not a debut (Medeo #3 5th + Nov 1 bronze already printed).\n[2026-11-10 1:38 PM ET] Frank chat: 'i would go with the \"first bouts\" angle and give it an encouraging tone.' Headline and angle updated. No placings in the feature (Club Results bar not met; results belong here only as the fact of showing up). Official CSVs in staging/weeks/next/sources/. Clark writes the feature once the budget is approved.",
       "slot_hint": "feature",
       "tags": [
         "feature",
@@ -57,12 +57,101 @@
         "medeo",
         "youth",
         "next-gen",
-        "related:email-agentmail-medeo-yc5-entries-2026-10-14"
+        "related:email-agentmail-medeo-yc5-entries-2026-10-14",
+        "first-bouts",
+        "related:ft-nyfa-youth-cup1-results-2026-11-08"
       ],
       "created_at": "2026-11-05T09:28:13-05:00",
       "vetted_at": "2026-11-05T09:28:13-05:00",
       "vetted_by": "frank",
-      "updated_at": "2026-11-10T07:56:00-05:00"
+      "updated_at": "2026-11-10T13:42:00-05:00",
+      "official_sources": [
+        "staging/weeks/next/sources/medeo-yc5-y10-mixed-results-2026-11-08.csv",
+        "staging/weeks/next/sources/medeo-yc5-y12-mixed-results-2026-11-08.csv",
+        "staging/weeks/next/sources/medeo-yc5-y14-mixed-results-2026-11-08.csv"
+      ],
+      "provenance": [
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-10T13:38:00-05:00",
+          "note": "Angle: 'First Bouts,' encouraging tone. No placings."
+        },
+        {
+          "type": "file",
+          "from": "frank",
+          "at": "2026-11-10T13:37:00-05:00",
+          "paths": [
+            "staging/weeks/next/sources/medeo-yc5-y10-mixed-results-2026-11-08.csv",
+            "staging/weeks/next/sources/medeo-yc5-y12-mixed-results-2026-11-08.csv",
+            "staging/weeks/next/sources/medeo-yc5-y14-mixed-results-2026-11-08.csv"
+          ],
+          "note": "Official Medeo YC #5 result CSVs Frank sent in chat (Y10 Mixed 8, Y12 Mixed 12, Y14 Mixed 18). Elite FC who fenced: Yoo 5, Peterfreund 6, Nora Li 7, Widjaja 8 (Y10); SarroWaite 12 (Y12); Owen Li 14, Shukla 18 (Y14). These places are recorded for the desk only — they do not print in the feature or in Club Results. SHENOY Shankar V (Elite Fencing Academy) is not ours. No Elite FC rating earned (all U)."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "retrieved_at": "2026-11-10T13:30:00-05:00",
+          "note": "First posted tournament (FT history): Samuel SarroWaite, Roy Yoo, Claire Widjaja, Mira Shukla, Nora Li. Second: Elle Peterfreund, Owen Li. Ian Huang has no result."
+        }
+      ]
+    },
+    {
+      "id": "reddit-rfencing-tennis-shoes-2026-11-08",
+      "kind": "overheard",
+      "section": "Overheard on Reddit",
+      "kicker": "OVERHEARD ON REDDIT",
+      "headline": "Overheard on Reddit: Do You Need Fencing Shoes?",
+      "body": "A beginner asked r/Fencing whether tennis shoes work as well as fencing shoes, at about half the price. r/Fencing commenters said the usual recommendation is indoor court shoes — squash or volleyball, a common example being ASICS Gel Rocket — and that entry fencing shoes, at about $80 to $100, wear out in a year or two. Some epee fencers prefer tennis shoes on aluminum strips. That's the commenters' opinion, not advice.",
+      "word_count": 72,
+      "source": "reddit",
+      "url": "https://www.reddit.com/r/Fencing/comments/1xr4rjt/are_tennis_shoes_just_the_default_recommendation/",
+      "thread": {
+        "subreddit": "r/Fencing",
+        "title": "Are tennis shoes just the default recommendation for fencing?",
+        "posted": "~2026-11-08",
+        "captured_at": "2026-11-10T13:33:00-05:00",
+        "pdf_pages": 6,
+        "comments_visible": "31 listed on the capture"
+      },
+      "from": "frank",
+      "requested": "Frank chat 2026-11-10 1:39 PM ET (t193u): sent the thread PDF; vetted it as the source; noted it's light on content.",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-10T13:39:00-05:00",
+      "idea_vetted": true,
+      "idea_vetted_by": "frank",
+      "idea_vetted_at": "2026-11-10T13:39:00-05:00",
+      "facts_status": "opinion only; no factual claims that need a rulebook check. Prices and the ASICS Gel Rocket example are attributed to r/Fencing commenters.",
+      "vet_notes": "Frank sent the r/Fencing PDF (captured Nov 10, 1:33 PM ET; thread ~Nov 8) and vetted it as the source. He noted it's light on content, so this is a short (~72w), under the section's typical 130–170w. House rules: no Reddit usernames; attribute as 'r/Fencing commenters'; labeled as opinion, not advice. Text is Clark's paraphrase for the budget; Frank can still cut or hold it. Slot it near First Bouts — useful to new families buying gear.",
+      "house_rules": "no usernames; attribute as 'r/Fencing commenters'; opinion, not advice",
+      "opinions_attributed": [
+        "consensus: indoor court shoes (squash/volleyball; e.g. ASICS Gel Rocket) work fine at about half the price of fencing shoes",
+        "entry fencing shoes ~$80–100 and wear out in a year or two",
+        "some epee fencers prefer tennis shoes on aluminum strips"
+      ],
+      "slot_hint": "overheard",
+      "suggested_slot": "overheard",
+      "tags": [
+        "overheard-reddit",
+        "reddit",
+        "gear",
+        "shoes",
+        "frank-idea"
+      ],
+      "provenance": [
+        {
+          "type": "reddit",
+          "note": "r/Fencing post 'Are tennis shoes just the default recommendation for fencing?' (~Nov 8, 2026; shown '2d ago' on a Nov 10 1:33 PM ET capture). PDF uploaded by Frank.",
+          "url": "https://www.reddit.com/r/Fencing/comments/1xr4rjt/are_tennis_shoes_just_the_default_recommendation/",
+          "local_copy": "staging/weeks/next/sources/reddit-rfencing-tennis-shoes-2026-11-08.pdf",
+          "text_extract": "staging/weeks/next/sources/reddit-rfencing-tennis-shoes-2026-11-08.txt",
+          "retrieved_at": "2026-11-10T13:39:00-05:00"
+        }
+      ],
+      "created_at": "2026-11-10T13:42:00-05:00",
+      "updated_at": "2026-11-10T13:42:00-05:00"
     },
     {
       "id": "chat-winter-camp-reminder",
@@ -642,7 +731,7 @@
       "vet_notes": "Allowlisted sender (chunkymonkey). Auto-vetted on ingest. New names vs roster: Samuel SarroWaite, Nora Li, Owen Li — flag for Frank before print. Wanglei Oct 25 Cadet/Junior and Nov 8 Senior listed in same digest with nobody signed up — not staged.",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5 board (8 entries). Event Sun Nov 8 is before No. 6: now a results watch for Club Results (bar per CONTENT-HIERARCHY).",
-      "updated_at": "2026-11-10T07:56:00-05:00",
+      "updated_at": "2026-11-10T13:42:00-05:00",
       "carried_at": "2026-11-03T15:20:00-05:00",
       "rechecks": [
         {
@@ -652,7 +741,7 @@
           "note": "Medeo YC #5: 8 entries, unchanged per chunkymonkey digest Nov 4 (data as of Nov 4 6:00 AM)."
         }
       ],
-      "results_watch": "Nov 10 7:56 AM ET: still no Medeo YC #5 results. Not listed in the club's Nov 9 congrats email (that mail covered NYFA Youth Cup and Fencers Club Senior Open only). FencingTracker club page still shows Ultimate Cup RJCC as newest; fencing-api cached club-results since Nov 7 returned 0 rows."
+      "results_watch": "Nov 10 1:37 PM ET: official Medeo result CSVs from Frank confirm seven Elite FC finishers (Ian Huang entered, no result). Places are below the Club Results bar and do not print as rows — they belong in the First Bouts feature only (no placings in that piece either). None earned a rating. CSVs: staging/weeks/next/sources/medeo-yc5-y{10,12,14}-mixed-results-2026-11-08.csv."
     },
     {
       "id": "desk-deadlines-2026-10-18",
@@ -1073,7 +1162,7 @@
       "carried_from": "staging/weeks/2026-11-03",
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Ran in No. 5 board. Event Sun Nov 8 is before No. 6: now a results watch for Club Results.",
-      "updated_at": "2026-11-10T07:56:00-05:00",
+      "updated_at": "2026-11-10T13:42:00-05:00",
       "rechecks": [
         {
           "at": "2026-11-04T07:59:00-05:00",
@@ -1082,7 +1171,7 @@
           "note": "NYFA Youth Cup #1: 6 entries, unchanged per chunkymonkey digest Nov 4 (data as of Nov 4 6:00 AM)."
         }
       ],
-      "results_watch": "Nov 10 7:56 AM ET: club Mailchimp (Mon Nov 9 10:44 AM ET) published placements — Madeline Siu 3rd Y8; Maximus Siu 8th Y10; Remy Ng 8th Y12; Christina Jiang 5th Y12; Mila Siu 5th Y14; Stella Kuo 6th Y14. Staged as email-mailchimp-congrats-2026-11-09 (auto-vetted). Bryce Cheng (entered Y10 Mixed) was not named. FencingTracker club page still has no NYFA results (newest tournament remains Ultimate Cup RJCC). Field sizes unknown until an event page posts."
+      "results_watch": "Nov 10 1:25–1:31 PM ET: FencingTracker event pages confirm the club Mailchimp placements and give field sizes. Staged as ft-nyfa-youth-cup1-results-2026-11-08. Bryce Cheng 14th of 17 in Y10 Mixed is below the local bar (top 8) and is omitted. Event titles as on the official/FT event pages."
     },
     {
       "id": "email-agentmail-pizza-ryc-entries-2026-10-27",
@@ -1266,7 +1355,7 @@
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-11-06T07:55:28-05:00",
       "created_at": "2026-11-06T07:55:28-05:00",
-      "updated_at": "2026-11-10T07:56:00-05:00",
+      "updated_at": "2026-11-10T13:42:00-05:00",
       "entries_last_confirmed": "2026-11-09T08:00:28-05:00",
       "board": "Nearby Tournaments",
       "slot_hint": "signup",
@@ -1314,7 +1403,7 @@
         }
       ],
       "entries_count": "3 fencers / 3 entries",
-      "results_watch": "Nov 10 7:56 AM ET: club Mailchimp (Mon Nov 9 10:44 AM ET) published placements — Maksim Milinkovic 7th and Nico Ng 8th (email: \"Maks Milinkovic\"; print Maksim via roster). Staged as email-mailchimp-congrats-2026-11-09 (auto-vetted). Skanda Krishnan was entered and was not named. FencingTracker club page still has no Fencers Club Open results. Field size unknown."
+      "results_watch": "Nov 10 1:25–1:31 PM ET: FencingTracker /event/44514 confirms the club Mailchimp placements and field size. Staged as ft-fencers-club-senior-open-results-2026-11-08. Mixed Epee, 31 finishers, A2. Maksim 7th and Nico 8th (each won T32 and T16 DEs; no new ratings, both still A26). Skanda Krishnan was entered but has no result — omit."
     },
     {
       "id": "email-mailchimp-congrats-2026-11-09",
@@ -1325,7 +1414,7 @@
         {
           "claim": "Madeline Siu 3rd Y8; Maximus Siu 8th Y10; Remy Ng 8th Y12; Christina Jiang 5th Y12; Mila Siu 5th Y14; Stella Kuo 6th Y14 at NYFA Youth Cup #1 (Nov. 8)",
           "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
-          "status": "verified-email (club Mailchimp allowlist); not yet on FencingTracker as of 2026-11-10 7:54 AM ET. Event letters match the staged NYFA signup row (Y8 Mixed, Y10 Mixed, Y12ME, Y12WE, Y14WE)."
+          "status": "verified-email (club Mailchimp allowlist); confirmed on FencingTracker event pages 2026-11-10 1:25–1:31 PM ET (field sizes now known). Event letters match the staged NYFA signup row (Y8 Mixed, Y10 Mixed, Y12ME, Y12WE, Y14WE)."
         },
         {
           "claim": "Maksim Milinkovic 7th and Nico Ng 8th at Fencers Club Senior Open (Nov. 8)",
@@ -1357,7 +1446,7 @@
       "vetted_by": "auto-club-mailchimp",
       "vetted_at": "2026-11-10T07:56:00-05:00",
       "created_at": "2026-11-10T07:56:00-05:00",
-      "updated_at": "2026-11-10T07:56:00-05:00",
+      "updated_at": "2026-11-10T13:42:00-05:00",
       "provenance": [
         {
           "type": "email",
@@ -1414,7 +1503,182 @@
         "results",
         "photos"
       ],
-      "vet_notes": "Allowlisted sender (club Mailchimp); facts auto-vetted. These are the first posted Nov 8 results — FencingTracker and fencing-api still show nothing for NYFA Youth Cup #1, Fencers Club Open, or Medeo YC #5. No field sizes. Club highlighted these placements only (not a complete results dump). Photos: club's own channel (coach-approved source); five NYFA podium shots staged for the photo desk. Do not caption named fencers onto a photo unless Frank IDs them. Budget v1 (Mon Nov 9) was built before this mail arrived; Club Results / photos would change the No. 6 lineup."
+      "vet_notes": "Allowlisted sender (club Mailchimp); facts auto-vetted. These are the first posted Nov 8 results — FencingTracker and fencing-api still show nothing for NYFA Youth Cup #1, Fencers Club Open, or Medeo YC #5. No field sizes. Club highlighted these placements only (not a complete results dump). Photos: club's own channel (coach-approved source); five NYFA podium shots staged for the photo desk. Do not caption named fencers onto a photo unless Frank IDs them. Budget v1 (Mon Nov 9) was built before this mail arrived; Club Results / photos would change the No. 6 lineup.\n[2026-11-10 1:25–1:31 PM ET] FencingTracker event pages now confirm placements and supply field sizes / event class. Club Results staged as ft-nyfa-youth-cup1-results-2026-11-08 and ft-fencers-club-senior-open-results-2026-11-08. Podium photos remain unidentified — offer as a photo option with an uncaptioned / non-naming caption."
+    },
+    {
+      "id": "ft-fencers-club-senior-open-results-2026-11-08",
+      "kind": "result_set",
+      "headline": "Fencers Club Senior Open (Nov. 8): Maksim Milinkovic 7th and Nico Ng 8th in Mixed Epee",
+      "body": "Fencers Club Senior Open, Fencers Club Inc., New York, N.Y., Sun Nov 8, 2026. Mixed Epee, 31 finishers, event class A2 (FencingTracker /event/44514). Local event: top 8 prints. Maksim Milinkovic 7th of 31 and Nico Ng 8th of 31; each won a table-of-32 and a table-of-16 elimination bout. No new ratings (both still A26). Skanda Krishnan was entered but has no result — omit (no 'also fenced' line).",
+      "source": "web+email",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "clark (Mailchimp allowlist + FencingTracker /event/44514)",
+      "vetted_at": "2026-11-10T13:31:00-05:00",
+      "vet_notes": "Placements first published in the club Mailchimp (email: 'Maks Milinkovic'; print Maksim via roster), auto-vetted as email-mailchimp-congrats-2026-11-09. Field size (31), event class A2, and DE path (each won T32 and T16) confirmed on FencingTracker /event/44514, Nov 10, 1:25–1:31 PM ET. Local top-8 bar cleared. Names as on the roster.",
+      "facts": [
+        {
+          "claim": "Maksim Milinkovic 7th of 31, Mixed Epee, Fencers Club Senior Open (Nov. 8), A2; won T32 and T16; still A26",
+          "source": "https://fencingtracker.com/event/44514",
+          "status": "verified-web 2026-11-10 1:25–1:31 PM ET; also club Mailchimp"
+        },
+        {
+          "claim": "Nico Ng 8th of 31, Mixed Epee; won T32 and T16; still A26",
+          "source": "https://fencingtracker.com/event/44514",
+          "status": "verified-web 2026-11-10 1:25–1:31 PM ET; also club Mailchimp"
+        },
+        {
+          "claim": "Skanda Krishnan entered, no result — omit",
+          "source": "signup row + FencingTracker /event/44514 finishers",
+          "status": "no result posted"
+        }
+      ],
+      "table_rows": [
+        [
+          "Maksim Milinkovic",
+          "Fencers Club Senior Open, Mixed Epee (Nov. 8)",
+          "7th of 31"
+        ],
+        [
+          "Nico Ng",
+          "Fencers Club Senior Open, Mixed Epee (Nov. 8)",
+          "8th of 31"
+        ]
+      ],
+      "suggested_slot": "club_results",
+      "slot_hint": "club_results",
+      "tags": [
+        "club",
+        "results",
+        "local",
+        "senior",
+        "fencers-club-open"
+      ],
+      "provenance": [
+        {
+          "type": "email",
+          "source": "email-mailchimp-congrats-2026-11-09",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "note": "Club newsletter first posted 7th and 8th; no field size."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/event/44514",
+          "retrieved_at": "2026-11-10T13:25:00-05:00",
+          "note": "Mixed Epee, 31 finishers, A2; Maksim 7th, Nico 8th; each won T32 and T16 DEs; no new ratings."
+        }
+      ],
+      "created_at": "2026-11-10T13:42:00-05:00",
+      "updated_at": "2026-11-10T13:42:00-05:00"
+    },
+    {
+      "id": "ft-nyfa-youth-cup1-results-2026-11-08",
+      "kind": "result_set",
+      "headline": "NYFA Youth Cup #1 (Nov. 8): six Elite FC finishes print under the local bar",
+      "body": "NYFA Youth Cup #1, New York Fencing Academy, Brooklyn, N.Y., Sun Nov 8, 2026. Local event: top 8 prints; small fields (under ~16) need top 8 or a medal; a medal always prints. Printing: Madeline Siu, tied for 3rd of 4, Y8 Mixed Epee (medal); Maximus Siu, 8th of 17, Y10 Mixed Epee; Remy Ng, 8th of 13, Y12 Men's Epee; Christina Jiang, 5th of 9, Y12 Women's Epee; Mila Siu, 5th of 10, and Stella Kuo, 6th of 10, Y14 Women's Epee. Below the bar (not printed; no 'also fenced' line): Bryce Cheng, 14th of 17, Y10 Mixed Epee. Event titles as on the official pages. No ratings earned.",
+      "source": "web+email",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "clark (Mailchimp allowlist + FencingTracker event pages; field sizes from FT)",
+      "vetted_at": "2026-11-10T13:31:00-05:00",
+      "vet_notes": "Placements first published in the club Mailchimp 'Group Class + Congrats!' (Mon Nov 9, 10:44 AM ET), auto-vetted as email-mailchimp-congrats-2026-11-09. Field sizes, ties and event titles confirmed on FencingTracker event pages fetched Nov 10, 1:25–1:31 PM ET. Local inclusion bar applied. Names as on the roster and official pages. Madeline's 3rd is a tie (two bronzes, no fence-off) in a field of 4 — prints because it is a medal.",
+      "facts": [
+        {
+          "claim": "Madeline Siu T3 of 4, Y8 Mixed Epee, NYFA Youth Cup #1 (Nov. 8)",
+          "source": "club Mailchimp + FencingTracker event page",
+          "status": "verified-web 2026-11-10 1:25–1:31 PM ET; medal"
+        },
+        {
+          "claim": "Maximus Siu 8th of 17, Y10 Mixed Epee",
+          "source": "club Mailchimp + FencingTracker event page",
+          "status": "verified-web; local top 8"
+        },
+        {
+          "claim": "Remy Ng 8th of 13, Y12 Men's Epee",
+          "source": "club Mailchimp + FencingTracker event page",
+          "status": "verified-web; local top 8 (field under ~16, still top 8)"
+        },
+        {
+          "claim": "Christina Jiang 5th of 9, Y12 Women's Epee",
+          "source": "club Mailchimp + FencingTracker event page",
+          "status": "verified-web; local top 8"
+        },
+        {
+          "claim": "Mila Siu 5th of 10, Y14 Women's Epee",
+          "source": "club Mailchimp + FencingTracker event page",
+          "status": "verified-web; local top 8"
+        },
+        {
+          "claim": "Stella Kuo 6th of 10, Y14 Women's Epee",
+          "source": "club Mailchimp + FencingTracker event page",
+          "status": "verified-web; local top 8"
+        },
+        {
+          "claim": "Bryce Cheng 14th of 17, Y10 Mixed Epee — omit",
+          "source": "FencingTracker event page",
+          "status": "verified-web; below local top-8 bar"
+        }
+      ],
+      "table_rows": [
+        [
+          "Madeline Siu",
+          "NYFA Youth Cup #1, Y8 Mixed (Nov. 8)",
+          "3rd of 4"
+        ],
+        [
+          "Maximus Siu",
+          "NYFA Youth Cup #1, Y10 Mixed (Nov. 8)",
+          "8th of 17"
+        ],
+        [
+          "Remy Ng",
+          "NYFA Youth Cup #1, Y12 Men (Nov. 8)",
+          "8th of 13"
+        ],
+        [
+          "Christina Jiang",
+          "NYFA Youth Cup #1, Y12 Women (Nov. 8)",
+          "5th of 9"
+        ],
+        [
+          "Mila Siu",
+          "NYFA Youth Cup #1, Y14 Women (Nov. 8)",
+          "5th of 10"
+        ],
+        [
+          "Stella Kuo",
+          "NYFA Youth Cup #1, Y14 Women (Nov. 8)",
+          "6th of 10"
+        ]
+      ],
+      "suggested_slot": "club_results",
+      "slot_hint": "club_results",
+      "tags": [
+        "club",
+        "results",
+        "local",
+        "youth",
+        "nyfa"
+      ],
+      "provenance": [
+        {
+          "type": "email",
+          "source": "email-mailchimp-congrats-2026-11-09",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
+          "retrieved_at": "2026-11-10T07:56:00-05:00",
+          "note": "Club newsletter first posted these placements; no field sizes."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "retrieved_at": "2026-11-10T13:25:00-05:00",
+          "note": "Event pages fetched Nov 10, 1:25–1:31 PM ET: field sizes, tie for 3rd in Y8 Mixed of 4, and the six printed finishes plus Cheng 14/17."
+        }
+      ],
+      "created_at": "2026-11-10T13:42:00-05:00",
+      "updated_at": "2026-11-10T13:42:00-05:00"
     },
     {
       "id": "history-photo-10-timea-nagy",
