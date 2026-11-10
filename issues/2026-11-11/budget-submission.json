@@ -1,0 +1,236 @@
+{
+  "publishDate": "2026-11-11",
+  "practice": false,
+  "pretend": false,
+  "targetWeek": "next",
+  "issue": {
+    "number": 6,
+    "label": "Issue No. 6",
+    "week": "Week of Nov. 9, 2026"
+  },
+  "includedSlots": [
+    {
+      "slot": "lead",
+      "name": "Lead story — First Bouts at Medeo #5",
+      "headline": "First Bouts at Medeo #5",
+      "itemId": "pitch-medeo-yc5-next-gen-2026-11-05",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "overheard-reddit",
+      "name": "Overheard on Reddit — Do You Need Fencing Shoes?",
+      "headline": "Overheard on Reddit: Do You Need Fencing Shoes?",
+      "itemId": "reddit-rfencing-tennis-shoes-2026-11-08",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "overheard",
+      "name": "Page 2 feature — For the Parents: What a Rating Letter Means",
+      "headline": "For the Parents: What a Rating Letter Means",
+      "itemId": "pitch-for-parents-rating-letters-2026-11-02",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tournament-day",
+      "name": "Page 2 visual — Tournament Day",
+      "headline": "Tournaments",
+      "itemId": "frank-tournament-day-cartoon-2026-11-10",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-results",
+      "name": "Club results",
+      "headline": "Club results",
+      "itemId": "ft-fencers-club-senior-open-results-2026-11-08",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup",
+      "name": "Nearby Tournaments — Pizza RYC/RJCC",
+      "headline": "Pizza RYC/RJCC — New Haven, Conn., Nov. 14–15",
+      "itemId": "email-agentmail-pizza-ryc-entries-2026-10-27",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-4",
+      "name": "Nearby Tournaments — Cobra Challenge",
+      "headline": "Cobra Challenge SYC/RCC — Secaucus, N.J., Nov. 27–29",
+      "itemId": "fencingapi-cobra-efc-entries-2026-10-19",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-local",
+      "name": "Nearby Tournaments — also on the calendar",
+      "headline": "Also on the Calendar",
+      "itemId": "email-agentmail-nov14-15-local-calendar-2026-11-10",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "on-the-road",
+      "name": "On the road — travel entries",
+      "headline": "On the Road",
+      "itemId": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines box",
+      "headline": "Deadlines box — No. 6",
+      "itemId": "desk-deadlines-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tv",
+      "name": "Epee on Screen",
+      "headline": "Epee on Screen — No. 6",
+      "itemId": "desk-epee-on-screen-2026-10-18",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "camp",
+      "name": "Club events — Winter Camp",
+      "headline": "Winter Camp: Sign Up Now",
+      "itemId": "chat-winter-camp-reminder",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "classes",
+      "name": "Weekly classes table",
+      "headline": "Elite FC weekly class schedule (club website)",
+      "itemId": "web-efc-standing-schedule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "photo-history",
+      "name": "Photo from History",
+      "headline": "Photo from History: 2000–2004 — Back-to-back in Sydney and Athens",
+      "itemId": "history-photo-10-timea-nagy",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "secondary-a",
+      "name": "Secondary — College season opens",
+      "headline": "College Season Opens Next Door",
+      "itemId": "x-college-season-opens-2026-11-09",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "by-the-book",
+      "name": "By the Book",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ high-school roundup",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "qa",
+      "name": "Parent Q&A",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "comic",
+      "name": "Comic",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    }
+  ],
+  "photoIncludes": [
+    "media-nyfa-youth-cup1-podium-4-2026-11-08"
+  ],
+  "notes": "I included a photo from the Newsletter.  One of the kids in there is Maximus Siu.  We should feature him because he gets no coverage and he hardly competes.  I forgot what he finished at NYFA though.\n\nWe'll include all of last weekend's results if they're worthy.  Mention that our club was well represented in tournaments and that we hope to see more and more Elite kids at events. Something like that.  Try not to be too pushy about it, just encouragment.",
+  "slotNotes": {
+    "on-the-road": "The staging text is a bit hard for me to parse, at least in this format.\n\nWe should probably include November NAC and Keifer Meinhardt.  Those seem to be bigger events."
+  },
+  "answers": [
+    {
+      "slot": "lead",
+      "itemId": "pitch-medeo-yc5-next-gen-2026-11-05",
+      "question": "Sunday's results are in (Maksim 7th and Nico 8th at the Senior Open; six NYFA Youth Cup rows). Keep First Bouts as the lead, or lead with the Senior Open instead?",
+      "answer": "Let's give attention to the newer kids.  Nico and Max get enough coverage."
+    },
+    {
+      "slot": "lead",
+      "itemId": "pitch-medeo-yc5-next-gen-2026-11-05",
+      "question": "Wait for Sunday's results before writing (publish Wed), or write it from the entries now?",
+      "answer": "We can write from entries now."
+    },
+    {
+      "slot": "overheard",
+      "itemId": "pitch-for-parents-rating-letters-2026-11-02",
+      "question": "This week as the page-2 feature, or hold another week?",
+      "answer": "we can include it unless we need the space."
+    },
+    {
+      "slot": "tournament-day",
+      "itemId": "frank-tournament-day-cartoon-2026-11-10",
+      "question": "The Comic section rule is 'Frank no byline.' There is no separate rule for AI-assisted art. Proposed credit: 'Illustration: Nico's Dad.' Accept that line, drop the credit, or reword it to mention AI?",
+      "answer": "No need for a byline or caption.  I think it speaks for itself.  I'm not going to have the image redrawn for the tennis racket looking mask.  just leave it alone."
+    },
+    {
+      "slot": "signup-local",
+      "itemId": "email-agentmail-nov14-15-local-calendar-2026-11-10",
+      "question": "You called these 'local events for older kids.' That fits Freehold's Senior Open and Wanglei's Cadet/Junior events, but Revolution is Y10, Y12 and Y14. The copy describes each by its actual age groups and applies 'older fencers' only to the Sunday pair. OK, or rephrase?",
+      "answer": "okay to rephrase."
+    }
+  ],
+  "order": [
+    "lead",
+    "overheard-reddit",
+    "overheard",
+    "tournament-day",
+    "club-results",
+    "signup",
+    "signup-4",
+    "signup-local",
+    "on-the-road",
+    "deadlines",
+    "camp",
+    "classes",
+    "tv",
+    "photo-history",
+    "secondary-a"
+  ],
+  "pageVersion": "budget-standalone-v2",
+  "submittedAt": "2026-11-10T16:21:00-05:00",
+  "vets": [
+    {
+      "id": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+      "vet_notes": ""
+    }
+  ],
+  "clientSubmittedAt": "2026-11-10T16:19:56-05:00"
+}

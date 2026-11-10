@@ -72,7 +72,7 @@
       "kind": "photo",
       "filename": "nyfa-youth-cup1-podium-4-2026-11-08.jpg",
       "media_path": "staging/weeks/next/media/nyfa-youth-cup1-podium-4-2026-11-08.jpg",
-      "caption": "Podium photograph from the club's Nov. 9 newsletter covering NYFA Youth Cup #1 (Nov. 8). NYFA banners visible. The email does not identify who is pictured.",
+      "caption": "Maximus Siu, 8th of 17 in Y10, is among the finalists pictured at NYFA Youth Cup #1.",
       "source": "email",
       "from": "elitefencersclub@111617670.mailchimpapp.com",
       "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261109154432.3a5cf54b51.9ab47f98@mail150.atl241.mcsv.net>",
@@ -82,7 +82,10 @@
       "vetted_by": "auto-club-mailchimp",
       "vetted_at": "2026-11-10T07:56:00-05:00",
       "parent_item_id": "email-mailchimp-congrats-2026-11-09",
-      "note": "640x480; EXIF orientation 3 (180°) honored and saved upright-as-EXIF. Converted from iPhone MPO to JPEG. EXIF DateTimeOriginal 2026-11-08 11:52:30 ET."
+      "note": "640x480; EXIF orientation 3 (180°) honored and saved upright-as-EXIF. Converted from iPhone MPO to JPEG. EXIF DateTimeOriginal 2026-11-08 11:52:30 ET.",
+      "alt_text": "A group of young fencers with medals, and two adults, standing in front of New York Fencing Academy banners after NYFA Youth Cup #1.",
+      "caption_note": "Frank confirmed Maximus Siu is in the photo and asked that he be featured. 8th of 17 in Y10 Mixed at NYFA Youth Cup #1 (FencingTracker, Nov. 10). Other people in the photo are not named; the caption does not point to a position. Frank’s private remarks (‘gets no coverage’, ‘hardly competes’) are not printed.",
+      "updated_at": "2026-11-10T16:28:00-05:00"
     },
     {
       "id": "media-nyfa-youth-cup1-podium-5-2026-11-08",
@@ -106,9 +109,9 @@
       "kind": "illustration",
       "filename": "tournament-day-cartoon.png",
       "media_path": "staging/weeks/next/media/tournament-day-cartoon.png",
-      "caption": "A first tournament day, clockwise from the evening sign-up: packing, an early start, the drive, check-in, bouting, and the ride home.",
-      "credit": "Illustration: Nico's Dad",
-      "credit_status": "proposed — Comic section rule is 'Frank no byline'; flagged as a question on the budget",
+      "caption": "",
+      "credit": "",
+      "credit_status": "none — Frank, budget submission 2026-11-10 4:19 PM ET: no byline and no caption",
       "source": "frank",
       "from": "frank",
       "w": 1536,
@@ -117,7 +120,8 @@
       "vetted_by": "frank",
       "vetted_at": "2026-11-10T15:49:00-05:00",
       "parent_item_id": "frank-tournament-day-cartoon-2026-11-10",
-      "note": "1536x1024 landscape (3:2), black-and-white newspaper-comic. Title lettered 'Tournaments'. No real names. Made by Frank with AI image generation (three passes; first sent 3:25 PM ET, re-sent 3:49 PM ET). Packing scene: the bag holds something that looks like a tennis racket; Frank may replace it, not a blocker."
+      "note": "1536x1024 landscape (3:2), black-and-white newspaper-comic. Title lettered ‘Tournaments’. No real names. Made by Frank with AI image generation (three passes; first sent 3:25 PM ET, re-sent 3:49 PM ET). Packing-scene bag looks like it holds a tennis racket; Frank said leave it alone, not redrawn.",
+      "updated_at": "2026-11-10T16:28:00-05:00"
     }
   ]
 }

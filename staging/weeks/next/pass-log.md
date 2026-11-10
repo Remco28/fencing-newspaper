@@ -89,3 +89,15 @@
 - Known flaw noted (not a blocker): in the packing scene the bag holds something that looks like a tennis racket; Frank may replace it.
 - Credit question on the budget: Comic section rule is "Frank no byline"; proposed line is "Illustration: Nico's Dad."
 - Chat decision #5 recorded. Budget v4 rebuilt. No compose.
+
+## 2026-11-10, 4:21–4:30 PM ET — budget v5 (Frank’s submission) and proof v1 compose
+
+Frank submitted the No. 6 budget JSON at 4:19 PM ET (`practice: false`, publish Wednesday Nov. 11). Copied to `budget-demo/submissions/inbox/budget-submission-no-6-2026-11-11.json`. Dry-ran then applied `scripts/ingest_budget_submission.py` (`--now 2026-11-10T16:21:00-05:00`): decision #6, On the Road vetted, approvals written (gitignored).
+
+Honored the submission: First Bouts lead written (seven named, no placings, first tournament for most, Ian Huang not described as having fenced); Club Results eight rows plus a light encouragement boxnote; NYFA podium-4 photo in with a Maximus Siu caption (8th of 17 in Y10; no other names; private remarks not printed); Overheard shoes in; For the Parents written from the 2026–27 Athlete Handbook §2.1 and included; Tournament Day cartoon in with no byline or caption, racket left alone, ‘may replace’ notes dropped; Also on the Calendar rephrased as approved; On the Road rewritten for November NAC and Kiefer Meinhardt from official USA Fencing entries (fencing-api live, 4:25–4:26 PM ET — same counts as the Nov. 9 FencingTracker pass). Excluded: Winter Camp, classes table, Photo from History, college season. Order as submitted.
+
+On the Road check: Kiefer Meinhardt Cup (USFA 12117) — Stella Kuo, Mila Siu, Y14WE Sat / Y12WE Sun, all approved. November NAC (USFA 12316, official dates Nov. 20–23) — Anayaa Sheth (official list: Sheth, Anayaà) JNRWE Fri; Nico Ng CDTME Sat; Athreya Aravind and Nico Ng JNRME Sun, all approved, club field Elite Fencers Club. Athreya is not on the club roster; flagged. Printed Anayaa Sheth per the roster house form.
+
+Budget v5 built from this lineup. Proof v1 composed the same evening (real submission is the compose go-ahead, as with No. 5).
+
+Proof v1 rendered clean at 4:35 PM ET: 2 pages, no layout FLAGs (p1 gap 0.18in, p2 gap 0.27in, row-1 spread 0.32in). PDF Author Nico's Dad. File issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf.

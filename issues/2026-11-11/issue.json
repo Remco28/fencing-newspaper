@@ -1,0 +1,71 @@
+{
+ "issue": 6,
+ "vol": "I",
+ "date": "2026-11-11",
+ "dateline": "Wednesday Edition · Vol. I — No. 6 · Chatham, N.J. · November 11, 2026",
+ "status": "PROOF v1 — awaiting Frank's answers and approval. Not for print until approved.",
+ "proof_version": 1,
+ "proof_history": [
+  {
+   "v": 1,
+   "at": "2026-11-10T16:35:00-05:00",
+   "note": "First proof from budget v5 (decision #6, Frank's standalone budget submission 2026-11-10 4:19 PM ET, practice:false)."
+  }
+ ],
+ "composed_at": "2026-11-10T16:35:00-05:00",
+ "approval": null,
+ "pdf": "issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf",
+ "previews": [
+  "issues/2026-11-11/preview-p1.png",
+  "issues/2026-11-11/preview-p2.png"
+ ],
+ "pdf_metadata": {
+  "Title": "En Garde Gazette — Vol. I No. 6 — November 11, 2026",
+  "Author": "Nico's Dad"
+ },
+ "build": "python3 issues/2026-11-11/recipe/compose.py x && python3 prototype/render.py issues/2026-11-11/issue.html issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf --author=\"Nico's Dad\"",
+ "pages": {
+  "1": [
+   "Lead: First Bouts at Medeo #5 (seven named; first tournament for most; no placings; Ian Huang not described as having fenced)",
+   "Overheard on Reddit: Do You Need Fencing Shoes?",
+   "Club Results (8 rows: Senior Open Maksim 7th / Nico 8th of 31; NYFA Youth Cup #1 six rows) plus a light encouragement boxnote",
+   "Photo: NYFA Youth Cup #1 group, caption featuring Maximus Siu, 8th of 17 in Y10",
+   "Deadlines (JO regular-fee today; Jan. 8 N.J. high school independents)",
+   "Epee on Screen (Dakar men's epee today; Berne/Wuxi; Novi Sad; Vancouver)",
+   "On the Road: Kiefer Meinhardt Cup (Stella Kuo, Mila Siu) and November NAC (Anayaa Sheth, Nico Ng, Athreya Aravind)"
+  ],
+  "2": [
+   "Nearby Tournaments: Pizza RYC/RJCC (Nov. 14–15) and Cobra Challenge SYC/RCC (Nov. 27–29)",
+   "Also on the Calendar: Revolution (Y10/Y12/Y14, Saturday), Freehold Senior Open and Wanglei Cadet/Junior (Sunday)",
+   "For the Parents: What a Rating Letter Means (from the 2026–27 Athlete Handbook §2.1)",
+   "Tournaments cartoon (no byline, no caption)"
+  ]
+ },
+ "cut": [
+  "Winter Camp reminder — out per budget",
+  "Weekly classes table — out per budget",
+  "Photo from History 10 (Tímea Nagy) — out per budget",
+  "College Season Opens Next Door — out per budget",
+  "By the Book, NJ high-school, Parent Q&A — empty this week",
+  "Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) — held; On the Road is NAC + Kiefer Meinhardt only",
+  "Medeo placements — not printed (First Bouts names only; below the Club Results bar)",
+  "Nov. 10 Youth Olympic Games women's epee — dropped, past by a Wednesday paper"
+ ],
+ "pending_frank": [
+  "Athreya Aravind is listed as Elite Fencers Club on the official November NAC Junior Men entry list (approved, USA Fencing tournament 12316, checked Nov. 10, 4:26 p.m. ET) but is not on the club roster yet. Printed as registered; confirm before print.",
+  "Junior Olympics regular-fee deadline is the publish day (Wednesday, Nov. 11, 11:59 p.m. Pacific).",
+  "Cartoon printed with no byline and no caption, packing-scene racket left as is, per the budget submission."
+ ],
+ "instruments": {
+  "p1_gap_in": 0.18,
+  "p2_gap_in": 0.27,
+  "row1_spread_in": 0.32,
+  "pages": 2
+ },
+ "words": {
+  "total": 980,
+  "p1": 550,
+  "p2": 430,
+  "note": "Approximate visible-copy counts, including boards and captions; furniture (masthead, dateline, footer) excluded from the rough split."
+ }
+}

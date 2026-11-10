@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-10T15:50:00-05:00",
+  "updated_at": "2026-11-10T16:28:00-05:00",
   "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos. 2026-11-10 PM: First Bouts angle (Frank chat); official Medeo YC #5 CSVs staged; NYFA Youth Cup #1 and Fencers Club Senior Open Club Results from FencingTracker event pages + club Mailchimp; Overheard on Reddit (tennis/court shoes) staged from Frank's PDF. 2026-11-10 3:30 PM ET: also-on-the-calendar note for three local Nov 14–15 events (Revolution Y10/12/14, Freehold November Open, Wanglei November Cup II) from the chunkymonkey digest and Frank's chat; Tournament Day cartoon staged (re-sent 3:49 PM ET) as a page-2 visual.",
   "items": [
     {
@@ -9,14 +9,14 @@
       "section": "For the Parents",
       "headline": "For the Parents: What a Rating Letter Means",
       "summary": "Pitch: a plain-words guide to USA Fencing ratings (A through E, U for unrated), what the year means (A26 = earned in 2026), how a fencer earns one (finish high enough at a big enough, strong enough event), and how long it lasts. Ties into Maksim's A26. About 110 words, sourced from USA Fencing's rules and Athlete Handbook.",
-      "body": "",
-      "word_count": 220,
+      "body": "A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U — unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026.\n\nRatings are earned, one weapon at a time, at USA Fencing-sanctioned competitions, from local events to national ones. What a competition can award depends on the size of the field and the ratings already in it. The official chart is in the USA Fencing Athlete Handbook (2026–27).\n\nA new rating is official only when it appears on USA Fencing’s membership list. It lasts four seasons. If it isn’t renewed in that time, it drops one letter at the start of the next season, on Aug. 1. A B earned in 2020 (B20) and not renewed became a C24 on Aug. 1, 2024.\n\nThe letter is a seeding tool, not a verdict. Every A in the club started as a U.",
+      "word_count": 160,
       "planned_words": 110,
       "source": "desk",
       "target_week": "next",
       "vetted": true,
-      "facts_status": "to research from reference/usa-fencing/ (Athlete Handbook 2026-27, Rules for Competition) before writing",
-      "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate. If the lead or Ratings Earned is cut, this still stands alone.\n[2026-11-09] Clark: Frank asked (Nov 2) to be reminded this week; proposed as the larger page-2 feature (~220w planned).",
+      "facts_status": "sourced",
+      "vet_notes": "Clark's pitch only, not written yet. Vet = go-ahead to write it. word_count is the planned length for the fill estimate. If the lead or Ratings Earned is cut, this still stands alone.\n[2026-11-09] Clark: Frank asked (Nov 2) to be reminded this week; proposed as the larger page-2 feature (~220w planned).\n[2026-11-10 4:21 PM ET] Frank’s budget submission: include unless space is needed. Feature written from the 2026–27 Athlete Handbook §2.1 (~160w). Included in proof v1.",
       "slot_hint": "for_the_parents",
       "tags": [
         "for-the-parents",
@@ -33,7 +33,16 @@
         "who": "frank",
         "when": "next week's budget (Issue No. 6)",
         "what": "Raise the For the Parents rating-letters feature again; Frank wants it larger."
-      }
+      },
+      "updated_at": "2026-11-10T16:28:00-05:00",
+      "provenance": [
+        {
+          "type": "file",
+          "path": "reference/usa-fencing/usaf-athlete-handbook-2026-27.pdf",
+          "note": "USA Fencing Athlete Handbook 2026–27, §2.1 Ratings (2.1.1 letters and year suffix; 2.1.2 earned at sanctioned competitions, award depends on field size and ratings — see Appendices; 2.1.3 official only on the USA Fencing membership list; 2.1.4 valid four seasons, then drops one letter on Aug. 1, with the B20 → C24 example).",
+          "retrieved_at": "2026-11-10T16:28:00-05:00"
+        }
+      ]
     },
     {
       "id": "frank-tournament-day-cartoon-2026-11-10",
@@ -41,8 +50,8 @@
       "section": "Illustration",
       "headline": "Tournaments",
       "body": "",
-      "caption": "A first tournament day, clockwise from the evening sign-up: packing, an early start, the drive, check-in, bouting, and the ride home.",
-      "credit": "Illustration: Nico's Dad",
+      "caption": "",
+      "credit": "",
       "alt_text": "Black-and-white newspaper-comic illustration titled Tournaments, showing a parent and a young fencer's tournament day in a clockwise loop: evening sign-up, packing, bedtime, an early breakfast, the drive, arriving at the gym, check-in and entry fee, fencing, a hard loss, a snack, and going home with a medal.",
       "word_count": 21,
       "source": "frank",
@@ -62,7 +71,7 @@
         "frank"
       ],
       "facts_status": "no factual claims; no real names in the drawing",
-      "vet_notes": "Frank chat 2026-11-10 3:25 PM ET (t199u): 'okay, after 3 passes this is what we came up with.' The source PNG was missing from the box at that pass. Re-sent 3:49 PM ET (t201ua0) and copied to staging/weeks/next/media/tournament-day-cartoon.png (1536x1024, 3:2, 2.8 MB). Staged as a vetted page-2 visual for new parents, pairing with First Bouts and For the Parents; half-page landscape, two columns. Known flaw: in the packing scene the bag holds something that looks like a tennis racket; Frank may replace it, not a blocker. Credit: Comic section rule is 'Guest artist (Ling) gets a credit line; Frank no byline.' There is no separate rule for AI-assisted art. Proposed modest line: 'Illustration: Nico's Dad.' Flagged as a question — accept, drop (follow the no-byline rule), or reword to mention AI.",
+      "vet_notes": "Frank chat 2026-11-10 3:25 PM ET (t199u): 'okay, after 3 passes this is what we came up with.' The source PNG was missing from the box at that pass. Re-sent 3:49 PM ET (t201ua0) and copied to staging/weeks/next/media/tournament-day-cartoon.png (1536x1024, 3:2, 2.8 MB). Staged as a vetted page-2 visual for new parents, pairing with First Bouts and For the Parents; half-page landscape, two columns. Known flaw: in the packing scene the bag holds something that looks like a tennis racket; Frank may replace it, not a blocker. Credit: Comic section rule is 'Guest artist (Ling) gets a credit line; Frank no byline.' There is no separate rule for AI-assisted art. Proposed modest line: 'Illustration: Nico's Dad.' Flagged as a question — accept, drop (follow the no-byline rule), or reword to mention AI.\n[2026-11-10 4:21 PM ET] Frank’s budget submission: ‘No need for a byline or caption. I think it speaks for itself. I’m not going to have the image redrawn for the tennis racket looking mask. just leave it alone.’ Printed with no byline and no caption. Racket left as is; ‘may replace’ notes dropped.",
       "provenance": [
         {
           "type": "chat",
@@ -84,7 +93,7 @@
         }
       ],
       "created_at": "2026-11-10T15:50:00-05:00",
-      "updated_at": "2026-11-10T15:50:00-05:00"
+      "updated_at": "2026-11-10T16:28:00-05:00"
     },
     {
       "id": "pitch-medeo-yc5-next-gen-2026-11-05",
@@ -92,15 +101,15 @@
       "section": "Feature",
       "headline": "First Bouts at Medeo #5",
       "summary": "Pitch (Frank chat 2026-11-10, 'First Bouts,' encouraging tone): a short feature on Elite FC kids starting their competitive paths at Medeo Youth Challenge #5 (Medeo Fencing Club, Bound Brook, Sun. Nov. 8). Eight Elite FC fencers entered; seven actually fenced — Samuel SarroWaite (Y12 Mixed); Roy Yoo, Elle Peterfreund, Nora Li and Claire Widjaja (Y10 Mixed); Owen Li and Mira Shukla (Y14 Mixed). Ian Huang was entered in Y10 Mixed but has no result — do not say he fenced. Christina Jiang withdrew from Y12 (she fenced NYFA Youth Cup #1 the same day). Official events are mixed, per Medeo's result CSVs (not the gendered entry labels). Verified first posted tournament (FencingTracker history, Nov. 10, 1:30 PM ET): Samuel SarroWaite, Roy Yoo, Claire Widjaja, Mira Shukla, Nora Li. Second tournament: Elle Peterfreund, Owen Li. Phrase carefully (e.g. 'for most, their first tournament'). No placings, no pool records, never characterize results. None earned a rating (all still U). About 150 words; planned lead. Pairs naturally with the rating-letters For the Parents feature (every A started at U). Note: SHENOY Shankar V, 9th in Y12 Mixed, fences for Elite Fencing Academy — a different club, not ours.",
-      "body": "",
-      "word_count": 150,
+      "body": "Seven Elite FC fencers took a first competitive step on Sunday at Medeo Youth Challenge #5, at Medeo Fencing Club in Bound Brook.\n\nSamuel SarroWaite fenced in Y12 Mixed. Roy Yoo, Elle Peterfreund, Nora Li and Claire Widjaja fenced in Y10 Mixed. Owen Li and Mira Shukla fenced in Y14 Mixed.\n\nFor most, it was their first tournament. Elle Peterfreund and Owen Li were fencing their second.\n\nShowing up for those first bouts is how a competitive path starts. You pack the bag, you check in, and you fence. Ratings and bigger events come later. Sunday was the beginning.",
+      "word_count": 99,
       "planned_words": 150,
       "source": "chat",
       "from": "frank",
       "target_week": "next",
       "vetted": true,
       "facts_status": "Entries and who fenced verified from official Medeo result CSVs Frank sent 2026-11-10 (Y10 Mixed 8, Y12 Mixed 12, Y14 Mixed 18) plus the signup row. Ian Huang entered, no result. Christina Jiang withdrew. First/second-tournament claims verified from FencingTracker history, Nov. 10, 1:30 PM ET, as listed in the summary. Do not print placings or pool records. Do not call SHENOY Shankar V (Elite Fencing Academy) one of ours.",
-      "vet_notes": "Frank chat 2026-11-05 (~9:27 AM ET after morning Medeo 8→9 note): \"Sounds like Medeo should get a feature of sorts. Lots of Elite fencers making their debut. The next generation.\" Vet = go-ahead to write the feature for No. 6 budget. Editorial angle from Frank (\"next generation\"); treat \"debut\" as his framing, not a verified fact — confirm per-fencer before compose. Related signup: email-agentmail-medeo-yc5-entries-2026-10-14. word_count is planned length for the fill estimate.\n[2026-11-09] Clark: results not posted as of Mon 9 AM ET; feature can run on entries alone (8 Elite FC fencers) or wait for results.\n[2026-11-10] Clark: club Mailchimp Nov 9 said \"we had a lot of kids participating in their very first competitions as well\" but listed only NYFA Youth Cup and Fencers Club Senior Open placements — no Medeo #5 results. Feature can still run on entries (8 Elite FC fencers) or wait. Christina Jiang's 5th at NYFA Y12 is a new printed-worthy result and she is not a debut (Medeo #3 5th + Nov 1 bronze already printed).\n[2026-11-10 1:38 PM ET] Frank chat: 'i would go with the \"first bouts\" angle and give it an encouraging tone.' Headline and angle updated. No placings in the feature (Club Results bar not met; results belong here only as the fact of showing up). Official CSVs in staging/weeks/next/sources/. Clark writes the feature once the budget is approved.",
+      "vet_notes": "Frank chat 2026-11-05 (~9:27 AM ET after morning Medeo 8→9 note): \"Sounds like Medeo should get a feature of sorts. Lots of Elite fencers making their debut. The next generation.\" Vet = go-ahead to write the feature for No. 6 budget. Editorial angle from Frank (\"next generation\"); treat \"debut\" as his framing, not a verified fact — confirm per-fencer before compose. Related signup: email-agentmail-medeo-yc5-entries-2026-10-14. word_count is planned length for the fill estimate.\n[2026-11-09] Clark: results not posted as of Mon 9 AM ET; feature can run on entries alone (8 Elite FC fencers) or wait for results.\n[2026-11-10] Clark: club Mailchimp Nov 9 said \"we had a lot of kids participating in their very first competitions as well\" but listed only NYFA Youth Cup and Fencers Club Senior Open placements — no Medeo #5 results. Feature can still run on entries (8 Elite FC fencers) or wait. Christina Jiang's 5th at NYFA Y12 is a new printed-worthy result and she is not a debut (Medeo #3 5th + Nov 1 bronze already printed).\n[2026-11-10 1:38 PM ET] Frank chat: 'i would go with the \"first bouts\" angle and give it an encouraging tone.' Headline and angle updated. No placings in the feature (Club Results bar not met; results belong here only as the fact of showing up). Official CSVs in staging/weeks/next/sources/. Clark writes the feature once the budget is approved.\n[2026-11-10 4:21 PM ET] Frank’s budget submission: keep First Bouts as the lead (attention to the newer kids); write from entries/known facts now. Feature written for proof v1. Seven who fenced named; no placings; ‘first tournament for most’ (five firsts; Elle Peterfreund and Owen Li their second). Ian Huang not described as having fenced.",
       "slot_hint": "feature",
       "tags": [
         "feature",
@@ -115,7 +124,7 @@
       "created_at": "2026-11-05T09:28:13-05:00",
       "vetted_at": "2026-11-05T09:28:13-05:00",
       "vetted_by": "frank",
-      "updated_at": "2026-11-10T13:42:00-05:00",
+      "updated_at": "2026-11-10T16:28:00-05:00",
       "official_sources": [
         "staging/weeks/next/sources/medeo-yc5-y10-mixed-results-2026-11-08.csv",
         "staging/weeks/next/sources/medeo-yc5-y12-mixed-results-2026-11-08.csv",
@@ -798,26 +807,18 @@
       "id": "desk-deadlines-2026-10-18",
       "kind": "fact",
       "headline": "Deadlines box — No. 6",
-      "body": "Deadlines for No. 6: Nov 11 Junior Olympics regular-fee deadline; Dec 18 Bernards HS Winter Senior Open (Dec 19) registration closes (AskFRED, unvetted listing); Jan 8 NJSIAA independent entries close. Winter Camp: tell the club ASAP for a headcount. Dropped as past: Nov 7 Cobra late entry, Nov 7 Medeo YC #5 prereg; NJFA Tue Nov 10 local closes Nov 9 (past by publish).",
+      "body": "Deadlines for No. 6 (Wednesday, Nov. 11): Junior Olympics regular-fee deadline is that same day, Nov. 11 (11:59 p.m. Pacific). Jan. 8, N.J. high school independent fencers’ entries close. Winter Camp reminder dropped with the excluded camp slot. Nov. 7 Cobra and Medeo deadlines already past. Dec. 19 Bernards HS Senior Open left off (unvetted).",
       "rows": [
-        [
-          "Nov. 7",
-          "Cobra Challenge (Secaucus, Nov. 27–29) — late entry closes"
-        ],
-        [
-          "Nov. 7",
-          "Medeo Youth Challenge #5 — preregistration closes"
-        ],
         [
           "Nov. 11",
           "Junior Olympics — regular-fee deadline"
         ],
         [
           "Jan. 8",
-          "N.J. high school — independent fencers' entries close"
+          "N.J. high school — independent fencers’ entries close"
         ]
       ],
-      "row_count": 5,
+      "row_count": 2,
       "source": "usafencing+njsiaa",
       "target_week": "next",
       "slot_hint": "deadlines",
@@ -907,7 +908,7 @@
       "vetted": true,
       "vetted_by": "frank (voice 2026-10-18: refresh Deadlines box from USA Fencing/AskFRED)",
       "vetted_at": "2026-10-18T08:45:00-04:00",
-      "vet_notes": "Clark's build 2026-10-18 from official pages only. Morris/Ultimate late closes carry over from No. 2 (still valid). Medeo prereg closes (Oct 24 / Nov 7) left off: the Medeo line is on the board.",
+      "vet_notes": "Clark's build 2026-10-18 from official pages only. Morris/Ultimate late closes carry over from No. 2 (still valid). Medeo prereg closes (Oct 24 / Nov 7) left off: the Medeo line is on the board.\n[2026-11-10 4:21 PM ET] Rows for print: Nov. 11 JO regular-fee (publish day) and Jan. 8 NJSIAA independent entries. Winter Camp ASAP line dropped because Frank excluded the camp slot.",
       "tags": [
         "deadlines",
         "desk-built"
@@ -918,24 +919,19 @@
       "dropped_for_no4": [
         "Morris Cup late entry (Oct 22) — passes before No. 4 publishes"
       ],
-      "updated_at": "2026-11-09T09:20:00-05:00",
+      "updated_at": "2026-11-10T16:28:00-05:00",
       "carried_at": "2026-11-03T15:20:00-05:00"
     },
     {
       "id": "desk-epee-on-screen-2026-10-18",
       "kind": "fact",
       "headline": "Epee on Screen — No. 6",
-      "body": "Upcoming epee for No. 6: Nov 10 women's epee and Nov 11 men's epee at the Dakar Youth Olympic Games (FIE: live on its streaming link and FIE YouTube channel); Nov 12–15 Berne (men) / Wuxi (women) senior World Cups (FencingTV); Nov 26–29 Novi Sad junior/cadet World Cup (no stream listed); Dec 3–6 Vancouver senior men's and women's epee World Cup (FencingTV). Manama (Nov 5–8) dropped, past.",
+      "body": "Epee on Screen for No. 6 (Wednesday, Nov. 11): men’s epee at the Dakar Youth Olympic Games is that day (FIE live stream / YouTube). Women’s epee (Nov. 10) dropped as past. Nov. 12–15 Berne (men) / Wuxi (women) senior World Cups (FencingTV); Nov. 26–29 Novi Sad junior/cadet World Cup (no stream listed); Dec. 3–6 Vancouver senior World Cup (FencingTV).",
       "rows": [
         [
-          "Nov. 5–8",
-          "Junior/Cadet World Cup (Manama, Bahrain)",
-          "No stream listed"
-        ],
-        [
-          "Nov. 8–13",
-          "Youth Olympic Games fencing (Dakar, Senegal)",
-          "No stream listed"
+          "Nov. 11",
+          "Youth Olympic Games, men’s epee (Dakar)",
+          "FIE live stream / YouTube"
         ],
         [
           "Nov. 12–15",
@@ -946,6 +942,11 @@
           "Nov. 26–29",
           "Junior/Cadet World Cup (Novi Sad, Serbia)",
           "No stream listed"
+        ],
+        [
+          "Dec. 3–6",
+          "Senior World Cup, men and women (Vancouver)",
+          "FencingTV"
         ]
       ],
       "row_count": 4,
@@ -990,7 +991,7 @@
       "vetted": true,
       "vetted_by": "frank (voice 2026-10-18: fresh 3–5 rows from FIE calendar/FencingTV)",
       "vetted_at": "2026-10-18T08:45:00-04:00",
-      "vet_notes": "Rows 1 and 3 also ran in No. 2's box (still upcoming); rows 2 and 4 are new. Drop 1 and 3 if you want only new rows. | No. 4 refresh 2026-10-19: San José dropped (past), Novi Sad added (new). Rows 1, 2 and 4 were in the cut No. 3 box (never printed).",
+      "vet_notes": "Rows 1 and 3 also ran in No. 2's box (still upcoming); rows 2 and 4 are new. Drop 1 and 3 if you want only new rows. | No. 4 refresh 2026-10-19: San José dropped (past), Novi Sad added (new). Rows 1, 2 and 4 were in the cut No. 3 box (never printed).\n[2026-11-10 4:21 PM ET] Nov. 10 women’s YOG epee dropped (past by a Wednesday paper). Men’s epee Nov. 11 kept.",
       "tags": [
         "tv",
         "desk-built"
@@ -998,7 +999,7 @@
       "created_at": "2026-10-18T08:45:00-04:00",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Ran in No. 5. Clark refreshes rows for No. 6's week.",
-      "updated_at": "2026-11-09T09:20:00-05:00",
+      "updated_at": "2026-11-10T16:28:00-05:00",
       "carried_at": "2026-11-03T15:20:00-05:00"
     },
     {
@@ -1321,9 +1322,9 @@
     {
       "id": "email-agentmail-nov14-15-local-calendar-2026-11-10",
       "kind": "graf",
-      "headline": "Also on the calendar — three local events this weekend",
-      "body": "Also on the calendar this weekend, three local events with no Elite FC entries yet. On Saturday, Nov. 14, Revolution Fencing Center hosts Y10, Y12 and Y14 Mixed Epee in West Chester, Pa.; preregistration closes that day. On Sunday, Nov. 15, Freehold Fencing's November Open (Senior Men's and Women's Epee, in Freehold, N.J.) and Wanglei Fencing's November Cup II (Cadet and Junior Epee, in Plainsboro Township, N.J.) are good practice with decently competitive fields, suited to older fencers. Preregistration for both Sunday events closes Saturday, Nov. 14.",
-      "word_count": 87,
+      "headline": "Also on the Calendar",
+      "body": "Also on the calendar this weekend, three local events with no Elite FC entries yet. On Saturday, Nov. 14, Revolution Fencing Center hosts Y10, Y12 and Y14 Mixed in West Chester, Pa.; preregistration closes that day. On Sunday, Nov. 15, Freehold Fencing’s November Open (Senior Men and Women, in Freehold, N.J.) and Wanglei Fencing’s November Cup II (Cadet and Junior, in Plainsboro Township, N.J.) are good practice with decently competitive fields, a fit for older fencers. Preregistration for both Sunday events closes Saturday, Nov. 14.",
+      "word_count": 85,
       "source": "email+askfred",
       "message_id": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
       "from": "chunkymonkey@agentmail.to",
@@ -1363,7 +1364,7 @@
           "status": "Frank's framing, used in the Sunday (Freehold Open + Wanglei Cadet/Junior) sentence. Revolution is Y10/Y12/Y14, so it is described by those age groups only — flag the 'older kids' mismatch for Frank."
         }
       ],
-      "vet_notes": "Frank chat 2026-11-10 3:25 PM ET (t199u) flagged a club-schedule email of tournaments he is watching; the digest arrived 3:24 PM ET and was already labeled processed. Frank chat 3:30 PM ET (t200u): 'yes please, also make mention that those tournaments are available along with who they are good for.  these are local events for older kids.  good practice.  decently competitive fields.' Allowlisted sender (chunkymonkey@agentmail.to). Venue towns, divisions, preregistration deadlines and links from AskFRED (fetched 2026-11-10 ~3:32–3:33 PM ET). No Elite FC names (nobody signed up). Nearby Tournaments' standing rule is 'Elite FC entries only'; this is a names-free 'also on the calendar' note Frank asked for, not an entry board. QUESTION for Frank: he said 'for older kids,' which fits Freehold's Senior Open and Wanglei's Cadet/Junior events, but Revolution is Y10, Y12 and Y14. The copy describes each by its actual age groups and applies 'older fencers' only to the Sunday pair. OK?",
+      "vet_notes": "Frank chat 2026-11-10 3:25 PM ET (t199u) flagged a club-schedule email of tournaments he is watching; the digest arrived 3:24 PM ET and was already labeled processed. Frank chat 3:30 PM ET (t200u): 'yes please, also make mention that those tournaments are available along with who they are good for.  these are local events for older kids.  good practice.  decently competitive fields.' Allowlisted sender (chunkymonkey@agentmail.to). Venue towns, divisions, preregistration deadlines and links from AskFRED (fetched 2026-11-10 ~3:32–3:33 PM ET). No Elite FC names (nobody signed up). Nearby Tournaments' standing rule is 'Elite FC entries only'; this is a names-free 'also on the calendar' note Frank asked for, not an entry board. QUESTION for Frank: he said 'for older kids,' which fits Freehold's Senior Open and Wanglei's Cadet/Junior events, but Revolution is Y10, Y12 and Y14. The copy describes each by its actual age groups and applies 'older fencers' only to the Sunday pair. OK?\n[2026-11-10 4:21 PM ET] Frank’s budget submission: ‘okay to rephrase.’ Copy still describes each event by its real divisions and keeps the ‘good practice, decently competitive fields’ framing for Sunday’s older-fencer events (Freehold Open and Wanglei Cadet/Junior). Weapon labels dropped in club context (STYLE-GUIDE §0c).",
       "provenance": [
         {
           "type": "email",
@@ -1388,17 +1389,17 @@
         }
       ],
       "created_at": "2026-11-10T15:37:00-05:00",
-      "updated_at": "2026-11-10T15:37:00-05:00"
+      "updated_at": "2026-11-10T16:28:00-05:00"
     },
     {
       "id": "ft-efc-travel-registrations-nov-dec-2026-10-28",
       "kind": "signup",
-      "headline": "Elite FC registrations beyond NJ, Nov.–Dec. (November NAC, Kiefer Meinhardt, December SJCC, Z1, Fairfax, Austin, Boston FC)",
-      "body": "FencingTracker club registrations page (Oct 28, 9:57 AM ET), active entries: November NAC (Columbus, OH, Greater Columbus Convention Center) — 4 entries / 3 fencers: Fri Nov 20 JNRWE Anayaa Sheth; Sat Nov 21 CDTME Nico Ng; Sun Nov 22 JNRME Athreya Aravind, Nico Ng. Kiefer Meinhardt Cup SYC/RJCC/Y8 (Glen Allen, VA, Henrico Sports and Events Center) — 4 / 2: Sat Nov 14 Y14WE Stella Kuo, Mila Siu; Sun Nov 15 Y12WE Stella Kuo, Mila Siu. December SJCC (Milwaukee, WI, Baird Center) — 5 / 3: Fri Dec 4 CDTME Nico Ng; Sat Dec 5 JNRWE Amina Gore, JNRME Nico Ng; Sun Dec 6 CDTWE Amina Gore, Anayaa Sheth. Z1 RYC/RJCC (Newtown, CT, NYA Sports & Fitness) — 7 / 5: Sat Dec 12 JNRWE Amina Gore, CDTME Noah Gore; Sun Dec 13 CDTWE Amina Gore, Y14ME Noah Gore, Ash Shah-Mirani, Y10ME Bryce Cheng, Rahi Shah-Mirani. Fairfax Challenge ROC/RJCC/RYC (Fredericksburg, VA) — 7 / 4: Fri Dec 18 Y14ME Connor Anderson; Sat Dec 19 CDTME Connor Anderson, Y14WE Sarah Sun, DV2ME Connor Anderson, Eric Anderson; Sun Dec 20 VETME Eric Anderson, Kang Sun. Not on roster yet: Athreya Aravind, Sarah Sun, Kang Sun, Eric Anderson (club attribution from registration can be wrong). Added Nov 4 (Wednesday skim, 9:58 AM ET): Austin Challenge SYC/RCC (Round Rock, TX, Round Rock Sports Center) — 3 / 1: Fri Dec 18 CDTWE, Sat Dec 19 Y14WE, Sun Dec 20 Y12WE Penelope Young. Boston Fencing Club RYC/RCC (Norton, MA, Wheaton College) — 1 / 1: Sat Dec 19 CDTME Maksim Milinkovic. Other counts unchanged vs Oct 28. Updated Nov 9 (Monday full pass, FencingTracker registrations): Z1 RYC/RJCC grew to 8 / 6 (new: Adela Sullivan, JNRWE Sat Dec 12). November NAC, Kiefer Meinhardt, December SJCC, Fairfax, Austin, Boston unchanged. Also listed further out: Neil Lazar ROC 1/1, Junior Olympics + January NAC 6/3, Capitol Clash 12/7, Miles Chamley-Watson 2/1, February NAC 1/1, Cherry Blossom 1/1, American Challenge 2/2 (not staged).",
+      "headline": "On the Road — Kiefer Meinhardt Cup and November NAC",
+      "body": "Two bigger travel events are next, from official USA Fencing entries (checked Nov. 10, 4:26 p.m. ET).\n\nKiefer Meinhardt Cup, Glen Allen, Va., Nov. 14–15: Stella Kuo and Mila Siu in Y14 Women on Saturday and Y12 Women on Sunday.\n\nNovember NAC, Columbus, Ohio, Nov. 20–23: Anayaa Sheth in Junior Women on Friday, Nov. 20; Nico Ng in Cadet Men on Saturday, Nov. 21; Athreya Aravind and Nico Ng in Junior Men on Sunday, Nov. 22.",
       "source": "fencingtracker",
       "target_week": "next",
-      "vetted": false,
-      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.",
+      "vetted": true,
+      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.",
       "tags": [
         "entries",
         "travel"
@@ -1430,13 +1431,34 @@
           "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
           "retrieved_at": "2026-11-09T09:00:00-05:00",
           "note": "Z1 8/6 (+Adela Sullivan JNRWE). Others unchanged."
+        },
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12117/entries?live=true",
+          "underlying": "https://member.usafencing.org/details/tournaments/12117",
+          "fetched_at": "2026-11-10T21:25:37Z",
+          "fetched_at_et": "2026-11-10 4:25 PM ET",
+          "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8, Henrico Sports and Events Center, Glen Allen, Va., Nov. 14–15. Elite Fencers Club approved: Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, close of registration 1:00 p.m.) and Y12WE (Sun Nov 15, 8:00 a.m.). Clocks are close of registration — not printed as start times. Names printed in roster house form (Stella Kuo, Mila Siu). Unchanged vs the Nov. 9 FencingTracker check (4 entries / 2 fencers)."
+        },
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/entries?live=true",
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "fetched_at": "2026-11-10T21:26:53Z",
+          "fetched_at_et": "2026-11-10 4:26 PM ET",
+          "note": "November NAC, Greater Columbus Convention Center, Columbus, Ohio, Nov. 20–23. Elite Fencers Club approved: Sheth, Anayaà, Junior Women’s Epee, Fri Nov 20 (print Anayaa Sheth, roster house form); Ng, Nico, Cadet Men’s Epee, Sat Nov 21; Aravind, Athreya and Ng, Nico, Junior Men’s Epee, Sun Nov 22. Tournament dates are Nov. 20–23 (Cadet Women and Div I Men epee on Mon Nov 23; no Elite FC in those). Athreya Aravind is listed as Elite Fencers Club on the official entry list, approved, but is not on the club roster yet — flagged for Frank. Unchanged vs the Nov. 9 FencingTracker check (4 entries / 3 fencers)."
         }
       ],
       "created_at": "2026-10-28T09:58:00-04:00",
-      "updated_at": "2026-11-09T09:20:00-05:00",
+      "updated_at": "2026-11-10T16:28:00-05:00",
       "carried_from": "staging/weeks/2026-11-03",
       "carry_note": "Unprinted in No. 5 (scraped, unvetted). November NAC Nov 20–22 still upcoming; candidate for No. 6.",
-      "carried_at": "2026-11-03T15:20:00-05:00"
+      "carried_at": "2026-11-03T15:20:00-05:00",
+      "vetted_at": "2026-11-10T16:21:00-05:00",
+      "vetted_by": "frank",
+      "word_count": 76
     },
     {
       "id": "x-fie-dakar-yog-2026-11-02",
@@ -1638,7 +1660,7 @@
       "vetted": true,
       "vetted_by": "clark (Mailchimp allowlist + FencingTracker /event/44514)",
       "vetted_at": "2026-11-10T13:31:00-05:00",
-      "vet_notes": "Placements first published in the club Mailchimp (email: 'Maks Milinkovic'; print Maksim via roster), auto-vetted as email-mailchimp-congrats-2026-11-09. Field size (31), event class A2, and DE path (each won T32 and T16) confirmed on FencingTracker /event/44514, Nov 10, 1:25–1:31 PM ET. Local top-8 bar cleared. Names as on the roster.",
+      "vet_notes": "Placements first published in the club Mailchimp (email: 'Maks Milinkovic'; print Maksim via roster), auto-vetted as email-mailchimp-congrats-2026-11-09. Field size (31), event class A2, and DE path (each won T32 and T16) confirmed on FencingTracker /event/44514, Nov 10, 1:25–1:31 PM ET. Local top-8 bar cleared. Names as on the roster.\n[2026-11-10 4:21 PM ET] Frank’s budget submission: include all of last weekend’s worthy results (already staged) and add a light, non-pushy encouragement line that the club was well represented and we hope to see more Elite kids at events. Printed as a Club Results boxnote. His private remarks about Maximus were not used.",
       "facts": [
         {
           "claim": "Maksim Milinkovic 7th of 31, Mixed Epee, Fencers Club Senior Open (Nov. 8), A2; won T32 and T16; still A26",
@@ -1694,7 +1716,8 @@
         }
       ],
       "created_at": "2026-11-10T13:42:00-05:00",
-      "updated_at": "2026-11-10T13:42:00-05:00"
+      "updated_at": "2026-11-10T16:28:00-05:00",
+      "boxnote": "Elite FC was well represented last weekend. We hope to see more and more of the club’s kids at events."
     },
     {
       "id": "ft-nyfa-youth-cup1-results-2026-11-08",

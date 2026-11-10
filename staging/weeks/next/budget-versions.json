@@ -33,6 +33,14 @@
       "decisions_through": "2026-11-10T15:49:00-05:00",
       "decisions": 5,
       "out": "budget-demo/out/budget-no-6-2026-11-11-v4.html"
+    },
+    {
+      "v": 5,
+      "built_at": "2026-11-10T16:29:54-05:00",
+      "data": "80db0375a829",
+      "decisions_through": "2026-11-10T16:19:56-05:00",
+      "decisions": 6,
+      "out": "budget-demo/out/budget-no-6-2026-11-11-v5.html"
     }
   ],
   "decisions": [
@@ -174,6 +182,89 @@
       "changes": [
         "Staged the Tournament Day cartoon as a vetted page-2 visual (2-column, half-page landscape, 1536x1024), pairing with First Bouts and For the Parents.",
         "Credit line 'Illustration: Nico's Dad' is proposed and flagged as a question (Comic section rule is Frank no byline). Packing-scene tennis-racket flaw noted; Frank may replace it, not a blocker."
+      ]
+    },
+    {
+      "at": "2026-11-10T16:21:00-05:00",
+      "client_submitted_at": "2026-11-10T16:19:56-05:00",
+      "source": "budget-submission-no-6-2026-11-11.json",
+      "stored": "budget-demo/submissions/budget-20261110-162100.json",
+      "publishDate": "2026-11-11",
+      "included": [
+        "lead",
+        "overheard-reddit",
+        "overheard",
+        "tournament-day",
+        "club-results",
+        "signup",
+        "signup-4",
+        "signup-local",
+        "on-the-road",
+        "deadlines",
+        "tv"
+      ],
+      "excluded": [
+        "camp",
+        "classes"
+      ],
+      "photoIncludes": [
+        "media-nyfa-youth-cup1-podium-4-2026-11-08"
+      ],
+      "slotNotes": {
+        "on-the-road": "The staging text is a bit hard for me to parse, at least in this format.\n\nWe should probably include November NAC and Keifer Meinhardt.  Those seem to be bigger events."
+      },
+      "answers": [
+        {
+          "slot": "lead",
+          "itemId": "pitch-medeo-yc5-next-gen-2026-11-05",
+          "question": "Sunday's results are in (Maksim 7th and Nico 8th at the Senior Open; six NYFA Youth Cup rows). Keep First Bouts as the lead, or lead with the Senior Open instead?",
+          "answer": "Let's give attention to the newer kids.  Nico and Max get enough coverage."
+        },
+        {
+          "slot": "lead",
+          "itemId": "pitch-medeo-yc5-next-gen-2026-11-05",
+          "question": "Wait for Sunday's results before writing (publish Wed), or write it from the entries now?",
+          "answer": "We can write from entries now."
+        },
+        {
+          "slot": "overheard",
+          "itemId": "pitch-for-parents-rating-letters-2026-11-02",
+          "question": "This week as the page-2 feature, or hold another week?",
+          "answer": "we can include it unless we need the space."
+        },
+        {
+          "slot": "tournament-day",
+          "itemId": "frank-tournament-day-cartoon-2026-11-10",
+          "question": "The Comic section rule is 'Frank no byline.' There is no separate rule for AI-assisted art. Proposed credit: 'Illustration: Nico's Dad.' Accept that line, drop the credit, or reword it to mention AI?",
+          "answer": "No need for a byline or caption.  I think it speaks for itself.  I'm not going to have the image redrawn for the tennis racket looking mask.  just leave it alone."
+        },
+        {
+          "slot": "signup-local",
+          "itemId": "email-agentmail-nov14-15-local-calendar-2026-11-10",
+          "question": "You called these 'local events for older kids.' That fits Freehold's Senior Open and Wanglei's Cadet/Junior events, but Revolution is Y10, Y12 and Y14. The copy describes each by its actual age groups and applies 'older fencers' only to the Sunday pair. OK, or rephrase?",
+          "answer": "okay to rephrase."
+        }
+      ],
+      "notes": "I included a photo from the Newsletter.  One of the kids in there is Maximus Siu.  We should feature him because he gets no coverage and he hardly competes.  I forgot what he finished at NYFA though.\n\nWe'll include all of last weekend's results if they're worthy.  Mention that our club was well represented in tournaments and that we hope to see more and more Elite kids at events. Something like that.  Try not to be too pushy about it, just encouragment.",
+      "order": [
+        "lead",
+        "overheard-reddit",
+        "overheard",
+        "tournament-day",
+        "club-results",
+        "signup",
+        "signup-4",
+        "signup-local",
+        "on-the-road",
+        "deadlines",
+        "camp",
+        "classes",
+        "tv",
+        "photo-history",
+        "secondary-a"
+      ],
+      "vets": [
+        "ft-efc-travel-registrations-nov-dec-2026-10-28"
       ]
     }
   ]
