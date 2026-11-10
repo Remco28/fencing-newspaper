@@ -17,6 +17,14 @@
       "decisions_through": "2026-11-10T13:38:00-05:00",
       "decisions": 2,
       "out": "budget-demo/out/budget-no-6-2026-11-11-v2.html"
+    },
+    {
+      "v": 3,
+      "built_at": "2026-11-10T15:38:34-05:00",
+      "data": "061f7a805354",
+      "decisions_through": "2026-11-10T15:30:00-05:00",
+      "decisions": 4,
+      "out": "budget-demo/out/budget-no-6-2026-11-11-v3.html"
     }
   ],
   "decisions": [
@@ -75,6 +83,62 @@
         "Pitch pitch-medeo-yc5-next-gen-2026-11-05 retitled; names only the seven who fenced; first/second-tournament claims recorded from FT history."
       ],
       "publishDate": "2026-11-11"
+    },
+    {
+      "at": "2026-11-10T15:38:00-05:00",
+      "client_submitted_at": "2026-11-10T15:25:00-05:00",
+      "source": "chat:frank:2026-11-10T15:25:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-10T15:25:00-05:00",
+        "text": "okay, after 3 passes this is what we came up with.\n\nI also sent you an email with new tournaments that I'm watching.  Hopefully you receive it."
+      },
+      "carried_from": 2,
+      "publishDate": "2026-11-11",
+      "included": [],
+      "excluded": [],
+      "answers": [
+        {
+          "slot": "lead",
+          "question": "Wait for Sunday's results before writing (publish Wed), or write it from the entries now?",
+          "answer": "I might push it to Wednesday this week to take some pressure off of us.",
+          "via": "chat"
+        }
+      ],
+      "order": [],
+      "changes": [
+        "Frank sent the Tournament Day cartoon (after 3 passes) for the issue, plus a club-schedule digest of new watched tournaments.",
+        "The digest was already in efc.weekly@agentmail.to (received 3:24 PM ET, labeled processed). The cartoon PNG was not present at the stated attachment path on the box at this build, so the visual is not in budget v3 yet."
+      ]
+    },
+    {
+      "at": "2026-11-10T15:38:10-05:00",
+      "client_submitted_at": "2026-11-10T15:30:00-05:00",
+      "source": "chat:frank:2026-11-10T15:30:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-10T15:30:00-05:00",
+        "text": "yes please, also make mention that those tournaments are available along with who they are good for.  these are local events for older kids.  good practice.  decently competitive fields."
+      },
+      "carried_from": 3,
+      "publishDate": "2026-11-11",
+      "included": [],
+      "excluded": [],
+      "answers": [
+        {
+          "slot": "lead",
+          "question": "Wait for Sunday's results before writing (publish Wed), or write it from the entries now?",
+          "answer": "I might push it to Wednesday this week to take some pressure off of us.",
+          "via": "chat"
+        }
+      ],
+      "order": [],
+      "changes": [
+        "Staged a names-free 'Also on the Calendar' Nearby Tournaments note for Revolution Y10/Y12/Y14 Mixed Epee (Nov. 14, West Chester, Pa.), Freehold November Open (Nov. 15, Senior Men's and Women's, Freehold, N.J.), and Wanglei November Cup II (Nov. 15, Cadet and Junior, Plainsboro Township, N.J.).",
+        "Sunday's two events are framed as good practice with decently competitive fields for older fencers; Revolution is described by its actual youth age groups. The 'older kids' mismatch is an open question on the budget page."
+      ]
     }
   ]
 }

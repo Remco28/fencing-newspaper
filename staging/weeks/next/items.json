@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-10T13:42:00-05:00",
-  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos. 2026-11-10 PM: First Bouts angle (Frank chat); official Medeo YC #5 CSVs staged; NYFA Youth Cup #1 and Fencers Club Senior Open Club Results from FencingTracker event pages + club Mailchimp; Overheard on Reddit (tennis/court shoes) staged from Frank's PDF.",
+  "updated_at": "2026-11-10T15:37:00-05:00",
+  "note": "Hold pile for Issue No. 6. Started as after-next at the No. 4 roll (holds Frank's For the Parents rating-letters feature + reminder); became next at the No. 5 roll-forward 2026-11-03. Still-relevant upcoming/results-watch items copied from 2026-11-03 with carried_from. 2026-11-05: added Medeo YC #5 next-gen feature pitch (Frank chat). 2026-11-10: staged club Mailchimp NYFA Youth Cup #1 + Fencers Club Senior Open results and five podium photos. 2026-11-10 PM: First Bouts angle (Frank chat); official Medeo YC #5 CSVs staged; NYFA Youth Cup #1 and Fencers Club Senior Open Club Results from FencingTracker event pages + club Mailchimp; Overheard on Reddit (tennis/court shoes) staged from Frank's PDF. 2026-11-10 3:30 PM ET: also-on-the-calendar note for three local Nov 14–15 events (Revolution Y10/12/14, Freehold November Open, Wanglei November Cup II) from the chunkymonkey digest and Frank's chat; Tournament Day cartoon pending the source PNG on the box.",
   "items": [
     {
       "id": "pitch-for-parents-rating-letters-2026-11-02",
@@ -1266,6 +1266,78 @@
           "note": "Pizza RYC/RJCC: Penelope Young + Amina Gore, unchanged (feed still \"could not refresh\", data as of Nov 9 6:01 PM) per chunkymonkey digest Nov 10. Past Nov 8 events dropped off the watched list as expected."
         }
       ]
+    },
+    {
+      "id": "email-agentmail-nov14-15-local-calendar-2026-11-10",
+      "kind": "graf",
+      "headline": "Also on the calendar — three local events this weekend",
+      "body": "Also on the calendar this weekend, three local events with no Elite FC entries yet. On Saturday, Nov. 14, Revolution Fencing Center hosts Y10, Y12 and Y14 Mixed Epee in West Chester, Pa.; preregistration closes that day. On Sunday, Nov. 15, Freehold Fencing's November Open (Senior Men's and Women's Epee, in Freehold, N.J.) and Wanglei Fencing's November Cup II (Cadet and Junior Epee, in Plainsboro Township, N.J.) are good practice with decently competitive fields, suited to older fencers. Preregistration for both Sunday events closes Saturday, Nov. 14.",
+      "word_count": 87,
+      "source": "email+askfred",
+      "message_id": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
+      "from": "chunkymonkey@agentmail.to",
+      "subject": "Club schedule · Tuesday, November 10",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-10T15:30:00-05:00",
+      "slot_hint": "nearby_tournaments",
+      "suggested_slot": "nearby_tournaments",
+      "board": "Nearby Tournaments",
+      "tags": [
+        "nearby_tournaments",
+        "calendar",
+        "local",
+        "no-entries"
+      ],
+      "facts": [
+        {
+          "claim": "Revolution Fencing Center Y10, 12, 14 Epee, Nov. 14, Revolution Fencing Center; nobody from Elite signed up (data as of Nov 10, 3:20 PM ET)",
+          "source": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
+          "status": "verified-email (allowlisted digest). AskFRED: West Chester, Pa. (1220 Ward Ave); Y10/Y12/Y14 Mixed Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/dc64e64e-99ce-4429-9e08-d2ac2e6c37ef"
+        },
+        {
+          "claim": "Freehold Fencing - November Open Epee, Nov. 15, Freehold Fencing Academy; nobody from Elite signed up (data as of Nov 10, 3:20 PM ET)",
+          "source": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
+          "status": "verified-email. AskFRED: Freehold, N.J. (56 Thoreau Dr); Senior Men's and Women's Epee (Open); tournament prereg_close 2026-11-14; https://www.askfred.net/tournaments/4faa90b1-2f4c-4993-8b82-bfae268c773a"
+        },
+        {
+          "claim": "Wanglei Fencing November Cup II: Cadet/Junior Epee, Nov. 15, Wanglei International Fencing Club; nobody from Elite signed up (data as of Nov 10, 3:22 PM ET)",
+          "source": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
+          "status": "verified-email. AskFRED: Plainsboro Township, N.J. (10 Schalks Crossing Rd); Cadet and Junior Men's and Women's Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/f607f80f-dea6-4517-bc92-557226c7f0fd"
+        },
+        {
+          "claim": "These are local events, good practice, decently competitive fields; for older kids",
+          "source": "Frank chat 2026-11-10T15:30:00-05:00 (t200u)",
+          "status": "Frank's framing, used in the Sunday (Freehold Open + Wanglei Cadet/Junior) sentence. Revolution is Y10/Y12/Y14, so it is described by those age groups only — flag the 'older kids' mismatch for Frank."
+        }
+      ],
+      "vet_notes": "Frank chat 2026-11-10 3:25 PM ET (t199u) flagged a club-schedule email of tournaments he is watching; the digest arrived 3:24 PM ET and was already labeled processed. Frank chat 3:30 PM ET (t200u): 'yes please, also make mention that those tournaments are available along with who they are good for.  these are local events for older kids.  good practice.  decently competitive fields.' Allowlisted sender (chunkymonkey@agentmail.to). Venue towns, divisions, preregistration deadlines and links from AskFRED (fetched 2026-11-10 ~3:32–3:33 PM ET). No Elite FC names (nobody signed up). Nearby Tournaments' standing rule is 'Elite FC entries only'; this is a names-free 'also on the calendar' note Frank asked for, not an entry board. QUESTION for Frank: he said 'for older kids,' which fits Freehold's Senior Open and Wanglei's Cadet/Junior events, but Revolution is Y10, Y12 and Y14. The copy describes each by its actual age groups and applies 'older fencers' only to the Sunday pair. OK?",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Tuesday, November 10",
+          "received_at": "2026-11-10T15:24:41-05:00",
+          "retrieved_at": "2026-11-10T15:37:00-05:00",
+          "note": "Watch list added Revolution Y10/12/14 (Nov 14), Freehold November Open (Nov 15), and Wanglei November Cup II Cadet/Junior (Nov 15), all with nobody signed up yet. Pizza RYC/RJCC unchanged (data as of Nov 9, 6:01 PM, could not refresh)."
+        },
+        {
+          "type": "api",
+          "source": "askfred",
+          "fetched_at": "2026-11-10T15:33:00-05:00",
+          "note": "Tournament + event records for dc64e64e-99ce-4429-9e08-d2ac2e6c37ef (Revolution, West Chester Pa.), 4faa90b1-2f4c-4993-8b82-bfae268c773a (Freehold Open), f607f80f-dea6-4517-bc92-557226c7f0fd (Wanglei Cup II)."
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-10T15:30:00-05:00",
+          "note": "Vet to mention the three events, who they are good for, local, good practice, decently competitive fields."
+        }
+      ],
+      "created_at": "2026-11-10T15:37:00-05:00",
+      "updated_at": "2026-11-10T15:37:00-05:00"
     },
     {
       "id": "ft-efc-travel-registrations-nov-dec-2026-10-28",
