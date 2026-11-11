@@ -5,7 +5,11 @@ Why CDP and not `chrome --print-to-pdf`: newer Chrome ignores
 --print-to-pdf-no-header, stamping date/URL/title chrome on every page.
 Page.printToPDF with displayHeaderFooter=false never does. (Style guide section 1.)
 
-Usage: render.py input.html [output.pdf] [--allow-flag] [--author=NAME] [--report=FILE.json]
+Usage: render.py input.html [output.pdf] [--allow-flag] [--force] [--fit] [--no-fit]
+                [--author=NAME] [--report=FILE.json] [--fit-report=FILE.json]
+An APPROVED issue's folder is frozen: writing a PDF there is refused unless you pass
+--force or write the PDF somewhere else. Fitting is on by default when the HTML has
+[data-art] slots; --no-fit skips it. --fit is accepted and is the default.
 """
 import base64
 import hashlib
@@ -18,6 +22,7 @@ import sys
 import tempfile
 import time
 import urllib.request
+from pathlib import Path
 
 def ws_connect(host, port, path):
     s = socket.create_connection((host, port), timeout=15)
@@ -295,12 +300,239 @@ def report(m):
     return flags
 
 
+COMPOSE_DIR = Path(__file__).resolve().parent
+REPO_ROOT = COMPOSE_DIR.parent
+FIT_JS = (COMPOSE_DIR / "fit.js").read_text(encoding="utf-8")
+
+
+def arg(prefix, default=None, argv=None):
+    argv = argv or sys.argv
+    return next((a.split("=", 1)[1] for a in argv if a.startswith(prefix)), default)
+
+
+def eval_js(call, expression, await_promise=False):
+    """Runtime.evaluate that raises if the JS threw, and returns the value."""
+    res = call("Runtime.evaluate", {
+        "expression": expression, "returnByValue": True, "awaitPromise": await_promise,
+    })
+    if res.get("exceptionDetails"):
+        d = res["exceptionDetails"]
+        text = d.get("text") or (d.get("exception") or {}).get("description") or str(d)
+        raise RuntimeError("JS: " + text)
+    return res.get("result", {}).get("value")
+
+
+def instrument_to_rec(m, slot=None, page=None):
+    """Flatten instrument + slot extras into the dict choose() expects.
+
+    Gates are scoped to the art: overflow and (fallback) gaps/spread come from
+    the slot's page only. Prefer the slot's region_gap_in and row_spread_in so a
+    short sibling column or an earlier board-split cannot reject a legal stack.
+    """
+    inch = lambda px: px / 96.0
+    worst = min_gap = overflow = max_spread = 0.0
+    pages = list((m or {}).get("pages") or [])
+    if page is not None:
+        pages = [pg for pg in pages if pg.get("page") == page]
+    if pages:
+        gaps = []
+        overflow = 0.0
+        spreads = []
+        for pg in pages:
+            gaps.extend(inch(g) for g in pg.get("gaps") or [])
+            overflow = max(overflow, inch(max(pg.get("overflow") or 0, 0)))
+            for row in pg.get("rows") or []:
+                if len(row.get("depths") or []) >= 2:
+                    spreads.append(inch(row["spread"]))
+        worst = max(gaps) if gaps else 0.0
+        min_gap = min(gaps) if gaps else 0.0
+        max_spread = max(spreads) if spreads else 0.0
+    rec = {
+        "overflow_in": overflow,
+        "min_gap_in": min_gap,
+        "worst_gap_in": worst,
+        "max_spread_in": max_spread,
+        "aspect_err": 0.0,
+        "float_hole_in": 0.0,
+        "interior_gap_in": 0.0,
+        "side_gutter_in": 0.0,
+        "region_w_in": None,
+    }
+    if slot:
+        for k in ("aspect_err", "float_hole_in", "interior_gap_in", "side_gutter_in",
+                  "region_w_in", "img_w_in", "img_h_in", "region_gap_in", "row_spread_in",
+                  "page_overflow_in"):
+            if k in slot and slot[k] is not None:
+                rec[k] = slot[k]
+        if slot.get("region_gap_in") is not None:
+            rec["worst_gap_in"] = slot["region_gap_in"]
+            rec["min_gap_in"] = slot["region_gap_in"]
+        if slot.get("row_spread_in") is not None:
+            rec["max_spread_in"] = slot["row_spread_in"]
+        if slot.get("page_overflow_in") is not None:
+            rec["overflow_in"] = slot["page_overflow_in"]
+    return rec
+
+
+def await_ready(call):
+    """Wait for document load, webfonts, and image decode (replaces the racy sleep(0.4))."""
+    for _ in range(100):
+        time.sleep(0.1)
+        try:
+            if eval_js(call, "document.readyState") == "complete":
+                break
+        except RuntimeError:
+            break
+    eval_js(call, """
+      Promise.all([
+        (document.fonts && document.fonts.ready) || Promise.resolve(),
+        ...[...document.images].map(i => (i.decode ? i.decode() : Promise.resolve()).catch(() => {}))
+      ])
+    """, await_promise=True)
+
+
+def _jsonable(obj):
+    if isinstance(obj, dict):
+        return {k: _jsonable(v) for k, v in obj.items() if k != "pairs"}
+    if isinstance(obj, (list, tuple)):
+        return [_jsonable(v) for v in obj]
+    if isinstance(obj, (int, float, str, bool)) or obj is None:
+        return obj
+    return str(obj)
+
+
+def _path_hint(src):
+    return "x.svg" if str(src).lower().endswith(".svg") else "x.jpg"
+
+
+def run_fit(call, flags):
+    """One Chrome-session fit pass. Returns a report dict; no-ops when there are no [data-art] slots."""
+    import art as artmod
+    eval_js(call, FIT_JS)
+    slots = eval_js(call, "window.__gzFit.listSlots()") or []
+    if not slots:
+        print("art-fit: 0 art slots, DOM untouched")
+        return {"slots": [], "decisions": [], "note": "0 art slots, DOM untouched"}
+
+    by_page = {}
+    for s in slots:
+        by_page.setdefault(s["page"], []).append(s)
+    for page, ss in by_page.items():
+        flex = [s for s in ss if s.get("flex")]
+        if len(flex) > 1:
+            msg = f"art-fit FLAG: page {page} has {len(flex)} flex art slots; v1 allows one"
+            flags.append(msg)
+            print(msg)
+
+    decisions = []
+    for s in slots:
+        sid = s["id"]
+        asset = {
+            "id": sid, "src": s.get("src") or "", "kind": s.get("kind") or "illustration",
+            "alt": "", "region": s.get("region") or "lower",
+            "flex": s.get("flex", True),
+            "lettered": s.get("lettered", False),
+        }
+        if s.get("modes"):
+            asset["modes"] = s["modes"]
+        if s.get("min_w"):
+            asset["min_w_in"] = s["min_w"]
+        wrap_ok = bool(s.get("wrap_ok"))
+        region_w = float(s.get("region_w_in") or 0)
+        px_w, px_h = int(s.get("px_w") or 0), int(s.get("px_h") or 0)
+        asset["_path"] = _path_hint(s.get("src"))
+
+        if not s.get("flex"):
+            eval_js(call, "window.__gzFit.apply(%s, %s)" % (
+                json.dumps(sid), json.dumps({"mode": "stack", "width": region_w})))
+            m = json.loads(eval_js(call, INSTRUMENT_JS))
+            extra = eval_js(call, "window.__gzFit.measureSlot(%s)" % json.dumps(sid))
+            rec = instrument_to_rec(m, extra, page=s.get("page"))
+            ok, resid, reasons = artmod.hard_gates(rec)
+            decisions.append({
+                "id": sid, "flex": False, "ok": ok, "flag": not ok,
+                "page": s.get("page"),
+                "cand": {"mode": "stack", "width": region_w, "role": "stack"},
+                "reasons": reasons, "rec": rec, "why": "fixed-stack",
+            })
+            if not ok:
+                msg = "page %s fixed art %r failed hard gates: %s" % (s["page"], sid, "; ".join(reasons))
+                flags.append(msg)
+                print("art-fit FLAG:", msg)
+            else:
+                print("art-fit: %s fixed stack at %.2fin [OK]" % (sid, region_w))
+            continue
+
+        cands = artmod.candidates(
+            asset, region_w, wrap_ok=wrap_ok, px_w=px_w, px_h=px_h,
+            path=asset["_path"], include_gutter=True,
+        )
+        records = []
+        for c in cands:
+            eval_js(call, "window.__gzFit.reset(%s)" % json.dumps(sid))
+            if not c.get("eligible") or c.get("width") is None:
+                dummy = instrument_to_rec({"pages": []}, None)
+                dummy["overflow_in"] = 99
+                dummy["worst_gap_in"] = 99
+                records.append(dummy)
+                continue
+            eval_js(call, "window.__gzFit.apply(%s, %s)" % (
+                json.dumps(sid), json.dumps({"mode": c["mode"], "width": c["width"]})))
+            m = json.loads(eval_js(call, INSTRUMENT_JS))
+            extra = eval_js(call, "window.__gzFit.measureSlot(%s)" % json.dumps(sid))
+            records.append(instrument_to_rec(m, extra))
+        eval_js(call, "window.__gzFit.reset(%s)" % json.dumps(sid))
+        decision = artmod.choose(cands, records, asset, region_w)
+        decision["id"] = sid
+        decision["flex"] = True
+        decision["page"] = s.get("page")
+        decision["region_w"] = region_w
+        decision["wrap_ok"] = wrap_ok
+        decisions.append(decision)
+        cand = decision.get("cand") or {}
+        if cand.get("width"):
+            eval_js(call, "window.__gzFit.apply(%s, %s)" % (
+                json.dumps(sid), json.dumps({"mode": cand["mode"], "width": cand["width"]})))
+        width = cand.get("width")
+        print("art-fit: %s chose %s at %s (%s)%s%s" % (
+            sid, cand.get("mode"), ("%.2fin" % width) if width else "n/a", decision.get("why"),
+            (" WARNs: " + "; ".join(decision.get("warns") or [])) if decision.get("warns") else "",
+            " [FLAG]" if decision.get("flag") else " [OK]",
+        ))
+        for line in decision.get("report") or []:
+            print("  hint:", line)
+        if decision.get("flag"):
+            flags.append("art-fit: %s no candidate passed the hard gates (%s)" % (sid, decision.get("why")))
+            for line in decision.get("report") or []:
+                flags.append("  " + line)
+
+    for d in decisions:
+        rec = d.get("rec") or {}
+        cand = d.get("cand") or {}
+        if cand.get("mode") == "stack" and (rec.get("side_gutter_in") or 0) > 0.1:
+            msg = "art-fit FLAG: side gutter %.2fin on stacked art %r (CSS regression)" % (
+                rec["side_gutter_in"], d.get("id"))
+            flags.append(msg)
+            print(msg)
+
+    return {"slots": slots, "decisions": _jsonable(decisions)}
+
+
+
 def main():
     src = sys.argv[1] if len(sys.argv) > 1 else "prototype/monday-v2.html"
-    out = sys.argv[2] if len(sys.argv) > 2 else (
+    explicit_out = len(sys.argv) > 2 and not sys.argv[2].startswith("--")
+    out = sys.argv[2] if explicit_out else (
         src.rsplit(".", 1)[0] + ".pdf" if "." in src else src + ".pdf"
     )
     src = os.path.abspath(src)
+    out = os.path.abspath(out)
+    # P0: refuse to write into an APPROVED issue folder (write_issue is already guarded).
+    import art as _art
+    refusal = _art.frozen_output_path(out, root=REPO_ROOT, force="--force" in sys.argv)
+    if refusal:
+        print(refusal, file=sys.stderr)
+        sys.exit(1)
     port = 19222
     profile = tempfile.mkdtemp(prefix="gazette-chrome-")
     chrome = subprocess.Popen(
@@ -349,7 +581,17 @@ def main():
                     break
             except RuntimeError:
                 break
-        time.sleep(0.4)  # let webfonts/images settle
+        await_ready(call)
+        flags = []  # any FLAG fails the build unless --allow-flag is passed (V7)
+        fit_report = None
+        if "--no-fit" not in sys.argv:
+            try:
+                fit_report = run_fit(call, flags)
+            except Exception:
+                import traceback as _tb
+                _tb.print_exc()
+                flags.append("art-fit failed to run")
+
         res = call("Page.printToPDF", {
             "displayHeaderFooter": False,
             "preferCSSPageSize": True,
@@ -360,7 +602,7 @@ def main():
             f.write(base64.b64decode(res["data"]))
         print(f"wrote {out}")
         # PDF Author (STYLE-GUIDE § PDF filename): --author=NAME, else <meta name="author">, else default
-        author = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--author=")), None)
+        author = arg("--author=")
         if author is None:
             try:
                 import re as _re
@@ -369,19 +611,49 @@ def main():
             except Exception:
                 author = DEFAULT_AUTHOR
         print("pdf Author set: " + author if set_pdf_author(out, author) else "pdf Author NOT set (unsupported xref)")
-        flags = []  # any FLAG fails the build unless --allow-flag is passed (V7)
+        instrument = None
         try:
-            res = call("Runtime.evaluate", {"expression": INSTRUMENT_JS, "returnByValue": True})
-            m = json.loads(res["result"]["value"])
-            flags += report(m)
-            rep = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--report=")), None)
+            instrument = json.loads(eval_js(call, INSTRUMENT_JS))
+            flags += report(instrument)
+            # Fit/verify agreement: the instrument after print should match the fitter's last measurement
+            # within 0.05in on the chosen candidate's page gap (if a fit ran).
+            if fit_report and fit_report.get("decisions"):
+                import art as _art
+                for d in fit_report["decisions"]:
+                    rec = d.get("rec") or {}
+                    if not rec or not d.get("id"):
+                        continue
+                    try:
+                        extra = eval_js(call, "window.__gzFit.measureSlot(%s)" % json.dumps(d["id"]))
+                    except Exception:
+                        extra = None
+                    post = instrument_to_rec(instrument, extra, page=d.get("page"))
+                    for key, label in (("worst_gap_in", "footer gap"), ("max_spread_in", "spread"), ("overflow_in", "overflow")):
+                        a, b = rec.get(key), post.get(key)
+                        if a is None or b is None:
+                            continue
+                        if abs(a - b) > _art.FIT_VERIFY_TOL_IN:
+                            if len([x for x in fit_report["decisions"] if x.get("flex")]) <= 1:
+                                msg = f"art-fit FLAG: fit/verify disagree on {label}: fit {a:.2f}in vs verify {b:.2f}in"
+                                flags.append(msg)
+                                print(msg)
+                            break
+            rep = arg("--report=")
             if rep:
+                payload = dict(instrument)
+                if fit_report:
+                    payload["art_fit"] = fit_report
                 with open(rep, "w") as f:
-                    json.dump(m, f, indent=1)
+                    json.dump(payload, f, indent=1)
+            fitrep = arg("--fit-report=")
+            if fitrep and fit_report:
+                with open(fitrep, "w") as f:
+                    json.dump(fit_report, f, indent=1)
         except Exception:
             import traceback as _tb
             _tb.print_exc()
             flags.append("instrument failed to run")
+
         try:
             info = subprocess.run(["pdfinfo", out], capture_output=True, text=True)
             for line in info.stdout.splitlines():
