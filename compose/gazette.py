@@ -17,6 +17,7 @@ What lives here
   board_split()         two halves of a full-width board; box notes go under the shorter half
   box(), box_pair()     tabular box; two small boxes side by side
   photo(), credit_line(), photo_span()   photo furniture and the placement rule
+  art(), load_art_manifest()             flexible art slot (comics, diagrams, photos)
   textcols(), split()   prose in ruled columns
   masthead(), dateline(), footer(), page(), document(), write_issue()
   check_issue()         compose-time checks (credit form, weapon spelling)
@@ -379,32 +380,23 @@ def split(*cols, widths=None):
             + "".join(f'<div style="flex:{w}">{c}</div>' for c, w in zip(cols, widths)) + "</div>")
 
 
-# ----------------------------------------------------------------- photos
-PHOTO_CEILING_IN = 2.2      # STYLE-GUIDE §19 soft ceiling
-COL1_IN, COL2_IN = 2.42, 4.96
-MIN_PRINT_DPI = 150
+# ----------------------------------------------------------------- photos and flexible art
+# Placement numbers and photo_span() live in art.py so the fitter and the composer share them.
+from art import (  # noqa: E402
+    PHOTO_CEILING_IN, COL1_IN, COL2_IN, PHOTO_MIN_DPI, MIN_PRINT_DPI,
+    photo_span, art_markup, load_art_manifest, validate_asset, ArtError,
+)
 
 
-def photo_span(path, is_results_photo=True):
-    """Placement rule for the week's photo (A3). Returns (columns, reason).
+def art(asset, src=None, credit=None):
+    """Flexible art slot for the fitter. `asset` is one entry from recipe/art.json.
 
-    A results photo runs two columns wide under the lead headline (the No. 4 front) only when,
-    at that width and uncropped, it (1) stays within the §19 height ceiling and (2) still has
-    150 dpi. Otherwise it runs one column wide in the rail, directly under Club Results.
-    The caption is the same either way. Cropping is the photo desk's call, never CSS."""
-    try:
-        from PIL import Image, ImageOps
-        im = ImageOps.exif_transpose(Image.open(ROOT / path)); w, h = im.size
-    except Exception as e:
-        return 1, f"could not measure ({e}); one column"
-    tall2, dpi2 = COL2_IN * h / w, w / COL2_IN
-    if not is_results_photo:
-        return 1, "not a results photo; one column"
-    if tall2 > PHOTO_CEILING_IN:
-        return 1, f"{w}x{h}: {tall2:.1f}in tall at two columns, over the {PHOTO_CEILING_IN}in ceiling; one column ({COL1_IN * h / w:.1f}in)"
-    if dpi2 < MIN_PRINT_DPI:
-        return 1, f"{w}x{h}: only {dpi2:.0f} dpi at two columns; one column"
-    return 2, f"{w}x{h}: {tall2:.1f}in tall, {dpi2:.0f} dpi at two columns"
+    The printed credit, if any, is the same one-line rule as photo(). Full attributions
+    should go through credit_line() first. Layout never crops."""
+    cred = ""
+    if credit:
+        cred = f'<p class="credit">{html.escape(check_credit(credit), quote=False)}</p>'
+    return art_markup(asset, src=src, credit_html=cred)
 
 
 _CREDIT_BAD = re.compile(r"\.(jpe?g|png|tiff?)\b|https?://|www\.|\w+\.(org|com|net)/|File:", re.I)

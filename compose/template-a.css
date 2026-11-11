@@ -10,6 +10,9 @@
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt; line-height: 1.26; color: #000;
     font-variant-numeric: tabular-nums; }
+  /* --colw is the estimate for a one-column rail (2.42in). The fitter overwrites it with the
+     measured content width when it runs. .pfloat uses the variable so it cannot overflow a rail. */
+  :root { --colw: 2.42in; --art-w: 100%; }
   .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
   .page:last-child { page-break-after: auto; }
   .page .footer { margin-top: auto; }
@@ -143,11 +146,20 @@
   /* Credit (A6): one short black line directly under the caption. */
   .credit { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; color: #000; margin-top: 1.5pt;
     text-align: left; line-height: 1.25; hyphens: none; }
-  .pfloat { float: left; width: 2.42in; margin: 2pt 9pt 3pt 0; } /* one grid column wide */
+  .pfloat { float: left; width: var(--colw); margin: 2pt 9pt 3pt 0; } /* one grid column wide */
   .photowide::after { content: ""; display: block; clear: both; }
   .figure img, .comicfig img { display: block; width: 100%; height: auto; }
   .figure .caption { margin-top: 3pt; }
   .comicfig { margin: 0; }
+
+  /* Flexible art (Frank t212u). Stack is flush to the region; float wraps following prose;
+     gutter is a last-resort narrow stack (≤ 0.25in side space, flush left, never centered).
+     Never crop: width is set, height follows aspect. Fixed margins, no auto. */
+  .art { margin: 6pt 0; max-width: 100%; }
+  .art img { display: block; width: 100%; height: auto; filter: grayscale(100%); }
+  .art--float { float: left; width: var(--art-w); margin: 2pt 9pt 3pt 0; }
+  .art--gutter { width: var(--art-w); margin: 6pt auto 6pt 0; } /* flush left; leftover is one side only */
+
   /* Scalable line art takes whatever depth is left on a .page.fit — scaled, never cropped. */
   .fill-art { flex: 1 1 0; min-height: 0; margin: 7pt 0 5pt 0; display: flex; justify-content: center; align-items: flex-start; }
   .fill-art img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; }
