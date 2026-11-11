@@ -2,6 +2,9 @@
 
 Newest first. Earlier versions (v3.3–v3.19) are summarized in PLAN.md (status line, §8, §9).
 
+## v3.47 — 2026-11-11
+- **Shared Template A composer** (Frank, chat t207u, 3:59 p.m. ET: adopt the general changes from the Fable 5.2 sample). New issues compose from `compose/`: `gazette.py` (helpers; repo root from `__file__`), `template-a.css` (the one stylesheet), `render.py` (fill instrument measures the footer gap in every column, including `.page2-lower`), `recipe_template.py`, and vendored `pyphen` for hyphenation. Kickers are 7.25pt, the dek is left-aligned, ears are 7–7.2pt (meeting the §4 type floor), hard hyphens in compounds such as `regular-fee` are preserved as U+2011, credits are black, split-board notes sit under the shorter half, Club Results groups tournament + date once, and thin On the Road boards use a Day column (busy boards keep sub-rows). Previews are 200 dpi. Published Nos. 1–6 (PDFs and `issue.html`) stay frozen; their recipes refuse an in-place overwrite without `--force`. The No. 5 / No. 6 page reshuffles from the sample were not adopted. Budget-page work is out of scope for this change.
+
 ## v3.46 — 2026-11-06
 - **Issue build folders renamed `build/` → `recipe/`** (Frank, chat 2026-11-06). `issues/<date>/build/` (`compose.py`, `overrides.json`) went missing from the working tree three times (found 2026-10-30, 11-02, 11-06) with no repo script, commit or teammate command responsible; the 10-28 box restore dropped every directory named `build`/`.build`, so the likely cause is something outside the repo treating `build` folders as disposable. Renamed for all three issues, updated the self-paths in each `compose.py`, the `build` command in each `issue.json`, and STYLE-GUIDE. Future issues keep their compose files in `issues/<date>/recipe/`. Earlier entries mentioning `build/` are history.
 

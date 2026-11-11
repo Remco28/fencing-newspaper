@@ -23,13 +23,20 @@
 - REDDIT-SETUP.md — Reddit OAuth path (approval-gated; fallbacks are default)
 - REVIEW-FROM-BUFFY-REVIEWER.md / VISUAL-REVIEW-DEEPSEEK-V4.1-FLASH.md — outside reviews
 
-## Render a prototype
+## Compose and render an issue
+Shared Template A composer (v3.47): typography, boards, stylesheet and fill instrument live in `compose/`. Start a new issue from `compose/recipe_template.py` (see `compose/README.md` and `staging/weeks/next/COMPOSE.md`).
+```bash
+python3 issues/<date>/recipe/compose.py x
+python3 compose/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf --author="Nico's Dad"
+pdftoppm -r 200 -png issues/<date>/en-garde-gazette-no-<N>-<date>.pdf issues/<date>/preview
+```
+`compose/render.py` uses Chrome CDP (headers off), then prints the footer gap **per column**
+(FLAG > 0.75in), per-row column spread (FLAG > 0.5in), the 7pt type floor, and hyphenated line breaks.
+Any FLAG fails the build unless `--allow-flag` is passed. See STYLE-GUIDE.md §7.
+`prototype/render.py` is a shim to the same renderer. Historical monday-v* pages:
 ```bash
 ./prototype/render.sh prototype/monday-v6.html
 ```
-`render.py` uses Chrome CDP (headers off), then prints per-page footer gaps
-(FLAG > 0.75in) and per-row column spread (FLAG > 0.5in). Any FLAG fails the build
-unless `--allow-flag` is passed. See STYLE-GUIDE.md §7 for the full QA checklist.
 
 ## Ops (locked 2026-10-06; gather loop v3.15; publish wording v3.19; first-run decisions v3.20)
 - **Publish cadence:** one weekly newsletter. Try Monday or Tuesday; later is fine (no rule broken). Soft preference to hold for Monday club results when easy. Dateline = actual publish day (`<Weekday> Edition`). No Mon/Thu split.
@@ -42,7 +49,8 @@ unless `--allow-flag` is passed. See STYLE-GUIDE.md §7 for the full QA checklis
 - **Durable store:** sync this repo to GitHub weekly (and after a finished issue if you care). Everything except raw email bodies.
 
 ## Repo layout
-- `prototype/` — layout sandbox (versioned `monday-vN.html` + PDFs, `render.py`)
+- `compose/` — shared Template A composer (`gazette.py`, `template-a.css`, `render.py`, recipe template). New issues start here.
+- `prototype/` — historical layout sandbox (versioned `monday-vN.html` + PDFs). `render.py` is a shim to `compose/render.py`.
 - `masthead001.png` — nameplate art (cropped to opaque bbox)
 - `budget-demo/` — local budget page at `http://127.0.0.1:8766/` (`cd budget-demo && nohup python3 server.py &`). `/` = **PRACTICE budget v2** (`practice.html`, v3.21): built for a 1280×800 desktop view from REAL `staging/weeks/next/items.json` + media manifest, driven by Clark's lineup `practice-lineup.json` (schema 2: sections, slot → item ids, summaries, questions for Frank, fit calibration). `/thumb/<file>` serves small cached thumbnails. `/demo` = old PRETEND demo. Vet → `staging/weeks/next/items.json` + vet-log; Submit → `submissions/budget-*.json` + `approvals.json` (gitignored), incl. Frank's `answers`. Previous issue's lineup + v1 page: `budget-demo/archive/`. Screens: `python3 budget-demo/screenshot.py <url> budget-demo/screens/<name> 1280 800`. See STAGING.md.
 - `scripts/` — helpers; **`scripts/askfred.py`** = gentle AskFRED gather client (key in `.env`, see SOURCES.md)

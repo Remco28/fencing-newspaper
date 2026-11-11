@@ -250,5 +250,8 @@ h = """<!DOCTYPE html>
 </body>
 </html>
 """
-open(R+ISSUE+'/issue.html','w').write(h)
-print('ok')
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parents[3] / "compose"))
+from gazette import write_issue as _write_issue
+_write_issue("issues/2026-11-11", h)

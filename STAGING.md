@@ -163,6 +163,7 @@ SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Easte
 ### Publish gates (reminder)
 **Budget HTML → Frank approve → Clark Kent compose → Proof PDF → Frank approve → print.**
 Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or email/chat message-ID + date, or logged API/fetch). Chat is doorbell only for “budget ready” / “proof ready.”
+Compose with the shared Template A helpers in `compose/` (copy `compose/recipe_template.py` to `issues/<date>/recipe/compose.py`; see `compose/README.md`). Render with `python3 compose/render.py` and write 200 dpi previews. An issue whose `issue.json` status starts with APPROVED is frozen — in-place compose needs `--force`. Published Nos. 1–6 stay frozen.
 
 ### Reality / provenance (locked 2026-10-07 — plan v3.16)
 - **Real issues invent nothing.** Sample/layout fiction stays labeled (`sample`, `pretend`, `demo`) and must not be promoted as fact.

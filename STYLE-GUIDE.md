@@ -124,7 +124,11 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
 - Secondary B + NJ HS (slots 5–6): smaller presence — same H2 tier or slightly tighter;
   shorter grafs within budget. Never enlarge shorts to match the lead.
 - Box titles 10pt caps. Tables/boards 8.5pt. Footer 7pt sans caps. Dateline: edition ~12.5–14pt display; meta ~8pt serif small-caps (§2/§12).
-  Nothing below 7pt, ever.
+  Kickers (`.rail-title`) 7–7.5pt bold sans caps, smaller than any headline, no underline.
+  Nothing below 7pt, ever. Ears (§12) are 7–7.2pt so they meet this floor.
+  The dek under the lead is left-aligned and unhyphenated (it is display type, not a column).
+  Body columns are justified; soft hyphens come from `compose/gazette.py` (`paras()`), not the browser.
+  Existing hard hyphens in compounds (regular-fee) are kept as non-breaking hyphens so they do not vanish at a line break.
 
 ## 5. Alignment (be anal — this is what looks professional)
 - Boards (ratings, scoreboard, signups) are TABLES with fixed layout, never loose lists:
@@ -144,6 +148,9 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
 - If content runs long, cut per §11 / CONTENT-HIERARCHY (never furniture,
   never shrink type) — never shrink below the type minimums to force a fit. If a late add
   would make 3 pages, reflow and trim **Clark fill** stories first (v3.20).
+- `compose/render.py` measures the footer gap **per column** (including `.page2-lower` and other
+  multi-column splits), not only the tallest sibling. The worst column is the page's number.
+  FLAG above 0.75in. Fill shortfalls with layout or by asking Frank for copy; never invent prose.
 
 ## 7. Mandatory visual QA (every render, no exceptions — human or bot)
 Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
@@ -172,8 +179,8 @@ Any NO = fix, re-render, re-check. Fitting on the page is necessary but NOT suff
 it must look purpose-built for this club. **A proof is not “done” (and no “proof ready”
 doorbell goes out) until Clark has opened and inspected every page PNG** of the current render
 (v3.20 — reaffirmed from the first real run).
-Board-level QA must be done on zoomed crops (150dpi+) of each table, not full-page
-thumbnails — alignment cannot be judged through frosted glass.
+Store page previews at **200 dpi** (`pdftoppm -r 200`). Board-level QA must be done on zoomed
+crops of each table, not full-page thumbnails — alignment cannot be judged through frosted glass.
 
 ## 8. Box-free articles; borders only on tables (locked 2026-10-06; **tightened 2026-10-07**)
 - ARTICLE text flows WITHOUT bounding boxes: headline, optional dek, justified text, nothing else.
@@ -245,8 +252,10 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 - Arrangement inside the full-width box: blocks flow top-to-bottom in `.board-split` halves; the
   biggest tournament takes the left half (or the full width if it is tall enough), smaller
   ones stack in the right half in date order. Venue/count note (`.boxnote`) stays under the board.
-- CSS: `prototype/template-a-v2.css` (append to Template A). Helper: `tourney()` in the issue composer
-  (`issues/2026-10-19/recipe/compose.py`).
+- CSS: `compose/template-a.css`. Helpers: `tourney()`, `board_split()` and `results_table()` in
+  `compose/gazette.py`. `tourney(layout="auto")` uses a Day column when most days hold one event;
+  busy tournaments keep day sub-rows. Club Results prints the tournament and date once as a sub-row.
+  (`prototype/template-a-v2.css` is superseded for new issues; historical monday-v* pages may still use it.)
 
 ## 11. Word budgets — measure once, write to fit (locked 2026-10-06; stretch refresh 2026-10-07)
 - Each pattern slot carries a WORD BUDGET calibrated once per template. Current calibration
@@ -282,8 +291,10 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 - **Flank presentation (v3.13 ears; v3.14 gap):**
   Serif face (**Libre Caslon Text** / Times), **not** bold Arial side-rules.
   Each ear: thin **0.75pt** top + bottom hairlines (no chunky 2pt side borders).
-  Text centered in its ear. Left: **small-caps**, ~6.5pt, light tracking.
-  Right: **italic**, ~6.8pt, sentence case. Never widen the logo to fill whitespace.
+  Text centered in its ear. Left: **small-caps**, **7–7.2pt**, light tracking.
+  Right: **italic**, **7–7.2pt**, sentence case. (These were ~6.5pt / ~6.8pt through No. 6;
+  raised 2026-11-11 so ears meet the §4 type floor. Masthead and dateline design is unchanged.)
+  Never widen the logo to fill whitespace.
   Do **not** revert to Arial + 2pt side rules.
   **Clear air from the masthead logo:** logo ~**50%** width with **`margin: 0 10pt`**
   on the img (PNG flourishes run to the image edges — CSS flex gap alone is not enough),
@@ -313,8 +324,11 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 - **Footer copy:** issue number + for-fun disclaimer only (e.g. tips path / "just for fun").
   No "printed at the club" language; no print-timestamp line. Dateline already carries
   Vol/No and date — do not restate a full dateline in the footer.
-- `render.py` measures the gap above each footer via CDP element boxes and reports inches:
-  FLAG above 0.75in. Thumbnails are for taste; NUMBERS are for fill. Eyeballing fill is banned.
+- `compose/render.py` measures the gap above each footer **per column** via CDP (including
+  `.page2-lower`, `.split`, and `.board-split`), and reports inches. The worst column is the
+  page's number. FLAG above 0.75in. It also checks the 7pt type floor on every text element
+  (ears, captions, credits, kickers, board heads) and counts hyphenated line breaks.
+  Thumbnails are for taste; NUMBERS are for fill. Eyeballing fill is banned.
 - The instrument (not the eye) decides whether a page passes; the eye decides whether it is beautiful.
 
 ## 14. Header/data alignment (locked 2026-10-06)
@@ -348,9 +362,10 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 - Page-level fill is necessary but not sufficient: columns WITHIN a row must end within
   ~0.5in of each other. A two-column-wide hole under a short lead next to a tall rail is
   a defect even when the footer reaches the bottom.
-- `render.py` reports per-row column-bottom spread alongside the footer gap. Fixes in order:
-  retune the short column's word budget, then pull-quote, then restructure — never leave
-  a region void larger than 0.5in.
+- `compose/render.py` reports per-row column-bottom spread alongside the per-column footer gap.
+  Fixes in order: retune the short column's word budget, then pull-quote, then restructure —
+  never leave a region void larger than 0.5in. In a `.board-split`, box notes go under the
+  shorter half rather than as one full-width line under both.
 
 ## 19. Photos — fit, no silent crop (locked 2026-10-07, plan v3.9)
 - Default CSS: `width: 100%; height: auto;` — preserve the original aspect ratio. **Never**
@@ -362,7 +377,10 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   renders as portrait and can exceed the ceiling even when the file header looks landscape.
   Sample note (2026-10-14): `club-newsletter-photo-1.jpeg` FLAGS at ~3.1in in a 1-col;
   issue used landscape `club-newsletter-photo-2.jpeg` (~1.8in) instead.
-- Caption under the image (sans ~7pt). Photo desk still chooses which frames run; layout
+- Caption under the image (sans ~7pt). Credit is one short black line under the caption
+  (author / source, licence with version, "(cropped)" if changed). No file names or URLs
+  in the printed line; the full attribution stays in `sources.json`. Published issues keep
+  the credit they already printed. Photo desk still chooses which frames run; layout
   only scales to column width.
 - **Caption naming (v3.20, first real run):** name **only people Frank has confirmed** (chat /
   vetted source). No left/right order unless Clark can actually tell who is who from the
@@ -379,7 +397,12 @@ Each published issue has **one** canonical PDF, uniquely named:
 Examples: `en-garde-gazette-no-1-2026-10-08.pdf`, `en-garde-gazette-no-2-2026-10-13.pdf`.
 
 - Lives in `issues/<date>/` (and the site/docs copies). Do **not** use a bare `paper.pdf` for published issues.
-- Render with: `python3 prototype/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf`
+- Render with: `python3 compose/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf`
+  (`prototype/render.py` still works; it is a shim). After the PDF, write previews at 200 dpi:
+  `pdftoppm -r 200 -png <pdf> issues/<date>/preview`.
+- Composer: start from `compose/recipe_template.py`, copy to `issues/<date>/recipe/compose.py`.
+  An issue whose `issue.json` status starts with APPROVED is frozen; in-place compose needs `--force`
+  or `--out=PATH` for a trial. Published Nos. 1–6 stay frozen.
 - Site `issues.json` `pdf` field and the Download button must point at that filename so browsers save the unique name.
 - PDF Author field (when set): **Nico's Dad** (Frank's joke byline).
 
@@ -388,6 +411,6 @@ Examples: `en-garde-gazette-no-1-2026-10-08.pdf`, `en-garde-gazette-no-2-2026-10
 Every page footer is a trio on the 2.5pt rule — left `En Garde Gazette · Issue No. N`, centre
 `Past issues · newsletter.teamremco.org`, right the for-fun disclaimer — all in the **same footer
 type** (7pt sans caps, same tracking and colour). CSS class `.foot-archive` now inherits the footer
-style (`prototype/template-a-v2.css`); it must not get its own size, weight, case or colour (Frank
+style (`compose/template-a.css`); it must not get its own size, weight, case or colour (Frank
 2026-10-18: the smaller muted line looked shoehorned). Do not enlarge or promote it.
 
