@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-11T08:00:00-05:00",
-  "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held.",
+  "updated_at": "2026-11-11T14:43:00-05:00",
+  "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7.",
   "items": [
     {
       "id": "chat-winter-camp-reminder",
@@ -953,7 +953,7 @@
       "source": "fencingtracker",
       "target_week": "next",
       "vetted": true,
-      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.\n[2026-11-10 5:21 PM ET] Frank (chat): 'Athreya is definitely a member of our club!  He's an OG.' Kept on On the Road; added to roster/people.json. Confirm-before-print flag dropped.",
+      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.\n[2026-11-10 5:21 PM ET] Frank (chat): 'Athreya is definitely a member of our club!  He's an OG.' Kept on On the Road; added to roster/people.json. Confirm-before-print flag dropped.\n[2026-11-11 2:40 p.m. ET] Frank (chat t204u): 'I forgot to include Keifer Meinhardt tournament. We'll mention the results next week I guess.' Results-watch item staged as chat-kiefer-meinhardt-results-watch-2026-11-11 for Issue No. 7.",
       "tags": [
         "entries",
         "travel"
@@ -1006,7 +1006,7 @@
         }
       ],
       "created_at": "2026-10-28T09:58:00-04:00",
-      "updated_at": "2026-11-10T17:22:00-05:00",
+      "updated_at": "2026-11-11T14:43:00-05:00",
       "carried_from": "staging/weeks/2026-11-11",
       "carry_note": "Unprinted in No. 5 (scraped, unvetted). November NAC Nov 20–22 still upcoming; candidate for No. 6.",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -1113,6 +1113,55 @@
           "note": "Prior digest: Freehold listed, nobody signed up (data as of Nov 10, 3:20 PM)."
         }
       ]
+    },
+    {
+      "id": "chat-kiefer-meinhardt-results-watch-2026-11-11",
+      "kind": "tip",
+      "headline": "Results watch: Kiefer Meinhardt Cup (Nov. 14–15)",
+      "body": "Frank (chat, Nov. 11, 2:40 p.m. ET) asked to mention Kiefer Meinhardt Cup results next week; he had forgotten to include the tournament. Event: Kiefer Meinhardt Cup, Glen Allen, Va., Nov. 14–15. Elite FC entered: Stella Kuo and Mila Siu in Y14 Women on Saturday and Y12 Women on Sunday (official USA Fencing entries, last checked Nov. 10, 4:26 p.m. ET). This is a desk reminder, not print copy — fetch official results after the event and stage them for Issue No. 7.",
+      "source": "chat",
+      "from": "frank",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_at": "2026-11-11T14:40:00-05:00",
+      "vetted_by": "frank",
+      "vet_scope": "direction_only",
+      "facts_status": "entry facts verified in sibling travel item; results not yet available",
+      "slot_hint": "club_results",
+      "suggested_slot": "club_results",
+      "tags": [
+        "results-watch",
+        "travel",
+        "kiefer-meinhardt"
+      ],
+      "word_count": 83,
+      "related_item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+      "frank_direction": "t204u 2026-11-11 2:40 p.m. ET: mention Kiefer Meinhardt Cup results next week.",
+      "vet_notes": "Frank chat t204u, 2026-11-11 2:40 p.m. ET: 'I forgot to include Keifer Meinhardt tournament. We'll mention the results next week I guess.' Official spelling is Kiefer (see ft-efc-travel-registrations-nov-dec-2026-10-28). Direction only: no results yet (event is Nov. 14–15). Do not invent placings. After the event, fetch official USA Fencing / FencingTracker results and stage them unvetted for Frank. Entry facts last confirmed Nov. 10, 4:26 p.m. ET via fencing-api. record_chat_decision.py was not used: No. 7 budget-versions.json has no decisions yet, and this is a results-watch note, not a budget include/exclude.",
+      "facts": [
+        {
+          "claim": "Kiefer Meinhardt Cup, Glen Allen, Va., Nov. 14–15",
+          "source": "ft-efc-travel-registrations-nov-dec-2026-10-28 / fencing-api /v1/usfa/tournaments/12117/entries",
+          "status": "verified in sibling travel item; last checked 2026-11-10 4:26 PM ET"
+        },
+        {
+          "claim": "Stella Kuo and Mila Siu entered Y14WE Sat Nov 14 and Y12WE Sun Nov 15",
+          "source": "ft-efc-travel-registrations-nov-dec-2026-10-28 / fencing-api /v1/usfa/tournaments/12117/entries",
+          "status": "verified in sibling travel item; last checked 2026-11-10 4:26 PM ET"
+        }
+      ],
+      "provenance": [
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-11T14:40:00-05:00",
+          "ref": "t204u",
+          "text": "I forgot to include Keifer Meinhardt tournament.  We'll mention the results next week I guess.",
+          "note": "Frank's spelling 'Keifer'; official name is Kiefer Meinhardt Cup."
+        }
+      ],
+      "created_at": "2026-11-11T14:43:00-05:00",
+      "updated_at": "2026-11-11T14:43:00-05:00"
     }
   ],
   "rolled_forward": {
