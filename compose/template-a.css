@@ -1,0 +1,167 @@
+  /* ==== En Garde Gazette — Template A base CSS ====================================
+     The ONE stylesheet every issue is composed with (prototype/gazette.py inlines it).
+     History: extracted 2026-11-11 from the CSS that composers used to scrape out of
+     issues/2026-10-13/issue.html, plus prototype/template-a-v2.css, plus the per-issue
+     "composition additions" that had become permanent. Review ids (A4, A10 ...) refer
+     to the Nov. 11 advisory review. Black and white only. Nothing below 7pt.
+     ================================================================================= */
+  @page { size: Letter; margin: 0.5in 0.5in 0.4in 0.5in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt; line-height: 1.26; color: #000;
+    font-variant-numeric: tabular-nums; }
+  .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
+  .page:last-child { page-break-after: auto; }
+  .page .footer { margin-top: auto; }
+  /* A page that carries scalable art (.fill-art) gets a definite height so the art can
+     take exactly the space that is left. The instrument flags any overlap with the footer. */
+  .page.fit { height: 10.1in; }
+
+  /* ---- Masthead, ears, dateline (design locked; A11 raises the ears to the 7pt floor) ---- */
+  .masthead { display: flex; align-items: center; gap: 18pt; }
+  .masthead img { display: block; width: 50%; height: auto; margin: 0 10pt; flex: none; }
+  .flank { flex: 1; min-width: 0; padding: 5pt 7pt; margin: 0;
+    border-top: 0.75pt solid #000; border-bottom: 0.75pt solid #000;
+    line-height: 1.22; }
+  .flank.left {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.1pt; font-variant: small-caps; letter-spacing: 0.06em;
+    text-align: center; font-weight: 400; }
+  .flank.right {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.1pt; font-style: italic; letter-spacing: 0.01em;
+    text-align: center; font-weight: 400; }
+  .dateline { text-align: center;
+    border-top: 3pt double #000; border-bottom: 2pt solid #000;
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+  .dateline .edition {
+    font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
+    font-weight: 700; font-size: 12.5pt; line-height: 1.02;
+    letter-spacing: 0.16em; text-transform: uppercase; }
+  .dateline .meta {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.5pt; letter-spacing: 0.05em; margin-top: 1.5pt;
+    font-variant: small-caps; font-weight: 400; }
+
+  /* ---- Grid ---- */
+  .cols3 { display: flex; gap: 9pt; }
+  .cols3 > .c { flex: 1; min-width: 0; }
+  .cols3 > .span2 { flex: 2.06; }
+  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: 9pt; }
+  .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
+  .page > :is(.box, .cols3, .split, .rail-block) + :is(.box, .cols3, .split, .rail-block) { margin-top: 7pt; }
+  .page > .box, .page > .rail-block { margin-bottom: 0; }
+  /* Any other side-by-side split of prose (A12): always ruled, like the thirds. */
+  .split, .page2-lower { display: flex; gap: 9pt; align-items: stretch; }
+  .split > *, .page2-lower > * { min-width: 0; }
+  .split > * + *, .page2-lower > * + * { border-left: 1pt solid #000; padding-left: 9pt; }
+  /* Prose set in newspaper columns under one headline (feature in a span2, short across the page). */
+  .textcols { column-gap: 19pt; column-rule: 1pt solid #000; orphans: 2; widows: 2; }
+  .textcols.n2 { column-count: 2; }
+  .textcols.n3 { column-count: 3; }
+
+  /* ---- Boxes (tables only, STYLE-GUIDE §8) and prose furniture ---- */
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
+  .rail-block { margin-bottom: 6pt; padding: 0; border: none; }
+  .boxtitle { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 0.5pt; padding-bottom: 2pt; margin-bottom: 3pt; }
+  .box > .boxtitle { border-bottom: 1pt solid #000; }
+  /* Kicker (A4): a label, not a second headline. Small bold sans caps, the .tourney-head voice.
+     No underline, ever (§8). */
+  .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.25pt;
+    line-height: 1.2; text-transform: uppercase; letter-spacing: 0.6pt; border: none; padding: 0; margin: 0 0 1.5pt 0; }
+  /* Two small tables side by side as half-width boxes (A3; §10: few rows never earn full width). */
+  .box-pair { display: flex; gap: 9pt; align-items: stretch; }
+  .box-pair > .box { flex: 1; min-width: 0; margin-bottom: 0; }
+
+  /* ---- Type scale (STYLE-GUIDE §4) ---- */
+  h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 18.5pt; line-height: 1.02; letter-spacing: -0.35pt; margin-bottom: 2pt; text-wrap: balance; }
+  .span2 > p { font-size: 9pt; } /* lead body +0.5pt vs shorts */
+  /* Dek (A10): display type is never justified or hyphenated. */
+  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; text-align: left; hyphens: none; text-wrap: balance; }
+  h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; text-wrap: balance; }
+  .slot-a h2.head { font-size: 12pt; }
+  .slot-a > p { font-size: 8.8pt; }
+  .slot-b h2.head { font-size: 10.5pt; }
+  .slot-feature h2.head { font-size: 13pt; line-height: 1.04; margin-bottom: 3pt; }
+  .slot-feature > p { font-size: 8.8pt; }
+  .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; margin-bottom: 3pt; }
+  /* Body text (A5). Hyphenation points are soft hyphens placed by gazette.ty(); `manual`
+     keeps the result identical on every machine, with or without a browser dictionary. */
+  p { margin-bottom: 3pt; text-align: justify; hyphens: manual; }
+  p, td { text-wrap: pretty; }
+  /* Table cells never auto-hyphenate; gazette.ty() uses U+2011 in compounds (regular-fee). */
+  td, th { hyphens: none; }
+  p:last-child { margin-bottom: 0; }
+  .factcheck { font-style: italic; }
+  .span2 p b.run { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 8pt; letter-spacing: 0.2pt; }
+  .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
+
+  /* ---- Vertical rhythm between stacked pieces in a column: margin only, never an HR ---- */
+  .c > :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo)
+      + :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo) { margin-top: 7pt; }
+  .c > p + :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo) { margin-top: 7pt; }
+  .c > :last-child { margin-bottom: 0; }
+
+  /* ---- Boards ---- */
+  table.board { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 8.5pt; }
+  table.board th { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; text-align: left; border-bottom: 1.5pt solid #000; padding: 1pt 4pt 1pt 0; }
+  table.board td { border-bottom: 0.5pt solid #000; padding: 1pt 4pt 1pt 0; vertical-align: top; }
+  table.board tr:last-child td { border-bottom: none; }
+  td.r, th.r, table.board th.r { text-align: right; }
+  td.num { text-align: right; white-space: nowrap; }
+  table.board th.t, table.board td.t { text-align: left; white-space: nowrap; padding-right: 8pt; }
+  td .nw { white-space: nowrap; }
+  /* Sub-row: a day inside a tournament (§10a) or a tournament inside Club Results (A7). */
+  table.board tr.day td { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7pt;
+    letter-spacing: 0.3pt; text-transform: uppercase; padding-top: 3pt; padding-bottom: 1pt;
+    border-bottom: 0.5pt solid #000; text-align: left; }
+  /* Day column (A8): the day prints once; its later rows leave the cell empty. */
+  table.board td.dayc { white-space: nowrap; }
+  .board-split { display: flex; gap: 12pt; }
+  .board-split > div { flex: 1; min-width: 0; }
+  .tourney + .tourney { margin-top: 9pt; }
+  .tourney-head, .board-cap { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 0 0 1pt 0; }
+  .tourney-head span, .board-cap span { font-weight: 400; text-transform: none; letter-spacing: 0;
+    font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  .boxnote { margin-top: 3pt; text-align: left; }
+  /* A note carried inside one half of a split board (A2) sits under that half's last table. */
+  .board-split .boxnote { margin-top: 5pt; }
+  .board-split .boxnote + .boxnote { margin-top: 3pt; }
+
+  /* ---- Photos, captions, credits, art ---- */
+  .photo { margin-bottom: 3pt; }
+  .photo img { display: block; width: 100%; height: auto; /* full frame, never a CSS crop (§19) */
+    filter: grayscale(100%); }
+  .caption { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; margin-top: 2pt;
+    text-align: left; line-height: 1.3; hyphens: none; }
+  /* Credit (A6): one short black line directly under the caption. */
+  .credit { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; color: #000; margin-top: 1.5pt;
+    text-align: left; line-height: 1.25; hyphens: none; }
+  .pfloat { float: left; width: 2.42in; margin: 2pt 9pt 3pt 0; } /* one grid column wide */
+  .photowide::after { content: ""; display: block; clear: both; }
+  .figure img, .comicfig img { display: block; width: 100%; height: auto; }
+  .figure .caption { margin-top: 3pt; }
+  .comicfig { margin: 0; }
+  /* Scalable line art takes whatever depth is left on a .page.fit — scaled, never cropped. */
+  .fill-art { flex: 1 1 0; min-height: 0; margin: 7pt 0 5pt 0; display: flex; justify-content: center; align-items: flex-start; }
+  .fill-art img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; }
+
+  /* ---- Parent Q&A (§8a) ---- */
+  .qa .q { font-style: italic; font-weight: bold; margin-bottom: 2pt; text-align: left; }
+  .qa .q::before { content: "Q. "; font-style: normal; font-weight: 900;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  .qa .a { margin-bottom: 0; }
+  .qa .a::before { content: "A. "; font-family: "Arial", "Liberation Sans", sans-serif;
+    font-weight: 900; font-size: 7.5pt; letter-spacing: 0.3pt; }
+
+  /* ---- Footer trio (locked) ---- */
+  .footer { border-top: 2.5pt solid #000; margin-top: 1pt; padding-top: 2pt;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt;
+    display: flex; justify-content: space-between; text-transform: uppercase;
+    gap: 14pt; letter-spacing: 0.15pt; }
