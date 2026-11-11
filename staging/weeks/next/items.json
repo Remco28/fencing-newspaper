@@ -9,8 +9,8 @@
       "section": "For the Parents",
       "headline": "For the Parents: What a Rating Letter Means",
       "summary": "Pitch: a plain-words guide to USA Fencing ratings (A through E, U for unrated), what the year means (A26 = earned in 2026), how a fencer earns one (finish high enough at a big enough, strong enough event), and how long it lasts. Ties into Maksim's A26. About 110 words, sourced from USA Fencing's rules and Athlete Handbook.",
-      "body": "A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U — unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026. A rating is official only on USA Fencing’s membership list. It lasts four seasons; if it isn’t renewed, it drops one letter at the start of the next season, on Aug. 1.\n\nRatings are earned, one weapon at a time, at sanctioned competitions from local events to national ones. A competition’s classification — Group E1, D1, C1 and so on — depends on the size of the field and the ratings already in it, and that determines what can be awarded. Group E1, the smallest that awards a rating, needs at least six fencers, none of whom have to be rated already. First place earns an E.\n\nRatings also seed the field, ordering fencers from strongest to weakest at the start of a competition. At local youth events, seeding is by rating and the year it was last earned. At many regional and national events, national points come first, then rating and year. Only official membership-list ratings should be used when seeding. The letter is a seeding tool, not a verdict. Every A in the club started as a U.",
-      "word_count": 220,
+      "body": "A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U — unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026. A rating is official only on USA Fencing’s membership list. It lasts four seasons; if it isn’t renewed, it drops one letter at the start of the next season, on Aug. 1 — a B earned in 2020 (B20) became a C24 on Aug. 1, 2024.\n\nRatings are earned, one weapon at a time, at sanctioned competitions from local events to national ones. A competition’s classification — Group E1, D1, C1 and so on — depends on the size of the field and the ratings already in it, and that determines what can be awarded. Group E1, the smallest that awards a rating, needs at least six fencers, none of whom have to be rated already. First place earns an E. Larger groups can award higher letters, and E’s further down the results. The official chart is in the Athlete Handbook (2026–27).\n\nRatings also seed the field, ordering fencers from strongest to weakest at the start of a competition. At local youth events, seeding is by rating and the year it was last earned. At many regional and national events, national points come first, then rating and year. In many categories, fencers with the same letter and year are placed in random order. Only official membership-list ratings should be used when seeding. The letter is a seeding tool, not a verdict. Every A in the club started as a U.",
+      "word_count": 270,
       "planned_words": 110,
       "source": "desk",
       "target_week": "next",
@@ -1906,6 +1906,71 @@
         }
       ],
       "created_at": "2026-11-09T09:20:00-05:00"
+    },
+    {
+      "id": "desk-for-the-parents-triple-fees-2026-11-10",
+      "kind": "desk",
+      "section": "For the Parents",
+      "headline": "For the Parents: What “Triple Fees” Means",
+      "summary": "Clark-proposed short for proof v3: how USA Fencing national entry fees work and the late-registration ‘triple fee,’ plus a note that regionals post their own schedules. Written for the top-right block on page 2 after Frank’s mockup (t202u). Pending Frank’s vet.",
+      "body": "At USA Fencing national tournaments — NACs, the Junior Olympics, Summer Nationals — each event page posts a regular-fee deadline. Miss it, and late entries are still taken online for a set window, but they cost triple the regular total, through 5 p.m. local time the night before the event.\n\nOn the Junior Olympics and November NAC pages, one event is $225, two are $320, three are $415; after the deadline those become $675, $960 and $1,245.\n\nThe Junior Olympics regular-fee deadline is today, Wednesday, Nov. 11. The November NAC, Nov. 20–23 in Columbus, is already in its late-fee window.\n\nRegional tournaments post their own fee schedules and late rates on each event’s page. Those are not the national triple-fee rule.",
+      "word_count": 121,
+      "source": "desk",
+      "target_week": "next",
+      "vetted": false,
+      "facts_status": "sourced",
+      "vet_notes": "Clark-proposed 2026-11-10 10:46 PM ET for proof v3, pending Frank’s vet. Frank (t202u) asked to fill the page-2 hole and, if nothing else, to explain regional/national entry pricing and the idea of triple fees. Sourced only from the 2026–27 Athlete Handbook §2.4 (late entries at national tournaments cost ‘triple the total amount due for regular entries,’ accepted online through 5 p.m. local time the night before the event) and the official event pages for the 2027 Junior Olympics & January NAC and the 2026 November NAC (same regular/late dollar table; JO regular-fee deadline Nov. 11, 2026; November NAC already past its Sept. 23 regular-fee deadline). Regional fees: Operations Manual 2026–27 says each tournament must post its own entry deadlines and fee schedule; no single regional dollar table or a uniform triple-fee rule is stated, so none is printed. No invented figures.",
+      "slot_hint": "for_the_parents",
+      "tags": [
+        "for-the-parents",
+        "fees",
+        "clark-proposed",
+        "pending-vet"
+      ],
+      "created_at": "2026-11-10T22:47:00-05:00",
+      "vetted_at": null,
+      "vetted_by": null,
+      "proposed_by": "clark",
+      "provenance": [
+        {
+          "type": "file",
+          "path": "reference/usa-fencing/usaf-athlete-handbook-2026-27.pdf",
+          "note": "§2.4 USA Fencing National Tournaments: deadlines strictly enforced; late entries accepted online only for a specified time frame, with payment of triple the total amount due for regular entries, up to the posted late entry deadline by 5:00 p.m. local time where the event is being hosted.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00"
+        },
+        {
+          "type": "file",
+          "path": "reference/usa-fencing/usaf-operations-manual-2026-27.pdf",
+          "note": "Registration policies: each tournament must post deadlines for tournament entry and the associated fee schedule. A late fee may not be enacted any earlier than is reasonable for tournament planning. On-site registrations are at the organizer’s discretion and must be posted in advance. Used only to support the regional ‘check the event page’ line; no regional dollar amounts printed.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/2027-junior-olympics-january-nac",
+          "note": "Official 2027 Junior Olympics & January NAC page (Oklahoma City, Jan. 8–11, 2027). Regular Fee Deadline: November 11, 2026. Late Entry Fee Deadline: 5 p.m. local time the night before the event. Regular prices: one event $225, two $320, three $415, team $190. Late: $675, $960, $1,245, $570 (exactly 3×). Classification Change Deadline is listed as January 6, 2026, which appears to be a typo and is not used.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00",
+          "local_copy": "staging/weeks/next/sources/usaf-2027-junior-olympics-january-nac-2026-11-10.txt"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/2026-november-north-american-cup",
+          "note": "Official 2026 November NAC page (Columbus, Nov. 20–23). Regular Fee Deadline: September 23, 2026 (passed). Late Entry Fee Deadline: 5 p.m. local time the night before the event. Same dollar table as the Junior Olympics page.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00",
+          "local_copy": "staging/weeks/next/sources/usaf-2026-november-nac-2026-11-10.txt"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/how-to-register",
+          "note": "How To Register (national): Entry Deadline is the deadline for normal fee registrations; Late Entry Deadline is the last day for any new registrations. Consulted for deadline definitions; fee dollar amounts taken from the event pages.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00"
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-10T22:46:00-05:00",
+          "note": "t202u: asked to fill the page-2 hole; if nothing else, explain how pricing at regionals and national tournaments works and the idea of triple fees."
+        }
+      ]
     }
   ],
   "rolled_forward": {

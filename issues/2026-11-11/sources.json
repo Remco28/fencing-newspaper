@@ -465,6 +465,54 @@
           "note": "Club Mailchimp Nov. 9 newsletter photo. Caption names only Maximus Siu (Frank confirmed he is in the group; 8th of 17 in Y10 Mixed at NYFA Youth Cup #1, FencingTracker Nov. 10). Other people in the photo are not named."
         }
       ]
+    },
+    {
+      "id": "desk-for-the-parents-triple-fees-2026-11-10",
+      "vetted": false,
+      "vetted_by": null,
+      "vetted_at": null,
+      "proposed_by": "clark",
+      "pending_vet": true,
+      "provenance": [
+        {
+          "type": "file",
+          "path": "reference/usa-fencing/usaf-athlete-handbook-2026-27.pdf",
+          "note": "§2.4 USA Fencing National Tournaments: deadlines strictly enforced; late entries accepted online only for a specified time frame, with payment of triple the total amount due for regular entries, up to the posted late entry deadline by 5:00 p.m. local time where the event is being hosted.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00"
+        },
+        {
+          "type": "file",
+          "path": "reference/usa-fencing/usaf-operations-manual-2026-27.pdf",
+          "note": "Registration policies: each tournament must post deadlines for tournament entry and the associated fee schedule. A late fee may not be enacted any earlier than is reasonable for tournament planning. On-site registrations are at the organizer’s discretion and must be posted in advance. Used only to support the regional ‘check the event page’ line; no regional dollar amounts printed.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/2027-junior-olympics-january-nac",
+          "note": "Official 2027 Junior Olympics & January NAC page (Oklahoma City, Jan. 8–11, 2027). Regular Fee Deadline: November 11, 2026. Late Entry Fee Deadline: 5 p.m. local time the night before the event. Regular prices: one event $225, two $320, three $415, team $190. Late: $675, $960, $1,245, $570 (exactly 3×). Classification Change Deadline is listed as January 6, 2026, which appears to be a typo and is not used.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00",
+          "local_copy": "staging/weeks/next/sources/usaf-2027-junior-olympics-january-nac-2026-11-10.txt"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/2026-november-north-american-cup",
+          "note": "Official 2026 November NAC page (Columbus, Nov. 20–23). Regular Fee Deadline: September 23, 2026 (passed). Late Entry Fee Deadline: 5 p.m. local time the night before the event. Same dollar table as the Junior Olympics page.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00",
+          "local_copy": "staging/weeks/next/sources/usaf-2026-november-nac-2026-11-10.txt"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/how-to-register",
+          "note": "How To Register (national): Entry Deadline is the deadline for normal fee registrations; Late Entry Deadline is the last day for any new registrations. Consulted for deadline definitions; fee dollar amounts taken from the event pages.",
+          "retrieved_at": "2026-11-10T22:47:00-05:00"
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-10T22:46:00-05:00",
+          "note": "t202u: asked to fill the page-2 hole; if nothing else, explain how pricing at regionals and national tournaments works and the idea of triple fees."
+        }
+      ]
     }
   ]
 }

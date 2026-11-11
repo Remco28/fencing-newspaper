@@ -3,8 +3,8 @@
   "vol": "I",
   "date": "2026-11-11",
   "dateline": "Wednesday Edition · Vol. I — No. 6 · Chatham, N.J. · November 11, 2026",
-  "status": "PROOF v2 — awaiting Frank's approval. Not for print until approved.",
-  "proof_version": 2,
+  "status": "PROOF v3 — awaiting Frank's approval. The new Triple Fees short is Clark-proposed and pending his vet. Not for print until approved.",
+  "proof_version": 3,
   "proof_history": [
     {
       "v": 1,
@@ -15,9 +15,14 @@
       "v": 2,
       "at": "2026-11-10T17:28:00-05:00",
       "note": "Proof v2 after Frank's review of v1 (t201u, 5:21 PM ET). Athreya Aravind confirmed as a club member and added to the roster; confirm-before-print flag dropped. Page 2: For the Parents expanded and rebalanced into three equal columns from the 2026–27 Athlete Handbook (§2.1, §2.15, Appendix classification table); Tournaments cartoon scaled up (3:2 preserved, no crop) to 3.68in tall / ~5.52in wide. A full-width 7.5in cartoon would be 5.0in tall and does not fit on the same page as the Nearby board and this feature. Page 1 unchanged. 2 pages, no layout FLAGs (p1 gap 0.18in, p2 gap 0.08in, row-1 spread 0.32in)."
+    },
+    {
+      "v": 3,
+      "at": "2026-11-10T22:53:00-05:00",
+      "note": "Proof v3 after Frank’s t202u mockup (10:46 PM ET). Page 2 relaid: For the Parents rating-letters as one narrow left column; Tournaments cartoon on the right at natural 3:2, uncropped, as large as fits, bottom-aligned. Top-right block filled with a new Clark-proposed For the Parents short, “What “Triple Fees” Means,” sourced from the 2026–27 Athlete Handbook §2.4 and the official Junior Olympics and November NAC event pages (exact posted dollar amounts; JO regular-fee deadline is today, Nov. 11). Pending Frank’s vet. Already-printed rule pieces and the referee feature were not reprinted. Page 1 unchanged. 2 pages, no layout FLAGs (p1 gap 0.18in, p2 gap 0.45in, row-1 spread 0.32in)."
     }
   ],
-  "composed_at": "2026-11-10T17:28:00-05:00",
+  "composed_at": "2026-11-10T22:53:00-05:00",
   "approval": null,
   "pdf": "issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf",
   "previews": [
@@ -42,8 +47,9 @@
     "2": [
       "Nearby Tournaments: Pizza RYC/RJCC (Nov. 14–15) and Cobra Challenge SYC/RCC (Nov. 27–29)",
       "Also on the Calendar: Revolution (Y10/Y12/Y14, Saturday), Freehold Senior Open and Wanglei Cadet/Junior (Sunday)",
-      "For the Parents: What a Rating Letter Means (expanded, three balanced columns, from the 2026–27 Athlete Handbook §2.1, §2.15, and the Appendix classification table)",
-      "Tournaments cartoon (no byline, no caption; scaled up, 3:2 preserved; side gutters remain ~0.99in each)"
+      "For the Parents: What a Rating Letter Means (left column, from the 2026–27 Athlete Handbook §2.1, §2.15, and the Appendix classification table)",
+      "For the Parents: What “Triple Fees” Means (top-right; Clark-proposed, pending Frank’s vet; Athlete Handbook §2.4 plus official JO and November NAC fee pages)",
+      "Tournaments cartoon (no byline, no caption; right column, 3:2 preserved, uncropped)"
     ]
   },
   "cut": [
@@ -58,18 +64,19 @@
   ],
   "pending_frank": [
     "Junior Olympics regular-fee deadline is the publish day (Wednesday, Nov. 11, 11:59 p.m. Pacific).",
-    "Cartoon printed with no byline and no caption, packing-scene racket left as is, per the budget submission."
+    "Cartoon printed with no byline and no caption, packing-scene racket left as is, per the budget submission.",
+    "New page-2 short “What “Triple Fees” Means” is Clark-proposed and pending Frank’s vet."
   ],
   "instruments": {
     "p1_gap_in": 0.18,
-    "p2_gap_in": 0.08,
+    "p2_gap_in": 0.45,
     "row1_spread_in": 0.32,
     "pages": 2
   },
   "words": {
-    "total": 1040,
+    "total": 1230,
     "p1": 550,
-    "p2": 490,
-    "note": "Approximate visible-copy counts, including boards and captions; furniture (masthead, dateline, footer) excluded from the rough split. Page 1 unchanged from proof v1; page 2 For the Parents grew from ~160 to 220 words."
+    "p2": 680,
+    "note": "Approximate visible-copy counts, including boards and captions; furniture excluded from the rough split. Page 1 unchanged from proof v1/v2. Page 2 adds the 121-word Triple Fees short and a modest sourced expansion of the rating-letters piece (now 270 words) for the single-column layout."
   }
 }

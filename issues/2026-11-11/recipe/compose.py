@@ -63,6 +63,21 @@ css+="""  /* ---- Issue 2026-11-11 composition additions (no furniture changes) 
   .comic-wide img, .comic-wide .comicfig img { display: block; width: auto; height: auto; max-width: 100%; max-height: 3.68in; margin: 0 auto; }
   .page-2-tighten .box.w3 { margin-bottom: 2pt; padding: 3pt 5pt; }
   .page-2-tighten .tourney + .tourney { margin-top: 5pt; }
+  /* Proof v3: Frank mockup — left article, right fees + cartoon */
+  .page2-lower { display: flex; gap: 10pt; align-items: stretch; margin-top: 4pt; }
+  .p2-left { flex: 0 0 35%; min-width: 0; }
+  .p2-left .rail-title { margin-bottom: 0; }
+  .p2-left h2.head { margin-bottom: 3pt; }
+  .p2-left p { margin: 0 0 4pt 0; }
+  .p2-left p:last-child { margin-bottom: 0; }
+  .p2-right { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: flex-start; gap: 4pt; }
+  .p2-right .fees-block .rail-title { margin-bottom: 0; }
+  .p2-right .fees-block h2.head { margin-bottom: 3pt; }
+  .p2-right .fees-block p { margin: 0 0 4pt 0; }
+  .p2-right .fees-block p:last-child { margin-bottom: 0; }
+  .p2-right .comic-wide { margin-top: auto; }
+  .p2-right .comic-wide img,
+  .p2-right .comic-wide .comicfig img { display: block; width: 100%; height: auto; max-width: 100%; max-height: none; margin: 0; }
 """+TPL_CSS+OV.get('css_add','')
 
 # Boards: Pizza + Cobra unchanged since No. 5 / Nov. 9–10 checks. Times in the board's AM/PM house form.
@@ -107,10 +122,14 @@ boardnote=OV.get('boardnote',"Pizza is at the Floyd Little Athletic Center. Cobr
 
 # Proof v2: three balanced columns, sourced from the 2026-27 Athlete Handbook.
 PARENTS_COLS=OV.get('parents_cols') or [
-"A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U \u2014 unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026. A rating is official only on USA Fencing\u2019s membership list. It lasts four seasons; if it isn\u2019t renewed, it drops one letter at the start of the next season, on Aug. 1.",
-"Ratings are earned, one weapon at a time, at sanctioned competitions from local events to national ones. A competition\u2019s classification \u2014 Group E1, D1, C1 and so on \u2014 depends on the size of the field and the ratings already in it, and that determines what can be awarded. Group E1, the smallest that awards a rating, needs at least six fencers, none of whom have to be rated already. First place earns an E.",
-"Ratings also seed the field, ordering fencers from strongest to weakest at the start of a competition. At local youth events, seeding is by rating and the year it was last earned. At many regional and national events, national points come first, then rating and year. Only official membership-list ratings should be used when seeding. The letter is a seeding tool, not a verdict. Every A in the club started as a U."
+"A rating is a letter. USA Fencing classifies fencers A (the highest), then B, C, D, E, and U \u2014 unclassified, where everyone starts. The letter is followed by a year: A26 means an A earned or re-earned in 2026. A rating is official only on USA Fencing\u2019s membership list. It lasts four seasons; if it isn\u2019t renewed, it drops one letter at the start of the next season, on Aug. 1 \u2014 a B earned in 2020 (B20) became a C24 on Aug. 1, 2024.",
+"Ratings are earned, one weapon at a time, at sanctioned competitions from local events to national ones. A competition\u2019s classification \u2014 Group E1, D1, C1 and so on \u2014 depends on the size of the field and the ratings already in it, and that determines what can be awarded. Group E1, the smallest that awards a rating, needs at least six fencers, none of whom have to be rated already. First place earns an E. Larger groups can award higher letters, and E\u2019s further down the results. The official chart is in the Athlete Handbook (2026–27).",
+"Ratings also seed the field, ordering fencers from strongest to weakest at the start of a competition. At local youth events, seeding is by rating and the year it was last earned. At many regional and national events, national points come first, then rating and year. In many categories, fencers with the same letter and year are placed in random order. Only official membership-list ratings should be used when seeding. The letter is a seeding tool, not a verdict. Every A in the club started as a U."
 ]
+
+FEES_HEAD=OV.get('fees_head',"What “Triple Fees” Means")
+FEES_BODY=OV.get('fees_body') or D.get('desk-for-the-parents-triple-fees-2026-11-10',{}).get('body') or ""
+
 
 blocks={
  'results':f'<div class="box"><div class="boxtitle">Club Results</div>{table(["Fencer","Event","Finish"],res,["0.72in",None,"0.62in"],numcol=None)}<p class="boxnote">{ty(results_note)}</p></div>',
@@ -206,15 +225,24 @@ h = """<!DOCTYPE html>
     <p class="boxnote"><b>Also on the calendar.</b> """ + ty(cal_note) + """</p>
   </div>
 
-  <div class="rail-block parents-wide">
-    <div class="rail-title">For the Parents</div>
-    <h2 class="head">""" + ty(parents_head) + """</h2>
-    <div class="parent-cols">
-      """ + "".join(f'<div class="col">{paras(c)}</div>' for c in PARENTS_COLS) + """
+  <div class="page2-lower">
+    <div class="p2-left">
+      <div class="rail-block">
+        <div class="rail-title">For the Parents</div>
+        <h2 class="head">""" + ty(parents_head) + """</h2>
+        """ + "".join(paras(c) for c in PARENTS_COLS) + """
+      </div>
     </div>
-  </div>
-  <div class="comic-wide">
-      """ + blocks["cartoon"] + """
+    <div class="p2-right">
+      <div class="rail-block fees-block">
+        <div class="rail-title">For the Parents</div>
+        <h2 class="head">""" + ty(FEES_HEAD) + """</h2>
+        """ + paras(FEES_BODY) + """
+      </div>
+      <div class="comic-wide">
+        """ + blocks["cartoon"] + """
+      </div>
+    </div>
   </div>
 """ + foot + """
 </div>
