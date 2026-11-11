@@ -5,7 +5,7 @@ Authoritative for every issue, template, and prototype. Locked 2026-10-06 by Fra
 furniture (dateline, flanks, §8 boxes vs rails) unless Frank reopens a rule.
 article size-by-importance + stretch hierarchy refreshed 2026-10-07 (plan v3.7);
 masthead flanks = publisher + rotating quip ears (v3.8 → v3.14); dateline = centered
-Playfair `<Weekday> Edition` (from actual publish day) / `Page Two` + meta (v3.12); photo fit no silent crop (v3.9);
+Playfair `<Weekday> Edition` (from actual publish day) / `Page Two` + meta (v3.12); photo fit no silent crop (v3.9); art-fit for photos/comics/diagrams §19 (v3.48);
 Clark Kent composition §0 (v3.10); voice §0a (v3.11); §8 tabular-only `.box` +
 `.rail-title` no underline (v3.12–v3.14); guests-only bylines; reality/provenance §0b (v3.16); **Parent Q&A** category + `.qa` pattern (v3.18); **epee assumed — no weapon labels in club context** §0c + captions name only Frank-confirmed people §19 + content-heavy cut order §11 (v3.20).
 If a render violates any rule below, it does not print — fix and re-render.
@@ -111,6 +111,7 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
   eyes scan shorter line lengths faster.
 - Lead story may span 2 columns; rails/boxes take the third. Nearby Tournaments board (signup board; formerly "Go Cheer") and footer span full width.
 - Educational figures (e.g. exploded-weapon): default **span 2 columns** (not 3 / not full-bleed) unless Frank says otherwise.
+  The art-fit system (§19) sizes them to the measured region; a full-width diagram needs `allow_full` in the asset manifest.
 - Column gaps 9pt. Boxes: 1.5pt border, 3–4pt padding, 4pt bottom margin.
 
 ## 4. Type scale (v2 baseline — the "small" version; per-slot lock 2026-10-07)
@@ -151,6 +152,9 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
 - `compose/render.py` measures the footer gap **per column** (including `.page2-lower` and other
   multi-column splits), not only the tallest sibling. The worst column is the page's number.
   FLAG above 0.75in. Fill shortfalls with layout or by asking Frank for copy; never invent prose.
+- Art (photos, comics, diagrams, illustrations) is the flexible element; the words stay put.
+  `compose/render.py` sizes each `art()` slot against this same instrument (§19). A shortfall
+  word-count in the fit report is a hint only — cuts still follow §16, never the hint alone.
 
 ## 7. Mandatory visual QA (every render, no exceptions — human or bot)
 Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
@@ -175,6 +179,9 @@ Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
       article bands (Read preview-p2.png — confirm)?
 - [ ] Parent Q&A (§8a): if present, `.rail-block.qa` (no border); anonymous unless named;
       no Frank byline; 40–70w; usually one?
+- [ ] Art-fit (§19): each illustration keeps its aspect (no silent crop); flush to the
+      column grid when a stack or float fits; a fit FLAG or a side gutter over ~0.25in
+      is a defect?
 Any NO = fix, re-render, re-check. Fitting on the page is necessary but NOT sufficient —
 it must look purpose-built for this club. **A proof is not “done” (and no “proof ready”
 doorbell goes out) until Clark has opened and inspected every page PNG** of the current render
@@ -328,6 +335,8 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   `.page2-lower`, `.split`, and `.board-split`), and reports inches. The worst column is the
   page's number. FLAG above 0.75in. It also checks the 7pt type floor on every text element
   (ears, captions, credits, kickers, board heads) and counts hyphenated line breaks.
+  The art-fit pass uses this same instrument as its verifier (`--report` includes `art_fit`
+  when slots were present; `--fit-report=FILE.json` writes the decisions alone).
   Thumbnails are for taste; NUMBERS are for fill. Eyeballing fill is banned.
 - The instrument (not the eye) decides whether a page passes; the eye decides whether it is beautiful.
 
@@ -388,6 +397,41 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   Elite FC. Don’t call a placing “podium” unless the photo shows one; tie the caption to
   results already printed. Look at the image before writing.
 
+### Art-fit — size the picture, not the type (v3.48)
+
+Photos, comics, diagrams and illustrations share one fitter (`compose/art.py`, driven by
+`compose/render.py`). Text is composed first. The fitter then measures leftover room in the
+slot's region and picks a printed size that keeps the native aspect ratio (never crop, never
+`object-fit: cover`, never a hard `max-height` that clips the frame). Widths snap to the
+column grid (one column, two columns, or full width).
+
+- **Call it through `art()`** in the recipe, from a `recipe/art.json` manifest (required
+  fields: `id`, `src`, `kind`, `alt`, `region`). Photos still need a caption and a credit
+  (§19 above). A diagram may go full width only with `allow_full`. Educational figures
+  still default to span 2 (§3).
+- **Stack first, flush to the grid.** If a full-region stack passes the hard gates, that
+  is the answer. If it is too tall, the fitter steps to a narrower float and lets the
+  following prose wrap beside it (allowed under or beside the lead). A small side gutter,
+  at most 0.25in, flush left, is a last resort only when no grid width lands in the
+  leftover; do not center a short stack to split the leftover on both sides.
+- **Hard gates** (any failure FLAGs the build): no overflow and no footer overlap; the
+  gap above the footer in the art's own region is between 0 and 0.75in; spread across
+  the row that holds the art is at most 0.5in; aspect stays within 1%. Soft warnings
+  (a hole under a float, dpi below the soft target, a region off the nominal grid) never
+  fail a build and never demote a legal stack.
+- **Floors, within reason.** Photos and wordless or lightly lettered comics and
+  illustrations: 1.6in minimum printed width. Lettered comics (`lettered` or
+  `lettering_px` in the manifest): 3.0in hard / 4.5in soft. Raster photos: 150 dpi hard
+  / 200 soft. Raster line art: 200 / 300. Vectors have no dpi floor. The 2.2in photo
+  height ceiling above still applies. An asset may set `min_size`, but keep a sane floor.
+- **One flex slot per page** in v1. The art must come *before* any prose meant to wrap
+  beside it. Put `margin-top: auto` on furniture, not on the art. If nothing passes, the
+  build FLAGs and the fit report states the shortfall (including a word-count *hint* —
+  not a new cut policy; §16 still governs cuts).
+- **Published Nos. 1–6 are unchanged.** `render.py` refuses to write a PDF into an
+  APPROVED issue folder unless you pass `--force` or write the file somewhere else.
+  Fitting is on by default for new issues that call `art()`; `--no-fit` skips it.
+
 ## PDF filename & download (locked 2026-10-15)
 
 Each published issue has **one** canonical PDF, uniquely named:
@@ -399,7 +443,9 @@ Examples: `en-garde-gazette-no-1-2026-10-08.pdf`, `en-garde-gazette-no-2-2026-10
 - Lives in `issues/<date>/` (and the site/docs copies). Do **not** use a bare `paper.pdf` for published issues.
 - Render with: `python3 compose/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf`
   (`prototype/render.py` still works; it is a shim). After the PDF, write previews at 200 dpi:
-  `pdftoppm -r 200 -png <pdf> issues/<date>/preview`.
+  `pdftoppm -r 200 -png <pdf> issues/<date>/preview`. `render.py` will also refuse to write
+  into an APPROVED issue folder (same rule as `write_issue`); use `--force` or a path outside
+  that folder for a trial. `--report` / `--fit-report` write measurements to JSON.
 - Composer: start from `compose/recipe_template.py`, copy to `issues/<date>/recipe/compose.py`.
   An issue whose `issue.json` status starts with APPROVED is frozen; in-place compose needs `--force`
   or `--out=PATH` for a trial. Published Nos. 1–6 stay frozen.

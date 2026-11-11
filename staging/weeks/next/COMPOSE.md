@@ -7,3 +7,6 @@ Use the shared Template A composer, not a copy of an old `issues/*/recipe/compos
 3. Build with `python3 issues/<date>/recipe/compose.py x` then `python3 compose/render.py …` and `pdftoppm -r 200`.
 
 Details: `compose/README.md`. Published Nos. 1–6 are frozen and cannot be overwritten in place.
+
+Art (photos, comics, diagrams, illustrations) is fitted automatically: place a `recipe/art.json` manifest and call `art()` from this recipe (see `compose/README.md` and STYLE-GUIDE §19). Do not hand-space with `.fill-art` or a hard `max-height`. Render with `compose/render.py` as usual; the fit pass is on by default when slots are present. `--fit-report=FILE.json` writes the decisions. Published Nos. 1–6 stay frozen.
+

@@ -37,8 +37,12 @@ WEEK = "staging/weeks/YYYY-MM-DD"    # or staging/weeks/next before the roll
 
 def main():
     # Build with piece(), paras(), results_table(), tourney(), board_split(), box(),
-    # photo(), textcols(), cols3(), page(), masthead(), dateline(), footer().
+    # photo(), art(), textcols(), cols3(), page(), masthead(), dateline(), footer().
+    # After Frank picks the art, load recipe/art.json with load_art_manifest() and
+    # emit each slot with art() (STYLE-GUIDE §19). The picture must come before any
+    # prose that should wrap beside it. Do not hand-space with .fill-art or max-height.
     # Keep slot order to the approved budget; do not invent copy to fill space.
+    # assets = load_art_manifest(ISSUE + "/recipe/art.json") if (ROOT / ISSUE / "recipe/art.json").is_file() else {}
     title = "En Garde Gazette — Vol. I No. N — Month D, YYYY"
     pages = [
         # page(masthead() + "\n" + dateline("Weekday Edition", "Vol. I — No. N · Chatham, N.J. · Month D, YYYY") + ... + footer(N)),

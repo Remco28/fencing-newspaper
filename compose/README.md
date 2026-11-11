@@ -6,8 +6,12 @@ Going-forward home for the print compositor (adopted 2026-11-11 from the Fable d
 |---|---|
 | `template-a.css` | The one stylesheet. New issues must not scrape CSS out of `issues/2026-10-13/issue.html`. |
 | `gazette.py` | Composer helpers. The repo root is derived from this file (never a hardcoded absolute path). |
-| `render.py` | HTML to PDF via Chrome CDP, plus the fill instrument. |
+| `render.py` | HTML to PDF via Chrome CDP, plus the fill instrument and the art-fit pass. |
+| `art.py` | Art-fit policy: eligibility, candidate list, `choose()`. No Chrome. |
+| `fit.js` | Dumb apply/reset/measure helpers, evaluated once per Chrome session. |
 | `test_gazette.py` | Golden checks: `python3 compose/test_gazette.py`. |
+| `test_art.py` | Art-fit unit tests (no Chrome): `python3 compose/test_art.py`. |
+| `test_art_fixtures.py` | Chrome fixtures (writes only under `/tmp/gz-fixtures/`): `python3 compose/test_art_fixtures.py`. |
 | `recipe_template.py` | Starter recipe for the next issue. Copy it to `issues/<date>/recipe/compose.py` after the budget is approved. |
 | `vendor/` | `pyphen` (hyphenation), installed with `pip install --target compose/vendor pyphen`. |
 
@@ -17,13 +21,14 @@ Going-forward home for the print compositor (adopted 2026-11-11 from the Fable d
 
 ```
 python3 issues/<date>/recipe/compose.py x
-python3 compose/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf --author="Nico's Dad"
+python3 compose/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf --author="Nico's Dad" --report=issues/<date>/fit-report.json
 pdftoppm -r 200 -png <out.pdf> issues/<date>/preview
 ```
 
 - `x` loads the issue's `recipe/overrides.json`, as before.
-- An issue whose `issue.json` status starts with APPROVED is frozen. Composing it in place needs `--force`, or `--out=PATH` to write a trial copy somewhere else. Published Nos. 1–6 stay frozen.
+- An issue whose `issue.json` status starts with APPROVED is frozen. Composing it in place needs `--force`, or `--out=PATH` to write a trial copy somewhere else. `render.py` uses the same rule for the PDF path. Published Nos. 1–6 stay frozen.
 - Previews are 200 dpi (STYLE-GUIDE §7).
+- Fitting is on by default when the HTML has `[data-art]` slots (`--no-fit` skips it). `--fit-report=FILE.json` writes the art decisions; `--report` includes them under `art_fit`.
 
 ## Rules the helpers apply
 
@@ -41,6 +46,8 @@ pdftoppm -r 200 -png <out.pdf> issues/<date>/preview
 
 **Photo placement** (`photo_span()`). A results photo runs two columns wide under the lead only if, uncropped at that width, it stays within the 2.2in ceiling of STYLE-GUIDE §19 and still has 150 dpi. Otherwise it runs one column in the rail. Layout never crops.
 
+**Art-fit** (`art()`, `load_art_manifest()`). For No. 7 onward, put scalable pictures in `recipe/art.json` and emit them with `art()`. Required fields: `id`, `src`, `kind` (`photo` / `comic` / `diagram` / `illustration`), `alt`, `region`. Photos still need a caption and a credit. The fitter measures leftover room and picks a grid width (stack, then a float beside following prose, then a last-resort gutter of at most 0.25in, flush left). A legal stack always wins. Wordless comics may go as small as 1.6in; lettered comics stay at 3.0in hard / 4.5in soft. Diagrams stay stack-only by default; full width needs `allow_full`. The art must come before any prose that should wrap beside it. Never crop, and do not use `.fill-art` or a hard `max-height`. Details: STYLE-GUIDE §19.
+
 **Checks at compose time.** Weapon spelled both "épée" and "epee" in running text: warning. A credit that still contains a file name or URL: warning (the strict check is on `photo()` / `credit_line()` so a published long credit is not rewritten).
 
 ## What the fill instrument reports
@@ -50,4 +57,4 @@ pdftoppm -r 200 -png <out.pdf> issues/<date>/preview
 - **Type floor** across every element that holds text, including ears, captions, credits and kickers. FLAG under 7pt.
 - **Hyphenated line breaks.** Zero on a page with justified text prints a WARN.
 
-`--report=FILE.json` saves the raw measurements.
+`--report=FILE.json` saves the raw measurements (and `art_fit` when a fit ran). `--fit-report=FILE.json` saves only the art decisions.
