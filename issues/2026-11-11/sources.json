@@ -468,11 +468,11 @@
     },
     {
       "id": "desk-for-the-parents-triple-fees-2026-11-10",
-      "vetted": false,
-      "vetted_by": null,
-      "vetted_at": null,
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-10T23:50:00-05:00",
       "proposed_by": "clark",
-      "pending_vet": true,
+      "pending_vet": false,
       "provenance": [
         {
           "type": "file",

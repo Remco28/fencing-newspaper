@@ -3,7 +3,7 @@
   "vol": "I",
   "date": "2026-11-11",
   "dateline": "Wednesday Edition · Vol. I — No. 6 · Chatham, N.J. · November 11, 2026",
-  "status": "PROOF v3 — awaiting Frank's approval. The new Triple Fees short is Clark-proposed and pending his vet. Not for print until approved.",
+  "status": "APPROVED — final, published (Frank, chat, 2026-11-10 11:50 PM ET). Proof v3 is the print version.",
   "proof_version": 3,
   "proof_history": [
     {
@@ -23,7 +23,7 @@
     }
   ],
   "composed_at": "2026-11-10T22:53:00-05:00",
-  "approval": null,
+  "approval": "Frank approved proof v3 in chat 2026-11-10 11:50 PM ET (\"Alright, let's run with it.\"). The approval also vets the Clark-proposed Triple Fees short.",
   "pdf": "issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf",
   "previews": [
     "issues/2026-11-11/preview-p1.png",
@@ -65,7 +65,7 @@
   "pending_frank": [
     "Junior Olympics regular-fee deadline is the publish day (Wednesday, Nov. 11, 11:59 p.m. Pacific).",
     "Cartoon printed with no byline and no caption, packing-scene racket left as is, per the budget submission.",
-    "New page-2 short “What “Triple Fees” Means” is Clark-proposed and pending Frank’s vet."
+    "Triple Fees short vetted by Frank’s proof-v3 approval (t203u, 11:50 PM ET)."
   ],
   "instruments": {
     "p1_gap_in": 0.18,
@@ -78,5 +78,10 @@
     "p1": 550,
     "p2": 680,
     "note": "Approximate visible-copy counts, including boards and captions; furniture excluded from the rough split. Page 1 unchanged from proof v1/v2. Page 2 adds the 121-word Triple Fees short and a modest sourced expansion of the rating-letters piece (now 270 words) for the single-column layout."
+  },
+  "published": {
+    "at": "2026-11-11",
+    "commit": "PENDING",
+    "via": "scripts/publish_issue.py 2026-11-11"
   }
 }
