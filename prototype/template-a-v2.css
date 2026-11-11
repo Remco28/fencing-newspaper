@@ -1,3 +1,6 @@
+/* SUPERSEDED 2026-11-11 for new issues: the live stylesheet is compose/template-a.css,
+   loaded by compose/gazette.py. This file is kept so historical prototype/monday-v*.html
+   pages and older recipes that still read it continue to work. */
   /* ---- Template A furniture v2 (2026-10-18, Frank) — STYLE-GUIDE §9b + §13a ---- */
   /* Footer: the archive line is the centred member of the footer trio, in the same 7pt sans caps as its neighbours (no separate size/colour). */
   .footer { gap: 14pt; letter-spacing: 0.15pt; }
