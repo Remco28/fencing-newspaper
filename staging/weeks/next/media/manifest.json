@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-10T23:54:00-05:00",
-  "note": "Media carried into Issue No. 7 after the No. 6 roll-forward: Winter Camp flyer and Photo from History 10 (Tímea Nagy), both still held.",
+  "updated_at": "2026-11-11T08:00:00-05:00",
+  "note": "Media carried into Issue No. 7 after the No. 6 roll-forward: Winter Camp flyer and Photo from History 10 (Tímea Nagy), both still held. 2026-11-11 daily pass added the Nov 10 Mailchimp photo flyer and the Oct 22 schedule graphic (re-extracted from that reminder; identical to the Oct 22 file).",
   "items": [
     {
       "id": "media-history-10-timea-nagy",
@@ -15,6 +15,44 @@
       "vetted": false,
       "parent_item_id": "history-photo-10-timea-nagy",
       "note": "1068x1600 portrait; 1 or 2 columns."
+    },
+    {
+      "id": "media-winter-camp-schedule-2026-10-22",
+      "kind": "graphic",
+      "filename": "winter-camp-schedule-2026-10-22.png",
+      "media_path": "staging/weeks/next/media/winter-camp-schedule-2026-10-22.png",
+      "caption": "Elite FC Winter Camp 2026 schedule graphic (Dec. 27–31).",
+      "source": "email",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261110160053.3d65440681.578871c8@mail150.atl241.mcsv.net>",
+      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/39390b91-c882-078d-7d6a-9b3a39e77765.png",
+      "retrieved_at": "2026-11-11T08:00:00-05:00",
+      "vetted": true,
+      "vetted_by": "auto-club-mailchimp",
+      "vetted_at": "2026-11-11T08:00:00-05:00",
+      "parent_item_id": "chat-winter-camp-reminder",
+      "w": 1080,
+      "h": 1350,
+      "note": "Same graphic first extracted from the Oct 22 ‘Winter Camp Schedule!’ Mailchimp (identical bytes). Re-extracted from the Nov 10 reminder. Club logo at the bottom is part of the graphic."
+    },
+    {
+      "id": "media-winter-camp-flyer-photos-2026-11-10",
+      "kind": "photo",
+      "filename": "efc-winter-camp-2026-flyer-photos-2026-11-10.png",
+      "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer-photos-2026-11-10.png",
+      "caption": "Club Winter Camp 2026 photo flyer from the Nov. 10 newsletter. Dates Dec. 27–31, 9:30 a.m.–2 p.m.; activities match the known list. The email does not identify who is pictured.",
+      "source": "email",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261110160053.3d65440681.578871c8@mail150.atl241.mcsv.net>",
+      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/8f529452-d056-bb21-6b0a-e4cb0fbd1517.png",
+      "retrieved_at": "2026-11-11T08:00:00-05:00",
+      "vetted": true,
+      "vetted_by": "auto-club-mailchimp",
+      "vetted_at": "2026-11-11T08:00:00-05:00",
+      "parent_item_id": "chat-winter-camp-reminder",
+      "w": 1080,
+      "h": 1440,
+      "note": "New photo-collage flyer (1080x1440). Club Mailchimp; allowlisted. Email does not name the people in the photos. A jacket in the top action photo appears to read MILINKOVIC; do not caption names from the picture unless Frank identifies them. Phone number on the flyer is not for print (Frank: contact the club)."
     }
   ]
 }

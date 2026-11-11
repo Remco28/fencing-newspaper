@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-10T23:54:00-05:00",
+  "updated_at": "2026-11-11T08:00:00-05:00",
   "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held.",
   "items": [
     {
@@ -16,7 +16,7 @@
       "vetted_by": "frank",
       "vet_scope": "angle_tone_only",
       "facts_status": "verified (price omitted)",
-      "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Clark 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Clark 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Clark 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md. | Frank chat 2026-11-02 20:56 ET: 'the winter camp can get a full write up since we have space.' Runs in full (~115w, v4 body) in No. 5.",
+      "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Clark 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Clark 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Clark 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md. | Frank chat 2026-11-02 20:56 ET: 'the winter camp can get a full write up since we have space.' Runs in full (~115w, v4 body) in No. 5. | Clark 2026-11-11: club Mailchimp ‘Winter Camp!’ (Tue Nov 10 11:01 AM ET) ingested. No new print facts; new photo flyer staged as media-winter-camp-flyer-photos-2026-11-10.",
       "facts": [
         {
           "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
@@ -69,6 +69,12 @@
           "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261022161941.d06cea8344.71242e8f@mail150.atl241.mcsv.net>",
           "where": "Mailchimp 'Winter Camp Schedule!' Oct 22 email body + schedule graphic https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/39390b91-c882-078d-7d6a-9b3a39e77765.png",
           "status": "verified-email (allowlisted sender)"
+        },
+        {
+          "claim": "Nov 10 Mailchimp reminder restates Winter Camp Dec 27–31, 9:30am–2:00pm, asks for a headcount ASAP, and includes the Oct 22 day-by-day schedule graphic plus a new photo flyer (activities and dates match; flyer also shows phone (631) 742-3307, website, and 17 Watchung Ave, Chatham). No price.",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261110160053.3d65440681.578871c8@mail150.atl241.mcsv.net>",
+          "where": "email body + embedded schedule graphic + new photo flyer",
+          "status": "verified-email (allowlisted club Mailchimp). Print body unchanged (already covers dates, hours, schedule highlights, headcount). Phone/email still omitted per Frank 2026-10-18 (‘contact the club’)."
         }
       ],
       "need": [
@@ -124,6 +130,16 @@
           "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261022161941.d06cea8344.71242e8f@mail150.atl241.mcsv.net>",
           "note": "Oct 22 Mailchimp 'Winter Camp Schedule!' — source of v4 schedule facts (see item email-mailchimp-winter-camp-schedule-2026-10-22)",
           "retrieved_at": "2026-10-23T07:58:00-04:00"
+        },
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261110160053.3d65440681.578871c8@mail150.atl241.mcsv.net>",
+          "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+          "subject": "Winter Camp!❄️",
+          "received_at": "2026-11-10T11:01:28-05:00",
+          "retrieved_at": "2026-11-11T08:00:00-05:00",
+          "url": "https://mailchi.mp/87b743a9be9b/winter-camp?e=f656c71db1",
+          "note": "Club Mailchimp reminder (arrived Tue Nov 10 11:01 AM ET, after that morning’s daily pass). Restates Dec 27–31, 9:30 a.m.–2 p.m., headcount ask, and ‘new and fun activities’ pointing at the same Oct 22 schedule graphic. New photo-collage flyer extracted; no price."
         }
       ],
       "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
@@ -169,7 +185,7 @@
         ],
         "text_copy": "staging/weeks/next/sources/email-fwd-winter-camp-2026-10-07.txt"
       },
-      "updated_at": "2026-11-09T09:20:00-05:00",
+      "updated_at": "2026-11-11T08:00:00-05:00",
       "ingest_notes": [
         "2026-10-08 daily email pass: Frank's 'Fwd: Group Class! + Winter Camp' (<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>) was already ingested 2026-10-07 ~19:20 ET; it had just not been labeled processed. Labeled now; no new facts (price and sign-up method still pending)."
       ],
@@ -790,10 +806,19 @@
           "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
           "retrieved_at": "2026-11-09T09:00:00-05:00",
           "note": "Monday full pass No. 6: unchanged (5 entries / 2 fencers, all Approved)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Wednesday, November 11",
+          "received_at": "2026-11-11T07:00:01-05:00",
+          "retrieved_at": "2026-11-11T08:00:00-05:00",
+          "note": "Unchanged: 5 entries / 2 fencers (Young, Penelope and Gore, Amina). Feed still \"could not refresh\", data as of Nov 10, 6:00 AM."
         }
       ],
-      "updated_at": "2026-11-10T07:56:00-05:00",
-      "entries_last_confirmed": "2026-11-10T07:56:00-05:00",
+      "updated_at": "2026-11-11T08:00:00-05:00",
+      "entries_last_confirmed": "2026-11-11T08:00:00-05:00",
       "carried_from": "staging/weeks/2026-11-11",
       "carry_note": "Ran in No. 5 board. Event Nov 14–15; refresh entries for No. 6 (or results watch if No. 6 publishes after).",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -827,6 +852,12 @@
           "source": "email",
           "message_id": "<010001a1c554570c-7fd4460f-9423-48c6-ae8d-14e7cd1991a6-000000@email.amazonses.com>",
           "note": "Pizza RYC/RJCC: Penelope Young + Amina Gore, unchanged (feed still \"could not refresh\", data as of Nov 9 6:01 PM) per chunkymonkey digest Nov 10. Past Nov 8 events dropped off the watched list as expected."
+        },
+        {
+          "at": "2026-11-11T08:00:00-05:00",
+          "source": "email",
+          "message_id": "<010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com>",
+          "note": "Pizza RYC/RJCC: Penelope Young + Amina Gore, unchanged (feed still \"could not refresh\", data as of Nov 10, 6:00 AM) per chunkymonkey digest Nov 11."
         }
       ],
       "printed_in": 6
@@ -835,7 +866,7 @@
       "id": "email-agentmail-nov14-15-local-calendar-2026-11-10",
       "kind": "graf",
       "headline": "Also on the Calendar",
-      "body": "Also on the calendar this weekend, three local events with no Elite FC entries yet. On Saturday, Nov. 14, Revolution Fencing Center hosts Y10, Y12 and Y14 Mixed in West Chester, Pa.; preregistration closes that day. On Sunday, Nov. 15, Freehold Fencing’s November Open (Senior Men and Women, in Freehold, N.J.) and Wanglei Fencing’s November Cup II (Cadet and Junior, in Plainsboro Township, N.J.) are good practice with decently competitive fields, a fit for older fencers. Preregistration for both Sunday events closes Saturday, Nov. 14.",
+      "body": "Also on the calendar this weekend: On Saturday, Nov. 14, Revolution Fencing Center hosts Y10, Y12 and Y14 Mixed in West Chester, Pa., with no Elite FC entries yet; preregistration closes that day. On Sunday, Nov. 15, Wanglei Fencing’s November Cup II (Cadet and Junior, in Plainsboro Township, N.J.) still has nobody from Elite signed up; it is good practice with a decently competitive field, a fit for older fencers. Preregistration closes Saturday, Nov. 14.",
       "word_count": 85,
       "source": "email+askfred",
       "message_id": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
@@ -858,17 +889,17 @@
         {
           "claim": "Revolution Fencing Center Y10, 12, 14 Epee, Nov. 14, Revolution Fencing Center; nobody from Elite signed up (data as of Nov 10, 3:20 PM ET)",
           "source": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
-          "status": "verified-email (allowlisted digest). AskFRED: West Chester, Pa. (1220 Ward Ave); Y10/Y12/Y14 Mixed Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/dc64e64e-99ce-4429-9e08-d2ac2e6c37ef"
+          "status": "verified-email (allowlisted digest). AskFRED: West Chester, Pa. (1220 Ward Ave); Y10/Y12/Y14 Mixed Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/dc64e64e-99ce-4429-9e08-d2ac2e6c37ef Rechecked Wed Nov 11 digest: still nobody signed up (data as of Nov 10, 3:20 PM)."
         },
         {
-          "claim": "Freehold Fencing - November Open Epee, Nov. 15, Freehold Fencing Academy; nobody from Elite signed up (data as of Nov 10, 3:20 PM ET)",
-          "source": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
-          "status": "verified-email. AskFRED: Freehold, N.J. (56 Thoreau Dr); Senior Men's and Women's Epee (Open); tournament prereg_close 2026-11-14; https://www.askfred.net/tournaments/4faa90b1-2f4c-4993-8b82-bfae268c773a"
+          "claim": "Freehold Fencing - November Open Epee, Nov. 15, Freehold Fencing Academy: Ng, Nico now entered in Sunday 10:30 AM Senior Men's Epee (chunkymonkey digest Wed Nov 11; data as of Nov 10, 3:20 PM). Tuesday afternoon digest, with the same data-as-of stamp, still said nobody signed up.",
+          "source": "<010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com>",
+          "status": "verified-email (allowlisted digest, change vs Tue Nov 10 3:24 PM ET digest). Entry staged separately as email-agentmail-freehold-nov-open-entries-2026-11-11. AskFRED (fetched 2026-11-10 ~3:32 PM ET): Freehold, N.J. (56 Thoreau Dr); Senior Men's and Women's Epee (Open); tournament prereg_close 2026-11-14; https://www.askfred.net/tournaments/4faa90b1-2f4c-4993-8b82-bfae268c773a"
         },
         {
           "claim": "Wanglei Fencing November Cup II: Cadet/Junior Epee, Nov. 15, Wanglei International Fencing Club; nobody from Elite signed up (data as of Nov 10, 3:22 PM ET)",
           "source": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
-          "status": "verified-email. AskFRED: Plainsboro Township, N.J. (10 Schalks Crossing Rd); Cadet and Junior Men's and Women's Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/f607f80f-dea6-4517-bc92-557226c7f0fd"
+          "status": "verified-email. AskFRED: Plainsboro Township, N.J. (10 Schalks Crossing Rd); Cadet and Junior Men's and Women's Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/f607f80f-dea6-4517-bc92-557226c7f0fd Rechecked Wed Nov 11 digest: still nobody signed up (data as of Nov 10, 3:22 PM)."
         },
         {
           "claim": "These are local events, good practice, decently competitive fields; for older kids",
@@ -876,7 +907,7 @@
           "status": "Frank's framing, used in the Sunday (Freehold Open + Wanglei Cadet/Junior) sentence. Revolution is Y10/Y12/Y14, so it is described by those age groups only — flag the 'older kids' mismatch for Frank."
         }
       ],
-      "vet_notes": "Frank chat 2026-11-10 3:25 PM ET (t199u) flagged a club-schedule email of tournaments he is watching; the digest arrived 3:24 PM ET and was already labeled processed. Frank chat 3:30 PM ET (t200u): 'yes please, also make mention that those tournaments are available along with who they are good for.  these are local events for older kids.  good practice.  decently competitive fields.' Allowlisted sender (chunkymonkey@agentmail.to). Venue towns, divisions, preregistration deadlines and links from AskFRED (fetched 2026-11-10 ~3:32–3:33 PM ET). No Elite FC names (nobody signed up). Nearby Tournaments' standing rule is 'Elite FC entries only'; this is a names-free 'also on the calendar' note Frank asked for, not an entry board. QUESTION for Frank: he said 'for older kids,' which fits Freehold's Senior Open and Wanglei's Cadet/Junior events, but Revolution is Y10, Y12 and Y14. The copy describes each by its actual age groups and applies 'older fencers' only to the Sunday pair. OK?\n[2026-11-10 4:21 PM ET] Frank’s budget submission: ‘okay to rephrase.’ Copy still describes each event by its real divisions and keeps the ‘good practice, decently competitive fields’ framing for Sunday’s older-fencer events (Freehold Open and Wanglei Cadet/Junior). Weapon labels dropped in club context (STYLE-GUIDE §0c).",
+      "vet_notes": "Frank chat 2026-11-10 3:25 PM ET (t199u) flagged a club-schedule email of tournaments he is watching; the digest arrived 3:24 PM ET and was already labeled processed. Frank chat 3:30 PM ET (t200u): 'yes please, also make mention that those tournaments are available along with who they are good for.  these are local events for older kids.  good practice.  decently competitive fields.' Allowlisted sender (chunkymonkey@agentmail.to). Venue towns, divisions, preregistration deadlines and links from AskFRED (fetched 2026-11-10 ~3:32–3:33 PM ET). No Elite FC names (nobody signed up). Nearby Tournaments' standing rule is 'Elite FC entries only'; this is a names-free 'also on the calendar' note Frank asked for, not an entry board. QUESTION for Frank: he said 'for older kids,' which fits Freehold's Senior Open and Wanglei's Cadet/Junior events, but Revolution is Y10, Y12 and Y14. The copy describes each by its actual age groups and applies 'older fencers' only to the Sunday pair. OK?\n[2026-11-10 4:21 PM ET] Frank’s budget submission: ‘okay to rephrase.’ Copy still describes each event by its real divisions and keeps the ‘good practice, decently competitive fields’ framing for Sunday’s older-fencer events (Freehold Open and Wanglei Cadet/Junior). Weapon labels dropped in club context (STYLE-GUIDE §0c).\n[2026-11-11 8:00 AM ET] Daily pass: Wednesday club-schedule digest (chunkymonkey, auto-vetted) now lists Nico Ng in Freehold’s November Open, Senior Men’s Epee, Sunday Nov. 15, 10:30 a.m. Tuesday’s digest (same ‘data as of Nov 10, 3:20 PM’ stamp) had nobody signed up. Body updated so this calendar note no longer claims Freehold has no Elite FC entries; Nico’s entry is in email-agentmail-freehold-nov-open-entries-2026-11-11. Revolution and Wanglei remain empty.",
       "provenance": [
         {
           "type": "email",
@@ -898,10 +929,19 @@
           "from": "frank",
           "at": "2026-11-10T15:30:00-05:00",
           "note": "Vet to mention the three events, who they are good for, local, good practice, decently competitive fields."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Wednesday, November 11",
+          "received_at": "2026-11-11T07:00:01-05:00",
+          "retrieved_at": "2026-11-11T08:00:00-05:00",
+          "note": "CHANGE: Freehold November Open now lists Ng, Nico in Sunday 10:30 AM Senior Men's Epee (data as of Nov 10, 3:20 PM). Revolution and Wanglei still nobody signed up. Pizza RYC unchanged (separate item)."
         }
       ],
       "created_at": "2026-11-10T15:37:00-05:00",
-      "updated_at": "2026-11-10T16:28:00-05:00",
+      "updated_at": "2026-11-11T08:00:00-05:00",
       "printed_in": 6,
       "carried_from": "staging/weeks/2026-11-11"
     },
@@ -1022,6 +1062,57 @@
       "carried_from": "staging/weeks/2026-11-11",
       "carry_note": "Ran in No. 5 as the Youth Olympics explainer. Fencing Nov 8–13 (WE Nov 10, ME Nov 11): results watch for No. 6. U.S. épée entries were never verified; print only from official results.",
       "carried_at": "2026-11-03T15:20:00-05:00"
+    },
+    {
+      "id": "email-agentmail-freehold-nov-open-entries-2026-11-11",
+      "kind": "signup_row",
+      "headline": "Freehold Fencing — November Open (Nov. 15) — EFC entries",
+      "body": "Freehold Fencing - November Open Epee (Freehold Fencing Academy, Freehold, N.J.) — Sun Nov 15. 10:30 AM Senior Men's Epee: Ng, Nico. (AgentMail club-schedule digest Wed Nov 11; data as of Nov 10, 3:20 PM; 1 entry / 1 fencer.) Print Nico via roster house form (Nico Ng). Tuesday Nov 10 3:24 PM ET digest still listed this event with nobody signed up.",
+      "source": "email",
+      "message_id": "<010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com>",
+      "from": "chunkymonkey@agentmail.to",
+      "subject": "Club schedule · Wednesday, November 11",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "auto-chunkymonkey",
+      "vetted_at": "2026-11-11T08:00:00-05:00",
+      "created_at": "2026-11-11T08:00:00-05:00",
+      "updated_at": "2026-11-11T08:00:00-05:00",
+      "entries_last_confirmed": "2026-11-11T08:00:00-05:00",
+      "board": "Nearby Tournaments",
+      "slot_hint": "signup",
+      "tags": [
+        "entries",
+        "nearby_tournaments"
+      ],
+      "facts": [
+        {
+          "claim": "Nico Ng entered in Senior Men's Epee, Sunday Nov. 15, 10:30 AM, Freehold Fencing November Open, Freehold Fencing Academy",
+          "source": "<010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com>",
+          "status": "verified-email (allowlisted digest). Roster house form: Nico Ng. AskFRED venue/deadline from Nov 10 fetch on the sibling calendar item: Freehold, N.J. (56 Thoreau Dr); Senior Men's and Women's Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/4faa90b1-2f4c-4993-8b82-bfae268c773a"
+        }
+      ],
+      "vet_notes": "Allowlisted sender (chunkymonkey@agentmail.to) = auto-vetted. New vs the Tuesday Nov 10 afternoon digest, which had Freehold on the watch list with nobody signed up. Candidate for Nearby Tournaments. Digest lists 10:30 AM (same style as other AskFRED start times in these digests). Weapon label in the official event name; drop ‘Epee’ in club-context print.",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Wednesday, November 11",
+          "received_at": "2026-11-11T07:00:01-05:00",
+          "retrieved_at": "2026-11-11T08:00:00-05:00",
+          "note": "First Elite FC entrant for Freehold Fencing - November Open Epee (Nov 15). Data as of Nov 10, 3:20 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1c72260cd-b22a0270-993a-4692-92d9-f66d4bd31893-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Tuesday, November 10",
+          "received_at": "2026-11-10T15:24:41-05:00",
+          "retrieved_at": "2026-11-10T15:37:00-05:00",
+          "note": "Prior digest: Freehold listed, nobody signed up (data as of Nov 10, 3:20 PM)."
+        }
+      ]
     }
   ],
   "rolled_forward": {
@@ -1074,5 +1165,25 @@
       "id": "email-agentmail-fencers-club-open-entries-2026-11-06",
       "why": "event was Nov. 8; past"
     }
-  ]
+  ],
+  "last_daily_pass": {
+    "at": "2026-11-11T08:00:00-05:00",
+    "kind": "weekday morning email + FencingTracker quick look",
+    "email": [
+      "ingested <010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com> (chunkymonkey Wed Nov 11 digest): Nico Ng entered Freehold November Open; Pizza RYC unchanged; Revolution and Wanglei still empty",
+      "ingested <d0ff43e598e6fe5cb242389b7.f656c71db1.20261110160053.3d65440681.578871c8@mail150.atl241.mcsv.net> (club Mailchimp Winter Camp reminder Nov 10 11:01 AM ET); no new print facts; extracted photo flyer + schedule graphic"
+    ],
+    "fencingtracker": {
+      "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+      "retrieved_at": "2026-11-11T07:57:00-05:00",
+      "note": "One fetch, HTTP 200. Club page still lists Ultimate Cup RJCC as newest (15 results; dates Oct 31–Nov 1, 2026 on the page). No NYFA Youth Cup #1, Fencers Club Senior Open, or Medeo Youth Challenge #5 on the club page."
+    },
+    "fencingapi": {
+      "endpoint": "club-results --since 2026-11-01 --club 'Elite Fencers Club'",
+      "source": "cache",
+      "http": 200,
+      "items": 0,
+      "note": "Empty cache since Nov 1; no live scrape (no Elite FC tournament today). No API-vs-FT club-page mismatch to flag."
+    }
+  }
 }
