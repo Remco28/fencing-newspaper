@@ -3,7 +3,7 @@
 import json,re,html,sys
 from pathlib import Path
 R='/workspace/fencing-newspaper/'
-WEEK='staging/weeks/next'
+WEEK='staging/weeks/2026-11-11'
 ISSUE='issues/2026-11-11'
 D={i['id']:i for i in json.load(open(R+WEEK+'/items.json'))['items']}
 L=json.load(open(R+'budget-demo/practice-lineup.json')); S={s['key']:s for s in L['slots']}

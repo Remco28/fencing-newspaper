@@ -81,7 +81,7 @@
   },
   "published": {
     "at": "2026-11-11",
-    "commit": "PENDING",
+    "commit": "18af56d",
     "via": "scripts/publish_issue.py 2026-11-11"
   }
 }

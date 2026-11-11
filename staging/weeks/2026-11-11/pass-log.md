@@ -118,3 +118,16 @@ Proof v1 rendered clean at 4:35 PM ET: 2 pages, no layout FLAGs (p1 gap 0.18in, 
 - Filled the top-right with a new Clark-proposed For the Parents short, “What “Triple Fees” Means” (121w), pending Frank’s vet. Sources: 2026–27 Athlete Handbook §2.4 (national late entries cost “triple the total amount due for regular entries,” online through 5 p.m. local time the night before the event); official 2027 Junior Olympics & January NAC and 2026 November NAC event pages (same dollar table: $225 / $320 / $415 regular, $675 / $960 / $1,245 late; JO regular-fee deadline Nov. 11, 2026; November NAC already in its late-fee window). Regional tournaments: Operations Manual 2026–27 requires each event to post its own fee schedule; no uniform regional dollar table or a national-style triple-fee rule is stated, so none is printed. No invented figures. Excluded items were not used.
 - Page 2 relaid to the mockup. Rating-letters stays one stacked column on the left (modest sourced expansion to 270w so the column meets the cartoon). Cartoon at natural 3:2, uncropped, as wide as the right column. Page 1 pixel-identical to v1/v2.
 - Proof v3 rendered clean at 10:53 PM ET: 2 pages, no layout FLAGs (p1 gap 0.18in, p2 gap 0.45in, row-1 spread 0.32in). PDF Author Nico’s Dad. Same filename `issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf`.
+
+## 2026-11-10 Tue 11:50 PM ET — No. 6 approved (proof v3) and published
+
+- Frank chat 11:50 PM ET (t203u): “Alright, let's run with it.” Chat decision #9 recorded. Proof v3 is the print version (Wednesday Edition, Nov. 11, 2026).
+- The approval vets the Clark-proposed For the Parents short `desk-for-the-parents-triple-fees-2026-11-10` (“What “Triple Fees” Means”).
+- Published with `scripts/publish_issue.py 2026-11-11` to newsletter.teamremco.org (site/ + docs/).
+
+## 2026-11-10 Tue 11:54 PM ET — staging roll-forward after No. 6
+
+- Archived this folder as staging/weeks/2026-11-11 (history); items printed in No. 6 marked printed_in: 6.
+- Carried still-relevant items into next (Issue No. 7) with carried_from: Winter Camp, classes table, Photo from History 10 (Tímea Nagy), and college season (all held); Deadlines; Epee on Screen; Cobra (Nov. 27–29); Pizza RYC/RJCC (Nov. 14–15); Also on the Calendar (Nov. 14–15 locals); On the Road / travel registrations (Kiefer, November NAC, later events); Bernards HS Senior Open (Dec. 19, unvetted); Dakar YOG as a results watch (event through Nov. 13).
+- Fresh empty after-next; budget version counter reset for No. 7.
+- No. 6 recipe/compose.py now reads this history folder.
