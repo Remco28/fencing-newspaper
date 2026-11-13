@@ -18,6 +18,7 @@ Keep all checklists below; do not delete sources when editing cadence.
 
 ## FencingTracker (recurring source — locked 2026-10-13, plan v3.24, Frank on a call 07:58 ET)
 - **Club page (Elite FC results):** https://fencingtracker.com/club/100261977/Elite%20FC/results
+- **Registrations page (Elite FC entries, regionals/nationals):** https://fencingtracker.com/club/100261977/Elite%20FC/registrations — **Monday full pass only, once a week** (Frank 2026-11-13: entrants here are regional/national events, so last-minute signups are rare; not daily, not Wednesday). Refresh On the Road / travel boards from it; new entries stage unvetted.
 - **Good for:** Elite FC results the NAC feed / AskFRED miss — local opens and regionals (e.g. Adela Sullivan's 2nd at the Artdu Open, Oct 11, 2026, appeared only here); placements by event; rating earned; links to event results pages (field size, pool/DE detail) and fencer history pages. Frank uses it himself.
 - **Cadence:**
   - **Daily quick look (weekday morning pass):** fetch the club page once; diff against staging for new results.
@@ -69,6 +70,7 @@ Keep all checklists below; do not delete sources when editing cadence.
 
 ## Weekly / as-needed
 - [ ] FencingTracker club page (full sweep, § FencingTracker): https://fencingtracker.com/club/100261977/Elite%20FC/results + NJ event pages
+- [ ] FencingTracker registrations page (Monday full pass only, § FencingTracker): https://fencingtracker.com/club/100261977/Elite%20FC/registrations
 - [ ] European Fencing Confederation results (epee): https://fencing-efc.eu/results
 - [ ] FIE rankings pages (1 line each, top-3 moves only)
 - [ ] Nearby NJ club blogs (Freehold template; add 2–3 more)
