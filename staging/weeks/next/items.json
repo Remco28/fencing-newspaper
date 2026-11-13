@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-12T07:58:00-05:00",
+  "updated_at": "2026-11-13T07:58:00-05:00",
   "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7.",
   "items": [
     {
@@ -835,10 +835,19 @@
           "received_at": "2026-11-12T07:00:03-05:00",
           "retrieved_at": "2026-11-12T07:58:00-05:00",
           "note": "Unchanged: 5 entries / 2 fencers (Young, Penelope and Gore, Amina). Feed still \"could not refresh\", data as of Nov 11, 6:00 PM. Wed Nov 11 2:36 PM ET digest (message_id <010001a1cc1ce47f-594d757a-353c-4681-8077-6a723c7d8ad0-000000@email.amazonses.com>) had the same entries with an older stamp (data as of Nov 10, 6:00 AM, could not refresh)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, November 13",
+          "received_at": "2026-11-13T07:00:02-05:00",
+          "retrieved_at": "2026-11-13T07:58:00-05:00",
+          "note": "Unchanged: 5 entries / 2 fencers (Young, Penelope and Gore, Amina). Feed still \"could not refresh\", data as of Nov 12, 6:01 PM."
         }
       ],
-      "updated_at": "2026-11-12T07:58:00-05:00",
-      "entries_last_confirmed": "2026-11-12T07:58:00-05:00",
+      "updated_at": "2026-11-13T07:58:00-05:00",
+      "entries_last_confirmed": "2026-11-13T07:58:00-05:00",
       "carried_from": "staging/weeks/2026-11-11",
       "carry_note": "Ran in No. 5 board. Event Nov 14–15; refresh entries for No. 6 (or results watch if No. 6 publishes after).",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -907,19 +916,19 @@
       ],
       "facts": [
         {
-          "claim": "Revolution Fencing Center Y10, 12, 14 Epee, Nov. 14, Revolution Fencing Center; nobody from Elite signed up (data as of Nov 11, 6:00 PM ET)",
-          "source": "<010001a1cfa11738-8c7d4bd8-7708-458f-b13d-2b9a8b9297fa-000000@email.amazonses.com>",
-          "status": "verified-email (allowlisted digest). AskFRED: West Chester, Pa. (1220 Ward Ave); Y10/Y12/Y14 Mixed Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/dc64e64e-99ce-4429-9e08-d2ac2e6c37ef Rechecked Thu Nov 12 digest: still nobody signed up (data as of Nov 11, 6:00 PM). Wed Nov 11 2:36 PM ET digest also empty (data as of Nov 10, 3:20 PM)."
+          "claim": "Revolution Fencing Center Y10, 12, 14 Epee, Nov. 14, Revolution Fencing Center; nobody from Elite signed up (data as of Nov 13, 6:00 AM ET)",
+          "source": "<010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com>",
+          "status": "verified-email (allowlisted digest). AskFRED: West Chester, Pa. (1220 Ward Ave); Y10/Y12/Y14 Mixed Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/dc64e64e-99ce-4429-9e08-d2ac2e6c37ef Rechecked Fri Nov 13 digest: still nobody signed up (data as of Nov 13, 6:00 AM)."
         },
         {
           "claim": "Freehold Fencing - November Open Epee, Nov. 15, Freehold Fencing Academy: Ng, Nico now entered in Sunday 10:30 AM Senior Men's Epee (chunkymonkey digest Wed Nov 11; data as of Nov 10, 3:20 PM). Tuesday afternoon digest, with the same data-as-of stamp, still said nobody signed up.",
           "source": "<010001a1ca7ab371-ba6d1d0c-0e91-40d3-90dc-45d173f354e9-000000@email.amazonses.com>",
-          "status": "verified-email (allowlisted digest, change vs Tue Nov 10 3:24 PM ET digest). Entry staged separately as email-agentmail-freehold-nov-open-entries-2026-11-11. AskFRED (fetched 2026-11-10 ~3:32 PM ET): Freehold, N.J. (56 Thoreau Dr); Senior Men's and Women's Epee (Open); tournament prereg_close 2026-11-14; https://www.askfred.net/tournaments/4faa90b1-2f4c-4993-8b82-bfae268c773a Rechecked Thu Nov 12 digest: Nico Ng still entered (data as of Nov 11, 6:00 PM)."
+          "status": "verified-email (allowlisted digest, change vs Tue Nov 10 3:24 PM ET digest). Entry staged separately as email-agentmail-freehold-nov-open-entries-2026-11-11. AskFRED (fetched 2026-11-10 ~3:32 PM ET): Freehold, N.J. (56 Thoreau Dr); Senior Men's and Women's Epee (Open); tournament prereg_close 2026-11-14; https://www.askfred.net/tournaments/4faa90b1-2f4c-4993-8b82-bfae268c773a Rechecked Thu Nov 12 digest: Nico Ng still entered (data as of Nov 11, 6:00 PM). Rechecked Fri Nov 13 digest: Nico Ng still entered (data as of Nov 13, 6:00 AM). Digest event title now reads Senior Mixed Epee (previously staged as Senior Men's Epee)."
         },
         {
-          "claim": "Wanglei Fencing November Cup II: Cadet/Junior Epee, Nov. 15, Wanglei International Fencing Club; nobody from Elite signed up (data as of Nov 11, 6:00 PM ET)",
-          "source": "<010001a1cfa11738-8c7d4bd8-7708-458f-b13d-2b9a8b9297fa-000000@email.amazonses.com>",
-          "status": "verified-email. AskFRED: Plainsboro Township, N.J. (10 Schalks Crossing Rd); Cadet and Junior Men's and Women's Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/f607f80f-dea6-4517-bc92-557226c7f0fd Rechecked Thu Nov 12 digest: still nobody signed up (data as of Nov 11, 6:00 PM). Wed Nov 11 2:36 PM ET digest also empty (data as of Nov 10, 3:22 PM)."
+          "claim": "Wanglei Fencing November Cup II: Cadet/Junior Epee, Nov. 15, Wanglei International Fencing Club; nobody from Elite signed up (data as of Nov 13, 6:00 AM ET)",
+          "source": "<010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com>",
+          "status": "verified-email. AskFRED: Plainsboro Township, N.J. (10 Schalks Crossing Rd); Cadet and Junior Men's and Women's Epee; prereg_close 2026-11-14; https://www.askfred.net/tournaments/f607f80f-dea6-4517-bc92-557226c7f0fd Rechecked Fri Nov 13 digest: still nobody signed up (data as of Nov 13, 6:00 AM)."
         },
         {
           "claim": "These are local events, good practice, decently competitive fields; for older kids",
@@ -967,10 +976,19 @@
           "received_at": "2026-11-12T07:00:03-05:00",
           "retrieved_at": "2026-11-12T07:58:00-05:00",
           "note": "Unchanged: Nico Ng still in Freehold November Open; Revolution and Wanglei still nobody signed up (data as of Nov 11, 6:00 PM). Pizza RYC unchanged (separate item). Wed Nov 11 2:36 PM ET digest had the same picture with older data-as-of stamps."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, November 13",
+          "received_at": "2026-11-13T07:00:02-05:00",
+          "retrieved_at": "2026-11-13T07:58:00-05:00",
+          "note": "Unchanged: Nico Ng still in Freehold November Open; Revolution and Wanglei still nobody signed up (data as of Nov 13, 6:00 AM). Pizza RYC unchanged (separate item). Digest lists Freehold as Senior Mixed Epee (previously staged as Senior Men's Epee)."
         }
       ],
       "created_at": "2026-11-10T15:37:00-05:00",
-      "updated_at": "2026-11-12T07:58:00-05:00",
+      "updated_at": "2026-11-13T07:58:00-05:00",
       "printed_in": 6,
       "carried_from": "staging/weeks/2026-11-11"
     },
@@ -1041,10 +1059,19 @@
           "received_at": "2026-11-12T07:00:03-05:00",
           "retrieved_at": "2026-11-12T07:58:00-05:00",
           "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8 still lists Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, 1:00 PM) and Y12WE (Sun Nov 15, 8:00 AM). Unchanged vs Nov 10 fencing-api check (4 entries / 2 fencers). Feed \"could not refresh\", data as of Nov 11, 2:36 PM. Wed Nov 11 2:36 PM ET digest had the same entries with an older stamp (data as of Nov 10, 4:25 PM, could not refresh)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, November 13",
+          "received_at": "2026-11-13T07:00:02-05:00",
+          "retrieved_at": "2026-11-13T07:58:00-05:00",
+          "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8 still lists Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, 1:00 PM) and Y12WE (Sun Nov 15, 8:00 AM). Unchanged vs Nov 10 fencing-api check (4 entries / 2 fencers). Feed \"could not refresh\", data as of Nov 12, 6:00 PM."
         }
       ],
       "created_at": "2026-10-28T09:58:00-04:00",
-      "updated_at": "2026-11-12T07:58:00-05:00",
+      "updated_at": "2026-11-13T07:58:00-05:00",
       "carried_from": "staging/weeks/2026-11-11",
       "carry_note": "Unprinted in No. 5 (scraped, unvetted). November NAC Nov 20–22 still upcoming; candidate for No. 6.",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -1115,8 +1142,8 @@
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-11-11T08:00:00-05:00",
       "created_at": "2026-11-11T08:00:00-05:00",
-      "updated_at": "2026-11-12T07:58:00-05:00",
-      "entries_last_confirmed": "2026-11-12T07:58:00-05:00",
+      "updated_at": "2026-11-13T07:58:00-05:00",
+      "entries_last_confirmed": "2026-11-13T07:58:00-05:00",
       "board": "Nearby Tournaments",
       "slot_hint": "signup",
       "tags": [
@@ -1158,6 +1185,15 @@
           "received_at": "2026-11-12T07:00:03-05:00",
           "retrieved_at": "2026-11-12T07:58:00-05:00",
           "note": "Unchanged: Nico Ng still entered in Sunday 10:30 AM Senior Men's Epee (1 entry / 1 fencer). Data as of Nov 11, 6:00 PM. Wed Nov 11 2:36 PM ET digest had the same entry (data as of Nov 10, 3:20 PM)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, November 13",
+          "received_at": "2026-11-13T07:00:02-05:00",
+          "retrieved_at": "2026-11-13T07:58:00-05:00",
+          "note": "Unchanged: Nico Ng still entered in Sunday 10:30 AM event (1 entry / 1 fencer). Data as of Nov 13, 6:00 AM. Digest event title now reads Senior Mixed Epee (previously staged as Senior Men's Epee from the Wed Nov 11 digest / AskFRED). Print body left as Senior Men's Epee pending official-page confirmation."
         }
       ]
     },
@@ -1263,15 +1299,14 @@
     }
   ],
   "last_daily_pass": {
-    "at": "2026-11-12T07:58:00-05:00",
+    "at": "2026-11-13T07:58:00-05:00",
     "kind": "weekday morning email + FencingTracker quick look",
     "email": [
-      "ingested <010001a1cfa11738-8c7d4bd8-7708-458f-b13d-2b9a8b9297fa-000000@email.amazonses.com> (chunkymonkey Thu Nov 12 digest): Pizza RYC unchanged (Penny Young + Amina Gore); Freehold still Nico Ng only; Kiefer Meinhardt still Stella Kuo + Mila Siu; Revolution and Wanglei still empty. Wed evening digest <010001a1cc1ce47f-594d757a-353c-4681-8077-6a723c7d8ad0-000000@email.amazonses.com> (Nov 11 2:36 PM ET) had the same entries with older data-as-of stamps; also labeled processed.",
-      "ingested <d0ff43e598e6fe5cb242389b7.f656c71db1.20261111152811.ff4407af0c.d362666d@mail150.atl241.mcsv.net> (club Mailchimp Group Class + Footwork Class, Wed Nov 11 10:28 AM ET); times match the standing schedule; logo only, no media extract; no new print facts."
+      "ingested <010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com> (chunkymonkey Fri Nov 13 digest): Pizza RYC unchanged (Penny Young + Amina Gore; data as of Nov 12, 6:01 PM, could not refresh); Freehold still Nico Ng only (data as of Nov 13, 6:00 AM; digest event title now reads Senior Mixed Epee, previously staged as Senior Men's Epee); Kiefer Meinhardt still Stella Kuo + Mila Siu (data as of Nov 12, 6:00 PM, could not refresh); Revolution and Wanglei still empty (data as of Nov 13, 6:00 AM)."
     ],
     "fencingtracker": {
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
-      "retrieved_at": "2026-11-12T07:55:11-05:00",
+      "retrieved_at": "2026-11-13T07:56:48-05:00",
       "note": "One fetch, HTTP 200. Club page still lists Ultimate Cup RJCC as newest (15 results; dates Oct 31–Nov 1, 2026 on the page). No NYFA Youth Cup #1, Fencers Club Senior Open, or Medeo Youth Challenge #5 on the club page."
     },
     "fencingapi": {
