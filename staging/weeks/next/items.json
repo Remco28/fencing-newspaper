@@ -1278,8 +1278,8 @@
         "frank",
         "ai-assisted"
       ],
-      "facts_status": "no factual claims; fictional characters. Jersey reads 'TSAI TPE' (Taiwan); Elite FC roster has a Bradley Tsai, flagged to Frank as a possible unintended association.",
-      "vet_notes": "Frank chat t218u 2026-11-15 11:52 PM ET: 'I have a comic for this week. I made it using ChatGPT. I don't think we need attribution.' No byline, no credit line, no caption (same as the No. 6 Tournaments cartoon). 2172x724 PNG. Lightly lettered three-panel strip: art-fit uses the lettered-comic floor; speech balloons must stay readable.",
+      "facts_status": "no factual claims; fictional characters. Jersey reads 'TSAI TPE'; Frank confirmed 2026-11-15 11:55 PM ET it's not a club fencer: leave as is.",
+      "vet_notes": "Frank chat t218u 2026-11-15 11:52 PM ET: 'I have a comic for this week. I made it using ChatGPT. I don't think we need attribution.' No byline, no credit line, no caption (same as the No. 6 Tournaments cartoon). 2172x724 PNG. Lightly lettered three-panel strip: art-fit uses the lettered-comic floor; speech balloons must stay readable.\n[2026-11-15 11:55 PM ET] Frank (t219u): 'just leave the name, it's fine. it's not a fencer at our club.' Closed; do not re-ask.",
       "provenance": [
         {
           "type": "chat",
@@ -1295,7 +1295,7 @@
         }
       ],
       "created_at": "2026-11-15T23:55:00-05:00",
-      "updated_at": "2026-11-15T23:55:00-05:00"
+      "updated_at": "2026-11-15T23:56:00-05:00"
     },
     {
       "id": "chat-weekend-results-nac-ratings-direction-2026-11-15",
