@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-15T23:55:00-05:00",
+  "updated_at": "2026-11-15T23:58:00-05:00",
   "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7. 2026-11-15 11:55 PM ET: Frank's VR parent-filter comic staged as a vetted page-2 visual (no attribution).",
   "items": [
     {
@@ -1296,6 +1296,39 @@
       ],
       "created_at": "2026-11-15T23:55:00-05:00",
       "updated_at": "2026-11-15T23:55:00-05:00"
+    },
+    {
+      "id": "chat-weekend-results-nac-ratings-direction-2026-11-15",
+      "kind": "tip",
+      "headline": "Desk note: weekend results, November NAC preview, new ratings",
+      "body": "Frank (chat, Sun Nov 15, 11:52 PM ET): kids traveled all over this weekend (Virginia, likely Connecticut, plus locals); results should post soon. The November NAC is this week. New ratings were earned. Desk direction for the Monday full pass, not print copy: fetch official results for every Elite FC entry Nov 14–15 (Kiefer Meinhardt Cup in Glen Allen, Va.; any Connecticut event; Pizza RYC/RJCC; Freehold November Open; Revolution; Wanglei), list new ratings earned from official results, and refresh November NAC Elite FC entrants and days for a this-week preview. Verify the Connecticut event from registrations; don't assume it.",
+      "source": "chat",
+      "from": "frank",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-15T23:52:00-05:00",
+      "vet_scope": "direction_only",
+      "facts_status": "direction only; all results, ratings and entrants must come from official pages",
+      "slot_hint": "club_results",
+      "suggested_slot": "club_results",
+      "tags": [
+        "results-watch",
+        "nac",
+        "ratings",
+        "travel"
+      ],
+      "word_count": 0,
+      "provenance": [
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-15T23:52:00-05:00",
+          "note": "t218u"
+        }
+      ],
+      "created_at": "2026-11-15T23:58:00-05:00",
+      "updated_at": "2026-11-15T23:58:00-05:00"
     }
   ],
   "rolled_forward": {
