@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-11T08:00:00-05:00",
+  "updated_at": "2026-11-15T23:55:00-05:00",
   "note": "Media carried into Issue No. 7 after the No. 6 roll-forward: Winter Camp flyer and Photo from History 10 (Tímea Nagy), both still held. 2026-11-11 daily pass added the Nov 10 Mailchimp photo flyer and the Oct 22 schedule graphic (re-extracted from that reminder; identical to the Oct 22 file).",
   "items": [
     {
@@ -53,6 +53,17 @@
       "w": 1080,
       "h": 1440,
       "note": "New photo-collage flyer (1080x1440). Club Mailchimp; allowlisted. Email does not name the people in the photos. A jacket in the top action photo appears to read MILINKOVIC; do not caption names from the picture unless Frank identifies them. Phone number on the flyer is not for print (Frank: contact the club)."
+    },
+    {
+      "id": "media-vr-parent-filter-comic-2026-11-15",
+      "kind": "comic",
+      "filename": "vr-parent-filter-comic.png",
+      "media_path": "staging/weeks/next/media/vr-parent-filter-comic.png",
+      "caption": "",
+      "source": "frank",
+      "vetted": true,
+      "parent_item_id": "frank-vr-parent-filter-comic-2026-11-15",
+      "note": "2172x724 three-panel strip, light lettering; no credit."
     }
   ]
 }
