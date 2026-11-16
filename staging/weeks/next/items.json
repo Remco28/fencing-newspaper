@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-15T23:58:00-05:00",
+  "updated_at": "2026-11-16T08:25:00-05:00",
   "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7. 2026-11-15 11:55 PM ET: Frank's VR parent-filter comic staged as a vetted page-2 visual (no attribution).",
   "items": [
     {
@@ -375,6 +375,17 @@
           "retrieved_at": "2026-11-12T07:58:00-05:00",
           "vetted_by": "auto-club-mailchimp",
           "note": "Wed Nov 11 Mailchimp (10:28 AM ET, after Wednesday's morning pass): all lessons Wed+Thu; Musketeers Group Class Wed 5:00 PM; Footwork Class Wed 6:30 PM; Advanced Group Class Thu 6:00 PM. Matches standing schedule; no change. Club logo only (500x500 Elite FC shield, June 2025 asset) — no media extract. Wed class times are past by this Thu morning ingest; Thu Advanced Group Class is same-day."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261113152341.3134d0ce47.6a4f6249@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class + Intermediate Class!",
+          "received_at": "2026-11-13T10:23:45-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Fri Nov 13 Mailchimp (10:23 AM ET, after Friday's morning pass): all lessons Friday and Saturday; Mini-Musketeers Group Class Fri 4:15 PM; Intermediate Group Class Fri 5:00 PM (end time not restated; Nov 6 email and No. 5 copy had 5:00–6:30 PM); Sat Musketeers Group Class 11:00 AM; Advanced Group Class 1:00 PM. Matches standing schedule / known Intermediate class; no change. Club logo only (mcusercontent Elite FC shield) — no media extract. The Friday/Saturday classes named in the email were already past by this Monday ingest."
         }
       ],
       "suggested_slot": "club-events",
@@ -391,7 +402,7 @@
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Standing club schedule reference; not printed in No. 5 (classes table out). Note: new Youth Intermediate class Fridays 5:00–6:30 PM (No. 5); website still lists open bouting 6:00–10:00 vs Frank's 6:30.",
       "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
-      "updated_at": "2026-11-12T07:58:00-05:00"
+      "updated_at": "2026-11-16T08:25:00-05:00"
     },
     {
       "id": "history-photo-10-timea-nagy",
@@ -844,10 +855,37 @@
           "received_at": "2026-11-13T07:00:02-05:00",
           "retrieved_at": "2026-11-13T07:58:00-05:00",
           "note": "Unchanged: 5 entries / 2 fencers (Young, Penelope and Gore, Amina). Feed still \"could not refresh\", data as of Nov 12, 6:01 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d9edc720-370f92f1-e137-4917-9a4e-1118b3ab1b4f-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, November 14",
+          "received_at": "2026-11-14T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Unchanged: 5 entries / 2 fencers (Young, Penelope and Gore, Amina). Feed still 'could not refresh', data as of Nov 13, 6:00 AM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1df1422d0-7e1e24a3-45e0-40e1-8967-80c020ecfaf2-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, November 15",
+          "received_at": "2026-11-15T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Unchanged: 5 entries / 2 fencers (Young, Penelope and Gore, Amina). Feed still 'could not refresh', data as of Nov 14, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1e43a7e84-5e6d1e63-fd93-4baf-8659-b02ee600e019-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, November 16",
+          "received_at": "2026-11-16T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Unchanged: 5 entries / 2 fencers (Young, Penelope and Gore, Amina). Feed still 'could not refresh', data as of Nov 15, 6:01 PM. Event has ended (Nov 14–15); no Pizza RYC results on the FencingTracker club page as of the 2026-11-16 daily look."
         }
       ],
-      "updated_at": "2026-11-13T07:58:00-05:00",
-      "entries_last_confirmed": "2026-11-13T07:58:00-05:00",
+      "updated_at": "2026-11-16T08:25:00-05:00",
+      "entries_last_confirmed": "2026-11-16T08:25:00-05:00",
       "carried_from": "staging/weeks/2026-11-11",
       "carry_note": "Ran in No. 5 board. Event Nov 14–15; refresh entries for No. 6 (or results watch if No. 6 publishes after).",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -985,10 +1023,37 @@
           "received_at": "2026-11-13T07:00:02-05:00",
           "retrieved_at": "2026-11-13T07:58:00-05:00",
           "note": "Unchanged: Nico Ng still in Freehold November Open; Revolution and Wanglei still nobody signed up (data as of Nov 13, 6:00 AM). Pizza RYC unchanged (separate item). Digest lists Freehold as Senior Mixed Epee (previously staged as Senior Men's Epee)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d9edc720-370f92f1-e137-4917-9a4e-1118b3ab1b4f-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, November 14",
+          "received_at": "2026-11-14T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Revolution Y10/12/14 Epee still nobody signed up (data as of Nov 13, 6:00 AM). Wanglei November Cup II still nobody signed up (data as of Nov 13, 6:00 AM). Nico Ng still in Freehold; Pizza RYC unchanged (separate items)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1df1422d0-7e1e24a3-45e0-40e1-8967-80c020ecfaf2-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, November 15",
+          "received_at": "2026-11-15T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Revolution still nobody signed up (data as of Nov 14, 6:00 PM; event was Nov 14). Wanglei still nobody signed up (data as of Nov 14, 6:00 PM). Freehold and Pizza unchanged (separate items)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1e43a7e84-5e6d1e63-fd93-4baf-8659-b02ee600e019-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, November 16",
+          "received_at": "2026-11-16T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Wanglei November Cup II still nobody signed up (data as of Nov 16, 6:00 AM; event was Nov 15) — no Elite FC entries. Revolution dropped off the Monday digest (event was Nov 14; last seen empty on the Sunday digest). Freehold and Pizza unchanged as entries (separate items)."
         }
       ],
       "created_at": "2026-11-10T15:37:00-05:00",
-      "updated_at": "2026-11-13T07:58:00-05:00",
+      "updated_at": "2026-11-16T08:25:00-05:00",
       "printed_in": 6,
       "carried_from": "staging/weeks/2026-11-11"
     },
@@ -1068,10 +1133,37 @@
           "received_at": "2026-11-13T07:00:02-05:00",
           "retrieved_at": "2026-11-13T07:58:00-05:00",
           "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8 still lists Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, 1:00 PM) and Y12WE (Sun Nov 15, 8:00 AM). Unchanged vs Nov 10 fencing-api check (4 entries / 2 fencers). Feed \"could not refresh\", data as of Nov 12, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d9edc720-370f92f1-e137-4917-9a4e-1118b3ab1b4f-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, November 14",
+          "received_at": "2026-11-14T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8 still lists Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, 1:00 PM) and Y12WE (Sun Nov 15, 8:00 AM). Unchanged (4 entries / 2 fencers). Feed still 'could not refresh', data as of Nov 13, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1df1422d0-7e1e24a3-45e0-40e1-8967-80c020ecfaf2-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, November 15",
+          "received_at": "2026-11-15T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Kiefer Meinhardt Cup entries unchanged (Kuo, Stella and Siu, Mila in Y14WE and Y12WE). Feed still 'could not refresh', data as of Nov 14, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1e43a7e84-5e6d1e63-fd93-4baf-8659-b02ee600e019-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, November 16",
+          "received_at": "2026-11-16T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Kiefer Meinhardt Cup entries unchanged (Kuo, Stella and Siu, Mila in Y14WE and Y12WE). Feed still 'could not refresh', data as of Nov 15, 6:03 PM. Event has ended; no Kiefer results on the FencingTracker club page as of the 2026-11-16 daily look. fencing-api live catalog /v1/usfa/tournaments/12117 (2026-11-16 8:24 AM ET, final=false, data_kind=catalog) lists Y14WE (event 75190) 76 official competitors and Y12WE (event 75196) 60 official competitors; no placements in that catalog payload."
         }
       ],
       "created_at": "2026-10-28T09:58:00-04:00",
-      "updated_at": "2026-11-13T07:58:00-05:00",
+      "updated_at": "2026-11-16T08:25:00-05:00",
       "carried_from": "staging/weeks/2026-11-11",
       "carry_note": "Unprinted in No. 5 (scraped, unvetted). November NAC Nov 20–22 still upcoming; candidate for No. 6.",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -1142,8 +1234,8 @@
       "vetted_by": "auto-chunkymonkey",
       "vetted_at": "2026-11-11T08:00:00-05:00",
       "created_at": "2026-11-11T08:00:00-05:00",
-      "updated_at": "2026-11-13T07:58:00-05:00",
-      "entries_last_confirmed": "2026-11-13T07:58:00-05:00",
+      "updated_at": "2026-11-16T08:25:00-05:00",
+      "entries_last_confirmed": "2026-11-16T08:25:00-05:00",
       "board": "Nearby Tournaments",
       "slot_hint": "signup",
       "tags": [
@@ -1194,6 +1286,33 @@
           "received_at": "2026-11-13T07:00:02-05:00",
           "retrieved_at": "2026-11-13T07:58:00-05:00",
           "note": "Unchanged: Nico Ng still entered in Sunday 10:30 AM event (1 entry / 1 fencer). Data as of Nov 13, 6:00 AM. Digest event title now reads Senior Mixed Epee (previously staged as Senior Men's Epee from the Wed Nov 11 digest / AskFRED). Print body left as Senior Men's Epee pending official-page confirmation."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d9edc720-370f92f1-e137-4917-9a4e-1118b3ab1b4f-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, November 14",
+          "received_at": "2026-11-14T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Unchanged: Nico Ng still entered in Sunday 10:30 AM Senior Mixed Epee (1 entry / 1 fencer). Data as of Nov 13, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1df1422d0-7e1e24a3-45e0-40e1-8967-80c020ecfaf2-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, November 15",
+          "received_at": "2026-11-15T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Unchanged: Nico Ng still entered in Sunday 10:30 AM Senior Mixed Epee (1 entry / 1 fencer). Data as of Nov 15, 6:00 AM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1e43a7e84-5e6d1e63-fd93-4baf-8659-b02ee600e019-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, November 16",
+          "received_at": "2026-11-16T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Unchanged entries: Nico Ng still the only Elite FC name, Sunday 10:30 AM Senior Mixed Epee (1 entry / 1 fencer). Data as of Nov 16, 6:00 AM. Official USA Fencing catalog (fencing-api live, 2026-11-16 8:24 AM ET, /v1/usfa/tournaments/12494) lists the fenced event as Division IA Mixed Epee (D1AXE, event 84713), 30 official competitors; Senior Open Men's and Women's Epee show 0 official competitors. FencingTracker club page (retrieved 2026-11-16 8:22 AM ET) now has a result: Ng, Nico, 5th, D1AXE, no rating earned — staged separately as ft-freehold-nov-open-nico-5th-2026-11-15. Print body of this entries item was left as Senior Men's Epee pending official confirmation; official name is now Division IA Mixed Epee."
         }
       ]
     },
@@ -1329,6 +1448,113 @@
       ],
       "created_at": "2026-11-15T23:58:00-05:00",
       "updated_at": "2026-11-15T23:58:00-05:00"
+    },
+    {
+      "id": "ft-freehold-nov-open-nico-5th-2026-11-15",
+      "kind": "result",
+      "headline": "Nico Ng 5th at Freehold November Open",
+      "body": "FencingTracker club results page lists Ng, Nico, 5th in Division IA Mixed Epee (D1AXE) at Freehold Fencing - November Open Epee, Nov. 15, 2026. No rating earned listed. Official USA Fencing catalog (fencing-api live, Nov. 16, 8:24 a.m. ET, /v1/usfa/tournaments/12494, final=false) names the same event (usfa event 84713) and lists 30 official competitors; Senior Open Men's and Women's Epee on that tournament show 0 official competitors (the event ran as mixed). The 30 figure is the catalog official_competitors count, not a finishers list from a results page, so '5th of 30' is not confirmed until an official results page is checked. Roster house form: Nico Ng.",
+      "source": "web",
+      "from": "FencingTracker club page",
+      "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+      "target_week": "next",
+      "vetted": false,
+      "slot_hint": "club_results",
+      "suggested_slot": "club_results",
+      "tags": [
+        "club",
+        "result",
+        "local",
+        "freehold"
+      ],
+      "print_rows": [
+        [
+          "Nico Ng",
+          "Division IA Mixed (Freehold November Open, Nov. 15)",
+          "5th"
+        ]
+      ],
+      "facts": [
+        {
+          "claim": "Nico Ng 5th, Division IA Mixed Epee (D1AXE), Freehold Fencing - November Open Epee, Nov. 15, 2026; no rating earned listed",
+          "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "status": "unvetted; FencingTracker club page 2026-11-16 8:22 AM ET"
+        },
+        {
+          "claim": "USA Fencing event catalog lists 30 official competitors in D1AXE (event 84713) at tournament 12494; catalog final=false",
+          "source": "fencingapi live /v1/usfa/tournaments/12494",
+          "status": "unvetted; catalog official_competitors, not a posted finishers list; fetched 2026-11-16 8:24 AM ET"
+        }
+      ],
+      "print_hint": "own Club Results row (unvetted); field size pending official results page",
+      "vet_notes": "Daily FT quick look 2026-11-16. Scraped result — unvetted until Frank vets. Local top-8 may print (5th; catalog lists 30 official competitors, finishers not yet confirmed on an event results page). Official event name is Division IA Mixed Epee, which resolves the earlier digest/AskFRED Senior Men's vs Senior Mixed label. No rating earned on the club page. Related entries item: email-agentmail-freehold-nov-open-entries-2026-11-11. Monday full pass should fetch the event results page for field size, DE path, and any other Elite FC finishers.",
+      "related_item": "email-agentmail-freehold-nov-open-entries-2026-11-11",
+      "provenance": [
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-16T08:22:24-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "Newest club-page tournament: Freehold Fencing - November Open Epee, Nov 15, 2026, 1 result. Ng, Nico, Division IA Mixed Epee (D1AXE), 5th, rating earned '-', date 2026-11-15. FT /tournament/1857; USFA https://member.usafencing.org/details/tournaments/12494."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12494",
+          "fetched_at": "2026-11-16T08:24:04-05:00",
+          "note": "live=true, source=live, kind=usfa.tournament, data_kind=catalog, final=false. Tournament: Freehold Fencing - November Open Epee, Freehold, NJ, Nov 15, 2026. D1AXE event 84713: official_competitors 30. SNRME event 79500 and SNRWE event 79501: official_competitors 0. No placements in this catalog payload."
+        }
+      ],
+      "created_at": "2026-11-16T08:25:00-05:00",
+      "updated_at": "2026-11-16T08:25:00-05:00"
+    },
+    {
+      "id": "ft-manchen-friday-mendez-5th-2026-11-13",
+      "kind": "result",
+      "headline": "Brendan Mendez 5th at Manchen Friday Night Epee",
+      "body": "FencingTracker club results page lists Mendez, Brendan, 5th in Senior Open Mixed Epee (SNRXE) at Manchen Friday Night Epee E & Under, Nov. 13, 2026. No rating earned listed. Field size is not shown on the club page.",
+      "source": "web",
+      "from": "FencingTracker club page",
+      "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+      "target_week": "next",
+      "vetted": false,
+      "slot_hint": "club_results",
+      "suggested_slot": "club_results",
+      "tags": [
+        "club",
+        "result",
+        "local",
+        "manchen"
+      ],
+      "print_rows": [
+        [
+          "Brendan Mendez",
+          "Senior Open Mixed (Manchen Friday Night Epee, Nov. 13)",
+          "5th"
+        ]
+      ],
+      "facts": [
+        {
+          "claim": "Brendan Mendez 5th, Senior Open Mixed Epee (SNRXE), Manchen Friday Night Epee E & Under, Nov. 13, 2026; no rating earned listed",
+          "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "status": "unvetted; FencingTracker club page 2026-11-16 8:22 AM ET; club membership not hard-confirmed"
+        }
+      ],
+      "print_hint": "own Club Results row (unvetted); membership caveat — do not print unless Frank confirms",
+      "vet_notes": "Daily FT quick look 2026-11-16. Scraped result — unvetted until Frank vets. IMPORTANT membership caveat: roster treats Brendan Mendez as Elite FC only because FencingTracker lists the club and Frank said he 'probably is' (chat 2026-10-12); never hard-confirmed. Frank dropped a prior Brendan result (3rd at Freehold Unrated, Oct 23) in the No. 5 budget (2026-11-02): 'Let's drop it. I'm also not convinced Brendan Mendez is really from our club... Did I ever confirm? Either way, let's drop it.' Staged only because it appeared on the Elite FC club page after Friday night; do not print without Frank deciding membership. Field size unknown (club page only; no fencing-api results payload).",
+      "provenance": [
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-16T08:22:24-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "Second-newest club-page tournament: Manchen Friday Night Epee E & Under, Nov 13, 2026, 1 result. Mendez, Brendan, Senior Open Mixed Epee (SNRXE), 5th, rating earned '-', date 2026-11-13. FT /tournament/1856; USFA https://member.usafencing.org/details/tournaments/12528. Not on the page at the Nov 13 7:56 AM ET daily look (event was that Friday night)."
+        }
+      ],
+      "created_at": "2026-11-16T08:25:00-05:00",
+      "updated_at": "2026-11-16T08:25:00-05:00"
     }
   ],
   "rolled_forward": {
@@ -1383,22 +1609,46 @@
     }
   ],
   "last_daily_pass": {
-    "at": "2026-11-13T07:58:00-05:00",
+    "at": "2026-11-16T08:25:00-05:00",
     "kind": "weekday morning email + FencingTracker quick look",
     "email": [
-      "ingested <010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com> (chunkymonkey Fri Nov 13 digest): Pizza RYC unchanged (Penny Young + Amina Gore; data as of Nov 12, 6:01 PM, could not refresh); Freehold still Nico Ng only (data as of Nov 13, 6:00 AM; digest event title now reads Senior Mixed Epee, previously staged as Senior Men's Epee); Kiefer Meinhardt still Stella Kuo + Mila Siu (data as of Nov 12, 6:00 PM, could not refresh); Revolution and Wanglei still empty (data as of Nov 13, 6:00 AM)."
+      "ingested Saturday, Sunday, and Monday chunkymonkey club-schedule digests (<010001a1d9edc720-370f92f1-e137-4917-9a4e-1118b3ab1b4f-000000@email.amazonses.com>, <010001a1df1422d0-7e1e24a3-45e0-40e1-8967-80c020ecfaf2-000000@email.amazonses.com>, <010001a1e43a7e84-5e6d1e63-fd93-4baf-8659-b02ee600e019-000000@email.amazonses.com>): Pizza RYC unchanged (Penny Young + Amina Gore; latest data as of Nov 15, 6:01 PM, could not refresh); Freehold still Nico Ng only (latest data as of Nov 16, 6:00 AM; digest event title remains Senior Mixed Epee); Kiefer Meinhardt still Stella Kuo + Mila Siu (latest data as of Nov 15, 6:03 PM, could not refresh); Revolution still empty on Sat/Sun digests (event was Nov 14; dropped off the Monday digest); Wanglei still empty (data as of Nov 16, 6:00 AM; event was Nov 15) — no Elite FC entries.",
+      "ingested <d0ff43e598e6fe5cb242389b7.f656c71db1.20261113152341.3134d0ce47.6a4f6249@mail67.atl91.mcsv.net> (club Mailchimp Fri Nov 13, 10:23 AM ET, after Friday's morning pass): Group Class + Intermediate Class! — Fri Mini-Musketeers 4:15 PM and Intermediate 5:00 PM; Sat Musketeers 11:00 AM and Advanced 1:00 PM. Matches standing schedule; logo only, no media extract."
     ],
     "fencingtracker": {
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
-      "retrieved_at": "2026-11-13T07:56:48-05:00",
-      "note": "One fetch, HTTP 200. Club page still lists Ultimate Cup RJCC as newest (15 results; dates Oct 31–Nov 1, 2026 on the page). No NYFA Youth Cup #1, Fencers Club Senior Open, or Medeo Youth Challenge #5 on the club page."
+      "retrieved_at": "2026-11-16T08:22:24-05:00",
+      "note": "One fetch, HTTP 200. NEW results vs the Nov 13 look (then-newest was Ultimate Cup RJCC, Oct 31–Nov 1). Newest: Freehold Fencing - November Open Epee (Nov 15, 2026) — Ng, Nico, Division IA Mixed Epee (D1AXE), 5th, no rating earned; staged unvetted as ft-freehold-nov-open-nico-5th-2026-11-15. Next: Manchen Friday Night Epee E & Under (Nov 13, 2026) — Mendez, Brendan, Senior Open Mixed Epee (SNRXE), 5th, no rating earned; staged unvetted as ft-manchen-friday-mendez-5th-2026-11-13 with membership caveat. No Pizza RYC, Kiefer Meinhardt, NYFA Youth Cup #1, Fencers Club Senior Open, or Medeo Youth Challenge #5 on the club page."
     },
     "fencingapi": {
-      "endpoint": "club-results --since 2026-11-01 --club 'Elite Fencers Club'",
-      "source": "cache",
-      "http": 200,
-      "items": 0,
-      "note": "Empty cache since Nov 1; no live scrape (no Elite FC tournament today). No API-vs-FT club-page mismatch to flag."
+      "cached": {
+        "endpoint": "club-results --since 2026-11-13 --club 'Elite Fencers Club'",
+        "source": "cache",
+        "http": 200,
+        "items": 0,
+        "note": "Empty cache since Nov 13."
+      },
+      "live": [
+        {
+          "endpoint": "get /v1/usfa/tournaments/12494 --live",
+          "source": "live",
+          "http": 200,
+          "fetched_at": "2026-11-16T08:24:04-05:00",
+          "final": false,
+          "data_kind": "catalog",
+          "note": "Freehold November Open Epee catalog: D1AXE (84713) official_competitors 30; SNRME and SNRWE 0. No placements in payload. Complements the FT club-page placement; finishers list not retrieved (wrong path /v1/usfa/tournaments/12494/results returned 404). No API-vs-FT contradiction on the event name or date."
+        },
+        {
+          "endpoint": "get /v1/usfa/tournaments/12117 --live",
+          "source": "live",
+          "http": 200,
+          "fetched_at": "2026-11-16T08:24:23-05:00",
+          "final": false,
+          "data_kind": "catalog",
+          "note": "Kiefer Meinhardt Cup catalog only (no placements). Y14WE (75190) 76 official competitors; Y12WE (75196) 60 official competitors. Matches the entered events; no results to stage. Pizza RYC live not attempted (USFA id not in staging)."
+        }
+      ],
+      "note": "Cached club-results empty, as expected before a live weekend scrape. /v1/guide returned a non-JSON body (client parse error); health was 200. No API-vs-FT club-page mismatch to flag for Frank. Monday full pass should pull official results pages for Freehold (field size/DE), plus Pizza RYC and Kiefer if they have posted."
     }
   }
 }
