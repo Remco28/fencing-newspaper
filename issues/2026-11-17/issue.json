@@ -1,0 +1,51 @@
+{
+  "issue": 7,
+  "vol": "I",
+  "date": "2026-11-17",
+  "dateline": "Tuesday Edition · Vol. I — No. 7 · Chatham, N.J. · November 17, 2026",
+  "status": "PROOF v1 — pending Frank's review (not approved)",
+  "proof_version": 1,
+  "proof_history": [
+    {
+      "v": 1,
+      "at": "2026-11-16T15:32:00-05:00",
+      "note": "First proof from budget v2 (decision #1, Frank's standalone budget submission 2026-11-16 3:18 PM ET, practice:false). Lead is Penny Young Takes Bronze in New Haven (Kiefer placeholder sentence omitted; official Kiefer results had posted by compose and were staged, not printed). Page 1: lead and World Cup in a span2, November NAC preview and By the Book in the rail, For the Parents and Winter Camp in a balanced split. Page 1 is short: 2.86in gap above the footer [FLAG] and a 1.04in column spread in row 1 [FLAG] (span2 2.73in vs rail 3.77in). No vetted unused copy was added to fill it. Page 2: Nearby Tournaments (Cobra, 16 fencers / 26 entries), box-pair On the Road November NAC and Deadlines (NJFA omitted), and the VR parent-filter comic at full width (no title, caption, or credit; art-fit stack at 7.50in, 290 dpi, lettered). Page 2 fill is clean: 0.08in footer gap, 0.01in board spread. Comic sits tight to the footer but does not overlap it."
+    }
+  ],
+  "composed_at": "2026-11-16T15:32:00-05:00",
+  "pdf": "issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf",
+  "previews": [
+    "issues/2026-11-17/preview-p1.png",
+    "issues/2026-11-17/preview-p2.png"
+  ],
+  "pdf_metadata": {
+    "Title": "En Garde Gazette — Vol. I No. 7 — November 17, 2026",
+    "Author": "Nico's Dad"
+  },
+  "build": "python3 issues/2026-11-17/recipe/compose.py x && python3 compose/render.py issues/2026-11-17/issue.html issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf --author=\"Nico's Dad\" --report=issues/2026-11-17/fit-report.json --fit-report=issues/2026-11-17/art-fit.json && pdftoppm -r 200 -png issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf issues/2026-11-17/preview",
+  "pages": {
+    "1": [
+      "Lead: Penny Young Takes Bronze in New Haven (Penny 3rd/52 Y12 and 13th/67 Y14 at Pizza RYC; Amina Gore 16th/54 Junior and 13th/54 Cadet; Nico Ng 5th/30 Freehold November Open)",
+      "World Cup: Hungary Rules World Cup Weekend (Bern and Wuxi, Nov. 13–15)",
+      "November NAC preview: Three Head to Columbus (Anayaa Sheth, Nico Ng, Athreya Aravind)",
+      "By the Book: Three Calls, Two Minutes (t.117–t.119)",
+      "For the Parents: A National Youth Event Next Door (Cobra practical note)",
+      "Club Events: Winter Camp: Sign Up Now (Dec. 27–31)",
+      "FILL: 2.86in gap above the footer [FLAG]; row-1 column spread 1.04in [FLAG]"
+    ],
+    "2": [
+      "Nearby Tournaments: Cobra Challenge SYC/RCC (Secaucus, Nov. 27–29; 16 fencers / 26 entries)",
+      "On the Road: November NAC, Columbus, Ohio, Nov. 20–23 (5 entries / 3 fencers)",
+      "Deadlines (Z1 regular fees Nov. 23; Fairfax regular fees Nov. 30; JO late registration ends Jan. 7; N.J. high-school independents Jan. 8). NJFA omitted per standing hold.",
+      "VR parent-filter comic (no title, no caption, no credit; art-fit full-width stack, 7.50in × 2.50in)",
+      "FILL: 0.08in footer gap [OK]; On the Road / Deadlines spread 0.01in [OK]"
+    ]
+  },
+  "fill": {
+    "p1_gap_in": 2.86,
+    "p1_row1_spread_in": 1.04,
+    "p2_gap_in": 0.08,
+    "p2_board_spread_in": 0.01,
+    "notes": "Page 1 flags are a real shortfall, not a measuring glitch. The Kiefer Meinhardt official results (Mila Siu 3rd of 62 in Y14 Women, earned C26; 10th of 54 in Y12 Women) would more than fill it if Frank wants them in a later proof. Excluded filler (Epee on Screen, Photo from History, college) would also close the gap. About 180 words or one figure."
+  }
+}

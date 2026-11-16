@@ -1,0 +1,248 @@
+{
+  "publishDate": "2026-11-17",
+  "practice": false,
+  "pretend": false,
+  "targetWeek": "next",
+  "issue": {
+    "number": 7,
+    "label": "Issue No. 7",
+    "week": "Week of Nov. 16, 2026"
+  },
+  "includedSlots": [
+    {
+      "slot": "lead",
+      "name": "Lead story — Penny Young takes bronze in New Haven",
+      "headline": "Penny Young Takes Bronze in New Haven",
+      "itemId": "pitch-weekend-roundup-2026-11-16",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "comic",
+      "name": "Page 2 visual — VR parent filter comic",
+      "headline": "(no title, no caption, no credit)",
+      "itemId": "frank-vr-parent-filter-comic-2026-11-15",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "for-the-parents",
+      "name": "For the Parents — A national youth event next door (Cobra)",
+      "headline": "For the Parents: A National Youth Event Next Door",
+      "itemId": "desk-for-the-parents-cobra-2026-11-16",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "nac-preview",
+      "name": "Short — Three Head to Columbus (November NAC preview)",
+      "headline": "Three Head to Columbus",
+      "itemId": "desk-nac-preview-2026-11-16",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-cobra",
+      "name": "Nearby Tournaments — Cobra Challenge",
+      "headline": "Cobra Challenge SYC/RCC — Secaucus, N.J., Nov. 27–29",
+      "itemId": "fencingapi-cobra-efc-entries-2026-10-19",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "on-the-road",
+      "name": "On the Road — November NAC",
+      "headline": "On the Road: November NAC, Columbus, Ohio, Nov. 20–23",
+      "itemId": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines box",
+      "headline": "Deadlines box — No. 7",
+      "itemId": "desk-deadlines-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "camp",
+      "name": "Club events — Winter Camp",
+      "headline": "Winter Camp: Sign Up Now",
+      "itemId": "chat-winter-camp-reminder",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-a",
+      "name": "Secondary — World Cup weekend (Bern, Wuxi)",
+      "headline": "Hungary Rules World Cup Weekend",
+      "itemId": "x-fie-epee-world-cups-bern-wuxi-2026-11-15",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "by-the-book",
+      "name": "By the Book — Three Calls, Two Minutes",
+      "headline": "By the Book: Three Calls, Two Minutes",
+      "itemId": "desk-by-the-book-three-calls-2026-11-16",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "club-results",
+      "name": "Club results",
+      "headline": "Club results",
+      "itemId": "fencingapi-pizza-ryc-results-2026-11-15",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-njfa",
+      "name": "Nearby Tournaments — NJFA Div. 3 & Y8–Y14 (Dec. 1)",
+      "headline": "NJFA Div. 3 and Y8–Y14 — Maplewood, N.J., Tue. Dec. 1",
+      "itemId": "askfred-njfa-div3-y8-y14-2026-12-01",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "classes",
+      "name": "Weekly classes table",
+      "headline": "Elite FC weekly class schedule (club website)",
+      "itemId": "web-efc-standing-schedule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tv",
+      "name": "Epee on Screen",
+      "headline": "Epee on Screen — No. 7",
+      "itemId": "desk-epee-on-screen-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "photo-history",
+      "name": "Photo from History",
+      "headline": "Photo from History: Tímea Nagy",
+      "itemId": "history-photo-10-timea-nagy",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "college",
+      "name": "Secondary — College season",
+      "headline": "College Season Opens Next Door",
+      "itemId": "x-college-season-opens-2026-11-09",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "ratings",
+      "name": "Ratings earned",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ high-school roundup",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "qa",
+      "name": "Parent Q&A",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "overheard",
+      "name": "Overheard on Reddit",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    }
+  ],
+  "photoIncludes": [],
+  "notes": "",
+  "slotNotes": {
+    "signup-njfa": "Let's not recommend any NJFA tournaments for the time being.  They are very unreliable organizers.  Many of their signups are bogus.  They sign up their own members to get others to join but when you show up the turnout is highly variable.  Many times our fencers have shown up with only 1-2 competitors.  They want you to stay for their class afterwards."
+  },
+  "answers": [
+    {
+      "slot": "lead",
+      "itemId": "pitch-weekend-roundup-2026-11-16",
+      "question": "Lead: weekend results (Penny's bronze) as drafted, or lead with the November NAC preview and move results to Club Results only?",
+      "answer": "We can lead with Penny"
+    },
+    {
+      "slot": "club-results",
+      "itemId": "fencingapi-pizza-ryc-results-2026-11-15",
+      "question": "Brendan Mendez was 5th in Senior Open Mixed at Manchen Friday Night Epee (Nov. 13, field size not shown) and FencingTracker lists him under Elite FC. You weren't sure in No. 5 that he's a member. Include him or leave him out?",
+      "answer": "i still don't know if he exists.  can we assume he doesn't for now until i can confirm?  i don't want to talk about him every week."
+    }
+  ],
+  "order": [
+    "lead",
+    "comic",
+    "for-the-parents",
+    "nac-preview",
+    "club-results",
+    "signup-cobra",
+    "signup-njfa",
+    "on-the-road",
+    "deadlines",
+    "camp",
+    "classes",
+    "secondary-a",
+    "by-the-book",
+    "tv",
+    "photo-history",
+    "college"
+  ],
+  "pageVersion": "budget-standalone-v2",
+  "submittedAt": "2026-11-16T15:18:22-05:00",
+  "vets": [
+    {
+      "id": "pitch-weekend-roundup-2026-11-16",
+      "vet_notes": ""
+    },
+    {
+      "id": "desk-for-the-parents-cobra-2026-11-16",
+      "vet_notes": ""
+    },
+    {
+      "id": "desk-nac-preview-2026-11-16",
+      "vet_notes": ""
+    },
+    {
+      "id": "fencingapi-pizza-ryc-results-2026-11-15",
+      "vet_notes": ""
+    },
+    {
+      "id": "askfred-njfa-div3-y8-y14-2026-12-01",
+      "vet_notes": ""
+    },
+    {
+      "id": "x-fie-epee-world-cups-bern-wuxi-2026-11-15",
+      "vet_notes": ""
+    },
+    {
+      "id": "desk-by-the-book-three-calls-2026-11-16",
+      "vet_notes": ""
+    }
+  ]
+}

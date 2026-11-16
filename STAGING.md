@@ -182,6 +182,7 @@ Claude Code (`claude -p`, Opus or Sonnet, whichever is available on the runner) 
 - **Official pages are the source of truth for names.** Print a fencer's name exactly as the official club or tournament page lists it (AskFRED, USA Fencing/member.usafencing.org entrant lists, the club's own pages and emails). Don't ask Frank about names. Order of precedence: a spelling Frank gives in chat, then an existing roster house form, then the official page. FencingTracker is a mirror, not an official page: if it disagrees with an official page, use the official spelling. New names go into `roster/people.json` with the official spelling and provenance "Frank (standing rule)".
 - **Pending entries print.** An entry that AskFRED shows as pending (not yet paid or confirmed) counts as an entry for the Nearby Tournaments board.
 - Never stage birth years / DOBs (some API and registration payloads carry them; drop on ingest).
+- **Brendan Mendez (Frank budget submission 2026-11-16):** assume he is **not** a club member until Frank confirms otherwise. Do not stage or print his results, do not list him on club boards, and **never ask Frank about him again**. A FencingTracker club listing is not confirmation. Keep the roster entry so the name is recognized and skipped. See `roster/people.json` (`brendan-mendez`).
 
 ### Related
 - Source checklists → **SOURCES.md**

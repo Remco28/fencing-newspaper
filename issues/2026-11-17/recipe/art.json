@@ -1,0 +1,10 @@
+{
+  "comic": {
+    "id": "vr-parent-filter",
+    "src": "media/vr-parent-filter-comic.png",
+    "kind": "comic",
+    "alt": "A three-panel comic: a parent labeled PARENT yells at a youth fencing tournament while a girl whose jersey reads TSAI TPE looks on; she puts on a VR headset; through the headset the same parent smiles and says Great bout, Good effort, and I'm proud of you, while the real parent still yells in the background.",
+    "region": "full",
+    "lettered": true
+  }
+}

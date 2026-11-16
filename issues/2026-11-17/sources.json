@@ -1,0 +1,402 @@
+{
+  "issue": "2026-11-17",
+  "pretend": false,
+  "items": [
+    {
+      "id": "pitch-weekend-roundup-2026-11-16",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T15:23:09-05:00",
+      "provenance": [
+        {
+          "type": "derived",
+          "from": [
+            "fencingapi-pizza-ryc-results-2026-11-15",
+            "ft-freehold-nov-open-nico-5th-2026-11-15",
+            "ft-efc-travel-registrations-nov-dec-2026-10-28"
+          ]
+        }
+      ],
+      "note": "Printed lead is the approved draft minus the Kiefer Meinhardt placeholder sentence. Official Kiefer results posted at compose time were staged as fencingapi-kiefer-meinhardt-results-2026-11-16 and are not in this proof."
+    },
+    {
+      "id": "frank-vr-parent-filter-comic-2026-11-15",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-15T23:52:00-05:00",
+      "provenance": [
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-15T23:52:00-05:00",
+          "note": "Attachment, made with ChatGPT."
+        },
+        {
+          "type": "file",
+          "path": "staging/weeks/next/media/vr-parent-filter-comic.png",
+          "retrieved_at": "2026-11-15T23:55:00-05:00",
+          "note": "2172x724 PNG, 3189535 bytes."
+        }
+      ],
+      "printed_credit": null,
+      "note": "Page-2 visual. Frank (chat, 2026-11-15): made with ChatGPT; no attribution, no title, no caption. TSAI jersey left as is (Frank, 2026-11-16)."
+    },
+    {
+      "id": "desk-for-the-parents-cobra-2026-11-16",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T15:23:09-05:00",
+      "provenance": [
+        {
+          "type": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12119",
+          "fetched_at": "2026-10-26T20:25:56Z",
+          "read_at": "2026-11-16T08:59:00-05:00",
+          "underlying": "https://member.usafencing.org/details/tournaments/12119"
+        }
+      ]
+    },
+    {
+      "id": "desk-nac-preview-2026-11-16",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T15:23:09-05:00",
+      "provenance": [
+        {
+          "type": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/entries",
+          "fetched_at_et": "2026-11-16 8:55 AM ET"
+        }
+      ]
+    },
+    {
+      "id": "fencingapi-cobra-efc-entries-2026-10-19",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-26T16:18:50-04:00",
+      "provenance": [
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12119/entries (live job, then cache)",
+          "fetched_at": "2026-10-19T13:06:21Z",
+          "fetched_at_et": "2026-10-19 9:06 AM ET",
+          "underlying": "https://member.usafencing.org/details/tournaments/12119",
+          "final": false
+        },
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-10-19T09:03:00-04:00",
+          "note": "Direct cross-check agrees: 'Cobra Challenge SYC/RCC — 25 active entries from 15 club members', same names/events."
+        },
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12119/entries?live=true",
+          "fetched_at": "2026-10-26T13:00:25Z",
+          "fetched_at_et": "2026-10-26 9:00 AM ET",
+          "note": "CHANGE: Bryce Cheng added to Y10ME (Fri Nov 27). Now 26 entries / 16 Elite FC fencers, all approved. Club field 'Elite Fencers Club' only."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-11-02T09:01:00-05:00",
+          "note": "Monday full pass: unchanged vs staging."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-11-09T09:00:00-05:00",
+          "note": "Monday full pass No. 6: unchanged (26 entries / 16 fencers, all Approved)."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-11-16T08:51:49-05:00",
+          "note": "Monday full pass No. 7: unchanged (26 entries / 16 fencers, all Approved)."
+        }
+      ]
+    },
+    {
+      "id": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-10T16:21:00-05:00",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-10-28T09:57:00-04:00",
+          "note": "Wednesday skim, 1 fetch"
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-11-02T09:01:00-05:00",
+          "note": "Monday full pass: unchanged vs staging."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-11-04T09:58:00-05:00",
+          "note": "Wednesday skim (2 fetches): Austin Challenge and Boston FC RYC/RCC entries new; Nov–Dec counts otherwise unchanged. Later 2027 entries (Neil Lazar ROC Jan 1, Junior Olympics + January NAC Jan 8–11, Capitol Clash Jan 16–18, Miles Chamley-Watson Cup Feb 5–6, Cherry Blossom Mar 14) logged in pass-log, not staged."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-11-09T09:00:00-05:00",
+          "note": "Z1 8/6 (+Adela Sullivan JNRWE). Others unchanged."
+        },
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12117/entries?live=true",
+          "underlying": "https://member.usafencing.org/details/tournaments/12117",
+          "fetched_at": "2026-11-10T21:25:37Z",
+          "fetched_at_et": "2026-11-10 4:25 PM ET",
+          "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8, Henrico Sports and Events Center, Glen Allen, Va., Nov. 14–15. Elite Fencers Club approved: Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, close of registration 1:00 p.m.) and Y12WE (Sun Nov 15, 8:00 a.m.). Clocks are close of registration — not printed as start times. Names printed in roster house form (Stella Kuo, Mila Siu). Unchanged vs the Nov. 9 FencingTracker check (4 entries / 2 fencers)."
+        },
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/entries?live=true",
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "fetched_at": "2026-11-10T21:26:53Z",
+          "fetched_at_et": "2026-11-10 4:26 PM ET",
+          "note": "November NAC, Greater Columbus Convention Center, Columbus, Ohio, Nov. 20–23. Elite Fencers Club approved: Sheth, Anayaà, Junior Women’s Epee, Fri Nov 20 (print Anayaa Sheth, roster house form); Ng, Nico, Cadet Men’s Epee, Sat Nov 21; Aravind, Athreya and Ng, Nico, Junior Men’s Epee, Sun Nov 22. Tournament dates are Nov. 20–23 (Cadet Women and Div I Men epee on Mon Nov 23; no Elite FC in those). Athreya Aravind is listed as Elite Fencers Club on the official entry list, approved, but is not on the club roster yet — flagged for Frank. Unchanged vs the Nov. 9 FencingTracker check (4 entries / 3 fencers). [2026-11-10 5:21 PM ET] Frank confirmed Athreya is a club member ('He's an OG.'); added to roster/people.json. Confirm-before-print flag dropped."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1cfa11738-8c7d4bd8-7708-458f-b13d-2b9a8b9297fa-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Thursday, November 12",
+          "received_at": "2026-11-12T07:00:03-05:00",
+          "retrieved_at": "2026-11-12T07:58:00-05:00",
+          "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8 still lists Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, 1:00 PM) and Y12WE (Sun Nov 15, 8:00 AM). Unchanged vs Nov 10 fencing-api check (4 entries / 2 fencers). Feed \"could not refresh\", data as of Nov 11, 2:36 PM. Wed Nov 11 2:36 PM ET digest had the same entries with an older stamp (data as of Nov 10, 4:25 PM, could not refresh)."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d4c7714f-5eeb4e36-61a9-4be1-8160-308f78cb0b45-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Friday, November 13",
+          "received_at": "2026-11-13T07:00:02-05:00",
+          "retrieved_at": "2026-11-13T07:58:00-05:00",
+          "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8 still lists Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, 1:00 PM) and Y12WE (Sun Nov 15, 8:00 AM). Unchanged vs Nov 10 fencing-api check (4 entries / 2 fencers). Feed \"could not refresh\", data as of Nov 12, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1d9edc720-370f92f1-e137-4917-9a4e-1118b3ab1b4f-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Saturday, November 14",
+          "received_at": "2026-11-14T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Kiefer Meinhardt Cup SYC/RJCC/Y8 still lists Kuo, Stella and Siu, Mila in Y14WE (Sat Nov 14, 1:00 PM) and Y12WE (Sun Nov 15, 8:00 AM). Unchanged (4 entries / 2 fencers). Feed still 'could not refresh', data as of Nov 13, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1df1422d0-7e1e24a3-45e0-40e1-8967-80c020ecfaf2-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Sunday, November 15",
+          "received_at": "2026-11-15T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Kiefer Meinhardt Cup entries unchanged (Kuo, Stella and Siu, Mila in Y14WE and Y12WE). Feed still 'could not refresh', data as of Nov 14, 6:00 PM."
+        },
+        {
+          "type": "email",
+          "message_id": "<010001a1e43a7e84-5e6d1e63-fd93-4baf-8659-b02ee600e019-000000@email.amazonses.com>",
+          "from": "AgentMail <chunkymonkey@agentmail.to>",
+          "subject": "Club schedule · Monday, November 16",
+          "received_at": "2026-11-16T07:00:01-05:00",
+          "retrieved_at": "2026-11-16T08:25:00-05:00",
+          "note": "Kiefer Meinhardt Cup entries unchanged (Kuo, Stella and Siu, Mila in Y14WE and Y12WE). Feed still 'could not refresh', data as of Nov 15, 6:03 PM. Event has ended; no Kiefer results on the FencingTracker club page as of the 2026-11-16 daily look. fencing-api live catalog /v1/usfa/tournaments/12117 (2026-11-16 8:24 AM ET, final=false, data_kind=catalog) lists Y14WE (event 75190) 76 official competitors and Y12WE (event 75196) 60 official competitors; no placements in that catalog payload."
+        },
+        {
+          "type": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/entries?live=true (job 710, then cache)",
+          "fetched_at": "2026-11-16T13:55:26Z",
+          "fetched_at_et": "2026-11-16 8:55 AM ET",
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "note": "JNRWE Nov 20 Sheth; CDTME Nov 21 Ng; JNRME Nov 22 Aravind, Ng; DV1ME Nov 23 Aravind (new). All approved."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
+          "retrieved_at": "2026-11-16T08:51:49-05:00",
+          "note": "Monday registrations check: November NAC 5 entries / 3 fencers (same as official)."
+        }
+      ]
+    },
+    {
+      "id": "desk-deadlines-2026-10-18",
+      "vetted": true,
+      "vetted_by": "frank (voice 2026-10-18: refresh Deadlines box from USA Fencing/AskFRED)",
+      "vetted_at": "2026-10-18T08:45:00-04:00",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://member.usafencing.org/details/tournaments/12119",
+          "retrieved_at": "2026-10-18T08:42:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/2027-junior-olympics-january-nac",
+          "retrieved_at": "2026-10-18T08:40:00-04:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.njsiaa.org/sports/fencing",
+          "retrieved_at": "2026-10-18T08:38:00-04:00"
+        },
+        {
+          "type": "api",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12095/entries (cached) + /v1/usfa/tournaments/12158/entries?live=true",
+          "fetched_at": "2026-10-18T12:33:15Z"
+        },
+        {
+          "type": "api",
+          "source": "askfred",
+          "endpoint": "scripts/askfred.py tournaments --start-date-gteq 2026-10-16",
+          "retrieved_at": "2026-10-18T08:31:00-04:00"
+        },
+        {
+          "type": "api",
+          "source": "askfred",
+          "endpoint": "scripts/askfred.py tournaments (Chatham 75mi epee)",
+          "retrieved_at": "2026-11-09T09:00:00-05:00",
+          "note": "Monday full pass No. 6: Bernards HS Winter Fencing Senior Open Fundraiser Dec 19 (close Dec 18) new; NJFA Div 3/Y8–Y14 Nov 10 (close Nov 9), Dec 1, Dec 8, Dec 29."
+        }
+      ],
+      "note": "NJFA Dec. 1 preregistration row omitted under the NJFA hold (Frank budget submission 2026-11-16)."
+    },
+    {
+      "id": "chat-winter-camp-reminder",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-10-07T18:53:00-04:00",
+      "provenance": [
+        {
+          "type": "chat",
+          "note": "chat: Frank 2026-10-07 — Winter Camp reminder angle + family joke",
+          "retrieved_at": "2026-10-07T18:53:00-04:00"
+        },
+        {
+          "type": "web",
+          "url": "https://www.elitefencersclub.com/camps",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        },
+        {
+          "type": "web",
+          "url": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
+          "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer.jpg",
+          "retrieved_at": "2026-10-07T18:55:00-04:00"
+        },
+        {
+          "type": "email",
+          "from": "Frank Ng <frankcng@gmail.com> (fwd of Elite Fencers Club Mailchimp, Sep 30 2026 10:04 AM)",
+          "subject": "Fwd: Group Class! + Winter Camp❄️",
+          "message_id": "<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>",
+          "original_message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20260930140307.ef8c3004dd.9c8898df@mail67.atl91.mcsv.net>",
+          "retrieved_at": "2026-10-07T19:15:00-04:00",
+          "note": "source of truth for camp facts (Frank, 2026-10-07)"
+        },
+        {
+          "type": "email-image",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
+          "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
+          "retrieved_at": "2026-10-07T19:16:00-04:00"
+        },
+        {
+          "type": "chat",
+          "note": "chat: Frank 2026-10-12 — skip Winter Camp this week; hold for No. 3",
+          "retrieved_at": "2026-10-12T09:45:00-04:00"
+        },
+        {
+          "type": "web",
+          "url": "https://www.elitefencersclub.com/camps",
+          "retrieved_at": "2026-10-18T08:37:00-04:00",
+          "note": "Re-check: no price; Register → Contact page"
+        },
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261022161941.d06cea8344.71242e8f@mail150.atl241.mcsv.net>",
+          "note": "Oct 22 Mailchimp 'Winter Camp Schedule!' — source of v4 schedule facts (see item email-mailchimp-winter-camp-schedule-2026-10-22)",
+          "retrieved_at": "2026-10-23T07:58:00-04:00"
+        },
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261110160053.3d65440681.578871c8@mail150.atl241.mcsv.net>",
+          "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+          "subject": "Winter Camp!❄️",
+          "received_at": "2026-11-10T11:01:28-05:00",
+          "retrieved_at": "2026-11-11T08:00:00-05:00",
+          "url": "https://mailchi.mp/87b743a9be9b/winter-camp?e=f656c71db1",
+          "note": "Club Mailchimp reminder (arrived Tue Nov 10 11:01 AM ET, after that morning’s daily pass). Restates Dec 27–31, 9:30 a.m.–2 p.m., headcount ask, and ‘new and fun activities’ pointing at the same Oct 22 schedule graphic. New photo-collage flyer extracted; no price."
+        }
+      ]
+    },
+    {
+      "id": "x-fie-epee-world-cups-bern-wuxi-2026-11-15",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T15:23:09-05:00",
+      "provenance": [
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2121313040788529600",
+          "posted_at": "2026-11-13T18:43:35Z",
+          "posted_at_et": "2026-11-13 1:43 PM ET",
+          "retrieved_at": "2026-11-16T08:58:00-05:00",
+          "note": "Bern men's individual medallists"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2121540960668590152",
+          "posted_at": "2026-11-14T09:49:16Z",
+          "posted_at_et": "2026-11-14 4:49 AM ET",
+          "retrieved_at": "2026-11-16T08:58:00-05:00",
+          "note": "Wuxi women's individual final 13-12"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2121668450342801700",
+          "posted_at": "2026-11-14T18:15:51Z",
+          "posted_at_et": "2026-11-14 1:15 PM ET",
+          "retrieved_at": "2026-11-16T08:58:00-05:00",
+          "note": "Bern men's team: Hungary 38-30 Switzerland; Italy bronze"
+        },
+        {
+          "type": "x_post",
+          "url": "https://x.com/FIE_fencing/status/2121906279115272216",
+          "posted_at": "2026-11-15T10:00:54Z",
+          "posted_at_et": "2026-11-15 5:00 AM ET",
+          "retrieved_at": "2026-11-16T08:58:00-05:00",
+          "note": "Wuxi women's team: Hungary 45-36 France; Ukraine bronze"
+        }
+      ],
+      "note": "Printed headline is the budget title 'Hungary Rules World Cup Weekend' (Frank's submission); body is the vetted item text."
+    },
+    {
+      "id": "desk-by-the-book-three-calls-2026-11-16",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T15:23:09-05:00",
+      "provenance": [
+        {
+          "type": "file",
+          "path": "reference/usa-fencing/usaf-rules-for-competition-2026-10.pdf",
+          "retrieved_at": "2026-11-16T09:30:00-05:00",
+          "note": "t.117, t.118, t.119, t.162; penalty chart t.170"
+        }
+      ]
+    }
+  ]
+}

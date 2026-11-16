@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-10",
+  "updated": "2026-11-16",
   "note": "Frank-confirmed club-people facts only (plus names cleared by Frank's 2026-10-18 standing rule: official club/tournament pages are the source of truth for name spellings). No ratings, ages, birthdays, or invented data. See roster/README.md. | 2026-10-19: added Morris/Ultimate/Cobra/JO names from USA Fencing / AskFRED under the official-pages standing rule.",
   "people": [
     {
@@ -160,14 +160,23 @@
         "Mendez, Brendan"
       ],
       "relations": [],
-      "notes": "Treated as Elite FC: FencingTracker lists his club as Elite FC and Frank believes he 'probably is' ours (chat 2026-10-12). Not a hard confirmation. Never print his school.",
+      "notes": "Assume he is NOT an Elite FC member until Frank confirms otherwise. Do not print his results, do not list him on club boards, and never ask Frank about him again (Frank budget submission 2026-11-16: 'i still don't know if he exists. can we assume he doesn't for now until i can confirm? i don't want to talk about him every week.'). Earlier roster note (kept for history): treated as Elite FC because FencingTracker lists the club and Frank said he 'probably is' (chat 2026-10-12); that was never a hard confirmation, and Frank dropped a prior result in the No. 5 budget. Never print his school.",
       "spelling_unresolved": false,
       "provenance": {
         "who": "Frank",
         "when": "2026-10-12",
         "via": "chat",
-        "basis": "FencingTracker club listing + Frank's belief ('probably is')"
-      }
+        "basis": "FencingTracker club listing + Frank's belief ('probably is')",
+        "later": {
+          "who": "Frank",
+          "when": "2026-11-16",
+          "via": "budget submission",
+          "basis": "Assume not a member until confirmed; never ask again"
+        }
+      },
+      "membership_assumption": "not-a-member-until-frank-confirms",
+      "do_not_ask": true,
+      "do_not_print": true
     },
     {
       "id": "samuel-sarrowaite",

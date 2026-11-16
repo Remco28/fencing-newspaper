@@ -120,6 +120,14 @@ list. Verify any new handle with `get_users_by_usernames` before adding it, and 
 - Fold into the cadence: Wednesday skim = FIE + NJ college timelines + one NAC/epee search. Monday full pass =
   all tier-A timelines active in the last 30 days + searches for this week's events (NAC, World Cup, NJ HS/college).
 
+## NJFA hold (Frank budget submission 2026-11-16)
+
+Do not recommend NJFA tournaments for now. Frank's reasons: the organizers are very unreliable; many signups are padded (they sign up their own members to draw others in); turnout is often only one or two competitors when our fencers arrive; they want fencers to stay for their class afterwards.
+
+- Do not propose NJFA events on the Nearby Tournaments board, and do not list NJFA dates in the Deadlines box, until Frank lifts this hold.
+- Official results of confirmed Elite FC members at an NJFA event may still be staged for Club Results like any other result. Do not treat an NJFA listing as a reason to ask Frank whether to promote the event.
+- Also recorded in `sections.json` (Nearby Tournaments and Deadlines rules).
+
 ## Club-results hold preference (soft — not a rule)
 - [ ] Optional: from results-app / start lists, any Elite FC members competing **Monday**? Holding for those results is nice when easy — publishing later (or without them) is fine.
 - [ ] Re-check AskFRED close times for locals with late/at-door entry (feeds deadlines + signup board)

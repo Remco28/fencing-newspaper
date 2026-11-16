@@ -25,6 +25,10 @@ future reports spell names consistently.
   as registered until Frank picks a house form.
 - **New confusion:** ask Frank once in chat, then record the answer here (and
   point Clean at the update). Do not re-ask every week.
+- **Brendan Mendez (Frank budget submission 2026-11-16):** assume he is not a
+  club member until Frank confirms otherwise. Do not print his results or list
+  him on club boards, and never ask Frank about him again. Keep the roster
+  entry so gather can recognize the name and skip it.
 
 ## Schema (per person)
 

@@ -174,7 +174,8 @@
         "Pending (unpaid/unconfirmed) entries print like confirmed",
         "When tight: fewer tournaments before fewer names",
         "Multi-day tournament = one block, days in order",
-        "No '(Epee)' labels"
+        "No '(Epee)' labels",
+        "Do not recommend NJFA tournaments for now (Frank budget submission 2026-11-16): unreliable organizers; padded signups; turnout often 1–2; they push their class afterwards. Do not list NJFA on this board until Frank lifts the hold."
       ],
       "last_ran": 3
     },
@@ -197,7 +198,8 @@
       "placement": "adjacent to Nearby Tournaments when both run",
       "rules": [
         "Entry closes and renewals (e.g. USA Fencing membership)",
-        "Dates checked against the official page"
+        "Dates checked against the official page",
+        "Do not list NJFA dates as recommendations while the NJFA hold is in effect (Frank budget submission 2026-11-16)."
       ],
       "last_ran": 3
     },

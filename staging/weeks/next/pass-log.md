@@ -25,3 +25,14 @@
 **Clean**: names via roster (Penelope → Penny Young; Anayaà → Anayaa Sheth; WU → Caden Wu); Owen Li already in roster. Dropped as stale (moved to `dropped-2026-11-16.json`): Pizza entries, Freehold entries, Nov. 14–15 calendar, Dakar YOG graf. Deadlines and Epee on Screen rows rebuilt.
 
 **Budget**: No. 7 v1 built (target Tue. Nov. 17, alt Wed. Nov. 18). Fill ~28% now, ~61% if Frank vets the proposals, ~88% with held filler (Photo from History, Epee on Screen, college short).
+
+## 2026-11-16 budget submission + proof v1 compose (from 3:18 PM ET)
+
+Frank submitted the No. 7 budget (practice:false, publish Tue. Nov. 17) at 3:18 PM ET. Ingested (decision #1); budget rebuilt as v2. Standing rules recorded with provenance "Frank budget submission 2026-11-16":
+
+- **NJFA hold:** do not recommend any NJFA tournaments for now (unreliable organizers; padded signups; turnout often 1–2; they push their class afterwards). NJFA Dec. 1 excluded; the Nov. 30 NJFA row was dropped from Deadlines. Written into SOURCES.md, sections.json (Nearby Tournaments + Deadlines), and the NJFA item.
+- **Brendan Mendez:** assume he is not a club member until Frank confirms; drop his results; never ask about him again. Manchen Friday Night item marked dropped; roster entry updated.
+- **Lead:** Penny Young as drafted.
+
+**Kiefer Meinhardt recheck at compose (3:23 PM ET, fencing-api live, official / final):** Mila Siu 3rd of 62 in Y14 Women (earned C26) and 10th of 54 in Y12 Women; Stella Kuo 20th of 62 (Y14) and 17th of 54 (Y12), both below the regional top-16 bar. Staged as `fencingapi-kiefer-meinhardt-results-2026-11-16`, unvetted. Not added to proof v1 (Frank did not include Club Results; the approved lead was written before these posted). The Kiefer placeholder sentence was omitted from the printed lead so it would not become an "also fenced" line.
+
