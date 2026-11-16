@@ -360,4 +360,19 @@ assert A.COL1_IN == 2.42 and A.COL2_IN == 4.96
 assert g.art_markup is A.art_markup or hasattr(g, "art")
 assert hasattr(g, "photo_span") and hasattr(g, "frozen_output_path") is False or True
 
+# Footer pin is a hard gate: a shrink-wrapped page (footer mid-sheet) must fail,
+# even when the content-to-footer gap is a legal 0.08in.
+ok_rec = {"overflow_in": 0, "min_gap_in": 0.08, "worst_gap_in": 0.08,
+          "max_spread_in": 0.01, "aspect_err": 0, "footer_drop_in": 0.02}
+passed, _, reasons = A.hard_gates(ok_rec)
+assert passed and not reasons, reasons
+bad_rec = dict(ok_rec, footer_drop_in=2.30)
+passed, residual, reasons = A.hard_gates(bad_rec)
+assert not passed, "footer mid-sheet must fail hard gates"
+assert any("page bottom" in r for r in reasons), reasons
+assert residual > 0
+# A hang past the content box is also a fail
+hang, _, hang_reasons = A.hard_gates(dict(ok_rec, footer_drop_in=-0.4))
+assert not hang and any("hangs" in r for r in hang_reasons), hang_reasons
+
 print("art: all checks passed")

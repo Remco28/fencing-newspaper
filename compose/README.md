@@ -53,6 +53,7 @@ pdftoppm -r 200 -png <out.pdf> issues/<date>/preview
 ## What the fill instrument reports
 
 - **Gap above the footer, per column**, including `.page2-lower` and other multi-column splits. The worst column is the page's number. FLAG over 0.75in, or if the page is too deep.
+- **Footer pin.** The footer's bottom edge vs the expected 10.1in content-box bottom, measured from the top of `.page` (not the element's used height). FLAG if the footer is more than 0.15in away from that bottom — this catches a shrink-wrapped page whose content-to-footer gap looks fine but leaves blank paper below the footer.
 - **Column spread** for every multi-column row, including board halves and prose columns. FLAG over 0.5in.
 - **Type floor** across every element that holds text, including ears, captions, credits and kickers. FLAG under 7pt.
 - **Hyphenated line breaks.** Zero on a page with justified text prints a WARN.

@@ -24,6 +24,11 @@ for sub in ("fixture", "no6", "float"):
 # Flessel lives in No. 5
 (ROOT_FX / "issues" / "float" / "media5").symlink_to(REPO / "issues" / "2026-11-03" / "media")
 (ROOT_FX / "masthead001.png").symlink_to(REPO / "masthead001.png")
+# Wide 3:1 lettered comic (No. 7) for the footer-pin fixture — a 3:2 stack at
+# full page width would be ~5in tall and is a different test.
+_no7_comic = REPO / "issues" / "2026-11-17" / "media" / "vr-parent-filter-comic.png"
+if _no7_comic.is_file():
+    (ROOT_FX / "issues" / "fixture" / "vr-parent-filter-comic.png").symlink_to(_no7_comic)
 
 # Also a tree used to render published HTML unchanged
 for date in ("2026-11-11", "2026-11-03", "2026-10-26", "2026-10-19", "2026-10-13", "2026-10-08"):
@@ -201,6 +206,112 @@ info = subprocess.run(["pdfinfo", str(pdf)], capture_output=True, text=True).std
 pages = next((ln.split()[1] for ln in info.splitlines() if ln.startswith("Pages:")), "?")
 check("float fixture is 2 pages", pages == "2", f"pages={pages} log={log[-300:]}")
 subprocess.run(["pdftoppm", "-r", "200", "-png", str(pdf), str(OUT / "float-tall")], check=False)
+
+
+def ink_bottom(pdf, dpi=40):
+    """Return [(frac of page height, blank inches below last ink), ...] for each PDF page."""
+    stem = OUT / "_ink"
+    subprocess.run(["pdftoppm", "-r", str(dpi), "-png", str(pdf), str(stem)], check=True)
+    from PIL import Image
+    out = []
+    for i in range(1, 8):
+        path = Path(f"{stem}-{i}.png")
+        if not path.is_file():
+            break
+        im = Image.open(path).convert("L")
+        w, h = im.size
+        pix = im.load()
+        last = 0
+        for y in range(h):
+            if any(pix[x, y] < 250 for x in range(w)):
+                last = y
+        # Letter 11in; blank below last ink, including the 0.4in @page bottom margin.
+        out.append((last / max(h - 1, 1), (h - 1 - last) / dpi))
+    for leftover in Path(OUT).glob("_ink-*.png"):
+        leftover.unlink(missing_ok=True)
+    return out
+
+
+def footer_drops(report_path):
+    if not report_path.is_file():
+        return []
+    data = json.loads(report_path.read_text(encoding="utf-8"))
+    inch = lambda px: px / 96.0
+    return [inch(pg.get("footer_drop") or 0) for pg in data.get("pages") or []]
+
+
+# 4) Footer pin: a page-2 art stack (art as a direct child of .page, like No. 7)
+# must leave the footer at the physical letter-page bottom, not mid-sheet.
+print("=== page-2 art stack pins the footer ===")
+pin_src = "vr-parent-filter-comic.png" if _no7_comic.is_file() else "media/tournament-day-cartoon.jpg"
+pin_cartoon = {
+    "id": "pin-comic", "src": pin_src,
+    "kind": "comic", "alt": "fixture cartoon", "region": "full", "lettered": True,
+}
+pin_p1 = page(
+    masthead() + "\n" + dateline("Tuesday Edition", "Vol. I — Fixture · Chatham, N.J. · November 17, 2026")
+    + "\n" + paras("Page one of the footer-pin fixture. Only here so the issue is two pages.")
+    + footer(0)
+)
+pin_p2 = page(
+    dateline("Page Two", "Fixture · Vol. I — No. 0", first=False)
+    + "\n" + box("Nearby Tournaments", "<p class=\"boxnote\">A short board so the page is not full.</p>")
+    + "\n" + art(pin_cartoon)
+    + "\n" + footer(0),
+    cls="fit",
+)
+pin_html = write_html("fixture", "En Garde Gazette — footer-pin fixture", [pin_p1, pin_p2])
+pdf = OUT / "footer-pin.pdf"
+rep = OUT / "footer-pin.json"
+r = render(pin_html, pdf, rep, allow=True)
+log = r.stdout + r.stderr
+(OUT / "footer-pin.log").write_text(log)
+check("footer-pin fixture ran", pdf.is_file(), log[-500:])
+drops = footer_drops(rep)
+check("footer-pin instrument has 2 pages", len(drops) == 2, drops)
+for i, d in enumerate(drops, 1):
+    check(f"footer-pin page {i} footer at page bottom (|drop| <= 0.15in)",
+          abs(d) <= 0.15, f"footer_drop={d:.3f}in")
+fitp = OUT / "footer-pin-fit.json"
+if fitp.is_file():
+    fit = json.loads(fitp.read_text())
+    decs = fit.get("decisions") or []
+    check("footer-pin art-fit has a decision", bool(decs), fitp)
+    if decs:
+        rec = decs[0].get("rec") or {}
+        reasons = decs[0].get("reasons") or []
+        gap = rec.get("min_gap_in")
+        check("footer-pin art-fit does not invent a footer overlap",
+              gap is None or gap >= -0.02,
+              f"min_gap_in={gap} reasons={reasons}")
+        check("footer-pin art-fit reasons have no footer overlap",
+              not any("footer overlap" in r for r in reasons),
+              reasons)
+if pdf.is_file():
+    ink = ink_bottom(pdf)
+    check("footer-pin PDF is 2 pages", len(ink) == 2, ink)
+    for i, (frac, blank) in enumerate(ink, 1):
+        # 0.4in is the @page bottom margin; allow a little ink-threshold slop.
+        check(f"footer-pin PDF page {i} has no blank paper below the footer",
+              blank <= 0.6, f"blank_below={blank:.2f}in frac={frac:.3f}")
+subprocess.run(["pdftoppm", "-r", "200", "-png", str(pdf), str(OUT / "footer-pin")], check=False)
+
+# Published No. 5 / No. 6 recomposed to /tmp: footer must stay pinned (no regression).
+print("=== published refit footer pin ===")
+for n in ("no6", "no5"):
+    rep = OUT / f"{n}-published-refit.json"
+    pdf = OUT / f"{n}-published-refit.pdf"
+    drops = footer_drops(rep)
+    check(f"{n} published instrument has 2 pages", len(drops) == 2, drops)
+    for i, d in enumerate(drops, 1):
+        check(f"{n} published page {i} footer at page bottom (|drop| <= 0.15in)",
+              abs(d) <= 0.15, f"footer_drop={d:.3f}in")
+    if pdf.is_file():
+        ink = ink_bottom(pdf)
+        check(f"{n} published PDF is 2 pages", len(ink) == 2, ink)
+        for i, (frac, blank) in enumerate(ink, 1):
+            check(f"{n} published PDF page {i} has no blank paper below the footer",
+                  blank <= 0.6, f"blank_below={blank:.2f}in frac={frac:.3f}")
 
 print()
 if failures:

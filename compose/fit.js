@@ -153,7 +153,13 @@
       remember(el);
       const page = el.closest(".page");
       if (page) page.classList.add("fit");
-      if (el.parentElement) el.parentElement.style.display = "flow-root";
+      // Floats need a BFC on their parent so wrapping prose closes around them.
+      // Never set that on .page itself: the page is a flex column that pins the
+      // footer (STYLE-GUIDE §13). display:flow-root overrides flex, shrink-wraps
+      // the page in print, and leaves blank paper below the footer.
+      if (el.parentElement && !el.parentElement.classList.contains("page")) {
+        el.parentElement.style.display = "flow-root";
+      }
       el.classList.remove("art--float", "art--gutter");
       el.style.display = "";
       el.style.visibility = "";
@@ -213,7 +219,20 @@
       const footer = pageEl && pageEl.querySelector(":scope > .footer");
       const ft = footer ? footer.getBoundingClientRect().top : 0;
       const cell = el ? el.parentElement : null;
-      const cellInk = cell ? inkBottom(cell) : -Infinity;
+      // When the art is a direct child of .page, inkBottom(page) would include
+      // the footer itself and look like a ~0.16in overlap (footer height).
+      let cellInk = -Infinity;
+      if (cell) {
+        if (cell.classList.contains("page")) {
+          for (const kid of cell.children) {
+            if (kid.classList.contains("footer")) continue;
+            const b = inkBottom(kid);
+            if (b > cellInk) cellInk = b;
+          }
+        } else {
+          cellInk = inkBottom(cell);
+        }
+      }
       const region_gap_in = (ft && cellInk > -Infinity) ? +inch(ft - cellInk).toFixed(4) : null;
       const row = el && el.closest(SEL);
       let row_spread_in = null;
@@ -224,6 +243,15 @@
       const pageOverflowPx = pageEl
         ? Math.max(pageEl.scrollHeight - pageEl.clientHeight, pageEl.getBoundingClientRect().height - 10.1 * 96)
         : 0;
+      // Space below the footer to the expected 10.1in content-box bottom, measured
+      // from the top of .page — not from the element's used height, which would
+      // hide a shrink-wrapped page.
+      let footer_drop_in = null;
+      if (pageEl && footer) {
+        const pr = pageEl.getBoundingClientRect();
+        const fb = footer.getBoundingClientRect();
+        footer_drop_in = +inch((pr.top + 10.1 * 96) - fb.bottom).toFixed(4);
+      }
       return {
         img_w_in: +inch(ir.width).toFixed(4),
         img_h_in: +inch(ir.height).toFixed(4),
@@ -235,6 +263,7 @@
         region_gap_in,
         row_spread_in,
         page_overflow_in: +inch(Math.max(pageOverflowPx, 0)).toFixed(4),
+        footer_drop_in,
       };
     },
   };

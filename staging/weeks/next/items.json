@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-16T15:23:09-05:00",
-  "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7. 2026-11-15 11:55 PM ET: Frank's VR parent-filter comic staged as a vetted page-2 visual (no attribution). 2026-11-16 Monday full pass: official Pizza RYC + Freehold results staged; NAC/Cobra/NJFA boards refreshed; deadlines and Epee on Screen rebuilt; 4 stale items moved to dropped-2026-11-16.json; lead, NAC preview, Cobra For the Parents and FIE World Cup items staged unvetted.",
+  "updated_at": "2026-11-16T15:40:00-05:00",
+  "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7. 2026-11-15 11:55 PM ET: Frank's VR parent-filter comic staged as a vetted page-2 visual (no attribution). 2026-11-16 Monday full pass: official Pizza RYC + Freehold results staged; NAC/Cobra/NJFA boards refreshed; deadlines and Epee on Screen rebuilt; 4 stale items moved to dropped-2026-11-16.json; lead, NAC preview, Cobra For the Parents and FIE World Cup items staged unvetted. 2026-11-16 3:38 PM ET: Frank (chat t223u) said YES, add the Kiefer Meinhardt results and share the lead between Mila Siu and Penny Young. C26 is the new rating. Stella Kuo stays out.",
   "items": [
     {
       "id": "chat-winter-camp-reminder",
@@ -1253,11 +1253,11 @@
     {
       "id": "pitch-weekend-roundup-2026-11-16",
       "kind": "graf",
-      "headline": "Penny Young Takes Bronze in New Haven",
+      "headline": "Penny Young and Mila Siu Take Bronze",
       "slot_hint": "lead",
       "suggested_slot": "lead",
-      "body": "DRAFT (~130w, from official results only). Penny Young won bronze in Youth 12 Women at the Pizza RYC/RJCC in New Haven, Conn., on Sunday, Nov. 15, finishing third in a field of 52. A day earlier she placed 13th of 67 in Youth 14 Women. Clubmate Amina Gore made the top 16 twice at the same regional: 16th of 54 in Junior Women on Saturday and 13th of 54 in Cadet Women on Sunday. Closer to home, Nico Ng finished fifth of 30 in Division IA Mixed at Freehold Fencing's November Open on Sunday. Elite FC fencers also traveled to Glen Allen, Va., for the Kiefer Meinhardt Cup, where Stella Kuo and Mila Siu fenced Y14 and Y12 Women; those results had not posted Monday morning. [Kiefer sentence to be replaced with results if they post before compose.]",
-      "word_count": 130,
+      "body": "DRAFT (~155w, from official results only). Elite FC brought home two youth bronzes this weekend, one in New Haven and one in Glen Allen, Va. Penny Young won bronze in Youth 12 Women at the Pizza RYC/RJCC in New Haven, Conn., on Sunday, Nov. 15, finishing third in a field of 52. A day earlier she placed 13th of 67 in Youth 14 Women. At the Kiefer Meinhardt Cup, a Super Youth Circuit event, Mila Siu took bronze in Youth 14 Women on Saturday, Nov. 14, finishing third in a field of 62 and earning a C26. On Sunday she placed 10th of 54 in Youth 12 Women. Clubmate Amina Gore made the top 16 twice at the New Haven regional: 16th of 54 in Junior Women on Saturday and 13th of 54 in Cadet Women on Sunday. Closer to home, Nico Ng finished fifth of 30 in Division IA Mixed at Freehold Fencing's November Open on Sunday.",
+      "word_count": 152,
       "source": "fencingapi",
       "target_week": "next",
       "vetted": true,
@@ -1269,21 +1269,23 @@
       "related_items": [
         "fencingapi-pizza-ryc-results-2026-11-15",
         "ft-freehold-nov-open-nico-5th-2026-11-15",
-        "chat-kiefer-meinhardt-results-watch-2026-11-11"
+        "chat-kiefer-meinhardt-results-watch-2026-11-11",
+        "fencingapi-kiefer-meinhardt-results-2026-11-16"
       ],
-      "vet_notes": "Desk lead pitch 2026-11-16. Pick order: strong club result first (regional bronze). Facts only from official USA Fencing results (fencing-api, final) and staged entries. Alternative lead: November NAC preview (desk-nac-preview-2026-11-16) if Frank prefers a forward-looking front page.\n[2026-11-16] Frank budget submission: lead with Penny as drafted. At compose, official Kiefer Meinhardt results had posted (see fencingapi-kiefer-meinhardt-results-2026-11-16). The Kiefer placeholder sentence was omitted from proof v1 — it would have been an 'also fenced' line without results, and adding the new official results needs Frank's say. Printed lead covers Penny, Amina, and Nico only.",
+      "vet_notes": "Desk lead pitch 2026-11-16. Pick order: strong club result first (regional bronze). Facts only from official USA Fencing results (fencing-api, final) and staged entries. Alternative lead: November NAC preview (desk-nac-preview-2026-11-16) if Frank prefers a forward-looking front page.\n[2026-11-16] Frank budget submission: lead with Penny as drafted. At compose, official Kiefer Meinhardt results had posted (see fencingapi-kiefer-meinhardt-results-2026-11-16). The Kiefer placeholder sentence was omitted from proof v1 — it would have been an 'also fenced' line without results, and adding the new official results needs Frank's say. Printed lead covers Penny, Amina, and Nico only.\n[2026-11-16 3:38 PM ET, Frank chat t223u]: YES, add the Kiefer Meinhardt results and share the lead between Mila Siu and Penny Young (two-bronze weekend: Penny in New Haven, Mila in Glen Allen, Va.). Print Mila's Y14 bronze (3rd of 62, Sat. Nov. 14, earned C26) and Y12 10th of 54 (Sun. Nov. 15). C26 is the new rating Frank mentioned; Ratings Earned may be a line in the lead or a small box. Stella Kuo's 20th/17th stay out (below the regional top-16 bar; no 'also fenced' line). Official results only (fencing-api live, final, 3:23 PM ET). Siona Hagerman, the other Y14 bronze, is not named unless the sentence needs her.",
       "provenance": [
         {
           "type": "derived",
           "from": [
             "fencingapi-pizza-ryc-results-2026-11-15",
             "ft-freehold-nov-open-nico-5th-2026-11-15",
-            "ft-efc-travel-registrations-nov-dec-2026-10-28"
+            "ft-efc-travel-registrations-nov-dec-2026-10-28",
+            "fencingapi-kiefer-meinhardt-results-2026-11-16"
           ]
         }
       ],
       "created_at": "2026-11-16T09:20:00-05:00",
-      "updated_at": "2026-11-16T15:25:00-05:00",
+      "updated_at": "2026-11-16T15:40:00-05:00",
       "vetted_at": "2026-11-16T15:23:09-05:00",
       "vetted_by": "frank"
     },
@@ -1627,10 +1629,10 @@
       "id": "fencingapi-kiefer-meinhardt-results-2026-11-16",
       "kind": "result",
       "headline": "Kiefer Meinhardt Cup — Mila Siu bronze and C26 in Y14 Women; 10th in Y12 Women",
-      "body": "Official USA Fencing results (final), Kiefer Meinhardt Cup SYC/RJCC/Y8, Glen Allen, Va., Nov. 14–15, fetched 2026-11-16 3:23 p.m. ET via fencing-api live. Youth 14 Women (Sat. Nov. 14): Mila Siu 3rd of 62, earned C26 (the other bronze is Siona Hagerman, also 3rd); Stella Kuo 20th of 62 (below the regional top-16 bar). Youth 12 Women (Sun. Nov. 15): Mila Siu 10th of 54 (clears regional top 16); Stella Kuo 17th of 54 (below the bar). Field sizes are the official result-list lengths (62 and 54). Not added to No. 7 proof v1: Frank's budget did not include Club Results, and he approved the Penny Young lead as drafted before these results posted.",
+      "body": "Official USA Fencing results (final), Kiefer Meinhardt Cup SYC/RJCC/Y8, Glen Allen, Va., Nov. 14–15, fetched 2026-11-16 3:23 p.m. ET via fencing-api live. Youth 14 Women (Sat. Nov. 14): Mila Siu 3rd of 62, earned C26 (the other bronze is Siona Hagerman, also 3rd); Stella Kuo 20th of 62 (below the regional top-16 bar). Youth 12 Women (Sun. Nov. 15): Mila Siu 10th of 54 (clears regional top 16); Stella Kuo 17th of 54 (below the bar). Field sizes are the official result-list lengths (62 and 54). Frank (chat, 2026-11-16 3:38 PM ET, t223u) said to add these results and share the lead with Penny Young. Printed in No. 7 proof v1: Mila's Y14 bronze, C26, and Y12 10th. Not printed: Stella Kuo (below the bar; no 'also fenced' line). Club Results as a section remains excluded; the results run in the lead (and Ratings Earned for the C26).",
       "source": "fencingapi",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "club_results",
       "suggested_slot": "club_results",
       "tags": [
@@ -1686,7 +1688,7 @@
           "status": "verified; below print bar"
         }
       ],
-      "vet_notes": "Staged at No. 7 compose time (2026-11-16 ~3:25 p.m. ET) after a live official recheck. Monday morning caches were empty (final=false). Not proposed into proof v1 without Frank's say. This is very likely the 'new ratings' he mentioned Nov. 15. Unvetted for print until he includes it.",
+      "vet_notes": "Staged at No. 7 compose time (2026-11-16 ~3:25 p.m. ET) after a live official recheck. Monday morning caches were empty (final=false). Not proposed into proof v1 without Frank's say. This is very likely the 'new ratings' he mentioned Nov. 15. Unvetted for print until he includes it.\n[2026-11-16 3:38 PM ET, Frank chat t223u]: vetted — add to the issue. Print Mila Siu only (Y14 bronze + C26, Y12 10th). Stella Kuo stays out. Used in the shared lead / Ratings Earned box; Club Results slot stays excluded.",
       "provenance": [
         {
           "type": "fencingapi",
@@ -1708,7 +1710,9 @@
         "pitch-weekend-roundup-2026-11-16"
       ],
       "created_at": "2026-11-16T15:25:00-05:00",
-      "updated_at": "2026-11-16T15:25:00-05:00"
+      "updated_at": "2026-11-16T15:40:00-05:00",
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T15:38:00-05:00"
     }
   ],
   "rolled_forward": {

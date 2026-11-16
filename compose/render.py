@@ -150,6 +150,10 @@ def set_pdf_author(path, author):
 #    If it is a multi-column row, every column gets its own gap; the WORST column
 #    is the page's number (old instrument: only the tallest sibling). FLAG > 0.75in.
 #    A negative gap means content overlaps the footer: FLAG.
+# 1b. Footer pin: the footer's bottom edge vs the expected 10.1in content-box
+#    bottom, measured from the top of .page — not from the element's used height
+#    (a shrink-wrapped page would hide blank paper below the footer). FLAG if the
+#    footer is more than FOOTER_PIN_FLAG_IN (0.15in) away from that bottom.
 # 2. Balance: for every multi-column row, the spread between its deepest and
 #    shallowest column. FLAG > 0.5in.
 # 3. Type floor: every element that directly holds text, including ears, captions,
@@ -217,8 +221,13 @@ INSTRUMENT_JS = r"""
       return { kind: label(r), depths: bs.map(b => +(b - top).toFixed(1)),
                spread: bs.length > 1 ? +(Math.max(...bs) - Math.min(...bs)).toFixed(1) : 0 };
     });
+    const pr = p.getBoundingClientRect();
+    const fb = f ? f.getBoundingClientRect() : { bottom: pr.top };
+    // Expected content-box bottom is pageTop + 10.1in, even if .page shrink-wrapped.
+    const footer_drop = +((pr.top + 10.1 * 96) - fb.bottom).toFixed(1);
     return { page: i + 1, last: label(last), gaps: cols, rows,
-             overflow: +Math.max(p.scrollHeight - p.clientHeight, p.getBoundingClientRect().height - 10.1 * 96).toFixed(1) };
+             overflow: +Math.max(p.scrollHeight - p.clientHeight, pr.height - 10.1 * 96).toFixed(1),
+             footer_drop, page_h: +pr.height.toFixed(1) };
   });
   // type floor
   let minPx = Infinity, minWho = '';
@@ -254,6 +263,7 @@ INSTRUMENT_JS = r"""
 
 GAP_FLAG_IN = 0.75
 SPREAD_FLAG_IN = 0.5
+FOOTER_PIN_FLAG_IN = 0.15  # must match art.FOOTER_PIN_FLAG_IN
 
 
 def report(m):
@@ -275,6 +285,15 @@ def report(m):
         print(msg)
         if tag == "FLAG":
             flags.append(msg)
+        drop = inch(pg.get("footer_drop") or 0)
+        pin_tag = "OK" if abs(drop) <= FOOTER_PIN_FLAG_IN else "FLAG"
+        if drop >= 0:
+            pin_msg = f"page {pg['page']}: footer {drop:.2f}in above the page bottom [{pin_tag}]"
+        else:
+            pin_msg = f"page {pg['page']}: footer hangs {abs(drop):.2f}in past the page bottom [{pin_tag}]"
+        print(pin_msg)
+        if pin_tag == "FLAG":
+            flags.append(pin_msg)
         for k, row in enumerate(pg["rows"]):
             if len(row["depths"]) < 2:
                 continue
@@ -331,6 +350,7 @@ def instrument_to_rec(m, slot=None, page=None):
     """
     inch = lambda px: px / 96.0
     worst = min_gap = overflow = max_spread = 0.0
+    footer_drop = None
     pages = list((m or {}).get("pages") or [])
     if page is not None:
         pages = [pg for pg in pages if pg.get("page") == page]
@@ -338,20 +358,25 @@ def instrument_to_rec(m, slot=None, page=None):
         gaps = []
         overflow = 0.0
         spreads = []
+        footer_drops = []
         for pg in pages:
             gaps.extend(inch(g) for g in pg.get("gaps") or [])
             overflow = max(overflow, inch(max(pg.get("overflow") or 0, 0)))
+            if pg.get("footer_drop") is not None:
+                footer_drops.append(inch(pg["footer_drop"]))
             for row in pg.get("rows") or []:
                 if len(row.get("depths") or []) >= 2:
                     spreads.append(inch(row["spread"]))
         worst = max(gaps) if gaps else 0.0
         min_gap = min(gaps) if gaps else 0.0
         max_spread = max(spreads) if spreads else 0.0
+        footer_drop = max(footer_drops, key=lambda d: abs(d)) if footer_drops else None
     rec = {
         "overflow_in": overflow,
         "min_gap_in": min_gap,
         "worst_gap_in": worst,
         "max_spread_in": max_spread,
+        "footer_drop_in": footer_drop,
         "aspect_err": 0.0,
         "float_hole_in": 0.0,
         "interior_gap_in": 0.0,
@@ -361,7 +386,7 @@ def instrument_to_rec(m, slot=None, page=None):
     if slot:
         for k in ("aspect_err", "float_hole_in", "interior_gap_in", "side_gutter_in",
                   "region_w_in", "img_w_in", "img_h_in", "region_gap_in", "row_spread_in",
-                  "page_overflow_in"):
+                  "page_overflow_in", "footer_drop_in"):
             if k in slot and slot[k] is not None:
                 rec[k] = slot[k]
         if slot.get("region_gap_in") is not None:
@@ -480,7 +505,7 @@ def run_fit(call, flags):
                 json.dumps(sid), json.dumps({"mode": c["mode"], "width": c["width"]})))
             m = json.loads(eval_js(call, INSTRUMENT_JS))
             extra = eval_js(call, "window.__gzFit.measureSlot(%s)" % json.dumps(sid))
-            records.append(instrument_to_rec(m, extra))
+            records.append(instrument_to_rec(m, extra, page=s.get("page")))
         eval_js(call, "window.__gzFit.reset(%s)" % json.dumps(sid))
         decision = artmod.choose(cands, records, asset, region_w)
         decision["id"] = sid

@@ -77,3 +77,19 @@ assert g.plain(tab).count("regular-fee") == 1
 # Do not rewrite hyphens inside tags/attributes.
 raw = '<img src="media/regular-fee-chart.jpg" alt="x">'
 assert g.protect_hyphens(raw) == raw
+
+# Footer pinning contract (STYLE-GUIDE §13): the page is a flex column of 10.1in;
+# the footer pins with margin-top:auto and must not shrink. art-fit must not change
+# .page's display (see compose/fit.js). The fill instrument uses PAGE_CONTENT_IN
+# to catch a shrink-wrapped page whose footer is mid-sheet.
+css = (g.ROOT / "compose" / "template-a.css").read_text(encoding="utf-8")
+assert "min-height: 10.1in" in css
+assert ".page .footer { margin-top: auto; flex-shrink: 0; }" in css
+assert ".page.fit { height: 10.1in; }" in css
+assert abs(g.PAGE_CONTENT_IN - 10.1) < 1e-9
+assert abs(g.FOOTER_PIN_FLAG_IN - 0.15) < 1e-9
+fit_js = (g.ROOT / "compose" / "fit.js").read_text(encoding="utf-8")
+assert 'el.parentElement.classList.contains("page")' in fit_js
+assert "Never set that on .page itself" in fit_js or "Never set that on .page" in fit_js
+
+print("gazette: all checks passed")

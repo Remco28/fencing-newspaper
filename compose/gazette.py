@@ -20,6 +20,7 @@ What lives here
   art(), load_art_manifest()             flexible art slot (comics, diagrams, photos)
   textcols(), split()   prose in ruled columns
   masthead(), dateline(), footer(), page(), document(), write_issue()
+  PAGE_CONTENT_IN    Letter content box (10.1in): 11in minus 0.5in top and 0.4in bottom
   check_issue()         compose-time checks (credit form, weapon spelling)
 """
 import html, json, math, re, sys
@@ -384,6 +385,7 @@ def split(*cols, widths=None):
 # Placement numbers and photo_span() live in art.py so the fitter and the composer share them.
 from art import (  # noqa: E402
     PHOTO_CEILING_IN, COL1_IN, COL2_IN, PHOTO_MIN_DPI, MIN_PRINT_DPI,
+    PAGE_CONTENT_IN, FOOTER_PIN_FLAG_IN,
     photo_span, art_markup, load_art_manifest, validate_asset, ArtError,
 )
 
@@ -452,6 +454,8 @@ def dateline(edition, meta, first=True):
 
 
 def footer(no):
+    """Page footer. Must be the last child of page() so CSS margin-top:auto can pin it
+    to the bottom of the 10.1in content box (STYLE-GUIDE §13). Do not wrap it."""
     return ('  <div class="footer">\n'
             f'    <span>En Garde Gazette · Issue No. {no}</span>\n'
             '    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>\n'
@@ -469,6 +473,10 @@ def cols3(*cols, span2_first=True):
 
 
 def page(inner, cls=""):
+    """One letter page. The stylesheet makes .page a flex column with min-height
+    PAGE_CONTENT_IN; the footer (last child) pins with margin-top:auto. Never change
+    .page's display (art-fit included): flow-root on the page shrink-wraps it in print
+    and leaves blank paper below the footer."""
     return f'<div class="page{(" " + cls) if cls else ""}">\n{inner}\n</div>'
 
 

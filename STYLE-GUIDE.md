@@ -326,15 +326,22 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 
 ## 13. Footer pinning + gap instrument (locked 2026-10-06; copy lock 2026-10-07)
 - `.page` is a flex column with min-height 10.1in (Letter minus our @page margins);
-  footer uses margin-top:auto so it always sits at the page bottom. Shortfalls appear as
-  honest daylight ABOVE the footer, never hidden below it.
+  footer uses margin-top:auto (and flex-shrink: 0) so it always sits at the page bottom.
+  Shortfalls appear as honest daylight ABOVE the footer, never hidden below it.
+  Do not change `.page`'s `display` (including during art-fit): `display: flow-root` on
+  the page kills flex pinning, shrink-wraps the page in print, and leaves blank paper
+  below the footer.
 - **Footer copy:** issue number + for-fun disclaimer only (e.g. tips path / "just for fun").
   No "printed at the club" language; no print-timestamp line. Dateline already carries
   Vol/No and date — do not restate a full dateline in the footer.
 - `compose/render.py` measures the gap above each footer **per column** via CDP (including
   `.page2-lower`, `.split`, and `.board-split`), and reports inches. The worst column is the
-  page's number. FLAG above 0.75in. It also checks the 7pt type floor on every text element
-  (ears, captions, credits, kickers, board heads) and counts hyphenated line breaks.
+  page's number. FLAG above 0.75in. It also measures the footer's position against the
+  physical content-box bottom (10.1in from the top of `.page`, not the element's used
+  height — a shrink-wrapped page would hide blank paper below the footer) and FLAGs any
+  page whose footer is not there (tolerance 0.15in). It also checks the 7pt type floor on
+  every text element (ears, captions, credits, kickers, board heads) and counts hyphenated
+  line breaks.
   The art-fit pass uses this same instrument as its verifier (`--report` includes `art_fit`
   when slots were present; `--fit-report=FILE.json` writes the decisions alone).
   Thumbnails are for taste; NUMBERS are for fill. Eyeballing fill is banned.

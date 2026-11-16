@@ -17,6 +17,14 @@
       "decisions_through": "2026-11-16T15:18:22-05:00",
       "decisions": 1,
       "out": "budget-demo/out/budget-no-7-2026-11-17-v2.html"
+    },
+    {
+      "v": 3,
+      "built_at": "2026-11-16T15:43:16-05:00",
+      "data": "b7c986f3f5ff",
+      "decisions_through": "2026-11-16T15:38:00-05:00",
+      "decisions": 2,
+      "out": "budget-demo/out/budget-no-7-2026-11-17-v3.html"
     }
   ],
   "decisions": [
@@ -89,6 +97,86 @@
         "askfred-njfa-div3-y8-y14-2026-12-01",
         "x-fie-epee-world-cups-bern-wuxi-2026-11-15",
         "desk-by-the-book-three-calls-2026-11-16"
+      ]
+    },
+    {
+      "at": "2026-11-16T15:43:16-05:00",
+      "client_submitted_at": "2026-11-16T15:38:00-05:00",
+      "source": "chat:frank:2026-11-16T15:38:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-16T15:38:00-05:00",
+        "text": "YES, add the Kiefer Meinhardt results. Mila Siu's bronze (3rd of 62, Y14 Women, Sat Nov 14, earned C26) and her 10th of 54 in Y12 Women (Sun Nov 15), and share the lead between Mila and Penny — a two-bronze weekend headline: Penny in New Haven, Mila in Glen Allen, Va. The C26 is the new rating. Stella Kuo's 20th/17th stay out."
+      },
+      "carried_from": 1,
+      "publishDate": "2026-11-17",
+      "included": [
+        "lead",
+        "comic",
+        "for-the-parents",
+        "nac-preview",
+        "signup-cobra",
+        "on-the-road",
+        "deadlines",
+        "camp",
+        "secondary-a",
+        "by-the-book"
+      ],
+      "excluded": [
+        "club-results",
+        "signup-njfa",
+        "classes",
+        "tv"
+      ],
+      "photoIncludes": [],
+      "slotNotes": {
+        "signup-njfa": "Let's not recommend any NJFA tournaments for the time being.  They are very unreliable organizers.  Many of their signups are bogus.  They sign up their own members to get others to join but when you show up the turnout is highly variable.  Many times our fencers have shown up with only 1-2 competitors.  They want you to stay for their class afterwards."
+      },
+      "answers": [
+        {
+          "slot": "lead",
+          "itemId": "pitch-weekend-roundup-2026-11-16",
+          "question": "Lead: weekend results (Penny's bronze) as drafted, or lead with the November NAC preview and move results to Club Results only?",
+          "answer": "We can lead with Penny"
+        },
+        {
+          "slot": "club-results",
+          "itemId": "fencingapi-pizza-ryc-results-2026-11-15",
+          "question": "Brendan Mendez was 5th in Senior Open Mixed at Manchen Friday Night Epee (Nov. 13, field size not shown) and FencingTracker lists him under Elite FC. You weren't sure in No. 5 that he's a member. Include him or leave him out?",
+          "answer": "i still don't know if he exists.  can we assume he doesn't for now until i can confirm?  i don't want to talk about him every week."
+        },
+        {
+          "slot": "lead",
+          "question": "Add the Kiefer Meinhardt results (Mila Siu) and share the lead with Penny Young?",
+          "answer": "YES. Share the lead between Mila and Penny. Print Mila's Y14 bronze, C26, and Y12 10th. Stella Kuo stays out.",
+          "via": "chat"
+        }
+      ],
+      "notes": "",
+      "order": [
+        "lead",
+        "comic",
+        "for-the-parents",
+        "nac-preview",
+        "club-results",
+        "signup-cobra",
+        "signup-njfa",
+        "on-the-road",
+        "deadlines",
+        "camp",
+        "classes",
+        "secondary-a",
+        "by-the-book",
+        "tv",
+        "photo-history",
+        "college"
+      ],
+      "changes": [
+        "Rewrite the No. 7 lead as a two-bronze weekend (Penny Young in New Haven, Mila Siu in Glen Allen, Va.).",
+        "Print Mila Siu 3rd of 62 in Y14 Women (Sat. Nov. 14, earned C26) and 10th of 54 in Y12 Women (Sun. Nov. 15); official fencing-api results, final, 3:23 PM ET.",
+        "Treat the C26 as the new rating: a line in the lead and a Ratings Earned box.",
+        "Stella Kuo 20th/17th stay out (below the regional top-16 bar; no also-fenced line). Club Results as a section remains excluded."
       ]
     }
   ]

@@ -30,6 +30,11 @@ LATTICE_IN = 0.125
 GUTTER_MAX_IN = 0.25                               # Frank t211u Q2: last-resort side gutter cap
 GAP_FLAG_IN = 0.75
 SPREAD_FLAG_IN = 0.5
+# Letter 11in minus @page margins 0.5in top and 0.4in bottom (STYLE-GUIDE §1, §13).
+PAGE_CONTENT_IN = 10.1
+# Footer not at the content-box bottom is a structural defect, not a content gap.
+# Tight on purpose: 0.15in is rounding/border slop, not a second 0.75in allowance.
+FOOTER_PIN_FLAG_IN = 0.15
 ASPECT_TOL = 0.01
 SOFT_HOLE_IN = 0.35
 LINE_IN = 0.149                                    # word-hint only, not a cut policy
@@ -409,6 +414,13 @@ def hard_gates(rec):
     if worst is not None and worst > GAP_FLAG_IN:
         reasons.append(f"footer gap {worst:.2f}in > {GAP_FLAG_IN}in")
         residual += worst - GAP_FLAG_IN
+    drop = rec.get("footer_drop_in")
+    if drop is not None and abs(drop) > FOOTER_PIN_FLAG_IN:
+        if drop > 0:
+            reasons.append(f"footer {drop:.2f}in above the page bottom")
+        else:
+            reasons.append(f"footer hangs {abs(drop):.2f}in past the page bottom")
+        residual += abs(drop)
     spread = rec.get("max_spread_in") or 0.0
     if spread > SPREAD_FLAG_IN:
         reasons.append(f"column spread {spread:.2f}in > {SPREAD_FLAG_IN}in")

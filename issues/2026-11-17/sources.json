@@ -13,11 +13,41 @@
           "from": [
             "fencingapi-pizza-ryc-results-2026-11-15",
             "ft-freehold-nov-open-nico-5th-2026-11-15",
-            "ft-efc-travel-registrations-nov-dec-2026-10-28"
+            "ft-efc-travel-registrations-nov-dec-2026-10-28",
+            "fencingapi-kiefer-meinhardt-results-2026-11-16"
           ]
         }
       ],
-      "note": "Printed lead is the approved draft minus the Kiefer Meinhardt placeholder sentence. Official Kiefer results posted at compose time were staged as fencingapi-kiefer-meinhardt-results-2026-11-16 and are not in this proof."
+      "note": "Printed lead is the shared two-bronze rewrite Frank asked for in chat t223u (2026-11-16 3:38 PM ET): Penny Young in New Haven and Mila Siu in Glen Allen, Va. Official Kiefer results (fencingapi-kiefer-meinhardt-results-2026-11-16, fencing-api live, final, 3:23 PM ET) are in the lead and in a Ratings Earned box (Mila's C26). Stella Kuo is not printed (below the regional top-16 bar; no 'also fenced' line). Siona Hagerman, the other Y14 bronze, is not named."
+    },
+    {
+      "id": "fencingapi-kiefer-meinhardt-results-2026-11-16",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T15:38:00-05:00",
+      "provenance": [
+        {
+          "type": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12117/events/75190/results?live=true",
+          "fetched_at": "2026-11-16T20:23:33Z",
+          "fetched_at_et": "2026-11-16 3:23 PM ET",
+          "note": "Y14 Women, official USA Fencing results, final=true, 62 finishers. Mila Siu 3rd, rating field 'Earned C26'; Stella Kuo 20th (not printed). Underlying: USA Fencing tournament 12117, Kiefer Meinhardt Cup SYC/RJCC/Y8, Glen Allen, Va."
+        },
+        {
+          "type": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12117/events/75196/results?live=true",
+          "fetched_at": "2026-11-16T20:23:35Z",
+          "fetched_at_et": "2026-11-16 3:23 PM ET",
+          "note": "Y12 Women, official, final=true, 54 finishers. Mila Siu 10th; Stella Kuo 17th (not printed). No Elite FC rating earned in this event."
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-16T15:38:00-05:00",
+          "note": "t223u: YES, add the Kiefer Meinhardt results and share the lead with Penny Young. C26 is the new rating. Stella Kuo stays out."
+        }
+      ],
+      "note": "Printed in the lead (Mila's Y14 bronze, C26, and Y12 10th) and in Ratings Earned (C26). Stella Kuo is not printed. Club Results as a section remains excluded."
     },
     {
       "id": "frank-vr-parent-filter-comic-2026-11-15",

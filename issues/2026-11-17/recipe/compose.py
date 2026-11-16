@@ -33,20 +33,25 @@ def body_of(item_id):
 
 
 LEAD_ID = "pitch-weekend-roundup-2026-11-16"
-# Official Kiefer results posted at compose time; omit the placeholder sentence
-# so it does not print as an "also fenced" line. Results are staged separately
-# and are not in this proof (Frank did not include Club Results).
+# Frank (chat t223u, 2026-11-16 3:38 PM ET): share the lead between Penny Young
+# and Mila Siu; print Mila's Kiefer Meinhardt Y14 bronze, C26, and Y12 10th;
+# Stella Kuo stays out (below the regional top-16 bar). Official results only.
+LEAD_HEAD = "Penny Young and Mila Siu Take Bronze"
 LEAD_BODY = (
-    "Penny Young won bronze in Youth 12 Women at the Pizza RYC/RJCC in New Haven, "
-    "Conn., on Sunday, Nov. 15, finishing third in a field of 52. A day earlier she "
-    "placed 13th of 67 in Youth 14 Women. Clubmate Amina Gore made the top 16 twice "
-    "at the same regional: 16th of 54 in Junior Women on Saturday and 13th of 54 in "
+    "Elite FC brought home two youth bronzes this weekend, one in New Haven and one "
+    "in Glen Allen, Va. Penny Young won bronze in Youth 12 Women at the Pizza RYC/RJCC "
+    "in New Haven, Conn., on Sunday, Nov. 15, finishing third in a field of 52. A day "
+    "earlier she placed 13th of 67 in Youth 14 Women. At the Kiefer Meinhardt Cup, a "
+    "Super Youth Circuit event, Mila Siu took bronze in Youth 14 Women on Saturday, "
+    "Nov. 14, finishing third in a field of 62 and earning a C26. On Sunday she placed "
+    "10th of 54 in Youth 12 Women. Clubmate Amina Gore made the top 16 twice at the "
+    "New Haven regional: 16th of 54 in Junior Women on Saturday and 13th of 54 in "
     "Cadet Women on Sunday. Closer to home, Nico Ng finished fifth of 30 in "
     "Division IA Mixed at Freehold Fencing's November Open on Sunday."
 )
 LEAD_DEK = (
-    "A Youth 12 bronze in New Haven, two top-16s for Amina Gore, "
-    "and a fifth for Nico Ng at Freehold."
+    "Penny Young medals in New Haven; Mila Siu medals in Glen Allen, Va., "
+    "and earns a C26."
 )
 
 PARENTS_BODY = body_of("desk-for-the-parents-cobra-2026-11-16")
@@ -105,10 +110,19 @@ def main():
     comic = next(a for a in assets if a["id"] == "vr-parent-filter")
 
     lead = piece(
-        "Penny Young Takes Bronze in New Haven",
+        LEAD_HEAD,
         f'<p class="dek">{ty(LEAD_DEK)}</p>\n' + paras(LEAD_BODY),
         level=1,
         cls="lead",
+    )
+    ratings = box(
+        "Ratings Earned",
+        table(
+            ["Fencer", "Rating", "Where"],
+            [[ty("Mila Siu"), ty("C26"), ty("Kiefer Meinhardt Cup, Glen Allen, Va.")]],
+            ["0.85in", "0.55in", None],
+            numcol=1,
+        ),
     )
     nac = piece(
         "Three Head to Columbus",
@@ -144,7 +158,7 @@ def main():
         + dateline("Tuesday Edition", "Vol. I — No. 7 · Chatham, N.J. · November 17, 2026")
         + "\n"
         + cols3(
-            stack(lead, world),
+            stack(lead, ratings, world),
             stack(nac, book),
         )
         + "\n"

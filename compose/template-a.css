@@ -15,9 +15,14 @@
   :root { --colw: 2.42in; --art-w: 100%; }
   .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
   .page:last-child { page-break-after: auto; }
-  .page .footer { margin-top: auto; }
+  /* Pin the footer to the bottom of the 10.1in content box. flex-shrink: 0 so a tall
+     art slot cannot squash it. Do not change .page's display (art-fit included):
+     flow-root on the page kills this pin and shrink-wraps the page in print, leaving
+     blank paper below the footer. */
+  .page .footer { margin-top: auto; flex-shrink: 0; }
   /* A page that carries scalable art (.fill-art) gets a definite height so the art can
-     take exactly the space that is left. The instrument flags any overlap with the footer. */
+     take exactly the space that is left. The instrument flags any overlap with the footer
+     and any footer that is not at the physical page bottom. */
   .page.fit { height: 10.1in; }
 
   /* ---- Masthead, ears, dateline (design locked; A11 raises the ears to the 7pt floor) ---- */
