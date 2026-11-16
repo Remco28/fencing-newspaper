@@ -1,693 +1,654 @@
 {
-  "schema": 2,
-  "mode": "real",
-  "capacity": {
-    "note": "Template A, US Letter, 3 columns (~2.42in each, 9pt gaps). Usable column height = 10.1in page minus furniture measured on the issues/2026-10-14 sample render: page 1 masthead 0.98in + dateline 0.55in + footer ~0.25in; page 2 dateline 0.52in + footer ~0.25in.",
-    "page1_col_in": 24.96,
-    "page2_col_in": 27.99,
-    "wpi": 40,
-    "wpi_feature": 36,
-    "oversupply": 1.15,
-    "head_short": 0.35,
-    "head_feature": 0.65,
-    "gap": 0.12,
-    "table_head": 0.35,
-    "row_rail": 0.24,
-    "row_full": 0.17,
-    "col_width_in": 2.42,
-    "span2_width_in": 4.96,
-    "photo_ceiling_in": 2.2,
-    "caption_in": 0.15
+ "schema": 2,
+ "mode": "real",
+ "capacity": {
+  "note": "Template A, US Letter, 3 columns (~2.42in each, 9pt gaps). Usable column height = 10.1in page minus furniture measured on the issues/2026-10-14 sample render: page 1 masthead 0.98in + dateline 0.55in + footer ~0.25in; page 2 dateline 0.52in + footer ~0.25in.",
+  "page1_col_in": 24.96,
+  "page2_col_in": 27.99,
+  "wpi": 40,
+  "wpi_feature": 36,
+  "oversupply": 1.15,
+  "head_short": 0.35,
+  "head_feature": 0.65,
+  "gap": 0.12,
+  "table_head": 0.35,
+  "row_rail": 0.24,
+  "row_full": 0.17,
+  "col_width_in": 2.42,
+  "span2_width_in": 4.96,
+  "photo_ceiling_in": 2.2,
+  "caption_in": 0.15
+ },
+ "sections": [
+  {
+   "key": "lead",
+   "title": "Lead & features",
+   "hint": "Top of page 1 and the back-page feature"
   },
-  "sections": [
-    {
-      "key": "lead",
-      "title": "Lead & features",
-      "hint": "Top of page 1 and the back-page feature"
-    },
-    {
-      "key": "club",
-      "title": "Club",
-      "hint": "Results, Nearby Tournaments, classes, events"
-    },
-    {
-      "key": "shorts",
-      "title": "Shorts & fill",
-      "hint": "Secondaries, Q&A, Clark fill — first to go if tight"
-    },
-    {
-      "key": "photos",
-      "title": "Photos",
-      "hint": "Thumbnails shown B&W as printed"
-    },
-    {
-      "key": "held",
-      "title": "Held, merged & next week",
-      "hint": "Not proposed for this issue"
-    }
-  ],
-  "seed_ids": [],
-  "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
-  "generated": "2026-11-10T15:50:00-05:00",
-  "target_week": "next",
-  "generated_at": "2026-11-10T16:28:00-05:00",
-  "issue": {
-    "number": 6,
-    "label": "Issue No. 6",
-    "week": "Week of Nov. 9, 2026"
+  {
+   "key": "club",
+   "title": "Club",
+   "hint": "Results, Nearby Tournaments, classes, events"
   },
-  "publish": {
-    "date": "2026-11-11",
-    "label": "Wednesday, November 11, 2026",
-    "alt": "2026-11-10",
-    "why": "Frank submitted the No. 6 budget (2026-11-10, 4:19 PM ET, practice:false) for Wednesday, Nov. 11. Sunday’s results are in. Pizza and Kiefer Meinhardt are still Nov. 14–15."
+  {
+   "key": "shorts",
+   "title": "Shorts & fill",
+   "hint": "Secondaries, Q&A, Clark fill — first to go if tight"
   },
-  "slots": [
+  {
+   "key": "photos",
+   "title": "Photos",
+   "hint": "Thumbnails shown B&W as printed"
+  },
+  {
+   "key": "held",
+   "title": "Held, merged & next week",
+   "hint": "Not proposed for this issue"
+  }
+ ],
+ "seed_ids": [],
+ "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
+ "generated": "2026-11-16T09:35:00-05:00",
+ "target_week": "next",
+ "generated_at": "2026-11-16T09:35:00-05:00",
+ "issue": {
+  "number": 7,
+  "label": "Issue No. 7",
+  "week": "Week of Nov. 16, 2026"
+ },
+ "publish": {
+  "date": "2026-11-17",
+  "label": "Tuesday, November 17, 2026",
+  "alt": "2026-11-18",
+  "why": "Weekend results from Pizza RYC (New Haven) and Freehold are official and final. Kiefer Meinhardt results have not posted (Mon 8:52 AM ET); Wednesday gives them another day. The November NAC starts Fri. Nov. 20, so the preview needs to go out by Thursday."
+ },
+ "desk_summary": [
+  "Issue No. 7, target Tue. Nov. 17 (alt Wed. Nov. 18). Monday full pass done 9:00 AM ET; v1.",
+  "Lead (proposed): Penny Young's bronze in Y12 Women at Pizza RYC (3rd of 52), with Penny and Amina Gore's other top-16 finishes and Nico Ng's 5th of 30 at Freehold. All from official USA Fencing results (final). Kiefer Meinhardt (Stella Kuo, Mila Siu) not posted yet.",
+  "Club Results: 5 strong rows (4 Pizza RYC, 1 Freehold). No ratings earned found for Elite FC in the posted results: see the question on Ratings.",
+  "Boards: Cobra Challenge (Secaucus, Nov. 27–29; 26 entries / 16 fencers, unchanged); NJFA Dec. 1 (Owen Li); On the Road = November NAC with new Athreya Aravind Div I Men entry Mon. Nov. 23. Deadlines rebuilt: Z1 Nov. 23, Fairfax and NJFA Nov. 30, JO late reg Jan. 7, NJ HS Jan. 8.",
+  "Page 2: your VR comic (vetted), proposed For the Parents on Cobra next door, NAC preview short, FIE World Cup weekend short, By the Book 'Three Calls, Two Minutes'. Most new pieces need your Vet. Fill is light until you vet them."
+ ],
+ "slots": [
+  {
+   "key": "lead",
+   "section": "lead",
+   "slot": "Lead story — Penny Young takes bronze in New Haven",
+   "budget": "~130–170w",
+   "item": "pitch-weekend-roundup-2026-11-16",
+   "proposed": true,
+   "waiting": false,
+   "cost": {
+    "type": "prose",
+    "span": 2,
+    "feature": true,
+    "words": 130
+   },
+   "title": "Penny Young Takes Bronze in New Haven",
+   "summary": "Weekend roundup led by the club's best result: Penny Young 3rd of 52 in Y12 Women at Pizza RYC/RJCC (regional), plus her 13th of 67 in Y14, Amina Gore 13th and 16th of 54 (Cadet and Junior Women), and Nico Ng 5th of 30 at Freehold's November Open. Draft written (~130w) from official results; Kiefer Meinhardt line waits for results.",
+   "questions": [
+    "Lead: weekend results (Penny's bronze) as drafted, or lead with the November NAC preview and move results to Club Results only?"
+   ],
+   "flags": [
     {
-      "key": "lead",
-      "section": "lead",
-      "slot": "Lead story — First Bouts at Medeo #5",
-      "budget": "~150–180w (planned 150)",
-      "item": "pitch-medeo-yc5-next-gen-2026-11-05",
-      "proposed": true,
-      "waiting": false,
-      "cost": {
-        "type": "prose",
-        "span": 2,
-        "feature": true,
-        "words": 150
-      },
-      "title": "First Bouts at Medeo #5",
-      "summary": "Approved lead: First Bouts at Medeo #5, encouraging, written from entries and known facts. Seven who fenced are named (Samuel SarroWaite, Roy Yoo, Elle Peterfreund, Nora Li, Claire Widjaja, Owen Li, Mira Shukla). For most it was their first tournament (five firsts; Elle and Owen their second). No placings. Ian Huang is not described as having fenced. About 99 words.",
-      "questions": [],
-      "answered": [
-        "Keep First Bouts as the lead — ‘Let’s give attention to the newer kids. Nico and Max get enough coverage.’ (budget submission, 4:19 PM ET).",
-        "Write from entries and known facts now (budget submission, 4:19 PM ET)."
-      ],
-      "flags": [
-        {
-          "level": "info",
-          "text": "Pitch only: no text yet. Fill estimate uses the planned 150 words. Official Medeo CSVs are in staging; first-tournament claims are verified."
-        }
-      ]
+     "level": "warn",
+     "text": "UNVETTED: official USA Fencing results via fencing-api (final), staged by the desk."
     },
     {
-      "key": "overheard-reddit",
-      "section": "lead",
-      "slot": "Overheard on Reddit — Do You Need Fencing Shoes?",
-      "budget": "~72w (short; Frank noted the thread is light)",
-      "item": "reddit-rfencing-tennis-shoes-2026-11-08",
-      "proposed": true,
-      "waiting": false,
-      "cost": {
-        "type": "prose",
-        "span": 1,
-        "words": 72
-      },
-      "title": "Overheard on Reddit: Do You Need Fencing Shoes?",
-      "summary": "Your r/Fencing thread (captured Nov. 10; posted ~Nov. 8): a beginner asked whether tennis shoes work as well as fencing shoes, at about half the price. Commenters there said indoor court shoes (squash or volleyball, e.g. ASICS Gel Rocket) do fine, and that entry fencing shoes, at about $80 to $100, wear out in a year or two. Some epee fencers prefer tennis shoes on aluminum strips. No usernames; attributed to r/Fencing commenters; labeled as opinion, not advice. Short on purpose — you flagged that the thread is light on content. Sits near First Bouts, where it's useful to new families buying gear.",
-      "flags": [
-        {
-          "level": "info",
-          "text": "72 words, under the section's typical 130–170w, per Frank's note that the thread is light."
-        }
-      ],
-      "questions": [],
-      "answered": [
-        "Frank sent the PDF and vetted it as the source (chat Nov. 10, 1:39 PM ET). He noted it's light on content."
-      ]
-    },
-    {
-      "key": "overheard",
-      "section": "lead",
-      "slot": "Page 2 feature — For the Parents: What a Rating Letter Means",
-      "budget": "~200–250w (planned 220)",
-      "item": "pitch-for-parents-rating-letters-2026-11-02",
-      "proposed": true,
-      "waiting": false,
-      "cost": {
-        "type": "prose",
-        "span": 1,
-        "feature": true,
-        "words": 270
-      },
-      "title": "For the Parents: What a Rating Letter Means",
-      "summary": "Page-2 feature, left column in proof v3, from the 2026–27 USA Fencing Athlete Handbook §2.1 and §2.15 / Appendix classification table. 270 words in one stacked column beside the cartoon.",
-      "flags": [
-        {
-          "level": "info",
-          "text": "Pitch only: no text yet. Fill estimate uses the planned length. Still your call whether it runs this week."
-        }
-      ],
-      "questions": [],
-      "answered": [
-        "‘we can include it unless we need the space.’ (budget submission, 4:19 PM ET). Included in proof v1."
-      ]
-    },
-    {
-      "key": "tournament-day",
-      "section": "lead",
-      "slot": "Page 2 visual — Tournament Day",
-      "budget": "half-page landscape, 2 columns (1536x1024, 3:2) + short caption",
-      "item": "frank-tournament-day-cartoon-2026-11-10",
-      "proposed": true,
-      "waiting": false,
-      "cost": {
-        "type": "figure",
-        "span": 2,
-        "w": 1536,
-        "h": 1024,
-        "words": 21,
-        "head": true,
-        "note": "landscape 3:2; 2-column half-page"
-      },
-      "thumb": "tournament-day-cartoon.png",
-      "title": "Tournaments",
-      "summary": "Approved page-2 visual. No byline and no caption (Frank: it speaks for itself). The packing-scene racket is left as is; ‘may replace’ notes dropped. Half-page landscape, two columns, 1536×1024 (3:2).",
-      "questions": [],
-      "flags": [],
-      "answered": [
-        "‘No need for a byline or caption. I think it speaks for itself. I’m not going to have the image redrawn for the tennis racket looking mask. just leave it alone.’ (budget submission, 4:19 PM ET)."
-      ]
-    },
-    {
-      "key": "club-results",
-      "section": "club",
-      "slot": "Club results",
-      "budget": "8 strong rows (no 'also fenced' line)",
-      "item": "ft-fencers-club-senior-open-results-2026-11-08",
-      "merged": [
-        "ft-nyfa-youth-cup1-results-2026-11-08",
-        "email-mailchimp-congrats-2026-11-09"
-      ],
-      "proposed": true,
-      "waiting": false,
-      "cost": {
-        "type": "table_rows",
-        "rows": 8
-      },
-      "title": "Club results",
-      "table": {
-        "head": [
-          "Fencer",
-          "Event",
-          "Finish"
-        ],
-        "rows": [
-          [
-            "Maksim Milinkovic",
-            "Fencers Club Senior Open, Mixed Epee (Nov. 8)",
-            "7th of 31"
-          ],
-          [
-            "Nico Ng",
-            "Fencers Club Senior Open, Mixed Epee (Nov. 8)",
-            "8th of 31"
-          ],
-          [
-            "Madeline Siu",
-            "NYFA Youth Cup #1, Y8 Mixed (Nov. 8)",
-            "3rd of 4"
-          ],
-          [
-            "Maximus Siu",
-            "NYFA Youth Cup #1, Y10 Mixed (Nov. 8)",
-            "8th of 17"
-          ],
-          [
-            "Remy Ng",
-            "NYFA Youth Cup #1, Y12 Men (Nov. 8)",
-            "8th of 13"
-          ],
-          [
-            "Christina Jiang",
-            "NYFA Youth Cup #1, Y12 Women (Nov. 8)",
-            "5th of 9"
-          ],
-          [
-            "Mila Siu",
-            "NYFA Youth Cup #1, Y14 Women (Nov. 8)",
-            "5th of 10"
-          ],
-          [
-            "Stella Kuo",
-            "NYFA Youth Cup #1, Y14 Women (Nov. 8)",
-            "6th of 10"
-          ]
-        ]
-      },
-      "summary": "Eight rows, all over the local bar (top 8, or a medal in a small field). Fencers Club Senior Open (31 finishers, A2): Maksim Milinkovic 7th and Nico Ng 8th — each won a table-of-32 and a table-of-16 bout; no new ratings, both still A26. NYFA Youth Cup #1: Madeline Siu 3rd of 4 in Y8 Mixed (a medal, tied for 3rd); Maximus Siu 8th of 17 in Y10 Mixed; Remy Ng 8th of 13 in Y12 Men; Christina Jiang 5th of 9 in Y12 Women; Mila Siu 5th and Stella Kuo 6th of 10 in Y14 Women. Omitted (below the bar or no result): Bryce Cheng 14th of 17 at NYFA; Skanda Krishnan, entered at the Open, no result. Medeo placements stay out of this box — they belong in First Bouts only, and even there without places. Sources: club Mailchimp (Nov. 9) plus FencingTracker event pages (Nov. 10, 1:25–1:31 PM ET).",
-      "questions": [],
-      "flags": [
-        {
-          "level": "info",
-          "text": "Madeline's 3rd is a tie (two bronzes) in a field of 4. It prints because it is a medal."
-        }
-      ],
-      "boxnote": "Elite FC was well represented last weekend. We hope to see more and more of the club’s kids at events."
-    },
-    {
-      "key": "signup",
-      "section": "club",
-      "slot": "Nearby Tournaments — Pizza RYC/RJCC",
-      "budget": "3 rows",
-      "item": "email-agentmail-pizza-ryc-entries-2026-10-27",
-      "proposed": true,
-      "cost": {
-        "type": "table",
-        "rows": 3,
-        "span": 1
-      },
-      "title": "Pizza RYC/RJCC — New Haven, Conn., Nov. 14–15",
-      "table": {
-        "head": [
-          "Day · check-in",
-          "Event",
-          "Elite FC entered"
-        ],
-        "rows": [
-          [
-            "Sat. · 8:00 a.m.",
-            "Y14 Women",
-            "Penny Young"
-          ],
-          [
-            "Sat. · 1:00 p.m.",
-            "Junior Women",
-            "Amina Gore"
-          ],
-          [
-            "Sun. · 8:00 a.m. / noon",
-            "Cadet Women · Y12 Women",
-            "Amina Gore, Penny Young · Penny Young"
-          ]
-        ]
-      },
-      "summary": "Same as No. 5: 5 entries / 2 fencers, all approved (FencingTracker Nov 9). This weekend, so it's the main board."
-    },
-    {
-      "key": "signup-4",
-      "section": "club",
-      "slot": "Nearby Tournaments — Cobra Challenge",
-      "budget": "7 rows (one block, days in order)",
-      "item": "fencingapi-cobra-efc-entries-2026-10-19",
-      "proposed": true,
-      "cost": {
-        "type": "table",
-        "rows": 7,
-        "span": 2
-      },
-      "title": "Cobra Challenge SYC/RCC — Secaucus, N.J., Nov. 27–29",
-      "table": {
-        "head": [
-          "Day",
-          "Event",
-          "Elite FC entered"
-        ],
-        "rows": [
-          [
-            "Fri. Nov. 27",
-            "Y14 Men",
-            "Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani"
-          ],
-          [
-            "Fri. Nov. 27",
-            "Cadet Women",
-            "Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young"
-          ],
-          [
-            "Fri. Nov. 27",
-            "Y10 Men",
-            "Bryce Cheng, Joshua Jeong"
-          ],
-          [
-            "Sat. Nov. 28",
-            "Y12 Women",
-            "Christina Jiang, Stella Kuo, Mila Siu, Penny Young"
-          ],
-          [
-            "Sat. Nov. 28",
-            "Y12 Men",
-            "Kian Jaising, Joshua Jeong, Remy Ng"
-          ],
-          [
-            "Sun. Nov. 29",
-            "Y14 Women",
-            "Stella Kuo, Mila Siu, Penny Young"
-          ],
-          [
-            "Sun. Nov. 29",
-            "Cadet Men",
-            "Connor Anderson, Nico Ng, Caden Wu"
-          ]
-        ]
-      },
-      "summary": "Unchanged since No. 5 (26 entries / 16 fencers). Reprinting it is optional; it ran in full last week.",
-      "questions": [],
-      "answered": [
-        "Included in the submitted budget (Cobra board runs again this week)."
-      ]
-    },
-    {
-      "key": "signup-local",
-      "section": "club",
-      "slot": "Nearby Tournaments — also on the calendar",
-      "budget": "~87w",
-      "item": "email-agentmail-nov14-15-local-calendar-2026-11-10",
-      "proposed": true,
-      "waiting": false,
-      "cost": {
-        "type": "prose",
-        "span": 1,
-        "words": 85
-      },
-      "title": "Also on the Calendar",
-      "summary": "Approved. Frank OK’d the rephrase: each event is described by its real divisions; ‘good practice, decently competitive fields’ applies to Sunday’s older-fencer events (Freehold Senior Open and Wanglei Cadet/Junior). Revolution remains Y10, Y12 and Y14 Mixed in West Chester, Pa. Names-free; no Elite FC entries. About 85 words.",
-      "questions": [],
-      "flags": [
-        {
-          "level": "info",
-          "text": "Nearby Tournaments usually lists Elite FC entries only. This is a names-free ‘also on the calendar’ note Frank asked for, not an entry board."
-        }
-      ],
-      "answered": [
-        "‘okay to rephrase.’ (budget submission, 4:19 PM ET)."
-      ]
-    },
-    {
-      "key": "on-the-road",
-      "section": "club",
-      "slot": "On the road — travel entries",
-      "budget": "~3 rows",
-      "item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
-      "proposed": true,
-      "cost": {
-        "type": "table",
-        "rows": 5,
-        "span": 1
-      },
-      "title": "On the Road",
-      "summary": "Approved and rewritten as a compact board from official USA Fencing entries (fencing-api live, Nov. 10, 4:25–4:26 p.m. ET). Kiefer Meinhardt Cup (Glen Allen, Va., Nov. 14–15): Stella Kuo and Mila Siu, Y14 Women Saturday and Y12 Women Sunday. November NAC (Columbus, Ohio, Nov. 20–23): Anayaa Sheth, Junior Women Friday; Nico Ng, Cadet Men Saturday; Athreya Aravind and Nico Ng, Junior Men Sunday. Same counts as the Nov. 9 FencingTracker pass. Other travel events held. Official NAC spelling is Anayaà Sheth; printed Anayaa Sheth (roster house form).",
-      "flags": [],
-      "table": {
-        "head": [
-          "Event",
-          "Elite FC"
-        ],
-        "rows": [
-          [
-            "Kiefer Meinhardt Cup, Glen Allen, Va., Sat. Nov. 14, Y14 Women",
-            "Stella Kuo, Mila Siu"
-          ],
-          [
-            "Kiefer Meinhardt Cup, Sun. Nov. 15, Y12 Women",
-            "Stella Kuo, Mila Siu"
-          ],
-          [
-            "November NAC, Columbus, Ohio, Fri. Nov. 20, Junior Women",
-            "Anayaa Sheth"
-          ],
-          [
-            "November NAC, Sat. Nov. 21, Cadet Men",
-            "Nico Ng"
-          ],
-          [
-            "November NAC, Sun. Nov. 22, Junior Men",
-            "Athreya Aravind, Nico Ng"
-          ]
-        ]
-      }
-    },
-    {
-      "key": "deadlines",
-      "section": "club",
-      "slot": "Deadlines box",
-      "budget": "3 rows",
-      "item": "desk-deadlines-2026-10-18",
-      "proposed": true,
-      "cost": {
-        "type": "table",
-        "rows": 2,
-        "span": 1
-      },
-      "table": {
-        "head": [
-          "Date",
-          "Deadline"
-        ],
-        "rows": [
-          [
-            "Nov. 11",
-            "Junior Olympics — regular-fee deadline"
-          ],
-          [
-            "Jan. 8",
-            "N.J. high school — independent fencers’ entries close"
-          ]
-        ]
-      },
-      "summary": "Nov. 11 Junior Olympics regular-fee deadline is the publish day (11:59 p.m. Pacific). Jan. 8 N.J. high school independent entries. Winter Camp ASAP line dropped (camp slot excluded). Bernards HS still unvetted, not added."
-    },
-    {
-      "key": "camp",
-      "section": "club",
-      "slot": "Club events — Winter Camp",
-      "budget": "~35w (short reminder)",
-      "item": "chat-winter-camp-reminder",
-      "proposed": false,
-      "cost": {
-        "type": "prose",
-        "span": 1,
-        "words": 35
-      },
-      "summary": "Short reminder this time, since the full write-up ran in No. 4 and No. 5: dates, hours, all levels, tell the club for the headcount."
-    },
-    {
-      "key": "classes",
-      "section": "club",
-      "slot": "Weekly classes table",
-      "budget": "cut (no change)",
-      "item": "web-efc-standing-schedule",
-      "proposed": false,
-      "cost": {
-        "type": "table",
-        "rows": 9,
-        "span": 1
-      },
-      "summary": "No schedule change this week. Not proposed."
-    },
-    {
-      "key": "tv",
-      "section": "shorts",
-      "slot": "Epee on Screen",
-      "budget": "5 rows",
-      "item": "desk-epee-on-screen-2026-10-18",
-      "proposed": true,
-      "cost": {
-        "type": "table",
-        "rows": 4,
-        "span": 1
-      },
-      "table": {
-        "head": [
-          "Dates",
-          "Event",
-          "Watch"
-        ],
-        "rows": [
-          [
-            "Nov. 11",
-            "Youth Olympic Games, men’s epee (Dakar)",
-            "FIE live stream / YouTube"
-          ],
-          [
-            "Nov. 12–15",
-            "Senior World Cups: Berne (men), Wuxi (women)",
-            "FencingTV"
-          ],
-          [
-            "Nov. 26–29",
-            "Junior/Cadet World Cup (Novi Sad, Serbia)",
-            "No stream listed"
-          ],
-          [
-            "Dec. 3–6",
-            "Senior World Cup, men and women (Vancouver)",
-            "FencingTV"
-          ]
-        ]
-      },
-      "summary": "Men’s epee at Dakar is Nov. 11 (publish day). Women’s epee (Nov. 10) dropped as past. Berne/Wuxi, Novi Sad, and Vancouver unchanged."
-    },
-    {
-      "key": "photo-history",
-      "section": "shorts",
-      "slot": "Photo from History",
-      "budget": "photo + ~142w + credit",
-      "item": "history-photo-10-timea-nagy",
-      "proposed": false,
-      "cost": {
-        "type": "figure",
-        "span": 1,
-        "w": 1068,
-        "h": 1600,
-        "words": 185,
-        "head": true,
-        "note": "portrait; 1 column fits"
-      },
-      "thumb": "10-timea-nagy.jpg",
-      "title": "Photo from History: 2000–2004 — Back-to-back in Sydney and Athens",
-      "summary": "Tímea Nagy, who beat last week's Laura Flessel in the 2000 semifinal and the 2004 final to win two Olympic epee golds. 2013 portrait. It lands the day women's epee is fenced at the Youth Olympics. Unvetted.",
-      "flags": [
-        {
-          "level": "warn",
-          "text": "UNVETTED."
-        }
-      ]
-    },
-    {
-      "key": "secondary-a",
-      "section": "shorts",
-      "slot": "Secondary — College season opens",
-      "budget": "~55w",
-      "item": "x-college-season-opens-2026-11-09",
-      "proposed": false,
-      "cost": {
-        "type": "prose",
-        "span": 1,
-        "words": 55
-      },
-      "title": "College Season Opens Next Door",
-      "summary": "Optional filler: NJIT's first home meet since 2019 (Nov 1), then the Drew Invitational in Madison (Nov 7) and Columbia Invitational (Nov 8). From NJIT's own X posts; vet if you want it.",
-      "flags": [
-        {
-          "level": "warn",
-          "text": "UNVETTED (X lead)."
-        }
-      ]
-    },
-    {
-      "key": "by-the-book",
-      "section": "shorts",
-      "slot": "By the Book",
-      "budget": "50–80w",
-      "empty": true,
-      "why": "Nothing staged this week."
-    },
-    {
-      "key": "nj-hs",
-      "section": "shorts",
-      "slot": "NJ high-school roundup",
-      "budget": "~40w",
-      "empty": true,
-      "why": "Out of season; no new NJ.com stories."
-    },
-    {
-      "key": "qa",
-      "section": "shorts",
-      "slot": "Parent Q&A",
-      "budget": "40–70w",
-      "empty": true,
-      "why": "No parent question this week."
-    },
-    {
-      "key": "comic",
-      "section": "shorts",
-      "slot": "Comic",
-      "budget": "1 panel",
-      "empty": true,
-      "why": "The Tournament Day illustration is in the page-2 visual slot, not the gag-panel comic slot."
+     "level": "info",
+     "text": "Kiefer Meinhardt Cup results not posted as of 8:52 AM ET; the sentence gets swapped for results if they post before compose."
     }
-  ],
-  "photos": [
+   ]
+  },
+  {
+   "key": "comic",
+   "section": "lead",
+   "slot": "Page 2 visual — VR parent filter comic",
+   "budget": "2-column strip (2172×724)",
+   "item": "frank-vr-parent-filter-comic-2026-11-15",
+   "proposed": true,
+   "waiting": false,
+   "cost": {
+    "type": "figure",
+    "span": 2,
+    "w": 2172,
+    "h": 724,
+    "words": 0,
+    "head": false,
+    "note": "wide 3-panel strip; lettered-comic floor"
+   },
+   "thumb": "vr-parent-filter-comic.png",
+   "title": "(no title, no caption, no credit)",
+   "summary": "Your three-panel comic, vetted Nov. 15. No byline, credit or caption (your call, same as No. 6's cartoon). TSAI jersey left as is (closed). Fitted by the art-fit system; balloons must stay readable.",
+   "questions": [],
+   "flags": []
+  },
+  {
+   "key": "for-the-parents",
+   "section": "lead",
+   "slot": "For the Parents — A national youth event next door (Cobra)",
+   "budget": "~95w",
+   "item": "desk-for-the-parents-cobra-2026-11-16",
+   "proposed": true,
+   "waiting": false,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 95
+   },
+   "title": "For the Parents: A National Youth Event Next Door",
+   "summary": "Practical note for the 16 Elite FC families at Cobra (Secaucus, Nov. 27–29): what SYC/RCC means, free garage parking, event caps and shifting check-in times, Absolute on site for repairs, and that listed times are usually check-in close. From the organizer's text on USA Fencing.",
+   "questions": [],
+   "flags": [
     {
-      "id": "media-history-10-timea-nagy",
-      "proposed": false,
-      "span": 1,
-      "note": "Excluded in the submitted budget (Photo from History held this week)."
-    },
-    {
-      "id": "media-nyfa-youth-cup1-podium-1-2026-11-08",
-      "proposed": false,
-      "span": 1,
-      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
-    },
-    {
-      "id": "media-nyfa-youth-cup1-podium-2-2026-11-08",
-      "proposed": false,
-      "span": 1,
-      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
-    },
-    {
-      "id": "media-nyfa-youth-cup1-podium-3-2026-11-08",
-      "proposed": false,
-      "span": 1,
-      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
-    },
-    {
-      "id": "media-nyfa-youth-cup1-podium-4-2026-11-08",
-      "proposed": true,
-      "span": 1,
-      "note": "Included. Frank confirmed Maximus Siu is in the photo and asked that he be featured (8th of 17 in Y10 Mixed at NYFA Youth Cup #1). Caption names only him and does not point to a position in the group. Other people are not named. His private remarks are not printed.",
-      "caption": "Maximus Siu, 8th of 17 in Y10, is among the finalists pictured at NYFA Youth Cup #1."
-    },
-    {
-      "id": "media-nyfa-youth-cup1-podium-5-2026-11-08",
-      "proposed": false,
-      "span": 1,
-      "note": "NYFA Youth Cup #1 podium photo from the club's Nov. 9 newsletter. Identities are not labeled — if you include it, the caption cannot name anyone."
+     "level": "warn",
+     "text": "UNVETTED desk draft."
     }
-  ],
-  "held": [],
-  "not_proposed": [
+   ]
+  },
+  {
+   "key": "nac-preview",
+   "section": "lead",
+   "slot": "Short — Three Head to Columbus (November NAC preview)",
+   "budget": "~65w",
+   "item": "desk-nac-preview-2026-11-16",
+   "proposed": true,
+   "waiting": false,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 66
+   },
+   "title": "Three Head to Columbus",
+   "summary": "This-week preview you asked for: Anayaa Sheth (Junior Women, Fri.), Nico Ng (Cadet Men, Sat.; Junior Men, Sun.), Athreya Aravind (Junior Men, Sun.; Division I Men, Mon., new entry). Same facts as On the Road; run one or both.",
+   "questions": [
+    "NAC: run the prose preview, the On the Road table, or both?"
+   ],
+   "flags": [
     {
-      "item": "email-agentmail-medeo-yc5-entries-2026-10-14",
-      "why": "Sunday's entries; folded into the First Bouts lead. Official CSVs are in staging/weeks/next/sources/."
-    },
-    {
-      "item": "email-agentmail-nyfa-youth-cup1-entries-2026-10-22",
-      "why": "Sunday's entries; results that clear the bar are in Club Results."
-    },
-    {
-      "item": "email-agentmail-fencers-club-open-entries-2026-11-06",
-      "why": "Sunday's entries; Maksim 7th and Nico 8th are in Club Results. Skanda had no result."
-    },
-    {
-      "item": "email-mailchimp-congrats-2026-11-09",
-      "why": "Source for the Club Results rows and the five unidentified NYFA podium photos; merged into those slots."
-    },
-    {
-      "item": "x-fie-dakar-yog-2026-11-02",
-      "why": "Ran in No. 5; epee days carried in Epee on Screen."
-    },
-    {
-      "item": "askfred-bernards-hs-senior-open-2026-12-19",
-      "why": "New Dec 19 local on AskFRED, no Elite FC entries known. Unvetted; could go in Deadlines later."
-    },
-    {
-      "item": "web-efc-standing-schedule",
-      "why": "Reference only; no change."
-    },
-    {
-      "item": "chat-winter-camp-reminder",
-      "why": "Excluded in the submitted budget (Winter Camp held this week)."
-    },
-    {
-      "item": "history-photo-10-timea-nagy",
-      "why": "Excluded in the submitted budget (Photo from History held this week)."
-    },
-    {
-      "item": "x-college-season-opens-2026-11-09",
-      "why": "Excluded in the submitted budget (college-season short held)."
+     "level": "warn",
+     "text": "UNVETTED desk draft (official entries)."
     }
-  ],
-  "desk_summary": [
-    "Issue No. 6, Wednesday, Nov. 11 — Frank submitted the budget (4:19 PM ET, practice:false). This is v5, the approved lineup.",
-    "Lead: First Bouts at Medeo #5, written, encouraging, no placings. Seven named; first tournament for most. Ian Huang not described as having fenced.",
-    "Club Results: eight worthy rows from the Senior Open and NYFA Youth Cup #1, plus a light encouragement line. NYFA group photo (podium-4) in, caption featuring Maximus Siu, 8th of 17 in Y10.",
-    "Page 2: For the Parents (rating letters, written from the Athlete Handbook); Tournament Day cartoon with no byline or caption; Overheard on Reddit shoes item; Pizza and Cobra boards; Also on the Calendar (rephrased); On the Road rewritten for Kiefer Meinhardt and November NAC from official entries.",
-    "Out: Winter Camp, classes table, Photo from History, college season. By the Book, NJ HS, Parent Q&A, and the empty Comic slot stay empty.",
-    "Athreya Aravind confirmed as a club member (Frank, 2026-11-10) and added to the roster.",
-    "Proof v3 (t202u): page 2 relaid per Frank’s mockup. New Clark-proposed For the Parents short on national entry fees and triple fees fills the top-right block; pending Frank’s vet."
-  ]
+   ]
+  },
+  {
+   "key": "club-results",
+   "section": "club",
+   "slot": "Club results",
+   "budget": "5 strong rows (no 'also fenced' line)",
+   "item": "fencingapi-pizza-ryc-results-2026-11-15",
+   "merged": [
+    "ft-freehold-nov-open-nico-5th-2026-11-15"
+   ],
+   "proposed": true,
+   "waiting": false,
+   "cost": {
+    "type": "table_rows",
+    "rows": 5
+   },
+   "title": "Club results",
+   "table": {
+    "head": [
+     "Fencer",
+     "Event",
+     "Finish"
+    ],
+    "rows": [
+     [
+      "Penny Young",
+      "Pizza RYC, Y12 Women (Nov. 15)",
+      "3rd of 52"
+     ],
+     [
+      "Penny Young",
+      "Pizza RYC, Y14 Women (Nov. 14)",
+      "13th of 67"
+     ],
+     [
+      "Amina Gore",
+      "Pizza RYC, Cadet Women (Nov. 15)",
+      "13th of 54"
+     ],
+     [
+      "Amina Gore",
+      "Pizza RYC, Junior Women (Nov. 14)",
+      "16th of 54"
+     ],
+     [
+      "Nico Ng",
+      "Freehold November Open, Division IA Mixed (Nov. 15)",
+      "5th of 30"
+     ]
+    ]
+   },
+   "summary": "All five clear the bar (regional top 16; local top 8). Official USA Fencing results, final. Brendan Mendez's 5th at Manchen Friday Night is held (see question). Kiefer Meinhardt rows get added if they post and clear the bar.",
+   "questions": [
+    "Brendan Mendez was 5th in Senior Open Mixed at Manchen Friday Night Epee (Nov. 13, field size not shown) and FencingTracker lists him under Elite FC. You weren't sure in No. 5 that he's a member. Include him or leave him out?"
+   ],
+   "flags": [
+    {
+     "level": "warn",
+     "text": "UNVETTED: both source items need your Vet (fencing-api / FencingTracker)."
+    }
+   ]
+  },
+  {
+   "key": "ratings",
+   "section": "club",
+   "slot": "Ratings earned",
+   "budget": "0 rows so far",
+   "empty": true,
+   "why": "No rating earned shows for any Elite FC fencer in the official Pizza RYC or Freehold results or on the FencingTracker club page. Kiefer Meinhardt not posted.",
+   "questions": [
+    "You said new ratings were earned this weekend. The posted official results show none for Elite FC. Which fencer and event did you mean? Or does this wait for Kiefer Meinhardt?"
+   ]
+  },
+  {
+   "key": "signup-cobra",
+   "section": "club",
+   "slot": "Nearby Tournaments — Cobra Challenge",
+   "budget": "7 rows (one block, days in order)",
+   "item": "fencingapi-cobra-efc-entries-2026-10-19",
+   "proposed": true,
+   "cost": {
+    "type": "table",
+    "rows": 7,
+    "span": 2
+   },
+   "title": "Cobra Challenge SYC/RCC — Secaucus, N.J., Nov. 27–29",
+   "table": {
+    "head": [
+     "Day",
+     "Event",
+     "Elite FC entered"
+    ],
+    "rows": [
+     [
+      "Fri. Nov. 27",
+      "Y14 Men",
+      "Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani"
+     ],
+     [
+      "Fri. Nov. 27",
+      "Cadet Women",
+      "Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young"
+     ],
+     [
+      "Fri. Nov. 27",
+      "Y10 Men",
+      "Bryce Cheng, Joshua Jeong"
+     ],
+     [
+      "Sat. Nov. 28",
+      "Y12 Women",
+      "Christina Jiang, Stella Kuo, Mila Siu, Penny Young"
+     ],
+     [
+      "Sat. Nov. 28",
+      "Y12 Men",
+      "Kian Jaising, Joshua Jeong, Remy Ng"
+     ],
+     [
+      "Sun. Nov. 29",
+      "Y14 Women",
+      "Stella Kuo, Mila Siu, Penny Young"
+     ],
+     [
+      "Sun. Nov. 29",
+      "Cadet Men",
+      "Connor Anderson, Nico Ng, Caden Wu"
+     ]
+    ]
+   },
+   "summary": "Main board: 11 days out, 26 entries / 16 fencers, all approved; unchanged on FencingTracker registrations Nov. 16, 8:51 AM ET. Ran in No. 6 too; still the nearest big local event."
+  },
+  {
+   "key": "signup-njfa",
+   "section": "club",
+   "slot": "Nearby Tournaments — NJFA Div. 3 & Y8–Y14 (Dec. 1)",
+   "budget": "1 row",
+   "item": "askfred-njfa-div3-y8-y14-2026-12-01",
+   "proposed": true,
+   "cost": {
+    "type": "table",
+    "rows": 1,
+    "span": 1
+   },
+   "title": "NJFA Div. 3 and Y8–Y14 — Maplewood, N.J., Tue. Dec. 1",
+   "table": {
+    "head": [
+     "Check-in",
+     "Event",
+     "Elite FC entered"
+    ],
+    "rows": [
+     [
+      "5:45 p.m.",
+      "D & Under Mixed",
+      "Owen Li"
+     ]
+    ]
+   },
+   "summary": "New from AskFRED: weeknight local in Maplewood; Owen Li entered (confirmed). Y12 Mixed has 8 entered, Y10 has 2 (no Elite FC yet), so it's a good nudge. Prereg closes Nov. 30.",
+   "flags": [
+    {
+     "level": "warn",
+     "text": "UNVETTED (AskFRED via fencing-api)."
+    }
+   ]
+  },
+  {
+   "key": "on-the-road",
+   "section": "club",
+   "slot": "On the Road — November NAC",
+   "budget": "4 rows",
+   "item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+   "proposed": true,
+   "cost": {
+    "type": "table",
+    "rows": 4,
+    "span": 1
+   },
+   "title": "On the Road: November NAC, Columbus, Ohio, Nov. 20–23",
+   "table": {
+    "head": [
+     "Day",
+     "Event",
+     "Elite FC entered"
+    ],
+    "rows": [
+     [
+      "Fri. Nov. 20",
+      "Junior Women",
+      "Anayaa Sheth"
+     ],
+     [
+      "Sat. Nov. 21",
+      "Cadet Men",
+      "Nico Ng"
+     ],
+     [
+      "Sun. Nov. 22",
+      "Junior Men",
+      "Athreya Aravind, Nico Ng"
+     ],
+     [
+      "Mon. Nov. 23",
+      "Division I Men",
+      "Athreya Aravind"
+     ]
+    ]
+   },
+   "summary": "Kiefer Meinhardt dropped (past). New official entry: Athreya Aravind, Division I Men, Mon. Nov. 23. 5 entries / 3 fencers, all approved (USA Fencing Nov. 16, 8:55 AM ET; FencingTracker agrees)."
+  },
+  {
+   "key": "deadlines",
+   "section": "club",
+   "slot": "Deadlines box",
+   "budget": "5 rows",
+   "item": "desk-deadlines-2026-10-18",
+   "proposed": true,
+   "cost": {
+    "type": "table",
+    "rows": 5,
+    "span": 1
+   },
+   "table": {
+    "head": [
+     "Date",
+     "Deadline"
+    ],
+    "rows": [
+     [
+      "Nov. 23",
+      "Z1 RYC/RJCC (Newtown, Conn.): regular fees end; triple from Nov. 24"
+     ],
+     [
+      "Nov. 30",
+      "Fairfax Challenge (Fredericksburg, Va.): regular fees end; triple from Dec. 1"
+     ],
+     [
+      "Nov. 30",
+      "NJFA Div. 3 and Y8–Y14 (Dec. 1): preregistration closes"
+     ],
+     [
+      "Jan. 7",
+      "Junior Olympics: online registration (late fee) ends"
+     ],
+     [
+      "Jan. 8",
+      "N.J. high school: independent fencers' entries close"
+     ]
+    ]
+   },
+   "summary": "Rebuilt from USA Fencing fee periods (Nov. 16) and AskFRED. Z1 has 7 Elite FC fencers entered and Fairfax 4, so the triple-fee dates matter (ties back to No. 6's triple-fees piece). USA Fencing times are 11:59 p.m. Pacific."
+  },
+  {
+   "key": "camp",
+   "section": "club",
+   "slot": "Club events — Winter Camp",
+   "budget": "~35w (short reminder)",
+   "item": "chat-winter-camp-reminder",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 35
+   },
+   "title": "Winter Camp: Sign Up Now",
+   "summary": "Dec. 27–31, 9:30 a.m.–2 p.m., all levels; tell the club for the headcount. Six weeks out, so camp moves up to medium priority. Short reminder only; the full write-up ran in Nos. 4–5.",
+   "questions": [
+    "Winter Camp: run the short reminder this week (you held it in No. 6)?"
+   ]
+  },
+  {
+   "key": "classes",
+   "section": "club",
+   "slot": "Weekly classes table",
+   "budget": "cut (no change)",
+   "item": "web-efc-standing-schedule",
+   "proposed": false,
+   "cost": {
+    "type": "table",
+    "rows": 9,
+    "span": 1
+   },
+   "summary": "Nov. 13 club email matches the standing schedule. No change, so it's not proposed."
+  },
+  {
+   "key": "secondary-a",
+   "section": "shorts",
+   "slot": "Secondary — World Cup weekend (Bern, Wuxi)",
+   "budget": "~80w",
+   "item": "x-fie-epee-world-cups-bern-wuxi-2026-11-15",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 80
+   },
+   "title": "Hungary Rules World Cup Weekend",
+   "summary": "Senior epee World Cups Nov. 13–15: Siklosi (HUN) won Bern men's; Santuccio (ITA) beat Sera Song (KOR) 13–12 in Wuxi; Hungary won both team events. From FIE's own posts (tier A). These were on No. 6's Epee on Screen box, so this closes the loop.",
+   "flags": [
+    {
+     "level": "warn",
+     "text": "UNVETTED (FIE X posts, tier A)."
+    }
+   ]
+  },
+  {
+   "key": "by-the-book",
+   "section": "shorts",
+   "slot": "By the Book — Three Calls, Two Minutes",
+   "budget": "~90w",
+   "item": "desk-by-the-book-three-calls-2026-11-16",
+   "proposed": true,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 92
+   },
+   "title": "By the Book: Three Calls, Two Minutes",
+   "summary": "t.118/t.119: first call 10 minutes before the start, then Yellow, Red (a touch for the opponent) and elimination a minute apart; t.117 spares. Timely with the NAC and Cobra. Written from the Oct. 2026 rulebook.",
+   "flags": [
+    {
+     "level": "warn",
+     "text": "UNVETTED desk draft."
+    }
+   ]
+  },
+  {
+   "key": "tv",
+   "section": "shorts",
+   "slot": "Epee on Screen",
+   "budget": "2 rows",
+   "item": "desk-epee-on-screen-2026-10-18",
+   "proposed": false,
+   "cost": {
+    "type": "table",
+    "rows": 2,
+    "span": 1
+   },
+   "table": {
+    "head": [
+     "Dates",
+     "Event",
+     "Watch"
+    ],
+    "rows": [
+     [
+      "Nov. 26–29",
+      "Junior/Cadet World Cup (Novi Sad, Serbia)",
+      "No stream listed"
+     ],
+     [
+      "Dec. 3–6",
+      "Senior World Cup, men and women (Vancouver)",
+      "FencingTV"
+     ]
+    ]
+   },
+   "summary": "Two rows left after the past ones were dropped. FIE calendar re-check failed this pass, so nothing new. Filler if there's room."
+  },
+  {
+   "key": "photo-history",
+   "section": "shorts",
+   "slot": "Photo from History",
+   "budget": "photo + ~142w + credit",
+   "item": "history-photo-10-timea-nagy",
+   "proposed": false,
+   "cost": {
+    "type": "figure",
+    "span": 1,
+    "w": 1068,
+    "h": 1600,
+    "words": 185,
+    "head": true,
+    "note": "portrait; 1 column fits"
+   },
+   "thumb": "10-timea-nagy.jpg",
+   "title": "Photo from History: Tímea Nagy",
+   "summary": "Held since No. 6. Ready to drop in as filler if page 2 runs short.",
+   "flags": [
+    {
+     "level": "warn",
+     "text": "UNVETTED."
+    }
+   ]
+  },
+  {
+   "key": "college",
+   "section": "shorts",
+   "slot": "Secondary — College season",
+   "budget": "~55w",
+   "item": "x-college-season-opens-2026-11-09",
+   "proposed": false,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 55
+   },
+   "title": "College Season Opens Next Door",
+   "summary": "Held. New lead: Penn Elite Invitational (Philadelphia, Nov. 14–15) with Columbia, Penn and UNC (headlines only, not verified). Could refresh if you want a college short.",
+   "flags": [
+    {
+     "level": "warn",
+     "text": "UNVETTED (X lead)."
+    }
+   ]
+  },
+  {
+   "key": "nj-hs",
+   "section": "shorts",
+   "slot": "NJ high-school roundup",
+   "budget": "—",
+   "empty": true,
+   "why": "Out of season; no new NJ.com stories."
+  },
+  {
+   "key": "qa",
+   "section": "shorts",
+   "slot": "Parent Q&A",
+   "budget": "40–70w",
+   "empty": true,
+   "why": "No parent question this week."
+  },
+  {
+   "key": "overheard",
+   "section": "shorts",
+   "slot": "Overheard on Reddit",
+   "budget": "—",
+   "empty": true,
+   "why": "No thread from you this week."
+  }
+ ],
+ "photos": [
+  {
+   "id": "media-vr-parent-filter-comic-2026-11-15",
+   "proposed": false,
+   "span": 2,
+   "note": "Runs as the page-2 visual slot above; not a separate photo."
+  },
+  {
+   "id": "media-winter-camp-flyer-photos-2026-11-10",
+   "proposed": false,
+   "span": 1,
+   "note": "Club Winter Camp flyer photo (Nov. 10 email). Optional with the camp reminder."
+  },
+  {
+   "id": "media-winter-camp-schedule-2026-10-22",
+   "proposed": false,
+   "span": 1,
+   "note": "Camp schedule graphic; the reminder covers it in words."
+  },
+  {
+   "id": "media-history-10-timea-nagy",
+   "proposed": false,
+   "span": 1,
+   "note": "Photo from History 10 (held)."
+  }
+ ],
+ "held": [],
+ "not_proposed": [
+  {
+   "item": "ft-manchen-friday-mendez-5th-2026-11-13",
+   "why": "Membership question for Frank (see Club Results)."
+  },
+  {
+   "item": "chat-kiefer-meinhardt-results-watch-2026-11-11",
+   "why": "Results watch: not posted Mon. 8:52 AM ET. Rows go into Club Results and the lead if they post."
+  },
+  {
+   "item": "chat-weekend-results-nac-ratings-direction-2026-11-15",
+   "why": "Your Nov. 15 direction; done this pass (see the desk summary)."
+  },
+  {
+   "item": "askfred-bernards-hs-senior-open-2026-12-19",
+   "why": "Dec. 19, no Elite FC entries; unvetted. Later issue."
+  },
+  {
+   "item": "web-efc-standing-schedule",
+   "why": "No schedule change."
+  }
+ ]
 }
