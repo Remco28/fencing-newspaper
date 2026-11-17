@@ -443,7 +443,7 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 - Caption under the image (sans ~7pt). Credit is one short black line under the caption
   (author / source, licence with version, "(cropped)" if changed). No file names or URLs
   in the printed line; the full attribution stays in `sources.json`. Published issues keep
-  the credit they already printed. Photo desk still chooses which frames run; layout
+  the credit they already printed. Frank still chooses on the Budget which frames run; layout
   only scales to column width, except for the prepared crop below.
 - **Face-safe backdrop crop (2026-11-16; balancer use retired the same night).** The
   balancer no longer crops anything. `balance.safe_cover_crop` stays as an editorial helper
@@ -466,7 +466,8 @@ Photos, comics, diagrams and illustrations share one fitter (`compose/art.py`, d
 `compose/render.py`). Text is composed first. The fitter then measures leftover room in the
 slot's region and picks a printed size that keeps the native aspect ratio (art-fit itself
 never crops, never uses `object-fit: cover`, never a hard `max-height` that clips the
-frame). The later row-balance pass may apply a prepared face-safe backdrop crop (§19).
+frame). The balancer does not crop. A prepared face-safe backdrop crop is only applied
+when Frank asks for one (§19 above).
 Widths snap to the
 column grid (one column, two columns, or full width).
 
@@ -484,18 +485,19 @@ column grid (one column, two columns, or full width).
   the row that holds the art is at most 0.5in; aspect stays within 1%. Mid-search soft
   warnings (a hole under a float, dpi below the soft target, a region off the nominal
   grid) never demote a legal stack. After art-fit, the fill instrument FLAGs any
-  remaining in-row column gap or float hole above 0.35in; the row-balance pass tries to
-  close those holes before the build fails.
+  remaining in-row column gap or float hole above 0.35in. The row-balance pass is report-only
+  (lists suggestions; `--balance=pair` may pair two stacked photos) and does not move boxes
+  or close holes on its own.
 - **Floors, within reason.** Photos and wordless or lightly lettered comics and
   illustrations: 1.6in minimum printed width. Lettered comics (`lettered` or
   `lettering_px` in the manifest): 3.0in hard / 4.5in soft. Raster photos: 150 dpi hard
   / 200 soft. Raster line art: 200 / 300. Vectors have no dpi floor. The 2.2in photo
-  height ceiling above still applies. An asset may set `min_size`, but keep a sane floor.
+  height ceiling above is a soft WARN; the hard cap is 4.5in. An asset may set `min_size`, but keep a sane floor.
 - **One flex slot per page** in v1. The art must come *before* any prose meant to wrap
   beside it. Put `margin-top: auto` on furniture, not on the art. If nothing passes, the
   build FLAGs and the fit report states the shortfall (including a word-count *hint* —
   not a new cut policy; §16 still governs cuts).
-- **Published Nos. 1–6 are unchanged.** `render.py` refuses to write a PDF into an
+- **Published Nos. 1–7 are unchanged.** `render.py` refuses to write a PDF into an
   APPROVED issue folder unless you pass `--force` or write the file somewhere else.
   Fitting is on by default for new issues that call `art()`; `--no-fit` skips it.
   The row-balance pass runs after art-fit by default in report-only mode; `--no-balance`
@@ -511,13 +513,16 @@ Examples: `en-garde-gazette-no-1-2026-10-08.pdf`, `en-garde-gazette-no-2-2026-10
 
 - Lives in `issues/<date>/` (and the site/docs copies). Do **not** use a bare `paper.pdf` for published issues.
 - Render with: `python3 compose/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf`
-  (`prototype/render.py` still works; it is a shim). After the PDF, write previews at 200 dpi:
-  `pdftoppm -r 200 -png <pdf> issues/<date>/preview`. `render.py` will also refuse to write
+  (`prototype/render.py` still works; it is a shim). Then run the eye check
+  (`python3 compose/eyecheck.py <pdf> --report=<fit-report.json>`) and send only when
+  `python3 compose/eyecheck.py --verify <pdf>` says SENDABLE (STYLE-GUIDE §7). A FLAG writes
+  `<name>.FAILED.pdf` and leaves the proof path untouched. After the PDF, write previews at 200 dpi:
+  `pdftoppm -r 200 -png <pdf> issues/<date>/preview` (eyecheck also writes these). `render.py` will also refuse to write
   into an APPROVED issue folder (same rule as `write_issue`); use `--force` or a path outside
   that folder for a trial. `--report` / `--fit-report` write measurements to JSON.
 - Composer: start from `compose/recipe_template.py`, copy to `issues/<date>/recipe/compose.py`.
   An issue whose `issue.json` status starts with APPROVED is frozen; in-place compose needs `--force`
-  or `--out=PATH` for a trial. Published Nos. 1–6 stay frozen.
+  or `--out=PATH` for a trial. Published Nos. 1–7 stay frozen.
 - Site `issues.json` `pdf` field and the Download button must point at that filename so browsers save the unique name.
 - PDF Author field (when set): **Nico's Dad** (Frank's joke byline).
 

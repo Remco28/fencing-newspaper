@@ -1,21 +1,32 @@
 # Standalone budget page
 
-> **2026-11-16: the page is now the Budget spread** (`pageVersion: budget-paper-v2` (Budget version 2; Auto / Manual placement)). Same builder, same one-file page, same
-> ingest. What Frank sees changed: the two pages of the issue with each included item as a block sized by the capacity model,
+> **The page is the Budget spread** (`pageVersion: budget-paper-v2`; Budget version 2, with v2.1 Manual
+> placement as of 2026-11-17). Always called **Budget**, never Dummy. Same builder, same one-file page, same ingest.
+> What Frank sees: the two pages of the issue with each included item as a block sized by the capacity model,
 > a bank of what isn't running, hatched holes for unfilled space (column-inches and words), and a slip per item (click or tap).
+> A page that oversets hangs the overflow in red below a trim line (a spill well), with the overset in col-in and ≈words.
 > Desktop: drag between the bank and the pages. Phone: open the slip and use Page 1 / Page 2 / Bank.
 > - **Sign off the budget** shows the submission JSON; Download or Copy, then ingest as before.
-> - New optional submission fields: `publishDateAlt` (YYYY-MM-DD or null), `budgetVersion`, `dataVersion`, `pages`
+> - Placement is **Auto** by default (the packer places and sizes blocks). A header switch freezes the current layout
+>   into **Manual**: nothing re-packs on its own. Grab a block anywhere (a photo moves like any block — the browser's
+>   own image drag is off in Manual); a dashed outline shows the snapped landing spot and the pages stay still while
+>   you drag. Releasing over the bank, or anywhere left of page 1, takes the block off the pages; Esc cancels. Width
+>   and height handles, Wide/Tall, and Expand/Shrink/Clear change only that block. Overlapping blocks get a red outline
+>   and a banner (warnings only — nothing is auto-fixed). Undo goes back up to 40 steps; Back to Auto asks first.
+> - Each block is a frame. Text re-flows on a new width, and its bottom edge asks Clark for the length that fills the
+>   frame. Photos and comics keep their shape and are scaled to fit the frame, never cropped; depth is free on the
+>   0.05 in grid. The slip has Smaller, Bigger and Natural size buttons. The 2.2 in photo guide and the 4.5 in hard
+>   cap are notes on the slip, not a Manual resize limit. Sections with a tall/wide variant (from
+>   `scripts/budget_page/layouts.json`, inlined by the builder; compose/ does not yet expose a registry) switch on
+>   the block. On a phone, the slip has the same controls.
+> - Optional submission fields: `publishDateAlt` (YYYY-MM-DD or null), `budgetVersion`, `dataVersion`, `pages`
 >   (`{slots: {slotKey: 1|2 or {page, span, widthIn, heightIn}}, photos: {mediaId: same}}` — a bare 1|2 means page only;
->   the object is used when art was resized), `resize` (`{slotKey: {direction: 'expand'|'shrink', target, ...}}`), and
->   `layout` (`{slotKey|mediaId: 'wide'|'tall'}`, names shared with compose/). Ingest records them on the decision when
->   present and never requires them. A stale `budgetVersion` does not block an ingest. Older submissions without these
->   fields still ingest.
-> - A page that oversets hangs the overflow in red below a trim line, with the overset in col-in and ≈words, live as
->   blocks are dragged or resized. Photos and comics have a corner handle (aspect locked, snaps to 1/2/3 columns, size
->   in inches). Stories have a bottom handle to grow or shrink estimated length. Sections with a tall/wide variant
->   (from `scripts/budget_page/layouts.json`, inlined by the builder; compose/ does not yet expose a registry) switch
->   on the block. On a phone, the slip has the same controls.
+>   the object is used when art was resized), `resize` (`{slotKey: {direction: 'expand'|'shrink', target, ...}}`),
+>   `layout` (`{slotKey|mediaId: 'wide'|'tall'}`, names shared with compose/), `mode` (`'auto'|'manual'`), and, when
+>   manual, `manualLayout` (`{slotKey|mediaId: {page, col, span, topIn, heightIn}}`; `col` is 0-based). Ingest records
+>   them on the decision when present and never requires them. A stale `budgetVersion` does not block an ingest.
+>   Older submissions without these fields still ingest. Overlaps and overset in a manual layout are warnings, never
+>   silently fixed. Compose does not yet pack from `manualLayout` (Clark matches it by hand; see `compose/README.md`).
 > - User-facing copy says “Clark” (or “Clark Kent” / “layout editor”), not “desk”. Internal ids and CSS classes (`desk`,
 >   `data-tab="desk"`) are unchanged. “Desktop” (the computer) is unchanged.
 > - Thumbnails in the standalone HTML are small B&W JPEGs inlined as data-URIs by the builder (CSP `default-src 'none'`;
@@ -30,8 +41,10 @@
 > - Photo vets in `vets` are written to `media/manifest.json` (vetted, vetted_at, vetted_by, vet_notes) so the next build — and
 >   next week — shows the photo already vetted. An unvetted photo is never auto-queued: not from a lineup `proposed` flag, not
 >   from last sitting's `photoIncludes`, and not in the submission's `photoIncludes`.
-> - Tests: `python3 scripts/tests/test_budget_page.py`, `python3 scripts/tests/test_section_history.py`
->   (optional Chrome check: `python3 scripts/tests/smoke_budget_chrome.py PAGE.html [SCREENSHOT_DIR]`).
+> - Tests use the frozen No. 7 snapshot in `scripts/tests/fixtures/` (never live staging):
+>   `python3 scripts/tests/test_budget_page.py`, `python3 scripts/tests/test_section_history.py`,
+>   `python3 scripts/tests/test_budget_interactions.py` (headless Chrome, real pointer events, including Manual;
+>   skipped without Playwright). Optional smoke: `python3 scripts/tests/smoke_budget_chrome.py PAGE.html [SCREENSHOT_DIR]`.
 
 One self-contained `.html` file Frank opens on his laptop or phone. It works offline, needs no server,
 and makes no network requests (a CSP `default-src 'none'` blocks them). It replaces the tunnel and server
@@ -40,7 +53,12 @@ for the weekly budget. `practice.html` + `server.py` still work and are kept as 
 Requirements: `STANDALONE-REQUIREMENTS.md`. Code: `scripts/build_budget_html.py` (generator),
 `scripts/budget_page/` (page template, CSS, `core.js` logic, `ui.js`), and `scripts/ingest_budget_submission.py`.
 
-## 1. Monday routine: generate the page
+## 1. Generate the page
+
+Usual moment is the Monday full pass, but the weekly rhythm (Frank, 2026-11-17) is: curate through
+the week, Clark preps sections ahead, and generate the Budget when it is ready. Auto placement is
+the default; Frank uses Manual only for final layout tweaks or to push one layout harder.
+
 
 After the lineup (`budget-demo/practice-lineup.json`, schema 2, unchanged) is written for the week:
 
@@ -87,8 +105,10 @@ Open the file in any browser. On a phone, open it from Files/Downloads.
   you should submit again.
 
 The payload has the same shape as the server's `/submit` (publishDate, practice, pretend, targetWeek,
-issue, includedSlots, excludedSlots, photoIncludes, notes, slotNotes, answers, order, pageVersion
-`budget-standalone-v1`, and submittedAt with a local offset), plus `vets: [{id, vet_notes}]`.
+issue, includedSlots, excludedSlots, photoIncludes, notes, slotNotes, answers, order, and submittedAt
+with a local offset), plus `vets: [{id, vet_notes}]`. `pageVersion` is `budget-paper-v2`. Optional
+Budget fields (`publishDateAlt`, `budgetVersion`, `dataVersion`, `pages`, `resize`, `layout`, `mode`,
+`manualLayout`) are included when set; see the callout above.
 
 ## 3. Clark: ingest the submission
 
@@ -106,11 +126,16 @@ This does what `server.py` did for `/submit` + `/vet`:
   time, as the server stamped it. The page's own time is kept as `clientSubmittedAt`.
 - for each `vets` entry, sets `vetted`, `vetted_at`, `vetted_by: "frank"` and `vet_notes` on the item in
   `<staging-week>/items.json`, and appends the vet-log line to both `vet-log.jsonl` files (`source:
-  "budget-page-standalone"`).
-- reports ids not in items.json as "not found" (for example, a photo's media id; the manifest isn't
-  changed, as with the server). The vet is still recorded in approvals.json.
+  "budget-page-standalone"`). A photo's media id is not in items.json: the same fields are written to
+  `<staging-week>/media/manifest.json` and logged with kind `"media"`, so the next build — and next
+  week — shows the photo already vetted.
+- reports ids found in neither items.json nor the media manifest as "not found". The vet is still
+  recorded in approvals.json.
+- refuses (exit 4, writes nothing) if an included slot's item, or a photo in `photoIncludes`, is in
+  staging and still unvetted after this submission's vets are applied. Missing ids from an older
+  issue stay warnings.
 - prints a summary: issue, publish date, included slots, vets applied/not found, answers, notes, and
-  warnings (for example, an included item that isn't vetted).
+  warnings (overlaps or overset in a manual layout are warnings, never silently fixed).
 
 Flags: `--staging-week`, `--submissions`, `--lineup` (defaults follow `GAZETTE_STAGING_WEEK`,
 `GAZETTE_SUBMISSIONS` and `GAZETTE_LINEUP`, as in server.py), `--now ISO` (for tests), `--dry-run`, and
@@ -159,6 +184,6 @@ items or the lineup: close questions, add rows and update facts by hand, then re
 ## Notes (Oct 26 follow-up)
 
 - The headline counter counts items only ("3 need vet"); photos are shown separately ("4 photos"). Photos can still be vetted on the page.
-- Ingest: photo vets (media ids) are recorded in `approvals.json` and the vet log; like the old `/vet` flow, `items.json` and the media manifest are not changed for photos.
+- Ingest: photo vets (media ids) are written to `media/manifest.json` (vetted, vetted_at, vetted_by, vet_notes) as well as `approvals.json` and the vet log, so they persist into the next build and the next week.
 - Ingest appends vet notes to an item's existing `vet_notes` as `[YYYY-MM-DD] Frank: <note>` on a new line instead of replacing them.
 - Output name: `budget-no-<N>-<date>-v<K>.html`. K is the per-week budget version, kept with Frank's decision log in `<staging-week>/budget-versions.json`. The page starts from the latest ingested decisions and shows "Budget vK · decisions captured through <time ET>". Rebuilding unchanged data keeps K. `--preview` writes `-preview.html` without a number. `--out` still overrides. The build stops if a submission JSON for this issue is waiting un-ingested (uploads, ~/Downloads, `budget-demo/submissions/inbox/`).

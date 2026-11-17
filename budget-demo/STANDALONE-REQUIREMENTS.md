@@ -1,5 +1,13 @@
 # Standalone budget page — requirements (Frank-approved 2026-10-26)
 
+> **Historical brief.** This is the original 2026-10-26 standalone-page brief. Current behavior —
+> the Budget spread (`pageVersion: budget-paper-v2`), Auto / Manual placement, photo vets written
+> to `media/manifest.json`, ingest exit 4 on unvetted includes, and the weekly generate / submit /
+> ingest routine — lives in **STANDALONE-README.md**. Do not treat constraints here that have since
+> changed (for example “do not write photo vets to the manifest”, or `pageVersion` `budget-standalone-v1`)
+> as current. The fallback rule still holds: do not break `practice.html` or `server.py`.
+
+
 ## Why
 Frank reviews the Gazette budget each week. The box cannot expose a tunnel (only outbound 443), so the
 page must be ONE self-contained `.html` file Frank opens on his own laptop or phone — offline, no server,

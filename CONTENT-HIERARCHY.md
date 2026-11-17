@@ -58,7 +58,7 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
   caption OK. Not a standing Fencing-101 category. Can absorb slack, but grows only within its span.
 - **Weekly Classes table:** not a weekly slot. Runs only when the schedule changed or something special
   needs it; otherwise a one-line note in Club events (Cut order step 1). Left out of No. 2.
-- **Photo desk** (budget page, not a print slot): thumbnails + multi-select → `photoIncludes`.
+- **Photos on the Budget** (not a print slot): photos sit as blocks on the two-page spread or in the bank; included IDs → `photoIncludes`. Unvetted photos cannot be placed and are never auto-queued.
 - **Page 1 vs page 2:** priority order, **not** page assignment. Compose judgment places material so both
   pages fill (No. 2 ran an Overheard on page 1 and the TV box on page 2).
 

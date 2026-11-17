@@ -80,7 +80,7 @@ Legend: ✅ fits now · 🔶 rotation/special · ❌ skip for v1 (reason).
 41. Jokes / riddles ❌ (cut — locked verdict) — 1 fencing one-liner ("Why did the epeeist bring a ladder?…"). Kids clip these.
 42. Spot-the-difference / maze 🔶 — piste maze SVG. Monthly special, toner-cheap if line art.
 43. Caption contest — ❌ skip (needs submissions; editor-only policy).
-44. Photo page — ❌ skip as a full print section v1; **Photo desk on budget page (v3.4)** shows visible thumbs + multi-select for a few B&W includes (`photoIncludes`).
+44. Photo page — ❌ skip as a full print section v1; photos are chosen on the **Budget** spread (blocks on the pages or in the bank; `photoIncludes`). (v3.4 called this the photo desk.)
 
 ## Milestones / people
 45. Milestones (birthdays/ratings) 🔶 — "new E26: Name" from emailed results. Ratings earned = beloved. Small box.

@@ -44,7 +44,7 @@ boxes (`box_table(shape=)`), photo pair (`photo_pair()`) vs float, rail vs full 
 `recipe/arrangement.json` names the one the proof uses.
 
 - `x` loads the issue's `recipe/overrides.json`, as before.
-- An issue whose `issue.json` status starts with APPROVED is frozen. Composing it in place needs `--force`, or `--out=PATH` to write a trial copy somewhere else. `render.py` uses the same rule for the PDF path. Published Nos. 1–6 stay frozen.
+- An issue whose `issue.json` status starts with APPROVED is frozen. Composing it in place needs `--force`, or `--out=PATH` to write a trial copy somewhere else. `render.py` uses the same rule for the PDF path. Published Nos. 1–7 stay frozen.
 - Previews are 200 dpi (STYLE-GUIDE §7).
 - Fitting is on by default when the HTML has `[data-art]` slots (`--no-fit` skips it). `--fit-report=FILE.json` writes the art decisions; `--report` includes them under `art_fit`.
 
@@ -100,8 +100,7 @@ submission and on the decision log ingest writes to `budget-versions.json`:
   reports overlaps and overset as warnings and does not move them.
 
 The existing `pages`, `resize`, and `layout` fields still apply. `manualLayout` is the frozen
-geometry Frank set in Manual placement. Compose should be able to read it later and honor those
-positions instead of auto-packing those slots. **This pass does not change the compose pipeline**
-(`gazette.py`, `render.py`, issue recipes, or packing). Leave Auto-composed issues as they are
-until a later change teaches the composer to apply `manualLayout`.
+geometry Frank set in Manual placement. **Compose does not yet read `manualLayout`.** Until a
+later change teaches the composer to honor those positions, Clark matches a Manual budget by
+hand when composing the proof, and flags anything that will not fit instead of moving it.
 

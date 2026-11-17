@@ -5,7 +5,7 @@ PLAN.md owns the narrative + decision list; this file owns the pipeline names, i
 schema, vetting rules, folder layout, and **ops cadence / gather loop**. On conflict,
 this file wins for pipeline topics.
 
-Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** pretend UX locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7); **ops cadence / gather loop** locked 2026-10-07 (plan v3.15; wording v3.19); **email trust allowlist** locked 2026-10-07 (plan v3.17); **Parent Q&A category** locked 2026-10-07 (plan v3.18); **first-real-run decisions** (slot-note override, scraped registrations unvetted, chat spellings, proof round, week roll-forward) locked 2026-10-07 (plan v3.20).
+Locked 2026-10-06 late evening (plan v3.3); scoreboard cut noted in v3.4; **email media extract** first pass locked 2026-10-06 night (v3.5); **budget-page Vet + notes** locked 2026-10-07 (v3.6); **AgentMail processed-mail labels** locked 2026-10-07 (v3.7); **ops cadence / gather loop** locked 2026-10-07 (plan v3.15; wording v3.19); **email trust allowlist** locked 2026-10-07 (plan v3.17); **Parent Q&A category** locked 2026-10-07 (plan v3.18); **first-real-run decisions** (slot-note override, scraped registrations unvetted, chat spellings, proof round, week roll-forward) locked 2026-10-07 (plan v3.20); **Budget spread** adopted 2026-11-16 (`budget-paper-v1`, then `budget-paper-v2` Auto/Manual on 2026-11-17); **weekly Budget rhythm** locked 2026-11-17 (Frank).
 
 ## Pipeline (formal names)
 
@@ -21,54 +21,57 @@ Locked 2026-10-06 late evening (plan v3.3); photo desk + scoreboard cut noted in
    form (FencingTracker / AskFRED / registration). Print Frank’s spelling; add the scraped
    form to that person’s `aliases` in `roster/people.json` as a scrape variant (e.g.
    “Anayaà Sheth” → “Anayaa Sheth”).
-3. **Budget** — local HTML page on Musketeer's computer. Proposed lineup vs
-   CONTENT-HIERARCHY.md. **Include only vetted** items in the proposed sheet;
-   unvetted items may appear on the page labeled **UNVETTED** but are blocked from
-   Include until Frank vets them. **Vetting UX (v3.6):** primary path is **Vet + notes
-   on the budget page** (staging inbox, lineup cards, photo desk). Notes field =
-   “Why this matters / what the bot should know”; stored on the staging item as
-   `vet_notes` (alias `notes` accepted on POST `/vet`). Chat promote / forward-from-
-   frank remain OK as alternates. **Photo desk:** visible image thumbnails with
-   multi-select Include checkboxes (gated until vetted); selected IDs →
-   `photoIncludes` in the submit JSON. Submit → timestamped budget JSON + overwrite
-   `approvals.json`. Vet → update `staging/weeks/next/items.json` + append
-   `vet-log.jsonl`. Chat is doorbell only for budget/proof readiness.
-   **Budget server workflow (2026-10-07):** Clark Kent serves the budget page on its own
-   computer: `cd budget-demo && nohup python3 server.py &` → `http://127.0.0.1:8766/` (keep port
-   8766; restart on the same port). Clark opens it in its desktop browser; Frank reviews / Vets /
-   Submits there via the Clark Kent computer tab — or answers in chat and Clark applies the
-   answers to staging + the lineup. Chat stays doorbell ("budget ready").
-   **Practice budget v2 (v3.21, 2026-10-07):** `budget-demo/practice.html` renders Clark's proposed
-   lineup (`budget-demo/practice-lineup.json`, `"schema": 2`) against live staging
-   (`items.json` + `media/manifest.json`). Built for Frank's 1280×800 remote-desktop view: fixed
-   left bar (issue, publish-day field, rough fit meter, Included / Need Vet / Questions counts,
-   jump nav, Submit), then sections in reading order — Lead & features · Club · Shorts & fill ·
-   Photos · Held, merged & next week. One card per slot: headline, one-line summary, words/rows +
-   budget, badges, red **Questions for Frank** answer boxes, Include toggle, note box, Vet button,
-   ↑/↓ reorder; draft text and provenance are collapsed and built only when opened. Thumbnails come
-   from `GET /thumb/<file>?w=…&bw=1` (small cached B&W JPEGs). No animations or shadows (remote lag).
-   **Monday routine:** to build the budget, rewrite `practice-lineup.json` for the coming issue:
-   `issue` {number, label, week}, `publish` {date, label, alt, why}, `desk_summary` (3–5 plain
-   lines), `sections`, `slots` [{key, section, slot, budget, item | empty+why, proposed, cost,
-   summary, questions[], flags[], title?, panels?/table?, thumb?, merged?, waiting?}], `photos`
-   [{id (manifest id), proposed, span, note}], `held`, `not_proposed`, `seed_ids`, `capacity`. Any
-   staging item the file doesn't mention still shows up (auto-placed by `slot_hint`, not proposed);
-   an item's `need` list becomes its questions when the slot has none. Then restart the server.
-   Last issue's file is kept under `budget-demo/archive/`. Submit JSON keeps the v1 keys
-   (`publishDate`, `includedSlots`, `excludedSlots`, `photoIncludes`, `notes`, `slotNotes`,
-   `order`) and adds `answers` [{slot, itemId, question, answer}] — **apply Frank's answers like
-   chat answers** (provenance “budget: Frank YYYY-MM-DD”). Vet on a card saves that card's note as
-   `vet_notes`. Test against a throwaway copy with `GAZETTE_STAGING_WEEK`, `GAZETTE_SUBMISSIONS`,
-   `GAZETTE_PORT` (see `server.py`), never the real pile. Screens:
-   `python3 budget-demo/screenshot.py <url> budget-demo/screens/<name> 1280 800`. Old pretend demo
-   still at `/demo`.
+3. **Budget** — one self-contained HTML file Frank opens on his laptop or phone
+   (offline, no server). Built by `python3 scripts/build_budget_html.py` into
+   `budget-demo/out/budget-no-<N>-<date>-v<K>.html` (gitignored; send the file, don't
+   commit it). Proposed lineup vs CONTENT-HIERARCHY.md, shown as the two pages of the
+   issue: included items are blocks sized by the capacity model, a **bank** holds what
+   isn't running, hatched holes mark unfilled space, and overflow hangs past a red trim
+   line (visual overset, with a spill well). `pageVersion` is `budget-paper-v2`.
+   User-facing copy says **Clark** / **Clark Kent**, never “desk”. Always called
+   **Budget**, never Dummy. Detail: **budget-demo/STANDALONE-README.md**.
+   **Include only vetted** items and photos. Unvetted work stays in the bank (drag and
+   the Page 1 / Page 2 buttons are disabled) until Frank vets it on the slip. A vet in
+   the same submission is enough. Ingest refuses (exit 4) a submission that includes an
+   unvetted staging item or photo. Photo vets are written to `media/manifest.json` and
+   persist into next week; an unvetted photo is never auto-queued.
+   **Vetting UX (v3.6, still the primary path):** **Vet + notes on the Budget page**.
+   Notes field = “Why this matters / what the bot should know”; stored on the staging
+   item as `vet_notes`. Chat promote / forward-from-frank remain OK as alternates.
+   **Placement:** Auto is the default (the packer places and sizes blocks). A Manual
+   switch freezes the current layout: drag blocks on the grid (dashed landing outline;
+   drop on the bank or left of page 1 to remove), resize only that block, Wide/Tall
+   variants (`layouts.json`), Expand/Shrink/Clear, framed photos that scale to fit and
+   are never cropped. Overlaps warn; nothing is auto-fixed. Undo is stacked; Back to
+   Auto asks first.
+   **Weekly rhythm (Frank, 2026-11-17):** curate through the week; Clark preps sections
+   ahead; when ready, generate the Budget, then Frank modifies and adds. Nothing about
+   that changes until Frank wants final layout tweaks, or wants to push one layout
+   harder — that is what Manual is for. Then Clark composes the proof (v3 process, eye
+   check) from the approved budget. A Manual layout is saved as `mode` + `manualLayout`;
+   compose does not yet pack from it, so Clark matches it by hand and flags anything
+   that will not fit.
+   Submit → download/copy JSON → ingest (`scripts/ingest_budget_submission.py`) writes a
+   timestamped budget JSON, `approvals.json`, vets (items + photo manifest), and a
+   decision in `budget-versions.json`. Chat is doorbell only for budget/proof readiness.
+   **Lineup:** rewrite `budget-demo/practice-lineup.json` (schema 2) for the coming
+   issue, then build the standalone page. Last issue's lineup is kept under
+   `budget-demo/archive/`. Apply Frank's answers like chat answers (provenance
+   “budget: Frank YYYY-MM-DD”).
+   **Fallback:** `practice.html` + `server.py` (`http://127.0.0.1:8766/`) still work if
+   the standalone file cannot be used. The old pretend demo is at `/demo`. Test a server
+   run against a throwaway copy (`GAZETTE_STAGING_WEEK`, `GAZETTE_SUBMISSIONS`,
+   `GAZETTE_PORT`), never the real pile.
    **Slot note beats the date field (v3.20):** if Frank’s budget submission carries a slot
    note or general note that names a publish day (e.g. “We are publishing this Thursday
    (tomorrow)”), that note **overrides** the `publishDate` field; the issue folder and dateline
    follow the note. Record the override in `issue.json`.
    Scoreboard strip is **cut** from the live hierarchy (v3.4); may return later as
    "headline wire" — do not treat it as a current Budget slot.
-4. **Proof** — rendered PDF; second approve gate. (Optional Claude Code copy check after vetting and PNG proof check: see § Claude Code, v3.36.) Nothing prints without both
+4. **Proof** — rendered PDF; second approve gate. Every proof goes through the eye check
+   (`compose/eyecheck.py`; `--verify` is the send gate) and Clark opens every preview
+   himself before it goes to Frank (STYLE-GUIDE §7; the proof v3 process used on No. 7).
+   (Optional Claude Code copy check after vetting and PNG proof check: see § Claude Code, v3.36.) Nothing prints without both
    budget + proof approval.
    **Proof round (v3.20 — as run for Issue No. 1):**
    proof **v1** → “proof ready” doorbell with previews + open flags (Clark fill list Frank can
@@ -129,8 +132,8 @@ On ingest from AgentMail (planned automation; first manual pass done 2026-10-06)
    - social icons (Instagram, website, Mailchimp monkey, etc. — known icon hosts)
    - tiny logos / brand marks under ~80px (or obvious logo assets)
 3. **Store** under `staging/weeks/<target>/media/` with a `manifest.json` (or per-item records) carrying provenance: `message_id`, `url` or attachment id, `from`, `vetted`, `kind: photo`, caption.
-4. **Budget photo desk** reads from that media folder (thumbs visible). Demo server maps `/staging-media/*` → `staging/weeks/next/media/`.
-5. Until this pass, the pretend budget demo used **synthetic PNGs** under `budget-demo/photos/` only. Those remain as clearly labeled **PRETEND** placeholders for multi-select UX; real photos from Frank’s test mail now lead the desk.
+4. **The Budget page** reads photos from that media folder (thumbnails on the spread and in the bank). The fallback demo server maps `/staging-media/*` → `staging/weeks/next/media/`.
+5. Until this pass, the pretend budget demo used **synthetic PNGs** under `budget-demo/photos/` only. Those remain as clearly labeled **PRETEND** placeholders; real photos from Frank’s test mail now lead the photo bank.
 
 Auto-vet allowlist still applies (see § Tips / mail): Frank Gmail, chunkymonkey, club Mailchimp → `vetted: true`.
 
@@ -162,8 +165,9 @@ SOURCES.md owns *what* to fetch; this section owns *how often*. Times = US Easte
 
 ### Publish gates (reminder)
 **Budget HTML → Frank approve → Clark Kent compose → Proof PDF → Frank approve → print.**
+Weekly rhythm (Frank, 2026-11-17): curate through the week, Clark preps sections ahead, generate the Budget (Auto default), Frank modifies and adds; Manual only for final layout tweaks or to push one layout harder; then compose, eye-check, Frank approves, publish.
 Every printed fact keeps provenance in `sources.json` (URL + retrieved date, or email/chat message-ID + date, or logged API/fetch). Chat is doorbell only for “budget ready” / “proof ready.”
-Compose with the shared Template A helpers in `compose/` (copy `compose/recipe_template.py` to `issues/<date>/recipe/compose.py`; see `compose/README.md`). Render with `python3 compose/render.py` and write 200 dpi previews. An issue whose `issue.json` status starts with APPROVED is frozen — in-place compose needs `--force`. Published Nos. 1–6 stay frozen.
+Compose with the shared Template A helpers in `compose/` (copy `compose/recipe_template.py` to `issues/<date>/recipe/compose.py`; see `compose/README.md`). Render with `python3 compose/render.py`, run `python3 compose/eyecheck.py` (and `--verify` before sending), and write 200 dpi previews. Clark also opens every preview himself. An issue whose `issue.json` status starts with APPROVED is frozen — in-place compose needs `--force`. Published Nos. 1–7 stay frozen. If Frank submitted a Manual layout, match `manualLayout` by hand — compose does not yet pack from it.
 
 ### Reality / provenance (locked 2026-10-07 — plan v3.16)
 - **Real issues invent nothing.** Sample/layout fiction stays labeled (`sample`, `pretend`, `demo`) and must not be promoted as fact.
@@ -221,7 +225,7 @@ Each staging item is one record (JSON object or equivalent). Fields:
 | `word_count` / `row_count` | number? | Filled/checked in Clean |
 | `created_at` | string | ISO timestamp |
 
-Educational illustrations / figures (Frank assets): stage as **`kind: other`** with `media_path` (SVG preferred) + tags `illustration` / `figure`; `suggested_slot` e.g. `back_page_feature`; default **`columns` / `span`: 2** (not 3 / not full-bleed) unless Frank widens it. Do not use `photo` (photo desk) or `comic` (gag panel) unless that is what they are.
+Educational illustrations / figures (Frank assets): stage as **`kind: other`** with `media_path` (SVG preferred) + tags `illustration` / `figure`; `suggested_slot` e.g. `back_page_feature`; default **`columns` / `span`: 2** (not 3 / not full-bleed) unless Frank widens it. Do not use `photo` (Budget photo) or `comic` (gag panel) unless that is what they are.
 
 Promotion / vet paths (any one is enough):
 - **Budget-page Vet + notes (preferred UX):** Frank hits **Vet** on an UNVETTED row/card/photo, adds `vet_notes`, Include unlocks. Demo: `POST /vet` → `staging/weeks/next/items.json` + `vet-log.jsonl`.
@@ -239,6 +243,7 @@ staging/
     next/                # default dump when publish date not yet chosen
       items.json           # (demo) staging items; items.jsonl OK when ingest ships
       vet-log.jsonl        # append-only Vet actions from budget page / tools
+      budget-versions.json # per-week Budget version counter + Frank's decision log
       media/
     after-next/          # hold for the issue after `next`; same layout as next/
 
@@ -274,7 +279,7 @@ the tree above is the layout lock.
 - Ops gather loop (email/self-gather timing) → this file § Ops cadence; fetch list → SOURCES.md
 - Slot order + budgets + cut/stretch → CONTENT-HIERARCHY.md (visual scale → STYLE-GUIDE §4/§11)
 - Fetch checklist → SOURCES.md
-- Approvals UX (budget + proof, chat doorbell, photo desk) → PLAN.md § Approval design
+- Approvals UX (budget + proof, chat doorbell) → this file § Budget; **budget-demo/STANDALONE-README.md**; PLAN.md § Approval design
 - Slot order (scoreboard cut v3.4) → CONTENT-HIERARCHY.md
 
 ## Printed-page archive whisper (2026-10-15)

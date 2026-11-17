@@ -1,6 +1,8 @@
 # Fencing Newspaper — Plan v3.30
 Date: 2026-10-07
-Status: **Site v5: landscape mobile desk + play area, wrapping top bar** (v3.42) + **Desk shows newest + 2 recent + random back catalogue** (v3.41, `site/js/pick-issues.js`) + **Photo from History pile** (v3.37) + **Claude Code optional second reviewer** (v3.36) + **No. 3 budget built Sun Oct 18** (v3.35: By the Book written by Clark from rulebook; names = official pages; pending entries print) + **fencing-api supplemental cross-check** (v3.34: alongside direct checks; daily/Wed/Mon/pre-budget) + **No. 2 proof v2 APPROVED for print (Frank, 12:48 ET)** (v3.32: Deadlines box, Nearby Tournaments, new right flank from No. 2) + **"Controversial Calls" occasional section** (v3.30: triggered by a real disputed call; call / rule / both sides / verdict; Dear Ref back to MAYBE) + **Frank's hierarchy answers** (v3.28: no fixed lengths; Overheard only when good; Deadlines every issue next to the local board; "Go Cheer" renamed **"Nearby Tournaments"** (v3.29); "For the Parents" final; Dear Ref MAYBE (v3.30)) + **CONTENT-HIERARCHY reviewed** (v3.27: renumbered, sources updated, standing elements + planned features split out, open questions listed) + **"For the Parents" recurring box** (v3.26: one practical item for non-fencing parents per issue; start issue open) + **"By the Book" recurring section** (v3.25: one USA Fencing rule/penalty per issue; awaiting Frank's material) + **FencingTracker recurring source** (v3.24: daily club-page look, Wed skim, Monday full sweep — SOURCES.md § FencingTracker) + **results tone LOCKED** (v3.23: strong finishes only, no "also fenced" line since 2026-10-20 — STYLE-GUIDE §0d, `sections.json`) + **X as a lead source** (v3.22: read-only `x` tools, vetted list `sources/x-accounts.md`, rules in SOURCES.md § X) + **budget page v2** (v3.21: 1280×800 reading layout, questions for Frank, `answers` in submit) + **sample taste LOCKED** (v3.14) + **ops cadence LOCKED** (v3.15; wording v3.19) + **reality/provenance LOCKED** (v3.16) + **email trust allowlist LOCKED** (v3.17) + **Parent Q&A category LOCKED** (v3.18) + **flexible weekly publish LOCKED** (v3.19) + **first-real-run decisions LOCKED** (v3.20: epee-assumed labels, content-heavy cut order, proof round). **Issue No. 1 published** (`issues/2026-10-08/`, Thursday Edition, approved by Frank 2026-10-07 18:40 ET). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + publish-morning full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Next: Issue No. 2 (week of Oct 12; THE WEAPON at span 2). Prior: v3.20 first-real-run decisions; v3.19 drop Mon/Thu split / flexible weekly; v3.18 Parent Q&A; v3.17 email trust; v3.16 reality lock; v3.14 taste lock.
+Status: **Site v5: landscape mobile desk + play area, wrapping top bar** (v3.42) + **Desk shows newest + 2 recent + random back catalogue** (v3.41, `site/js/pick-issues.js`) + **Photo from History pile** (v3.37) + **Claude Code optional second reviewer** (v3.36) + **No. 3 budget built Sun Oct 18** (v3.35: By the Book written by Clark from rulebook; names = official pages; pending entries print) + **fencing-api supplemental cross-check** (v3.34: alongside direct checks; daily/Wed/Mon/pre-budget) + **No. 2 proof v2 APPROVED for print (Frank, 12:48 ET)** (v3.32: Deadlines box, Nearby Tournaments, new right flank from No. 2) + **"Controversial Calls" occasional section** (v3.30: triggered by a real disputed call; call / rule / both sides / verdict; Dear Ref back to MAYBE) + **Frank's hierarchy answers** (v3.28: no fixed lengths; Overheard only when good; Deadlines every issue next to the local board; "Go Cheer" renamed **"Nearby Tournaments"** (v3.29); "For the Parents" final; Dear Ref MAYBE (v3.30)) + **CONTENT-HIERARCHY reviewed** (v3.27: renumbered, sources updated, standing elements + planned features split out, open questions listed) + **"For the Parents" recurring box** (v3.26: one practical item for non-fencing parents per issue; start issue open) + **"By the Book" recurring section** (v3.25: one USA Fencing rule/penalty per issue; awaiting Frank's material) + **FencingTracker recurring source** (v3.24: daily club-page look, Wed skim, Monday full sweep — SOURCES.md § FencingTracker) + **results tone LOCKED** (v3.23: strong finishes only, no "also fenced" line since 2026-10-20 — STYLE-GUIDE §0d, `sections.json`) + **X as a lead source** (v3.22: read-only `x` tools, vetted list `sources/x-accounts.md`, rules in SOURCES.md § X) + **budget page v2** (v3.21: 1280×800 reading layout, questions for Frank, `answers` in submit) + **sample taste LOCKED** (v3.14) + **ops cadence LOCKED** (v3.15; wording v3.19) + **reality/provenance LOCKED** (v3.16) + **email trust allowlist LOCKED** (v3.17) + **Parent Q&A category LOCKED** (v3.18) + **flexible weekly publish LOCKED** (v3.19) + **first-real-run decisions LOCKED** (v3.20: epee-assumed labels, content-heavy cut order, proof round). **Issue No. 1 published** (`issues/2026-10-08/`, Thursday Edition, approved by Frank 2026-10-07 18:40 ET). Reference sheet `issues/2026-10-14/` (`paper-v3.14.pdf` / `paper.pdf`, `preview-p1.png`, `preview-p2.png`). Furniture: STYLE-GUIDE §2/§8/§12. Composition/voice: §1a–1b + STYLE-GUIDE §0/§0a. **Gather loop:** STAGING.md § Ops cadence + SOURCES.md cadence header (chat anytime; email daily + pre-budget; Wed skim + publish-morning full pass). **Dynamic layout PAUSED** (deferred future — Template A only). Historical next (as of this status line): Issue No. 2 (week of Oct 12; THE WEAPON at span 2). Prior: v3.20 first-real-run decisions; v3.19 drop Mon/Thu split / flexible weekly; v3.18 Parent Q&A; v3.17 email trust; v3.16 reality lock; v3.14 taste lock.
+
+**Current (2026-11-17):** Issue No. 7 is published. The weekly Budget is the two-page spread (`pageVersion: budget-paper-v2`; Auto default, Manual for final tweaks). Compose follows the proof v3 / eye-check process. Weekly rhythm: curate through the week, Clark preps sections ahead, generate the Budget when ready, Frank modifies; Manual only to push a layout. Detail: CHANGELOG.md v3.49–v3.50, STAGING.md, budget-demo/STANDALONE-README.md, compose/README.md. Next: Issue No. 8.
 Project folder (runner): `/workspace/fencing-newspaper` on Musketeer's computer (Grok Bot box). Frank's earlier `~/Dev/fencing-newspaper` path is historical.
 Durable store: private GitHub `Remco28/fencing-newspaper` (weekly sync; push sooner after a finished issue if you care).
 Work item: office work #21
@@ -140,7 +142,7 @@ Killed (v3.4): **Scoreboard strip** — hard to implement well as big headlines 
 
 **Controversial Calls** (v3.30, chat: Frank 2026-10-13 11:34 ET): occasional article, only when a real disputed call comes up. Structure: the call (verified facts) → the rule (rulebook + penalty guide, brief quotes) → both sides (labeled opinion) → the verdict (what the rules support, or "judgment call"). No naming referees critically; fencers named only with the family's OK; reality lock applies. CONTENT-HIERARCHY § Occasional. Low priority: recruiting notes (only if genuinely good).
 Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coaching tips, foil/saber anything, editorials, long interviews.
-**Photo desk (v3.4–v3.5):** budget page shows actual image thumbnails; Frank multi-selects → `photoIncludes`. **Email media extract (v3.5):** on ingest, save MIME attachments **and** download remote/inline HTML images (skip tracking pixels, social icons, tiny logos <~80px). Store under `staging/weeks/<target>/media/` with provenance (`message_id`, url/attachment id, `from`, `vetted`). Budget desk reads that folder. First pass: 2 real JPEGs from Frank’s forwarded club newsletter; demo still keeps a few labeled PRETEND PNGs for multi-select. Feature was planned earlier; synthetic PNGs only until this pass.
+**Photos on the Budget (since v3.50; started as the v3.4–v3.5 photo desk):** the Budget spread shows actual image thumbnails as blocks on the pages or in the bank; included IDs → `photoIncludes`. **Email media extract (v3.5):** on ingest, save MIME attachments **and** download remote/inline HTML images (skip tracking pixels, social icons, tiny logos <~80px). Store under `staging/weeks/<target>/media/` with provenance (`message_id`, url/attachment id, `from`, `vetted`). The Budget page reads that folder. First pass: 2 real JPEGs from Frank’s forwarded club newsletter; the fallback demo still keeps a few labeled PRETEND PNGs.
 
 ## 4. Layout — Template A rails (V1); patterns TBD
 
@@ -149,7 +151,7 @@ Cut for v1: weather, food, travel, crossword, quiz/trivia, jokes/riddles, coachi
 Rules (rails, not a weekly redesign):
 - Print geometry, type scales, word budgets, and furniture CSS are designed once, print-tested, then frozen. No generative redesign of the shell weekly.
 - Content / layout split: Clark Kent composes into `issue.json` + HTML within locked rails (PLAN §1a); Chromium/WeasyPrint renders `paper.pdf`. Schema + epee-only + word limits still bind. “Fill slots and ship” is a fail — compose for Elite FC.
-- US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art + approved B&W photo picks from photo desk.
+- US Letter, 0.5in margins, B&W-safe: 100% black headlines, no gray text under 10pt, 1–2pt rules, SVG line art + approved B&W photo picks from the Budget.
 - ~600–700 words max per issue.
 - Per-issue folder: `issues/<YYYY-MM-DD>/` (publish date) with `issue.json`, `sources.json`, derived `inputs/`, `approvals.json`, `paper.pdf`. Pre-issue material lives under `staging/weeks/` — see **STAGING.md**. Raw email bodies stay in AgentMail (not in git); cite them by message-ID in `sources.json`.
 
@@ -185,7 +187,7 @@ Still needed: results-app email schema, attachment cap, spam fallback = stage as
 
 - Scheduler: once weekly. **Try Monday or Tuesday** (exact time TBD, US Eastern). Publishing later is OK. Soft preference only: hold for Monday club results when easy.
 - **Ops cadence (locked v3.15; wording v3.19):** chat → staging anytime; email = daily morning light pass + second pass before HTML budget; self-gather = Wed mid-week skim + publish-morning full pass. Canonical: **STAGING.md § Ops cadence** + **SOURCES.md** cadence header.
-- V1 gates: **Budget → Frank approve → Clark compose → Proof → Frank approve → print.** Proof round in practice (v3.20): proof v1 → Frank’s answers → v2 (…) → approval → **Frank prints the PDF himself**. Proof status lives in `issue.json`. Detail: STAGING.md § Proof. Chat is doorbell only for budget/proof readiness. Every fact → `sources.json` provenance. Unvetted tips stay off the sheet until Frank vets. No auto-print until approved.
+- V1 gates: **Budget → Frank approve → Clark compose → Proof → Frank approve → print.** Weekly rhythm (v3.50): curate through the week, generate the Budget when ready (Auto default; Manual for final tweaks). Proof round in practice (v3.20, process as of v3.49): proof v1 → Frank’s answers → v2 (…) → approval → **Frank prints the PDF himself**, with every proof eye-checked and `--verify`'d first. Proof status lives in `issue.json`. Detail: STAGING.md § Proof. Chat is doorbell only for budget/proof readiness. Every fact → `sources.json` provenance. Unvetted tips stay off the sheet until Frank vets. No auto-print until approved.
 - **Claude Code second reviewer (v3.36, Frank 2026-10-18):** optional. (a) copy check after vetting, before budget/compose; (b) proof check of rendered PNGs alongside Clark's visual QA; (c) site/code work. Clark remains the writer and source-of-truth keeper; Claude Code never adds facts. If it's unavailable, skip it; nothing depends on it. Detail: STAGING.md § Claude Code.
 - Later: `lp -d club-printer paper.pdf` auto-print after N clean issues.
 - API keys live in env file on the runner, never in git. Allowlisted inbox only.
@@ -292,29 +294,30 @@ canonical home wins.
 - [ ] 2 dry-run weekly issues with Frank red-pen, then enable scheduled bot
 - [ ] See also: STAGING.md, SOURCES.md, SECTIONS-MENU.md, REDDIT-SETUP.md
 
-## 10. Approval design (locked 2026-10-06; unvetted rule v3.3; photo desk v3.4; email media extract v3.5; Vet+notes v3.6)
-- Primary: LOCAL budget page on Musketeer's computer (Grok Bot box). Stories + **Photo desk**
-  with visible B&W-as-printed thumbnails and Include checkboxes (multi-select → `photoIncludes`).
-  Slot include checkboxes for the lineup. **Only vetted items can be included** in the issue
-  lineup; unvetted tips/photos appear labeled **UNVETTED** with Include disabled until Frank
-  hits **Vet** and (strongly encouraged) adds notes for the bot. Chat promote remains an
-  alternate. Demo: `POST /vet` updates `staging/weeks/next/items.json` + `vet-log.jsonl`.
-  Submit POSTs JSON → timestamped `submissions/budget-*.json` AND overwrites
-  `submissions/approvals.json` (demo) / issue `approvals.json` (prod). Frank works on desktop, never phone.
-- **Where the page runs (2026-10-07):** Clark Kent serves it from its own computer (`budget-demo/server.py`,
-  port 8766: `cd budget-demo && nohup python3 server.py &`) and opens it in Clark's desktop browser; Frank
-  reviews / Vets / Submits through the Clark Kent computer tab, or answers in chat and Clark applies them.
-  Detail: STAGING.md Budget step.
-- **Budget page v2 (v3.21):** redesigned for Frank's 1280×800 remote view — fixed summary bar with
-  Submit, sections in reading order, one card per slot with questions for Frank answered in place
-  (`answers` in the submit JSON), collapsed draft/provenance, small cached thumbnails, no
-  animations. Monday routine rewrites `budget-demo/practice-lineup.json` (schema 2; STAGING.md).
+## 10. Approval design (locked 2026-10-06; unvetted rule v3.3; email media extract v3.5; Vet+notes v3.6; Budget spread v3.50)
+- Primary: a self-contained **Budget** HTML file (`scripts/build_budget_html.py` →
+  `budget-demo/out/budget-no-<N>-<date>-v<K>.html`). Frank opens it on his laptop or phone
+  (offline). It is the two-page paper plus a bank of what isn't running (`pageVersion:
+  budget-paper-v2`). Auto placement is the default; Manual is for final layout tweaks or
+  to push one layout harder. User-facing copy says Clark / Clark Kent, never “desk”.
+  Detail: **budget-demo/STANDALONE-README.md**.
+- **Only vetted items and photos can be placed** on the pages. Unvetted work stays in the
+  bank until Frank hits **Vet** (and, strongly encouraged, adds notes for the bot). Photo
+  vets persist to `media/manifest.json`; unvetted photos are never auto-queued. Ingest
+  refuses unvetted includes (exit 4). Chat promote remains an alternate.
+- Submit downloads/copies JSON; Clark ingests it (`scripts/ingest_budget_submission.py`)
+  to a timestamped `submissions/budget-*.json`, `approvals.json`, and the week's
+  `budget-versions.json`. Optional fields include `pages`, `resize`, `layout`, `mode`, and
+  `manualLayout`. Older submissions still ingest.
+- **Fallback:** `practice.html` + `server.py` (port 8766) still work if the standalone file
+  cannot be used. Lineup schema 2 (`budget-demo/practice-lineup.json`) is unchanged.
 - Chat is DOORBELL only: the bot pings "budget ready" / "proof ready" — no approval state
   lives in chat (chat fragments across messages and forces scroll-to-reference; rejected as
   a surface). Chat *facts* still go to staging (see STAGING.md).
 - Google Form rejected: static templates can't show per-issue photos without regenerating
   the form each time, or force blind approvals.
-- Two gates always: (1) approve the budget, (2) approve the rendered proof. Nothing prints
-  otherwise. Missed message = skipped week, which is fine (low stakes, just for fun).
+- Two gates always: (1) approve the budget, (2) approve the rendered proof (eye-checked,
+  `--verify`'d, and opened by Clark). Nothing prints otherwise. Missed message = skipped
+  week, which is fine (low stakes, just for fun).
 - Reversal = re-render from a previous `approvals.json`. Every render records which file it used.
 - Pipeline detail: **STAGING.md**.
