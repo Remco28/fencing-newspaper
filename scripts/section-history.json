@@ -31,6 +31,11 @@
       "number": 6,
       "date": "2026-11-11",
       "headline": "First Bouts at Medeo #5"
+    },
+    {
+      "number": 7,
+      "date": "2026-11-17",
+      "headline": "Penny Young and Mila Siu Take Bronze"
     }
   ],
   "sections": [
@@ -44,9 +49,10 @@
         3,
         4,
         5,
-        6
+        6,
+        7
       ],
-      "last": 6,
+      "last": 7,
       "evidence": {
         "1": [
           "page-1 headline: “School Fencing Season Starts Nov. 30”"
@@ -65,6 +71,9 @@
         ],
         "6": [
           "page-1 headline: “First Bouts at Medeo #5”"
+        ],
+        "7": [
+          "page-1 headline: “Penny Young and Mila Siu Take Bronze”"
         ]
       }
     },
@@ -103,11 +112,15 @@
       "name": "Ratings Earned",
       "frequency": "when_available",
       "ran": [
-        5
+        5,
+        7
       ],
-      "last": 5,
+      "last": 7,
       "evidence": {
         "5": [
+          "box “Ratings Earned”"
+        ],
+        "7": [
           "box “Ratings Earned”"
         ]
       }
@@ -121,9 +134,10 @@
         2,
         3,
         4,
-        5
+        5,
+        7
       ],
-      "last": 5,
+      "last": 7,
       "evidence": {
         "1": [
           "story: “School Rules Let the Flèche Fly”",
@@ -145,6 +159,11 @@
         ],
         "5": [
           "story: “The Youth Olympics, Explained”"
+        ],
+        "7": [
+          "story: “Three Head to Columbus” (kicker “November NAC”)",
+          "story: “March NAC Comes to Atlantic City” (kicker “March NAC”)",
+          "story: “Hungary Rules World Cup Weekend” (kicker “World Cup”)"
         ]
       }
     },
@@ -199,9 +218,10 @@
         3,
         4,
         5,
-        6
+        6,
+        7
       ],
-      "last": 6,
+      "last": 7,
       "evidence": {
         "1": [
           "box “Go Cheer — Elite FC Entries (All Epee)”"
@@ -220,6 +240,9 @@
         ],
         "6": [
           "box “Nearby Tournaments — Elite FC Entries”"
+        ],
+        "7": [
+          "box “Nearby Tournaments — Elite FC Entries”"
         ]
       }
     },
@@ -232,9 +255,10 @@
         3,
         4,
         5,
-        6
+        6,
+        7
       ],
-      "last": 6,
+      "last": 7,
       "evidence": {
         "2": [
           "box “Deadlines”"
@@ -250,6 +274,9 @@
         ],
         "6": [
           "box “Deadlines”"
+        ],
+        "7": [
+          "box “Deadlines”"
         ]
       }
     },
@@ -262,9 +289,10 @@
         2,
         3,
         4,
-        5
+        5,
+        7
       ],
-      "last": 5,
+      "last": 7,
       "evidence": {
         "1": [
           "box “Weekly Classes at Elite FC”"
@@ -282,6 +310,10 @@
         "5": [
           "headline pattern: “New Friday Class: Youth Intermediate”",
           "budget slot “Club events — Winter Camp”: “Winter Camp: Sign Up Now”"
+        ],
+        "7": [
+          "kicker “Club Events”: “Winter Camp: Sign Up Now”",
+          "kicker “Club Events”: “Holiday Party: Friday, Dec. 11”"
         ]
       }
     },
@@ -306,9 +338,10 @@
       "ran": [
         3,
         4,
-        5
+        5,
+        7
       ],
-      "last": 5,
+      "last": 7,
       "evidence": {
         "3": [
           "kicker “By the Book”: “You Can’t Appeal What the Referee Saw”"
@@ -318,6 +351,9 @@
         ],
         "5": [
           "kicker “By the Book”: “The 40-Millisecond Double”"
+        ],
+        "7": [
+          "kicker “By the Book”: “Three Calls, Two Minutes”"
         ]
       }
     },
@@ -327,9 +363,10 @@
       "frequency": "when_available",
       "ran": [
         3,
-        6
+        6,
+        7
       ],
-      "last": 6,
+      "last": 7,
       "evidence": {
         "3": [
           "kicker “For the Parents”: “Qualifying Isn’t Registering”"
@@ -337,6 +374,9 @@
         "6": [
           "kicker “For the Parents”: “What a Rating Letter Means”",
           "kicker “For the Parents”: “What “Triple Fees” Means”"
+        ],
+        "7": [
+          "kicker “For the Parents”: “A National Youth Event Next Door”"
         ]
       }
     },
@@ -345,12 +385,16 @@
       "name": "Comic",
       "frequency": "when_available",
       "ran": [
-        6
+        6,
+        7
       ],
-      "last": 6,
+      "last": 7,
       "evidence": {
         "6": [
           "figure (comic-wide)"
+        ],
+        "7": [
+          "figure (art)"
         ]
       }
     },
@@ -529,14 +573,18 @@
       "name": "On the Road",
       "kind": "box",
       "ran": [
-        6
+        6,
+        7
       ],
       "evidence": {
         "6": [
           "box “On the Road — Elite FC Entries”"
+        ],
+        "7": [
+          "box “On the Road — November NAC”"
         ]
       },
-      "last": 6
+      "last": 7
     },
     {
       "name": "Also on the Calendar",
@@ -550,11 +598,54 @@
         ]
       },
       "last": 6
+    },
+    {
+      "name": "November NAC",
+      "kind": "topical kicker",
+      "ran": [
+        7
+      ],
+      "evidence": {
+        "7": [
+          "over “Three Head to Columbus”"
+        ]
+      },
+      "last": 7
+    },
+    {
+      "name": "March NAC",
+      "kind": "topical kicker",
+      "ran": [
+        7
+      ],
+      "evidence": {
+        "7": [
+          "over “March NAC Comes to Atlantic City”"
+        ]
+      },
+      "last": 7
+    },
+    {
+      "name": "World Cup",
+      "kind": "topical kicker",
+      "ran": [
+        7
+      ],
+      "evidence": {
+        "7": [
+          "over “Hungary Rules World Cup Weekend”"
+        ]
+      },
+      "last": 7
     }
   ],
   "notes": {
     "1": [
       "photo not counted as a club photo: “A high school dual meet at Morris Hills High School, home of the state”"
+    ],
+    "7": [
+      "figure not matched to a section: “Penny Young with her Youth 12 bronze at the Pizza RYC/RJCC in New Have”",
+      "figure not matched to a section: “Mila Siu, left, with her Youth 14 bronze at the Kiefer Meinhardt Cup i”"
     ]
   }
 }

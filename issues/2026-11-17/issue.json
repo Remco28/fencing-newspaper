@@ -3,7 +3,7 @@
   "vol": "I",
   "date": "2026-11-17",
   "dateline": "Tuesday Edition · Vol. I — No. 7 · Chatham, N.J. · November 17, 2026",
-  "status": "PROOF v3 — pending Frank's review (v1 was sent; v2 and v3 not sent)",
+  "status": "APPROVED — final, published (Frank, chat, 2026-11-17 12:09 AM ET). Proof v3 is the print version.",
   "proof_version": 3,
   "proof_history": [
     {
@@ -86,5 +86,11 @@
       8.3
     ],
     "notes": "Proof v3 (Frank t229u fixes): one spacing token set, report-only balancer, soft photo ceiling, arrangement chosen by compose/arrange.py (pair-under+stacked), copy lengths from recipe/lengths.json, March NAC short added. Eye check PASS (see eye-check.md)."
+  },
+  "approval": "Frank approved proof v3 in chat 2026-11-17 12:09 AM ET (\"the issue is very much approved! we're running with it.\"). Eye check PASS, --verify SENDABLE (sha256 5fbc9b00aa6d).",
+  "published": {
+    "at": "2026-11-17",
+    "commit": "PENDING",
+    "via": "scripts/publish_issue.py 2026-11-17"
   }
 }

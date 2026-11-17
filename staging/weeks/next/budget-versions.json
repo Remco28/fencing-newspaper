@@ -383,6 +383,92 @@
       "changes": [
         "Staged usaf-march-nac-atlantic-city-2027 (short news, No. 7, from the official event page) and carried usaf-march-nac-feature-no8 to after-next for a large No. 8 feature."
       ]
+    },
+    {
+      "at": "2026-11-17T00:10:53-05:00",
+      "client_submitted_at": "2026-11-17T00:09:00-05:00",
+      "source": "chat:frank:2026-11-17T00:09:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-17T00:09:00-05:00",
+        "text": "that's way more like it!  the issue is very much approved!  we're running with it.  we should commit and push these changes.  whatever you did, let's keep it up next week as well.  great job."
+      },
+      "carried_from": 4,
+      "publishDate": "2026-11-17",
+      "included": [
+        "lead",
+        "comic",
+        "for-the-parents",
+        "nac-preview",
+        "signup-cobra",
+        "on-the-road",
+        "deadlines",
+        "camp",
+        "secondary-a",
+        "by-the-book",
+        "march-nac"
+      ],
+      "excluded": [
+        "club-results",
+        "signup-njfa",
+        "classes",
+        "tv"
+      ],
+      "photoIncludes": [],
+      "slotNotes": {
+        "signup-njfa": "Let's not recommend any NJFA tournaments for the time being.  They are very unreliable organizers.  Many of their signups are bogus.  They sign up their own members to get others to join but when you show up the turnout is highly variable.  Many times our fencers have shown up with only 1-2 competitors.  They want you to stay for their class afterwards."
+      },
+      "answers": [
+        {
+          "slot": "lead",
+          "itemId": "pitch-weekend-roundup-2026-11-16",
+          "question": "Lead: weekend results (Penny's bronze) as drafted, or lead with the November NAC preview and move results to Club Results only?",
+          "answer": "We can lead with Penny"
+        },
+        {
+          "slot": "club-results",
+          "itemId": "fencingapi-pizza-ryc-results-2026-11-15",
+          "question": "Brendan Mendez was 5th in Senior Open Mixed at Manchen Friday Night Epee (Nov. 13, field size not shown) and FencingTracker lists him under Elite FC. You weren't sure in No. 5 that he's a member. Include him or leave him out?",
+          "answer": "i still don't know if he exists.  can we assume he doesn't for now until i can confirm?  i don't want to talk about him every week."
+        },
+        {
+          "slot": "lead",
+          "question": "Add the Kiefer Meinhardt results (Mila Siu) and share the lead with Penny Young?",
+          "answer": "YES. Share the lead between Mila and Penny. Print Mila's Y14 bronze, C26, and Y12 10th. Stella Kuo stays out.",
+          "via": "chat"
+        },
+        {
+          "slot": "lead",
+          "question": "The remaining No. 7 content is in a club email — holiday party and photos of Mila and Stella plus Penny?",
+          "answer": "Yes. Please check your emails. The remaining content is there: holiday party announcement and the photos of the 2 girls (Mila and Stella) plus the photo of the 1 girl (Penelope, she goes by Penny).",
+          "via": "chat"
+        }
+      ],
+      "notes": "",
+      "order": [
+        "lead",
+        "comic",
+        "for-the-parents",
+        "nac-preview",
+        "club-results",
+        "signup-cobra",
+        "signup-njfa",
+        "on-the-road",
+        "deadlines",
+        "camp",
+        "classes",
+        "secondary-a",
+        "by-the-book",
+        "tv",
+        "photo-history",
+        "college",
+        "march-nac"
+      ],
+      "changes": [
+        "Frank approved proof v3 of No. 7 for publication (Tuesday, Nov. 17, 2026).",
+        "Frank asked to keep the proof v3 workflow (eye check, spacing tokens, copy lengths, arrangements) for next week."
+      ]
     }
   ]
 }
