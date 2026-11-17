@@ -237,3 +237,21 @@ body.resizing .blk{cursor:nwse-resize}
   /* Wide/Tall stays tappable on the block; slip also has the same controls. */
 }
 
+
+/* Budget version 2 — Auto / Manual placement */
+.modebox{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;border:2px solid var(--ink);background:var(--wash);padding:4px 8px 4px 6px;border-radius:4px}
+.modebox .mlab{font:700 9.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-right:2px}
+.modebox .seg{background:var(--paper)}
+.modebox .seg button{padding:6px 12px;font:700 12px var(--sans)}
+.modebox .aux{font:600 11.5px var(--sans);padding:5px 9px;border:1.5px solid var(--ink);background:var(--paper);border-radius:4px;cursor:pointer;color:var(--ink)}
+.modebox .aux:disabled{opacity:.4;cursor:not-allowed}
+.modebox .aux.warn{border-color:var(--bad);color:var(--bad)}
+body.manual .modebox{border-color:var(--accent);box-shadow:0 0 0 2px rgba(31,95,168,.25)}
+.blk.overlap{box-shadow:0 0 0 2px var(--bad);border-color:var(--bad);z-index:4}
+.overlap-banner{max-width:1120px;margin:0 auto 8px;background:#fbe9e7;border:1.5px solid var(--bad);color:var(--bad);padding:6px 10px;font:600 12.5px var(--sans)}
+.overlap-banner[hidden]{display:none}
+.handle.wid{width:8px;height:22px;right:1px;top:50%;margin-top:-11px;cursor:ew-resize;border-radius:2px}
+body.manual .blk{cursor:grab}
+body.manual.moving{cursor:grabbing;user-select:none}
+body.manual.moving .blk{cursor:grabbing}
+body.manual .hint .manual-note{font-weight:700;color:#fff}

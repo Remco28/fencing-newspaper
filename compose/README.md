@@ -86,3 +86,22 @@ boxes (`box_table(shape=)`), photo pair (`photo_pair()`) vs float, rail vs full 
 - **Send gate.** The PDF is written as `<name>.draft.pdf`; any FLAG renames it `<name>.FAILED.pdf` and leaves the proof path untouched (`--allow-flag` overrides, for trials).
 
 `--report=FILE.json` saves the raw measurements (and `art_fit` when a fit ran). `--fit-report=FILE.json` saves only the art decisions.
+
+## Budget page hand-off: `manualLayout` (not packed yet)
+
+Budget version 2 (`pageVersion: budget-paper-v2`) can send an optional placement contract on a
+submission and on the decision log ingest writes to `budget-versions.json`:
+
+- `mode`: `'auto'` or `'manual'`. Older submissions omit it; treat a missing field as auto.
+- `manualLayout`: `{slotKey|mediaId: {page, col, span, topIn, heightIn}}` when mode is manual.
+  `page` is `1` or `2`, `col` is 0-based (`0`, `1` or `2`), `span` is `1`, `2` or `3` columns,
+  and `topIn` / `heightIn` are inches from the top of the column well (below the folio furniture).
+  Positions snap to the column grid and a 0.05-inch vertical grid. Blocks may overlap; ingest
+  reports overlaps and overset as warnings and does not move them.
+
+The existing `pages`, `resize`, and `layout` fields still apply. `manualLayout` is the frozen
+geometry Frank set in Manual placement. Compose should be able to read it later and honor those
+positions instead of auto-packing those slots. **This pass does not change the compose pipeline**
+(`gazette.py`, `render.py`, issue recipes, or packing). Leave Auto-composed issues as they are
+until a later change teaches the composer to apply `manualLayout`.
+

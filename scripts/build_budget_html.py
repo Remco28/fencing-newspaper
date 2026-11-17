@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the standalone Gazette Budget page: ONE self-contained .html, no server, no network.
 
-The page is the Budget spread (pageVersion budget-paper-v1): the two pages of the issue with every
+The page is the Budget spread (pageVersion budget-paper-v2, labelled Budget version 2): the two pages of the issue with every
 included item drawn as a block sized by the capacity model, a bank of what isn't running, holes for
 unfilled space, and a slip per item. UI in scripts/budget_page/ (page.html, page.css, core.js, ui.js).
 
@@ -47,7 +47,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import budget_model  # noqa: E402
 import build_section_history  # noqa: E402
 
-PAGE_VERSION = "budget-paper-v1"  # must match core.js
+PAGE_VERSION = "budget-paper-v2"  # must match core.js
 ASSETS = Path(__file__).resolve().parent / "budget_page"
 DEFAULT_LINEUP = REPO / "budget-demo" / "practice-lineup.json"
 DEFAULT_WEEK = REPO / "staging" / "weeks" / "next"

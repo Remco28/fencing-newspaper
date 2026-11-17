@@ -248,6 +248,115 @@ class Interactions(unittest.TestCase):
         # 16 moves + up should stay well under a second on this page once packing is rAF-coalesced
         self.assertLess(elapsed_ms, 1000, "page-2 handle drag felt slow: %s ms" % round(elapsed_ms, 1))
 
+    def test_manual_toggle_drag_to_page2_resize_overlap_undo_and_submission(self):
+        # Auto is the default
+        start = self.js("""() => {
+          const C = BudgetPage.core;
+          const lead = C.pack(1).placed.find(b => b.id === 'lead') || C.pack(1).placed[0];
+          return { mode: C.submission().mode, pageVersion: C.PAGE_VERSION, lead: lead && { id: lead.id, page: 1, col: lead.col, y: lead.y, h: lead.h, span: lead.span } };
+        }""")
+        self.assertEqual(start["mode"], "auto")
+        self.assertEqual(start["pageVersion"], "budget-paper-v2")
+        self.page.wait_for_selector('#modebox [data-mode="manual"]')
+        self.page.click('#modebox [data-mode="manual"]')
+        snapped = self.js("""() => {
+          const C = BudgetPage.core, doc = C.submission(), e = doc.manualLayout && doc.manualLayout.lead;
+          return { mode: doc.mode, hasLayout: !!e, page: e && e.page, col: e && e.col, banner: !document.querySelector('.modebox [data-mode="manual"].on') ? false : true };
+        }""")
+        self.assertEqual(snapped["mode"], "manual")
+        self.assertTrue(snapped["hasLayout"])
+        self.assertTrue(snapped["banner"])
+
+        # Drag lead down and onto page 2 (or keep page and move if already hard to cross)
+        lead = self.js("""() => {
+          const el = document.querySelector('.blk[data-slot="lead"]');
+          const r = el.getBoundingClientRect();
+          const p2 = document.querySelector('.cols[data-page="2"]').getBoundingClientRect();
+          return { x: r.x + r.width/2, y: r.y + 12, p2x: p2.x + 40, p2y: p2.y + 80, startPage: +el.closest('.cols').dataset.page };
+        }""")
+        self.page.mouse.move(lead["x"], lead["y"])
+        self.page.mouse.down()
+        self.page.mouse.move(lead["p2x"], lead["p2y"], steps=12)
+        self.page.mouse.up()
+        after_drag = self.js("""() => {
+          const e = BudgetPage.core.manualLayoutOf().lead, doc = BudgetPage.core.submission();
+          return { page: e && e.page, col: e && e.col, topIn: e && e.topIn, mode: doc.mode, keys: Object.keys(doc.manualLayout || {}) };
+        }""")
+        self.assertEqual(after_drag["mode"], "manual")
+        self.assertEqual(after_drag["page"], 2)
+        self.assertIn("lead", after_drag["keys"])
+        self.assertGreaterEqual(after_drag["topIn"], 0)
+
+        # Height handle on a page-2 block (prefer a table or the lead now on page 2)
+        handle = self.js("""() => {
+          const blk = document.querySelector('.page[data-page="2"] .blk[data-slot="lead"]') || document.querySelector('.page[data-page="2"] .blk');
+          const h = blk && blk.querySelector('.handle.len');
+          if (!h) return null;
+          const r = h.getBoundingClientRect(), C = BudgetPage.core, key = blk.dataset.slot;
+          const e = C.manualLayoutOf()[key];
+          return { key, x: r.x + r.width/2, y: r.y + r.height/2, heightIn: e.heightIn };
+        }""")
+        self.assertTrue(handle, "manual mode should show a length handle")
+        self.page.mouse.move(handle["x"], handle["y"])
+        self.page.mouse.down()
+        self.page.mouse.move(handle["x"], handle["y"] + 50, steps=8)
+        self.page.mouse.up()
+        taller = self.js("k => BudgetPage.core.manualLayoutOf()[k].heightIn", handle["key"])
+        self.assertGreater(taller, handle["heightIn"] - 0.001)
+
+        # Overlap: drop another included block onto lead's box
+        ov = self.js("""() => {
+          const C = BudgetPage.core, lead = C.manualLayoutOf().lead;
+          const other = Object.keys(C.manualLayoutOf()).find(k => k !== 'lead');
+          C.act.placeAt(other, { page: lead.page, col: lead.col, span: Math.min(lead.span, C.manualLayoutOf()[other].span), topIn: lead.topIn, heightIn: C.manualLayoutOf()[other].heightIn });
+          const pack = C.pack(lead.page);
+          const banner = document.querySelector('#overlap');
+          return { overlaps: pack.overlaps.length, banner: !!(banner && !banner.hidden && /overlap/i.test(banner.textContent || '')), other };
+        }""")
+        # placeAt emits and re-renders, so the banner should be visible
+        ov = self.js("""() => {
+          const C = BudgetPage.core, lead = C.manualLayoutOf().lead;
+          const pack = C.pack(lead.page);
+          const banner = document.querySelector('#overlap');
+          return { overlaps: pack.overlaps.length, banner: !!(banner && !banner.hidden), text: banner && banner.textContent };
+        }""")
+        self.assertGreater(ov["overlaps"], 0)
+        self.assertTrue(ov["banner"], "overlap banner should be visible: %s" % ov.get("text"))
+
+        # Undo pops the overlap (and maybe the resize/drag); keep undoing until lead is not overlapping or positions change
+        before_undo = self.js("() => BudgetPage.core.pack(BudgetPage.core.manualLayoutOf().lead.page).overlaps.length")
+        self.page.click('#undoplace')
+        after_undo = self.js("() => ({ overlaps: BudgetPage.core.pack(BudgetPage.core.manualLayoutOf().lead.page).overlaps.length, can: BudgetPage.core.canUndo() })")
+        self.assertLessEqual(after_undo["overlaps"], before_undo)
+
+        # Back to Auto with confirm
+        self.page.once("dialog", lambda d: d.accept())
+        self.page.click('#toauto')
+        back = self.js('''() => ({ mode: BudgetPage.core.submission().mode, layout: BudgetPage.core.submission().manualLayout || null, autoOn: !!document.querySelector('#modebox [data-mode="auto"].on') })''')
+        self.assertEqual(back["mode"], "auto")
+        self.assertIsNone(back["layout"])
+        self.assertTrue(back["autoOn"])
+
+    def test_existing_auto_interactions_still_work_after_manual_and_back(self):
+        self.page.click('#modebox [data-mode="manual"]')
+        self.page.once("dialog", lambda d: d.accept())
+        self.page.click('#toauto')
+        info = self.js("""() => {
+          const C = BudgetPage.core;
+          const s = C.slots.find(x => C.state.inc[x.key] && C.state.page[x.key] === 2
+            && x.cost && (x.cost.type === 'table' || x.cost.type === 'table_rows'));
+          return { key: s.key, cost: C.costOf(s) };
+        }""")
+        self.js("key => BudgetPage.select('slot', key)", info["key"])
+        self.page.wait_for_selector('.sheet [data-act="rz"][data-v="expand"]')
+        self.page.click('.sheet [data-act="rz"][data-v="expand"]')
+        after = self.js('''key => {
+          const btn = document.querySelector('.sheet [data-act="rz"][data-v="expand"]');
+          return { cost: BudgetPage.core.costOf(BudgetPage.core.slotBy[key]), on: !!(btn && btn.classList.contains("on")) };
+        }''', info["key"])
+        self.assertGreater(after["cost"], info["cost"])
+        self.assertTrue(after["on"])
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

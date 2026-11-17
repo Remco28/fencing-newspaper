@@ -9,7 +9,7 @@
    - what still needs Frank, and the submission document (fixed contract, see buildDoc/submission). */
 (function (root) {
   'use strict';
-  const PAGE_VERSION = 'budget-paper-v1';
+  const PAGE_VERSION = 'budget-paper-v2';
   const isObj = x => !!x && typeof x === 'object' && !Array.isArray(x);
   const words = t => { t = String(t || '').trim(); return t ? t.split(/\s+/).length : 0; };
   const itemWords = it => (it ? (Number(it.word_count) || words(it.body)) : 0);
@@ -19,6 +19,8 @@
   const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const GUT = 0.125;       // gutter between columns, inches
   const MIN_PIECE = 0.5;   // shortest piece of a block worth starting in a column, inches
+  const VGRID = 0.05;      // manual-mode vertical snap, inches
+  const UNDO_MAX = 40;
 
   function make(D) {
     const L = D.lineup, build = D.build || {}, dec = isObj(D.decisions) ? D.decisions : null;
@@ -203,6 +205,18 @@
     }
     const pageNum = v => (v === 1 || v === 2) ? v : (isObj(v) && (v.page === 1 || v.page === 2) ? v.page : 0);
     const takeSpan = v => (isObj(v) && typeof v.span === 'number' && v.span >= 1 && v.span <= 3) ? Math.round(v.span) : 0;
+    const snapY = y => Math.round((Number(y) || 0) / VGRID) * VGRID;
+    function takeManual(v) {
+      if (!isObj(v)) return null;
+      const page = pageNum(v);
+      const span = takeSpan(v) || (typeof v.span === 'number' ? Math.max(1, Math.min(3, Math.round(v.span))) : 0);
+      if (!page || !span) return null;
+      const col = Math.max(0, Math.min(3 - span, Math.round(Number(v.col) || 0)));
+      const topIn = Math.max(0, snapY(v.topIn));
+      const heightIn = Math.max(MIN_PIECE * 0.8, snapY(v.heightIn != null ? v.heightIn : 0));
+      if (!(heightIn > 0)) return null;
+      return { page, col, span, topIn, heightIn };
+    }
 
     /* ---------- state ---------- */
     const qKey = (k, i) => k + '|' + i;
@@ -220,7 +234,7 @@
     }
     function freshState() {
       const st = { v: build.dataVersion || '', savedAt: null, publishDate: (L.publish || {}).date || '', altDate: (L.publish || {}).alt || '',
-        inc: {}, order: [], photos: {}, slotNotes: {}, answers: {}, vets: {}, notes: '', filler: '', page: {}, photoPage: {}, moved: {}, resize: {}, layout: {}, slotSpan: {}, photoSpan: {} };
+        inc: {}, order: [], photos: {}, slotNotes: {}, answers: {}, vets: {}, notes: '', filler: '', page: {}, photoPage: {}, moved: {}, resize: {}, layout: {}, slotSpan: {}, photoSpan: {}, mode: 'auto', manualLayout: {} };
       slots.forEach(s => { st.inc[s.key] = !s.empty && !!s.proposed && !s.waiting && slotVettedOnFile(s); });
       photoList.forEach(p => { st.photos[p.id] = loosePhotos.includes(p.id) && !!p.proposed && vettedOnFile(p.id); });
       if (dec) {
@@ -273,6 +287,19 @@
       if (dec && isObj(dec.resize)) Object.keys(dec.resize).forEach(k => {
         if (isObj(dec.resize[k])) st.resize[k] = Object.assign({}, dec.resize[k]);
       });
+      // Optional mode / manualLayout from a previous Budget version 2 submission. Older files omit them; Auto is the default.
+      if (dec && dec.mode === 'manual' && isObj(dec.manualLayout)) {
+        st.mode = 'manual';
+        Object.keys(dec.manualLayout).forEach(k => {
+          const e = takeManual(dec.manualLayout[k]);
+          if (!e) return;
+          if (slotBy[k] || photoMeta[k]) {
+            st.manualLayout[k] = e;
+            if (slotBy[k]) { st.page[k] = e.page; st.slotSpan[k] = e.span; st.layout[k] = e.span >= 2 ? 'wide' : 'tall'; if (st.inc[k]) st.moved[k] = e.page; }
+            if (photoMeta[k]) { st.photoPage[k] = e.page; st.photoSpan[k] = e.span; st.layout[k] = e.span >= 2 ? 'wide' : 'tall'; }
+          }
+        });
+      }
       return st;
     }
     state = freshState();
@@ -303,6 +330,14 @@
       each(saved.photoSpan, (k, v) => { if (photoMeta[k] && typeof v === 'number' && v >= 1 && v <= 3) state.photoSpan[k] = Math.round(v); });
       each(saved.layout, (k, v) => { if ((card(k) || photoMeta[k]) && (v === 'wide' || v === 'tall')) state.layout[k] = v; });
       each(saved.resize, (k, v) => { if (card(k) && isObj(v)) state.resize[k] = Object.assign({}, v); });
+      if (saved.mode === 'manual' || saved.mode === 'auto') state.mode = saved.mode;
+      each(saved.manualLayout, (k, v) => {
+        const e = takeManual(v);
+        if (!e) return;
+        if (card(k) || photoMeta[k]) state.manualLayout[k] = e;
+        else res.dropped++;
+      });
+      if (state.mode !== 'manual') state.manualLayout = {};
       each(saved.slotNotes, (k, v) => { if (typeof v !== 'string') return; if (slotBy[k]) state.slotNotes[k] = v; else if (v.trim()) res.dropped++; });
       each(saved.answers, (k, v) => {
         if (typeof v !== 'string') return;
@@ -378,7 +413,7 @@
       return state.order.filter(k => state.inc[k] && state.page[k] === p).map(k => ({ type: 'slot', id: k, span: spanOf(slotBy[k]), cost: costOf(slotBy[k]), kind: (slotBy[k].cost || {}).type }))
         .concat(loosePhotos.filter(id => state.photos[id] && state.photoPage[id] === p).map(id => ({ type: 'photo', id, span: photoSpanOf(id), cost: photoCost(id), kind: 'figure' })));
     }
-    function pack(p) {
+    function packAuto(p) {
       const H = pageH(p), h = [0, 0, 0], placed = [], over = [], holes = [], blocks = pageBlocks(p);
       blocks.forEach(b => {
         b.h = b.cost / b.span;
@@ -438,8 +473,108 @@
       const overset = placed.reduce((a, b) => a + (b.hang || 0) * (b.parts ? 1 : (b.span || 1)), 0);
       const spillIn = Math.max(0, Math.max(h[0], h[1], h[2]) - H);
       return { H, h, placed, over, holes, cap: H * 3, used: blocks.reduce((a, b) => a + b.cost, 0), placedUsed: usedPlaced,
-        open: holes.reduce((a, x) => a + x.colIn, 0), overset, spillIn, oversetWords: Math.round(overset * cap.wpi) };
+        open: holes.reduce((a, x) => a + x.colIn, 0), overset, spillIn, oversetWords: Math.round(overset * cap.wpi), overlaps: [] };
     }
+
+    /* Manual mode: each included block sits where Frank put it. Nothing is re-packed or auto-resized.
+       Holes are the uncovered on-page area; overlaps are reported, never resolved. Overset still hangs
+       past the trim into the spill well. */
+    function isManual() { return state && state.mode === 'manual'; }
+    function manualBlocks(p) {
+      const out = [];
+      slots.forEach(s => {
+        if (!state.inc[s.key]) return;
+        const e = state.manualLayout[s.key];
+        if (!e || e.page !== p) return;
+        out.push({ type: 'slot', id: s.key, span: e.span, cost: costOf(s), kind: (s.cost || {}).type, col: e.col, y: e.topIn, h: e.heightIn });
+      });
+      loosePhotos.forEach(id => {
+        if (!state.photos[id]) return;
+        const e = state.manualLayout[id];
+        if (!e || e.page !== p) return;
+        out.push({ type: 'photo', id, span: e.span, cost: photoCost(id), kind: 'figure', col: e.col, y: e.topIn, h: e.heightIn });
+      });
+      return out;
+    }
+    function overlapPair(a, b) {
+      if (a.id === b.id && a.type === b.type) return 0;
+      const a1 = a.col + a.span, b1 = b.col + b.span;
+      if (a1 <= b.col || b1 <= a.col) return 0;
+      const overlapH = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+      if (overlapH <= 0.02) return 0;
+      const cols = Math.min(a1, b1) - Math.max(a.col, b.col);
+      return overlapH * cols;
+    }
+    function packManual(p) {
+      const H = pageH(p), placed = [], over = [], holes = [], overlaps = [];
+      const blocks = manualBlocks(p);
+      const h = [0, 0, 0];
+      blocks.forEach(b => {
+        const onPage = b.y >= H ? 0 : Math.max(0, Math.min(b.h, H - b.y));
+        const hang = Math.max(0, b.h - onPage);
+        const rec = Object.assign({}, b, { hang, spill: hang > 0.02, onPage });
+        placed.push(rec);
+        if (rec.spill) over.push(rec);
+        const bottom = b.y + b.h;
+        for (let i = b.col; i < b.col + b.span && i < 3; i++) h[i] = Math.max(h[i], bottom);
+      });
+      placed.forEach((a, i) => {
+        for (let j = i + 1; j < placed.length; j++) {
+          const other = placed[j], area = overlapPair(a, other);
+          if (area > 0.02) {
+            a.overlap = true; other.overlap = true;
+            overlaps.push({ a: { type: a.type, id: a.id }, b: { type: other.type, id: other.id }, area });
+          }
+        }
+      });
+      // Uncovered on-page area per column, then merge neighbours of the same depth (like Auto).
+      for (let i = 0; i < 3; i++) {
+        const cover = placed.filter(b => b.col <= i && i < b.col + b.span && b.y < H)
+          .map(b => [Math.max(0, b.y), Math.min(H, b.y + b.h)]).sort((x, y) => x[0] - y[0]);
+        const merged = [];
+        cover.forEach(iv => {
+          const last = merged[merged.length - 1];
+          if (!last || iv[0] > last[1] + 0.02) merged.push(iv.slice());
+          else last[1] = Math.max(last[1], iv[1]);
+        });
+        let y = 0;
+        merged.forEach(iv => {
+          if (iv[0] - y > 0.02) holes.push({ col: i, cols: 1, y, h: iv[0] - y, trapped: iv[0] < H - 0.05 });
+          y = Math.max(y, iv[1]);
+        });
+        if (H - y > 0.02) holes.push({ col: i, cols: 1, y, h: H - y, trapped: false });
+      }
+      // merge adjacent same-y, same-h, same-trapped holes
+      holes.sort((a, b) => a.y - b.y || a.col - b.col);
+      const mergedHoles = [];
+      holes.forEach(x => {
+        const last = mergedHoles[mergedHoles.length - 1];
+        if (last && last.col + last.cols === x.col && Math.abs(last.y - x.y) < 0.05 && Math.abs(last.h - x.h) < 0.05 && last.trapped === x.trapped)
+          last.cols++;
+        else mergedHoles.push(x);
+      });
+      mergedHoles.forEach(x => { x.colIn = x.h * x.cols; x.words = Math.round(x.colIn * cap.wpi); });
+      // Unique on-page coverage so holes + covered still add up to the page (overlaps are not counted twice).
+      let covered = 0;
+      for (let i = 0; i < 3; i++) {
+        const cover = placed.filter(b => b.col <= i && i < b.col + b.span && b.y < H)
+          .map(b => [Math.max(0, b.y), Math.min(H, b.y + b.h)]).sort((x, y) => x[0] - y[0]);
+        const merged = [];
+        cover.forEach(iv => {
+          const last = merged[merged.length - 1];
+          if (!last || iv[0] > last[1] + 1e-6) merged.push(iv.slice());
+          else last[1] = Math.max(last[1], iv[1]);
+        });
+        merged.forEach(iv => { covered += iv[1] - iv[0]; });
+      }
+      const overset = placed.reduce((a, b) => a + (b.hang || 0) * (b.span || 1), 0);
+      const spillIn = Math.max(0, Math.max(h[0], h[1], h[2]) - H);
+      const used = blocks.reduce((a, b) => a + b.cost, 0);
+      return { H, h, placed, over, holes: mergedHoles, cap: H * 3, used, placedUsed: covered,
+        open: mergedHoles.reduce((a, x) => a + x.colIn, 0), overset, spillIn, oversetWords: Math.round(overset * cap.wpi), overlaps };
+    }
+    function pack(p) { return isManual() ? packManual(p) : packAuto(p); }
+    function allOverlaps() { return pack(1).overlaps.concat(pack(2).overlaps); }
 
     /* ---------- what still needs Frank ---------- */
     function needs() {
@@ -459,6 +594,13 @@
       const f = fill();
       if (f.status === 'short') out.push({ kind: 'fill', blocking: false, text: 'Issue is short: ' + r1(f.gap) + ' col-in open (≈' + f.words + ' words)' });
       if (f.status === 'over') out.push({ kind: 'fill', blocking: false, text: 'Over Clark’s oversupply line by ' + r1(f.gap) + ' col-in (≈' + f.words + ' words)' });
+      if (isManual()) {
+        const names = rec => rec.type === 'photo' ? ((media[rec.id] || {}).filename || rec.id) : shortName(slotBy[rec.id] || { slot: rec.id, key: rec.id });
+        allOverlaps().forEach(o => {
+          out.push({ kind: 'overlap', slot: o.a.type === 'slot' ? o.a.id : undefined, blocking: false,
+            text: 'These blocks overlap: ' + names(o.a) + ' and ' + names(o.b) + ' (' + r1(o.area) + ' col-in). They will print as stacked unless you move one.' });
+        });
+      }
       return out;
     }
 
@@ -547,7 +689,7 @@
       const lines = [stripPlacement(state.notes), state.filler.trim() && 'FILLER REQUEST: ' + state.filler.trim()];
       const slotNotes = {};
       Object.keys(state.slotNotes).forEach(k => { if (slotBy[k] && String(state.slotNotes[k]).trim()) slotNotes[k] = String(state.slotNotes[k]).trim(); });
-      return {
+      const doc = {
         publishDate: state.publishDate, practice: L.mode !== 'real', pretend: false, targetWeek: L.target_week || 'next', issue: L.issue || null,
         includedSlots: ordered.filter(s => state.inc[s.key]).map(entry),
         excludedSlots: ordered.filter(s => !state.inc[s.key]).concat(empties).map(entry), // empty slots listed as excluded, as before
@@ -560,17 +702,135 @@
         pages: placementOf(),
         resize: resizeOf(),
         layout: layoutOf(),
+        mode: isManual() ? 'manual' : 'auto',
       };
+      if (isManual()) doc.manualLayout = manualLayoutOf();
+      return doc;
+    }
+    function manualLayoutOf() {
+      const out = {};
+      if (!isManual()) return out;
+      const keep = id => state.manualLayout[id] && ((slotBy[id] && state.inc[id]) || (photoMeta[id] && state.photos[id]));
+      Object.keys(state.manualLayout).forEach(k => {
+        if (!keep(k)) return;
+        const e = takeManual(state.manualLayout[k]);
+        if (e) out[k] = e;
+      });
+      return out;
     }
     const submissionName = doc => 'budget-submission-no-' + issueNo + '-' + doc.publishDate + (build.budgetVersion ? '-v' + build.budgetVersion : '') + '-'
       + doc.submittedAt.replace(/[-:]/g, '').replace('T', '-').slice(0, 15) + '.json';
+
+    /* ---------- manual placement (snapshot Auto, then Frank moves blocks himself) ---------- */
+    const clone = x => JSON.parse(JSON.stringify(x));
+    function layoutSnap() {
+      return {
+        mode: state.mode, manualLayout: clone(state.manualLayout || {}),
+        page: clone(state.page), photoPage: clone(state.photoPage), moved: clone(state.moved),
+        inc: clone(state.inc), photos: clone(state.photos), order: state.order.slice(),
+        slotSpan: clone(state.slotSpan), photoSpan: clone(state.photoSpan),
+        layout: clone(state.layout), resize: clone(state.resize)
+      };
+    }
+    let undoStack = [];
+    function pushUndo() {
+      undoStack.push(layoutSnap());
+      if (undoStack.length > UNDO_MAX) undoStack.shift();
+    }
+    function applyLayoutSnap(s) {
+      if (!s) return;
+      state.mode = s.mode === 'manual' ? 'manual' : 'auto';
+      state.manualLayout = clone(s.manualLayout || {});
+      ['page', 'photoPage', 'moved', 'inc', 'photos', 'slotSpan', 'photoSpan', 'layout', 'resize'].forEach(k => {
+        state[k] = clone(s[k] || {});
+      });
+      if (Array.isArray(s.order)) state.order = s.order.slice();
+    }
+    function canUndo() { return undoStack.length > 0; }
+    function undo() {
+      if (!undoStack.length) return false;
+      applyLayoutSnap(undoStack.pop());
+      emit('undo');
+      return true;
+    }
+    function writeManual(id, e) {
+      const n = takeManual(e) || takeManual(Object.assign({ page: 1, col: 0, span: 1, topIn: 0, heightIn: 1 }, e));
+      if (!n) return null;
+      state.manualLayout[id] = n;
+      if (photoMeta[id]) {
+        state.photoPage[id] = n.page; state.photoSpan[id] = n.span; state.layout[id] = n.span >= 2 ? 'wide' : 'tall';
+      } else if (slotBy[id]) {
+        state.page[id] = n.page; state.slotSpan[id] = n.span; state.layout[id] = n.span >= 2 ? 'wide' : 'tall';
+        if (state.inc[id]) state.moved[id] = n.page;
+      }
+      return n;
+    }
+    function defaultManualPos(id, page) {
+      const isPhoto = !!photoMeta[id];
+      const span = isPhoto ? photoSpanOf(id) : spanOf(slotBy[id]);
+      const cost = isPhoto ? photoCost(id) : costOf(slotBy[id]);
+      const heightIn = Math.max(MIN_PIECE, cost / span);
+      const r = packManual(page);
+      const hole = r.holes.filter(x => !x.trapped && x.cols >= span && x.h >= Math.min(heightIn, 0.6)).sort((a, b) => a.y - b.y || a.col - b.col)[0];
+      if (hole) return { page, col: hole.col, span, topIn: hole.y, heightIn };
+      return { page, col: 0, span, topIn: 0, heightIn };
+    }
+    function ensureManual(id, page) {
+      const cur = state.manualLayout[id];
+      if (cur && (page == null || cur.page === page)) return writeManual(id, cur);
+      return writeManual(id, defaultManualPos(id, page || (cur && cur.page) || 1));
+    }
+    function snapshotFromAuto() {
+      const layout = {};
+      [1, 2].forEach(p => {
+        const seen = {};
+        packAuto(p).placed.forEach(b => {
+          if (seen[b.id]) return;
+          seen[b.id] = 1;
+          const e = takeManual({ page: p, col: b.col, span: b.span, topIn: b.y, heightIn: b.cost / b.span });
+          if (e) layout[b.id] = e;
+        });
+      });
+      state.manualLayout = layout;
+    }
+    function syncManualFromCost(id) {
+      if (!isManual() || !state.manualLayout[id]) return;
+      const e = state.manualLayout[id];
+      const isPhoto = !!photoMeta[id];
+      const span = isPhoto ? photoSpanOf(id) : (slotBy[id] ? spanOf(slotBy[id]) : e.span);
+      const cost = isPhoto ? photoCost(id) : costOf(slotBy[id]);
+      const col = Math.max(0, Math.min(3 - span, e.col));
+      writeManual(id, { page: e.page, col, span, topIn: e.topIn, heightIn: Math.max(MIN_PIECE * 0.8, cost / span) });
+    }
+    function toManual() {
+      if (isManual()) return;
+      pushUndo();
+      snapshotFromAuto();
+      state.mode = 'manual';
+      emit('mode');
+    }
+    function toAuto() {
+      if (!isManual()) return;
+      pushUndo();
+      state.mode = 'auto';
+      state.manualLayout = {};
+      emit('mode');
+    }
+    function setManualPos(id, pos, why) {
+      if (!isManual()) return;
+      const cur = state.manualLayout[id] || defaultManualPos(id, (pos && pos.page) || 1);
+      writeManual(id, Object.assign({}, cur, pos));
+      emit(why || 'place');
+    }
 
     /* ---------- mutations ---------- */
     const act = {
       include(k, v) {
         const s = slotBy[k]; if (!s || s.empty) return;
         if (v && !canPlace(s)) return; // unvetted items cannot run; vet on the slip first
+        if (isManual()) pushUndo();
         state.inc[k] = !!v;
+        if (isManual() && v) ensureManual(k, state.page[k] || 1);
         const m = mediaOfSlot(s);
         if (m && s.cost && s.cost.type === 'figure' && s.cost.head) {
           if (v && isVetted(m.id)) state.photos[m.id] = true;
@@ -578,8 +838,43 @@
         }
         emit('include');
       },
-      place(k, p) { if (!slotBy[k] || slotBy[k].empty) return; if (!canPlace(slotBy[k])) return; if (state.page[k] !== p || !state.inc[k]) state.moved[k] = p; state.page[k] = p; act.include(k, true); },
-      photo(id, v, p) { if (!photoMeta[id]) return; if (v && !canPlacePhoto(id)) return; if (p) state.photoPage[id] = p; state.photos[id] = !!v; emit('photo'); },
+      place(k, p) {
+        if (!slotBy[k] || slotBy[k].empty) return; if (!canPlace(slotBy[k])) return;
+        if (isManual()) {
+          pushUndo();
+          state.inc[k] = true;
+          const cur = state.manualLayout[k];
+          writeManual(k, Object.assign({}, cur || defaultManualPos(k, p), { page: p }));
+          emit('place'); return;
+        }
+        if (state.page[k] !== p || !state.inc[k]) state.moved[k] = p; state.page[k] = p; act.include(k, true);
+      },
+      placeAt(k, pos, why) {
+        if (photoMeta[k]) return act.placePhotoAt(k, pos, why);
+        if (!slotBy[k] || slotBy[k].empty) return; if (!canPlace(slotBy[k])) return;
+        if (!isManual()) { return act.place(k, (pos && pos.page) || state.page[k] || 1); }
+        if (!(why || '').endsWith('drag')) pushUndo();
+        state.inc[k] = true;
+        const cur = state.manualLayout[k] || defaultManualPos(k, (pos && pos.page) || 1);
+        writeManual(k, Object.assign({}, cur, pos || {}));
+        emit(why || 'place');
+      },
+      placePhotoAt(id, pos, why) {
+        if (!photoMeta[id] || !canPlacePhoto(id)) return;
+        if (!isManual()) { return act.photo(id, true, (pos && pos.page) || 1); }
+        if (!(why || '').endsWith('drag')) pushUndo();
+        state.photos[id] = true;
+        const cur = state.manualLayout[id] || defaultManualPos(id, (pos && pos.page) || 1);
+        writeManual(id, Object.assign({}, cur, pos || {}));
+        emit(why || 'place');
+      },
+      photo(id, v, p) {
+        if (!photoMeta[id]) return; if (v && !canPlacePhoto(id)) return;
+        if (isManual()) pushUndo();
+        if (p) state.photoPage[id] = p; state.photos[id] = !!v;
+        if (isManual() && v) ensureManual(id, p || state.photoPage[id] || 1);
+        emit('photo');
+      },
       vet(id, note) { state.vets[id] = note || ''; emit('vet'); },
       unvet(id) {
         delete state.vets[id];
@@ -599,42 +894,77 @@
       before(k, other) { const o = state.order; if (k === other || !o.includes(k) || !o.includes(other)) return; o.splice(o.indexOf(k), 1); o.splice(o.indexOf(other), 0, k); },
       setLayout(k, v) {
         if (v !== 'wide' && v !== 'tall') return;
+        if (isManual() ) pushUndo();
         if (photoMeta[k]) {
           state.layout[k] = v;
           state.photoSpan[k] = v === 'tall' ? 1 : Math.max(2, (photoMeta[k] || {}).span || 2);
+          if (isManual()) syncManualFromCost(k);
           emit('layout'); return;
         }
         const s = slotBy[k]; if (!s || s.empty) return;
         state.layout[k] = v;
         state.slotSpan[k] = layoutSpan(s, v);
+        if (isManual()) syncManualFromCost(k);
         emit('layout');
       },
       setSpan(k, span, why) {
         span = Math.max(1, Math.min(3, Math.round(Number(span) || 1)));
+        if (isManual() && !(why || '').endsWith('drag')) pushUndo();
         if (photoMeta[k]) {
           state.photoSpan[k] = span;
           state.layout[k] = span >= 2 ? 'wide' : 'tall';
+          if (isManual()) syncManualFromCost(k);
           emit(why || 'resize'); return;
         }
         const s = slotBy[k]; if (!s || s.empty) return;
         state.slotSpan[k] = span;
         state.layout[k] = span >= 2 ? 'wide' : 'tall';
+        if (isManual()) syncManualFromCost(k);
         emit(why || 'resize');
       },
       setResize(k, direction, target, why) {
         const s = slotBy[k]; if (!s || s.empty) return;
-        if (!direction) { delete state.resize[k]; emit(why || 'resize'); return; }
+        if (isManual() && !(why || '').endsWith('drag')) pushUndo();
+        if (!direction) {
+          delete state.resize[k];
+          if (isManual()) syncManualFromCost(k);
+          emit(why || 'resize'); return;
+        }
         applyResize(s, direction, target);
+        if (isManual()) syncManualFromCost(k);
         emit(why || 'resize');
+      },
+      setHeight(k, heightIn, why) {
+        if (!isManual()) return;
+        const e = state.manualLayout[k]; if (!e) return;
+        if (!(why || '').endsWith('drag')) pushUndo();
+        const h = Math.max(MIN_PIECE * 0.8, snapY(heightIn));
+        writeManual(k, Object.assign({}, e, { heightIn: h }));
+        if (slotBy[k] && !photoMeta[k]) {
+          const wpi = (slotBy[k].cost && slotBy[k].cost.feature) ? cap.wpi_feature : cap.wpi;
+          const toWords = Math.max(0, Math.round(h * e.span * wpi));
+          const dir = toWords >= baseWordsOf(slotBy[k]) ? 'expand' : 'shrink';
+          applyResize(slotBy[k], dir, toWords + 'w');
+          // keep the dragged height, not the cost-derived height (they can differ on tables)
+          writeManual(k, Object.assign({}, state.manualLayout[k], { heightIn: h }));
+        }
+        emit(why || 'resize');
+      },
+      toManual, toAuto, undo, checkpoint: pushUndo,
+      setManualPos(id, pos, why) {
+        if (!isManual()) return;
+        if (!(why || '').endsWith('drag')) pushUndo();
+        setManualPos(id, pos, why);
       },
     };
     const thumb = name => (((D.thumbs || {})[fileOf(name)]) || {}).src || '';
     function answersForSave() { const m = {}; slots.forEach(s => questionsOf(s).forEach(q => { m[q.key] = q.q; })); return m; }
 
-    return { PAGE_VERSION, D, L, cap, dec, build, items, media, slots, slotBy, state, on, emit, act, costOf, photoCost, spanOf, wordsOf, fill, pack, pageH, needs, itemOf, allItemsOf,
+    return { PAGE_VERSION, D, L, cap, dec, build, items, media, slots, slotBy, state, on, emit, act, costOf, photoCost, spanOf, wordsOf, fill, pack, packAuto, packManual, pageH, needs, itemOf, allItemsOf,
       headlineOf, shortName, isVetted, vettedOnFile, canPlace, canPlacePhoto, staleness, sourcesOf, flagsOf, questionsOf, mediaOfSlot, loosePhotos, photoMeta, sectionRows, sectionsOfSlot, submission, submissionName,
-      placementNotes, placementOf, resizeOf, layoutOf, serialize, restore, answersForSave, fmt, fmtDate, r1, esc, thumb, total, issueNo, GUT,
-      layoutSpec, canSwitchLayout, currentLayout, layoutSpan, photoSpanOf, photoLayoutOf, photoSize, slotSize, snapSpan, baseWordsOf, naturalSpan, SNAP_WIDTHS };
+      placementNotes, placementOf, resizeOf, layoutOf, manualLayoutOf, serialize, restore, answersForSave, fmt, fmtDate, r1, esc, thumb, total, issueNo, GUT, VGRID,
+      layoutSpec, canSwitchLayout, currentLayout, layoutSpan, photoSpanOf, photoLayoutOf, photoSize, slotSize, snapSpan, baseWordsOf, naturalSpan, SNAP_WIDTHS,
+      isManual, canUndo, allOverlaps, snapY, takeManual };
   }
 
   const Core = { PAGE_VERSION, make };

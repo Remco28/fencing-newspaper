@@ -195,7 +195,10 @@
     const fig = b.type === 'photo' || b.kind === 'figure' || (b.type === 'slot' && ((core.slotBy[b.id] || {}).cost || {}).type === 'figure');
     const s = b.type === 'slot' ? core.slotBy[b.id] : null;
     let h = '';
-    if (fig) h += '<i class="handle se" data-handle="scale" title="Drag to size (keeps aspect, snaps to 1 / 2 / 3 columns)"></i>';
+    if (core.isManual()) {
+      h += '<i class="handle wid" data-handle="width" title="Drag to set width (snaps to 1, 2 or 3 columns)"></i>';
+      h += '<i class="handle len" data-handle="length" title="Drag to set height (snaps to 0.05 in)"></i>';
+    } else if (fig) h += '<i class="handle se" data-handle="scale" title="Drag to size (keeps aspect, snaps to 1 / 2 / 3 columns)"></i>';
     else if (s && s.cost && (s.cost.type === 'prose' || s.cost.type === 'qa' || s.cost.type === 'table' || s.cost.type === 'table_rows'))
       h += '<i class="handle len" data-handle="length" title="Drag to grow or shrink the estimated length"></i>';
     if (s && core.canSwitchLayout(s)) {
@@ -217,9 +220,11 @@
   function blockHTML(b, ppi, pageH) {
     const pos = `left:${colX(b.col) * ppi}px;top:${b.y * ppi}px;width:${spanW(b.span) * ppi}px;height:${Math.max(6, b.h * ppi - 3)}px`;
     const spillC = (b.spill || b.hang > 0.02) ? ' spill' : '';
+    const overC = b.overlap ? ' overlap' : '';
+    const dragAttr = (!core.isManual() && ((b.type === 'photo' && core.canPlacePhoto(b.id)) || (b.type !== 'photo' && core.canPlace(core.slotBy[b.id])))) ? 'draggable="true"' : '';
     if (b.type === 'photo') {
       const m = core.media[b.id];
-      return `<div class="blk t-photo${isSel('photo', b.id)}${core.canPlacePhoto(b.id) ? '' : ' locked'}${spillC}" ${core.canPlacePhoto(b.id) ? 'draggable="true"' : ''} tabindex="0" data-photo="${E(b.id)}" style="${pos}"><span class="marks">${core.isVetted(b.id) ? '<i class="mk ok">✓</i>' : '<i class="mk vet">VET</i>'}</span><img src="${core.thumb(m.filename)}" alt=""><div class="k">Photo · ${E(m.kind)}</div>${hangHTML(b, ppi, pageH)}${handlesHTML(b)}</div>`;
+      return `<div class="blk t-photo${isSel('photo', b.id)}${core.canPlacePhoto(b.id) ? '' : ' locked'}${spillC}${overC}" ${dragAttr} tabindex="0" data-photo="${E(b.id)}" style="${pos}"><span class="marks">${core.isVetted(b.id) ? '<i class="mk ok">✓</i>' : '<i class="mk vet">VET</i>'}</span><img src="${core.thumb(m.filename)}" alt=""><div class="k">Photo · ${E(m.kind)}</div>${hangHTML(b, ppi, pageH)}${handlesHTML(b)}</div>`;
     }
     const s = core.slotBy[b.id], c = s.cost || {}, head = core.headlineOf(s), cont = b.part > 1;
     let inner = `<div class="k">${E(ui.shortName(s))}</div>`;
@@ -227,7 +232,7 @@
     else if (c.type === 'figure') inner += `<img src="${core.thumb(s.thumb)}" alt="">` + (c.head ? `<div class="h">${E(head)}</div><div class="greek" style="flex:1.3"></div>` : '');
     else if (s.table && Array.isArray(s.table.rows)) inner += (s.title ? `<div class="h">${E(head)}</div>` : '') + s.table.rows.map(r => `<div class="tr" style="height:${rowIn(c) * ppi}px;line-height:${rowIn(c) * ppi}px;font-size:${Math.min(9, rowIn(c) * ppi * .8)}px"><b>${E(r[0])}</b> · ${E(r.slice(1).join(' · '))}</div>`).join('');
     else inner += `<div class="h">${E(head)}</div><div class="greek"></div>`;
-    return `<div class="blk t-${E(c.type || 'prose')}${c.feature ? ' lead' : ''}${b.span >= 2 ? ' wide' : ''}${cont ? ' cont' : ''}${isSel('slot', b.id)}${core.canPlace(s) ? '' : ' locked'}${spillC}" ${core.canPlace(s) ? 'draggable="true"' : ''} tabindex="0" data-slot="${E(b.id)}" style="${pos}">${cont ? '' : marks(b.id)}${inner}${hangHTML(b, ppi, pageH)}${handlesHTML(b)}</div>`;
+    return `<div class="blk t-${E(c.type || 'prose')}${c.feature ? ' lead' : ''}${b.span >= 2 ? ' wide' : ''}${cont ? ' cont' : ''}${isSel('slot', b.id)}${core.canPlace(s) ? '' : ' locked'}${spillC}${overC}" ${dragAttr} tabindex="0" data-slot="${E(b.id)}" style="${pos}">${cont ? '' : marks(b.id)}${inner}${hangHTML(b, ppi, pageH)}${handlesHTML(b)}</div>`;
   }
 
   function renderPages() {
@@ -250,8 +255,20 @@
         ? `OVERSET by ${core.r1(r.overset)} col-in ≈ ${r.oversetWords || Math.round(r.overset * cap.wpi)} words · hangs ${core.r1(spill)} in below the trim`
         : `open ${core.r1(r.open)} col-in ≈ ${Math.round(r.open * cap.wpi)} words`;
       pg.querySelector('.pfoot').innerHTML = `<span>PAGE ${p} · ${core.r1(r.placedUsed)} of ${core.r1(r.cap)} col-in on the page</span><span class="${r.open > 0.5 || r.overset > 0.02 ? 'short' : ''}">${overTxt}</span>`;
+      const overlapTxt = (r.overlaps && r.overlaps.length) ? ` · ${r.overlaps.length} overlap${r.overlaps.length > 1 ? 's' : ''}` : '';
+      pg.querySelector('.pfoot').innerHTML = `<span>PAGE ${p} · ${core.r1(r.placedUsed)} of ${core.r1(r.cap)} col-in on the page</span><span class="${r.open > 0.5 || r.overset > 0.02 || (r.overlaps && r.overlaps.length) ? 'short' : ''}">${overTxt}${overlapTxt}</span>`;
       pg.querySelector('.overset').innerHTML = r.over.length ? 'Hanging below the trim: ' + r.over.map(b => `<span data-${b.type}="${E(b.id)}">${E(b.type === 'slot' ? ui.shortName(core.slotBy[b.id]) : core.media[b.id].filename)} · ${core.r1(b.hang || 0)} in hang · ${core.r1(b.cost)} col-in</span>`).join('') : '';
     });
+    renderOverlap();
+  }
+  function renderOverlap() {
+    const el = $('#overlap'); if (!el) return;
+    if (!core.isManual()) { el.hidden = true; el.textContent = ''; return; }
+    const ov = core.allOverlaps();
+    if (!ov.length) { el.hidden = true; el.textContent = ''; return; }
+    const name = rec => rec.type === 'photo' ? ((core.media[rec.id] || {}).filename || rec.id) : ui.shortName(core.slotBy[rec.id] || { slot: rec.id });
+    el.hidden = false;
+    el.textContent = 'Overlap: ' + ov.map(o => name(o.a) + ' and ' + name(o.b)).join('; ') + '. Move a block so they do not sit on top of each other.';
   }
 
   function stripHTML(s) {
@@ -278,7 +295,10 @@
     NEEDS = core.needs();
     const blk = NEEDS.filter(n => n.blocking).length, adv = NEEDS.length - blk, b = core.build;
     $('#iss').textContent = (core.L.issue || {}).label || 'Issue No. ' + NO;
-    $('#stamp').innerHTML = `${b.budgetVersion ? 'BUDGET v' + E(b.budgetVersion) : 'PREVIEW'}<small>${E(String(b.versionLabel || '').split(' · ')[1] || '')}</small>`;
+    $('#stamp').innerHTML = `BUDGET VERSION 2<small>${E(String(b.versionLabel || '').split(' · ').slice(1).join(' · ') || '')}</small>`;
+    document.body.classList.toggle('manual', core.isManual());
+    const mb = $('#modebox');
+    if (mb) mb.innerHTML = `<span class="mlab">Placement</span><div class="seg"><button type="button" data-mode="auto" class="${core.isManual() ? '' : 'on'}">Auto</button><button type="button" data-mode="manual" class="${core.isManual() ? 'on' : ''}">Manual</button></div><button type="button" class="aux" id="undoplace" ${core.canUndo() ? '' : 'disabled'}>Undo</button>${core.isManual() ? '<button type="button" class="aux warn" id="toauto">Back to Auto</button>' : ''}`;
     $('#rd').textContent = core.fmtDate(S.publishDate); $('#ad').textContent = S.altDate ? 'alt ' + core.fmtDate(S.altDate) : 'no alternate';
     $('#meter').innerHTML = ui.meter();
     const nb = $('#needbtn'); nb.className = 'needbtn' + (blk ? '' : ' clear');
@@ -391,7 +411,7 @@
 
   /* ---------- events ---------- */
   core.on(why => {
-    if (why === 'resize-drag') { // mid-handle-drag: the pointer path previews the block and footers; skip a full rebuild
+    if (why === 'resize-drag' || why === 'move-drag') { // mid-drag: the pointer path previews; skip a full rebuild
       save();
       return;
     }
@@ -406,6 +426,19 @@
     if (c('[data-dismiss]')) return notice('');
     if (c('#startover') || c('#startover2')) return startOver();
     if (c('#sign')) return openSign();
+    if (c('[data-mode]')) {
+      const mode = c('[data-mode]').dataset.mode;
+      if (mode === 'manual' && !core.isManual()) core.act.toManual();
+      else if (mode === 'auto' && core.isManual()) {
+        if (confirm('Return to Auto placement? Your manual positions will be cleared. Switching back to Manual later snapshots Auto again.')) core.act.toAuto();
+      }
+      return;
+    }
+    if (c('#undoplace')) { core.act.undo(); return; }
+    if (c('#toauto')) {
+      if (confirm('Return to Auto placement? Your manual positions will be cleared. Switching back to Manual later snapshots Auto again.')) core.act.toAuto();
+      return;
+    }
     if (c('#needbtn')) { A.sel = null; A.tab = 'needs'; document.body.classList.add('side-open'); return render(); }
     if (c('[data-close]')) { if (A.sel && innerWidth > 900) A.sel = null; document.body.classList.remove('side-open'); return render(); }
     if (c('[data-tab]')) { A.sel = null; A.tab = c('[data-tab]').dataset.tab; document.body.classList.add('side-open'); return render(); }
@@ -432,6 +465,10 @@
     else if (t.id === 'dmain') core.act.date(t.value); else if (t.id === 'dalt') core.act.alt(t.value);
   });
   document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') && !e.shiftKey) {
+      const tag = (e.target && e.target.tagName) || '';
+      if (tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); core.act.undo(); return; }
+    }
     if (e.key === 'Escape') { $('#modal').classList.remove('open'); if (A.sel) { A.sel = null; render(); } }
     if (e.key === 'Enter' && e.target.matches && e.target.matches('.blk,.strip')) e.target.click();
   });
@@ -448,6 +485,11 @@
     const z = e.target.closest && e.target.closest('.cols,.bank'); if (!z) return; e.preventDefault(); z.classList.remove('drop');
     const raw = e.dataTransfer.getData('text/plain'), type = raw.slice(0, 1), id = raw.slice(2); if (!id || (type !== 'p' && type !== 's')) return;
     const p = +z.dataset.page || 0;
+    if (core.isManual() && p) {
+      const cols = z.classList.contains('cols') ? z : z.querySelector('.cols');
+      const pos = dropPos(cols, e.clientX, e.clientY, id, type === 'p');
+      return type === 'p' ? core.act.placePhotoAt(id, pos) : core.act.placeAt(id, pos);
+    }
     if (type === 'p') return core.act.photo(id, !!p, p);
     if (!p) return core.act.include(id, false);
     const over = e.target.closest('.blk[data-slot]');
@@ -462,21 +504,28 @@
   let handleDrag = null, dragRaf = 0, dragMoved = false;
   function dragApply(d) {
     if (!d) return;
-    if (d.kind === 'scale') {
+    if (d.kind === 'scale' || d.kind === 'width') {
       const dx = (d.x - d.startX) / d.ppi, widthIn = (core.SNAP_WIDTHS[d.startSpan] || cap.col_width_in) + dx;
       const span = core.snapSpan(widthIn);
+      const id = d.photo || d.slot;
       if (d.photo) { if (core.photoSpanOf(d.photo) !== span) core.act.setSpan(d.photo, span, 'resize-drag'); }
       else if (d.slot && core.spanOf(core.slotBy[d.slot]) !== span) core.act.setSpan(d.slot, span, 'resize-drag');
-    } else if (d.kind === 'length' && d.slot) {
-      const s = core.slotBy[d.slot]; if (!s) return;
-      const dy = (d.y - d.startY) / d.ppi, span = core.spanOf(s);
-      const newH = Math.max(0.4, d.startH + dy), toColIn = newH * span;
-      const wpi = (s.cost && s.cost.feature) ? cap.wpi_feature : cap.wpi;
-      const toWords = Math.max(0, Math.round(toColIn * wpi));
-      const dir = toWords >= core.baseWordsOf(s) ? 'expand' : 'shrink';
-      if (d.lastWords != null && Math.abs(toWords - d.lastWords) < 5) return;
-      d.lastWords = toWords;
-      core.act.setResize(d.slot, dir, toWords + 'w', 'resize-drag');
+    } else if (d.kind === 'length') {
+      const newH = Math.max(0.4, d.startH + (d.y - d.startY) / d.ppi);
+      if (core.isManual()) {
+        const id = d.photo || d.slot;
+        if (id && (!d.lastH || Math.abs(newH - d.lastH) >= core.VGRID / 2)) { d.lastH = newH; core.act.setHeight(id, newH, 'resize-drag'); }
+      } else if (d.slot) {
+        const s = core.slotBy[d.slot]; if (!s) return;
+        const span = core.spanOf(s);
+        const toColIn = newH * span;
+        const wpi = (s.cost && s.cost.feature) ? cap.wpi_feature : cap.wpi;
+        const toWords = Math.max(0, Math.round(toColIn * wpi));
+        const dir = toWords >= core.baseWordsOf(s) ? 'expand' : 'shrink';
+        if (d.lastWords != null && Math.abs(toWords - d.lastWords) < 5) return;
+        d.lastWords = toWords;
+        core.act.setResize(d.slot, dir, toWords + 'w', 'resize-drag');
+      }
     }
     previewDrag(d);
   }
@@ -485,9 +534,12 @@
     if (blk) {
       const ppi = d.ppi, s = d.slot ? core.slotBy[d.slot] : null;
       const span = d.photo ? core.photoSpanOf(d.photo) : core.spanOf(s);
-      const cost = d.photo ? core.photoCost(d.photo) : core.costOf(s);
+      const man = core.isManual() && S.manualLayout[d.photo || d.slot];
+      const hIn = man ? man.heightIn : ((d.photo ? core.photoCost(d.photo) : core.costOf(s)) / span);
       blk.style.width = (spanW(span) * ppi) + 'px';
-      blk.style.height = Math.max(6, (cost / span) * ppi - 3) + 'px';
+      blk.style.height = Math.max(6, hIn * ppi - 3) + 'px';
+      if (man) { blk.style.left = (colX(man.col) * ppi) + 'px'; blk.style.top = (man.topIn * ppi) + 'px'; }
+      blk.classList.toggle('overlap', !!(d.el && core.allOverlaps().some(o => o.a.id === (d.photo || d.slot) || o.b.id === (d.photo || d.slot))));
       const lab = blk.querySelector('.size-lab');
       if (lab) {
         if (d.photo || (s && (s.cost || {}).type === 'figure')) {
@@ -510,6 +562,28 @@
     });
     const meter = document.getElementById('meter');
     if (meter) meter.innerHTML = ui.meter();
+    if (typeof renderOverlap === 'function') renderOverlap();
+  }
+  function dropPos(cols, clientX, clientY, id, isPhoto) {
+    const ppi = Number((cols && cols.dataset.ppi) || 0) || (cols ? cols.clientWidth / PW : 48);
+    const page = +((cols && cols.dataset.page) || 1) || 1;
+    const r = cols.getBoundingClientRect();
+    const cur = S.manualLayout[id];
+    const span = (cur && cur.span) || (isPhoto ? core.photoSpanOf(id) : core.spanOf(core.slotBy[id]));
+    const heightIn = (cur && cur.heightIn) || ((isPhoto ? core.photoCost(id) : core.costOf(core.slotBy[id])) / span);
+    const xIn = (clientX - r.left) / ppi, yIn = (clientY - r.top) / ppi;
+    const col = Math.max(0, Math.min(3 - span, Math.round(xIn / (CW + GUT))));
+    return { page, col, span, topIn: Math.max(0, core.snapY(yIn)), heightIn };
+  }
+  function pageAtPoint(clientX, clientY) {
+    for (const p of [1, 2]) {
+      const cols = document.querySelector(`.cols[data-page="${p}"]`);
+      if (!cols) continue;
+      const r = cols.getBoundingClientRect(), pad = 24;
+      if (clientX >= r.left - pad && clientX <= r.right + pad && clientY >= r.top - pad && clientY <= r.bottom + pad)
+        return { page: p, cols, ppi: Number(cols.dataset.ppi) || (cols.clientWidth / PW) };
+    }
+    return null;
   }
   document.addEventListener('pointerdown', e => {
     const h = e.target.closest && e.target.closest('[data-handle]'); if (!h) return;
@@ -523,6 +597,7 @@
       startSpan, startWords: s ? core.wordsOf(s) : 0, startH: blk.getBoundingClientRect().height / ppi,
       pointer: e.pointerId, el: blk };
     dragMoved = false;
+    if (core.isManual()) core.act.checkpoint();
     document.body.classList.add('resizing');
     try { document.documentElement.setPointerCapture(e.pointerId); } catch (err) { /* capture is best-effort */ }
   });
@@ -547,6 +622,72 @@
   }
   document.addEventListener('pointerup', endHandle);
   document.addEventListener('pointercancel', endHandle);
+
+  /* Manual mode: drag a block to any snapped position on either page. Mid-drag is a preview only. */
+  let moveDrag = null, moveRaf = 0, moveMoved = false;
+  function moveApply(d) {
+    if (!d || !core.isManual()) return;
+    const at = pageAtPoint(d.x, d.y);
+    const cols = (at && at.cols) || d.el.closest('.cols');
+    const ppi = (at && at.ppi) || d.ppi;
+    const page = (at && at.page) || d.startPage;
+    const r = cols.getBoundingClientRect();
+    const span = d.span;
+    const col = Math.max(0, Math.min(3 - span, Math.round(((d.x - r.left) / ppi - d.grabX) / (CW + GUT))));
+    const topIn = Math.max(0, core.snapY((d.y - r.top) / ppi - d.grabY));
+    const pos = { page, col, span, topIn, heightIn: d.heightIn };
+    if (d.photo) core.act.placePhotoAt(d.photo, pos, 'move-drag');
+    else core.act.placeAt(d.slot, pos, 'move-drag');
+    // live preview: move the element onto the target page without rebuilding
+    if (at && at.cols && d.el.parentNode !== at.cols) at.cols.appendChild(d.el);
+    d.el.style.left = (colX(col) * ppi) + 'px';
+    d.el.style.top = (topIn * ppi) + 'px';
+    d.el.style.width = (spanW(span) * ppi) + 'px';
+    d.el.style.zIndex = 6;
+    previewDrag({ photo: d.photo, slot: d.slot, el: d.el, ppi, kind: 'move' });
+  }
+  document.addEventListener('pointerdown', e => {
+    if (!core.isManual()) return;
+    if (e.target.closest && e.target.closest('[data-handle],.lay-tog,.handle,button,.marks')) return;
+    const blk = e.target.closest && e.target.closest('.blk'); if (!blk) return;
+    const slot = blk.dataset.slot, photo = blk.dataset.photo, id = photo || slot;
+    if (photo ? !core.canPlacePhoto(photo) : !core.canPlace(core.slotBy[slot])) return;
+    const cols = blk.closest('.cols'); if (!cols) return;
+    const ppi = Number(cols.dataset.ppi) || (cols.clientWidth / PW);
+    const r = blk.getBoundingClientRect();
+    const cur = S.manualLayout[id] || { page: +cols.dataset.page, col: 0, span: photo ? core.photoSpanOf(photo) : core.spanOf(core.slotBy[slot]), topIn: 0, heightIn: (photo ? core.photoCost(photo) : core.costOf(core.slotBy[slot])) };
+    moveDrag = { photo, slot, el: blk, ppi, startPage: +cols.dataset.page, startX: e.clientX, startY: e.clientY, x: e.clientX, y: e.clientY,
+      grabX: (e.clientX - r.left) / ppi, grabY: (e.clientY - r.top) / ppi, span: cur.span, heightIn: cur.heightIn, pointer: e.pointerId, checked: false };
+    moveMoved = false;
+    try { document.documentElement.setPointerCapture(e.pointerId); } catch (err) { /* best-effort */ }
+  });
+  document.addEventListener('pointermove', e => {
+    if (!moveDrag) return;
+    moveDrag.x = e.clientX; moveDrag.y = e.clientY;
+    if (Math.abs(e.clientX - moveDrag.startX) + Math.abs(e.clientY - moveDrag.startY) > 3) {
+      if (!moveMoved && !moveDrag.checked) { core.act.checkpoint(); moveDrag.checked = true; }
+      moveMoved = true;
+      document.body.classList.add('moving');
+    }
+    if (moveRaf) return;
+    const d = moveDrag;
+    moveRaf = requestAnimationFrame(() => { moveRaf = 0; if (moveDrag === d && moveMoved) moveApply(d); });
+  });
+  function endMove(e) {
+    if (!moveDrag) return;
+    if (moveRaf) { cancelAnimationFrame(moveRaf); moveRaf = 0; }
+    const d = moveDrag;
+    moveDrag = null;
+    document.body.classList.remove('moving');
+    try { if (e && e.pointerId != null) document.documentElement.releasePointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+    if (moveMoved) {
+      moveApply(d);
+      render(); save();
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+    }
+  }
+  document.addEventListener('pointerup', endMove);
+  document.addEventListener('pointercancel', endMove);
 
   renderDatePop(); render();
   window.BudgetPage = { core, payload: () => core.submission(), storeKey: () => STORE_KEY, select };

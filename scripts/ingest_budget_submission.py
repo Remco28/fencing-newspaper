@@ -14,7 +14,7 @@ Does exactly what budget-demo/server.py does for POST /submit and POST /vet:
   - refuses (exit 4, writes nothing) if an included slot's item, or a photo in photoIncludes, is
     in staging and still unvetted after this submission's vets are applied. Missing ids (an older
     issue's items) stay warnings, so Nos. 1–6 submissions still ingest.
-  - appends the decisions (includes/excludes, photo picks, optional pages / resize / layout, slot notes,
+  - appends the decisions (includes/excludes, photo picks, optional pages / resize / layout / mode / manualLayout, slot notes,
     answers, notes, vets) to <staging-week>/budget-versions.json "decisions"; build_budget_html.py
     starts the next numbered budget (vN) from the latest entry, so a rebuild never drops what
     Frank already decided. Unvetted photos are never recorded in photoIncludes, so they are never
@@ -29,7 +29,7 @@ Defaults match server.py: GAZETTE_STAGING_WEEK (staging/weeks/next), GAZETTE_SUB
 Refuses a submission whose issue number / targetWeek doesn't match the lineup unless --force.
 Re-ingesting the same file just re-applies (vet-log notes already_vetted).
 
-Optional fields from the Budget page (pageVersion budget-paper-v1); submissions without them ingest as before:
+Optional fields from the Budget page (pageVersion budget-paper-v1 or budget-paper-v2); submissions without them ingest as before:
   publishDateAlt  YYYY-MM-DD or null — Frank's alternate run date; stored on the decision when present.
   budgetVersion   the vN the page was built as, and
   dataVersion     the build's data hash — both recorded on the decision for the record. Neither is checked:
@@ -41,6 +41,12 @@ Optional fields from the Budget page (pageVersion budget-paper-v1); submissions 
                   Clark to rewrite to length. Stored when present; ignored when absent.
   layout          {slotKey|mediaId: 'wide'|'tall'} — chosen layout variant (names shared with compose/).
                   Stored when present; ignored when absent.
+  mode            'auto' or 'manual' — whether Frank left Auto placement on, or placed blocks himself.
+                  Stored when present; a missing field means auto (older submissions).
+  manualLayout    {slotKey|mediaId: {page, col, span, topIn, heightIn}} — frozen positions when mode is
+                  manual. col is 0-based (0, 1 or 2). Overlaps and overset past the trim are reported as
+                  warnings and are not silently fixed. Stored when present; ignored when absent.
+                  compose/ does not yet pack from this field (hand-off is documented in compose/README.md).
 """
 from __future__ import annotations
 
@@ -52,6 +58,9 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import budget_model  # noqa: E402
 
 REPO = Path(__file__).resolve().parent.parent
 SOURCE = "budget-page-standalone"
@@ -118,6 +127,8 @@ def validate(p: dict) -> list[str]:
     errs.extend(validate_pages(p.get("pages")))
     errs.extend(validate_resize(p.get("resize")))
     errs.extend(validate_layout(p.get("layout")))
+    errs.extend(validate_mode(p.get("mode")))
+    errs.extend(validate_manual_layout(p.get("manualLayout")))
     return errs
 
 
@@ -198,6 +209,52 @@ def validate_layout(layout) -> list[str]:
             errs.append("layout keys must be non-empty strings")
         elif v not in ("wide", "tall"):
             errs.append(f"layout.{k} must be 'wide' or 'tall'")
+    return errs
+
+
+
+def validate_mode(mode) -> list[str]:
+    """Absent mode is Auto (older submissions)."""
+    if mode is None or mode == "":
+        return []
+    if mode not in ("auto", "manual"):
+        return ["mode must be 'auto' or 'manual'"]
+    return []
+
+
+def validate_manual_layout(layout) -> list[str]:
+    """Each entry is {page: 1|2, col: 0|1|2, span: 1|2|3, topIn, heightIn}. Absent is fine."""
+    if layout is None:
+        return []
+    if not isinstance(layout, dict):
+        return ["manualLayout must be an object or null"]
+    errs = []
+    for k, v in layout.items():
+        if not isinstance(k, str) or not k:
+            errs.append("manualLayout keys must be non-empty strings")
+            continue
+        if not isinstance(v, dict):
+            errs.append(f"manualLayout.{k} must be an object")
+            continue
+        if v.get("page") not in (1, 2):
+            errs.append(f"manualLayout.{k}.page must be 1 or 2")
+        span = v.get("span")
+        if not isinstance(span, (int, float)) or int(span) != span or not (1 <= span <= 3):
+            errs.append(f"manualLayout.{k}.span must be 1, 2 or 3")
+            span = None
+        col = v.get("col")
+        if not isinstance(col, (int, float)) or int(col) != col or col < 0 or col > 2:
+            errs.append(f"manualLayout.{k}.col must be 0, 1 or 2")
+        elif span is not None and col + span > 3:
+            errs.append(f"manualLayout.{k}.col + span must be <= 3")
+        for fld in ("topIn", "heightIn"):
+            n = v.get(fld)
+            if not isinstance(n, (int, float)) or isinstance(n, bool):
+                errs.append(f"manualLayout.{k}.{fld} must be a number")
+            elif fld == "heightIn" and n <= 0:
+                errs.append(f"manualLayout.{k}.heightIn must be positive")
+            elif fld == "topIn" and n < 0:
+                errs.append(f"manualLayout.{k}.topIn must be >= 0")
     return errs
 
 
@@ -356,6 +413,10 @@ def main() -> None:
         die("unvetted items cannot run (vet them in this submission or leave them out):\n  - " +
             "\n  - ".join(unvetted) + "\n  Nothing written.", 4)
 
+    if payload.get("manualLayout") or payload.get("mode") == "manual":
+        cap = budget_model.merged_capacity((lineup or {}).get("capacity") or {}, budget_model.load_calibration())
+        warnings.extend(budget_model.manual_layout_warnings(payload.get("manualLayout") or {}, cap))
+
     # ---- decision log entry (budget versions; build_budget_html.py reads the latest) ----
     versions_path = week / "budget-versions.json"
     decision = {
@@ -380,6 +441,10 @@ def main() -> None:
         decision["resize"] = payload["resize"]
     if "layout" in payload:
         decision["layout"] = payload["layout"]
+    if "mode" in payload:
+        decision["mode"] = payload["mode"]
+    if "manualLayout" in payload:
+        decision["manualLayout"] = payload["manualLayout"]
     vdoc = None
     if versions_path.is_file():
         try:

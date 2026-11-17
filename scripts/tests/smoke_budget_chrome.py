@@ -72,7 +72,7 @@ def main() -> int:
                 pg.locator("#side [data-close]").click()
             pg.locator("#sign").click()
             doc = json.loads(pg.locator("#json").inner_text())
-            assert doc["pageVersion"] == "budget-paper-v1" and "publishDateAlt" in doc and "budgetVersion" in doc and "dataVersion" in doc
+            assert doc["pageVersion"] == "budget-paper-v2" and "publishDateAlt" in doc and "budgetVersion" in doc and "dataVersion" in doc
             if shots and name == "desktop":
                 pg.screenshot(path=str(shots / "budget-desktop-signoff.png"))
             ctx.close()

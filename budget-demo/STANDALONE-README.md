@@ -1,6 +1,6 @@
 # Standalone budget page
 
-> **2026-11-16: the page is now the Budget spread** (`pageVersion: budget-paper-v1`). Same builder, same one-file page, same
+> **2026-11-16: the page is now the Budget spread** (`pageVersion: budget-paper-v2` (Budget version 2; Auto / Manual placement)). Same builder, same one-file page, same
 > ingest. What Frank sees changed: the two pages of the issue with each included item as a block sized by the capacity model,
 > a bank of what isn't running, hatched holes for unfilled space (column-inches and words), and a slip per item (click or tap).
 > Desktop: drag between the bank and the pages. Phone: open the slip and use Page 1 / Page 2 / Bank.
@@ -117,6 +117,12 @@ Flags: `--staging-week`, `--submissions`, `--lineup` (defaults follow `GAZETTE_S
 `--force`. If the submission's issue number or `targetWeek` doesn't match the lineup, the script refuses
 it (exit 2) unless you pass `--force`. Ingesting the same file again just re-applies it; the vet-log
 records `already_vetted: true`.
+
+Optional Budget version 2 fields (`mode: 'auto'|'manual'` and, when manual, `manualLayout` mapping
+each included slot or photo to `{page, col, span, topIn, heightIn}`) are stored on the decision when
+present. Older submissions without them still ingest. Overlaps and overset past the trim are printed
+as warnings and are not moved. Compose does not yet pack from `manualLayout` (see `compose/README.md`).
+
 
 Test against a throwaway copy, never the live paths:
 

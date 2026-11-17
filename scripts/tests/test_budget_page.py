@@ -28,7 +28,7 @@ LINEUP = REPO / _SNAP["lineup"]
 WEEK = REPO / _SNAP["week"]
 OLD_FIELDS = ["publishDate", "practice", "pretend", "targetWeek", "issue", "includedSlots", "excludedSlots", "photoIncludes",
               "notes", "slotNotes", "answers", "order", "pageVersion", "submittedAt", "vets"]
-NEW_OPTIONAL = ["publishDateAlt", "budgetVersion", "dataVersion", "pages", "resize", "layout"]
+NEW_OPTIONAL = ["publishDateAlt", "budgetVersion", "dataVersion", "pages", "resize", "layout", "mode"]
 
 
 def run(*args, **kw):
@@ -110,7 +110,7 @@ class Builder(unittest.TestCase):
         code = re.sub(r'<script type="application/json" id="budget-data">.*?</script>', "", self.html, flags=re.S)
         self.assertNotRegex(code, r"(?i)dummy")  # the mockup's working name is gone from everything Frank sees
         self.assertNotRegex(code, r"\bfetch\(|XMLHttpRequest|<link\b|src=[\"']https?:")
-        self.assertEqual(self.data["build"]["pageVersion"], "budget-paper-v1")
+        self.assertEqual(self.data["build"]["pageVersion"], "budget-paper-v2")
         for a in ("page.html", "page.css", "core.js", "ui.js", "layouts.json"):
             self.assertTrue((SCRIPTS / "budget_page" / a).is_file())
         self.assertIn("layouts", self.data)
@@ -153,7 +153,7 @@ class PageLogic(unittest.TestCase):
         doc = node(self.data, "out = C.submission(new Date(2026, 10, 16, 22, 0, 0));")
         self.assertEqual(list(doc)[:len(OLD_FIELDS)], OLD_FIELDS)
         self.assertEqual(sorted(set(doc) - set(OLD_FIELDS)), sorted(NEW_OPTIONAL))
-        self.assertEqual(doc["pageVersion"], "budget-paper-v1")
+        self.assertEqual(doc["pageVersion"], "budget-paper-v2")
         self.assertRegex(doc["publishDate"], r"^\d{4}-\d{2}-\d{2}$")
         self.assertEqual(doc["dataVersion"], self.data["build"]["dataVersion"])
         self.assertIn("budgetVersion", doc)
@@ -343,6 +343,63 @@ class PageLogic(unittest.TestCase):
         self.assertLess(res["p3"], res["p2"])
         self.assertEqual(res["pClr"], res["pBefore"])
         self.assertEqual(res["hasResize"], 0)
+
+
+    def test_manual_mode_snapshots_auto_and_does_not_repack_neighbors(self):
+        res = node(self.data, """
+          const before = {};
+          [1, 2].forEach(p => C.pack(p).placed.forEach(b => { before[b.id] = { page: p, col: b.col, y: +b.y.toFixed(3), h: +(b.cost / b.span).toFixed(3), span: b.span }; }));
+          C.act.toManual();
+          const doc = C.submission();
+          const after = C.manualLayoutOf();
+          const lead = before.lead;
+          const moved = { page: lead.page === 1 ? 2 : 1, col: 0, span: lead.span, topIn: 0.4, heightIn: lead.h };
+          C.act.placeAt('lead', moved);
+          const layout = C.manualLayoutOf();
+          const others = Object.keys(before).filter(k => k !== 'lead').every(k => {
+            const a = after[k], b = layout[k];
+            return a && b && a.page === b.page && a.col === b.col && Math.abs(a.topIn - b.topIn) < 0.06;
+          });
+          const fillSame = Math.abs(C.fill().used - (() => { C.act.undo(); const u = C.fill().used; C.act.placeAt('lead', moved); return u; })());
+          out = {
+            mode: doc.mode, hasLayout: !!doc.manualLayout, leadBefore: lead, leadAfter: layout.lead,
+            othersUnmoved: others, pageVersion: doc.pageVersion, keys: Object.keys(layout).sort(),
+            undoRestores: null
+          };
+          C.act.undo();
+          const back = C.manualLayoutOf().lead;
+          out.undoRestores = back && back.page === after.lead.page && back.col === after.lead.col && Math.abs(back.topIn - after.lead.topIn) < 0.06;
+          C.act.toAuto();
+          const auto = C.submission();
+          out.backToAuto = auto.mode === 'auto' && !auto.manualLayout;
+        """
+        )
+        self.assertEqual(res["mode"], "manual")
+        self.assertTrue(res["hasLayout"])
+        self.assertEqual(res["pageVersion"], "budget-paper-v2")
+        self.assertTrue(res["keys"])
+        self.assertEqual(res["leadAfter"]["page"], 2 if res["leadBefore"]["page"] == 1 else 1)
+        self.assertAlmostEqual(res["leadAfter"]["topIn"], 0.4, places=2)
+        self.assertTrue(res["othersUnmoved"], "moving one block in Manual must not move the others")
+        self.assertTrue(res["undoRestores"])
+        self.assertTrue(res["backToAuto"])
+
+    def test_manual_overlap_is_reported_and_not_resolved(self):
+        res = node(self.data, """
+          C.act.toManual();
+          const a = Object.keys(C.manualLayoutOf())[0];
+          const b = Object.keys(C.manualLayoutOf()).find(k => k !== a && C.manualLayoutOf()[k].page === C.manualLayoutOf()[a].page) || Object.keys(C.manualLayoutOf())[1];
+          const A = C.manualLayoutOf()[a];
+          C.act.placeAt(b, { page: A.page, col: A.col, span: A.span, topIn: A.topIn, heightIn: A.heightIn });
+          const pack = C.pack(A.page);
+          const needs = C.needs().filter(n => n.kind === 'overlap');
+          const doc = C.submission();
+          out = { overlaps: pack.overlaps.length, needs: needs.length, mode: doc.mode, same: doc.manualLayout[a].topIn === doc.manualLayout[b].topIn && doc.manualLayout[a].col === doc.manualLayout[b].col };
+        """)
+        self.assertGreater(res["overlaps"], 0)
+        self.assertGreater(res["needs"], 0)
+        self.assertTrue(res["same"], "ingest-style layout must keep the overlapping positions")
+        self.assertEqual(res["mode"], "manual")
 
     def test_resize_and_layout_seed_from_a_previous_decision(self):
 
@@ -573,6 +630,29 @@ class Ingest(unittest.TestCase):
         self.assertEqual(r6.returncode, 0, r6.stderr)
         self.assertNotIn("resize", self.last_decision())
         self.assertNotIn("layout", self.last_decision())
+
+    def test_manual_layout_is_stored_and_overlaps_are_warnings_not_fixes(self):
+        layout = {
+            "lead": {"page": 1, "col": 0, "span": 2, "topIn": 0.0, "heightIn": 4.0},
+            "comic": {"page": 1, "col": 0, "span": 2, "topIn": 1.0, "heightIn": 3.0},
+        }
+        r = self.ingest(dict(self.base(), mode="manual", manualLayout=layout, pageVersion="budget-paper-v2"))
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn("manualLayout overlap", r.stderr + r.stdout)
+        d = self.last_decision()
+        self.assertEqual(d["mode"], "manual")
+        self.assertEqual(d["manualLayout"], layout)  # not silently moved
+        r2 = self.ingest(self.base())  # older submission, no mode
+        self.assertEqual(r2.returncode, 0, r2.stderr)
+        d2 = self.last_decision()
+        self.assertNotIn("mode", d2)
+        self.assertNotIn("manualLayout", d2)
+        r3 = self.ingest(dict(self.base(), mode="sideways"))
+        self.assertEqual(r3.returncode, 1)
+        self.assertIn("mode must be", r3.stderr)
+        r4 = self.ingest(dict(self.base(), mode="manual", manualLayout={"lead": {"page": 1, "col": 0, "span": 3, "topIn": 0, "heightIn": 0}}))
+        self.assertEqual(r4.returncode, 1)
+        self.assertIn("heightIn", r4.stderr)
 
     @unittest.skipUnless(NODE, "node not installed")
     def test_page_document_round_trips_through_ingest_and_the_next_build(self):
