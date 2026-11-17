@@ -385,7 +385,7 @@ def split(*cols, widths=None):
 # Placement numbers and photo_span() live in art.py so the fitter and the composer share them.
 from art import (  # noqa: E402
     PHOTO_CEILING_IN, COL1_IN, COL2_IN, PHOTO_MIN_DPI, MIN_PRINT_DPI,
-    PAGE_CONTENT_IN, FOOTER_PIN_FLAG_IN,
+    PAGE_CONTENT_IN, FOOTER_PIN_FLAG_IN, COL_GAP_FLAG_IN, PHOTO_CROP_MIN_H_IN,
     photo_span, art_markup, load_art_manifest, validate_asset, ArtError,
 )
 
@@ -394,7 +394,7 @@ def art(asset, src=None, credit=None):
     """Flexible art slot for the fitter. `asset` is one entry from recipe/art.json.
 
     The printed credit, if any, is the same one-line rule as photo(). Full attributions
-    should go through credit_line() first. Layout never crops."""
+    should go through credit_line() first. Layout never silently CSS-crops; a prepared face-safe backdrop crop may be applied by the row-balance pass (credit must include "(cropped)")."""
     cred = ""
     if credit:
         cred = f'<p class="credit">{html.escape(check_credit(credit), quote=False)}</p>'

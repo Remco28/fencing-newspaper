@@ -266,6 +266,257 @@
         footer_drop_in,
       };
     },
+
+    // Row-balance helpers (STYLE-GUIDE §13). Stamp ids, list movable shorts,
+    // move a short box into a shorter column/rail, unwrap a one-child split,
+    // and retarget an art slot at a prepared crop.
+    stampBalanceIds() {
+      let n = 0, c = 0;
+      const SEL = '[data-balance], .cols3, .page2-lower, .split, .board-split, .box-pair';
+      const stamp = (el) => { el.setAttribute("data-bal-id", "i" + (++n)); };
+      document.querySelectorAll(".page").forEach((page, pi) => {
+        page.querySelectorAll(SEL).forEach((row) => {
+          if (row.closest(".page") !== page) return;
+          [...row.children].forEach((col) => {
+            col.setAttribute("data-bal-col", "p" + (pi + 1) + "c" + (++c));
+            const walk = (el) => {
+              [...el.children].forEach((kid) => {
+                if (kid.matches && kid.matches(SEL)) return; // nested row stamps itself
+                if (kid.matches && kid.matches(".masthead, .dateline, .footer")) return;
+                if (kid.matches && kid.matches("figure.art, .art")) { stamp(kid); return; }
+                if (kid.matches && kid.matches(".lead, .rail-block, .slot-a, .slot-b, .box")) {
+                  stamp(kid);
+                  kid.querySelectorAll("figure.art, .art").forEach(stamp);
+                  return;
+                }
+                stamp(kid);
+                walk(kid);
+              });
+            };
+            walk(col);
+          });
+        });
+      });
+      return { items: n, cols: c };
+    },
+
+    listMovable() {
+      this.stampBalanceIds();
+      const SEL = '[data-balance], .cols3, .page2-lower, .split, .board-split, .box-pair';
+      const inch = (px) => +(px / 96).toFixed(4);
+      const inkBottom = (el) => {
+        let b = -Infinity;
+        const take = (r) => { if (r.width > 0 && r.height > 0 && r.bottom > b) b = r.bottom; };
+        const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        const range = document.createRange();
+        for (let n = w.nextNode(); n; n = w.nextNode()) {
+          if (!n.nodeValue.trim()) continue;
+          range.selectNodeContents(n);
+          for (const r of range.getClientRects()) take(r);
+        }
+        el.querySelectorAll("img, svg, hr, td, th").forEach(e => take(e.getBoundingClientRect()));
+        return b;
+      };
+      const isMovable = (el) => {
+        if (el.matches(".lead, .masthead, .dateline, .footer, .w3")) return false;
+        if (el.matches(".box, .rail-block, .slot-a, .slot-b")) return true;
+        return false;
+      };
+      const itemKind = (el) => {
+        if (el.matches("figure, .art")) return "art";
+        if (el.matches(".lead")) return "lead";
+        if (el.matches(".box")) return "box";
+        if (el.matches(".rail-block, .slot-a, .slot-b")) return "short";
+        return "other";
+      };
+      const itemLabel = (el) => {
+        const h = el.querySelector("h1, h2, h3, h4, .board-head, .boxtitle, .rail-title");
+        if (h && h.textContent.trim()) return h.textContent.trim().replace(/\s+/g, " ").slice(0, 80);
+        return (el.getAttribute("data-art") || el.className || el.tagName).toString().split(" ")[0];
+      };
+      const pages = [...document.querySelectorAll(".page")].map((page, pi) => {
+        const rows = [...page.querySelectorAll(SEL)].filter(r => r.closest(".page") === page).map((row, ri) => {
+          const box = row.getBoundingClientRect();
+          const rcs = getComputedStyle(row);
+          const rowBottom = box.bottom - (parseFloat(rcs.paddingBottom) || 0);
+          const cols = [...row.children].map((col) => {
+            const ink = inkBottom(col);
+            const items = [...col.querySelectorAll("[data-bal-id]")].map((el) => {
+              const r = el.getBoundingClientRect();
+              return {
+                id: el.getAttribute("data-bal-id"),
+                kind: itemKind(el),
+                movable: isMovable(el),
+                label: itemLabel(el),
+                art_id: el.getAttribute("data-art") || (el.querySelector("[data-art]") && el.querySelector("[data-art]").getAttribute("data-art")) || "",
+                photo: !!(el.matches("figure.art, .art") || el.querySelector("figure.art, .art")),
+                lettered: el.getAttribute("data-lettered") === "true" || !!(el.querySelector && el.querySelector("[data-lettered='true']")),
+                h_in: inch(r.height),
+                src: (el.matches("img") ? el.getAttribute("src") : (el.querySelector && el.querySelector("img") && el.querySelector("img").getAttribute("src"))) || "",
+              };
+            });
+            return {
+              id: col.getAttribute("data-bal-col"),
+              gap_in: inch(rowBottom - ink),
+              h_in: inch(Math.max(ink - col.getBoundingClientRect().top, 0)),
+              items,
+            };
+          });
+          return { kind: (row.getAttribute("data-balance") || (row.className || "").split(" ")[0]), cols };
+        });
+        return { page: pi + 1, rows };
+      });
+      return { pages };
+    },
+
+    moveItem(itemId, destColId) {
+      const el = document.querySelector('[data-bal-id="' + CSS.escape(itemId) + '"]');
+      const dest = document.querySelector('[data-bal-col="' + CSS.escape(destColId) + '"]');
+      if (!el || !dest) return { ok: false, reason: "missing item or dest" };
+      dest.appendChild(el);
+      this.unwrapLonelySplits();
+      return { ok: true, item: itemId, dest: destColId };
+    },
+
+        unwrapLonelySplits() {
+      const SEL = ".split, .board-split, .box-pair, [data-balance='split']";
+      let n = 0;
+      document.querySelectorAll(SEL).forEach((row) => {
+        const isEmpty = (d) => !d.children.length && !(d.textContent || "").trim();
+        const empties = [...row.children].filter(isEmpty);
+        const remaining = [...row.children].filter((d) => !isEmpty(d));
+        // Lock art widths while siblings still define the column width.
+        // Removing an empty half first would let a flex:1 photo expand to
+        // the full row, then overflow after unwrap.
+        if (remaining.length === 1) {
+          remaining[0].querySelectorAll("figure.art, .art").forEach((art) => {
+            const w = art.getBoundingClientRect().width / 96;
+            if (w > 0) {
+              art.style.width = w.toFixed(4) + "in";
+              art.style.maxWidth = w.toFixed(4) + "in";
+              art.style.setProperty("--art-w", w.toFixed(4) + "in");
+            }
+          });
+          if (remaining[0].matches && remaining[0].matches("figure.art, .art")) {
+            const art = remaining[0];
+            const w = art.getBoundingClientRect().width / 96;
+            if (w > 0) {
+              art.style.width = w.toFixed(4) + "in";
+              art.style.maxWidth = w.toFixed(4) + "in";
+              art.style.setProperty("--art-w", w.toFixed(4) + "in");
+            }
+          }
+        }
+        empties.forEach((d) => d.remove());
+        const kids = [...row.children];
+        if (kids.length !== 1) return;
+        const parent = row.parentElement;
+        if (!parent) return;
+        let keep = kids[0];
+        while (keep.children.length === 1 &&
+               !keep.matches("figure, .art, .box, .lead, .rail-block, .slot-a, .slot-b, .w3")) {
+          keep = keep.children[0];
+        }
+        parent.insertBefore(keep, row);
+        row.remove();
+        n++;
+      });
+      return n;
+    },
+
+    wrapInSplit(itemIds, flexes) {
+      const els = (itemIds || []).map((id) =>
+        document.querySelector('[data-bal-id="' + CSS.escape(id) + '"]'));
+      if (!els.length || els.some((e) => !e)) return { ok: false, reason: "missing item" };
+      flexes = flexes || els.map(() => 1);
+      const split = document.createElement("div");
+      split.className = "split";
+      split.setAttribute("data-balance", "split");
+      const lead = els[0].closest(".lead");
+      if (lead && lead.parentElement) {
+        lead.parentElement.insertBefore(split, lead.nextSibling);
+      } else {
+        els[0].parentElement.insertBefore(split, els[0]);
+      }
+      els.forEach((el, i) => {
+        const artId = el.getAttribute("data-art");
+        if (artId) this.clearArtMode(artId);
+        const cell = document.createElement("div");
+        cell.style.flex = String(flexes[i] || 1);
+        split.appendChild(cell);
+        cell.appendChild(el);
+      });
+      return { ok: true, ids: itemIds };
+    },
+
+    clearArtMode(id) {
+      if (!id) return { ok: false };
+      const el = document.querySelector('[data-art="' + CSS.escape(id) + '"]');
+      if (!el) return { ok: false };
+      el.classList.remove("art--float", "art--gutter");
+      el.style.cssFloat = "";
+      el.style.display = "";
+      el.style.width = "100%";
+      el.style.setProperty("--art-w", "100%");
+      el.style.marginLeft = "0";
+      el.style.marginRight = "0";
+      return { ok: true };
+    },
+
+    floatIntoLead(id, widthIn) {
+      const el = document.querySelector('[data-art="' + CSS.escape(id) + '"]');
+      if (!el) return { ok: false, reason: "no slot " + id };
+      const col = el.closest(".c, .span2") || el.parentElement;
+      const lead = col && col.querySelector(".lead");
+      if (!lead) return { ok: false, reason: "no lead in column" };
+      const existing = lead.querySelector("figure.art, .art");
+      if (existing && existing !== el) existing.after(el);
+      else {
+        const hook = lead.querySelector("p.dek, p, h1, h2");
+        if (hook && hook.nextSibling) hook.parentNode.insertBefore(el, hook.nextSibling);
+        else lead.appendChild(el);
+      }
+      el.classList.add("art--float");
+      el.classList.remove("art--gutter");
+      el.style.cssFloat = "left";
+      el.style.display = "";
+      const w = widthIn || (el.getBoundingClientRect().width / 96);
+      el.style.width = w + "in";
+      el.style.maxWidth = w + "in";
+      el.style.setProperty("--art-w", w + "in");
+      el.style.marginLeft = "0";
+      if (el.parentElement && !el.parentElement.classList.contains("page")) {
+        el.parentElement.style.display = "flow-root";
+      }
+      return { ok: true, id, width: w };
+    },
+
+    setArtSrc(id, src, creditSuffix) {
+      const el = document.querySelector('[data-art="' + CSS.escape(id) + '"]');
+      if (!el) return { ok: false, reason: "no slot " + id };
+      const img = el.querySelector("img") || (el.tagName === "IMG" ? el : null);
+      if (!img) return { ok: false, reason: "no img" };
+      img.setAttribute("src", src);
+      img.setAttribute("data-src", src);
+      if (creditSuffix) {
+        const cred = el.querySelector(".credit, p.credit") ||
+          (el.parentElement && el.parentElement.querySelector(".credit"));
+        if (cred && cred.textContent.indexOf(creditSuffix) < 0) {
+          cred.textContent = cred.textContent.replace(/\.?\s*$/, "") + " " + creditSuffix;
+        }
+      }
+      return { ok: true, id, src };
+    },
+
+    setArtWidth(id, widthIn) {
+      const el = document.querySelector('[data-art="' + CSS.escape(id) + '"]');
+      if (!el) return { ok: false };
+      if (widthIn) {
+        el.style.width = widthIn + "in";
+        el.style.setProperty("--art-w", widthIn + "in");
+      }
+      return { ok: true };
+    },
   };
   return true;
 })()

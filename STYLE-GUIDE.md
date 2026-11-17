@@ -151,7 +151,12 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
   would make 3 pages, reflow and trim **Clark fill** stories first (v3.20).
 - `compose/render.py` measures the footer gap **per column** (including `.page2-lower` and other
   multi-column splits), not only the tallest sibling. The worst column is the page's number.
-  FLAG above 0.75in. Fill shortfalls with layout or by asking Frank for copy; never invent prose.
+  FLAG above 0.75in. It also measures the blank at the bottom of **every column, rail and box
+  in every row band**, and any float hole beside a photo, and FLAGs any of those holes above
+  0.35in — filling the gap above the footer is not enough if it has pushed white space up
+  into a short rail. Fill shortfalls with layout (the row-balance pass) or by asking Frank
+  for copy; never invent or pad prose. If layout cannot close a hole, report its size and
+  location.
 - Art (photos, comics, diagrams, illustrations) is the flexible element; the words stay put.
   `compose/render.py` sizes each `art()` slot against this same instrument (§19). A shortfall
   word-count in the fit report is a hint only — cuts still follow §16, never the hint alone.
@@ -339,7 +344,13 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   page's number. FLAG above 0.75in. It also measures the footer's position against the
   physical content-box bottom (10.1in from the top of `.page`, not the element's used
   height — a shrink-wrapped page would hide blank paper below the footer) and FLAGs any
-  page whose footer is not there (tolerance 0.15in). It also checks the 7pt type floor on
+  page whose footer is not there (tolerance 0.15in). For every multi-column row it also
+  records the blank at the bottom of each column/rail/box (row content-box bottom minus
+  that column's ink) and FLAGs any hole above 0.35in, plus the same threshold on a
+  floated art slot whose wrapping text does not reach the art's bottom (or vice versa).
+  After art-fit, a row-balance pass (`compose/balance.py`) may move a short box into the
+  shorter column, pair photos in a row, or scale / face-safe-crop a photo to close those
+  holes (`--no-balance` skips it). It also checks the 7pt type floor on
   every text element (ears, captions, credits, kickers, board heads) and counts hyphenated
   line breaks.
   The art-fit pass uses this same instrument as its verifier (`--report` includes `art_fit`
@@ -374,18 +385,24 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 - The rail rises to the very top beside the dek. Rebalance lead word budget against rail
   height whenever this arrangement changes (see §11 budgets).
 
-## 18. Region balance (locked 2026-10-06)
+## 18. Region balance (locked 2026-10-06; in-row holes 2026-11-16)
 - Page-level fill is necessary but not sufficient: columns WITHIN a row must end within
-  ~0.5in of each other. A two-column-wide hole under a short lead next to a tall rail is
-  a defect even when the footer reaches the bottom.
-- `compose/render.py` reports per-row column-bottom spread alongside the per-column footer gap.
-  Fixes in order: retune the short column's word budget, then pull-quote, then restructure —
-  never leave a region void larger than 0.5in. In a `.board-split`, box notes go under the
-  shorter half rather than as one full-width line under both.
+  0.35in of the row bottom (the fill instrument FLAGs any column/rail/box bottom gap
+  above 0.35in). A two-column-wide hole under a short lead next to a tall rail is a
+  defect even when the footer reaches the bottom. Column-spread (deepest minus
+  shallowest) is still reported and FLAGs above 0.5in.
+- `compose/render.py` reports those per-column bottom gaps and the spread alongside the
+  per-column footer gap. Fixes, in the general row-balance pass: move a short box
+  (Ratings Earned, a small short) into the shorter column or rail; let paired items in
+  a row equalize; scale a photo within its ceilings, or apply a prepared face-safe
+  backdrop crop (§19). Then, if a hole remains, report its size and location to Frank —
+  never invent or pad prose, never leave a region void unreported. In a `.board-split`,
+  box notes go under the shorter half rather than as one full-width line under both.
 
 ## 19. Photos — fit, no silent crop (locked 2026-10-07, plan v3.9)
 - Default CSS: `width: 100%; height: auto;` — preserve the original aspect ratio. **Never**
-  use `object-fit: cover` or a hard `max-height` that silently crops the frame.
+  use `object-fit: cover` or a hard `max-height` that silently crops the frame in the
+  stylesheet. A prepared crop is a different thing: see the backdrop-crop note below.
 - Grayscale filter (`filter: grayscale(100%)`) may stay for B&W print.
 - Soft ceiling: if a photo would print taller than **~2.2in** in its column, FLAG to Frank
   (crop on the photo desk, pick a smaller slot, or swap the image). Do not auto-crop in CSS.
@@ -397,7 +414,15 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   (author / source, licence with version, "(cropped)" if changed). No file names or URLs
   in the printed line; the full attribution stays in `sources.json`. Published issues keep
   the credit they already printed. Photo desk still chooses which frames run; layout
-  only scales to column width.
+  only scales to column width, except for the prepared crop below.
+- **Face-safe backdrop crop (row-balance, 2026-11-16).** To close an in-row hole, the
+  balancer may write a sibling `*-fillcrop` file that cover-crops a portrait's backdrop
+  and floor only. A keep-band (default 10–55% of the original height) must stay intact
+  so faces and torsos are not touched; a target that cannot contain the band is
+  refused. The original file stays; the printed credit must include "(cropped)". This
+  is not CSS `object-fit: cover` and is not a silent crop. Lettered comics are never
+  cover-cropped; they may shrink within the art-fit floors. Photos may also scale
+  within the 2.2in ceiling and the 1.2in crop floor.
 - **Caption naming (v3.20, first real run):** name **only people Frank has confirmed** (chat /
   vetted source). No left/right order unless Clark can actually tell who is who from the
   image. People from other clubs are “other medalists” (or similar) — never imply they are
@@ -408,8 +433,10 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
 
 Photos, comics, diagrams and illustrations share one fitter (`compose/art.py`, driven by
 `compose/render.py`). Text is composed first. The fitter then measures leftover room in the
-slot's region and picks a printed size that keeps the native aspect ratio (never crop, never
-`object-fit: cover`, never a hard `max-height` that clips the frame). Widths snap to the
+slot's region and picks a printed size that keeps the native aspect ratio (art-fit itself
+never crops, never uses `object-fit: cover`, never a hard `max-height` that clips the
+frame). The later row-balance pass may apply a prepared face-safe backdrop crop (§19).
+Widths snap to the
 column grid (one column, two columns, or full width).
 
 - **Call it through `art()`** in the recipe, from a `recipe/art.json` manifest (required
@@ -423,9 +450,11 @@ column grid (one column, two columns, or full width).
   leftover; do not center a short stack to split the leftover on both sides.
 - **Hard gates** (any failure FLAGs the build): no overflow and no footer overlap; the
   gap above the footer in the art's own region is between 0 and 0.75in; spread across
-  the row that holds the art is at most 0.5in; aspect stays within 1%. Soft warnings
-  (a hole under a float, dpi below the soft target, a region off the nominal grid) never
-  fail a build and never demote a legal stack.
+  the row that holds the art is at most 0.5in; aspect stays within 1%. Mid-search soft
+  warnings (a hole under a float, dpi below the soft target, a region off the nominal
+  grid) never demote a legal stack. After art-fit, the fill instrument FLAGs any
+  remaining in-row column gap or float hole above 0.35in; the row-balance pass tries to
+  close those holes before the build fails.
 - **Floors, within reason.** Photos and wordless or lightly lettered comics and
   illustrations: 1.6in minimum printed width. Lettered comics (`lettered` or
   `lettering_px` in the manifest): 3.0in hard / 4.5in soft. Raster photos: 150 dpi hard
@@ -438,6 +467,7 @@ column grid (one column, two columns, or full width).
 - **Published Nos. 1–6 are unchanged.** `render.py` refuses to write a PDF into an
   APPROVED issue folder unless you pass `--force` or write the file somewhere else.
   Fitting is on by default for new issues that call `art()`; `--no-fit` skips it.
+  The row-balance pass runs after art-fit by default; `--no-balance` skips it.
 
 ## PDF filename & download (locked 2026-10-15)
 

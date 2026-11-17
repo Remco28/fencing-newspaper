@@ -88,8 +88,16 @@ assert ".page .footer { margin-top: auto; flex-shrink: 0; }" in css
 assert ".page.fit { height: 10.1in; }" in css
 assert abs(g.PAGE_CONTENT_IN - 10.1) < 1e-9
 assert abs(g.FOOTER_PIN_FLAG_IN - 0.15) < 1e-9
+assert abs(g.COL_GAP_FLAG_IN - 0.35) < 1e-9
+assert abs(g.PHOTO_CROP_MIN_H_IN - 1.2) < 1e-9
 fit_js = (g.ROOT / "compose" / "fit.js").read_text(encoding="utf-8")
 assert 'el.parentElement.classList.contains("page")' in fit_js
 assert "Never set that on .page itself" in fit_js or "Never set that on .page" in fit_js
+render_py = (g.ROOT / "compose" / "render.py").read_text(encoding="utf-8")
+assert "col_gaps" in render_py
+assert "COL_GAP_FLAG_IN = 0.35" in render_py
+assert "moveItem(" in fit_js
+assert "wrapInSplit(" in fit_js
+assert (g.ROOT / "compose" / "balance.py").is_file()
 
 print("gazette: all checks passed")

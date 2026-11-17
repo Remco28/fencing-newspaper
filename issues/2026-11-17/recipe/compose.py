@@ -241,7 +241,7 @@ def main():
         cls="fit",
     )
 
-    title = "En Garde Gazette — Vol. I No. 7 — November 17, 2026"
+    title = "En Garde Gazette — Vol. I No. 7 — November 17, 2026 (proof v2)"
     doc = document(title, [page1, page2])
     write_issue(ISSUE, doc)
 

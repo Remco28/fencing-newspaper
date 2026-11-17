@@ -6,10 +6,12 @@ Why CDP and not `chrome --print-to-pdf`: newer Chrome ignores
 Page.printToPDF with displayHeaderFooter=false never does. (Style guide section 1.)
 
 Usage: render.py input.html [output.pdf] [--allow-flag] [--force] [--fit] [--no-fit]
-                [--author=NAME] [--report=FILE.json] [--fit-report=FILE.json]
+                [--no-balance] [--author=NAME] [--report=FILE.json] [--fit-report=FILE.json]
 An APPROVED issue's folder is frozen: writing a PDF there is refused unless you pass
 --force or write the PDF somewhere else. Fitting is on by default when the HTML has
-[data-art] slots; --no-fit skips it. --fit is accepted and is the default.
+[data-art] slots; --no-fit skips it. --fit is accepted and is the default. After
+art-fit, a row-balance pass evens short columns (move short boxes, scale or
+face-safe backdrop-crop photos). --no-balance skips that pass.
 """
 import base64
 import hashlib
@@ -156,6 +158,13 @@ def set_pdf_author(path, author):
 #    footer is more than FOOTER_PIN_FLAG_IN (0.15in) away from that bottom.
 # 2. Balance: for every multi-column row, the spread between its deepest and
 #    shallowest column. FLAG > 0.5in.
+# 2b. Column bottom gaps: for every column/rail/box in every row band, the blank
+#    vertical space from that column's ink to the row's content-box bottom.
+#    FLAG > COL_GAP_FLAG_IN (0.35in). This is the in-row hole the footer-gap
+#    check cannot see — filling the gap above the footer can push white space
+#    up into a short rail or a short half of a split.
+# 2c. Float holes: for a floated art slot, the vertical mismatch between the
+#    art and the wrapping text beside it. FLAG > COL_GAP_FLAG_IN (0.35in).
 # 3. Type floor: every element that directly holds text, including ears, captions,
 #    credits, kickers and board heads. FLAG < 7pt.
 # 4. Hyphenation: how many justified lines actually end at a soft hyphen. Zero on
@@ -217,15 +226,50 @@ INSTRUMENT_JS = r"""
     const cols = columnsAtFoot(last).map(b => +(ft - b).toFixed(1));
     const rows = [...p.querySelectorAll(SEL)].map(r => {
       const bs = colBottoms(r);
-      const top = r.getBoundingClientRect().top;
+      const box = r.getBoundingClientRect();
+      const rcs = getComputedStyle(r);
+      const rowBottom = box.bottom - (parseFloat(rcs.paddingBottom) || 0);
+      const top = box.top;
+      // Blank at the bottom of every column/rail/box in this row band:
+      // the row content-box bottom minus that column's ink. The tallest
+      // column is usually ~0; a short rail or box leaves a hole here.
+      const col_gaps = bs.map(b => +(rowBottom - b).toFixed(1));
       return { kind: label(r), depths: bs.map(b => +(b - top).toFixed(1)),
-               spread: bs.length > 1 ? +(Math.max(...bs) - Math.min(...bs)).toFixed(1) : 0 };
+               spread: bs.length > 1 ? +(Math.max(...bs) - Math.min(...bs)).toFixed(1) : 0,
+               col_gaps, row_bottom: +(rowBottom - top).toFixed(1) };
+    });
+    const holes = [];
+    p.querySelectorAll("figure.art, .art").forEach(art => {
+      if (art.closest(".page") !== p) return;
+      const parent = art.parentElement;
+      if (!parent) return;
+      const fr = art.getBoundingClientRect();
+      const floated = art.classList.contains("art--float") ||
+        ((getComputedStyle(art).cssFloat || "none") !== "none");
+      if (!floated) return;
+      let last = null;
+      for (const n of parent.children) {
+        if (n === art) continue;
+        if (n.matches && n.matches("figure, .art, figcaption, .credit")) continue;
+        const b = n.getBoundingClientRect();
+        if (b.top < fr.bottom - 1) last = Math.max(last || 0, b.bottom);
+      }
+      if (last == null) return;
+      const signed = +(fr.bottom - last).toFixed(1);
+      if (Math.abs(signed) <= 2) return;
+      holes.push({
+        kind: "float",
+        id: art.getAttribute("data-art") || "",
+        gap: Math.abs(signed),
+        signed,
+        where: signed > 0 ? "under wrapping text beside art" : "under art",
+      });
     });
     const pr = p.getBoundingClientRect();
     const fb = f ? f.getBoundingClientRect() : { bottom: pr.top };
     // Expected content-box bottom is pageTop + 10.1in, even if .page shrink-wrapped.
     const footer_drop = +((pr.top + 10.1 * 96) - fb.bottom).toFixed(1);
-    return { page: i + 1, last: label(last), gaps: cols, rows,
+    return { page: i + 1, last: label(last), gaps: cols, rows, holes,
              overflow: +Math.max(p.scrollHeight - p.clientHeight, pr.height - 10.1 * 96).toFixed(1),
              footer_drop, page_h: +pr.height.toFixed(1) };
   });
@@ -263,6 +307,7 @@ INSTRUMENT_JS = r"""
 
 GAP_FLAG_IN = 0.75
 SPREAD_FLAG_IN = 0.5
+COL_GAP_FLAG_IN = 0.35  # must match art.COL_GAP_FLAG_IN; in-row holes + float holes
 FOOTER_PIN_FLAG_IN = 0.15  # must match art.FOOTER_PIN_FLAG_IN
 
 
@@ -297,10 +342,35 @@ def report(m):
         for k, row in enumerate(pg["rows"]):
             if len(row["depths"]) < 2:
                 continue
+            col_gaps = [inch(g) for g in (row.get("col_gaps") or [])]
+            if col_gaps:
+                worst_col = max(col_gaps)
+                tag = "OK" if round(worst_col, 2) <= COL_GAP_FLAG_IN else "FLAG"
+                msg = (f"page {pg['page']} row {k + 1} ({row['kind']}): "
+                       f"column bottom gaps [" + ", ".join(f"{g:.2f}in" for g in col_gaps)
+                       + f"] [{tag}]")
+                print(msg)
+                if tag == "FLAG":
+                    for ci, g in enumerate(col_gaps, 1):
+                        if round(g, 2) > COL_GAP_FLAG_IN:
+                            flags.append(
+                                f"page {pg['page']} row {k + 1} ({row['kind']}): "
+                                f"column {ci} bottom gap {g:.2f}in [FLAG]"
+                            )
             sp = inch(row["spread"])
             tag = "OK" if sp <= SPREAD_FLAG_IN else "FLAG"
             msg = (f"page {pg['page']} row {k + 1} ({row['kind']}): column spread {sp:.2f}in [{tag}] ["
                    + ", ".join(f"{inch(d):.2f}in" for d in row["depths"]) + "]")
+            print(msg)
+            if tag == "FLAG":
+                flags.append(msg)
+        for hole in pg.get("holes") or []:
+            gap_in = inch(hole.get("gap") or 0)
+            loc = hole.get("where") or "float"
+            hid = hole.get("id") or ""
+            tag = "OK" if gap_in <= COL_GAP_FLAG_IN else "FLAG"
+            msg = (f"page {pg['page']}: float hole {gap_in:.2f}in {loc}"
+                   + (f" ({hid})" if hid else "") + f" [{tag}]")
             print(msg)
             if tag == "FLAG":
                 flags.append(msg)
@@ -617,6 +687,21 @@ def main():
                 _tb.print_exc()
                 flags.append("art-fit failed to run")
 
+        if "--no-balance" not in sys.argv:
+            try:
+                import balance as balancemod
+                bal_report = balancemod.run_balance(
+                    call, flags, Path(src).parent,
+                    eval_js=eval_js, instrument_js=INSTRUMENT_JS, fit_js=FIT_JS,
+                )
+                if fit_report is None:
+                    fit_report = {"slots": [], "decisions": [], "note": "no art-fit"}
+                fit_report["balance"] = bal_report
+            except Exception:
+                import traceback as _tb
+                _tb.print_exc()
+                flags.append("row-balance failed to run")
+
         res = call("Page.printToPDF", {
             "displayHeaderFooter": False,
             "preferCSSPageSize": True,
@@ -642,7 +727,10 @@ def main():
             flags += report(instrument)
             # Fit/verify agreement: the instrument after print should match the fitter's last measurement
             # within 0.05in on the chosen candidate's page gap (if a fit ran).
-            if fit_report and fit_report.get("decisions"):
+            # Skip fit/verify when the row-balance pass later moved or cropped
+            # items: the post-print instrument is supposed to differ.
+            balanced = bool((fit_report or {}).get("balance", {}).get("actions"))
+            if fit_report and fit_report.get("decisions") and not balanced:
                 import art as _art
                 for d in fit_report["decisions"]:
                     rec = d.get("rec") or {}

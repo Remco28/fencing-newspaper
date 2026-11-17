@@ -30,6 +30,13 @@ LATTICE_IN = 0.125
 GUTTER_MAX_IN = 0.25                               # Frank t211u Q2: last-resort side gutter cap
 GAP_FLAG_IN = 0.75
 SPREAD_FLAG_IN = 0.5
+# In-row blank at the bottom of every column/rail/box, and float holes.
+# Same number as the soft float-hole WARN; the fill instrument FLAGs (fails
+# the build) when a column or float hole exceeds this. Footer-gap 0.75in
+# stays the page-level fill budget.
+COL_GAP_FLAG_IN = 0.35
+# Shortest printed height a face-safe backdrop crop may shrink a photo to.
+PHOTO_CROP_MIN_H_IN = 1.2
 # Letter 11in minus @page margins 0.5in top and 0.4in bottom (STYLE-GUIDE §1, §13).
 PAGE_CONTENT_IN = 10.1
 # Footer not at the content-box bottom is a structural defect, not a content gap.
