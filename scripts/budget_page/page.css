@@ -210,3 +210,30 @@ button{font-family:inherit}
 
 .strip.locked, .blk.locked{cursor:default;opacity:.92}
 .strip.locked .add button[disabled], .place .seg button[disabled], .seg button[disabled]{opacity:.45;cursor:not-allowed;background:var(--wash)}
+
+/* Visual overset: page grows past the trim; hanging type sits in a hatched red well. */
+.page.overseting{padding-bottom:2%}
+.cols{overflow:visible}
+.trim{position:absolute;left:0;right:0;border-top:2px dashed var(--bad);z-index:4;pointer-events:none}
+.trim span{position:absolute;right:2px;top:-11px;font:700 8px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--bad);background:var(--paper);padding:0 4px}
+.spillwell{position:absolute;left:0;right:0;background:repeating-linear-gradient(135deg,rgba(198,47,39,.07) 0,rgba(198,47,39,.07) 6px,rgba(198,47,39,.18) 6px,rgba(198,47,39,.18) 8px);border:1px solid rgba(198,47,39,.45);border-top:0;pointer-events:none;z-index:0}
+.blk.spill{border-color:var(--bad);background:#fbe9e7;z-index:2}
+.blk .hang{position:absolute;left:-1px;right:-1px;bottom:-1px;background:rgba(198,47,39,.32);border-top:1.5px dashed var(--bad);pointer-events:none;z-index:1}
+.handle{position:absolute;z-index:5;background:var(--accent);border:1px solid #fff;box-shadow:0 0 0 1px var(--ink);touch-action:none}
+.handle.se{width:11px;height:11px;right:1px;bottom:1px;cursor:nwse-resize;border-radius:1px 0 0 0}
+.handle.len{width:22px;height:8px;left:50%;bottom:1px;transform:translateX(-50%);cursor:ns-resize;border-radius:2px}
+.lay-tog{position:absolute;left:2px;bottom:2px;z-index:5;font:700 8px/14px var(--mono);letter-spacing:.02em;text-transform:uppercase;border:1px solid var(--ink);background:var(--paper);color:var(--ink);padding:0 5px;cursor:pointer;border-radius:2px}
+.lay-tog:hover{background:var(--ink);color:var(--paper)}
+.size-lab{position:absolute;right:14px;bottom:2px;font:600 8px/12px var(--mono);color:var(--dim);pointer-events:none;background:rgba(251,250,246,.9);padding:0 3px}
+body.resizing{cursor:nwse-resize;user-select:none}
+body.resizing .blk{cursor:nwse-resize}
+.sh-fit{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line)}
+.sh-fit .sh-lbl{margin-bottom:4px}
+.sh-fit .seg{margin:0 8px 6px 0}
+.sh-fit .sh-in{max-width:16em;display:inline-block;width:auto;margin:0 8px 0 0}
+.pfoot .short{color:var(--bad)}
+@media (max-width:900px){
+  .handle{display:none}
+  /* Wide/Tall stays tappable on the block; slip also has the same controls. */
+}
+

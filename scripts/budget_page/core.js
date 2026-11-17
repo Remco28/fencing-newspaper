@@ -48,7 +48,7 @@
       const hint = it.slot_hint || it.suggested_slot || it.kind || '';
       if (/ops_note_not_print/.test(hint)) return;
       slots.push({ key: 'auto-' + it.id, slot: 'Not slotted yet (' + (hint || 'item') + ')', budget: itemWords(it) ? itemWords(it) + 'w' : '',
-        item: it.id, proposed: false, auto: true, cost: { type: 'prose', span: 1 }, why: 'Staged, but the desk has not given it a slot.' });
+        item: it.id, proposed: false, auto: true, cost: { type: 'prose', span: 1 }, why: 'Staged, but Clark has not given it a slot.' });
     });
     const slotBy = Object.fromEntries(slots.map(s => [s.key, s]));
     const itemOf = s => (s.item && items[s.item]) || null;
@@ -57,9 +57,9 @@
     const shortName = s => String(s.slot).split(' — ')[0];
     const questionsFor = s => s.questions || ((itemOf(s) && Array.isArray(itemOf(s).need)) ? itemOf(s).need.map(n => 'Need: ' + n) : []);
 
-    /* ---------- photos: the lineup's list + any staged photo the desk hasn't reviewed ---------- */
+    /* ---------- photos: the lineup's list + any staged photo Clark hasn't reviewed ---------- */
     const photoList = (L.photos || []).filter(p => isObj(p) && media[p.id]);
-    mediaList.forEach(m => { if (m.kind === 'photo' && !photoList.some(p => p.id === m.id)) photoList.push({ id: m.id, proposed: false, span: 1, note: 'Not reviewed by the desk yet.' }); });
+    mediaList.forEach(m => { if (m.kind === 'photo' && !photoList.some(p => p.id === m.id)) photoList.push({ id: m.id, proposed: false, span: 1, note: 'Not reviewed by Clark yet.' }); });
     const photoMeta = Object.fromEntries(photoList.map(p => [p.id, p]));
     const mediaOfSlot = s => (s.item && s.thumb && mediaList.find(m => m.parent_item_id === s.item && fileOf(s.thumb) === m.filename)) || null;
     const slotMediaIds = new Set(slots.map(mediaOfSlot).filter(Boolean).map(m => m.id));
@@ -72,19 +72,119 @@
       const width = span <= 1 ? cap.col_width_in : span === 2 ? cap.span2_width_in : cap.full_width_in, nat = width * (h || 1) / (w || 1);
       return span <= 1 ? Math.min(nat, cap.photo_ceiling_in) : nat;
     }
-    const spanOf = s => Math.max(1, Math.min(3, (s.cost && s.cost.span) || 1));
-    const wordsOf = s => (s.cost && typeof s.cost.words === 'number' ? s.cost.words : itemWords(itemOf(s)));
+    let state = null;
+    /* Layout variants. Shared names with compose/: 'wide' | 'tall'. compose/ does not yet expose a
+       registry, so the builder inlines scripts/budget_page/layouts.json as D.layouts. */
+    const LAY = isObj(D.layouts) ? D.layouts : {};
+    const LAY_SECTIONS = isObj(LAY.sections) ? LAY.sections : {};
+    const LAY_BY_SLOT = isObj(LAY.bySlot) ? LAY.bySlot : {};
+    const SNAP_WIDTHS = { 1: cap.col_width_in, 2: cap.span2_width_in, 3: cap.full_width_in };
+    const hist = isObj(D.sectionHistory) ? D.sectionHistory : null;
+    function naturalSpan(s) { return Math.max(1, Math.min(3, (s.cost && s.cost.span) || 1)); }
+    function sectionIdOf(s) {
+      if (!s) return '';
+      if (LAY_BY_SLOT[s.key]) return LAY_BY_SLOT[s.key];
+      const secs = (hist && (hist.slotSections || {})[s.key]) || [];
+      return secs.find(id => LAY_SECTIONS[id]) || secs[0] || '';
+    }
+    function layoutSpec(s) {
+      const id = sectionIdOf(s), spec = (id && LAY_SECTIONS[id]) || null;
+      return (spec && Array.isArray(spec.variants) && spec.variants.length > 1) ? spec : null;
+    }
+    const canSwitchLayout = s => !!layoutSpec(s);
+    function layoutSpan(s, lay) {
+      const spec = layoutSpec(s);
+      const n = (spec && spec[lay] && spec[lay].span) || (lay === 'tall' ? 1 : Math.max(2, naturalSpan(s)));
+      return Math.max(1, Math.min(3, n));
+    }
+    function currentLayout(s) {
+      const v = state && state.layout && state.layout[s.key];
+      if (v === 'wide' || v === 'tall') return v;
+      return spanOf(s) >= 2 ? 'wide' : 'tall';
+    }
+    function photoLayoutOf(id) {
+      const v = state && state.layout && state.layout[id];
+      if (v === 'wide' || v === 'tall') return v;
+      return photoSpanOf(id) >= 2 ? 'wide' : 'tall';
+    }
+    const spanOf = s => {
+      if (state && state.slotSpan && state.slotSpan[s.key]) return Math.max(1, Math.min(3, state.slotSpan[s.key]));
+      if (state && state.layout && (state.layout[s.key] === 'wide' || state.layout[s.key] === 'tall')) return layoutSpan(s, state.layout[s.key]);
+      return naturalSpan(s);
+    };
+    function photoSpanOf(id) {
+      if (state && state.photoSpan && state.photoSpan[id]) return Math.max(1, Math.min(3, state.photoSpan[id]));
+      if (state && state.layout && (state.layout[id] === 'wide' || state.layout[id] === 'tall')) return state.layout[id] === 'tall' ? 1 : Math.max(2, (photoMeta[id] || {}).span || 2);
+      return Math.max(1, Math.min(3, (photoMeta[id] || {}).span || 1));
+    }
+    const baseWordsOf = s => (s.cost && typeof s.cost.words === 'number' ? s.cost.words : itemWords(itemOf(s)));
+    const wordsOf = s => {
+      const rz = state && state.resize && state.resize[s.key];
+      return (rz && typeof rz.toWords === 'number') ? rz.toWords : baseWordsOf(s);
+    };
     function costOf(s) {
-      const c = s.cost; if (!c) return 0; const span = c.span || 1, t = c.type;
+      const c = s.cost; if (!c) return 0; const span = spanOf(s), t = c.type;
       if (t === 'prose' || t === 'qa') return wordsOf(s) / (c.feature ? cap.wpi_feature : cap.wpi) + ((c.feature ? cap.head_feature : cap.head_short) + cap.gap) * span;
       if (t === 'table' || t === 'table_rows') return (cap.table_head + (c.rows || 0) * (span > 1 ? cap.row_full : cap.row_rail) + cap.gap) * span + (c.words || 0) / cap.wpi;
       if (t === 'figure') return figDepth(c.w, c.h, span) * span + (c.head ? cap.caption_in : 0) * span + cap.gap * span + (c.words || 0) / cap.wpi + (c.head ? cap.head_short * span : 0);
       return 0;
     }
     function photoCost(id) {
-      const m = media[id] || {}, span = Math.max(1, Math.min(3, (photoMeta[id] || {}).span || 1));
+      const m = media[id] || {}, span = photoSpanOf(id);
       return (figDepth(m.w, m.h, span) + cap.caption_in + cap.gap) * span;
     }
+    function slotSize(s) {
+      const span = spanOf(s);
+      return { span, widthIn: SNAP_WIDTHS[span] || cap.col_width_in, heightIn: r1(costOf(s) / span) };
+    }
+    function photoSize(id) {
+      const m = media[id] || {}, span = photoSpanOf(id);
+      return { span, widthIn: SNAP_WIDTHS[span] || cap.col_width_in, heightIn: r1(figDepth(m.w, m.h, span)) };
+    }
+    function snapSpan(widthIn) {
+      let best = 1, d = Infinity;
+      [1, 2, 3].forEach(n => { const dd = Math.abs((SNAP_WIDTHS[n] || 0) - widthIn); if (dd < d) { d = dd; best = n; } });
+      return best;
+    }
+    function applyResize(s, direction, target) {
+      const fromWords = baseWordsOf(s), prev = state.resize[s.key];
+      delete state.resize[s.key];
+      const fromColIn = costOf(s);
+      if (prev) state.resize[s.key] = prev;
+      let toWords = fromWords, unit = 'words', pct = 100, raw = (target == null ? '' : String(target).trim());
+      let m;
+      if ((m = raw.match(/^([+-]?\d+(?:\.\d+)?)\s*%$/))) {
+        pct = Math.max(10, Math.min(400, Number(m[1])));
+        toWords = Math.max(0, Math.round(fromWords * pct / 100));
+        unit = 'pct';
+      } else if ((m = raw.match(/^([+-]?\d+(?:\.\d+)?)\s*(col-?in(?:ches)?|in|")$/i))) {
+        const wpi = (s.cost && s.cost.feature) ? cap.wpi_feature : cap.wpi;
+        toWords = Math.max(0, Math.round(Number(m[1]) * wpi));
+        unit = 'col-in';
+        pct = fromWords ? Math.round(toWords / fromWords * 100) : 100;
+      } else if (raw && (m = raw.match(/^([+-]?\d+)\s*w?$/i))) {
+        toWords = Math.max(0, Math.round(Number(m[1])));
+        unit = 'words';
+        pct = fromWords ? Math.round(toWords / fromWords * 100) : 100;
+      } else if (typeof target === 'number' && isFinite(target)) {
+        toWords = Math.max(0, Math.round(target));
+        unit = 'words';
+        raw = String(toWords);
+        pct = fromWords ? Math.round(toWords / fromWords * 100) : 100;
+      } else if (direction === 'expand') {
+        toWords = Math.round(fromWords * 1.25); pct = 125; unit = 'pct'; raw = raw || '125%';
+      } else if (direction === 'shrink') {
+        toWords = Math.round(fromWords * 0.75); pct = 75; unit = 'pct'; raw = raw || '75%';
+      } else {
+        return null;
+      }
+      direction = toWords > fromWords ? 'expand' : toWords < fromWords ? 'shrink' : (direction === 'shrink' || direction === 'expand' ? direction : 'expand');
+      state.resize[s.key] = { direction, target: raw, fromWords, toWords, fromColIn: r1(fromColIn), unit, pct };
+      state.resize[s.key].toColIn = r1(costOf(s));
+      return state.resize[s.key];
+    }
+    const pageNum = v => (v === 1 || v === 2) ? v : (isObj(v) && (v.page === 1 || v.page === 2) ? v.page : 0);
+    const takeSpan = v => (isObj(v) && typeof v.span === 'number' && v.span >= 1 && v.span <= 3) ? Math.round(v.span) : 0;
 
     /* ---------- state ---------- */
     const qKey = (k, i) => k + '|' + i;
@@ -102,7 +202,7 @@
     }
     function freshState() {
       const st = { v: build.dataVersion || '', savedAt: null, publishDate: (L.publish || {}).date || '', altDate: (L.publish || {}).alt || '',
-        inc: {}, order: [], photos: {}, slotNotes: {}, answers: {}, vets: {}, notes: '', filler: '', page: {}, photoPage: {}, moved: {} };
+        inc: {}, order: [], photos: {}, slotNotes: {}, answers: {}, vets: {}, notes: '', filler: '', page: {}, photoPage: {}, moved: {}, resize: {}, layout: {}, slotSpan: {}, photoSpan: {} };
       slots.forEach(s => { st.inc[s.key] = !s.empty && !!s.proposed && !s.waiting && slotVettedOnFile(s); });
       photoList.forEach(p => { st.photos[p.id] = loosePhotos.includes(p.id) && !!p.proposed && vettedOnFile(p.id); });
       if (dec) {
@@ -138,12 +238,26 @@
       // Optional pages field: {slots:{key:1|2}, photos:{id:1|2}}, or a flat slot map. Older submissions omit it.
       if (dec && isObj(dec.pages)) {
         const raw = dec.pages, slotMap = (isObj(raw.slots) || isObj(raw.photos)) ? (raw.slots || {}) : raw, photoMap = isObj(raw.photos) ? raw.photos : {};
-        Object.keys(slotMap).forEach(k => { if (slotBy[k] && (slotMap[k] === 1 || slotMap[k] === 2)) { st.page[k] = slotMap[k]; if (st.inc[k]) st.moved[k] = slotMap[k]; } });
-        Object.keys(photoMap).forEach(id => { if (photoMeta[id] && (photoMap[id] === 1 || photoMap[id] === 2)) st.photoPage[id] = photoMap[id]; });
+        Object.keys(slotMap).forEach(k => {
+          const n = pageNum(slotMap[k]), sp = takeSpan(slotMap[k]);
+          if (slotBy[k] && n) { st.page[k] = n; if (st.inc[k]) st.moved[k] = n; }
+          if (slotBy[k] && sp) { st.slotSpan[k] = sp; st.layout[k] = sp >= 2 ? 'wide' : 'tall'; }
+        });
+        Object.keys(photoMap).forEach(id => {
+          const n = pageNum(photoMap[id]), sp = takeSpan(photoMap[id]);
+          if (photoMeta[id] && n) st.photoPage[id] = n;
+          if (photoMeta[id] && sp) { st.photoSpan[id] = sp; st.layout[id] = sp >= 2 ? 'wide' : 'tall'; }
+        });
       }
+      if (dec && isObj(dec.layout)) Object.keys(dec.layout).forEach(k => {
+        if (dec.layout[k] === 'wide' || dec.layout[k] === 'tall') st.layout[k] = dec.layout[k];
+      });
+      if (dec && isObj(dec.resize)) Object.keys(dec.resize).forEach(k => {
+        if (isObj(dec.resize[k])) st.resize[k] = Object.assign({}, dec.resize[k]);
+      });
       return st;
     }
-    const state = freshState();
+    state = freshState();
     const listeners = [];
     const on = f => listeners.push(f), emit = why => listeners.forEach(f => f(why));
 
@@ -164,9 +278,13 @@
       each(saved.vets, (id, v) => { if (!(items[id] || media[id])) { res.dropped++; return; } if (!vettedOnFile(id)) state.vets[id] = typeof v === 'string' ? v : ''; });
       each(saved.inc, (k, v) => { if (card(k)) state.inc[k] = !!v && canPlace(slotBy[k]); else res.dropped++; });
       each(saved.photos, (k, v) => { if (photoMeta[k]) state.photos[k] = !!v && canPlacePhoto(k); else res.dropped++; });
-      each(saved.page, (k, v) => { if (card(k) && (v === 1 || v === 2)) state.page[k] = v; });
-      each(saved.moved, (k, v) => { if (card(k) && (v === 1 || v === 2)) state.moved[k] = v; });
-      each(saved.photoPage, (k, v) => { if (photoMeta[k] && (v === 1 || v === 2)) state.photoPage[k] = v; });
+      each(saved.page, (k, v) => { const n = pageNum(v); if (card(k) && n) state.page[k] = n; });
+      each(saved.moved, (k, v) => { const n = pageNum(v); if (card(k) && n) state.moved[k] = n; });
+      each(saved.photoPage, (k, v) => { const n = pageNum(v); if (photoMeta[k] && n) state.photoPage[k] = n; });
+      each(saved.slotSpan, (k, v) => { if (card(k) && typeof v === 'number' && v >= 1 && v <= 3) state.slotSpan[k] = Math.round(v); });
+      each(saved.photoSpan, (k, v) => { if (photoMeta[k] && typeof v === 'number' && v >= 1 && v <= 3) state.photoSpan[k] = Math.round(v); });
+      each(saved.layout, (k, v) => { if ((card(k) || photoMeta[k]) && (v === 'wide' || v === 'tall')) state.layout[k] = v; });
+      each(saved.resize, (k, v) => { if (card(k) && isObj(v)) state.resize[k] = Object.assign({}, v); });
       each(saved.slotNotes, (k, v) => { if (typeof v !== 'string') return; if (slotBy[k]) state.slotNotes[k] = v; else if (v.trim()) res.dropped++; });
       each(saved.answers, (k, v) => {
         if (typeof v !== 'string') return;
@@ -240,42 +358,69 @@
        estimate of how much fits, not a layout: the composer balances, splits and scales art its own way. */
     function pageBlocks(p) {
       return state.order.filter(k => state.inc[k] && state.page[k] === p).map(k => ({ type: 'slot', id: k, span: spanOf(slotBy[k]), cost: costOf(slotBy[k]), kind: (slotBy[k].cost || {}).type }))
-        .concat(loosePhotos.filter(id => state.photos[id] && state.photoPage[id] === p).map(id => ({ type: 'photo', id, span: Math.max(1, Math.min(3, (photoMeta[id] || {}).span || 1)), cost: photoCost(id), kind: 'figure' })));
+        .concat(loosePhotos.filter(id => state.photos[id] && state.photoPage[id] === p).map(id => ({ type: 'photo', id, span: photoSpanOf(id), cost: photoCost(id), kind: 'figure' })));
     }
     function pack(p) {
       const H = pageH(p), h = [0, 0, 0], placed = [], over = [], holes = [], blocks = pageBlocks(p);
       blocks.forEach(b => {
         b.h = b.cost / b.span;
         const cands = b.span >= 3 ? [[0, 1, 2]] : b.span === 2 ? [[0, 1], [1, 2]] : [[0], [1], [2]];
-        let best = null;
+        let best = null, bestSpill = null;
         cands.forEach(c => {
           const y = Math.max.apply(null, c.map(i => h[i])), waste = c.reduce((a, i) => a + y - h[i], 0);
-          if (y + b.h <= H + 0.05 && (!best || y < best.y - 1e-6 || (Math.abs(y - best.y) < 1e-6 && waste < best.waste))) best = { c, y, waste };
+          const cand = { c, y, waste };
+          if (y + b.h <= H + 0.05) {
+            if (!best || y < best.y - 1e-6 || (Math.abs(y - best.y) < 1e-6 && waste < best.waste)) best = cand;
+          } else if (!bestSpill || y < bestSpill.y - 1e-6 || (Math.abs(y - bestSpill.y) < 1e-6 && waste < bestSpill.waste)) {
+            bestSpill = cand;
+          }
         });
         if (best) {
           best.c.forEach(i => { if (best.y - h[i] > 0.02) holes.push({ col: i, cols: 1, y: h[i], h: best.y - h[i], trapped: true }); h[i] = best.y + b.h; });
-          placed.push(Object.assign({}, b, { col: best.c[0], y: best.y }));
+          placed.push(Object.assign({}, b, { col: best.c[0], y: best.y, hang: 0, spill: false, onPage: b.h }));
           return;
         }
-        const open = [0, 1, 2].filter(i => H - h[i] >= MIN_PIECE), room = open.reduce((a, i) => a + H - h[i], 0);
+        // One-column text/tables may still continue across on-page column remnants.
+        const open = [0, 1, 2].filter(i => H - h[i] >= MIN_PIECE), room = open.reduce((a, i) => a + Math.max(0, H - h[i]), 0);
         if (b.span === 1 && b.kind !== 'figure' && room >= b.h - 0.05) {
           let left = b.h, part = 0; const parts = [];
           open.forEach(i => { if (left <= 0.01) return; const take = Math.min(left, H - h[i]); parts.push({ col: i, y: h[i], h: take }); h[i] += take; left -= take; });
-          parts.forEach(x => placed.push(Object.assign({}, b, x, { part: ++part, parts: parts.length })));
+          parts.forEach(x => placed.push(Object.assign({}, b, x, { part: ++part, parts: parts.length, hang: 0, spill: false, onPage: x.h })));
           return;
         }
-        over.push(b);
+        // Place it anyway, hanging past the trim (or stacked in the spill well if every column is already full).
+        const minCol = Math.min(h[0], h[1], h[2]);
+        let c, y;
+        if (minCol >= H - 0.01) {
+          c = (bestSpill && bestSpill.c) || [0];
+          y = Math.max(H, Math.max.apply(null, c.map(i => h[i])));
+        } else {
+          c = bestSpill.c; y = bestSpill.y;
+        }
+        c.forEach(i => {
+          const top = Math.min(y, H);
+          if (top - h[i] > 0.02 && h[i] < H - 0.01) holes.push({ col: i, cols: 1, y: h[i], h: top - h[i], trapped: true });
+          h[i] = y + b.h;
+        });
+        const onPage = y >= H ? 0 : Math.max(0, Math.min(b.h, H - y));
+        const hang = Math.max(0, b.h - onPage);
+        const rec = Object.assign({}, b, { col: c[0], y, hang, spill: hang > 0.02, onPage });
+        placed.push(rec);
+        over.push(rec);
       });
-      for (let i = 0; i < 3; i++) { // open space at the foot of each column; neighbours of the same depth merge into one hole
-        const free = H - h[i]; if (free <= 0.02) continue;
+      for (let i = 0; i < 3; i++) { // open space at the foot of each column (on the page only); neighbours of the same depth merge
+        const usedH = Math.min(h[i], H), free = H - usedH; if (free <= 0.02) continue;
         const last = holes[holes.length - 1];
-        if (last && !last.trapped && last.col + last.cols === i && Math.abs(last.y - h[i]) < 0.05) last.cols++;
-        else holes.push({ col: i, cols: 1, y: h[i], h: free, trapped: false });
+        if (last && !last.trapped && last.col + last.cols === i && Math.abs(last.y - usedH) < 0.05) last.cols++;
+        else holes.push({ col: i, cols: 1, y: usedH, h: free, trapped: false });
       }
       holes.forEach(x => { x.colIn = x.h * x.cols; x.words = Math.round(x.colIn * cap.wpi); });
-      const usedPlaced = placed.reduce((a, b) => a + (b.parts ? b.h : b.cost), 0);
+      const onPageCol = b => (typeof b.onPage === 'number' ? b.onPage : (b.parts ? b.h : b.cost / (b.span || 1))) * (b.parts ? 1 : (b.span || 1));
+      const usedPlaced = placed.reduce((a, b) => a + onPageCol(b), 0);
+      const overset = placed.reduce((a, b) => a + (b.hang || 0) * (b.parts ? 1 : (b.span || 1)), 0);
+      const spillIn = Math.max(0, Math.max(h[0], h[1], h[2]) - H);
       return { H, h, placed, over, holes, cap: H * 3, used: blocks.reduce((a, b) => a + b.cost, 0), placedUsed: usedPlaced,
-        open: holes.reduce((a, x) => a + x.colIn, 0), overset: over.reduce((a, b) => a + b.cost, 0) };
+        open: holes.reduce((a, x) => a + x.colIn, 0), overset, spillIn, oversetWords: Math.round(overset * cap.wpi) };
     }
 
     /* ---------- what still needs Frank ---------- */
@@ -295,13 +440,13 @@
       if (!state.altDate) out.push({ kind: 'date', blocking: false, text: 'No alternate publish date' });
       const f = fill();
       if (f.status === 'short') out.push({ kind: 'fill', blocking: false, text: 'Issue is short: ' + r1(f.gap) + ' col-in open (≈' + f.words + ' words)' });
-      if (f.status === 'over') out.push({ kind: 'fill', blocking: false, text: 'Over the desk’s oversupply line by ' + r1(f.gap) + ' col-in (≈' + f.words + ' words)' });
+      if (f.status === 'over') out.push({ kind: 'fill', blocking: false, text: 'Over Clark’s oversupply line by ' + r1(f.gap) + ' col-in (≈' + f.words + ' words)' });
       return out;
     }
 
     /* ---------- section history (derived by scripts/build_section_history.py at build time) ----------
        "In this budget" is worked out here, live, from Frank's current includes. */
-    const H = isObj(D.sectionHistory) ? D.sectionHistory : null;
+    const H = hist;
     function sectionRows() {
       if (!H) return null;
       const n = (H.issues || []).length, secOf = H.slotSections || {}, otherOf = H.slotOther || {}, photoOf = H.photoSections || {};
@@ -317,7 +462,7 @@
             : (state.slotNotes[s.key] || '').trim() ? 'You left it out. Your note: ' + state.slotNotes[s.key]
             : s.empty ? 'Empty slot. ' + (s.why || '')
             : excludedBefore.includes(s.key) ? 'You left it out in your ' + fmt(dec.client_submitted_at || dec.at) + ' decision.'
-            : s.proposed === false ? 'Desk did not propose it' + (s.why || s.summary ? ': ' + (s.why || s.summary) : '.')
+            : s.proposed === false ? 'Clark did not propose it' + (s.why || s.summary ? ': ' + (s.why || s.summary) : '.')
             : 'You pulled it this sitting.';
         }
         if (!base.ran.length) note = ('Has never run. ' + note).trim();
@@ -346,10 +491,24 @@
       return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + 'T' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds()) + (o < 0 ? '-' : '+') + p(a / 60 | 0) + ':' + p(a % 60);
     }
     // pages is the placement contract (slot/photo → 1|2). Placement is not written into notes.
+    function placementVal(page, sized, size) { return sized ? { page, span: size.span, widthIn: size.widthIn, heightIn: size.heightIn } : page; }
     const placementOf = () => ({
-      slots: Object.fromEntries(slots.filter(s => state.inc[s.key] && (state.page[s.key] === 1 || state.page[s.key] === 2)).map(s => [s.key, state.page[s.key]])),
-      photos: Object.fromEntries(loosePhotos.filter(id => state.photos[id] && (state.photoPage[id] === 1 || state.photoPage[id] === 2)).map(id => [id, state.photoPage[id]])),
+      slots: Object.fromEntries(slots.filter(s => state.inc[s.key] && (state.page[s.key] === 1 || state.page[s.key] === 2)).map(s => [s.key, placementVal(state.page[s.key], !!state.slotSpan[s.key], slotSize(s))])),
+      photos: Object.fromEntries(loosePhotos.filter(id => state.photos[id] && (state.photoPage[id] === 1 || state.photoPage[id] === 2)).map(id => [id, placementVal(state.photoPage[id], !!state.photoSpan[id], photoSize(id))])),
     });
+    function resizeOf() {
+      const out = {};
+      Object.keys(state.resize).forEach(k => {
+        const r = state.resize[k];
+        if (r && (r.direction === 'expand' || r.direction === 'shrink')) out[k] = Object.assign({}, r);
+      });
+      return out;
+    }
+    function layoutOf() {
+      const out = {};
+      Object.keys(state.layout).forEach(k => { if (state.layout[k] === 'wide' || state.layout[k] === 'tall') out[k] = state.layout[k]; });
+      return out;
+    }
     const placementNotes = () => { const p = placementOf(), n = Object.keys(p.slots).length + Object.keys(p.photos).length;
       return n ? [n + ' block' + (n === 1 ? '' : 's') + ' placed'] : []; }; // used only as a count label on sign-off, never as notes text
     function submission(now) {
@@ -381,6 +540,8 @@
         publishDateAlt: isDate(state.altDate) ? state.altDate : null, // optional: alternate run date, or null for "no alternate"
         budgetVersion: build.budgetVersion == null ? null : build.budgetVersion, dataVersion: build.dataVersion || null,
         pages: placementOf(),
+        resize: resizeOf(),
+        layout: layoutOf(),
       };
     }
     const submissionName = doc => 'budget-submission-no-' + issueNo + '-' + doc.publishDate + (build.budgetVersion ? '-v' + build.budgetVersion : '') + '-'
@@ -418,13 +579,44 @@
         while (j >= 0 && j < o.length && !state.inc[o[j]] && state.inc[k]) j += dir; // skip past slots in the bank
         if (i < 0 || j < 0 || j >= o.length) return; o.splice(i, 1); o.splice(j, 0, k); emit('order'); },
       before(k, other) { const o = state.order; if (k === other || !o.includes(k) || !o.includes(other)) return; o.splice(o.indexOf(k), 1); o.splice(o.indexOf(other), 0, k); },
+      setLayout(k, v) {
+        if (v !== 'wide' && v !== 'tall') return;
+        if (photoMeta[k]) {
+          state.layout[k] = v;
+          state.photoSpan[k] = v === 'tall' ? 1 : Math.max(2, (photoMeta[k] || {}).span || 2);
+          emit('layout'); return;
+        }
+        const s = slotBy[k]; if (!s || s.empty) return;
+        state.layout[k] = v;
+        state.slotSpan[k] = layoutSpan(s, v);
+        emit('layout');
+      },
+      setSpan(k, span) {
+        span = Math.max(1, Math.min(3, Math.round(Number(span) || 1)));
+        if (photoMeta[k]) {
+          state.photoSpan[k] = span;
+          state.layout[k] = span >= 2 ? 'wide' : 'tall';
+          emit('resize'); return;
+        }
+        const s = slotBy[k]; if (!s || s.empty) return;
+        state.slotSpan[k] = span;
+        state.layout[k] = span >= 2 ? 'wide' : 'tall';
+        emit('resize');
+      },
+      setResize(k, direction, target) {
+        const s = slotBy[k]; if (!s || s.empty) return;
+        if (!direction) { delete state.resize[k]; emit('resize'); return; }
+        applyResize(s, direction, target);
+        emit('resize');
+      },
     };
     const thumb = name => (((D.thumbs || {})[fileOf(name)]) || {}).src || '';
     function answersForSave() { const m = {}; slots.forEach(s => questionsOf(s).forEach(q => { m[q.key] = q.q; })); return m; }
 
     return { PAGE_VERSION, D, L, cap, dec, build, items, media, slots, slotBy, state, on, emit, act, costOf, photoCost, spanOf, wordsOf, fill, pack, pageH, needs, itemOf, allItemsOf,
       headlineOf, shortName, isVetted, vettedOnFile, canPlace, canPlacePhoto, staleness, sourcesOf, flagsOf, questionsOf, mediaOfSlot, loosePhotos, photoMeta, sectionRows, sectionsOfSlot, submission, submissionName,
-      placementNotes, placementOf, serialize, restore, answersForSave, fmt, fmtDate, r1, esc, thumb, total, issueNo, GUT };
+      placementNotes, placementOf, resizeOf, layoutOf, serialize, restore, answersForSave, fmt, fmtDate, r1, esc, thumb, total, issueNo, GUT,
+      layoutSpec, canSwitchLayout, currentLayout, layoutSpan, photoSpanOf, photoLayoutOf, photoSize, slotSize, snapSpan, baseWordsOf, naturalSpan, SNAP_WIDTHS };
   }
 
   const Core = { PAGE_VERSION, make };

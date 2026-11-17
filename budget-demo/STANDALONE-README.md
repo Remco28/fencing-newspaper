@@ -5,9 +5,21 @@
 > a bank of what isn't running, hatched holes for unfilled space (column-inches and words), and a slip per item (click or tap).
 > Desktop: drag between the bank and the pages. Phone: open the slip and use Page 1 / Page 2 / Bank.
 > - **Sign off the budget** shows the submission JSON; Download or Copy, then ingest as before.
-> - New optional submission fields: `publishDateAlt` (YYYY-MM-DD or null), `budgetVersion`, `dataVersion`, and `pages`
->   (`{slots: {slotKey: 1|2}, photos: {mediaId: 1|2}}`). Ingest records them on the decision when present and never requires
->   them. A stale `budgetVersion` does not block an ingest. Older submissions without `pages` still ingest.
+> - New optional submission fields: `publishDateAlt` (YYYY-MM-DD or null), `budgetVersion`, `dataVersion`, `pages`
+>   (`{slots: {slotKey: 1|2 or {page, span, widthIn, heightIn}}, photos: {mediaId: same}}` — a bare 1|2 means page only;
+>   the object is used when art was resized), `resize` (`{slotKey: {direction: 'expand'|'shrink', target, ...}}`), and
+>   `layout` (`{slotKey|mediaId: 'wide'|'tall'}`, names shared with compose/). Ingest records them on the decision when
+>   present and never requires them. A stale `budgetVersion` does not block an ingest. Older submissions without these
+>   fields still ingest.
+> - A page that oversets hangs the overflow in red below a trim line, with the overset in col-in and ≈words, live as
+>   blocks are dragged or resized. Photos and comics have a corner handle (aspect locked, snaps to 1/2/3 columns, size
+>   in inches). Stories have a bottom handle to grow or shrink estimated length. Sections with a tall/wide variant
+>   (from `scripts/budget_page/layouts.json`, inlined by the builder; compose/ does not yet expose a registry) switch
+>   on the block. On a phone, the slip has the same controls.
+> - User-facing copy says “Clark” (or “Clark Kent” / “layout editor”), not “desk”. Internal ids and CSS classes (`desk`,
+>   `data-tab="desk"`) are unchanged. “Desktop” (the computer) is unchanged.
+> - Thumbnails in the standalone HTML are small B&W JPEGs inlined as data-URIs by the builder (CSP `default-src 'none'`;
+>   no network).
 > - Placement is `pages`, not `notes`. A lineup slot may still carry an optional `page: 1|2` to set its starting page when
 >   no ingested `pages` field is on file.
 > - Unvetted items and photos cannot be placed on the pages until they are vetted on the slip (drag and the p.1/p.2 buttons

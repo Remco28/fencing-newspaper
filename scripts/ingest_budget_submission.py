@@ -14,7 +14,7 @@ Does exactly what budget-demo/server.py does for POST /submit and POST /vet:
   - refuses (exit 4, writes nothing) if an included slot's item, or a photo in photoIncludes, is
     in staging and still unvetted after this submission's vets are applied. Missing ids (an older
     issue's items) stay warnings, so Nos. 1–6 submissions still ingest.
-  - appends the decisions (includes/excludes, photo picks, optional pages placement, slot notes,
+  - appends the decisions (includes/excludes, photo picks, optional pages / resize / layout, slot notes,
     answers, notes, vets) to <staging-week>/budget-versions.json "decisions"; build_budget_html.py
     starts the next numbered budget (vN) from the latest entry, so a rebuild never drops what
     Frank already decided. Unvetted photos are never recorded in photoIncludes, so they are never
@@ -34,8 +34,13 @@ Optional fields from the Budget page (pageVersion budget-paper-v1); submissions 
   budgetVersion   the vN the page was built as, and
   dataVersion     the build's data hash — both recorded on the decision for the record. Neither is checked:
                   a missing or older budgetVersion never stops an ingest.
-  pages           {slots: {slotKey: 1|2}, photos: {mediaId: 1|2}} — where Frank put each included
-                  block. Stored on the decision when present; ignored when absent.
+  pages           {slots: {slotKey: 1|2 or {page, span, widthIn, heightIn}}, photos: {mediaId: same}} —
+                  where Frank put each included block, and (when he resized art) its column span and
+                  size in inches. A bare 1|2 means page only. Stored when present; ignored when absent.
+  resize          {slotKey: {direction: 'expand'|'shrink', target, ...}} — grow/shrink requests for
+                  Clark to rewrite to length. Stored when present; ignored when absent.
+  layout          {slotKey|mediaId: 'wide'|'tall'} — chosen layout variant (names shared with compose/).
+                  Stored when present; ignored when absent.
 """
 from __future__ import annotations
 
@@ -111,12 +116,30 @@ def validate(p: dict) -> list[str]:
     if isinstance(p.get("issue"), (str, int, float, list)):
         errs.append("issue must be an object")
     errs.extend(validate_pages(p.get("pages")))
+    errs.extend(validate_resize(p.get("resize")))
+    errs.extend(validate_layout(p.get("layout")))
     return errs
 
 
+def page_value_ok(v) -> bool:
+    """A page placement is 1 or 2, or {page: 1|2, span?, widthIn?, heightIn?} when art was resized."""
+    if v in (1, 2):
+        return True
+    if not isinstance(v, dict):
+        return False
+    if v.get("page") not in (1, 2):
+        return False
+    if "span" in v and not (isinstance(v["span"], int) and 1 <= v["span"] <= 3):
+        return False
+    for k in ("widthIn", "heightIn"):
+        if k in v and not isinstance(v[k], (int, float)):
+            return False
+    return True
+
+
 def validate_pages(pages) -> list[str]:
-    """Optional. Absent or null is fine (older submissions). Shape: {slots:{key:1|2}, photos:{id:1|2}}.
-    A flat {key:1|2} map is also accepted and stored as pages.slots."""
+    """Optional. Absent or null is fine (older submissions). Shape: {slots:{key:1|2 or size object},
+    photos:{id: same}}. A flat map is also accepted and stored as pages.slots."""
     if pages is None:
         return []
     if not isinstance(pages, dict):
@@ -129,8 +152,8 @@ def validate_pages(pages) -> list[str]:
         for k, v in g.items():
             if not isinstance(k, str) or not k.strip():
                 errs.append(f"{label} keys must be non-empty strings")
-            elif v not in (1, 2):
-                errs.append(f"{label}.{k} must be 1 or 2")
+            elif not page_value_ok(v):
+                errs.append(f"{label}.{k} must be 1 or 2, or an object {{page, span?, widthIn?, heightIn?}}")
     if "slots" in pages or "photos" in pages:
         if "slots" in pages and pages["slots"] is not None:
             check_map(pages["slots"], "pages.slots")
@@ -138,6 +161,43 @@ def validate_pages(pages) -> list[str]:
             check_map(pages["photos"], "pages.photos")
     else:
         check_map(pages, "pages")
+    return errs
+
+
+def validate_resize(resize) -> list[str]:
+    """Optional. {slotKey: {direction: 'expand'|'shrink', target?, toWords?, ...}}."""
+    if resize is None:
+        return []
+    if not isinstance(resize, dict):
+        return ["resize must be an object or null"]
+    errs = []
+    for k, v in resize.items():
+        if not isinstance(k, str) or not k.strip():
+            errs.append("resize keys must be non-empty strings")
+            continue
+        if not isinstance(v, dict):
+            errs.append(f"resize.{k} must be an object")
+            continue
+        d = v.get("direction")
+        if d is not None and d not in ("expand", "shrink"):
+            errs.append(f"resize.{k}.direction must be 'expand' or 'shrink'")
+        if "target" in v and v["target"] is not None and not isinstance(v["target"], (str, int, float)):
+            errs.append(f"resize.{k}.target must be a string or number")
+    return errs
+
+
+def validate_layout(layout) -> list[str]:
+    """Optional. {slotKey|mediaId: 'wide'|'tall'}. Names are shared with compose/."""
+    if layout is None:
+        return []
+    if not isinstance(layout, dict):
+        return ["layout must be an object or null"]
+    errs = []
+    for k, v in layout.items():
+        if not isinstance(k, str) or not k.strip():
+            errs.append("layout keys must be non-empty strings")
+        elif v not in ("wide", "tall"):
+            errs.append(f"layout.{k} must be 'wide' or 'tall'")
     return errs
 
 
@@ -316,6 +376,10 @@ def main() -> None:
             decision[k] = payload[k]
     if "pages" in payload:
         decision["pages"] = payload["pages"]
+    if "resize" in payload:
+        decision["resize"] = payload["resize"]
+    if "layout" in payload:
+        decision["layout"] = payload["layout"]
     vdoc = None
     if versions_path.is_file():
         try:

@@ -22,7 +22,7 @@ LINEUP = REPO / "budget-demo" / "practice-lineup.json"
 WEEK = REPO / "staging" / "weeks" / "next"
 OLD_FIELDS = ["publishDate", "practice", "pretend", "targetWeek", "issue", "includedSlots", "excludedSlots", "photoIncludes",
               "notes", "slotNotes", "answers", "order", "pageVersion", "submittedAt", "vets"]
-NEW_OPTIONAL = ["publishDateAlt", "budgetVersion", "dataVersion", "pages"]
+NEW_OPTIONAL = ["publishDateAlt", "budgetVersion", "dataVersion", "pages", "resize", "layout"]
 
 
 def run(*args, **kw):
@@ -105,8 +105,10 @@ class Builder(unittest.TestCase):
         self.assertNotRegex(code, r"(?i)dummy")  # the mockup's working name is gone from everything Frank sees
         self.assertNotRegex(code, r"\bfetch\(|XMLHttpRequest|<link\b|src=[\"']https?:")
         self.assertEqual(self.data["build"]["pageVersion"], "budget-paper-v1")
-        for a in ("page.html", "page.css", "core.js", "ui.js"):
+        for a in ("page.html", "page.css", "core.js", "ui.js", "layouts.json"):
             self.assertTrue((SCRIPTS / "budget_page" / a).is_file())
+        self.assertIn("layouts", self.data)
+        self.assertEqual(self.data["layouts"]["variants"], ["wide", "tall"])
 
     def test_history_is_derived_fresh_and_inlined(self):
         h = self.data["sectionHistory"]
@@ -160,7 +162,8 @@ class PageLogic(unittest.TestCase):
     def test_starts_from_the_latest_decision(self):
         dec = self.data["decisions"]
         doc = node(self.data, "out = C.submission();")
-        self.assertEqual([e["slot"] for e in doc["includedSlots"]], [k for k in dec["order"] if k in dec["included"]])
+        known = {s["key"] for s in self.data["lineup"]["slots"]}
+        self.assertEqual([e["slot"] for e in doc["includedSlots"]], [k for k in dec["order"] if k in dec["included"] and k in known])
         self.assertEqual(doc["publishDate"], dec["publishDate"])
         self.assertEqual(doc["slotNotes"], {k: v.strip() for k, v in dec["slotNotes"].items()})
         for a in dec["answers"]:  # nothing Frank already answered is dropped, including answers given by chat
@@ -262,6 +265,91 @@ class PageLogic(unittest.TestCase):
             self.assertAlmostEqual(pg["placed"] + pg["open"], pg["cap"], delta=0.15)       # holes + blocks = the page
             self.assertAlmostEqual(pg["placed"] + pg["over"], pg["used"], delta=0.15)      # what doesn't fit is overset, not lost
         self.assertGreater(res["b"][1]["over"], 0)  # everything on page 2 cannot fit
+        # Overflow is also placed, hanging past the trim (not dropped from the packing).
+        hang = node(self.data, """
+          C.slots.filter(s => !s.empty && C.canPlace(s)).forEach(s => C.act.place(s.key, 2));
+          const r = C.pack(2);
+          out = { spillIn: r.spillIn, hanging: r.placed.filter(b => b.spill || b.hang > 0.02).length, over: r.over.length, H: r.H,
+                  anyBelow: r.placed.some(b => b.y + b.h > r.H + 0.05) };
+        """)
+        self.assertGreater(hang["spillIn"], 0)
+        self.assertGreater(hang["hanging"], 0)
+        self.assertTrue(hang["anyBelow"])
+        self.assertEqual(hang["hanging"], hang["over"])
+
+    def test_resize_layout_and_art_span_reach_the_document(self):
+        res = node(self.data, """
+          const lead = C.slotBy.lead;
+          const before = { cost: C.costOf(lead), words: C.wordsOf(lead), span: C.spanOf(lead) };
+          C.act.setResize('lead', 'shrink', '80%');
+          const mid = { cost: C.costOf(lead), words: C.wordsOf(lead), resize: C.submission().resize.lead };
+          C.act.setLayout('lead', 'tall');
+          const after = { span: C.spanOf(lead), layout: C.submission().layout.lead, cost: C.costOf(lead) };
+          const photo = C.loosePhotos.find(id => C.canPlacePhoto(id)) || C.loosePhotos[0];
+          if (photo && !C.canPlacePhoto(photo)) C.act.vet(photo, 'ok');
+          C.act.photo(photo, true, 1);
+          C.act.setSpan(photo, 3);
+          const doc = C.submission();
+          out = { before, mid, after, photo, pagesPhoto: doc.pages.photos[photo], layoutPhoto: doc.layout[photo],
+                  canLead: C.canSwitchLayout(lead), layoutsInlined: !!(C.D.layouts && C.D.layouts.sections) };
+        """)
+        self.assertTrue(res["canLead"])
+        self.assertTrue(res["layoutsInlined"])
+        self.assertLess(res["mid"]["words"], res["before"]["words"])
+        self.assertLess(res["mid"]["cost"], res["before"]["cost"])
+        self.assertEqual(res["mid"]["resize"]["direction"], "shrink")
+        self.assertEqual(res["mid"]["resize"]["toWords"], res["mid"]["words"])
+        self.assertEqual(res["after"]["span"], 1)
+        self.assertEqual(res["after"]["layout"], "tall")
+        self.assertEqual(res["pagesPhoto"]["page"], 1)
+        self.assertEqual(res["pagesPhoto"]["span"], 3)
+        self.assertIn("widthIn", res["pagesPhoto"])
+        self.assertIn("heightIn", res["pagesPhoto"])
+        self.assertEqual(res["layoutPhoto"], "wide")
+
+    def test_resize_and_layout_seed_from_a_previous_decision(self):
+        data = dict(self.data, decisions=dict(self.data["decisions"] or {}, 
+            resize={"lead": {"direction": "expand", "target": "125%", "toWords": 2000}},
+            layout={"lead": "tall", "comic": "wide"},
+            pages={"slots": {"lead": {"page": 2, "span": 1, "widthIn": 2.42, "heightIn": 6.0}}, "photos": {}}))
+        # keep other decision fields; lead may not be included if decisions say otherwise — force include via node after seed
+        res = node(data, """
+          out = {
+            layout: C.state.layout.lead,
+            span: C.spanOf(C.slotBy.lead),
+            page: C.state.page.lead,
+            slotSpan: C.state.slotSpan.lead,
+            resize: C.state.resize.lead,
+            pages: C.submission().pages.slots.lead,
+            layoutOut: C.submission().layout
+          };
+        """)
+        self.assertEqual(res["layout"], "tall")
+        self.assertEqual(res["span"], 1)
+        self.assertEqual(res["page"], 2)
+        self.assertEqual(res["slotSpan"], 1)
+        self.assertEqual(res["resize"]["direction"], "expand")
+        self.assertEqual(res["pages"]["page"], 2)
+        self.assertEqual(res["pages"]["span"], 1)
+        self.assertEqual(res["layoutOut"]["lead"], "tall")
+        self.assertEqual(res["layoutOut"]["comic"], "wide")
+
+    def test_no_user_facing_desk_copy(self):
+        """User-facing copy says Clark, not desk. Internal ids, classes, and property names may stay."""
+        hits = []
+        for name in ("core.js", "ui.js"):
+            text = (SCRIPTS / "budget_page" / name).read_text(encoding="utf-8")
+            text = re.sub(r"/\*.*?\*/", "", text, flags=re.S)
+            text = re.sub(r"//.*?$", "", text, flags=re.M)
+            for m in re.finditer(r"desk", text, flags=re.I):
+                ctx = text[max(0, m.start() - 24):m.end() + 24]
+                if re.search(r"desktop", ctx, re.I):
+                    continue
+                # internal: tab id, CSS class, deskPane, desk_summary, st.desk
+                if re.search(r"st\.desk|desk_summary|deskPane|data-tab=[\"']desk[\"']|\.desk\b|[\"']desk[\"']|\{ desk:", ctx):
+                    continue
+                hits.append((name, " ".join(ctx.split())))
+        self.assertEqual(hits, [], "user-facing string still says desk: " + repr(hits[:8]))
 
     def test_cost_model_matches_python(self):
         cap = self.data["capacity"]
@@ -433,6 +521,20 @@ class Ingest(unittest.TestCase):
         r3 = self.ingest(dict(self.base(), pages={"slots": {"lead": 3}}))
         self.assertEqual(r3.returncode, 1)
         self.assertIn("pages.slots.lead", r3.stderr)
+        sized = {"slots": {"lead": {"page": 1, "span": 2, "widthIn": 4.96, "heightIn": 4.0}}, "photos": {}}
+        r4 = self.ingest(dict(self.base(), pages=sized, resize={"lead": {"direction": "shrink", "target": "80%"}}, layout={"lead": "tall"}))
+        self.assertEqual(r4.returncode, 0, r4.stderr)
+        d = self.last_decision()
+        self.assertEqual(d["pages"], sized)
+        self.assertEqual(d["resize"]["lead"]["direction"], "shrink")
+        self.assertEqual(d["layout"]["lead"], "tall")
+        r5 = self.ingest(dict(self.base(), layout={"lead": "sideways"}))
+        self.assertEqual(r5.returncode, 1)
+        self.assertIn("layout.lead", r5.stderr)
+        r6 = self.ingest(self.base())  # no resize/layout
+        self.assertEqual(r6.returncode, 0, r6.stderr)
+        self.assertNotIn("resize", self.last_decision())
+        self.assertNotIn("layout", self.last_decision())
 
     @unittest.skipUnless(NODE, "node not installed")
     def test_page_document_round_trips_through_ingest_and_the_next_build(self):

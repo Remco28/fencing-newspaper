@@ -1,0 +1,41 @@
+{
+  "_about": "Which Budget slots can switch between wide (horizontal, 2–3 columns) and tall (vertical, 1 column). Variant names are shared with compose/: 'wide' | 'tall'. compose/ does not yet expose a variants list, so the Budget builder inlines this map. When compose grows a registry, keep these names and prefer that source.",
+  "variants": ["wide", "tall"],
+  "sections": {
+    "lead-story":         { "variants": ["wide", "tall"], "default": "wide", "wide": { "span": 2 }, "tall": { "span": 1 }, "note": "Page-1 lead: two columns, or one tall column." },
+    "secondary-articles": { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 }, "note": "Usually 1 column; 2 for a bigger piece." },
+    "comic":              { "variants": ["wide", "tall"], "default": "wide", "wide": { "span": 2 }, "tall": { "span": 1 }, "note": "Strip (2–3 col) or a stacked single column." },
+    "club-photos":        { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "photo-from-history": { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "featured-bout":      { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "road-trip":          { "variants": ["wide", "tall"], "default": "wide", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "controversial-calls":{ "variants": ["wide", "tall"], "default": "wide", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "the-vault":          { "variants": ["wide", "tall"], "default": "wide", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "club-events":        { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "for-the-parents":    { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "by-the-book":        { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "nearby-tournaments": { "variants": ["wide", "tall"], "default": "wide", "wide": { "span": 2 }, "tall": { "span": 1 }, "note": "A busy board can run 2–3 columns or one tall column." },
+    "club-results":       { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "deadlines":          { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } },
+    "epee-on-screen":     { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 } }
+  },
+  "bySlot": {
+    "lead": "lead-story",
+    "comic": "comic",
+    "for-the-parents": "for-the-parents",
+    "nac-preview": "secondary-articles",
+    "club-results": "club-results",
+    "signup-cobra": "nearby-tournaments",
+    "signup-njfa": "nearby-tournaments",
+    "on-the-road": "nearby-tournaments",
+    "deadlines": "deadlines",
+    "camp": "club-events",
+    "secondary-a": "secondary-articles",
+    "secondary-b": "secondary-articles",
+    "by-the-book": "by-the-book",
+    "tv": "epee-on-screen",
+    "photo-history": "photo-from-history",
+    "college": "secondary-articles"
+  },
+  "photos": { "variants": ["wide", "tall"], "default": "tall", "wide": { "span": 2 }, "tall": { "span": 1 }, "note": "Loose art and comics: 1 column (tall) or 2–3 (wide). Snap on the corner handle." }
+}

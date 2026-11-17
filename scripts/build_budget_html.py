@@ -325,11 +325,13 @@ def main() -> None:
         warnings.append(f"section history not derived ({exc}); the Sections tab will be empty")
     calibration = budget_model.load_calibration()
     capacity = budget_model.merged_capacity(cfg["capacity"], calibration)
+    layouts_path = ASSETS / "layouts.json"
+    layouts = load_json(layouts_path, "layouts") if layouts_path.is_file() else None
     if calibration is None:
         warnings.append(f"no fill calibration at {rel(budget_model.CALIBRATION)}: block sizes use lineup.capacity as is")
     # The inlined page assets are part of the version: a Budget-page change (vet gates, contract, layout)
     # is a new vN even when the staging data has not changed.
-    page_fp = hashlib.sha256(b"".join((ASSETS / n).read_bytes() for n in ("page.html", "page.css", "core.js", "ui.js"))).hexdigest()[:12]
+    page_fp = hashlib.sha256(b"".join((ASSETS / n).read_bytes() for n in ("page.html", "page.css", "core.js", "ui.js", "layouts.json"))).hexdigest()[:12]
     version = hashlib.sha256(json.dumps([cfg, items_doc, manifest, decisions, history, capacity, PAGE_VERSION, page_fp], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
     prev = vdoc["versions"][-1] if vdoc["versions"] else None
     if args.preview:
@@ -355,7 +357,9 @@ def main() -> None:
         "decisions": last_dec,  # the page starts from these (includes, notes, answers, photos, dates)
         "capacity": capacity,   # lineup.capacity + calibration: what the blocks and holes are sized from
         "sectionHistory": history,
-        # the version log and a short decision log, for "what happened since the desk wrote its read"
+        # tall/wide variants the page can switch; compose/ does not yet expose this, so we inline our map
+        "layouts": layouts,
+        # the version log and a short decision log, for "what happened since Clark wrote his read"
         "versions": [{k: v.get(k) for k in ("v", "built_at", "data", "decisions_through", "decisions")} for v in vdoc["versions"]],
         "decisionLog": [{"n": i + 1, "at": d.get("at"), "through": d.get("client_submitted_at") or d.get("at"), "kind": d.get("kind") or "page",
                          "chat": (d.get("chat") or {}).get("text"), "changes": d.get("changes") or [], "vets": len(d.get("vets") or []),

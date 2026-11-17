@@ -18,7 +18,7 @@ from datetime import datetime
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-CARRY = ("publishDate", "publishDateAlt", "included", "excluded", "photoIncludes", "slotNotes", "answers", "notes", "order", "pages")
+CARRY = ("publishDate", "publishDateAlt", "included", "excluded", "photoIncludes", "slotNotes", "answers", "notes", "order", "pages", "resize", "layout")
 
 
 def main() -> None:
