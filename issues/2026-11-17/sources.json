@@ -63,7 +63,7 @@
         },
         {
           "type": "file",
-          "path": "staging/weeks/next/media/vr-parent-filter-comic.png",
+          "path": "staging/weeks/2026-11-17/media/vr-parent-filter-comic.png",
           "retrieved_at": "2026-11-15T23:55:00-05:00",
           "note": "2172x724 PNG, 3189535 bytes."
         }
@@ -326,7 +326,7 @@
         {
           "type": "web",
           "url": "https://www.elitefencersclub.com/camps/winter-camp-2026.jpg",
-          "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer.jpg",
+          "local_copy": "staging/weeks/2026-11-17/media/efc-winter-camp-2026-flyer.jpg",
           "retrieved_at": "2026-10-07T18:55:00-04:00"
         },
         {
@@ -341,7 +341,7 @@
         {
           "type": "email-image",
           "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/f149792d-af91-4a69-fb14-0ac57fd92243.png",
-          "local_copy": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
+          "local_copy": "staging/weeks/2026-11-17/media/efc-winter-camp-2026-flyer-email.png",
           "retrieved_at": "2026-10-07T19:16:00-04:00"
         },
         {

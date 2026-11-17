@@ -19,7 +19,7 @@ from gazette import *  # noqa: E402
 
 ISSUE = "issues/2026-11-17"
 LINEUP = "budget-demo/archive/practice-lineup-issue7-2026-11-17.json"
-WEEK = "staging/weeks/next"
+WEEK = "staging/weeks/2026-11-17"
 
 items = {i["id"]: i for i in load(WEEK + "/items.json")["items"]}
 

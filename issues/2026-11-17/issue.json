@@ -90,7 +90,7 @@
   "approval": "Frank approved proof v3 in chat 2026-11-17 12:09 AM ET (\"the issue is very much approved! we're running with it.\"). Eye check PASS, --verify SENDABLE (sha256 5fbc9b00aa6d).",
   "published": {
     "at": "2026-11-17",
-    "commit": "PENDING",
+    "commit": "b48ac5b",
     "via": "scripts/publish_issue.py 2026-11-17"
   }
 }
