@@ -120,9 +120,10 @@
         else if (a === 'lay') core.act.setLayout(key || sh.dataset.photo, b.dataset.v);
         else if (a === 'span') core.act.setSpan(key || sh.dataset.photo, +b.dataset.v);
         else if (a === 'rz') {
-          const inp = sh.querySelector('[data-rztarget]');
+          // Buttons step or clear on their own. A leftover value in the target field must not
+          // hijack Expand / Shrink (that made a second click, or Clear then Expand, feel like a no-op).
           if (b.dataset.v === 'clear') core.act.setResize(key, null);
-          else core.act.setResize(key, b.dataset.v, inp ? inp.value : '');
+          else core.act.setResize(key, b.dataset.v, '');
         }
       });
       el.addEventListener('input', e => {
@@ -132,12 +133,12 @@
         else if (t.dataset.vetnote && t.dataset.vetnote in state.vets) { state.vets[t.dataset.vetnote] = t.value; core.emit('text'); }
         else if ('rztarget' in t.dataset && key) {
           const dir = (state.resize[key] && state.resize[key].direction) || (t.value.trim() ? 'expand' : null);
-          if (!t.value.trim()) core.act.setResize(key, null);
-          else core.act.setResize(key, dir, t.value);
+          if (!t.value.trim()) core.act.setResize(key, null, null, 'resize-text');
+          else core.act.setResize(key, dir, t.value, 'resize-text');
         }
       });
     }
-    const TEXTY = ['answer', 'note', 'notes', 'text', 'resize']; // emit reasons that must not rebuild a focused form
+    const TEXTY = ['answer', 'note', 'notes', 'text', 'resize-text']; // typing a target must not rebuild the focused form; Expand/Shrink/Clear do re-render the slip
     function history(compact) {
       const R = core.sectionRows(), lab = { in: 'IN', out: 'left out', empty: 'empty', none: '—' };
       if (!R) return '<h3>Section history</h3><p class="dim">Section history was not derived for this build (see the builder’s warning).</p>';
@@ -199,10 +200,10 @@
       h += '<i class="handle len" data-handle="length" title="Drag to grow or shrink the estimated length"></i>';
     if (s && core.canSwitchLayout(s)) {
       const lay = core.currentLayout(s);
-      h += `<button type="button" class="lay-tog" data-lay="${lay === 'wide' ? 'tall' : 'wide'}" title="Switch to ${lay === 'wide' ? 'tall (1 column)' : 'wide'}">${lay === 'wide' ? 'Wide ▸ Tall' : 'Tall ▸ Wide'}</button>`;
+      h += `<button type="button" class="lay-tog" data-lay="${lay === 'wide' ? 'tall' : 'wide'}" title="Switch to ${lay === 'wide' ? 'tall (1 column)' : 'wide'}">${lay === 'wide' ? 'Wide' : 'Tall'}</button>`;
     } else if (b.type === 'photo') {
       const lay = core.photoLayoutOf(b.id);
-      h += `<button type="button" class="lay-tog" data-play="${lay === 'wide' ? 'tall' : 'wide'}" title="Switch to ${lay === 'wide' ? 'tall (1 column)' : 'wide'}">${lay === 'wide' ? 'Wide ▸ Tall' : 'Tall ▸ Wide'}</button>`;
+      h += `<button type="button" class="lay-tog" data-play="${lay === 'wide' ? 'tall' : 'wide'}" title="Switch to ${lay === 'wide' ? 'tall (1 column)' : 'wide'}">${lay === 'wide' ? 'Wide' : 'Tall'}</button>`;
     }
     if (fig) {
       const sz = b.type === 'photo' ? core.photoSize(b.id) : core.slotSize(core.slotBy[b.id]);
@@ -389,7 +390,14 @@
   function startOver() { if (store) { try { store.removeItem(STORE_KEY); } catch (e) { /* ignore */ } } clearTimeout(saveT); core.on(() => clearTimeout(saveT)); location.reload(); }
 
   /* ---------- events ---------- */
-  core.on(why => { render(!ui.TEXTY.includes(why)); save(); });
+  core.on(why => {
+    if (why === 'resize-drag') { // mid-handle-drag: the pointer path previews the block and footers; skip a full rebuild
+      save();
+      return;
+    }
+    render(!ui.TEXTY.includes(why));
+    save();
+  });
   ui.bind($('#side'));
   window.addEventListener('resize', renderPages);
   document.addEventListener('click', e => {
@@ -447,8 +455,62 @@
     core.act.place(id, p);
   });
 
-  // Corner / bottom handles: scale art (aspect locked, snap 1/2/3 cols) or grow/shrink a story. Live fill/overset.
-  let handleDrag = null;
+  // Corner / bottom handles: scale art (aspect locked, snap 1/2/3 cols) or grow/shrink a story.
+  // Mid-drag we update state and a live preview (this block + footers/meter) on animation frames;
+  // a full pack+DOM rebuild waits until pointerup so the handle is not destroyed mid-gesture
+  // (which used to fire pointercancel and drop the rest of the drag).
+  let handleDrag = null, dragRaf = 0, dragMoved = false;
+  function dragApply(d) {
+    if (!d) return;
+    if (d.kind === 'scale') {
+      const dx = (d.x - d.startX) / d.ppi, widthIn = (core.SNAP_WIDTHS[d.startSpan] || cap.col_width_in) + dx;
+      const span = core.snapSpan(widthIn);
+      if (d.photo) { if (core.photoSpanOf(d.photo) !== span) core.act.setSpan(d.photo, span, 'resize-drag'); }
+      else if (d.slot && core.spanOf(core.slotBy[d.slot]) !== span) core.act.setSpan(d.slot, span, 'resize-drag');
+    } else if (d.kind === 'length' && d.slot) {
+      const s = core.slotBy[d.slot]; if (!s) return;
+      const dy = (d.y - d.startY) / d.ppi, span = core.spanOf(s);
+      const newH = Math.max(0.4, d.startH + dy), toColIn = newH * span;
+      const wpi = (s.cost && s.cost.feature) ? cap.wpi_feature : cap.wpi;
+      const toWords = Math.max(0, Math.round(toColIn * wpi));
+      const dir = toWords >= core.baseWordsOf(s) ? 'expand' : 'shrink';
+      if (d.lastWords != null && Math.abs(toWords - d.lastWords) < 5) return;
+      d.lastWords = toWords;
+      core.act.setResize(d.slot, dir, toWords + 'w', 'resize-drag');
+    }
+    previewDrag(d);
+  }
+  function previewDrag(d) {
+    const blk = d.el && d.el.isConnected ? d.el : document.querySelector(d.photo ? `.blk[data-photo="${CSS.escape(d.photo)}"]` : `.blk[data-slot="${CSS.escape(d.slot)}"]`);
+    if (blk) {
+      const ppi = d.ppi, s = d.slot ? core.slotBy[d.slot] : null;
+      const span = d.photo ? core.photoSpanOf(d.photo) : core.spanOf(s);
+      const cost = d.photo ? core.photoCost(d.photo) : core.costOf(s);
+      blk.style.width = (spanW(span) * ppi) + 'px';
+      blk.style.height = Math.max(6, (cost / span) * ppi - 3) + 'px';
+      const lab = blk.querySelector('.size-lab');
+      if (lab) {
+        if (d.photo || (s && (s.cost || {}).type === 'figure')) {
+          const sz = d.photo ? core.photoSize(d.photo) : core.slotSize(s);
+          lab.textContent = core.r1(sz.widthIn) + ' × ' + core.r1(sz.heightIn) + ' in';
+        } else if (s && S.resize[s.key]) {
+          const rz = S.resize[s.key];
+          lab.textContent = (rz.direction || '') + (rz.toWords != null ? ' ' + rz.toWords + 'w' : '');
+        }
+      }
+    }
+    [1, 2].forEach(p => {
+      const r = core.pack(p), pg = document.querySelector(`.page[data-page="${p}"]`), foot = pg && pg.querySelector('.pfoot');
+      if (!foot) return;
+      const spill = r.spillIn || 0;
+      const overTxt = r.overset > 0.02
+        ? `OVERSET by ${core.r1(r.overset)} col-in ≈ ${r.oversetWords || Math.round(r.overset * cap.wpi)} words · hangs ${core.r1(spill)} in below the trim`
+        : `open ${core.r1(r.open)} col-in ≈ ${Math.round(r.open * cap.wpi)} words`;
+      foot.innerHTML = `<span>PAGE ${p} · ${core.r1(r.placedUsed)} of ${core.r1(r.cap)} col-in on the page</span><span class="${r.open > 0.5 || r.overset > 0.02 ? 'short' : ''}">${overTxt}</span>`;
+    });
+    const meter = document.getElementById('meter');
+    if (meter) meter.innerHTML = ui.meter();
+  }
   document.addEventListener('pointerdown', e => {
     const h = e.target.closest && e.target.closest('[data-handle]'); if (!h) return;
     const blk = h.closest('.blk'); if (!blk) return;
@@ -457,34 +519,31 @@
     const photo = blk.dataset.photo, slot = blk.dataset.slot;
     const startSpan = photo ? core.photoSpanOf(photo) : core.spanOf(core.slotBy[slot]);
     const s = slot ? core.slotBy[slot] : null;
-    const startWords = s ? core.wordsOf(s) : 0;
-    const startH = blk.getBoundingClientRect().height / ppi;
-    handleDrag = { kind: h.dataset.handle, photo, slot, ppi, startX: e.clientX, startY: e.clientY, startSpan, startWords, startH, pointer: e.pointerId };
-    try { h.setPointerCapture(e.pointerId); } catch (err) { /* pointer capture is best-effort */ }
+    handleDrag = { kind: h.dataset.handle, photo, slot, ppi, startX: e.clientX, startY: e.clientY, x: e.clientX, y: e.clientY,
+      startSpan, startWords: s ? core.wordsOf(s) : 0, startH: blk.getBoundingClientRect().height / ppi,
+      pointer: e.pointerId, el: blk };
+    dragMoved = false;
     document.body.classList.add('resizing');
+    try { document.documentElement.setPointerCapture(e.pointerId); } catch (err) { /* capture is best-effort */ }
   });
   document.addEventListener('pointermove', e => {
     if (!handleDrag) return;
+    handleDrag.x = e.clientX; handleDrag.y = e.clientY;
+    if (Math.abs(e.clientX - handleDrag.startX) + Math.abs(e.clientY - handleDrag.startY) > 3) dragMoved = true;
+    if (dragRaf) return;
     const d = handleDrag;
-    if (d.kind === 'scale') {
-      const dx = (e.clientX - d.startX) / d.ppi, widthIn = (core.SNAP_WIDTHS[d.startSpan] || cap.col_width_in) + dx;
-      const span = core.snapSpan(widthIn);
-      if (d.photo) { if (core.photoSpanOf(d.photo) !== span) core.act.setSpan(d.photo, span); }
-      else if (d.slot && core.spanOf(core.slotBy[d.slot]) !== span) core.act.setSpan(d.slot, span);
-    } else if (d.kind === 'length' && d.slot) {
-      const s = core.slotBy[d.slot]; if (!s) return;
-      const dy = (e.clientY - d.startY) / d.ppi, span = core.spanOf(s);
-      const newH = Math.max(0.4, d.startH + dy), toColIn = newH * span;
-      const wpi = (s.cost && s.cost.feature) ? cap.wpi_feature : cap.wpi;
-      const toWords = Math.max(0, Math.round(toColIn * wpi));
-      const dir = toWords >= core.baseWordsOf(s) ? 'expand' : 'shrink';
-      if (!d.lastWords || Math.abs(toWords - d.lastWords) >= 5) { d.lastWords = toWords; core.act.setResize(d.slot, dir, toWords + 'w'); }
-    }
+    dragRaf = requestAnimationFrame(() => { dragRaf = 0; if (handleDrag === d) dragApply(d); });
   });
   function endHandle(e) {
     if (!handleDrag) return;
+    if (dragRaf) { cancelAnimationFrame(dragRaf); dragRaf = 0; }
+    const d = handleDrag;
     handleDrag = null;
     document.body.classList.remove('resizing');
+    try { if (e && e.pointerId != null) document.documentElement.releasePointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+    dragApply(d); // flush the last point
+    render(); save(); // full pack + slip, now that the gesture is done
+    if (e && dragMoved) { e.preventDefault(); e.stopPropagation(); }
   }
   document.addEventListener('pointerup', endHandle);
   document.addEventListener('pointercancel', endHandle);

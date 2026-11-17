@@ -313,7 +313,39 @@ class PageLogic(unittest.TestCase):
         self.assertIn("heightIn", res["pagesPhoto"])
         self.assertEqual(res["layoutPhoto"], "wide")
 
+    def test_expand_shrink_clear_apply_to_tables_and_step_from_current(self):
+        """Grow/shrink must change a table's col-in (page 2 is mostly boards), step from the current
+        estimate, and Clear must drop the resize field and restore the original cost."""
+        res = node(self.data, """
+          const table = C.slots.find(s => s.cost && (s.cost.type === 'table' || s.cost.type === 'table_rows'));
+          const prose = C.slots.find(s => s.cost && (s.cost.type === 'prose' || s.cost.type === 'qa'));
+          const tBefore = C.costOf(table), pBefore = C.wordsOf(prose);
+          C.act.setResize(table.key, 'expand', '');
+          const tExp = { cost: C.costOf(table), words: C.wordsOf(table), rz: C.submission().resize[table.key] };
+          C.act.setResize(table.key, null);
+          const tClr = { cost: C.costOf(table), rz: C.submission().resize[table.key] || null };
+          C.act.setResize(prose.key, 'expand', '');
+          const p1 = C.wordsOf(prose);
+          C.act.setResize(prose.key, 'expand', '');
+          const p2 = C.wordsOf(prose);
+          C.act.setResize(prose.key, 'shrink', '');
+          const p3 = C.wordsOf(prose);
+          C.act.setResize(prose.key, null);
+          out = { tKey: table.key, tBefore, tExp, tClr, pBefore, p1, p2, p3, pClr: C.wordsOf(prose),
+                  hasResize: Object.keys(C.submission().resize).length };
+        """)
+        self.assertGreater(res["tExp"]["cost"], res["tBefore"])
+        self.assertEqual(res["tExp"]["rz"]["direction"], "expand")
+        self.assertAlmostEqual(res["tClr"]["cost"], res["tBefore"], delta=0.05)
+        self.assertFalse(res["tClr"]["rz"])
+        self.assertGreater(res["p1"], res["pBefore"])
+        self.assertGreater(res["p2"], res["p1"])  # a second Expand keeps growing
+        self.assertLess(res["p3"], res["p2"])
+        self.assertEqual(res["pClr"], res["pBefore"])
+        self.assertEqual(res["hasResize"], 0)
+
     def test_resize_and_layout_seed_from_a_previous_decision(self):
+
         data = dict(self.data, decisions=dict(self.data["decisions"] or {}, 
             resize={"lead": {"direction": "expand", "target": "125%", "toWords": 2000}},
             layout={"lead": "tall", "comic": "wide"},

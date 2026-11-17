@@ -122,11 +122,23 @@
       const rz = state && state.resize && state.resize[s.key];
       return (rz && typeof rz.toWords === 'number') ? rz.toWords : baseWordsOf(s);
     };
+    function resizeWordDelta(s, baseWords) {
+      const rz = state && state.resize && state.resize[s.key];
+      if (!rz || typeof rz.toWords !== 'number') return 0;
+      const from = (typeof rz.fromWords === 'number') ? rz.fromWords : (baseWords || 0);
+      return (rz.toWords - from) / cap.wpi;
+    }
     function costOf(s) {
       const c = s.cost; if (!c) return 0; const span = spanOf(s), t = c.type;
       if (t === 'prose' || t === 'qa') return wordsOf(s) / (c.feature ? cap.wpi_feature : cap.wpi) + ((c.feature ? cap.head_feature : cap.head_short) + cap.gap) * span;
-      if (t === 'table' || t === 'table_rows') return (cap.table_head + (c.rows || 0) * (span > 1 ? cap.row_full : cap.row_rail) + cap.gap) * span + (c.words || 0) / cap.wpi;
-      if (t === 'figure') return figDepth(c.w, c.h, span) * span + (c.head ? cap.caption_in : 0) * span + cap.gap * span + (c.words || 0) / cap.wpi + (c.head ? cap.head_short * span : 0);
+      if (t === 'table' || t === 'table_rows') {
+        const base = (cap.table_head + (c.rows || 0) * (span > 1 ? cap.row_full : cap.row_rail) + cap.gap) * span + (c.words || 0) / cap.wpi;
+        return Math.max(MIN_PIECE, base + resizeWordDelta(s, c.words || 0));
+      }
+      if (t === 'figure') {
+        const base = figDepth(c.w, c.h, span) * span + (c.head ? cap.caption_in : 0) * span + cap.gap * span + (c.words || 0) / cap.wpi + (c.head ? cap.head_short * span : 0);
+        return Math.max(MIN_PIECE, base + resizeWordDelta(s, c.words || 0));
+      }
       return 0;
     }
     function photoCost(id) {
@@ -171,10 +183,16 @@
         unit = 'words';
         raw = String(toWords);
         pct = fromWords ? Math.round(toWords / fromWords * 100) : 100;
-      } else if (direction === 'expand') {
-        toWords = Math.round(fromWords * 1.25); pct = 125; unit = 'pct'; raw = raw || '125%';
-      } else if (direction === 'shrink') {
-        toWords = Math.round(fromWords * 0.75); pct = 75; unit = 'pct'; raw = raw || '75%';
+      } else if (direction === 'expand' || direction === 'shrink') {
+        // Step from the current estimate (a second Expand keeps growing). fromWords stays the original length.
+        const current = (prev && typeof prev.toWords === 'number') ? prev.toWords : fromWords;
+        const factor = direction === 'expand' ? 1.25 : 0.75;
+        toWords = Math.max(0, Math.round(current * factor));
+        const lo = Math.round(fromWords * 0.10), hi = Math.round(fromWords * 4) || toWords;
+        if (fromWords) toWords = Math.max(lo, Math.min(hi, toWords));
+        pct = fromWords ? Math.round(toWords / fromWords * 100) : (direction === 'expand' ? 125 : 75);
+        unit = 'pct';
+        raw = raw || (pct + '%');
       } else {
         return null;
       }
@@ -591,23 +609,23 @@
         state.slotSpan[k] = layoutSpan(s, v);
         emit('layout');
       },
-      setSpan(k, span) {
+      setSpan(k, span, why) {
         span = Math.max(1, Math.min(3, Math.round(Number(span) || 1)));
         if (photoMeta[k]) {
           state.photoSpan[k] = span;
           state.layout[k] = span >= 2 ? 'wide' : 'tall';
-          emit('resize'); return;
+          emit(why || 'resize'); return;
         }
         const s = slotBy[k]; if (!s || s.empty) return;
         state.slotSpan[k] = span;
         state.layout[k] = span >= 2 ? 'wide' : 'tall';
-        emit('resize');
+        emit(why || 'resize');
       },
-      setResize(k, direction, target) {
+      setResize(k, direction, target, why) {
         const s = slotBy[k]; if (!s || s.empty) return;
-        if (!direction) { delete state.resize[k]; emit('resize'); return; }
+        if (!direction) { delete state.resize[k]; emit(why || 'resize'); return; }
         applyResize(s, direction, target);
-        emit('resize');
+        emit(why || 'resize');
       },
     };
     const thumb = name => (((D.thumbs || {})[fileOf(name)]) || {}).src || '';
