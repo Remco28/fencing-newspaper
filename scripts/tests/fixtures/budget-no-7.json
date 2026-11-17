@@ -1,0 +1,7 @@
+{
+  "_about": "Frozen No. 7 inputs for scripts/tests/test_budget_page.py. The staging week (items, media, decision log) is the archived pile already in the repo; tests read it by path so a later roll of staging/weeks/next cannot break them. Media is not copied into this folder (it includes minors).",
+  "week": "staging/weeks/2026-11-17",
+  "lineup": "scripts/tests/fixtures/practice-lineup-no-7.json",
+  "issue": 7,
+  "publish": "2026-11-17"
+}

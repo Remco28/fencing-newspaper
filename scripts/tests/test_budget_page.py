@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Budget page (the two-page spread): builder, submission contract, ingest, capacity model.
 No Chrome, no network. The JS logic (scripts/budget_page/core.js) runs under node; those tests skip without it.
-Everything is written to temp dirs: the real staging week, submissions and version log are never touched.
+Inputs are the frozen No. 7 snapshot in scripts/tests/fixtures/ (lineup plus a pointer at
+staging/weeks/2026-11-17). Everything is written to temp dirs: the archived week, live next, submissions
+and version log are never touched.
 Run: python3 scripts/tests/test_budget_page.py      (optional Chrome check: scripts/tests/smoke_budget_chrome.py)"""
 import json
 import re
@@ -14,12 +16,16 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 SCRIPTS = REPO / "scripts"
+FIXTURES = Path(__file__).resolve().parent / "fixtures"
 sys.path.insert(0, str(SCRIPTS))
 import budget_model  # noqa: E402
 
 NODE = shutil.which("node")
-LINEUP = REPO / "budget-demo" / "practice-lineup.json"
-WEEK = REPO / "staging" / "weeks" / "next"
+# Frozen No. 7 snapshot: the archived staging week (by path, media stays there) plus a copied lineup.
+# Live staging/weeks/next and budget-demo/practice-lineup.json will move on after a publish/roll.
+_SNAP = json.loads((FIXTURES / "budget-no-7.json").read_text(encoding="utf-8"))
+LINEUP = REPO / _SNAP["lineup"]
+WEEK = REPO / _SNAP["week"]
 OLD_FIELDS = ["publishDate", "practice", "pretend", "targetWeek", "issue", "includedSlots", "excludedSlots", "photoIncludes",
               "notes", "slotNotes", "answers", "order", "pageVersion", "submittedAt", "vets"]
 NEW_OPTIONAL = ["publishDateAlt", "budgetVersion", "dataVersion", "pages", "resize", "layout"]
@@ -30,7 +36,7 @@ def run(*args, **kw):
 
 
 def week_copy(tmp: Path) -> Path:
-    """A throwaway staging week: items, media + manifest, version log."""
+    """A throwaway staging week copied from the frozen No. 7 archive: items, media + manifest, version log."""
     wk = tmp / "week"
     shutil.copytree(WEEK / "media", wk / "media")
     for f in ("items.json", "budget-versions.json"):
@@ -41,7 +47,7 @@ def week_copy(tmp: Path) -> Path:
 def build(tmp: Path, *extra) -> tuple[subprocess.CompletedProcess, Path, dict]:
     wk = week_copy(tmp) if not (tmp / "week").is_dir() else tmp / "week"
     out = tmp / "out"
-    r = run(SCRIPTS / "build_budget_html.py", "--staging-week", wk, "--out", out, "--allow-pending", *extra)
+    r = run(SCRIPTS / "build_budget_html.py", "--lineup", LINEUP, "--staging-week", wk, "--out", out, "--allow-pending", *extra)
     pages = sorted(out.glob("*.html"), key=lambda p: p.stat().st_mtime) if out.is_dir() else []
     data = {}
     if pages:

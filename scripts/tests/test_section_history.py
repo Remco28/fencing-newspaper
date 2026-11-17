@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """Section history: derived from the published issues, checked against the 2026-11-16 manual audit.
+Audit and “what happens when we publish No. 7” tests use a frozen snapshot (issues 1–6 published;
+No. 7 files are only added when a test lists them). Live site/issues.json can gain issues without
+breaking those expectations. test_record_file_is_current still checks the live record.
 No Chrome, no network. Run: python3 scripts/tests/test_section_history.py"""
 import json
 import shutil
@@ -11,24 +14,34 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
+FIXTURES = HERE / "fixtures"
 sys.path.insert(0, str(REPO / "scripts"))
 import build_section_history as bsh  # noqa: E402
 
-AUDIT = json.loads((HERE / "fixtures" / "section-audit-2026-11-16.json").read_text(encoding="utf-8"))
+AUDIT = json.loads((FIXTURES / "section-audit-2026-11-16.json").read_text(encoding="utf-8"))
+# Published list and history record as of just before No. 7 was published (commit 29d34e7).
+PUBLISHED_THROUGH_6 = json.loads((FIXTURES / "issues-published-through-no-6.json").read_text(encoding="utf-8"))
+RECORD_THROUGH_6 = FIXTURES / "section-history-through-no-6.json"
 
 
 def repo_copy(tmp: Path, extra_published=None) -> Path:
-    """A throwaway repo with just what the deriver reads; optionally 'publish' more issues."""
+    """A throwaway repo frozen at issues 1–6 published; optionally 'publish' more issues on top."""
     (tmp / "scripts").mkdir()
-    for name in ("sections.json", bsh.RECORD):
-        if (REPO / name).is_file():
-            shutil.copy(REPO / name, tmp / name)
+    if (REPO / "sections.json").is_file():
+        shutil.copy(REPO / "sections.json", tmp / "sections.json")
+    rec_src = RECORD_THROUGH_6 if RECORD_THROUGH_6.is_file() else (REPO / bsh.RECORD)
+    if rec_src.is_file():
+        shutil.copy(rec_src, tmp / bsh.RECORD)
     (tmp / "site").mkdir()
-    listed = json.loads((REPO / "site" / "issues.json").read_text(encoding="utf-8")) + list(extra_published or [])
+    listed = list(PUBLISHED_THROUGH_6) + list(extra_published or [])
     (tmp / "site" / "issues.json").write_text(json.dumps(listed), encoding="utf-8")
+    seen = set()
     for e in listed:
+        if e["date"] in seen:
+            continue
+        seen.add(e["date"])
         dst = tmp / "issues" / e["date"]
-        dst.mkdir(parents=True)
+        dst.mkdir(parents=True, exist_ok=True)
         for f in ("issue.html", "issue.json", "sources.json", "budget-submission.json"):
             if (REPO / "issues" / e["date"] / f).is_file():
                 shutil.copy(REPO / "issues" / e["date"] / f, dst / f)
@@ -38,15 +51,18 @@ def repo_copy(tmp: Path, extra_published=None) -> Path:
 class Audit(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.h = bsh.build_history(REPO)
+        cls.tmp = Path(tempfile.mkdtemp())
+        cls.repo = repo_copy(cls.tmp)
+        cls.h = bsh.build_history(cls.repo)
         cls.by_id = {s["id"]: s for s in cls.h["sections"]}
+
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(cls.tmp, ignore_errors=True)
 
     def test_published_issues_only(self):
         nums = [i["number"] for i in self.h["issues"]]
-        self.assertEqual(nums[:6], AUDIT["issues"])
-        proof = json.loads((REPO / "issues" / "2026-11-17" / "issue.json").read_text(encoding="utf-8"))
-        if "not approved" in proof.get("status", ""):  # No. 7 is a proof in this snapshot: must not count
-            self.assertNotIn(7, nums)
+        self.assertEqual(nums, AUDIT["issues"])  # frozen at Nos. 1–6; publishing No. 7 is covered in GoingForward
 
     def test_every_registry_section_has_a_row_and_a_rule(self):
         reg = [s["id"] for s in json.loads((REPO / "sections.json").read_text(encoding="utf-8"))["sections"]]
@@ -162,9 +178,11 @@ class Lineup(unittest.TestCase):
         self.assertEqual(r.classify_slot({"key": "x1", "slot": "Mystery"}, {"slot_hint": "by_the_book"}), ["by-the-book"])
 
     def test_budget_history_for_the_current_lineup(self):
-        lineup = json.loads((REPO / "budget-demo" / "practice-lineup.json").read_text(encoding="utf-8"))
-        items = json.loads((REPO / "staging" / "weeks" / "next" / "items.json").read_text(encoding="utf-8"))["items"]
-        manifest = json.loads((REPO / "staging" / "weeks" / "next" / "media" / "manifest.json").read_text(encoding="utf-8"))
+        snap = json.loads((FIXTURES / "budget-no-7.json").read_text(encoding="utf-8"))
+        week = REPO / snap["week"]
+        lineup = json.loads((REPO / snap["lineup"]).read_text(encoding="utf-8"))
+        items = json.loads((week / "items.json").read_text(encoding="utf-8"))["items"]
+        manifest = json.loads((week / "media" / "manifest.json").read_text(encoding="utf-8"))
         h = bsh.budget_history(REPO, lineup, items, manifest)
         keys = {s.get("key") for s in lineup["slots"]}
         self.assertTrue(set(h["slotSections"]) <= keys and set(h["slotOther"]) <= keys)
