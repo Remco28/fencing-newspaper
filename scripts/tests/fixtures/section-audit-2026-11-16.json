@@ -1,0 +1,27 @@
+{
+  "_about": "Frank/Clark manual audit of which section ran in which published issue, taken 2026-11-16 (issues Nos. 1-6). tests/test_section_history.py checks the DERIVED history against it. This is a test fixture, not a data source: the budget page never reads it.",
+  "issues": [1, 2, 3, 4, 5, 6],
+  "ran": {
+    "lead-story": [1, 2, 3, 4, 5, 6],
+    "club-results": [1, 2, 4, 5, 6],
+    "ratings-earned": [5],
+    "secondary-articles": [1, 2, 3, 4, 5],
+    "nj-high-school": [3],
+    "overheard-reddit": [2, 3, 5, 6],
+    "nearby-tournaments": [1, 2, 3, 4, 5, 6],
+    "deadlines": [2, 3, 4, 5, 6],
+    "club-events": [1, 2, 3, 4, 5],
+    "parent-qa": [1],
+    "by-the-book": [3, 4, 5],
+    "for-the-parents": [3, 6],
+    "comic": [6],
+    "epee-on-screen": [2, 4, 5, 6],
+    "club-photos": [1, 4, 6],
+    "featured-bout": [],
+    "road-trip": [],
+    "photo-from-history": [3, 5],
+    "controversial-calls": [3],
+    "the-vault": [2, 4]
+  },
+  "unregistered_kickers_at_least": {"On the Road": [6], "Also on the Calendar": [6]}
+}

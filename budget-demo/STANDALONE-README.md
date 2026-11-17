@@ -1,5 +1,21 @@
 # Standalone budget page
 
+> **2026-11-16: the page is now the Budget spread** (`pageVersion: budget-paper-v1`). Same builder, same one-file page, same
+> ingest. What Frank sees changed: the two pages of the issue with each included item as a block sized by the capacity model,
+> a bank of what isn't running, hatched holes for unfilled space (column-inches and words), and a slip per item (click or tap).
+> Desktop: drag between the bank and the pages. Phone: open the slip and use Page 1 / Page 2 / Bank.
+> - **Sign off the budget** shows the submission JSON; Download or Copy, then ingest as before.
+> - New optional submission fields: `publishDateAlt` (YYYY-MM-DD or null), `budgetVersion`, `dataVersion`. Ingest records them on
+>   the decision when present and never requires them. A stale `budgetVersion` does not block an ingest.
+> - Page placement is not in the contract: a block Frank puts on a page himself goes out as a "Budget placement: …" line in `notes`.
+>   A lineup slot may carry an optional `page: 1|2` to set its starting page.
+> - Section history (the Sections tab) is derived on every build by `scripts/build_section_history.py` from the published issues.
+> - Block sizes use `lineup.capacity` with `scripts/budget_page/calibration.json` laid over it (fill calibration against Nos. 1–7).
+> - Photo vets are still collected in `vets` and still recorded only in the stored submission and the decision log, not in
+>   `media/manifest.json`. A photo vetted on the page shows VET again on the next build until the desk marks the manifest.
+> - Tests: `python3 scripts/tests/test_budget_page.py`, `python3 scripts/tests/test_section_history.py`
+>   (optional Chrome check: `python3 scripts/tests/smoke_budget_chrome.py PAGE.html [SCREENSHOT_DIR]`).
+
 One self-contained `.html` file Frank opens on his laptop or phone. It works offline, needs no server,
 and makes no network requests (a CSP `default-src 'none'` blocks them). It replaces the tunnel and server
 for the weekly budget. `practice.html` + `server.py` still work and are kept as the fallback.

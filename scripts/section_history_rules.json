@@ -1,0 +1,133 @@
+{
+  "_about": "How scripts/build_section_history.py recognises a registry section (sections.json id) in a printed issue and in a budget lineup. Data, not code: add an alias here when a kicker is renamed. 'aliases' match printed kickers (box titles, rail titles), headline prefixes ('Overheard on Reddit: ...'), and the segments of a lineup slot name ('Club events — Winter Camp'). 'slot_keys' match lineup slot keys exactly or as '<key>-<suffix>' (signup, signup-2, signup-cobra). 'slot_hints' match a staging item's slot_hint / suggested_slot. 'headline_regex' catches unkickered heads and box titles. Matching ignores case, periods and punctuation.",
+  "club_regex": "\\bElite FC\\b|\\bElite Fencers\\b|elitefencersclub",
+  "sections": {
+    "lead-story": {
+      "short": "Lead",
+      "lead_h1": true,
+      "aliases": ["Lead story", "Lead"],
+      "slot_keys": ["lead"],
+      "slot_hints": ["lead"]
+    },
+    "club-results": {
+      "short": "Club Results",
+      "aliases": ["Club Results"],
+      "slot_keys": ["club-results"],
+      "slot_hints": ["club_results", "results"]
+    },
+    "ratings-earned": {
+      "short": "Ratings Earned",
+      "aliases": ["Ratings Earned"],
+      "slot_keys": ["ratings"],
+      "slot_hints": ["ratings", "ratings_earned"]
+    },
+    "secondary-articles": {
+      "short": "Secondary",
+      "leftover_stories": true,
+      "aliases": ["Secondary", "Short"],
+      "slot_keys": ["secondary"],
+      "slot_hints": ["secondary", "secondary_a", "secondary_b"]
+    },
+    "nj-high-school": {
+      "short": "NJ HS",
+      "aliases": ["NJ High School", "NJ high-school", "NJ HS"],
+      "slot_keys": ["nj-hs"],
+      "slot_hints": ["nj_hs", "nj_high_school"]
+    },
+    "overheard-reddit": {
+      "short": "Overheard",
+      "aliases": ["Overheard on Reddit", "Overheard"],
+      "slot_keys": ["overheard", "overheard-reddit"],
+      "slot_hints": ["overheard", "overheard_reddit"]
+    },
+    "nearby-tournaments": {
+      "short": "Nearby Tournaments",
+      "aliases": ["Nearby Tournaments", "Go Cheer", "Signup board"],
+      "slot_keys": ["signup"],
+      "slot_hints": ["signup", "whos_entered", "go_cheer"]
+    },
+    "deadlines": {
+      "short": "Deadlines",
+      "aliases": ["Deadlines"],
+      "slot_keys": ["deadlines"],
+      "slot_hints": ["deadlines"]
+    },
+    "club-events": {
+      "short": "Club Events",
+      "aliases": ["Club Events", "Club notes", "Club note", "Weekly classes"],
+      "slot_keys": ["club-events", "camp", "classes", "footwork"],
+      "slot_hints": ["club_events", "club-events"],
+      "headline_regex": "\\b(class|classes|camp|clinic)\\b"
+    },
+    "parent-qa": {
+      "short": "Parent Q&A",
+      "aliases": ["Parent Q&A", "Parent Q and A"],
+      "slot_keys": ["qa"],
+      "slot_hints": ["parent_qa", "qa"]
+    },
+    "by-the-book": {
+      "short": "By the Book",
+      "aliases": ["By the Book"],
+      "slot_keys": ["by-the-book"],
+      "slot_hints": ["by_the_book"]
+    },
+    "for-the-parents": {
+      "short": "For the Parents",
+      "aliases": ["For the Parents"],
+      "slot_keys": ["for-the-parents", "for-parents"],
+      "slot_hints": ["for_the_parents"]
+    },
+    "comic": {
+      "short": "Comic",
+      "aliases": ["Comic", "Cartoon"],
+      "slot_keys": ["comic"],
+      "slot_hints": ["comic"],
+      "figure_classes": ["comic-wide", "comicfig", "comic"],
+      "figure_alt_regex": "\\b(comic|cartoon)\\b"
+    },
+    "epee-on-screen": {
+      "short": "Epee on Screen",
+      "aliases": ["Epee on Screen", "TV / streaming"],
+      "slot_keys": ["tv"],
+      "slot_hints": ["tv", "epee_on_screen"]
+    },
+    "club-photos": {
+      "short": "Club Photos",
+      "club_photo": true,
+      "aliases": ["Club Photos", "Club photo", "From the Club"],
+      "slot_keys": ["club-photo", "club-photos"],
+      "slot_hints": ["club_photo", "club_photos"]
+    },
+    "featured-bout": {
+      "short": "Featured Bout",
+      "aliases": ["Featured Bout"],
+      "slot_keys": ["featured-bout"],
+      "slot_hints": ["featured_bout"]
+    },
+    "road-trip": {
+      "short": "Travel Tournaments",
+      "aliases": ["Travel Tournaments", "Road Trip"],
+      "slot_keys": ["road-trip", "travel-tournaments"],
+      "slot_hints": ["road_trip", "travel_tournaments"]
+    },
+    "photo-from-history": {
+      "short": "Photo from History",
+      "aliases": ["Photo from History"],
+      "slot_keys": ["photo-history", "photo-from-history"],
+      "slot_hints": ["photo_history", "photo_from_history"]
+    },
+    "controversial-calls": {
+      "short": "Controversial Calls",
+      "aliases": ["Controversial Calls"],
+      "slot_keys": ["controversial-calls"],
+      "slot_hints": ["controversial_calls"]
+    },
+    "the-vault": {
+      "short": "The Vault",
+      "vault_entries": true,
+      "aliases": ["The Vault", "From the Vault"],
+      "slot_keys": ["vault", "the-vault"],
+      "slot_hints": ["vault", "the_vault"]
+    }
+  }
+}

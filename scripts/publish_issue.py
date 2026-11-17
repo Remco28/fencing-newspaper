@@ -11,6 +11,8 @@ Steps (safe to re-run; same input -> same result):
      Skipped when the images are already newer than the PDF (unless --force-images).
   3. Upsert the entry in site/issues.json (keyed by date), sorted newest first,
      so the newest issue lands on top of the desk.
+  3b. Refresh scripts/section-history.json (scripts/build_section_history.py): which registry section ran in
+     which published issue. The budget page shows it; "published" means "listed in site/issues.json".
   4. Sync site/ -> docs/ (GitHub Pages source), minus REPORT.md and tests/. Builds docs.new
      first and swaps it in, so docs/ is never left empty.
 
@@ -103,6 +105,19 @@ def sync_docs():
     print('  docs/ synced from site/')
 
 
+def update_section_history():
+    """Refresh section-history.json now that this issue is listed in site/issues.json (= published).
+    Never blocks a publish: a failure here is a warning, and the budget page derives its own copy anyway."""
+    try:
+        from pathlib import Path
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import build_section_history as bsh
+        changed, hist = bsh.update_record(Path(ROOT))
+        print('  scripts/section-history.json ' + ('updated' if changed else 'unchanged') + f" ({len(hist['issues'])} published issues)")
+    except Exception as exc:  # noqa: BLE001
+        print(f'  warning: scripts/section-history.json not refreshed ({exc}); run scripts/build_section_history.py')
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('date', help='issue folder date, YYYY-MM-DD')
@@ -147,8 +162,9 @@ def main():
     }
     entries = [e for e in entries if e.get('date') != d] + [entry]
     write_issues_json(entries)
+    update_section_history()
     sync_docs()
-    print('Done. Next: git add site docs && git commit && git push')
+    print('Done. Next: git add site docs scripts/section-history.json && git commit && git push')
 
 
 if __name__ == '__main__':

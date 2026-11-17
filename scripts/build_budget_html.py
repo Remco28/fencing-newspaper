@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
-"""Build the standalone Gazette budget page: ONE self-contained .html, no server, no network.
+"""Build the standalone Gazette Budget page: ONE self-contained .html, no server, no network.
+
+The page is the Budget spread (pageVersion budget-paper-v1): the two pages of the issue with every
+included item drawn as a block sized by the capacity model, a bank of what isn't running, holes for
+unfilled space, and a slip per item. UI in scripts/budget_page/ (page.html, page.css, core.js, ui.js).
 
 Inlines the lineup (practice-lineup.json, schema 2), the staging week's items.json and
 media/manifest.json as JSON, small B&W JPEG thumbnails as data-URIs, and all CSS/JS
-(scripts/budget_page/). A CSP meta tag (default-src 'none') blocks every network request.
+(scripts/budget_page/), plus two things derived fresh on every build: the section history
+(scripts/build_section_history.py, from the published issues) and the capacity model (lineup.capacity with
+the fill calibration scripts/budget_page/calibration.json laid over it). A CSP meta tag (default-src 'none') blocks every network request.
 Frank opens the file on his laptop or phone, vets/includes/answers locally, and Submit downloads +
 copies a JSON file; scripts/ingest_budget_submission.py applies it on the box.
 See budget-demo/STANDALONE-README.md.
@@ -37,6 +43,11 @@ from datetime import datetime
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import budget_model  # noqa: E402
+import build_section_history  # noqa: E402
+
+PAGE_VERSION = "budget-paper-v1"  # must match core.js
 ASSETS = Path(__file__).resolve().parent / "budget_page"
 DEFAULT_LINEUP = REPO / "budget-demo" / "practice-lineup.json"
 DEFAULT_WEEK = REPO / "staging" / "weeks" / "next"
@@ -306,7 +317,17 @@ def main() -> None:
         die("un-ingested submission(s) for this issue: " + ", ".join(str(p) for p in pending) +
             "\n  Dry-run + apply scripts/ingest_budget_submission.py first (or --allow-pending).")
     last_dec = decisions[-1] if decisions else None
-    version = hashlib.sha256(json.dumps([cfg, items_doc, manifest, decisions], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
+    # derived fresh each build: section history (published issues only) and the calibrated capacity model
+    try:
+        history = build_section_history.budget_history(REPO, cfg, items, manifest)
+    except Exception as exc:  # noqa: BLE001 — the budget still builds; the Sections tab says history is missing
+        history = None
+        warnings.append(f"section history not derived ({exc}); the Sections tab will be empty")
+    calibration = budget_model.load_calibration()
+    capacity = budget_model.merged_capacity(cfg["capacity"], calibration)
+    if calibration is None:
+        warnings.append(f"no fill calibration at {rel(budget_model.CALIBRATION)}: block sizes use lineup.capacity as is")
+    version = hashlib.sha256(json.dumps([cfg, items_doc, manifest, decisions, history, capacity, PAGE_VERSION], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
     prev = vdoc["versions"][-1] if vdoc["versions"] else None
     if args.preview:
         budget_v = None
@@ -323,12 +344,23 @@ def main() -> None:
             "generator": "scripts/build_budget_html.py",
             "lineupPath": rel(lineup_path), "stagingWeek": rel(week), "dataVersion": version,
             "thumbWidth": args.thumb_width, "budgetVersion": budget_v, "decisionsThrough": through,
-            "versionLabel": ver_label,
+            "versionLabel": ver_label, "pageVersion": PAGE_VERSION,
+            "calibrated": bool(calibration), "calibration": (calibration or {}).get("residual", {}).get("after"),
             "missing": {"items": missing_items, "merged": missing_merged, "photos": missing_photos, "media": missing_media},
         },
         "lineup": cfg, "items": items_doc, "media": manifest, "thumbs": thumbs,
-        "decisions": last_dec,  # the page starts from these (includes, notes, answers, photos)
+        "decisions": last_dec,  # the page starts from these (includes, notes, answers, photos, dates)
+        "capacity": capacity,   # lineup.capacity + calibration: what the blocks and holes are sized from
+        "sectionHistory": history,
+        # the version log and a short decision log, for "what happened since the desk wrote its read"
+        "versions": [{k: v.get(k) for k in ("v", "built_at", "data", "decisions_through", "decisions")} for v in vdoc["versions"]],
+        "decisionLog": [{"n": i + 1, "at": d.get("at"), "through": d.get("client_submitted_at") or d.get("at"), "kind": d.get("kind") or "page",
+                         "chat": (d.get("chat") or {}).get("text"), "changes": d.get("changes") or [], "vets": len(d.get("vets") or []),
+                         "included": len(d.get("included") or []), "budgetVersion": d.get("budgetVersion")}
+                        for i, d in enumerate(decisions) if isinstance(d, dict)],
     }
+    if budget_v is not None and not (prev and prev.get("v") == budget_v):  # this build is a new version: show it in its own log
+        data["versions"].append({"v": budget_v, "built_at": data["build"]["generatedAt"], "data": version, "decisions_through": through, "decisions": len(decisions)})
 
     page = (ASSETS / "page.html").read_text(encoding="utf-8")
     parts = {name: (ASSETS / name).read_text(encoding="utf-8") for name in ("page.css", "core.js", "ui.js")}
@@ -351,7 +383,7 @@ def main() -> None:
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_bytes(html.encode("utf-8"))
     if budget_v is not None:
-        entry = {"v": budget_v, "built_at": data["build"]["generatedAt"], "data": version,
+        entry = {"v": budget_v, "built_at": data["build"]["generatedAt"], "data": version, "page": PAGE_VERSION,
                  "decisions_through": through, "decisions": len(decisions), "out": rel(out)}
         if prev and prev["v"] == budget_v:
             prev.update(entry)
@@ -379,6 +411,11 @@ def main() -> None:
         print(f"  warning: {w}")
     if size > SIZE_TARGET:
         print(f"  warning: page is {size / 1048576:.1f} MB (target < 2 MB); try --thumb-width 320 --quality 60")
+    if history:
+        print(f"  section history: {len(history['issues'])} published issues, {len(history['sections'])} sections, "
+              f"{len(history['unregistered'])} unregistered kickers (derived this build)")
+    print("  capacity: " + (f"calibrated ({rel(budget_model.CALIBRATION)})" if calibration else "lineup.capacity (uncalibrated)") +
+          f" · {capacity['page1_col_in']} + {capacity['page2_col_in']} col-in · {capacity['wpi']} words per col-in")
     print("  self-check: ok (inlined JSON parses; no network loads; CSP default-src 'none')")
 
 

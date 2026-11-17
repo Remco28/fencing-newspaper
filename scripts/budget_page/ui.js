@@ -1,572 +1,361 @@
-/* En Garde Gazette — standalone budget page: rendering + interactions.
-   All data is inlined (#budget-data); logic lives in BudgetCore (core.js). No network: Vet is local,
-   Submit downloads + copies a JSON file, progress autosaves to localStorage. */
+/* En Garde Gazette — Budget page (the two-page spread): DOM. Logic is in core.js (BudgetCore).
+   Interaction and look follow the approved mockup references/concept-a.html: two pages, blocks sized by the
+   capacity model, a bank of what isn't running, drag on/off the pages (desktop), holes in column-inches and
+   words, a slip per item, grease-pencil marks. On a phone the same moves are the slip's Page 1 / Page 2 /
+   Bank buttons. Nothing leaves the file: Sign off downloads/copies the submission JSON. */
 (function () {
-  "use strict";
-  var Core = window.BudgetCore;
-  var $ = function (id) { return document.getElementById(id); };
-  var DATA, M, S, STORE_KEY, storage = null, ui = { open: {}, jumpIdx: {}, last: null };
-  var saveTimer = 0, totalsTimer = 0;
+  'use strict';
+  const D = JSON.parse(document.getElementById('budget-data').textContent);
+  const core = BudgetCore.make(D);
 
-  function esc(s) {
-    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  }
-  function attrSel(v) { return String(v).replace(/["\\]/g, "\\$&"); }
-  function fmtTime(iso) {
-    var d = iso ? new Date(iso) : null;
-    return d && !isNaN(d) ? d.toLocaleString("en-US", { weekday: "short", month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) : "";
-  }
-  function fmtDay(v) {
-    var d = v ? new Date(v + "T12:00:00") : null;
-    return d && !isNaN(d) ? d.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" }) : "";
-  }
-  function thumbHtml(file, cls) {
-    var t = file && M.thumbs[file];
-    if (!t) return file ? '<div class="nothumb">No thumbnail</div>' : "";
-    return '<img class="' + (cls || "thumb") + '" alt="" decoding="async" src="' + t.src + '" width="' + t.w + '" height="' + t.h + '" />';
-  }
-
-  /* ---------- storage ---------- */
-  function probeStorage() {
-    try { var k = "__gazette_probe__"; window.localStorage.setItem(k, "1"); window.localStorage.removeItem(k); return window.localStorage; }
-    catch (e) { return null; }
-  }
-  function saveNow() {
-    clearTimeout(saveTimer); saveTimer = 0;
-    if (!storage) return;
-    S.savedAt = new Date().toISOString();
-    try { storage.setItem(STORE_KEY, JSON.stringify(S)); }
-    catch (e) { storage = null; notice("warn", "Couldn't save progress on this device (storage full or blocked). Finish in one sitting, or Submit early."); }
-  }
-  function changed(opts) {
-    clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 400);
-    if (!opts || !opts.noTotals) { clearTimeout(totalsTimer); totalsTimer = setTimeout(updateTotals, 120); }
-    else { clearTimeout(totalsTimer); totalsTimer = setTimeout(updateDirty, 300); }
-  }
-
-  /* ---------- notices / status ---------- */
-  function notice(kind, html) {
-    var d = document.createElement("div");
-    d.className = "notice" + (kind === "warn" ? " warn" : "");
-    d.innerHTML = "<span>" + html + '</span><button type="button" aria-label="Dismiss" data-act="dismiss">✕</button>';
-    $("notices").appendChild(d);
-  }
-  function status(cls, html) { var s = $("status"); s.className = cls || ""; s.innerHTML = html; }
-  function toast(html) { $("toastMsg").innerHTML = html; $("toast").classList.add("show"); }
-
-  /* ---------- cards ---------- */
-  function hostAttrs(s) { return ' data-key="' + esc(s.key) + '" data-item-id="' + esc(s.item || "") + '"'; }
-
-  function statusHtml(s, it) {
-    var missing = Core.isMissing(M, s), onFile = Core.vettedOnFile(M, s.item), local = !onFile && !!(s.item && S.vets[s.item]);
-    var nq = Core.openQuestions(M, S, s), nqAll = Core.questionsFor(s, it).length, info = [], pill;
-    if (missing) pill = '<span class="pill missing">Not in staging</span>';
-    else if (s.waiting) pill = '<span class="pill wait">Waiting on results</span>';
-    else if (!onFile && !local) pill = '<span class="pill vet">Needs your vet</span>';
-    else if (nq) pill = '<span class="pill q">Question for you</span>';
-    else if (local) pill = '<span class="pill mine">✓ Vetted by you · not sent yet</span>';
-    else pill = '<span class="pill ok">✓ Vetted' + (it && it.vet_scope === "angle_tone_only" ? " (angle &amp; tone)" : "") + "</span>";
-    if (!missing && s.waiting) info.push(onFile || local ? "vetted" : "unvetted");
-    if (nq && (missing || s.waiting || (!onFile && !local))) info.push(nq + (nq === 1 ? " question" : " questions") + " for you");
-    else if (nqAll && !nq) info.push("questions answered");
-    if (it && it.facts_status === "pending") info.push("facts pending");
-    if (s.proposed && !missing && !onFile && !local) info.push("Clark proposes — goes in once vetted");
-    else if (s.proposed && !missing) info.push("Clark proposes");
-    if (s.auto) info.push("auto-placed from staging");
-    return pill + (info.length ? '<span class="sec-info">' + esc(info.join(" · ")) + "</span>" : "");
-  }
-
-  function qsHtml(s, qs) {
-    return '<div class="qs"><div class="qs-h">Questions for Frank</div>' + qs.map(function (q, i) {
-      var a = S.answers[s.key + "|" + i], v = a ? a.a : "", id = "q-" + s.key + "-" + i;
-      return '<div class="q' + (String(v).trim() ? " done" : "") + '"><label for="' + esc(id) + '"><span>' + esc(q) + "</span></label>" +
-        '<textarea rows="1" id="' + esc(id) + '" data-q="' + esc(s.key + "|" + i) + '" placeholder="Type your answer">' + esc(v) + "</textarea></div>";
-    }).join("") + "</div>";
-  }
-
-  function draftLabel(s, it) {
-    var w = Core.itemWords(it);
-    if (s.panels) return "See the board (" + s.panels.panels.reduce(function (n, p) { return n + p.rows.length; }, 0) + " events)";
-    if (s.table && !it) return "See the table";
-    if (it && it.schedule_rows) return "See the class table";
-    if (s.cost && s.cost.type === "figure") return "Read Clark's description of the figure";
-    if (it && /graf|qa|comic/.test(it.kind || "")) return "Read the draft · " + w + " words";
-    if (s.table) return "See the table";
-    return "Read the staging text";
-  }
-  function tableHtml(head, rows) {
-    return '<div class="tscroll"><table class="t"><thead><tr>' + (head || []).map(function (h) { return "<th>" + esc(h) + "</th>"; }).join("") + "</tr></thead><tbody>" +
-      (rows || []).map(function (r) { return "<tr>" + (Array.isArray(r) ? r : [r]).map(function (c) { return "<td>" + esc(c) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
-  }
-  function draftBody(s, it) {
-    if (s.panels) {
-      return s.panels.panels.map(function (p) { return '<div class="panel-h">' + esc(p.title) + "</div>" + tableHtml(s.panels.head, p.rows); }).join("");
+  /* ---- detail views: the per-item slip, the section-history table, the fill meter (from the mockup) ---- */
+  const ui = (() => {
+    const { esc, state, slotBy, items, media, fmt, r1 } = core;
+    const shortName = s => s.slot.split(' — ')[0];
+    function vetBlock(id, label) {
+      const x = items[id] || media[id], session = id in state.vets, changed = items[id] && core.staleness(items[id]).changed;
+      const note = `<input class="sh-in" data-vetnote="${esc(id)}" placeholder="Vet note (optional)" value="${esc(state.vets[id] || '')}">`;
+      let body;
+      if (session) body = `<div class="vet ok"><b>✔ Vetted here</b> — goes out in this submission. <button class="lnk" data-act="unvet" data-id="${esc(id)}">undo</button></div>${note}`;
+      else if (x.vetted && changed) body = `<div class="vet warn"><b>Vetted ${fmt(x.vetted_at)}</b>, but the draft changed ${fmt(x.updated_at, false)} — after that vet.</div>${note}<button class="btn pri" data-act="vet" data-id="${esc(id)}">Vet the current draft</button>`;
+      else if (x.vetted) body = `<div class="vet ok">✔ Vetted by ${esc(x.vetted_by || 'desk rule')}${x.vetted_at ? ' · ' + fmt(x.vetted_at) : ''}${x.vet_scope ? ` <span class="dim">· scope: ${esc(x.vet_scope.replace(/_/g, ' '))}</span>` : ''}${x.facts_status ? ` <span class="dim">· facts: ${esc(x.facts_status)}</span>` : ''}</div>`;
+      else body = `<div class="vet bad"><b>UNVETTED</b> — not approved for print.</div>${note}<button class="btn pri" data-act="vet" data-id="${esc(id)}">Vet for print</button>`;
+      return `<div class="sh-vet"><div class="sh-lbl">${esc(label)}</div>${body}</div>`;
     }
-    if (s.table || (it && it.schedule_rows)) {
-      var t = s.table || { head: ["Day", "Time", "Class"], rows: it.schedule_rows };
-      return tableHtml(t.head, t.rows);
+    function staleLine(it) {
+      const st = core.staleness(it); if (!st) return '';
+      const bits = [`Desk stale mark: <b>${st.desk ? 'STALE' : 'none'}</b>`, `last touched ${fmt(st.last)}${st.days ? ` (${st.days} day${st.days > 1 ? 's' : ''} before this build)` : ''}`];
+      if (st.old) bits.push('<b class="warnc">may be out of date</b>');
+      if (st.refreshed) bits.push('refreshed since your vet');
+      if (st.carried) bits.push('carried from ' + esc(st.carried.split('/').pop()) + (st.carryNote ? ` — ${esc(st.carryNote)}` : ''));
+      return `<div class="sh-stale ${st.old || st.desk ? 'old' : ''}">${bits.join(' · ')}</div>`;
     }
-    var body = String((it && it.body) || "");
-    return '<div class="draft-body">' + body.split(/\n\s*\n/).map(function (p) {
-      return "<p>" + esc(p.trim()).replace(/\n/g, "<br>").replace(/\[NEED:[^\]]*\]/g, function (m) { return "<mark>" + m + "</mark>"; }) + "</p>";
-    }).join("") + "</div>" + (it && it.draft_path ? '<div class="hint">Draft file: <code>' + esc(it.draft_path) + "</code></div>" : "");
-  }
-  function provLine(p) {
-    var bits = [];
-    if (p.type) bits.push('<span class="lbl">' + esc(p.type) + "</span>");
-    if (p.url) {
-      var label = p.url;
-      try { var u = new URL(p.url); label = u.hostname.replace(/^www\./, "") + u.pathname.replace(/\/$/, "").slice(0, 60); } catch (e) {}
-      bits.push(/^https?:\/\//i.test(p.url) ? '<a href="' + esc(p.url) + '" target="_blank" rel="noopener noreferrer">' + esc(label) + "</a>" : esc(label));
+    const tableHTML = t => t && Array.isArray(t.rows) ? `<table class="sh-tbl"><tr>${(t.head || []).map(h => `<th>${esc(h)}</th>`).join('')}</tr>${t.rows.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table>` : '';
+    function sourcesHTML(it) {
+      const src = core.sourcesOf(it);
+      return `<div class="sh-src"><div class="sh-lbl">Sources — ${esc(it.headline || it.id)} <span class="dim">(${esc(it.source)}${it.from ? ', from ' + esc(it.from) : ''})</span></div>` +
+        (src.length ? `<ol>${src.map(p => `<li><span class="tag">${esc(p.type)}</span> ${esc(p.what)}${p.where ? `<br><span class="dim mono">${esc(p.where)}</span>` : ''}${p.when ? `<br><span class="dim">${esc(p.when)}</span>` : ''}</li>`).join('')}</ol>` : '<p class="dim">No provenance entries recorded for this item.</p>') +
+        (Array.isArray(it.facts) && it.facts.length ? `<details><summary>Fact checks (${it.facts.length})</summary><ul>${it.facts.map(f => `<li>${esc(f.claim)} <span class="dim">— ${esc(f.status)}</span></li>`).join('')}</ul></details>` : '') +
+        (it.vet_notes ? `<details><summary>Desk &amp; vet log</summary><p class="pre">${esc(it.vet_notes)}</p></details>` : '') + '</div>';
     }
-    if (p.source) bits.push(esc(p.source));
-    if (p.author) bits.push(esc(p.author));
-    if (p.from) bits.push(esc(p.from));
-    if (p.subject) bits.push("“" + esc(p.subject) + "”");
-    if (p.note) bits.push(esc(p.note));
-    ["id", "path", "endpoint", "underlying", "method"].forEach(function (k) { if (p[k] && typeof p[k] !== "object") bits.push("<code>" + esc(p[k]) + "</code>"); });
-    if (p.local_copy) bits.push("copy: <code>" + esc(p.local_copy) + "</code>");
-    if (p.message_id) bits.push("<code>" + esc(p.message_id) + "</code>");
-    var when = p.retrieved_at || p.fetched_at || p.posted_at || p.received_at;
-    if (when) bits.push('<span class="lbl">' + esc(String(when).slice(0, 16).replace("T", " ")) + "</span>");
-    return bits.join(" · ");
-  }
-  function provBody(s, it) {
-    var prov = Array.isArray(it.provenance) ? it.provenance : [];
-    var h = '<div class="prov-body">';
-    h += '<div><span class="lbl">Item</span> <code>' + esc(it.id) + "</code> · " + esc(it.kind || "") + " · source " + esc(it.source || "—") + (it.from ? " · from " + esc(it.from) : "") + "</div>";
-    if (it.vetted) h += '<div><span class="lbl">Vetted</span> by ' + esc(it.vetted_by || "?") + " · " + esc(String(it.vetted_at || "").slice(0, 16).replace("T", " ")) + "</div>";
-    else if (S.vets[it.id]) h += '<div><span class="lbl">Vetted by you</span> on this page · not sent yet</div>';
-    if (prov.length) h += "<ol>" + prov.filter(function (p) { return p && typeof p === "object"; }).map(function (p) { return "<li>" + provLine(p) + "</li>"; }).join("") + "</ol>";
-    else if (it.message_id) h += "<div><code>" + esc(it.message_id) + "</code></div>";
-    if (Array.isArray(it.facts) && it.facts.length) h += '<div class="lbl">Facts on file</div><ol>' + it.facts.map(function (f) { return "<li>" + esc(f && f.claim) + (f && f.status ? " — " + esc(f.status) : "") + "</li>"; }).join("") + "</ol>";
-    if (it.claims_path) h += '<div><span class="lbl">Claim check</span> <code>' + esc(it.claims_path) + "</code></div>";
-    if (it.vet_notes) h += '<div style="margin-top:6px"><span class="lbl">Clark / vet notes</span> ' + esc(it.vet_notes) + "</div>";
-    if ((s.merged || []).length) h += '<div><span class="lbl">Merged</span> ' + s.merged.map(function (m) { return "<code>" + esc(m) + "</code>" + (M.byId[m] ? "" : " (not in staging)"); }).join(", ") + "</div>";
-    return h + "</div>";
-  }
-  function detailsHtml(key, kind, label, bodyFn) {
-    var open = !!ui.open[key + "|" + kind];
-    return '<details class="x" data-lazy="' + kind + '"' + (open ? " open data-filled=\"1\"" : "") + "><summary>" + esc(label) + "</summary>" +
-      (open ? '<div class="xb">' + bodyFn() + "</div>" : "") + "</details>";
-  }
-  function vetBoxHtml(id, what) {
-    var v = S.vets[id];
-    return '<div class="mine-box"><b>✓ Vetted by you — goes with your submission</b>' +
-      '<label class="sr" for="vn-' + esc(id) + '">Vet note</label><input type="text" id="vn-' + esc(id) + '" data-vnote="' + esc(id) + '" value="' + esc(v.notes || "") + '" placeholder="Vet note for the bot (optional)" />' +
-      '<button type="button" class="unvet" data-unvet="' + esc(id) + '">Un-vet ' + what + "</button></div>";
-  }
-  function moveHtml(s) {
-    return '<div class="move"><button type="button" data-move="-1" aria-label="Move up: ' + esc(s.slot) + '">↑ Up</button><button type="button" data-move="1" aria-label="Move down: ' + esc(s.slot) + '">↓ Down</button></div>';
-  }
-
-  function cardHtml(s) {
-    var it = s.item ? M.byId[s.item] || null : null;
-    var qs = Core.questionsFor(s, it);
-    if (s.empty) {
-      return '<div class="empty-wrap" id="c-' + esc(s.key) + '"' + hostAttrs(s) + ' data-empty="1">' +
-        '<div class="empty"><span class="slot">' + esc(s.slot) + "</span><span>Empty · " + esc(s.why || "") + "</span></div>" +
-        (qs.length ? qsHtml(s, qs) : "") + "</div>";
+    function historyLine(key) {
+      const rows = core.sectionsOfSlot(key), R = core.sectionRows(); if (!R || !rows.length) return '';
+      return rows.map(r => `<div class="sh-hist"><div class="sh-lbl">Section history — ${esc(r.name)}${r.official ? '' : ' <span class="tag">not in official list</span>'}</div>
+        <span class="dots">${R.issues.map(i => `<i class="${r.ran.includes(i.number) ? 'on' : ''}" title="No. ${i.number} (${esc(i.date)})${r.evidence[i.number] ? ': ' + esc(r.evidence[i.number].join('; ')) : ': did not run'}">${i.number}</i>`).join('')}<i class="now ${r.status}" title="This budget">${esc(core.issueNo)}</i></span>
+        <span class="dim">${r.ran.length ? `last ran No. ${r.last}` : 'has never run'} · ${esc(String(r.frequency).replace(/_/g, ' '))}</span></div>`).join('');
     }
-    var missing = Core.isMissing(M, s), onFile = Core.vettedOnFile(M, s.item), local = !onFile && !!(s.item && S.vets[s.item]);
-    var vetted = onFile || local, on = Core.isIncluded(M, S, s);
-    var cls = ["card"];
-    if (missing) cls.push("missing"); else if (!vetted) cls.push("needs-vet"); else if (on) cls.push("is-in"); else cls.push("is-out");
-    var summary = s.summary || (it && it.summary) || Core.firstSentence(it && it.body);
-    var w = Core.itemWords(it), meta = [];
-    if (s.cost && /table/.test(s.cost.type || "")) meta.push((s.cost.rows || "?") + " rows");
-    else if (s.cost && s.cost.type === "figure") meta.push("figure, " + s.cost.span + " columns");
-    else if (w && !(it && /signup_row|fact/.test(it.kind || ""))) meta.push(w + " words");
-    if (s.budget) meta.push("budget " + s.budget);
-    var thumbFile = s.thumb || (it && it.media_path && !/\.svg$/i.test(it.media_path) ? Core.fileOf(it.media_path) : "");
-    var hasDraft = it || s.table || s.panels;
-    var incLabel = on ? "In the issue" : missing ? "Include (not in staging)" : vetted ? "Include" : "Include (Vet first)";
-    var locked = missing || !vetted;
-    return '<article class="' + cls.join(" ") + '" id="c-' + esc(s.key) + '"' + hostAttrs(s) + ' data-vetted="' + vetted + '"' +
-      (!missing && !vetted ? ' data-needs-vet="1"' : "") + (on ? ' data-in="1"' : "") + ">" +
-      '<div class="c-main">' +
-        '<div class="slotline"><span class="slot">' + esc(s.slot) + "</span><span>" + esc(meta.join(" · ")) + "</span></div>" +
-        "<h3>" + esc(Core.headlineOf(s, it)) + "</h3>" +
-        '<div class="status">' + statusHtml(s, it) + "</div>" +
-        (missing ? '<p class="missing-note">' + (s.item ? "Item <code>" + esc(s.item) + "</code> is not in this week's staging (rolled out of <code>next</code>?). Can't be vetted or included from here." : "No staging item for this slot.") + "</p>" : "") +
-        (summary ? '<p class="sum">' + esc(summary) + "</p>" : "") +
-        (qs.length ? qsHtml(s, qs) : "") +
-        ((s.flags || []).length ? '<ul class="flags">' + s.flags.map(function (f) { return '<li class="' + esc(f.level || "") + '">' + esc(f.text) + "</li>"; }).join("") + "</ul>" : "") +
-        (hasDraft ? detailsHtml(s.key, "draft", draftLabel(s, it), function () { return draftBody(s, it); }) : "") +
-        (it ? detailsHtml(s.key, "prov", "Source & provenance", function () { return provBody(s, it); }) : "") +
-      "</div>" +
-      '<div class="ctl">' +
-        thumbHtml(thumbFile) +
-        '<label class="inc' + (on ? " on" : "") + (locked ? " locked" : "") + '"><input type="checkbox" data-inc' + (on ? " checked" : "") + (locked ? " disabled" : "") + " /><span>" + esc(incLabel) + "</span></label>" +
-        (!missing && !vetted ? '<button type="button" class="vet" data-vet="' + esc(s.item) + '">Vet this item</button>' : "") +
-        (local ? vetBoxHtml(s.item, "item") : "") +
-        '<label class="sr" for="n-' + esc(s.key) + '">Note to Clark</label><textarea class="note" rows="2" id="n-' + esc(s.key) + '" data-note="' + esc(s.key) + '" placeholder="Note to Clark (optional)">' + esc(S.slotNotes[s.key] || "") + "</textarea>" +
-        moveHtml(s) +
-      "</div></article>";
+    function sheet(key) {
+      const s = slotBy[key], it = core.itemOf(s), all = core.allItemsOf(s), m = core.mediaOfSlot(s), inc = state.inc[key];
+      const qs = core.questionsOf(s), flags = core.flagsOf(s), c = s.cost;
+      const costTxt = c ? `${r1(core.costOf(s))} col-in${c.type !== 'table' && c.type !== 'table_rows' && core.wordsOf(s) ? ` · ~${core.wordsOf(s)}w` : ''}${c.rows ? ` · ${c.rows} rows` : ''} · ${core.spanOf(s)} col wide` : '';
+      return `<div class="sheet" data-slot="${esc(key)}">
+        <div class="sh-k">${esc(s.slot)}</div>
+        <h2 class="sh-h">${esc(s.title || (it && it.headline) || shortName(s))}</h2>
+        ${s.item && !it ? `<div class="sh-now">The lineup names item <span class="mono">${esc(s.item)}</span>, which is not in staging. Nothing to vet or read yet.</div>` : ''}
+        ${it && s.title && it.headline && it.headline !== s.title ? `<div class="sh-now">Draft headline now: <b>${esc(it.headline)}</b></div>` : ''}
+        ${s.empty ? `<div class="sh-empty">EMPTY SLOT — nothing to run. ${esc(s.why || '')}</div>` :
+          `<div class="sh-row"><div class="seg"><button data-act="inc" data-v="1" class="${inc ? 'on' : ''}">In the issue</button><button data-act="inc" data-v="0" class="${inc ? '' : 'on'}">Left out</button></div>
+           <span class="dim">${costTxt} · desk ${s.proposed ? 'proposed it' : 'did not propose it'}${s.budget ? ' · budget: ' + esc(s.budget) : ''}</span></div>`}
+        ${s.summary ? `<p class="sh-sum">${esc(s.summary)}</p>` : ''}
+          ${qs.map(q => `<div class="sh-q ${q.answer.trim() ? 'done' : ''}"><div class="sh-lbl">The desk asks</div><p>${esc(q.q)}</p><textarea class="sh-in" data-q="${q.i}" rows="2" placeholder="Your answer…">${esc(q.answer)}</textarea></div>`).join('')}
+        ${m ? `<img class="sh-img" src="${core.thumb(m.filename)}" alt="">` : ''}
+        ${all.map(x => vetBlock(x.id, all.length > 1 ? 'Vet — ' + x.headline : 'Vet the facts')).join('')}
+        ${m && m.id ? vetBlock(m.id, 'Vet the photo — ' + m.filename) + (m.note ? `<p class="dim sm">${esc(m.note)}${m.license ? ' · ' + esc(m.license) : ''}</p>` : '') : ''}
+        ${flags.length ? `<ul class="sh-flags">${flags.map(f => `<li class="${f.level} ${f.cleared ? 'cleared' : ''}"><span>${esc(f.text)}</span>${f.cleared ? ' <em>cleared — vetted since the desk wrote this</em>' : ''}</li>`).join('')}</ul>` : ''}
+        ${it ? staleLine(it) : ''}
+        ${it && (it.body || s.table) ? `<details class="sh-body"><summary>${s.table ? 'The table as it would print' : `The draft${it.word_count ? ` (${it.word_count}w)` : ''}`}</summary>${tableHTML(s.table)}${it.body ? `<p>${esc(it.body)}</p>` : ''}${Array.isArray(it.held_rows) && it.held_rows.length ? `<p class="dim">Held rows: ${it.held_rows.map(r => esc([].concat(r).join(' · '))).join('; ')}</p>` : ''}</details>` : ''}
+        ${all.map(sourcesHTML).join('')}
+        <div class="sh-note"><div class="sh-lbl">Slot note to the desk</div><textarea class="sh-in" data-slotnote rows="3" placeholder="Anything about this slot: cuts, swaps, standing rules…">${esc(state.slotNotes[key] || '')}</textarea></div>
+        ${historyLine(key)}</div>`;
+    }
+    function photoSheet(id) {
+      const m = media[id], p = core.photoMeta[id] || {}, on = state.photos[id];
+      return `<div class="sheet" data-photo="${esc(id)}"><div class="sh-k">Photo — ${esc(m.kind)}</div><h2 class="sh-h">${esc(m.filename)}</h2>
+        <img class="sh-img" src="${core.thumb(m.filename)}" alt="">
+        <div class="sh-row"><div class="seg"><button data-act="photo" data-v="1" class="${on ? 'on' : ''}">Run it</button><button data-act="photo" data-v="0" class="${on ? '' : 'on'}">Leave out</button></div>
+        <span class="dim">${r1(core.photoCost(id))} col-in · ${p.span || 1} col wide · desk ${p.proposed ? 'proposed it' : 'did not propose it'}</span></div>
+        <p class="sh-sum">${esc(p.note || '')}</p>${m.caption ? `<p><span class="sh-lbl">Caption on file</span> ${esc(m.caption)}</p>` : ''}
+        ${vetBlock(id, 'Vet the photo')}
+        <div class="sh-src"><div class="sh-lbl">Source</div><p>${esc(m.source)}${m.from ? ' · ' + esc(m.from) : ''}${m.retrieved_at ? ' · ' + fmt(m.retrieved_at) : ''}${m.url ? `<br><span class="dim mono">${esc(m.url)}</span>` : ''}</p><p class="dim sm">${esc(m.note || '')}</p></div></div>`;
+    }
+    // wire a container holding a sheet; text fields update state silently, buttons re-render
+    function bind(el) {
+      el.addEventListener('click', e => {
+        const b = e.target.closest('[data-act]'); if (!b) return;
+        const sh = b.closest('.sheet'), key = sh && sh.dataset.slot, a = b.dataset.act;
+        if (a === 'inc') core.act.include(key, b.dataset.v === '1');
+        else if (a === 'photo') core.act.photo(sh.dataset.photo, b.dataset.v === '1');
+        else if (a === 'vet') { const n = sh.querySelector(`[data-vetnote="${CSS.escape(b.dataset.id)}"]`); core.act.vet(b.dataset.id, n ? n.value : ''); }
+        else if (a === 'unvet') core.act.unvet(b.dataset.id);
+      });
+      el.addEventListener('input', e => {
+        const t = e.target, sh = t.closest('.sheet'); if (!sh) return; const key = sh.dataset.slot;
+        if (t.dataset.q != null) { core.act.answer(key, +t.dataset.q, t.value); t.closest('.sh-q').classList.toggle('done', !!t.value.trim()); }
+        else if ('slotnote' in t.dataset) core.act.slotNote(key, t.value);
+        else if (t.dataset.vetnote && t.dataset.vetnote in state.vets) { state.vets[t.dataset.vetnote] = t.value; core.emit('text'); }
+      });
+    }
+    const TEXTY = ['answer', 'note', 'notes', 'text']; // emit reasons that must not rebuild a focused form
+    function history(compact) {
+      const R = core.sectionRows(), lab = { in: 'IN', out: 'left out', empty: 'empty', none: '—' };
+      if (!R) return '<h3>Section history</h3><p class="dim">Section history was not derived for this build (see the builder’s warning).</p>';
+      const nums = R.issues.map(i => i.number);
+      const row = r => `<tr class="${r.status}${r.ran.length ? '' : ' never'}"><th>${esc(r.name)}<small>${esc(String(r.frequency).replace(/_/g, ' '))}</small></th>
+        ${R.issues.map(i => `<td class="c ${r.ran.includes(i.number) ? 'on' : ''}" title="${r.evidence[i.number] ? esc(r.evidence[i.number].join('; ')) : 'did not run in No. ' + i.number}">${r.ran.includes(i.number) ? '●' : '·'}</td>`).join('')}
+        <td class="last">${r.ran.length ? 'No. ' + r.last + (r.gap > 1 ? `<small>sat out ${r.gap - 1}</small>` : '') : '<b>never</b>'}</td><td class="st"><span class="chip ${r.status}">${lab[r.status]}</span></td>${compact ? '' : `<td class="nt">${esc(r.note)}</td>`}</tr>${compact && r.note ? `<tr class="ntr"><td class="nt" colspan="${R.issues.length + 3}">${esc(r.note)}</td></tr>` : ''}`;
+      const head = `<tr><th></th>${R.issues.map(i => `<th class="c" title="${esc(i.date + ' — ' + i.headline)}">${i.number}</th>`).join('')}<th>Last ran</th><th>No. ${esc(core.issueNo)}</th>${compact ? '' : '<th>If absent, why</th>'}</tr>`;
+      return `<h3>Section history, ${nums.length ? 'Nos. ' + nums[0] + '–' + nums[nums.length - 1] : 'no published issues yet'}</h3>
+        <table class="hist">${head}${R.official.map(row).join('')}${R.unregistered.length ? `<tr class="sep"><td colspan="${R.issues.length + 4}">Printed kickers that are not in the official section list</td></tr>${R.unregistered.map(row).join('')}` : ''}</table>
+        <p class="dim sm">Derived from the published issues when this page was built. Dots: hover for what actually printed. “Sat out” counts the published issues since it last ran. The No. ${esc(core.issueNo)} column follows what is on the pages right now.</p>
+        ${Object.keys(R.notes).map(n => `<p class="dim sm">No. ${esc(n)}: ${esc(R.notes[n].join('; '))}</p>`).join('')}`;
+    }
+    function meter() {
+      const f = core.fill(), max = 1.3, w = Math.min(f.pct, max) / max * 100;
+      const msg = f.status === 'short' ? `short by ${r1(f.gap)} col-in ≈ ${f.words.toLocaleString()} words` : f.status === 'over' ? `over by ${r1(f.gap)} col-in ≈ ${f.words.toLocaleString()} words` : 'full, inside the oversupply cushion';
+      return `<div class="meter ${f.status}" title="Estimate from the desk's capacity model (calibrated against the composed issues): prose words ÷ ${core.cap.wpi} per col-in (${core.cap.wpi_feature} for the lead), plus heads, table rows and art. Two pages hold ${r1(f.total)} col-in ≈ ${f.capWords.toLocaleString()} words; the desk aims to oversupply ×${core.cap.oversupply}.">
+        <div class="m-bar"><i style="width:${w}%"></i><b style="left:${100 / max}%"></b><b class="os" style="left:${core.cap.oversupply / max * 100}%"></b></div>
+        <div class="m-txt"><strong>${Math.round(f.pct * 100)}% full</strong> · ${r1(f.used)} of ${r1(f.total)} col-in · <span class="m-msg">${msg}</span></div></div>`;
+    }
+    return { sheet, photoSheet, bind, history, meter, shortName, TEXTY, vetBlock, tableHTML };
+  })();
+
+  /* ================= the spread ================= */
+  const $ = q => document.querySelector(q), S = core.state, E = core.esc, cap = core.cap, dec = core.dec || {};
+  const A = { sel: null, tab: 'needs' };
+  const GUT = core.GUT, CW = cap.col_width_in, PW = 3 * CW + 2 * GUT;
+  const colX = i => i * (CW + GUT), spanW = n => n * CW + (n - 1) * GUT;
+  const FURN = { 1: [['mast', 0.98], ['dl', 0.5]], 2: [['dl', 0.5]] }; // drawn only; the page depths come from the capacity model
+  const NO = core.issueNo;
+
+  let NEEDS = [];
+  const rowIn = c => ((c.span || 1) > 1 ? cap.row_full : cap.row_rail);
+  function marks(key) {
+    const n = NEEDS.filter(x => x.slot === key), s = core.slotBy[key], it = core.itemOf(s); let m = '';
+    if (n.some(x => x.kind === 'vet' || x.kind === 'photo')) m += '<i class="mk vet" title="Needs your vet">VET</i>';
+    if (n.some(x => x.kind === 'question')) m += '<i class="mk q" title="The desk asked you something here">?</i>';
+    if (n.some(x => x.kind === 'changed')) m += '<i class="mk chg" title="Draft changed after your vet">Δ</i>';
+    if ((S.slotNotes[key] || '').trim()) m += '<i class="mk note" title="You left a slot note">✎</i>';
+    if (it && core.staleness(it).old) m += `<i class="mk age" title="Last touched ${core.staleness(it).days} days before this build — may be out of date">${core.staleness(it).days}d</i>`;
+    if (!m && it && core.allItemsOf(s).every(i => core.isVetted(i.id))) m = '<i class="mk ok" title="Vetted">✓</i>';
+    return `<span class="marks">${m}</span>`;
+  }
+  const isSel = (t, id) => (A.sel && A.sel.type === t && A.sel.id === id ? ' sel' : '');
+
+  function blockHTML(b, ppi) {
+    const pos = `left:${colX(b.col) * ppi}px;top:${b.y * ppi}px;width:${spanW(b.span) * ppi}px;height:${Math.max(6, b.h * ppi - 3)}px`;
+    if (b.type === 'photo') {
+      const m = core.media[b.id];
+      return `<div class="blk t-photo${isSel('photo', b.id)}" draggable="true" tabindex="0" data-photo="${E(b.id)}" style="${pos}"><span class="marks">${core.isVetted(b.id) ? '<i class="mk ok">✓</i>' : '<i class="mk vet">VET</i>'}</span><img src="${core.thumb(m.filename)}" alt=""><div class="k">Photo · ${E(m.kind)}</div></div>`;
+    }
+    const s = core.slotBy[b.id], c = s.cost || {}, head = core.headlineOf(s), cont = b.part > 1;
+    let inner = `<div class="k">${E(ui.shortName(s))}</div>`;
+    if (cont) inner += `<div class="cont-l">continued</div><div class="greek"></div>`;
+    else if (c.type === 'figure') inner += `<img src="${core.thumb(s.thumb)}" alt="">` + (c.head ? `<div class="h">${E(head)}</div><div class="greek" style="flex:1.3"></div>` : '');
+    else if (s.table && Array.isArray(s.table.rows)) inner += (s.title ? `<div class="h">${E(head)}</div>` : '') + s.table.rows.map(r => `<div class="tr" style="height:${rowIn(c) * ppi}px;line-height:${rowIn(c) * ppi}px;font-size:${Math.min(9, rowIn(c) * ppi * .8)}px"><b>${E(r[0])}</b> · ${E(r.slice(1).join(' · '))}</div>`).join('');
+    else inner += `<div class="h">${E(head)}</div><div class="greek"></div>`;
+    return `<div class="blk t-${E(c.type || 'prose')}${c.feature ? ' lead' : ''}${b.span >= 2 ? ' wide' : ''}${cont ? ' cont' : ''}${isSel('slot', b.id)}" draggable="true" tabindex="0" data-slot="${E(b.id)}" style="${pos}">${cont ? '' : marks(b.id)}${inner}</div>`;
   }
 
-  function photoHtml(p) {
-    var m = M.mediaById[p.id] || {}, item = M.byId[p.id], present = Core.photoPresent(M, p);
-    var onFile = Core.vettedOnFile(M, p.id), local = !onFile && !!S.vets[p.id], vetted = onFile || local;
-    var on = Core.photoIncluded(M, S, p), file = m.filename || Core.fileOf(m.media_path), d = Core.photoDims(M, p);
-    var pill = !present ? '<span class="pill missing">Not in staging</span>' : local ? '<span class="pill mine">✓ Vetted by you · not sent yet</span>' :
-      vetted ? '<span class="pill ok">✓ Vetted</span>' : '<span class="pill vet">Needs your vet</span>';
-    var info = [];
-    if (p.proposed) info.push(present && !vetted ? "Clark proposes — goes in once vetted" : "Clark proposes");
-    var cls = "ph" + (on ? " is-in" : present && !vetted ? " needs-vet" : "");
-    return '<div class="' + cls + '" id="p-' + esc(p.id) + '" data-photo="' + esc(p.id) + '" data-item-id="' + esc(p.id) + '"' +
-      (present && !vetted ? ' data-needs-vet="1"' : "") + (on ? ' data-in="1"' : "") + ">" +
-      (file ? thumbHtml(file) : '<div class="nothumb">' + (present ? "No file" : "Not in this week's media") + "</div>") +
-      '<div class="cap">' + esc(m.caption || (item && item.caption) || p.id) + "</div>" +
-      '<div class="status">' + pill + (info.length ? '<span class="sec-info">' + esc(info.join(" · ")) + "</span>" : "") + "</div>" +
-      (p.note ? '<div class="meta">' + esc(p.note) + "</div>" : "") +
-      '<div class="meta">' + esc(file || p.id) + (m.w || (d[0] > 1) ? " · " + d[0] + "×" + d[1] : "") + (m.source ? " · " + esc(m.source) : "") + (m.license ? " · " + esc(m.license) : "") +
-        (m.parent_item_id ? " · for <code>" + esc(m.parent_item_id) + "</code>" : "") + "</div>" +
-      '<label class="inc' + (on ? " on" : "") + (vetted && present ? "" : " locked") + '"><input type="checkbox" data-pinc="' + esc(p.id) + '"' + (on ? " checked" : "") + (vetted && present ? "" : " disabled") + " /><span>" +
-        (on ? "In the issue" : !present ? "Not in staging" : vetted ? "Include photo" : "Include (Vet first)") + "</span></label>" +
-      (present && !vetted ? '<button type="button" class="vet" data-vet="' + esc(p.id) + '">Vet this photo</button>' : "") +
-      (local ? vetBoxHtml(p.id, "photo") + (item ? "" : '<div class="hint">Media id — Clark records this vet from your submission.</div>') : "") +
-      "</div>";
-  }
-
-  function heldHtml() {
-    var cfg = M.cfg, rows = [];
-    (cfg.held || []).forEach(function (h) { rows.push("<b>Held: " + esc(h.label || h.id || h.item) + "</b><span>" + esc(h.note || "") + "</span>"); });
-    (cfg.not_proposed || []).forEach(function (n) {
-      var it = M.byId[n.item];
-      rows.push("<b>" + esc((it && it.headline) || n.item) + "</b><span>" + esc(n.why) + " · <code>" + esc(n.item) + "</code>" +
-        (!it ? " · not in staging" : it.vetted === false ? " · unvetted" : "") + "</span>");
-    });
-    var seeds = M.items.filter(function (i) { return Core.isSeed(cfg, i); });
-    if (seeds.length) rows.push("<b>Seed / pretend items excluded (" + seeds.length + ")</b><span>" + seeds.map(function (s) { return "<code>" + esc(s.id) + "</code>"; }).join(", ") + "</span>");
-    if (!rows.length) rows.push("<span>Nothing held.</span>");
-    return '<div class="held-list">' + rows.map(function (r) { return '<div class="held-row">' + r + "</div>"; }).join("") + "</div>";
-  }
-
-  function render() {
-    var html = "";
-    M.sections.forEach(function (sec) {
-      html += '<section class="sec" id="sec-' + esc(sec.key) + '"><h2>' + esc(sec.title) + ' <span class="sc" data-sc="' + esc(sec.key) + '"></span></h2>' +
-        (sec.hint ? '<p class="sec-hint">' + esc(sec.hint) + "</p>" : "");
-      if (sec.type === "photos") html += M.photos.length ? '<div class="photos">' + M.photos.map(photoHtml).join("") + "</div>" : '<p class="sec-hint">No photos in staging.</p>';
-      else if (sec.type === "held") html += heldHtml();
-      else {
-        var list = Core.sectionList(M, S, sec.key);
-        html += list.length ? '<div class="cards" data-cards="' + esc(sec.key) + '">' + list.map(cardHtml).join("") + "</div>" : '<p class="sec-hint">Nothing slotted here.</p>';
-      }
-      html += "</section>";
-    });
-    $("sections").innerHTML = html;
-    var links = M.sections.map(function (sec) {
-      return '<a href="#sec-' + esc(sec.key) + '">' + esc(sec.title) + ' <span data-jc="' + esc(sec.key) + '"></span></a>';
-    }).join("") + '<a href="#sec-notes">Notes &amp; submit <span></span></a>';
-    $("jumpSide").innerHTML = links;
-    $("jumpChips").innerHTML = links;
-    document.querySelectorAll("[data-cards]").forEach(fixMoveButtons);
-    updateTotals();
-  }
-
-  function rerenderHosts(id) {
-    document.querySelectorAll('[data-item-id="' + attrSel(id) + '"]').forEach(function (el) {
-      var key = el.getAttribute("data-key"), fresh = null;
-      if (key) { var s = M.slotByKey[key]; if (s) fresh = cardHtml(s); }
-      else if (el.hasAttribute("data-photo")) { var p = M.photos.filter(function (x) { return x.id === id; })[0]; if (p) fresh = photoHtml(p); }
-      if (fresh) replaceNode(el, fresh);
-    });
-  }
-  function rerenderKey(key) { var el = $("c-" + key), s = M.slotByKey[key]; if (el && s) replaceNode(el, cardHtml(s)); }
-  function replaceNode(el, html) {
-    var tmp = document.createElement("div"); tmp.innerHTML = html;
-    var node = tmp.firstElementChild; el.replaceWith(node);
-    var cards = node.closest("[data-cards]"); if (cards) fixMoveButtons(cards);
-    return node;
-  }
-  function fixMoveButtons(container) {
-    var cards = container.querySelectorAll("article.card");
-    cards.forEach(function (c, i) {
-      var up = c.querySelector('[data-move="-1"]'), dn = c.querySelector('[data-move="1"]');
-      if (up) up.disabled = i === 0;
-      if (dn) dn.disabled = i === cards.length - 1;
+  function renderPages() {
+    const host = $('#pages');
+    if (!host.children.length) host.innerHTML = [1, 2].map(p => `<div class="page" data-page="${p}">${FURN[p].map(([c]) => `<div class="furn ${c}" data-f="${c}"></div>`).join('')}<div class="cols" data-page="${p}"></div><div class="pfoot"></div><div class="overset"></div></div>`).join('');
+    [1, 2].forEach(p => {
+      const pg = host.querySelector(`.page[data-page="${p}"]`), cols = pg.querySelector('.cols'), ppi = cols.clientWidth / PW, r = core.pack(p);
+      FURN[p].forEach(([c, inch]) => { const f = pg.querySelector(`[data-f="${c}"]`); f.style.height = inch * ppi + 'px';
+        f.innerHTML = c === 'mast' ? 'En Garde Gazette' : `<span>${E((core.L.issue || {}).label || 'Issue No. ' + NO)}</span><span>${E(core.fmtDate(S.publishDate))}</span><span>Page ${p}</span>`; });
+      cols.style.height = r.H * ppi + 'px';
+      const holes = r.holes.filter(x => x.h > 0.3).map(x => `<div class="hole${x.trapped ? ' trap' : ''}" style="left:${colX(x.col) * ppi}px;width:${spanW(x.cols) * ppi}px;top:${x.y * ppi + 2}px;height:${x.h * ppi - 2}px">${
+        x.h > 0.7 ? `OPEN<br>${core.r1(x.colIn)} col-in<br>≈ ${x.words}w` : x.h * ppi > 13 ? `${core.r1(x.colIn)} col-in` : ''}</div>`).join('');
+      cols.innerHTML = r.placed.map(b => blockHTML(b, ppi)).join('') + holes;
+      pg.querySelector('.pfoot').innerHTML = `<span>PAGE ${p} · ${core.r1(r.placedUsed)} of ${core.r1(r.cap)} col-in placed</span><span class="${r.open > 0.5 || r.over.length ? 'short' : ''}">${
+        r.over.length ? `OVERSET by ${core.r1(r.overset)} col-in` : `open ${core.r1(r.open)} col-in ≈ ${Math.round(r.open * cap.wpi)} words`}</span>`;
+      pg.querySelector('.overset').innerHTML = r.over.length ? 'OVERSET — does not fit on this page: ' + r.over.map(b => `<span data-${b.type}="${E(b.id)}">${E(b.type === 'slot' ? ui.shortName(core.slotBy[b.id]) : core.media[b.id].filename)} · ${core.r1(b.cost)}</span>`).join('') : '';
     });
   }
 
-  /* ---------- totals (debounced; reads state, never the DOM) ---------- */
-  function updateTotals() {
-    clearTimeout(totalsTimer); totalsTimer = 0;
-    var T = Core.computeTotals(M, S);
-    $("mFill").style.width = T.fillPct + "%";
-    $("mPend").style.width = T.pendPct + "%";
-    $("mTick").style.left = T.tickPct + "%";
-    $("meter").classList.toggle("over", T.over);
-    var room = Math.abs(T.room).toLocaleString();
-    $("fitLine").innerHTML = "<b>" + T.pct + "%</b>" +
-      '<span class="long"> of two pages · ' + (T.room >= 0 ? "room for ≈ " + room + " words" : '<span class="over">over by ≈ ' + room + " words — cut from the bottom</span>") + "</span>" +
-      '<span class="short"> full · ' + (T.room >= 0 ? "≈" + room + "w room" : '<span class="over">≈' + room + "w over</span>") +
-      (T.pend ? ' <span class="proj">· ' + T.pctP + "% if vetted</span>" : "") + "</span>";
-    $("fitProj").textContent = (T.pend ? T.pctP + "% if you Vet what Clark proposes · " : "") + "rough estimate · red tick = full";
-    [["nIn", T.nIn], ["nVet", T.nVet], ["nQ", T.nQ]].forEach(function (x) { $(x[0]).textContent = x[1]; $(x[0]).parentNode.classList.toggle("zero", !x[1] && !(x[0] === "nVet" && T.nVetPh)); });
-    $("nVetPh").textContent = T.nVetPh; $("nVetPhWrap").hidden = !T.nVetPh; $("nVetPhWrap").parentNode.classList.toggle("has-ph", !!T.nVetPh);
-    Object.keys(T.labels).forEach(function (k) {
-      var sc = document.querySelector('[data-sc="' + attrSel(k) + '"]'); if (sc) sc.textContent = T.labels[k];
-      document.querySelectorAll('[data-jc="' + attrSel(k) + '"]').forEach(function (b) { b.textContent = T.labels[k]; });
-    });
-    updateDirty();
+  function stripHTML(s) {
+    const it = core.itemOf(s), k = s.key;
+    if (s.empty) return `<div class="strip ghost${isSel('slot', k)}" tabindex="0" data-slot="${E(k)}">${marks(k)}<div class="k">Empty slot</div><div class="h">${E(s.slot)}</div><div class="w">${E(s.why || '')}</div></div>`;
+    const who = (k in (dec.slotNotes || {})) || (dec.excluded || []).includes(k) ? 'You left it out' : s.auto ? 'Not slotted by the desk' : s.waiting ? 'Desk is waiting on it' : s.proposed ? 'Pulled' : 'Desk did not propose it';
+    const unvet = core.allItemsOf(s).some(i => !core.isVetted(i.id));
+    return `<div class="strip${s.item && !it ? ' missing' : ''}${isSel('slot', k)}" draggable="true" tabindex="0" data-slot="${E(k)}">${marks(k)}${s.thumb ? `<img src="${core.thumb(s.thumb)}" alt="">` : ''}<div class="k">${E(ui.shortName(s))}</div>
+      <div class="h">${E(core.headlineOf(s) || s.slot)}</div><div class="w">${who} · ${core.r1(core.costOf(s))} col-in${unvet ? ' · <b style="color:var(--bad)">unvetted</b>' : ''}${s.item && !it ? ' · <b style="color:var(--bad)">not in staging</b>' : ''}</div>
+      <div class="add">run on <button data-add="1">p.1</button><button data-add="2">p.2</button></div></div>`;
   }
-  function updateDirty() {
-    var d = $("dirty"), dirty = false;
-    if (S.lastSubmit && S.lastSubmit.sig) {
-      dirty = Core.payloadSig(Core.buildPayload(M, S, null)) !== S.lastSubmit.sig;
-      d.textContent = dirty ? "Changed since your last submit (" + fmtTime(S.lastSubmit.at) + ") — Submit again to send the changes." : "";
-    }
-    d.classList.toggle("show", dirty);
-    $("submitTop").classList.toggle("dirty", dirty);
-    $("submitTop").textContent = dirty ? "Submit again" : "Submit";
+  function renderBank() {
+    const out = S.order.map(k => core.slotBy[k]).filter(s => s && !S.inc[s.key]);
+    const photos = core.loosePhotos.filter(id => !S.photos[id]);
+    const np = (core.L.not_proposed || []).concat((core.L.held || []).map(h => ({ item: h.id || h.item, why: h.why || h.note || 'Held.' })));
+    const empties = core.slots.filter(s => s.empty);
+    $('#bank').innerHTML = `<h3>The bank — not running (${out.length})</h3>${out.map(stripHTML).join('') || '<p class="np">Everything is on the pages.</p>'}
+      ${core.loosePhotos.length ? `<h3>Loose art (${photos.length})</h3>${photos.map(id => { const m = core.media[id]; return `<div class="strip${isSel('photo', id)}" draggable="true" tabindex="0" data-photo="${E(id)}"><img src="${core.thumb(m.filename)}" alt=""><div class="k">${E(m.kind)}</div><div class="h">${E(String(m.filename).replace(/\.\w+$/, ''))}</div><div class="w">${core.r1(core.photoCost(id))} col-in · ${core.isVetted(id) ? 'vetted' : '<b style="color:var(--bad)">unvetted</b>'}</div><div class="add">run on <button data-add="1">p.1</button><button data-add="2">p.2</button></div></div>`; }).join('') || '<p class="np">All of it is on the pages.</p>'}` : ''}
+      ${empties.length ? `<h3>Empty slots</h3>${empties.map(stripHTML).join('')}` : ''}
+      ${np.length ? `<h3>Staged, not in the lineup</h3>${np.map(n => `<p class="np"><b>${E((core.items[n.item] || {}).headline || n.item)}</b>${E(n.why || '')}</p>`).join('')}` : ''}`;
   }
 
-  /* ---------- header ---------- */
-  function showDay() {
-    var v = $("publishDate").value, pub = M.cfg.publish || {};
-    $("publishDay").textContent = fmtDay(v) + (v && v === pub.date ? " · Clark's pick" : v && v === pub.alt ? " · Clark's alternate" : "");
-    document.querySelectorAll("[data-pick]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.getAttribute("data-pick") === v)); });
-    $("fileName").textContent = fileName(v);
+  function renderTop() {
+    NEEDS = core.needs();
+    const blk = NEEDS.filter(n => n.blocking).length, adv = NEEDS.length - blk, b = core.build;
+    $('#iss').textContent = (core.L.issue || {}).label || 'Issue No. ' + NO;
+    $('#stamp').innerHTML = `${b.budgetVersion ? 'BUDGET v' + E(b.budgetVersion) : 'PREVIEW'}<small>${E(String(b.versionLabel || '').split(' · ')[1] || '')}</small>`;
+    $('#rd').textContent = core.fmtDate(S.publishDate); $('#ad').textContent = S.altDate ? 'alt ' + core.fmtDate(S.altDate) : 'no alternate';
+    $('#meter').innerHTML = ui.meter();
+    const nb = $('#needbtn'); nb.className = 'needbtn' + (blk ? '' : ' clear');
+    nb.textContent = blk ? `${blk} need${blk > 1 ? '' : 's'} you` : adv ? `Nothing blocking · ${adv} to check` : 'All clear';
   }
-  function fileName(date) { return "budget-submission-no-" + ((M.cfg.issue || {}).number || "x") + "-" + (date || (M.cfg.publish || {}).date || "undated") + ".json"; }
-  function renderHeader() {
-    var cfg = M.cfg, iss = cfg.issue || {}, pub = cfg.publish || {}, real = cfg.mode === "real", b = M.build || {};
-    $("issueLabel").textContent = iss.label || "Next issue";
-    $("weekLabel").textContent = iss.week || "";
-    $("barId").innerHTML = esc(iss.label || "Budget") + "<small>" + esc(iss.week || "") + "</small>";
-    document.title = "Budget — " + (iss.label || "next issue") + (real ? "" : " (practice)");
-    $("modeTag").textContent = real ? "Real budget · your submission goes to Clark" : "Practice — not a real submission";
-    $("modeTag").className = "mode" + (real ? "" : " practice");
-    $("verTag").textContent = b.versionLabel || "";
-    var picks = [];
-    if (pub.date) picks.push('<button type="button" data-pick="' + esc(pub.date) + '">Clark\'s pick: ' + esc(fmtDay(pub.date)) + "</button>");
-    if (pub.alt) picks.push('<button type="button" data-pick="' + esc(pub.alt) + '">Alternate: ' + esc(fmtDay(pub.alt)) + "</button>");
-    $("datePicks").innerHTML = picks.join("");
-    $("publishWhy").innerHTML = (pub.note ? esc(pub.note) : "") + (pub.why ? (pub.note ? "<br>" : "") + "<b>Why:</b> " + esc(pub.why) : "");
-    $("deskList").innerHTML = (cfg.desk_summary || []).map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") || "<li>No summary from Clark.</li>";
-    $("publishDate").value = S.publishDate || pub.date || "";
-    $("globalNotes").value = S.notes || "";
-    var miss = (b.missing && b.missing.items) || [];
-    $("foot").innerHTML = "Locked footer (prints on every issue): “For fun only — facts aren't guaranteed accurate.”<br>" +
-      "Built " + esc(fmtTime(b.generatedAt)) + " from <code>" + esc(b.stagingWeek || "?") + "</code> · lineup <code>" + esc(b.lineupPath || "?") + "</code> · data " + esc(b.dataVersion || "?") +
-      (miss.length ? " · " + miss.length + " lineup item" + (miss.length === 1 ? "" : "s") + " not in staging" : "") + " · " + esc(Core.PAGE_VERSION);
-    if (window.matchMedia && window.matchMedia("(max-width: 640px)").matches && (cfg.desk_summary || []).length > 4) $("desk").open = false;
-    showDay();
+  function renderDatePop() {
+    const pub = core.L.publish || {};
+    $('#rpop').innerHTML = `${pub.why ? `<div class="sh-lbl">The desk picked ${E(pub.label || core.fmtDate(pub.date))} because</div><p class="why">${E(pub.why)}</p>` : ''}
+      <label for="dmain">Target publish date</label><input type="date" id="dmain" value="${E(S.publishDate)}">
+      <label for="dalt">Alternate</label><input type="date" id="dalt" value="${E(S.altDate)}">
+      <div class="acts"><button class="btn" id="dswap">⇄ Swap: run on the alternate</button></div>
+      <p class="dim sm" style="margin:8px 0 0">The target goes out as <span class="mono">publishDate</span>, the alternate as <span class="mono">publishDateAlt</span> (blank = no alternate).</p>`;
   }
 
-  /* ---------- interactions (event delegation) ---------- */
-  document.addEventListener("change", function (e) {
-    var t = e.target, host;
-    if (t.matches("[data-inc]")) {
-      host = t.closest("[data-key]"); S.inc[host.getAttribute("data-key")] = t.checked;
-      var n = replaceNode(host, cardHtml(M.slotByKey[host.getAttribute("data-key")])); var box = n.querySelector("[data-inc]"); if (box) box.focus();
-      changed();
-    } else if (t.matches("[data-pinc]")) {
-      var id = t.getAttribute("data-pinc"); S.pinc[id] = t.checked;
-      rerenderHosts(id); var pb = document.querySelector('[data-pinc="' + attrSel(id) + '"]'); if (pb) pb.focus();
-      changed();
-    } else if (t.id === "publishDate") { S.publishDate = t.value; showDay(); changed(); }
-  });
-  document.addEventListener("input", function (e) {
-    var t = e.target;
-    if (t.matches("[data-q]")) {
-      var k = t.getAttribute("data-q"), parts = k.split("|"), s = M.slotByKey[parts[0]];
-      S.answers[k] = { q: Core.questionsFor(s, M.byId[s.item])[Number(parts[1])], a: t.value };
-      t.closest(".q").classList.toggle("done", !!t.value.trim());
-      var st = t.closest("[data-key]").querySelector(".status"); if (st) st.innerHTML = statusHtml(s, M.byId[s.item]);
-      autoGrow(t); changed();
-    } else if (t.matches("[data-note]")) { S.slotNotes[t.getAttribute("data-note")] = t.value; changed({ noTotals: true }); }
-    else if (t.matches("[data-vnote]")) { var v = S.vets[t.getAttribute("data-vnote")]; if (v) v.notes = t.value; changed({ noTotals: true }); }
-    else if (t.id === "globalNotes") { S.notes = t.value; changed({ noTotals: true }); }
-  });
-  function autoGrow(t) { t.style.height = "auto"; t.style.height = Math.min(240, t.scrollHeight + 2) + "px"; }
-  document.addEventListener("toggle", function (e) {
-    var d = e.target;
-    if (!d.matches || !d.matches("details[data-lazy]")) return;
-    var host = d.closest("[data-key]"); if (!host) return;
-    var key = host.getAttribute("data-key"), kind = d.getAttribute("data-lazy");
-    ui.open[key + "|" + kind] = d.open;
-    if (!d.open || d.getAttribute("data-filled")) return;
-    var s = M.slotByKey[key], it = M.byId[s.item];
-    d.insertAdjacentHTML("beforeend", '<div class="xb">' + (kind === "draft" ? draftBody(s, it) : provBody(s, it)) + "</div>");
-    d.setAttribute("data-filled", "1");
-  }, true);
-  document.addEventListener("click", function (e) {
-    var t = e.target.closest("button,a[href^='#']"); if (!t) return;
-    if (t.tagName === "A") { if (t.closest("#chips")) toggleChips(false); return; }
-    var act = t.getAttribute("data-act");
-    if (t.hasAttribute("data-vet")) return vet(t.getAttribute("data-vet"));
-    if (t.hasAttribute("data-unvet")) return unvet(t.getAttribute("data-unvet"));
-    if (t.hasAttribute("data-move")) return move(t, Number(t.getAttribute("data-move")));
-    if (t.hasAttribute("data-jump")) return jumpNext(t.getAttribute("data-jump"));
-    if (t.hasAttribute("data-pick")) { $("publishDate").value = t.getAttribute("data-pick"); S.publishDate = $("publishDate").value; showDay(); changed(); return; }
-    if (t.id === "submitTop" || t.id === "submitBottom") return submit();
-    if (t.id === "secsBtn") return toggleChips();
-    if (act === "dismiss") return t.closest(".notice").remove();
-    if (act === "show-json") return openJson("");
-    if (act === "close-json") return closeJson();
-    if (act === "select-json") { var ta = $("jsonText"); ta.focus(); ta.select(); ta.setSelectionRange(0, ta.value.length); return; }
-    if (act === "copy-json") return copyText($("jsonText").value).then(function (ok) { $("jpMsg").textContent = ok ? "Copied. Paste it in chat, or send the file to the Gazette inbox." : "Couldn't copy automatically — tap Select all, then copy."; });
-    if (act === "download-json") { var c = current(); $("jpMsg").textContent = download(c.text, c.name) ? "Download started: " + c.name : "Download blocked — use Copy instead."; return; }
-    if (act === "share-json") return share();
-    if (act === "close-toast") return $("toast").classList.remove("show");
-    if (act === "reset") return reset();
-  });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && $("jsonPanel").classList.contains("open")) closeJson(); });
-  function toggleChips(force) {
-    var open = force == null ? !$("chips").classList.contains("open") : force;
-    $("chips").classList.toggle("open", open); $("secsBtn").setAttribute("aria-expanded", String(open));
-    measureBar();
+  function needsPane() {
+    const lab = { vet: 'VET', photo: 'PHOTO', question: 'ASKED', changed: 'CHANGED', fill: 'FILL', date: 'DATE', missing: 'MISSING' };
+    const li = n => `<div class="need${n.blocking ? '' : ' adv'}" ${n.slot ? `data-go="${E(n.slot)}"` : n.kind === 'photo' ? `data-gop="${E(n.id)}"` : n.kind === 'date' ? 'data-date' : ''}><span class="t">${lab[n.kind] || 'CHECK'}</span><span>${E(n.text)}${n.slot ? `<small>${E(core.slotBy[n.slot].slot)}${S.inc[n.slot] ? '' : ' · in the bank'}</small>` : ''}</span></div>`;
+    const blk = NEEDS.filter(n => n.blocking), adv = NEEDS.filter(n => !n.blocking);
+    const bench = core.slots.filter(s => !s.empty && !S.inc[s.key] && core.allItemsOf(s).some(i => !core.isVetted(i.id)));
+    return `<h3>Before the budget can be signed off</h3>${blk.length ? blk.map(li).join('') : '<p class="allclear">✔ Nothing is blocking. Every block on the pages is vetted and every desk question has an answer.</p>'}
+      <h3>Worth a look</h3>${adv.length ? adv.map(li).join('') : '<p class="dim">Nothing.</p>'}
+      <h3>In the bank, unvetted</h3><p class="dim sm">Only matters if you run them.</p>${bench.map(s => `<div class="need adv" data-go="${E(s.key)}"><span class="t">BANK</span><span>${E(core.headlineOf(s) || s.slot)}<small>${core.allItemsOf(s).filter(i => !core.isVetted(i.id)).map(i => E(i.headline || i.id)).join(' · ')}</small></span></div>`).join('') || '<p class="dim">None.</p>'}`;
   }
+  function readPane() {
+    const ds = core.L.desk_summary || [], v = D.versions || [], log = D.decisionLog || [], last = log[log.length - 1], cal = core.build.calibration;
+    const gen = core.L.generated_at || core.L.generated;
+    return `<div class="read"><h3>Clark Kent’s read on the week</h3>${ds.length ? `<p class="lede">${E(ds[0])}</p>${ds.slice(1).map(p => `<p>${E(p)}</p>`).join('')}` : '<p class="dim">The lineup has no desk summary this week.</p>'}
+      ${gen ? `<p class="dim sm">Written when the lineup was generated (${core.fmt(gen)}). Vet flags in it predate anything you vetted since.</p>` : ''}
+      <h4>Since then</h4><ul class="vers">${v.map(x => `<li class="${x.v === core.build.budgetVersion ? 'cur' : ''}">v${E(x.v)} · built ${core.fmt(x.built_at, false)} · ${x.decisions_through ? 'decisions through ' + core.fmt(x.decisions_through, false) : 'no decisions yet'} · data ${E(x.data)}</li>`).join('') || '<li>This is a preview build; it is not numbered.</li>'}</ul>
+      ${log.length ? `<h4>Your decisions on file (${log.length})</h4><ul class="vers">${log.map(d => `<li>#${d.n} · ${d.kind === 'chat' ? 'by chat' : 'budget page'} · ${core.fmt(d.through)} · ${d.included} on the pages${d.vets ? ' · ' + d.vets + ' vets' : ''}</li>`).join('')}</ul>` : '<p class="dim sm">No decisions from you are on file for this issue yet. The pages start from the desk’s proposal.</p>'}
+      ${last && last.chat ? `<h4>Your last word (${core.fmt(last.through)}, by chat)</h4><p class="quote">${E(last.chat)}</p>` : ''}
+      ${last && last.changes.length ? `<h4>What the desk changed because of it</h4><ul>${last.changes.map(c => `<li>${E(c)}</li>`).join('')}</ul>` : ''}
+      <p class="cal">Block sizes and holes are estimates from the desk’s capacity model${core.build.calibrated ? `, calibrated against the composed issues${cal ? ` (typically within ${E(cal.page_mae)} col-in a page)` : ''}` : ' (not calibrated)'}. The composer balances columns and scales art, so the printed page will not match block for block.
+      <br><button class="lnk" id="startover">Start over from the desk’s version</button> (clears what this browser saved for this issue)</p></div>`;
+  }
+  function deskPane() {
+    const f = core.fill();
+    const noted = Object.keys(S.slotNotes).filter(k => core.slotBy[k] && S.slotNotes[k].trim());
+    return `<h3>To the desk</h3><h4>General notes — copy, cuts, swaps, things to skip</h4><textarea class="sh-in" id="gnotes" rows="5" placeholder="Anything that isn’t about one slot…">${E(S.notes)}</textarea>
+      <h4>Filler request</h4><textarea class="sh-in" id="filler" rows="3" placeholder="Ask Clark for filler…">${E(S.filler)}</textarea>
+      ${f.status === 'short' ? `<button class="btn" id="askfill">Ask for ≈${f.words.toLocaleString()} words to close the hole</button>` : ''}
+      <h4>Slot notes on file (${noted.length})</h4>${noted.map(k => `<div class="need adv" data-go="${E(k)}"><span class="t" style="border-color:var(--accent);color:var(--accent)">NOTE</span><span>${E(core.slotBy[k].slot)}<small>${E(S.slotNotes[k].slice(0, 150))}${S.slotNotes[k].length > 150 ? '…' : ''}</small></span></div>`).join('') || '<p class="dim">None. Open any block to leave one.</p>'}
+      <p class="dim sm" style="margin-top:14px">Both boxes are filed in the submission’s <span class="mono">notes</span> field. Slot notes go in <span class="mono">slotNotes</span>.</p>`;
+  }
+  function slipPane() {
+    if (A.sel.type === 'photo') { const id = A.sel.id, on = S.photos[id];
+      return `<div class="place"><span class="sh-lbl">On the budget</span><div class="seg" style="display:inline-flex">${[1, 2].map(p => `<button data-ppg="${p}" class="${on && S.photoPage[id] === p ? 'on' : ''}">Page ${p}</button>`).join('')}<button data-ppg="0" class="${on ? '' : 'on'}">Bank</button></div></div>${ui.photoSheet(id)}`; }
+    const k = A.sel.id, s = core.slotBy[k], inc = S.inc[k], run = S.order.filter(x => S.inc[x]);
+    const bar = s.empty ? '' : `<div class="place"><span class="sh-lbl">On the budget</span><div class="seg" style="display:inline-flex">${[1, 2].map(p => `<button data-pg="${p}" class="${inc && S.page[k] === p ? 'on' : ''}">Page ${p}</button>`).join('')}<button data-pg="0" class="${inc ? '' : 'on'}">Bank</button></div>
+      ${inc ? `<button class="btn" data-mv="-1">↑ Earlier</button><button class="btn" data-mv="1">↓ Later</button><span class="dim sm">runs #${run.indexOf(k) + 1} of ${run.length}</span>` : ''}</div>`;
+    return bar + ui.sheet(k);
+  }
+  function renderSide() {
+    const blk = NEEDS.filter(n => n.blocking).length;
+    const tabs = [['needs', `Needs you (${blk})`], ['read', 'Desk’s read'], ['hist', 'Sections'], ['desk', 'To the desk']];
+    const body = A.sel ? slipPane() : A.tab === 'needs' ? needsPane() : A.tab === 'read' ? readPane() : A.tab === 'hist' ? ui.history(true) : deskPane();
+    const pane = $('#side .pane'), top = pane ? pane.scrollTop : 0, same = pane && pane.dataset.v === (A.sel ? A.sel.id : A.tab);
+    $('#side').innerHTML = `<nav class="tabs">${A.sel ? '<button class="on">Slip</button>' : ''}${tabs.map(([t, l]) => `<button data-tab="${t}" class="${!A.sel && A.tab === t ? 'on' : ''}">${l}</button>`).join('')}<button class="x" data-close aria-label="Close">×</button></nav><div class="pane" data-v="${E(A.sel ? A.sel.id : A.tab)}">${body}</div>`;
+    if (same) $('#side .pane').scrollTop = top;
+  }
+  function render(side = true) { renderTop(); renderPages(); renderBank(); if (side) renderSide(); }
+  function select(type, id) { if (type === 'slot' ? !core.slotBy[id] : !core.media[id]) return; A.sel = { type, id }; document.body.classList.add('side-open'); render(); }
 
-  function vet(id) {
-    if (!Core.vettable(M, id) || Core.vettedOnFile(M, id)) return;
-    S.vets[id] = { notes: "", at: Core.isoLocal(new Date()) };
-    rerenderHosts(id);
-    var inp = document.querySelector('[data-vnote="' + attrSel(id) + '"]'); if (inp) inp.focus({ preventScroll: true });
-    status("", "Vetted <code>" + esc(id) + "</code> on this page. It goes to Clark with your submission.");
-    changed();
-  }
-  function unvet(id) {
-    delete S.vets[id];
-    M.slots.forEach(function (s) { if (s.item === id) delete S.inc[s.key]; });
-    delete S.pinc[id];
-    rerenderHosts(id);
-    var b = document.querySelector('[data-vet="' + attrSel(id) + '"]'); if (b) b.focus({ preventScroll: true });
-    status("", "Un-vetted <code>" + esc(id) + "</code>. Include is locked again.");
-    changed();
-  }
-  function move(btn, dir) {
-    var card = btn.closest("article.card"), list = card.parentNode;
-    var sib = dir < 0 ? card.previousElementSibling : card.nextElementSibling;
-    while (sib && !sib.matches("article.card")) sib = dir < 0 ? sib.previousElementSibling : sib.nextElementSibling;
-    if (!sib) return;
-    // swap positions so empty slots keep their places (same as Core.sectionList)
-    var mark = document.createComment("");
-    list.replaceChild(mark, sib); list.replaceChild(sib, card); list.replaceChild(card, mark);
-    S.order[list.getAttribute("data-cards")] = Array.from(list.querySelectorAll("article.card")).map(function (c) { return c.getAttribute("data-key"); });
-    fixMoveButtons(list);
-    if (btn.disabled) { var other = card.querySelector('[data-move="' + (-dir) + '"]'); if (other) other.focus(); } else btn.focus();
-    if (card.getBoundingClientRect().top < barH()) card.scrollIntoView({ block: "start" });
-    changed();
-  }
-  function barH() { return $("bar").getBoundingClientRect().height; }
-  function measureBar() { document.documentElement.style.setProperty("--barh", Math.ceil(barH()) + "px"); }
-  function jumpNext(which) {
-    var els = [];
-    if (which === "q") document.querySelectorAll("[data-q]").forEach(function (i) { if (!i.value.trim()) els.push(i); });
-    else document.querySelectorAll(which === "in" ? "[data-in]" : "[data-needs-vet]").forEach(function (el) { els.push(el); });
-    if (!els.length) { status("", which === "q" ? "No open questions." : which === "in" ? "Nothing included yet." : "Nothing left to vet."); return; }
-    var top = barH() + 12, target = null;
-    for (var i = 0; i < els.length; i++) { if (els[i].getBoundingClientRect().top > top + 4) { target = els[i]; break; } }
-    if (!target) target = els[0]; // wrap around
-    var scrollEl = which === "q" ? target.closest("[data-key]") || target : target;
-    scrollEl.scrollIntoView({ block: "start" });
-    if (which === "q" && !(window.matchMedia && window.matchMedia("(pointer: coarse)").matches)) target.focus({ preventScroll: true });
-  }
-
-  /* ---------- submit: download + clipboard, JSON box fallback ---------- */
-  function current() {
-    var p = Core.buildPayload(M, S, new Date());
-    return { payload: p, text: JSON.stringify(p, null, 2) + "\n", name: fileName(p.publishDate) };
-  }
+  /* ---------- sign-off: where decisions become the submission document ---------- */
   function download(text, name) {
-    try {
-      var url = URL.createObjectURL(new Blob([text], { type: "application/json" }));
-      var a = document.createElement("a"); a.href = url; a.download = name; a.rel = "noopener"; a.style.display = "none";
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
-      return true;
-    } catch (e) { return false; }
+    try { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' })); a.download = name; a.rel = 'noopener';
+      document.body.appendChild(a); a.click(); a.remove(); return true; } catch (e) { return false; }
   }
-  function execCopy(text) {
-    var ta = document.createElement("textarea"), ok = false, active = document.activeElement;
-    ta.value = text; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.top = "0"; ta.style.left = "-9999px"; ta.style.opacity = "0";
-    document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, text.length);
-    try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
-    ta.remove(); if (active && active.focus) active.focus({ preventScroll: true });
-    return ok;
-  }
+  function execCopy(text) { const t = document.createElement('textarea'); t.value = text; t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch (e) { ok = false; } t.remove(); return ok; }
   function copyText(text) {
-    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) {
-      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return execCopy(text); });
-    }
+    if (navigator.clipboard && navigator.clipboard.writeText && window.isSecureContext) return navigator.clipboard.writeText(text).then(() => true, () => execCopy(text));
     return Promise.resolve(execCopy(text));
   }
-  function submit() {
-    var c = current(); ui.last = c;
-    var dl = download(c.text, c.name);
-    copyText(c.text).then(function (copied) {
-      S.lastSubmit = { at: c.payload.submittedAt, sig: Core.payloadSig(c.payload) };
-      saveNow(); updateDirty();
-      var p = c.payload, summary = p.includedSlots.length + " included · " + p.vets.length + " vetted by you · " + p.answers.length + " answers · " + p.photoIncludes.length + " photos";
-      var msg = dl && copied ? "<b>Downloaded + copied.</b> Send <code>" + esc(c.name) + "</code> to the Gazette inbox or paste it in chat." :
-        copied ? "<b>Copied.</b> Paste it in chat (the download may not have started)." :
-        dl ? "<b>Downloaded</b> <code>" + esc(c.name) + "</code> — send it to the Gazette inbox. (Couldn't copy; use Show JSON to copy by hand.)" :
-        "<b>Couldn't download or copy.</b> Select the text below and copy it.";
-      status("ok", msg + "<br>" + esc(summary) + " · " + esc(fmtTime(p.submittedAt)));
-      toast(msg);
-      if (!copied) openJson(dl ? "Couldn't copy automatically. If the file didn't download either, tap Select all, copy, and paste it in chat." : "Tap Select all, copy, and paste it in chat — or Share/Download.");
-    });
-  }
-  function openJson(msg) {
-    var c = current(); ui.last = c;
-    $("jsonText").value = c.text;
-    $("jpMsg").textContent = msg || "Copy this and paste it in chat, or save it (" + c.name + ") and send it to the Gazette inbox.";
-    $("shareBtn").hidden = !canShareFile(c);
-    $("jsonPanel").classList.add("open");
-    $("jsonText").scrollTop = 0;
-    $("jsonText").focus({ preventScroll: true }); // readonly: no phone keyboard
-  }
-  function closeJson() { $("jsonPanel").classList.remove("open"); }
-  function shareFile(c) { try { return new File([c.text], c.name, { type: "application/json" }); } catch (e) { return null; } }
-  function canShareFile(c) { var f = navigator.canShare && shareFile(c); return !!(f && navigator.canShare({ files: [f] })); }
-  function share() {
-    var c = current(), f = shareFile(c);
-    navigator.share({ files: [f], title: c.name }).then(function () { $("jpMsg").textContent = "Shared " + c.name + "."; }, function () {});
+  function openSign() {
+    const doc = core.submission(), blk = NEEDS.filter(n => n.blocking), b = core.build, moved = core.placementNotes();
+    $('#modal').innerHTML = `<div class="sheetbox"><div><div class="sh-lbl">Sign off the budget · ${E((core.L.issue || {}).label || 'Issue No. ' + NO)} · ${b.budgetVersion ? 'Budget v' + E(b.budgetVersion) : 'preview build'}</div><h2>${blk.length ? 'Not ready to sign' : 'Ready to sign'}</h2>
+      ${blk.length ? `<p style="color:var(--bad)"><b>${blk.length} open item${blk.length > 1 ? 's' : ''}:</b></p>${blk.map(n => `<div class="need" ${n.slot ? `data-go="${E(n.slot)}"` : n.kind === 'photo' ? `data-gop="${E(n.id)}"` : ''}><span class="t">OPEN</span><span>${E(n.text)}</span></div>`).join('')}<p class="dim sm">You can still file; the desk will see these as unanswered.</p>` : '<p class="allclear">✔ Everything on the pages is vetted and answered.</p>'}
+      <ul class="sum"><li><b>Runs</b> ${E(core.fmtDate(doc.publishDate))}${doc.publishDateAlt ? ` (alternate ${E(core.fmtDate(doc.publishDateAlt))})` : ' (no alternate)'}</li>
+      <li><b>On the pages</b> ${doc.includedSlots.length} — ${doc.includedSlots.map(s => E(String(s.name).split(' — ')[0])).join(', ')}</li>
+      <li><b>Left out</b> ${doc.excludedSlots.filter(s => !s.empty).length} + ${doc.excludedSlots.filter(s => s.empty).length} empty</li>
+      <li><b>Photos</b> ${doc.photoIncludes.length || 'none'}</li><li><b>New vets</b> ${doc.vets.length || 'none this sitting'}</li>
+      <li><b>Answers</b> ${doc.answers.length} · <b style="min-width:0">slot notes</b> ${Object.keys(doc.slotNotes).length}${moved.length ? ` · <b style="min-width:0">page moves</b> ${moved.length}` : ''}</li><li><b>Fill</b> ${E($('#meter .m-txt') ? $('#meter .m-txt').textContent : '')}</li></ul>
+      <p class="dim sm">The page positions become <span class="mono">order</span>; a block you put on a page yourself becomes a line in <span class="mono">notes</span>. Nothing leaves this file until you download or copy the document and hand it to the desk.</p>
+      <div class="acts"><button class="btn pri" id="dl">Download submission JSON</button><button class="btn" id="cp">Copy</button><button class="btn" data-closem>Back to the budget</button></div><p class="dim sm" id="signmsg" role="status"></p></div>
+      <div><div class="sh-lbl">The submission document, exactly as it would be written</div><pre id="json">${E(JSON.stringify(doc, null, 2))}</pre></div></div>`;
+    $('#modal').classList.add('open');
+    const text = () => JSON.stringify(core.submission(), null, 2) + '\n';
+    $('#dl').onclick = () => { const d = core.submission(); $('#signmsg').textContent = download(JSON.stringify(d, null, 2) + '\n', core.submissionName(d)) ? 'Download started: ' + core.submissionName(d) : 'Download blocked — use Copy, or select the text on the right.'; };
+    $('#cp').onclick = () => copyText(text()).then(ok => { $('#signmsg').textContent = ok ? 'Copied. Paste it in chat to the desk.' : 'Could not copy automatically — select the text on the right and copy it.'; });
   }
 
-  function reset() {
-    if (!window.confirm("Reset everything you've done on this issue (includes, vets, notes, answers, order)? This can't be undone.")) return;
-    if (storage) { try { storage.removeItem(STORE_KEY); } catch (e) {} }
-    S = Core.defaultState(M); ui.open = {};
-    renderHeader(); render();
-    status("", M.decisions ? "Reset. Back to this version: Clark's budget with your captured decisions." : "Reset. Back to Clark's proposed budget.");
-  }
+  /* ---------- autosave in this browser (per issue); a newer ingested decision supersedes it ---------- */
+  const STORE_KEY = 'gazette-budget-paper:' + NO + ':' + ((core.L.publish || {}).date || '');
+  let store = null, saveT = 0;
+  try { const k = '__gazette_probe__'; window.localStorage.setItem(k, '1'); window.localStorage.removeItem(k); store = window.localStorage; } catch (e) { store = null; }
+  function save() { if (!store) return; clearTimeout(saveT); saveT = setTimeout(() => { try { store.setItem(STORE_KEY, JSON.stringify(core.serialize())); } catch (e) { /* full or blocked: the page still works */ } }, 250); }
+  function notice(html) { const n = $('#notice'); n.hidden = !html; n.innerHTML = html || ''; }
+  (function restoreSaved() {
+    if (!store) return;
+    let saved = null; try { saved = JSON.parse(store.getItem(STORE_KEY) || 'null'); } catch (e) { saved = null; }
+    const r = core.restore(saved);
+    if (r.superseded) notice('<span>Your earlier unsent work in this browser was replaced by the decisions the desk has since ingested.</span><button class="lnk" data-dismiss>OK</button>');
+    else if (r.restored) notice(`<span>Picked up where you left off in this browser (saved ${E(core.fmt(saved.savedAt))})${r.dataChanged ? '. This is a newer build' + (r.dropped ? `; ${r.dropped} saved thing${r.dropped > 1 ? 's' : ''} no longer apply` : '') : ''}.</span><span><button class="lnk" id="startover2">Start over</button> · <button class="lnk" data-dismiss>OK</button></span>`);
+  })();
+  function startOver() { if (store) { try { store.removeItem(STORE_KEY); } catch (e) { /* ignore */ } } clearTimeout(saveT); core.on(() => clearTimeout(saveT)); location.reload(); }
 
-  /* ---------- boot ---------- */
-  function boot() {
-    DATA = JSON.parse($("budget-data").textContent);
-    M = Core.makeModel(DATA);
-    var iss = M.cfg.issue || {};
-    STORE_KEY = "gazette-budget:" + (iss.number != null ? iss.number : "x") + ":" + (iss.week || (M.cfg.publish || {}).date || "");
-    storage = probeStorage();
-    var saved = null;
-    if (storage) { try { saved = JSON.parse(storage.getItem(STORE_KEY) || "null"); } catch (e) { saved = null; } }
-    var r = Core.restoreState(M, saved);
-    S = r.state;
-    renderHeader();
-    render();
-    measureBar();
-    if (window.ResizeObserver) new ResizeObserver(measureBar).observe($("bar")); else window.addEventListener("resize", measureBar);
-    if (!storage) notice("warn", "This browser won't save your progress here (private mode or file:// limits). The page still works — finish in one sitting, or Submit early.");
-    else if (r.superseded) notice("", "Clark has captured your submission (" + esc(b.versionLabel || "") + "), so this page starts from it; earlier progress saved in this browser was set aside.");
-    else if (r.restored) {
-      notice("", "Restored your progress from " + esc(fmtTime(S.savedAt) || "earlier") + "." +
-        (r.dataChanged ? " Clark has updated this page since; your notes, answers, includes, order and vets were kept where they still match" +
-          (r.dropped ? " (" + r.dropped + " saved entr" + (r.dropped === 1 ? "y" : "ies") + " no longer match and were dropped)" : "") + "." : ""));
-    }
-    if (r.restored) saveNow();
-    document.querySelectorAll("[data-q]").forEach(function (t) { if (t.value) autoGrow(t); });
-    window.addEventListener("pagehide", function () { if (saveTimer) saveNow(); });
-    document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden" && saveTimer) saveNow(); });
-  }
-  window.BudgetPage = { model: function () { return M; }, state: function () { return S; }, payload: function () { return Core.buildPayload(M, S, new Date()); }, storeKey: function () { return STORE_KEY; } };
-  try { boot(); }
-  catch (err) {
-    document.body.insertAdjacentHTML("afterbegin", '<div class="notice warn" style="margin:12px"><span>Page failed to load: ' + esc(err && err.message || err) + "</span></div>");
-    throw err;
-  }
+  /* ---------- events ---------- */
+  core.on(why => { render(!ui.TEXTY.includes(why)); save(); });
+  ui.bind($('#side'));
+  window.addEventListener('resize', renderPages);
+  document.addEventListener('click', e => {
+    const t = e.target, c = q => t.closest(q);
+    if (c('[data-closem]') || t === $('#modal')) return $('#modal').classList.remove('open');
+    if (c('[data-dismiss]')) return notice('');
+    if (c('#startover') || c('#startover2')) return startOver();
+    if (c('#sign')) return openSign();
+    if (c('#needbtn')) { A.sel = null; A.tab = 'needs'; document.body.classList.add('side-open'); return render(); }
+    if (c('[data-close]')) { if (A.sel && innerWidth > 900) A.sel = null; document.body.classList.remove('side-open'); return render(); }
+    if (c('[data-tab]')) { A.sel = null; A.tab = c('[data-tab]').dataset.tab; document.body.classList.add('side-open'); return render(); }
+    if (c('[data-add]')) { const st = c('.strip'), p = +c('[data-add]').dataset.add;
+      return st.dataset.photo ? core.act.photo(st.dataset.photo, true, p) : core.act.place(st.dataset.slot, p); }
+    if (c('[data-pg]')) { const p = +c('[data-pg]').dataset.pg, k = A.sel.id; return p ? core.act.place(k, p) : core.act.include(k, false); }
+    if (c('[data-ppg]')) { const p = +c('[data-ppg]').dataset.ppg; return core.act.photo(A.sel.id, !!p, p); }
+    if (c('[data-mv]')) return core.act.move(A.sel.id, +c('[data-mv]').dataset.mv);
+    if (c('[data-date]')) { $('#modal').classList.remove('open'); $('#rund').open = true; return $('#rund').scrollIntoView({ block: 'nearest' }); }
+    if (c('[data-go]') && c('[data-go]').dataset.go) { $('#modal').classList.remove('open'); return select('slot', c('[data-go]').dataset.go); }
+    if (c('[data-gop]')) { $('#modal').classList.remove('open'); return select('photo', c('[data-gop]').dataset.gop); }
+    if (c('#dswap')) { const a = S.altDate; if (!a) return; S.altDate = S.publishDate; core.act.date(a); return renderDatePop(); }
+    if (c('#askfill')) { const f = core.fill(); core.act.filler(`Need about ${f.words} words of filler: ${core.r1(f.gap)} col-in are open under the current includes.`); return renderSide(); }
+    const hit = c('.blk,.strip,.overset span');
+    if (hit && !c('.sheet')) return hit.dataset.photo ? select('photo', hit.dataset.photo) : select('slot', hit.dataset.slot);
+    if (c('.cols') && A.sel) { A.sel = null; render(); }
+  });
+  document.addEventListener('input', e => {
+    const t = e.target;
+    if (t.id === 'gnotes') core.act.notes(t.value); else if (t.id === 'filler') core.act.filler(t.value);
+    else if (t.id === 'dmain') core.act.date(t.value); else if (t.id === 'dalt') core.act.alt(t.value);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { $('#modal').classList.remove('open'); if (A.sel) { A.sel = null; render(); } }
+    if (e.key === 'Enter' && e.target.matches && e.target.matches('.blk,.strip')) e.target.click();
+  });
+  // drag (desktop): bank <-> pages, page <-> page, and a block onto another block to run ahead of it
+  document.addEventListener('dragstart', e => { const b = e.target.closest && e.target.closest('[draggable]'); if (!b) return;
+    e.dataTransfer.setData('text/plain', b.dataset.photo ? 'p:' + b.dataset.photo : 's:' + b.dataset.slot); e.dataTransfer.effectAllowed = 'move'; });
+  document.addEventListener('dragover', e => { const z = e.target.closest && e.target.closest('.cols,.bank'); if (z) { e.preventDefault(); z.classList.add('drop'); } });
+  document.addEventListener('dragleave', e => { const z = e.target.closest && e.target.closest('.cols,.bank'); if (z && !z.contains(e.relatedTarget)) z.classList.remove('drop'); });
+  document.addEventListener('drop', e => {
+    const z = e.target.closest && e.target.closest('.cols,.bank'); if (!z) return; e.preventDefault(); z.classList.remove('drop');
+    const raw = e.dataTransfer.getData('text/plain'), type = raw.slice(0, 1), id = raw.slice(2); if (!id || (type !== 'p' && type !== 's')) return;
+    const p = +z.dataset.page || 0;
+    if (type === 'p') return core.act.photo(id, !!p, p);
+    if (!p) return core.act.include(id, false);
+    const over = e.target.closest('.blk[data-slot]');
+    if (over && over.dataset.slot !== id) core.act.before(id, over.dataset.slot);
+    core.act.place(id, p);
+  });
+  renderDatePop(); render();
+  window.BudgetPage = { core, payload: () => core.submission(), storeKey: () => STORE_KEY, select };
 })();

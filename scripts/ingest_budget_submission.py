@@ -21,6 +21,12 @@ Defaults match server.py: GAZETTE_STAGING_WEEK (staging/weeks/next), GAZETTE_SUB
 (budget-demo/submissions), GAZETTE_LINEUP (budget-demo/practice-lineup.json).
 Refuses a submission whose issue number / targetWeek doesn't match the lineup unless --force.
 Re-ingesting the same file just re-applies (vet-log notes already_vetted).
+
+Optional fields from the Budget page (pageVersion budget-paper-v1); submissions without them ingest as before:
+  publishDateAlt  YYYY-MM-DD or null — Frank's alternate run date; stored on the decision when present.
+  budgetVersion   the vN the page was built as, and
+  dataVersion     the build's data hash — both recorded on the decision for the record. Neither is checked:
+                  a missing or older budgetVersion never stops an ingest.
 """
 from __future__ import annotations
 
@@ -90,6 +96,9 @@ def validate(p: dict) -> list[str]:
     for k, t in shapes.items():
         if p.get(k) is not None and not isinstance(p[k], t):
             errs.append(f"{k} must be a {t.__name__}")
+    alt = p.get("publishDateAlt")  # optional; null = "no alternate"
+    if alt is not None and not (isinstance(alt, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", alt)):
+        errs.append("publishDateAlt must be YYYY-MM-DD or null")
     if isinstance(p.get("issue"), (str, int, float, list)):
         errs.append("issue must be an object")
     return errs
@@ -238,6 +247,12 @@ def main() -> None:
         "answers": payload.get("answers") or [], "notes": payload.get("notes") or "", "order": payload.get("order") or [],
         "vets": [v[0] for v in vets],
     }
+    # optional, recorded only when the page sent them (older pages and Nos. 1-6 don't)
+    if "publishDateAlt" in payload:
+        decision["publishDateAlt"] = payload["publishDateAlt"]
+    for k in ("budgetVersion", "dataVersion", "pageVersion"):
+        if payload.get(k) is not None:
+            decision[k] = payload[k]
     vdoc = None
     if versions_path.is_file():
         try:
@@ -272,7 +287,11 @@ def main() -> None:
     print(f"  Issue: {iss.get('label') or iss.get('number', '?')} ({iss.get('week', '')}) · targetWeek {payload.get('targetWeek')} · "
           f"page {payload.get('pageVersion', '?')} · {'PRACTICE' if payload.get('practice') else 'real'}"
           f"{' · pretend' if stored.get('pretend') else ''}")
-    print(f"  Publish date: {payload['publishDate']} · submitted on page {payload.get('submittedAt') or '?'}")
+    print(f"  Publish date: {payload['publishDate']}" +
+          (f" · alternate {payload['publishDateAlt'] or 'none'}" if "publishDateAlt" in payload else "") +
+          f" · submitted on page {payload.get('submittedAt') or '?'}" +
+          (f" · built as budget v{payload['budgetVersion']}" if payload.get("budgetVersion") is not None else "") +
+          (f" · data {payload['dataVersion']}" if payload.get("dataVersion") else ""))
     inc = payload["includedSlots"]
     exc = [e for e in payload["excludedSlots"] if not e.get("empty")]
     print(f"  Included ({len(inc)}):")
