@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-16T15:40:00-05:00",
-  "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7. 2026-11-15 11:55 PM ET: Frank's VR parent-filter comic staged as a vetted page-2 visual (no attribution). 2026-11-16 Monday full pass: official Pizza RYC + Freehold results staged; NAC/Cobra/NJFA boards refreshed; deadlines and Epee on Screen rebuilt; 4 stale items moved to dropped-2026-11-16.json; lead, NAC preview, Cobra For the Parents and FIE World Cup items staged unvetted. 2026-11-16 3:38 PM ET: Frank (chat t223u) said YES, add the Kiefer Meinhardt results and share the lead between Mila Siu and Penny Young. C26 is the new rating. Stella Kuo stays out.",
+  "updated_at": "2026-11-16T21:56:35-05:00",
+  "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7. 2026-11-15 11:55 PM ET: Frank's VR parent-filter comic staged as a vetted page-2 visual (no attribution). 2026-11-16 Monday full pass: official Pizza RYC + Freehold results staged; NAC/Cobra/NJFA boards refreshed; deadlines and Epee on Screen rebuilt; 4 stale items moved to dropped-2026-11-16.json; lead, NAC preview, Cobra For the Parents and FIE World Cup items staged unvetted. 2026-11-16 3:38 PM ET: Frank (chat t223u) said YES, add the Kiefer Meinhardt results and share the lead between Mila Siu and Penny Young. C26 is the new rating. Stella Kuo stays out. 2026-11-16 9:51 PM ET: Frank (chat t226u) pointed to the club Mailchimp (Group Class + HOLIDAY PARTY!, 10:18 AM ET) for the remaining No. 7 content: holiday party on Friday, Dec. 11, plus photos of Mila Siu and Stella Kuo and of Penny Young.",
   "items": [
     {
       "id": "chat-winter-camp-reminder",
@@ -1713,6 +1713,180 @@
       "updated_at": "2026-11-16T15:40:00-05:00",
       "vetted_by": "frank",
       "vetted_at": "2026-11-16T15:38:00-05:00"
+    },
+    {
+      "id": "media-mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14",
+      "kind": "photo",
+      "headline": "Mila Siu, left, with her Youth 14 bronze at the Kiefer Meinhardt Cup in Glen Allen, Va., and Stella Kuo.",
+      "body": "Mila Siu, left, with her Youth 14 bronze at the Kiefer Meinhardt Cup in Glen Allen, Va., and Stella Kuo.",
+      "media_path": "staging/weeks/next/media/mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14.jpg",
+      "alt": "Mila Siu, left, holding a bronze medal, and Stella Kuo standing beside her in Elite FC jackets against a Kiefer Meinhardt Cup backdrop.",
+      "source": "email",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T21:51:00-05:00",
+      "tags": [
+        "photo",
+        "club",
+        "results"
+      ],
+      "suggested_slot": "lead",
+      "slot_hint": "lead",
+      "do_not_print": false,
+      "vet_notes": "Frank chat t226u 2026-11-16 9:51 PM ET: the remaining No. 7 content is in the club email (holiday party and these photos). Also on the club Mailchimp auto-vet allowlist. Portrait 480x640 as displayed (EXIF orientation 6; file saved already transposed). Club email names both fencers; Mila is the one holding the bronze medal (she earned Y14 bronze; Stella did not medal). Used in No. 7 proof with the lead. Stella is named in the caption only, as the club email presents her; her Y12 17th / Y14 20th stay out of results copy (below the regional top-16 bar).",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class + HOLIDAY PARTY!",
+          "sent_at": "2026-11-16T15:18:28Z",
+          "sent_at_et": "2026-11-16 10:18 AM ET",
+          "retrieved_at": "2026-11-16T21:53:00-05:00",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/9b14527f-4ee3-cb95-2bed-8e732c18c0a4.jpeg"
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-16T21:51:00-05:00",
+          "note": "t226u: remaining No. 7 content is the club email's holiday party and the photos of Mila and Stella plus Penny (Penelope, she goes by Penny)."
+        }
+      ],
+      "created_at": "2026-11-16T21:56:35-05:00",
+      "updated_at": "2026-11-16T21:56:35-05:00"
+    },
+    {
+      "id": "media-penny-young-pizza-ryc-2026-11-15",
+      "kind": "photo",
+      "headline": "Penny Young with her Youth 12 bronze at the Pizza RYC/RJCC in New Haven.",
+      "body": "Penny Young with her Youth 12 bronze at the Pizza RYC/RJCC in New Haven.",
+      "media_path": "staging/weeks/next/media/penny-young-pizza-ryc-2026-11-15.jpg",
+      "alt": "Penny Young standing in front of a New Haven Athletics backdrop, wearing a bronze medal and holding up two fingers.",
+      "source": "email",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T21:51:00-05:00",
+      "tags": [
+        "photo",
+        "club",
+        "results"
+      ],
+      "suggested_slot": "lead",
+      "slot_hint": "lead",
+      "do_not_print": false,
+      "vet_notes": "Frank chat t226u 2026-11-16 9:51 PM ET: the remaining No. 7 content is in the club email (holiday party and these photos). Also on the club Mailchimp auto-vet allowlist. Portrait 480x640 as displayed (EXIF orientation 6; file saved already transposed). Identified as Penny Young from the New Haven Athletics backdrop (Pizza RYC) and the bronze medal; Frank (chat t226u) said the single-girl photo is Penelope, who goes by Penny. Used in No. 7 proof with the lead.",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class + HOLIDAY PARTY!",
+          "sent_at": "2026-11-16T15:18:28Z",
+          "sent_at_et": "2026-11-16 10:18 AM ET",
+          "retrieved_at": "2026-11-16T21:53:00-05:00",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/7722c961-2fd6-8f4c-12ae-63909ad102e7.jpeg"
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-16T21:51:00-05:00",
+          "note": "t226u: remaining No. 7 content is the club email's holiday party and the photos of Mila and Stella plus Penny (Penelope, she goes by Penny)."
+        }
+      ],
+      "created_at": "2026-11-16T21:56:35-05:00",
+      "updated_at": "2026-11-16T21:56:35-05:00"
+    },
+    {
+      "id": "media-kiefer-meinhardt-podium-group-2026-11-14",
+      "kind": "photo",
+      "headline": "Youth medalists on the podium at the Kiefer Meinhardt Cup. Mila Siu of Elite FC is at far right, holding her Youth 14 bronze; the other medalists are from other clubs and are not named here.",
+      "body": "Youth medalists on the podium at the Kiefer Meinhardt Cup. Mila Siu of Elite FC is at far right, holding her Youth 14 bronze; the other medalists are from other clubs and are not named here.",
+      "media_path": "staging/weeks/next/media/kiefer-meinhardt-podium-group-2026-11-14.jpg",
+      "alt": "A group of youth fencers on the second- and third-place podium at the Kiefer Meinhardt Cup. Mila Siu stands at far right holding a bronze medal.",
+      "source": "email",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T21:51:00-05:00",
+      "tags": [
+        "photo",
+        "club",
+        "held"
+      ],
+      "suggested_slot": null,
+      "slot_hint": "held",
+      "do_not_print": true,
+      "vet_notes": "Frank chat t226u 2026-11-16 9:51 PM ET: the remaining No. 7 content is in the club email (holiday party and these photos). Also on the club Mailchimp auto-vet allowlist. Landscape 640x480. Extracted from the same newsletter but not used in No. 7 proof v1: Frank asked for the two-girl photo (Mila and Stella) and the Penny photo. This frame is a wider podium group; Stella is not clearly identifiable, and the other medalists are not named in the club email. Held for Frank if he wants it.",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class + HOLIDAY PARTY!",
+          "sent_at": "2026-11-16T15:18:28Z",
+          "sent_at_et": "2026-11-16 10:18 AM ET",
+          "retrieved_at": "2026-11-16T21:53:00-05:00",
+          "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/288eb33f-dd28-4c84-46aa-63ea93e84a31.jpeg"
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-16T21:51:00-05:00",
+          "note": "t226u: remaining No. 7 content is the club email's holiday party and the photos of Mila and Stella plus Penny (Penelope, she goes by Penny)."
+        }
+      ],
+      "created_at": "2026-11-16T21:56:35-05:00",
+      "updated_at": "2026-11-16T21:56:35-05:00"
+    },
+    {
+      "id": "email-holiday-party-2026-12-11",
+      "kind": "graf",
+      "headline": "Holiday Party: Friday, Dec. 11",
+      "slot_hint": "camp",
+      "suggested_slot": "camp",
+      "body": "This year's Elite FC holiday party will be Friday, Dec. 11. There will be food, drinks and snacks, and everyone is welcome. Please mark your calendars; the club hopes you can join to celebrate everything we have accomplished.",
+      "word_count": 38,
+      "source": "email",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T21:51:00-05:00",
+      "tags": [
+        "club",
+        "event",
+        "holiday-party"
+      ],
+      "vet_notes": "Frank chat t226u 2026-11-16 9:51 PM ET: add the holiday party announcement from the club email. Facts taken only as written: Friday, December 11th; food, drinks and snacks; everyone welcome; mark your calendars; hope you can join to celebrate everything we have accomplished. The email does not give a time, a specific venue, a cost, or an RSVP instruction; those were not invented. The 17 Watchung Ave, Chatham, N.J. line is the newsletter sign-off, not clearly stated as the party location. Same-email class reminders (lessons today/tomorrow, Musketeers 4:30 p.m., Advanced 6:00 p.m.) are for Nov. 16–17 and were not staged as a classes item (classes stay excluded).",
+      "provenance": [
+        {
+          "type": "email",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class + HOLIDAY PARTY!",
+          "sent_at": "2026-11-16T15:18:28Z",
+          "sent_at_et": "2026-11-16 10:18 AM ET",
+          "retrieved_at": "2026-11-16T21:53:00-05:00",
+          "note": "Club Mailchimp newsletter, DKIM/DMARC pass, auto-vet allowlist plus Frank t226u."
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-16T21:51:00-05:00",
+          "note": "t226u: remaining No. 7 content includes the holiday party announcement."
+        }
+      ],
+      "created_at": "2026-11-16T21:56:35-05:00",
+      "updated_at": "2026-11-16T21:56:35-05:00"
     }
   ],
   "rolled_forward": {

@@ -39,3 +39,16 @@ Frank submitted the No. 7 budget (practice:false, publish Tue. Nov. 17) at 3:18 
 ## 2026-11-16 3:38 PM ET — Frank adds Kiefer results (chat t223u)
 
 Frank said YES, add the Kiefer Meinhardt official results and share the lead between Mila Siu and Penny Young (two-bronze weekend: Penny in New Haven, Mila in Glen Allen, Va.). Print Mila's Y14 bronze (3rd of 62, Sat. Nov. 14, earned C26) and Y12 10th of 54 (Sun. Nov. 15). The C26 is the new rating mentioned earlier; Ratings Earned may be a line in the lead or a small box. Stella Kuo's 20th (Y14) and 17th (Y12) stay out (below the regional top-16 bar; no "also fenced" line). Official results from the 3:23 PM ET fencing-api live recheck (final=true) stand. Item `fencingapi-kiefer-meinhardt-results-2026-11-16` is now vetted via this chat. Club Results as a section remains excluded; the results run in the shared lead.
+
+## 2026-11-16 9:51 PM ET — Frank sends Clark to the club email (t226u)
+
+Frank (chat, 9:51 PM ET): the remaining No. 7 content is in the Gazette inbox, from the club — holiday party announcement and photos of Mila and Stella plus Penny (Penelope, she goes by Penny).
+
+**Email found** (inbox `efc.weekly@agentmail.to`, unread / not yet `processed`): Elite Fencers Club `<elitefencersclub@111617670.mailchimpapp.com>` → `frankcng@gmail.com` (copy in the Gazette inbox). Subject: Group Class + HOLIDAY PARTY! Sent 2026-11-16 10:18 AM ET (message-id `<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>`). DKIM/DMARC pass. Auto-vet allowlist plus Frank's chat.
+
+**Holiday party, as written:** Friday, December 11th; food, drinks and snacks; everyone welcome; mark your calendars; hope you can join to celebrate everything we have accomplished. No time, venue, cost, or RSVP in the email (the 17 Watchung Ave line is the newsletter sign-off). Staged as `email-holiday-party-2026-12-11`. Same-email class reminders were not staged (classes stay excluded).
+
+**Photos extracted** (Mailchimp CDN; logo, social icons, and a 1×1 tracker skipped) into `staging/weeks/next/media/` and `issues/2026-11-17/media/`, EXIF-normalized, not cropped:
+- `mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14.jpg` (480×640) — Mila, left, with the Y14 bronze, and Stella Kuo. Printed with the lead.
+- `penny-young-pizza-ryc-2026-11-15.jpg` (480×640) — Penny Young with the Y12 bronze in New Haven. Printed with the lead.
+- `kiefer-meinhardt-podium-group-2026-11-14.jpg` (640×480) — wider Y14 podium group; staged, not printed (Stella not clearly identifiable; other medalists not named in the email).

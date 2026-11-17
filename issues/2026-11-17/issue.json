@@ -15,9 +15,14 @@
       "v": 1,
       "at": "2026-11-16T15:46:32-05:00",
       "note": "Re-rendered after the page-2 footer-pin composer fix (fit.js no longer sets display:flow-root on .page, which had shrink-wrapped the page and left blank paper below the footer; the fill instrument now also checks footer position against the 10.1in content-box bottom) and after Frank's 3:38 PM ET chat decision (t223u, budget v3, decision #2) to add the Kiefer Meinhardt results and share the lead between Penny Young and Mila Siu. Lead: Penny Young and Mila Siu Take Bronze (Penny 3rd/52 Y12 and 13th/67 Y14 at Pizza RYC; Mila 3rd/62 Y14 with C26 and 10th/54 Y12 at Kiefer Meinhardt, Glen Allen, Va.). Ratings Earned box on page 1 (Mila Siu, C26). Stella Kuo is not printed. Page 1: 2.71in gap above the footer [FLAG]; row-1 spread 0.15in [OK]. Page 2: footer pinned at the page bottom (0.00in drop [OK]); 2.22in gap above the footer [FLAG] (lettered comic is aspect-locked at 7.50×2.50in; no unused vetted copy was added). Comic 290 dpi [WARN, soft 300]."
+    },
+    {
+      "v": 1,
+      "at": "2026-11-16T22:01:30-05:00",
+      "note": "Re-rendered after Frank's 9:51 PM ET chat (t226u) pointing to the club Mailchimp 'Group Class + HOLIDAY PARTY!' (10:18 AM ET) for the remaining content. Added the holiday party short (Friday, Dec. 11; food, drinks and snacks; everyone welcome — no time, venue, cost, or RSVP in the email) and two result photos: Penny Young floats beside the lead; Mila Siu and Stella Kuo sit with Ratings Earned. Stella is named only in the caption. A group podium photo was staged, not printed. Budget v4, decision #3. Page 1 and page 2 both have a 0.54in gap above a pinned footer [OK], 0.00in footer drop [OK]. Remaining FLAGs are column spreads: page 1 row 1 2.23in (the rail is shorter than the lead-and-photos column) and the Ratings Earned box is short beside the Mila photo (1.86in); page 2 world/party split 0.65in."
     }
   ],
-  "composed_at": "2026-11-16T15:46:32-05:00",
+  "composed_at": "2026-11-16T22:01:30-05:00",
   "pdf": "issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf",
   "previews": [
     "issues/2026-11-17/preview-p1.png",
@@ -30,30 +35,30 @@
   "build": "python3 issues/2026-11-17/recipe/compose.py x && python3 compose/render.py issues/2026-11-17/issue.html issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf --author=\"Nico's Dad\" --report=issues/2026-11-17/fit-report.json --fit-report=issues/2026-11-17/art-fit.json && pdftoppm -r 200 -png issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf issues/2026-11-17/preview",
   "pages": {
     "1": [
-      "Lead: Penny Young and Mila Siu Take Bronze (Penny 3rd/52 Y12 and 13th/67 Y14 at Pizza RYC; Mila Siu 3rd/62 Y14 earned C26 and 10th/54 Y12 at Kiefer Meinhardt Cup, Glen Allen, Va.; Amina Gore 16th/54 Junior and 13th/54 Cadet; Nico Ng 5th/30 Freehold November Open)",
-      "Ratings Earned: Mila Siu, C26, Kiefer Meinhardt Cup, Glen Allen, Va.",
-      "World Cup: Hungary Rules World Cup Weekend (Bern and Wuxi, Nov. 13–15)",
-      "November NAC preview: Three Head to Columbus (Anayaa Sheth, Nico Ng, Athreya Aravind)",
-      "By the Book: Three Calls, Two Minutes (t.117–t.119)",
-      "For the Parents: A National Youth Event Next Door (Cobra practical note)",
-      "Club Events: Winter Camp: Sign Up Now (Dec. 27–31)",
-      "FILL: 2.71in gap above the footer [FLAG]; row-1 column spread 0.15in [OK]; footer 0.00in above the page bottom [OK]"
+      "Lead: Penny Young and Mila Siu Take Bronze, with Penny's Pizza RYC photo floating beside the lead and the Mila+Stella Kiefer Meinhardt photo next to Ratings Earned (Mila Siu, C26)",
+      "November NAC preview: Three Head to Columbus",
+      "By the Book: Three Calls, Two Minutes",
+      "For the Parents: A National Youth Event Next Door",
+      "Club Events: Winter Camp: Sign Up Now",
+      "FILL: 0.54in gap above the footer [OK]; footer 0.00in above the page bottom [OK]; row-1 column spread 2.23in [FLAG] (span2 6.01in vs rail 3.77in); Mila/ratings split spread 1.86in [FLAG]; parents/camp split 0.00in [OK]"
     ],
     "2": [
-      "Nearby Tournaments: Cobra Challenge SYC/RCC (Secaucus, Nov. 27–29; 16 fencers / 26 entries)",
-      "On the Road: November NAC, Columbus, Ohio, Nov. 20–23 (5 entries / 3 fencers)",
-      "Deadlines (Z1 regular fees Nov. 23; Fairfax regular fees Nov. 30; JO late registration ends Jan. 7; N.J. high-school independents Jan. 8). NJFA omitted per standing hold.",
-      "VR parent-filter comic (no title, no caption, no credit; art-fit full-width stack, 7.50in × 2.50in, 290 dpi)",
-      "FILL: 2.22in gap above the footer [FLAG]; footer 0.00in above the page bottom [OK]; On the Road / Deadlines spread 0.01in [OK]. The previous 0.08in OK was a false pass: the page had shrink-wrapped and the instrument did not check footer-to-page-bottom."
+      "World Cup: Hungary Rules World Cup Weekend, beside Club Events: Holiday Party: Friday, Dec. 11",
+      "Nearby Tournaments: Cobra Challenge SYC/RCC (16 fencers / 26 entries)",
+      "On the Road: November NAC; Deadlines (NJFA omitted)",
+      "VR parent-filter comic (7.50in × 2.50in, 290 dpi)",
+      "FILL: 0.54in gap above the footer [OK]; footer 0.00in above the page bottom [OK]; world/party spread 0.65in [FLAG]; board spread 0.01in [OK]"
     ]
   },
   "fill": {
-    "p1_gap_in": 2.71,
-    "p1_row1_spread_in": 0.15,
+    "p1_gap_in": 0.54,
     "p1_footer_drop_in": 0.0,
-    "p2_gap_in": 2.22,
-    "p2_board_spread_in": 0.01,
+    "p1_row1_spread_in": 2.23,
+    "p1_mila_ratings_spread_in": 1.86,
+    "p2_gap_in": 0.54,
     "p2_footer_drop_in": 0.0,
-    "notes": "Both footers sit at the physical content-box bottom (0.00in drop). Page 1's 2.71in gap and page 2's 2.22in gap are real shortfalls above the pinned footers, not measuring glitches. The shared lead and Ratings Earned box balanced page 1 row 1 (spread 0.15in, was 1.04in) but only added about 0.15in of page height once the span2 caught up with the rail. The lettered VR comic is already at full width and aspect-locked at 7.50×2.50in, so it cannot absorb the page 2 hole. About 180 words or a figure on page 1, and about 387 words or a figure on page 2, would fill them. Excluded items (Club Results as a section, Epee on Screen, Photo from History, college, classes, NJFA) were not used as padding. Stella Kuo's 20th/17th were not printed."
+    "p2_world_party_spread_in": 0.65,
+    "p2_board_spread_in": 0.01,
+    "notes": "The previous 2.71in / 2.22in footer gaps are closed; both footers sit at the physical page bottom (0.42in of paper below the last ink is the 0.4in @page margin). Remaining FLAGs are column spreads, not footer holes: on page 1 the rail (NAC + By the Book) is 2.23in shorter than the lead-and-photos column, leaving daylight under By the Book beside the Mila photo, and the Ratings Earned box is short beside that portrait. On page 2 the holiday party is 0.65in shorter than the World Cup. Portraits are 480×640 and cannot stack at column width without breaking the 2.2in photo ceiling, so Penny floats at 1.65in and Mila stacks in a 1/3 split. The email did not give a party time, venue, cost, or RSVP, so none was invented."
   }
 }

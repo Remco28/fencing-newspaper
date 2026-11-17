@@ -25,6 +25,14 @@
       "decisions_through": "2026-11-16T15:38:00-05:00",
       "decisions": 2,
       "out": "budget-demo/out/budget-no-7-2026-11-17-v3.html"
+    },
+    {
+      "v": 4,
+      "built_at": "2026-11-16T21:57:02-05:00",
+      "data": "97d27d019d91",
+      "decisions_through": "2026-11-16T21:51:00-05:00",
+      "decisions": 3,
+      "out": "budget-demo/out/budget-no-7-2026-11-17-v4.html"
     }
   ],
   "decisions": [
@@ -177,6 +185,91 @@
         "Print Mila Siu 3rd of 62 in Y14 Women (Sat. Nov. 14, earned C26) and 10th of 54 in Y12 Women (Sun. Nov. 15); official fencing-api results, final, 3:23 PM ET.",
         "Treat the C26 as the new rating: a line in the lead and a Ratings Earned box.",
         "Stella Kuo 20th/17th stay out (below the regional top-16 bar; no also-fenced line). Club Results as a section remains excluded."
+      ]
+    },
+    {
+      "at": "2026-11-16T21:57:02-05:00",
+      "client_submitted_at": "2026-11-16T21:51:00-05:00",
+      "source": "chat:frank:2026-11-16T21:51:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-16T21:51:00-05:00",
+        "text": "Please check your emails. Hopefully you have one from the club. The remaining content is there. Holiday party announcement and the photos of the 2 girls (Mila and Stella) plus the photo of the 1 girl (Penelope, she goes by Penny)."
+      },
+      "carried_from": 2,
+      "publishDate": "2026-11-17",
+      "included": [
+        "lead",
+        "comic",
+        "for-the-parents",
+        "nac-preview",
+        "signup-cobra",
+        "on-the-road",
+        "deadlines",
+        "camp",
+        "secondary-a",
+        "by-the-book"
+      ],
+      "excluded": [
+        "club-results",
+        "signup-njfa",
+        "classes",
+        "tv"
+      ],
+      "photoIncludes": [],
+      "slotNotes": {
+        "signup-njfa": "Let's not recommend any NJFA tournaments for the time being.  They are very unreliable organizers.  Many of their signups are bogus.  They sign up their own members to get others to join but when you show up the turnout is highly variable.  Many times our fencers have shown up with only 1-2 competitors.  They want you to stay for their class afterwards."
+      },
+      "answers": [
+        {
+          "slot": "lead",
+          "itemId": "pitch-weekend-roundup-2026-11-16",
+          "question": "Lead: weekend results (Penny's bronze) as drafted, or lead with the November NAC preview and move results to Club Results only?",
+          "answer": "We can lead with Penny"
+        },
+        {
+          "slot": "club-results",
+          "itemId": "fencingapi-pizza-ryc-results-2026-11-15",
+          "question": "Brendan Mendez was 5th in Senior Open Mixed at Manchen Friday Night Epee (Nov. 13, field size not shown) and FencingTracker lists him under Elite FC. You weren't sure in No. 5 that he's a member. Include him or leave him out?",
+          "answer": "i still don't know if he exists.  can we assume he doesn't for now until i can confirm?  i don't want to talk about him every week."
+        },
+        {
+          "slot": "lead",
+          "question": "Add the Kiefer Meinhardt results (Mila Siu) and share the lead with Penny Young?",
+          "answer": "YES. Share the lead between Mila and Penny. Print Mila's Y14 bronze, C26, and Y12 10th. Stella Kuo stays out.",
+          "via": "chat"
+        },
+        {
+          "slot": "lead",
+          "question": "The remaining No. 7 content is in a club email — holiday party and photos of Mila and Stella plus Penny?",
+          "answer": "Yes. Please check your emails. The remaining content is there: holiday party announcement and the photos of the 2 girls (Mila and Stella) plus the photo of the 1 girl (Penelope, she goes by Penny).",
+          "via": "chat"
+        }
+      ],
+      "notes": "",
+      "order": [
+        "lead",
+        "comic",
+        "for-the-parents",
+        "nac-preview",
+        "club-results",
+        "signup-cobra",
+        "signup-njfa",
+        "on-the-road",
+        "deadlines",
+        "camp",
+        "classes",
+        "secondary-a",
+        "by-the-book",
+        "tv",
+        "photo-history",
+        "college"
+      ],
+      "changes": [
+        "Ingest the 10:18 AM ET Nov. 16 club Mailchimp (Group Class + HOLIDAY PARTY!) from efc.weekly@agentmail.to.",
+        "Stage the holiday party as a club-events item with only the facts in the email (Friday, Dec. 11; food, drinks and snacks; everyone welcome). No time, venue, cost, or RSVP was given, so none was invented.",
+        "Extract the Mila+Stella and Penny result photos into staging media (Frank-vetted for No. 7) and print them with the lead via art-fit. Stella is named in the caption only. A group podium photo was staged but not printed."
       ]
     }
   ]
