@@ -327,7 +327,10 @@ def main() -> None:
     capacity = budget_model.merged_capacity(cfg["capacity"], calibration)
     if calibration is None:
         warnings.append(f"no fill calibration at {rel(budget_model.CALIBRATION)}: block sizes use lineup.capacity as is")
-    version = hashlib.sha256(json.dumps([cfg, items_doc, manifest, decisions, history, capacity, PAGE_VERSION], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
+    # The inlined page assets are part of the version: a Budget-page change (vet gates, contract, layout)
+    # is a new vN even when the staging data has not changed.
+    page_fp = hashlib.sha256(b"".join((ASSETS / n).read_bytes() for n in ("page.html", "page.css", "core.js", "ui.js"))).hexdigest()[:12]
+    version = hashlib.sha256(json.dumps([cfg, items_doc, manifest, decisions, history, capacity, PAGE_VERSION, page_fp], sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
     prev = vdoc["versions"][-1] if vdoc["versions"] else None
     if args.preview:
         budget_v = None

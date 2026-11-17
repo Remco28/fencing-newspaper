@@ -89,16 +89,27 @@
     /* ---------- state ---------- */
     const qKey = (k, i) => k + '|' + i;
     const carried = []; // captured answers that don't belong to a desk question on a slot (e.g. answers given by chat)
+    // On-file only. Session vets are not applied yet; unvetted work stays in the bank and is never auto-queued
+    // from a proposal or from last sitting's includes / photoIncludes.
+    const vettedOnFile = id => { const x = items[id] || media[id]; return !!(x && x.vetted); };
+    function slotVettedOnFile(s) {
+      if (!s || s.empty) return false;
+      const its = allItemsOf(s);
+      if (s.item && !its.length) return false;
+      if (its.some(i => !vettedOnFile(i.id))) return false;
+      const m = mediaOfSlot(s);
+      return !m || vettedOnFile(m.id);
+    }
     function freshState() {
       const st = { v: build.dataVersion || '', savedAt: null, publishDate: (L.publish || {}).date || '', altDate: (L.publish || {}).alt || '',
         inc: {}, order: [], photos: {}, slotNotes: {}, answers: {}, vets: {}, notes: '', filler: '', page: {}, photoPage: {}, moved: {} };
-      slots.forEach(s => { st.inc[s.key] = !s.empty && !!s.proposed && !s.waiting; });
-      photoList.forEach(p => { st.photos[p.id] = loosePhotos.includes(p.id) && !!p.proposed; });
+      slots.forEach(s => { st.inc[s.key] = !s.empty && !!s.proposed && !s.waiting && slotVettedOnFile(s); });
+      photoList.forEach(p => { st.photos[p.id] = loosePhotos.includes(p.id) && !!p.proposed && vettedOnFile(p.id); });
       if (dec) {
         const inc = dec.included || [], known = new Set([].concat(dec.order || [], inc, dec.excluded || []));
-        slots.forEach(s => { if (!s.empty && known.has(s.key)) st.inc[s.key] = inc.includes(s.key); });
+        slots.forEach(s => { if (!s.empty && known.has(s.key)) st.inc[s.key] = inc.includes(s.key) && slotVettedOnFile(s); });
         (dec.order || []).forEach(k => { if (slotBy[k] && !slotBy[k].empty && !st.order.includes(k)) st.order.push(k); });
-        if (Array.isArray(dec.photoIncludes)) photoList.forEach(p => { st.photos[p.id] = dec.photoIncludes.includes(p.id); });
+        if (Array.isArray(dec.photoIncludes)) photoList.forEach(p => { st.photos[p.id] = dec.photoIncludes.includes(p.id) && vettedOnFile(p.id); });
         if (isObj(dec.slotNotes)) Object.keys(dec.slotNotes).forEach(k => { if (slotBy[k] && typeof dec.slotNotes[k] === 'string') st.slotNotes[k] = dec.slotNotes[k]; });
         if (typeof dec.notes === 'string') st.notes = dec.notes;
         if (isDate(dec.publishDate)) st.publishDate = dec.publishDate;
@@ -124,6 +135,12 @@
         if (st.inc[s.key] && st.page[s.key] === 1) cum += costOf(s);
       });
       loosePhotos.forEach(id => { st.photoPage[id] = 1; });
+      // Optional pages field: {slots:{key:1|2}, photos:{id:1|2}}, or a flat slot map. Older submissions omit it.
+      if (dec && isObj(dec.pages)) {
+        const raw = dec.pages, slotMap = (isObj(raw.slots) || isObj(raw.photos)) ? (raw.slots || {}) : raw, photoMap = isObj(raw.photos) ? raw.photos : {};
+        Object.keys(slotMap).forEach(k => { if (slotBy[k] && (slotMap[k] === 1 || slotMap[k] === 2)) { st.page[k] = slotMap[k]; if (st.inc[k]) st.moved[k] = slotMap[k]; } });
+        Object.keys(photoMap).forEach(id => { if (photoMeta[id] && (photoMap[id] === 1 || photoMap[id] === 2)) st.photoPage[id] = photoMap[id]; });
+      }
       return st;
     }
     const state = freshState();
@@ -144,13 +161,13 @@
       if (isDate(saved.publishDate)) state.publishDate = saved.publishDate;
       if (saved.altDate === '' || isDate(saved.altDate)) state.altDate = saved.altDate;
       ['notes', 'filler'].forEach(k => { if (typeof saved[k] === 'string') state[k] = saved[k]; });
-      each(saved.inc, (k, v) => { if (card(k)) state.inc[k] = !!v; else res.dropped++; });
-      each(saved.photos, (k, v) => { if (photoMeta[k]) state.photos[k] = !!v; else res.dropped++; });
+      each(saved.vets, (id, v) => { if (!(items[id] || media[id])) { res.dropped++; return; } if (!vettedOnFile(id)) state.vets[id] = typeof v === 'string' ? v : ''; });
+      each(saved.inc, (k, v) => { if (card(k)) state.inc[k] = !!v && canPlace(slotBy[k]); else res.dropped++; });
+      each(saved.photos, (k, v) => { if (photoMeta[k]) state.photos[k] = !!v && canPlacePhoto(k); else res.dropped++; });
       each(saved.page, (k, v) => { if (card(k) && (v === 1 || v === 2)) state.page[k] = v; });
       each(saved.moved, (k, v) => { if (card(k) && (v === 1 || v === 2)) state.moved[k] = v; });
       each(saved.photoPage, (k, v) => { if (photoMeta[k] && (v === 1 || v === 2)) state.photoPage[k] = v; });
       each(saved.slotNotes, (k, v) => { if (typeof v !== 'string') return; if (slotBy[k]) state.slotNotes[k] = v; else if (v.trim()) res.dropped++; });
-      each(saved.vets, (id, v) => { if (!(items[id] || media[id])) { res.dropped++; return; } if (!vettedOnFile(id)) state.vets[id] = typeof v === 'string' ? v : ''; });
       each(saved.answers, (k, v) => {
         if (typeof v !== 'string') return;
         const s = slotBy[k.split('|')[0]], i = Number(k.split('|')[1]);
@@ -165,8 +182,16 @@
     }
 
     /* ---------- per-item truth ---------- */
-    const vettedOnFile = id => { const x = items[id] || media[id]; return !!(x && x.vetted); };
     const isVetted = id => vettedOnFile(id) || id in state.vets;
+    function canPlace(s) {
+      if (!s || s.empty) return false;
+      const its = allItemsOf(s);
+      if (s.item && !its.length) return false;
+      if (its.some(i => !isVetted(i.id))) return false;
+      const m = mediaOfSlot(s);
+      return !m || isVetted(m.id);
+    }
+    const canPlacePhoto = id => !!(photoMeta[id] && isVetted(id));
     const ms = t => (t ? new Date(t).getTime() : 0);
     const fmt = (t, withDay = true) => { if (!t) return '—'; const d = new Date(t); if (isNaN(d)) return String(t);
       return d.toLocaleString('en-US', Object.assign({ timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }, withDay ? { weekday: 'short', month: 'short', day: 'numeric' } : {})) + ' ET'; };
@@ -320,9 +345,13 @@
       const p = n => String(n).padStart(2, '0'), o = -d.getTimezoneOffset(), a = Math.abs(o);
       return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + 'T' + p(d.getHours()) + ':' + p(d.getMinutes()) + ':' + p(d.getSeconds()) + (o < 0 ? '-' : '+') + p(a / 60 | 0) + ':' + p(a % 60);
     }
-    // a block Frank put on a page himself (the contract has no page field, so it rides in `notes`)
-    const placementNotes = () => slots.filter(s => state.inc[s.key] && state.moved[s.key] && state.moved[s.key] !== s.page)
-      .map(s => 'Budget placement: run “' + shortName(s) + '” (' + s.key + ') on page ' + state.moved[s.key] + '.');
+    // pages is the placement contract (slot/photo → 1|2). Placement is not written into notes.
+    const placementOf = () => ({
+      slots: Object.fromEntries(slots.filter(s => state.inc[s.key] && (state.page[s.key] === 1 || state.page[s.key] === 2)).map(s => [s.key, state.page[s.key]])),
+      photos: Object.fromEntries(loosePhotos.filter(id => state.photos[id] && (state.photoPage[id] === 1 || state.photoPage[id] === 2)).map(id => [id, state.photoPage[id]])),
+    });
+    const placementNotes = () => { const p = placementOf(), n = Object.keys(p.slots).length + Object.keys(p.photos).length;
+      return n ? [n + ' block' + (n === 1 ? '' : 's') + ' placed'] : []; }; // used only as a count label on sign-off, never as notes text
     function submission(now) {
       const entry = s => {
         const it = itemOf(s), e = { slot: s.key, name: s.slot, headline: s.empty ? '' : headlineOf(s), itemId: s.item || null,
@@ -337,19 +366,21 @@
       const capOrder = a => { const i = prior.findIndex(x => x.slot === a.slot && x.question === a.question); return i < 0 ? 1e6 : i; };
       answers.sort((a, b) => capOrder(a) - capOrder(b)); // captured answers keep their order, new ones follow
       carried.forEach(a => answers.splice(Math.min(capOrder(a), answers.length), 0, Object.assign({}, a, { itemId: a.itemId || (slotBy[a.slot] || {}).item || null })));
-      const lines = [state.notes.trim(), state.filler.trim() && 'FILLER REQUEST: ' + state.filler.trim()].concat(placementNotes().filter(x => !state.notes.includes(x)));
+      const stripPlacement = t => String(t || '').split(/\n+/).filter(line => !/^Budget placement:/i.test(line.trim())).join('\n\n').trim();
+      const lines = [stripPlacement(state.notes), state.filler.trim() && 'FILLER REQUEST: ' + state.filler.trim()];
       const slotNotes = {};
       Object.keys(state.slotNotes).forEach(k => { if (slotBy[k] && String(state.slotNotes[k]).trim()) slotNotes[k] = String(state.slotNotes[k]).trim(); });
       return {
         publishDate: state.publishDate, practice: L.mode !== 'real', pretend: false, targetWeek: L.target_week || 'next', issue: L.issue || null,
         includedSlots: ordered.filter(s => state.inc[s.key]).map(entry),
         excludedSlots: ordered.filter(s => !state.inc[s.key]).concat(empties).map(entry), // empty slots listed as excluded, as before
-        photoIncludes: photoList.map(p => p.id).filter(id => state.photos[id]),
+        photoIncludes: photoList.map(p => p.id).filter(id => state.photos[id] && isVetted(id)), // never queue an unvetted photo
         notes: lines.filter(Boolean).join('\n\n'), slotNotes, answers, order: state.order.slice(),
         pageVersion: PAGE_VERSION, submittedAt: isoLocal(now || new Date()),
         vets: Object.keys(state.vets).filter(id => (items[id] || media[id]) && !vettedOnFile(id)).map(id => ({ id, vet_notes: String(state.vets[id] || '').trim() })),
         publishDateAlt: isDate(state.altDate) ? state.altDate : null, // optional: alternate run date, or null for "no alternate"
         budgetVersion: build.budgetVersion == null ? null : build.budgetVersion, dataVersion: build.dataVersion || null,
+        pages: placementOf(),
       };
     }
     const submissionName = doc => 'budget-submission-no-' + issueNo + '-' + doc.publishDate + (build.budgetVersion ? '-v' + build.budgetVersion : '') + '-'
@@ -357,11 +388,26 @@
 
     /* ---------- mutations ---------- */
     const act = {
-      include(k, v) { const s = slotBy[k]; if (!s || s.empty) return; state.inc[k] = !!v; const m = mediaOfSlot(s); if (m && s.cost && s.cost.type === 'figure' && s.cost.head) state.photos[m.id] = !!v; emit('include'); },
-      place(k, p) { if (!slotBy[k] || slotBy[k].empty) return; if (state.page[k] !== p || !state.inc[k]) state.moved[k] = p; state.page[k] = p; act.include(k, true); },
-      photo(id, v, p) { if (!photoMeta[id]) return; if (p) state.photoPage[id] = p; state.photos[id] = !!v; emit('photo'); },
+      include(k, v) {
+        const s = slotBy[k]; if (!s || s.empty) return;
+        if (v && !canPlace(s)) return; // unvetted items cannot run; vet on the slip first
+        state.inc[k] = !!v;
+        const m = mediaOfSlot(s);
+        if (m && s.cost && s.cost.type === 'figure' && s.cost.head) {
+          if (v && isVetted(m.id)) state.photos[m.id] = true;
+          else if (!v) state.photos[m.id] = false;
+        }
+        emit('include');
+      },
+      place(k, p) { if (!slotBy[k] || slotBy[k].empty) return; if (!canPlace(slotBy[k])) return; if (state.page[k] !== p || !state.inc[k]) state.moved[k] = p; state.page[k] = p; act.include(k, true); },
+      photo(id, v, p) { if (!photoMeta[id]) return; if (v && !canPlacePhoto(id)) return; if (p) state.photoPage[id] = p; state.photos[id] = !!v; emit('photo'); },
       vet(id, note) { state.vets[id] = note || ''; emit('vet'); },
-      unvet(id) { delete state.vets[id]; emit('vet'); },
+      unvet(id) {
+        delete state.vets[id];
+        slots.forEach(s => { if (state.inc[s.key] && !canPlace(s)) state.inc[s.key] = false; });
+        if (state.photos[id] && !canPlacePhoto(id)) state.photos[id] = false;
+        emit('vet');
+      },
       answer(k, i, text) { state.answers[qKey(k, i)] = text; emit('answer'); },
       slotNote(k, text) { state.slotNotes[k] = text; emit('note'); },
       notes(text) { state.notes = text; emit('notes'); },
@@ -377,8 +423,8 @@
     function answersForSave() { const m = {}; slots.forEach(s => questionsOf(s).forEach(q => { m[q.key] = q.q; })); return m; }
 
     return { PAGE_VERSION, D, L, cap, dec, build, items, media, slots, slotBy, state, on, emit, act, costOf, photoCost, spanOf, wordsOf, fill, pack, pageH, needs, itemOf, allItemsOf,
-      headlineOf, shortName, isVetted, vettedOnFile, staleness, sourcesOf, flagsOf, questionsOf, mediaOfSlot, loosePhotos, photoMeta, sectionRows, sectionsOfSlot, submission, submissionName,
-      placementNotes, serialize, restore, answersForSave, fmt, fmtDate, r1, esc, thumb, total, issueNo, GUT };
+      headlineOf, shortName, isVetted, vettedOnFile, canPlace, canPlacePhoto, staleness, sourcesOf, flagsOf, questionsOf, mediaOfSlot, loosePhotos, photoMeta, sectionRows, sectionsOfSlot, submission, submissionName,
+      placementNotes, placementOf, serialize, restore, answersForSave, fmt, fmtDate, r1, esc, thumb, total, issueNo, GUT };
   }
 
   const Core = { PAGE_VERSION, make };

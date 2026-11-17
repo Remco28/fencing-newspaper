@@ -54,8 +54,8 @@
         ${s.item && !it ? `<div class="sh-now">The lineup names item <span class="mono">${esc(s.item)}</span>, which is not in staging. Nothing to vet or read yet.</div>` : ''}
         ${it && s.title && it.headline && it.headline !== s.title ? `<div class="sh-now">Draft headline now: <b>${esc(it.headline)}</b></div>` : ''}
         ${s.empty ? `<div class="sh-empty">EMPTY SLOT — nothing to run. ${esc(s.why || '')}</div>` :
-          `<div class="sh-row"><div class="seg"><button data-act="inc" data-v="1" class="${inc ? 'on' : ''}">In the issue</button><button data-act="inc" data-v="0" class="${inc ? '' : 'on'}">Left out</button></div>
-           <span class="dim">${costTxt} · desk ${s.proposed ? 'proposed it' : 'did not propose it'}${s.budget ? ' · budget: ' + esc(s.budget) : ''}</span></div>`}
+          `<div class="sh-row"><div class="seg"><button data-act="inc" data-v="1" class="${inc ? 'on' : ''}" ${core.canPlace(s) ? '' : 'disabled title="Vet this on the slip first"'}>In the issue</button><button data-act="inc" data-v="0" class="${inc ? '' : 'on'}">Left out</button></div>
+           <span class="dim">${costTxt} · desk ${s.proposed ? 'proposed it' : 'did not propose it'}${s.budget ? ' · budget: ' + esc(s.budget) : ''}${core.canPlace(s) ? '' : ' · <b style="color:var(--bad)">vet it before it can run</b>'}</span></div>`}
         ${s.summary ? `<p class="sh-sum">${esc(s.summary)}</p>` : ''}
           ${qs.map(q => `<div class="sh-q ${q.answer.trim() ? 'done' : ''}"><div class="sh-lbl">The desk asks</div><p>${esc(q.q)}</p><textarea class="sh-in" data-q="${q.i}" rows="2" placeholder="Your answer…">${esc(q.answer)}</textarea></div>`).join('')}
         ${m ? `<img class="sh-img" src="${core.thumb(m.filename)}" alt="">` : ''}
@@ -72,8 +72,8 @@
       const m = media[id], p = core.photoMeta[id] || {}, on = state.photos[id];
       return `<div class="sheet" data-photo="${esc(id)}"><div class="sh-k">Photo — ${esc(m.kind)}</div><h2 class="sh-h">${esc(m.filename)}</h2>
         <img class="sh-img" src="${core.thumb(m.filename)}" alt="">
-        <div class="sh-row"><div class="seg"><button data-act="photo" data-v="1" class="${on ? 'on' : ''}">Run it</button><button data-act="photo" data-v="0" class="${on ? '' : 'on'}">Leave out</button></div>
-        <span class="dim">${r1(core.photoCost(id))} col-in · ${p.span || 1} col wide · desk ${p.proposed ? 'proposed it' : 'did not propose it'}</span></div>
+        <div class="sh-row"><div class="seg"><button data-act="photo" data-v="1" class="${on ? 'on' : ''}" ${core.canPlacePhoto(id) ? '' : 'disabled title="Vet this photo on the slip first"'}>Run it</button><button data-act="photo" data-v="0" class="${on ? '' : 'on'}">Leave out</button></div>
+        <span class="dim">${r1(core.photoCost(id))} col-in · ${p.span || 1} col wide · desk ${p.proposed ? 'proposed it' : 'did not propose it'}${core.canPlacePhoto(id) ? '' : ' · <b style="color:var(--bad)">vet it before it can run</b>'}</span></div>
         <p class="sh-sum">${esc(p.note || '')}</p>${m.caption ? `<p><span class="sh-lbl">Caption on file</span> ${esc(m.caption)}</p>` : ''}
         ${vetBlock(id, 'Vet the photo')}
         <div class="sh-src"><div class="sh-lbl">Source</div><p>${esc(m.source)}${m.from ? ' · ' + esc(m.from) : ''}${m.retrieved_at ? ' · ' + fmt(m.retrieved_at) : ''}${m.url ? `<br><span class="dim mono">${esc(m.url)}</span>` : ''}</p><p class="dim sm">${esc(m.note || '')}</p></div></div>`;
@@ -145,7 +145,7 @@
     const pos = `left:${colX(b.col) * ppi}px;top:${b.y * ppi}px;width:${spanW(b.span) * ppi}px;height:${Math.max(6, b.h * ppi - 3)}px`;
     if (b.type === 'photo') {
       const m = core.media[b.id];
-      return `<div class="blk t-photo${isSel('photo', b.id)}" draggable="true" tabindex="0" data-photo="${E(b.id)}" style="${pos}"><span class="marks">${core.isVetted(b.id) ? '<i class="mk ok">✓</i>' : '<i class="mk vet">VET</i>'}</span><img src="${core.thumb(m.filename)}" alt=""><div class="k">Photo · ${E(m.kind)}</div></div>`;
+      return `<div class="blk t-photo${isSel('photo', b.id)}${core.canPlacePhoto(b.id) ? '' : ' locked'}" ${core.canPlacePhoto(b.id) ? 'draggable="true"' : ''} tabindex="0" data-photo="${E(b.id)}" style="${pos}"><span class="marks">${core.isVetted(b.id) ? '<i class="mk ok">✓</i>' : '<i class="mk vet">VET</i>'}</span><img src="${core.thumb(m.filename)}" alt=""><div class="k">Photo · ${E(m.kind)}</div></div>`;
     }
     const s = core.slotBy[b.id], c = s.cost || {}, head = core.headlineOf(s), cont = b.part > 1;
     let inner = `<div class="k">${E(ui.shortName(s))}</div>`;
@@ -153,7 +153,7 @@
     else if (c.type === 'figure') inner += `<img src="${core.thumb(s.thumb)}" alt="">` + (c.head ? `<div class="h">${E(head)}</div><div class="greek" style="flex:1.3"></div>` : '');
     else if (s.table && Array.isArray(s.table.rows)) inner += (s.title ? `<div class="h">${E(head)}</div>` : '') + s.table.rows.map(r => `<div class="tr" style="height:${rowIn(c) * ppi}px;line-height:${rowIn(c) * ppi}px;font-size:${Math.min(9, rowIn(c) * ppi * .8)}px"><b>${E(r[0])}</b> · ${E(r.slice(1).join(' · '))}</div>`).join('');
     else inner += `<div class="h">${E(head)}</div><div class="greek"></div>`;
-    return `<div class="blk t-${E(c.type || 'prose')}${c.feature ? ' lead' : ''}${b.span >= 2 ? ' wide' : ''}${cont ? ' cont' : ''}${isSel('slot', b.id)}" draggable="true" tabindex="0" data-slot="${E(b.id)}" style="${pos}">${cont ? '' : marks(b.id)}${inner}</div>`;
+    return `<div class="blk t-${E(c.type || 'prose')}${c.feature ? ' lead' : ''}${b.span >= 2 ? ' wide' : ''}${cont ? ' cont' : ''}${isSel('slot', b.id)}${core.canPlace(s) ? '' : ' locked'}" ${core.canPlace(s) ? 'draggable="true"' : ''} tabindex="0" data-slot="${E(b.id)}" style="${pos}">${cont ? '' : marks(b.id)}${inner}</div>`;
   }
 
   function renderPages() {
@@ -177,10 +177,10 @@
     const it = core.itemOf(s), k = s.key;
     if (s.empty) return `<div class="strip ghost${isSel('slot', k)}" tabindex="0" data-slot="${E(k)}">${marks(k)}<div class="k">Empty slot</div><div class="h">${E(s.slot)}</div><div class="w">${E(s.why || '')}</div></div>`;
     const who = (k in (dec.slotNotes || {})) || (dec.excluded || []).includes(k) ? 'You left it out' : s.auto ? 'Not slotted by the desk' : s.waiting ? 'Desk is waiting on it' : s.proposed ? 'Pulled' : 'Desk did not propose it';
-    const unvet = core.allItemsOf(s).some(i => !core.isVetted(i.id));
-    return `<div class="strip${s.item && !it ? ' missing' : ''}${isSel('slot', k)}" draggable="true" tabindex="0" data-slot="${E(k)}">${marks(k)}${s.thumb ? `<img src="${core.thumb(s.thumb)}" alt="">` : ''}<div class="k">${E(ui.shortName(s))}</div>
-      <div class="h">${E(core.headlineOf(s) || s.slot)}</div><div class="w">${who} · ${core.r1(core.costOf(s))} col-in${unvet ? ' · <b style="color:var(--bad)">unvetted</b>' : ''}${s.item && !it ? ' · <b style="color:var(--bad)">not in staging</b>' : ''}</div>
-      <div class="add">run on <button data-add="1">p.1</button><button data-add="2">p.2</button></div></div>`;
+    const unvet = !core.canPlace(s);
+    return `<div class="strip${s.item && !it ? ' missing' : ''}${isSel('slot', k)}${unvet ? ' locked' : ''}" ${unvet ? '' : 'draggable="true"'} tabindex="0" data-slot="${E(k)}">${marks(k)}${s.thumb ? `<img src="${core.thumb(s.thumb)}" alt="">` : ''}<div class="k">${E(ui.shortName(s))}</div>
+      <div class="h">${E(core.headlineOf(s) || s.slot)}</div><div class="w">${who} · ${core.r1(core.costOf(s))} col-in${unvet ? ' · <b style="color:var(--bad)">unvetted — vet on the slip to run it</b>' : ''}${s.item && !it ? ' · <b style="color:var(--bad)">not in staging</b>' : ''}</div>
+      <div class="add">run on <button data-add="1" ${unvet ? 'disabled title="Vet this on the slip first"' : ''}>p.1</button><button data-add="2" ${unvet ? 'disabled title="Vet this on the slip first"' : ''}>p.2</button></div></div>`;
   }
   function renderBank() {
     const out = S.order.map(k => core.slotBy[k]).filter(s => s && !S.inc[s.key]);
@@ -188,7 +188,7 @@
     const np = (core.L.not_proposed || []).concat((core.L.held || []).map(h => ({ item: h.id || h.item, why: h.why || h.note || 'Held.' })));
     const empties = core.slots.filter(s => s.empty);
     $('#bank').innerHTML = `<h3>The bank — not running (${out.length})</h3>${out.map(stripHTML).join('') || '<p class="np">Everything is on the pages.</p>'}
-      ${core.loosePhotos.length ? `<h3>Loose art (${photos.length})</h3>${photos.map(id => { const m = core.media[id]; return `<div class="strip${isSel('photo', id)}" draggable="true" tabindex="0" data-photo="${E(id)}"><img src="${core.thumb(m.filename)}" alt=""><div class="k">${E(m.kind)}</div><div class="h">${E(String(m.filename).replace(/\.\w+$/, ''))}</div><div class="w">${core.r1(core.photoCost(id))} col-in · ${core.isVetted(id) ? 'vetted' : '<b style="color:var(--bad)">unvetted</b>'}</div><div class="add">run on <button data-add="1">p.1</button><button data-add="2">p.2</button></div></div>`; }).join('') || '<p class="np">All of it is on the pages.</p>'}` : ''}
+      ${core.loosePhotos.length ? `<h3>Loose art (${photos.length})</h3>${photos.map(id => { const m = core.media[id], ok = core.canPlacePhoto(id); return `<div class="strip${isSel('photo', id)}${ok ? '' : ' locked'}" ${ok ? 'draggable="true"' : ''} tabindex="0" data-photo="${E(id)}"><img src="${core.thumb(m.filename)}" alt=""><div class="k">${E(m.kind)}</div><div class="h">${E(String(m.filename).replace(/\.\w+$/, ''))}</div><div class="w">${core.r1(core.photoCost(id))} col-in · ${ok ? 'vetted' : '<b style="color:var(--bad)">unvetted — vet on the slip to run it</b>'}</div><div class="add">run on <button data-add="1" ${ok ? '' : 'disabled title="Vet this photo on the slip first"'}>p.1</button><button data-add="2" ${ok ? '' : 'disabled title="Vet this photo on the slip first"'}>p.2</button></div></div>`; }).join('') || '<p class="np">All of it is on the pages.</p>'}` : ''}
       ${empties.length ? `<h3>Empty slots</h3>${empties.map(stripHTML).join('')}` : ''}
       ${np.length ? `<h3>Staged, not in the lineup</h3>${np.map(n => `<p class="np"><b>${E((core.items[n.item] || {}).headline || n.item)}</b>${E(n.why || '')}</p>`).join('')}` : ''}`;
   }
@@ -219,7 +219,7 @@
     const bench = core.slots.filter(s => !s.empty && !S.inc[s.key] && core.allItemsOf(s).some(i => !core.isVetted(i.id)));
     return `<h3>Before the budget can be signed off</h3>${blk.length ? blk.map(li).join('') : '<p class="allclear">✔ Nothing is blocking. Every block on the pages is vetted and every desk question has an answer.</p>'}
       <h3>Worth a look</h3>${adv.length ? adv.map(li).join('') : '<p class="dim">Nothing.</p>'}
-      <h3>In the bank, unvetted</h3><p class="dim sm">Only matters if you run them.</p>${bench.map(s => `<div class="need adv" data-go="${E(s.key)}"><span class="t">BANK</span><span>${E(core.headlineOf(s) || s.slot)}<small>${core.allItemsOf(s).filter(i => !core.isVetted(i.id)).map(i => E(i.headline || i.id)).join(' · ')}</small></span></div>`).join('') || '<p class="dim">None.</p>'}`;
+      <h3>In the bank, unvetted</h3><p class="dim sm">Vet them on the slip before they can run. They cannot be dropped onto the pages until then.</p>${bench.map(s => `<div class="need adv" data-go="${E(s.key)}"><span class="t">BANK</span><span>${E(core.headlineOf(s) || s.slot)}<small>${core.allItemsOf(s).filter(i => !core.isVetted(i.id)).map(i => E(i.headline || i.id)).join(' · ')}</small></span></div>`).join('') || '<p class="dim">None.</p>'}`;
   }
   function readPane() {
     const ds = core.L.desk_summary || [], v = D.versions || [], log = D.decisionLog || [], last = log[log.length - 1], cal = core.build.calibration;
@@ -244,9 +244,12 @@
   }
   function slipPane() {
     if (A.sel.type === 'photo') { const id = A.sel.id, on = S.photos[id];
-      return `<div class="place"><span class="sh-lbl">On the budget</span><div class="seg" style="display:inline-flex">${[1, 2].map(p => `<button data-ppg="${p}" class="${on && S.photoPage[id] === p ? 'on' : ''}">Page ${p}</button>`).join('')}<button data-ppg="0" class="${on ? '' : 'on'}">Bank</button></div></div>${ui.photoSheet(id)}`; }
+      const okp = core.canPlacePhoto(id);
+      return `<div class="place"><span class="sh-lbl">On the budget</span><div class="seg" style="display:inline-flex">${[1, 2].map(p => `<button data-ppg="${p}" class="${on && S.photoPage[id] === p ? 'on' : ''}" ${okp ? '' : 'disabled title="Vet this photo first"'}>Page ${p}</button>`).join('')}<button data-ppg="0" class="${on ? '' : 'on'}">Bank</button></div>${okp ? '' : '<span class="dim sm">Vet the photo on the slip, then place it.</span>'}</div>${ui.photoSheet(id)}`; }
     const k = A.sel.id, s = core.slotBy[k], inc = S.inc[k], run = S.order.filter(x => S.inc[x]);
-    const bar = s.empty ? '' : `<div class="place"><span class="sh-lbl">On the budget</span><div class="seg" style="display:inline-flex">${[1, 2].map(p => `<button data-pg="${p}" class="${inc && S.page[k] === p ? 'on' : ''}">Page ${p}</button>`).join('')}<button data-pg="0" class="${inc ? '' : 'on'}">Bank</button></div>
+    const ok = core.canPlace(s);
+    const bar = s.empty ? '' : `<div class="place"><span class="sh-lbl">On the budget</span><div class="seg" style="display:inline-flex">${[1, 2].map(p => `<button data-pg="${p}" class="${inc && S.page[k] === p ? 'on' : ''}" ${ok ? '' : 'disabled title="Vet this on the slip first"'}>Page ${p}</button>`).join('')}<button data-pg="0" class="${inc ? '' : 'on'}">Bank</button></div>
+      ${ok ? '' : '<span class="dim sm">Vet it on the slip, then place it.</span>'}
       ${inc ? `<button class="btn" data-mv="-1">↑ Earlier</button><button class="btn" data-mv="1">↓ Later</button><span class="dim sm">runs #${run.indexOf(k) + 1} of ${run.length}</span>` : ''}</div>`;
     return bar + ui.sheet(k);
   }
@@ -280,8 +283,8 @@
       <li><b>On the pages</b> ${doc.includedSlots.length} — ${doc.includedSlots.map(s => E(String(s.name).split(' — ')[0])).join(', ')}</li>
       <li><b>Left out</b> ${doc.excludedSlots.filter(s => !s.empty).length} + ${doc.excludedSlots.filter(s => s.empty).length} empty</li>
       <li><b>Photos</b> ${doc.photoIncludes.length || 'none'}</li><li><b>New vets</b> ${doc.vets.length || 'none this sitting'}</li>
-      <li><b>Answers</b> ${doc.answers.length} · <b style="min-width:0">slot notes</b> ${Object.keys(doc.slotNotes).length}${moved.length ? ` · <b style="min-width:0">page moves</b> ${moved.length}` : ''}</li><li><b>Fill</b> ${E($('#meter .m-txt') ? $('#meter .m-txt').textContent : '')}</li></ul>
-      <p class="dim sm">The page positions become <span class="mono">order</span>; a block you put on a page yourself becomes a line in <span class="mono">notes</span>. Nothing leaves this file until you download or copy the document and hand it to the desk.</p>
+      <li><b>Answers</b> ${doc.answers.length} · <b style="min-width:0">slot notes</b> ${Object.keys(doc.slotNotes).length}${doc.pages && (Object.keys(doc.pages.slots || {}).length + Object.keys(doc.pages.photos || {}).length) ? ` · <b style="min-width:0">pages</b> ${Object.keys(doc.pages.slots || {}).length + Object.keys(doc.pages.photos || {}).length} placed` : ''}</li><li><b>Fill</b> ${E($('#meter .m-txt') ? $('#meter .m-txt').textContent : '')}</li></ul>
+      <p class="dim sm">Running order is <span class="mono">order</span>; which page each block sits on is <span class="mono">pages</span>. Nothing leaves this file until you download or copy the document and hand it to the desk.</p>
       <div class="acts"><button class="btn pri" id="dl">Download submission JSON</button><button class="btn" id="cp">Copy</button><button class="btn" data-closem>Back to the budget</button></div><p class="dim sm" id="signmsg" role="status"></p></div>
       <div><div class="sh-lbl">The submission document, exactly as it would be written</div><pre id="json">${E(JSON.stringify(doc, null, 2))}</pre></div></div>`;
     $('#modal').classList.add('open');
@@ -318,7 +321,7 @@
     if (c('#needbtn')) { A.sel = null; A.tab = 'needs'; document.body.classList.add('side-open'); return render(); }
     if (c('[data-close]')) { if (A.sel && innerWidth > 900) A.sel = null; document.body.classList.remove('side-open'); return render(); }
     if (c('[data-tab]')) { A.sel = null; A.tab = c('[data-tab]').dataset.tab; document.body.classList.add('side-open'); return render(); }
-    if (c('[data-add]')) { const st = c('.strip'), p = +c('[data-add]').dataset.add;
+    if (c('[data-add]')) { if (c('[data-add]').disabled) return; const st = c('.strip'), p = +c('[data-add]').dataset.add;
       return st.dataset.photo ? core.act.photo(st.dataset.photo, true, p) : core.act.place(st.dataset.slot, p); }
     if (c('[data-pg]')) { const p = +c('[data-pg]').dataset.pg, k = A.sel.id; return p ? core.act.place(k, p) : core.act.include(k, false); }
     if (c('[data-ppg]')) { const p = +c('[data-ppg]').dataset.ppg; return core.act.photo(A.sel.id, !!p, p); }
@@ -343,6 +346,8 @@
   });
   // drag (desktop): bank <-> pages, page <-> page, and a block onto another block to run ahead of it
   document.addEventListener('dragstart', e => { const b = e.target.closest && e.target.closest('[draggable]'); if (!b) return;
+    const ok = b.dataset.photo ? core.canPlacePhoto(b.dataset.photo) : core.canPlace(core.slotBy[b.dataset.slot]);
+    if (!ok) { e.preventDefault(); return; }
     e.dataTransfer.setData('text/plain', b.dataset.photo ? 'p:' + b.dataset.photo : 's:' + b.dataset.slot); e.dataTransfer.effectAllowed = 'move'; });
   document.addEventListener('dragover', e => { const z = e.target.closest && e.target.closest('.cols,.bank'); if (z) { e.preventDefault(); z.classList.add('drop'); } });
   document.addEventListener('dragleave', e => { const z = e.target.closest && e.target.closest('.cols,.bank'); if (z && !z.contains(e.relatedTarget)) z.classList.remove('drop'); });

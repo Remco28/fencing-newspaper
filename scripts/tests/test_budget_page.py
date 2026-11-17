@@ -22,7 +22,7 @@ LINEUP = REPO / "budget-demo" / "practice-lineup.json"
 WEEK = REPO / "staging" / "weeks" / "next"
 OLD_FIELDS = ["publishDate", "practice", "pretend", "targetWeek", "issue", "includedSlots", "excludedSlots", "photoIncludes",
               "notes", "slotNotes", "answers", "order", "pageVersion", "submittedAt", "vets"]
-NEW_OPTIONAL = ["publishDateAlt", "budgetVersion", "dataVersion"]
+NEW_OPTIONAL = ["publishDateAlt", "budgetVersion", "dataVersion", "pages"]
 
 
 def run(*args, **kw):
@@ -168,29 +168,95 @@ class PageLogic(unittest.TestCase):
 
     def test_alternate_date_vets_and_page_moves_reach_the_document(self):
         doc = node(self.data, """
-          const bank = C.slots.find(s => !s.empty && !C.state.inc[s.key]), photo = Object.keys(C.media).find(id => !C.vettedOnFile(id)), loose = C.loosePhotos[0];
-          C.act.alt('2026-11-19'); C.act.place(bank.key, 2); C.act.vet(photo, 'crop ok'); C.act.photo(loose, true, 1);
+          const bank = C.slots.find(s => !s.empty && !C.state.inc[s.key] && C.canPlace(s))
+                    || C.slots.find(s => !s.empty && !C.state.inc[s.key]);
+          const photo = Object.keys(C.media).find(id => !C.vettedOnFile(id));
+          const loose = C.loosePhotos.find(id => C.canPlacePhoto(id)) || C.loosePhotos[0];
+          C.act.alt('2026-11-19');
+          if (!C.canPlace(bank)) C.act.vet(bank.item, 'ok to run');
+          C.act.place(bank.key, 2);
+          C.act.vet(photo, 'crop ok');
+          if (!C.canPlacePhoto(loose)) C.act.vet(loose, 'ok');
+          C.act.photo(loose, true, 1);
           const a = C.submission(); C.act.alt(''); const b = C.submission();
-          out = { a, b, bank: bank.key, photo, loose };""")
+          out = { a, b, bank: bank.key, photo, loose, notes: a.notes };""")
         a = doc["a"]
         self.assertEqual(a["publishDateAlt"], "2026-11-19")
         self.assertIsNone(doc["b"]["publishDateAlt"])
         self.assertIn(doc["bank"], [e["slot"] for e in a["includedSlots"]])
-        self.assertIn(f"({doc['bank']}) on page 2", a["notes"])  # page placement rides in notes: the contract has no page field
-        self.assertIn({"id": doc["photo"], "vet_notes": "crop ok"}, a["vets"])  # photo vets are collected (media id + note)
+        self.assertNotIn("Budget placement", a["notes"] or "")
+        self.assertEqual(a["pages"]["slots"][doc["bank"]], 2)
+        self.assertIn({"id": doc["photo"], "vet_notes": "crop ok"}, a["vets"])
         self.assertIn(doc["loose"], a["photoIncludes"])
+        self.assertEqual(a["pages"]["photos"].get(doc["loose"]), 1)
+
+    def test_unvetted_items_cannot_be_placed_until_vetted(self):
+        res = node(self.data, """
+          const s = C.slots.find(x => !x.empty && !C.canPlace(x));
+          const photo = C.loosePhotos.find(id => !C.canPlacePhoto(id));
+          const before = { inc: !!(s && C.state.inc[s.key]), photo: !!(photo && C.state.photos[photo]) };
+          if (s) C.act.place(s.key, 1);
+          if (photo) C.act.photo(photo, true, 1);
+          const refused = { inc: !!(s && C.state.inc[s.key]), photo: !!(photo && C.state.photos[photo]),
+                            docInc: !!(s && C.submission().includedSlots.some(e => e.slot === s.key)),
+                            docPhoto: !!(photo && C.submission().photoIncludes.includes(photo)) };
+          if (s) { (C.allItemsOf(s).filter(i => !C.isVetted(i.id))).forEach(i => C.act.vet(i.id, 'ok')); const m = C.mediaOfSlot(s); if (m && !C.isVetted(m.id)) C.act.vet(m.id, 'ok'); C.act.place(s.key, 1); }
+          if (photo) { C.act.vet(photo, 'ok'); C.act.photo(photo, true, 2); }
+          const placed = { inc: !!(s && C.state.inc[s.key]), page: s ? C.submission().pages.slots[s.key] : null,
+                           photo: !!(photo && C.submission().photoIncludes.includes(photo)), photoPage: photo ? C.submission().pages.photos[photo] : null };
+          if (s) { C.allItemsOf(s).forEach(i => { if (i.id in C.state.vets) C.act.unvet(i.id); }); }
+          if (photo) C.act.unvet(photo);
+          const after = { inc: !!(s && C.state.inc[s.key]), photo: !!(photo && C.state.photos[photo]) };
+          out = { hasSlot: !!s, hasPhoto: !!photo, slot: s && s.key, photo, before, refused, placed, after };
+        """)
+        self.assertTrue(res["hasSlot"] or res["hasPhoto"], "fixture has no unvetted slot or photo to exercise")
+        self.assertFalse(res["refused"]["inc"])
+        self.assertFalse(res["refused"]["photo"])
+        self.assertFalse(res["refused"]["docInc"])
+        self.assertFalse(res["refused"]["docPhoto"])
+        if res["hasSlot"]:
+            self.assertTrue(res["placed"]["inc"])
+            self.assertEqual(res["placed"]["page"], 1)
+            self.assertFalse(res["after"]["inc"])  # unvet returns it to the bank
+        if res["hasPhoto"]:
+            self.assertTrue(res["placed"]["photo"])
+            self.assertEqual(res["placed"]["photoPage"], 2)
+            self.assertFalse(res["after"]["photo"])
+
+    def test_unvetted_photos_are_never_auto_queued(self):
+        # A proposed unvetted photo, or one left in last sitting's photoIncludes, stays off the pages.
+        res = node(self.data, """
+          const pid = C.loosePhotos.find(id => !C.vettedOnFile(id)) || Object.keys(C.media).find(id => !C.vettedOnFile(id));
+          out = { pid, defaultOn: pid && C.state.photos[pid] };
+        """)
+        if not res["pid"]:
+            self.skipTest("no unvetted photo in the fixture")
+        self.assertFalse(res["defaultOn"])
+        data = dict(self.data)
+        data = json.loads(json.dumps(self.data))
+        data["decisions"] = dict(data.get("decisions") or {}, photoIncludes=[res["pid"]], included=list((data.get("decisions") or {}).get("included") or []))
+        # also mark it proposed on the lineup photo list
+        photos = data["lineup"].setdefault("photos", [])
+        entry = next((p for p in photos if p.get("id") == res["pid"]), None)
+        if entry: entry["proposed"] = True
+        else: photos.append({"id": res["pid"], "proposed": True, "span": 1})
+        again = node(data, "const pid = %s; out = { on: !!C.state.photos[pid], inc: C.submission().photoIncludes };" % json.dumps(res["pid"]))
+        self.assertFalse(again["on"])
+        self.assertNotIn(res["pid"], again["inc"])
 
     def test_no_decisions_yet_starts_from_the_desks_proposal(self):
         data = dict(self.data, decisions=None)
         doc = node(data, "out = { d: C.submission(), needs: C.needs().length };")
-        proposed = [s["key"] for s in self.data["lineup"]["slots"] if s.get("proposed") and not s.get("waiting") and not s.get("empty")]
+        proposed = node(data, """
+          out = C.slots.filter(s => s.proposed && !s.waiting && !s.empty && C.canPlace(s)).map(s => s.key);
+        """)
         self.assertEqual(sorted(e["slot"] for e in doc["d"]["includedSlots"]), sorted(proposed))
         self.assertEqual(doc["d"]["publishDateAlt"], self.data["lineup"]["publish"].get("alt"))
 
     def test_blocks_and_holes_account_for_each_page(self):
         res = node(self.data, """
           const snap = () => [1, 2].map(p => { const r = C.pack(p); return { cap: r.cap, placed: r.placedUsed, open: r.open, over: r.overset, used: r.used }; });
-          const a = snap(); C.slots.filter(s => !s.empty).forEach(s => C.act.place(s.key, 2)); const b = snap();
+          const a = snap(); C.slots.filter(s => !s.empty && C.canPlace(s)).forEach(s => C.act.place(s.key, 2)); const b = snap();
           out = { a, b, fill: C.fill() };""")
         for pg in res["a"] + res["b"]:
             self.assertAlmostEqual(pg["placed"] + pg["open"], pg["cap"], delta=0.15)       # holes + blocks = the page
@@ -229,7 +295,9 @@ class PageLogic(unittest.TestCase):
 
     def test_autosave_round_trip_and_supersede(self):
         res = node(self.data, """
-          const k = C.slots.find(s => !s.empty && !C.state.inc[s.key]).key;
+          const s = C.slots.find(s => !s.empty && !C.state.inc[s.key] && C.canPlace(s)) || C.slots.find(s => !s.empty && !C.state.inc[s.key]);
+          if (!C.canPlace(s)) { C.allItemsOf(s).forEach(i => C.act.vet(i.id, 'ok')); const m = C.mediaOfSlot(s); if (m) C.act.vet(m.id, 'ok'); }
+          const k = s.key;
           C.act.place(k, 1); C.act.notes('hold the comic'); const saved = JSON.parse(JSON.stringify(C.serialize(new Date('2030-01-01T00:00:00Z'))));
           out = { k, saved };""")
         fresh = node(self.data, "const r = C.restore(%s); out = { r, inc: C.state.inc[%s], notes: C.state.notes, page: C.state.page[%s] };"
@@ -307,29 +375,87 @@ class Ingest(unittest.TestCase):
             self.assertEqual(r.returncode, 0, f"{extra}: {r.stderr}")
         self.assertNotIn("--allow-stale", run(SCRIPTS / "ingest_budget_submission.py", "--help").stdout)
 
-    def test_photo_vets_are_collected_but_never_written_to_the_manifest(self):
+    def test_photo_vets_are_written_to_the_manifest(self):
         manifest = json.loads(self.manifest_before)
         pid = next(m["id"] for m in manifest["items"] if not m.get("vetted"))
         r = self.ingest(dict(self.base(), vets=[{"id": pid, "vet_notes": "fine to run"}]))
         self.assertEqual(r.returncode, 0, r.stderr)
-        self.assertEqual((self.week / "media" / "manifest.json").read_bytes(), self.manifest_before)
-        self.assertIn(pid, self.last_decision()["vets"])  # on the decision log and in the stored submission only
+        after = json.loads((self.week / "media" / "manifest.json").read_text(encoding="utf-8"))
+        entry = next(m for m in after["items"] if m["id"] == pid)
+        self.assertTrue(entry["vetted"])
+        self.assertEqual(entry["vetted_by"], "frank")
+        self.assertEqual(entry["vetted_at"], "2026-11-16T23:00:00-05:00")
+        self.assertIn("Frank: fine to run", entry["vet_notes"])
+        self.assertIn(pid, self.last_decision()["vets"])
         self.assertIn(pid, [v["id"] for v in json.loads((self.subs / "approvals.json").read_text(encoding="utf-8"))["vets"]])
+        # re-ingest does not drop the note
+        r2 = self.ingest(dict(self.base(), vets=[{"id": pid, "vet_notes": "fine to run"}]))
+        self.assertEqual(r2.returncode, 0, r2.stderr)
+        again = json.loads((self.week / "media" / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(next(m for m in again["items"] if m["id"] == pid)["vet_notes"].count("Frank: fine to run"), 1)
+
+    def test_ingest_rejects_unvetted_included_items_and_photos(self):
+        # pick a real unvetted item and photo in the copied week
+        items = {i["id"]: i for i in json.loads((self.week / "items.json").read_text(encoding="utf-8"))["items"]}
+        iid = next(i for i, it in items.items() if not it.get("vetted"))
+        pid = next(m["id"] for m in json.loads((self.week / "media" / "manifest.json").read_text(encoding="utf-8"))["items"] if not m.get("vetted"))
+        n = len(json.loads((self.week / "budget-versions.json").read_text(encoding="utf-8"))["decisions"])
+        payload = dict(self.base(), includedSlots=list(self.base()["includedSlots"]) + [
+            {"slot": "college", "name": "College", "headline": "x", "itemId": iid, "vetted": False, "stale": False}
+        ])
+        r = self.ingest(payload)
+        self.assertEqual(r.returncode, 4, r.stderr + r.stdout)
+        self.assertIn(iid, r.stderr)
+        self.assertIn("Nothing written", r.stderr)
+        self.assertEqual(len(json.loads((self.week / "budget-versions.json").read_text(encoding="utf-8"))["decisions"]), n)
+        r2 = self.ingest(dict(self.base(), photoIncludes=[pid]))
+        self.assertEqual(r2.returncode, 4, r2.stderr + r2.stdout)
+        self.assertIn(pid, r2.stderr)
+        self.assertEqual((self.week / "media" / "manifest.json").read_bytes(), self.manifest_before)
+        # same sitting: a vet in the payload allows the include
+        r3 = self.ingest(dict(payload, vets=[{"id": iid, "vet_notes": "ok"}]))
+        self.assertEqual(r3.returncode, 0, r3.stderr)
+        self.assertIn("college", self.last_decision()["included"])
+        self.assertTrue(next(i for i in json.loads((self.week / "items.json").read_text(encoding="utf-8"))["items"] if i["id"] == iid)["vetted"])
+        r4 = self.ingest(dict(self.base(), photoIncludes=[pid], vets=[{"id": pid, "vet_notes": "ok"}]))
+        self.assertEqual(r4.returncode, 0, r4.stderr)
+        self.assertIn(pid, self.last_decision()["photoIncludes"])
+        self.assertTrue(next(m for m in json.loads((self.week / "media" / "manifest.json").read_text(encoding="utf-8"))["items"] if m["id"] == pid)["vetted"])
+
+    def test_pages_are_stored_and_old_submissions_without_them_still_ingest(self):
+        pages = {"slots": {"lead": 1, "comic": 2}, "photos": {}}
+        r = self.ingest(dict(self.base(), pages=pages, pageVersion="budget-paper-v1"))
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual(self.last_decision()["pages"], pages)
+        r2 = self.ingest(self.base())  # no pages field
+        self.assertEqual(r2.returncode, 0, r2.stderr)
+        self.assertNotIn("pages", self.last_decision())
+        r3 = self.ingest(dict(self.base(), pages={"slots": {"lead": 3}}))
+        self.assertEqual(r3.returncode, 1)
+        self.assertIn("pages.slots.lead", r3.stderr)
 
     @unittest.skipUnless(NODE, "node not installed")
     def test_page_document_round_trips_through_ingest_and_the_next_build(self):
         _, _, data = build(self.tmp, "--preview")
-        doc = node(data, "C.act.alt('2026-11-19'); const k = C.slots.find(s => !s.empty && !C.state.inc[s.key]).key; C.act.place(k, 1); out = C.submission();")
+        doc = node(data, """
+          C.act.alt('2026-11-19');
+          const s = C.slots.find(s => !s.empty && !C.state.inc[s.key] && C.canPlace(s)) || C.slots.find(s => !s.empty && !C.state.inc[s.key]);
+          if (!C.canPlace(s)) { C.allItemsOf(s).forEach(i => C.act.vet(i.id, 'ok')); const m = C.mediaOfSlot(s); if (m) C.act.vet(m.id, 'ok'); }
+          C.act.place(s.key, 1);
+          out = C.submission();
+        """)
         r = self.ingest(doc)
         self.assertEqual(r.returncode, 0, r.stderr)
         d = self.last_decision()
         self.assertEqual(d["included"], [e["slot"] for e in doc["includedSlots"]])
         self.assertEqual(d["publishDateAlt"], "2026-11-19")
-        r2, _, data2 = build(self.tmp)  # the next numbered budget starts from it, alternate date included
+        self.assertEqual(d["pages"], doc["pages"])
+        r2, _, data2 = build(self.tmp)  # the next numbered budget starts from it, alternate date and pages included
         self.assertEqual(r2.returncode, 0, r2.stderr)
         again = node(data2, "out = C.submission();")
         self.assertEqual(again["publishDateAlt"], "2026-11-19")
         self.assertEqual([e["slot"] for e in again["includedSlots"]], d["included"])
+        self.assertEqual(again["pages"]["slots"], d["pages"]["slots"])
 
 
 if __name__ == "__main__":

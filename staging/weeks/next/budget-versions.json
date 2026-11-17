@@ -42,6 +42,15 @@
       "decisions_through": "2026-11-16T21:51:00-05:00",
       "decisions": 3,
       "out": "budget-demo/out/budget-no-7-2026-11-17-v5.html"
+    },
+    {
+      "v": 6,
+      "built_at": "2026-11-16T23:15:14-05:00",
+      "data": "d729b670a3f6",
+      "page": "budget-paper-v1",
+      "decisions_through": "2026-11-16T21:51:00-05:00",
+      "decisions": 3,
+      "out": "budget-demo/out/budget-no-7-2026-11-17-v6.html"
     }
   ],
   "decisions": [

@@ -207,3 +207,6 @@ button{font-family:inherit}
   .hint .dt{display:none}
 }
 @media (min-width:901px){.hint .ph{display:none}}
+
+.strip.locked, .blk.locked{cursor:default;opacity:.92}
+.strip.locked .add button[disabled], .place .seg button[disabled], .seg button[disabled]{opacity:.45;cursor:not-allowed;background:var(--wash)}

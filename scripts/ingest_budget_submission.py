@@ -7,11 +7,18 @@ Does exactly what budget-demo/server.py does for POST /submit and POST /vet:
     the page's own timestamp is kept as clientSubmittedAt)
   - for every `vets` entry: sets vetted/vetted_at/vetted_by="frank"/vet_notes on the item in
     <staging-week>/items.json and appends the vet-log entry to <staging-week>/vet-log.jsonl AND
-    <submissions>/vet-log.jsonl (source "budget-page-standalone"). Ids not in items.json (e.g. a
-    photo's media id) are reported as not found, like the server's 404 — nothing else is touched.
-  - appends the decisions (includes/excludes, photo picks, slot notes, answers, notes, vets) to
-    <staging-week>/budget-versions.json "decisions"; build_budget_html.py starts the next numbered
-    budget (vN) from the latest entry, so a rebuild never drops what Frank already decided.
+    <submissions>/vet-log.jsonl (source "budget-page-standalone"). A photo's media id is not in
+    items.json: its vet is written to <staging-week>/media/manifest.json the same way (vetted,
+    vetted_at, vetted_by, vet_notes) and logged with kind "media", so the next budget build shows
+    it vetted and does not ask again. Ids found in neither file are reported as not found.
+  - refuses (exit 4, writes nothing) if an included slot's item, or a photo in photoIncludes, is
+    in staging and still unvetted after this submission's vets are applied. Missing ids (an older
+    issue's items) stay warnings, so Nos. 1–6 submissions still ingest.
+  - appends the decisions (includes/excludes, photo picks, optional pages placement, slot notes,
+    answers, notes, vets) to <staging-week>/budget-versions.json "decisions"; build_budget_html.py
+    starts the next numbered budget (vN) from the latest entry, so a rebuild never drops what
+    Frank already decided. Unvetted photos are never recorded in photoIncludes, so they are never
+    queued for the next build.
 
 Usage:
   python3 scripts/ingest_budget_submission.py SUBMISSION.json [--dry-run] [--force]
@@ -27,6 +34,8 @@ Optional fields from the Budget page (pageVersion budget-paper-v1); submissions 
   budgetVersion   the vN the page was built as, and
   dataVersion     the build's data hash — both recorded on the decision for the record. Neither is checked:
                   a missing or older budgetVersion never stops an ingest.
+  pages           {slots: {slotKey: 1|2}, photos: {mediaId: 1|2}} — where Frank put each included
+                  block. Stored on the decision when present; ignored when absent.
 """
 from __future__ import annotations
 
@@ -101,6 +110,34 @@ def validate(p: dict) -> list[str]:
         errs.append("publishDateAlt must be YYYY-MM-DD or null")
     if isinstance(p.get("issue"), (str, int, float, list)):
         errs.append("issue must be an object")
+    errs.extend(validate_pages(p.get("pages")))
+    return errs
+
+
+def validate_pages(pages) -> list[str]:
+    """Optional. Absent or null is fine (older submissions). Shape: {slots:{key:1|2}, photos:{id:1|2}}.
+    A flat {key:1|2} map is also accepted and stored as pages.slots."""
+    if pages is None:
+        return []
+    if not isinstance(pages, dict):
+        return ["pages must be an object or null"]
+    errs = []
+    def check_map(g, label):
+        if not isinstance(g, dict):
+            errs.append(f"{label} must be an object")
+            return
+        for k, v in g.items():
+            if not isinstance(k, str) or not k.strip():
+                errs.append(f"{label} keys must be non-empty strings")
+            elif v not in (1, 2):
+                errs.append(f"{label}.{k} must be 1 or 2")
+    if "slots" in pages or "photos" in pages:
+        if "slots" in pages and pages["slots"] is not None:
+            check_map(pages["slots"], "pages.slots")
+        if "photos" in pages and pages["photos"] is not None:
+            check_map(pages["photos"], "pages.photos")
+    else:
+        check_map(pages, "pages")
     return errs
 
 
@@ -172,12 +209,13 @@ def main() -> None:
             die(f"{items_path} is not valid JSON: {exc}")
         if not isinstance(items_doc, dict) or not isinstance(items_doc.get("items"), list):
             die(f"{items_path} malformed (no 'items' list)")
-    manifest_ids = set()
+    manifest_path, manifest, media_by_id = week / "media" / "manifest.json", None, {}
     try:
-        manifest = json.loads((week / "media" / "manifest.json").read_text(encoding="utf-8"))
-        manifest_ids = {m.get("id") for m in manifest.get("items", []) if isinstance(m, dict)}
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        media_by_id = {m.get("id"): m for m in manifest.get("items", []) if isinstance(m, dict) and m.get("id")}
     except (OSError, json.JSONDecodeError, AttributeError):
-        pass
+        manifest = None
+    manifest_ids = set(media_by_id)
 
     # ---- the stored submission (server /submit) ----
     stored = copy.deepcopy(payload)
@@ -195,14 +233,19 @@ def main() -> None:
         seen[v["id"].strip()] = (v.get("vet_notes") or "").strip()
     vets = list(seen.items())
     by_id = {i.get("id"): i for i in (items_doc or {}).get("items", []) if isinstance(i, dict)}
-    applied, not_found, photo_vets, log_entries = [], [], [], []
+    applied, media_applied, not_found, photo_vets, log_entries = [], [], [], [], []
     for item_id, vet_notes in vets:
         found = by_id.get(item_id)
-        if found is None:
-            # Photo (media) ids aren't items: like the old page/server flow, nothing in items.json or the
-            # manifest is touched; the vet is recorded in approvals.json (the stored submission) only.
-            (photo_vets if item_id in manifest_ids else not_found).append(item_id)
+        if found is None and item_id in manifest_ids:
+            # A photo (media) id: the vet goes on its media/manifest.json entry, which is where the
+            # budget page reads a photo's vetted flag from. Same fields and note-append rule as an item.
+            found, target = media_by_id[item_id], "media"
+            photo_vets.append(item_id)
+        elif found is None:
+            not_found.append(item_id)
             continue
+        else:
+            target = "item"
         already = bool(found.get("vetted"))
         before = {k: found.get(k) for k in ("vetted", "vetted_at", "vetted_by", "vet_notes")}
         found["vetted"] = True
@@ -218,22 +261,40 @@ def main() -> None:
                 found["vet_notes"] = old.rstrip("\n") + "\n" + line
         elif "vet_notes" not in found:
             found["vet_notes"] = None
-        applied.append((item_id, already, before, vet_notes))
+        if target == "item":
+            applied.append((item_id, already, before, vet_notes))
+        else:
+            media_applied.append((item_id, already, before, vet_notes))
         log_entries.append({
             "id": item_id, "vetted": True, "vetted_at": found["vetted_at"], "vetted_by": "frank",
-            "vet_notes": found.get("vet_notes"), "already_vetted": already, "kind": found.get("kind"),
-            "body": found.get("body"), "source": SOURCE,
+            "vet_notes": found.get("vet_notes"), "already_vetted": already,
+            "kind": found.get("kind") if target == "item" else "media",
+            "body": found.get("body") if target == "item" else (found.get("caption") or found.get("filename")),
+            "source": SOURCE,
         })
 
-    # ---- warnings: included slots whose item isn't vetted on file or in this submission ----
+    # ---- warnings, then refuse unvetted includes (exit 4, write nothing) ----
     warnings = [f"lineup mismatch ignored (--force): {m}" for m in mism]
     if items_doc is None:
         warnings.append(f"no items.json at {rel(items_path)}: vets can't be applied")
-    vetted_now = {a[0] for a in applied}
+    vetted_now = {a[0] for a in applied} | {a[0] for a in media_applied}
+    unvetted = []
     for e in payload["includedSlots"]:
         iid = e.get("itemId")
-        if iid and iid not in vetted_now and not (by_id.get(iid) or {}).get("vetted"):
-            warnings.append(f"included slot {e.get('slot')!r} item {iid} is " + ("not in staging" if iid not in by_id else "not vetted"))
+        if not iid:
+            continue
+        if iid not in by_id:
+            warnings.append(f"included slot {e.get('slot')!r} item {iid} is not in staging")
+        elif iid not in vetted_now and not by_id[iid].get("vetted"):
+            unvetted.append(f"included slot {e.get('slot')!r} item {iid} is not vetted")
+    for pid in payload.get("photoIncludes") or []:
+        if pid not in media_by_id:
+            warnings.append(f"photoIncludes {pid} is not in the media manifest")
+        elif pid not in vetted_now and not media_by_id[pid].get("vetted"):
+            unvetted.append(f"photoIncludes {pid} is not vetted")
+    if unvetted:
+        die("unvetted items cannot run (vet them in this submission or leave them out):\n  - " +
+            "\n  - ".join(unvetted) + "\n  Nothing written.", 4)
 
     # ---- decision log entry (budget versions; build_budget_html.py reads the latest) ----
     versions_path = week / "budget-versions.json"
@@ -253,6 +314,8 @@ def main() -> None:
     for k in ("budgetVersion", "dataVersion", "pageVersion"):
         if payload.get(k) is not None:
             decision[k] = payload[k]
+    if "pages" in payload:
+        decision["pages"] = payload["pages"]
     vdoc = None
     if versions_path.is_file():
         try:
@@ -271,9 +334,12 @@ def main() -> None:
         subs.mkdir(parents=True, exist_ok=True)
         stamped.write_text(stored_text, encoding="utf-8")
         approvals.write_text(stored_text, encoding="utf-8")
+        if media_applied:
+            manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
         if applied:
             items_doc["updated_at"] = now_iso
             items_path.write_text(json.dumps(items_doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        if log_entries:
             week.mkdir(parents=True, exist_ok=True)
             lines = "".join(json.dumps(e, ensure_ascii=False) + "\n" for e in log_entries)
             for log in (week / "vet-log.jsonl", subs / "vet-log.jsonl"):
@@ -300,13 +366,12 @@ def main() -> None:
     print(f"  Excluded: {len(exc)} (+ {len(payload['excludedSlots']) - len(exc)} empty slots)")
     if payload.get("photoIncludes"):
         print(f"  Photos in: {', '.join(payload['photoIncludes'])}")
-    print(f"  Vets: {len(applied)} applied, {len(not_found)} not found" +
-          (f" · {len(photo_vets)} photo vet(s) recorded in approvals.json" if photo_vets else ""))
-    for item_id, already, before, notes in applied:
+    print(f"  Vets: {len(applied)} item(s) applied, {len(media_applied)} photo(s) applied, {len(not_found)} not found")
+    for item_id, already, before, notes in applied + media_applied:
         print(f"    ✓ {item_id}: vetted {before['vetted']} -> True" + (" (already vetted; re-applied)" if already else "") +
               (f" · note: {notes}" if notes else ""))
     for item_id in not_found:
-        print(f"    ? {item_id}: not found in items.json (recorded in approvals.json only)")
+        print(f"    ? {item_id}: not found in items.json or media/manifest.json (recorded in approvals.json only)")
     answers = payload.get("answers") or []
     if answers:
         print(f"  Answers ({len(answers)}):")
@@ -320,7 +385,9 @@ def main() -> None:
         print(f"  warning: {w}")
     verb = "would write" if args.dry_run else "wrote"
     print(f"  {verb}: {rel(versions_path)} (decision #{len(vdoc['decisions'])}; next build is the next budget version), {rel(stamped)}, {rel(approvals)}" +
-          (f", {rel(items_path)}, {rel(week / 'vet-log.jsonl')}, {rel(subs / 'vet-log.jsonl')} (+{len(log_entries)} lines)" if applied else ""))
+          (f", {rel(items_path)}" if applied else "") +
+          (f", {rel(manifest_path)}" if media_applied else "") +
+          (f", {rel(week / 'vet-log.jsonl')}, {rel(subs / 'vet-log.jsonl')} (+{len(log_entries)} lines)" if log_entries else ""))
 
 
 if __name__ == "__main__":

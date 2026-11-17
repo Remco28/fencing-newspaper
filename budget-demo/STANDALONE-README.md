@@ -5,14 +5,19 @@
 > a bank of what isn't running, hatched holes for unfilled space (column-inches and words), and a slip per item (click or tap).
 > Desktop: drag between the bank and the pages. Phone: open the slip and use Page 1 / Page 2 / Bank.
 > - **Sign off the budget** shows the submission JSON; Download or Copy, then ingest as before.
-> - New optional submission fields: `publishDateAlt` (YYYY-MM-DD or null), `budgetVersion`, `dataVersion`. Ingest records them on
->   the decision when present and never requires them. A stale `budgetVersion` does not block an ingest.
-> - Page placement is not in the contract: a block Frank puts on a page himself goes out as a "Budget placement: …" line in `notes`.
->   A lineup slot may carry an optional `page: 1|2` to set its starting page.
+> - New optional submission fields: `publishDateAlt` (YYYY-MM-DD or null), `budgetVersion`, `dataVersion`, and `pages`
+>   (`{slots: {slotKey: 1|2}, photos: {mediaId: 1|2}}`). Ingest records them on the decision when present and never requires
+>   them. A stale `budgetVersion` does not block an ingest. Older submissions without `pages` still ingest.
+> - Placement is `pages`, not `notes`. A lineup slot may still carry an optional `page: 1|2` to set its starting page when
+>   no ingested `pages` field is on file.
+> - Unvetted items and photos cannot be placed on the pages until they are vetted on the slip (drag and the p.1/p.2 buttons
+>   are disabled). Ingest rejects (exit 4) a submission that includes an unvetted staging item or photo; a vet in the same
+>   payload is enough. Missing ids from an older issue stay warnings.
 > - Section history (the Sections tab) is derived on every build by `scripts/build_section_history.py` from the published issues.
 > - Block sizes use `lineup.capacity` with `scripts/budget_page/calibration.json` laid over it (fill calibration against Nos. 1–7).
-> - Photo vets are still collected in `vets` and still recorded only in the stored submission and the decision log, not in
->   `media/manifest.json`. A photo vetted on the page shows VET again on the next build until the desk marks the manifest.
+> - Photo vets in `vets` are written to `media/manifest.json` (vetted, vetted_at, vetted_by, vet_notes) so the next build — and
+>   next week — shows the photo already vetted. An unvetted photo is never auto-queued: not from a lineup `proposed` flag, not
+>   from last sitting's `photoIncludes`, and not in the submission's `photoIncludes`.
 > - Tests: `python3 scripts/tests/test_budget_page.py`, `python3 scripts/tests/test_section_history.py`
 >   (optional Chrome check: `python3 scripts/tests/smoke_budget_chrome.py PAGE.html [SCREENSHOT_DIR]`).
 
