@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Headless Chrome: Budget-page expand/shrink/clear, handles, and Wide/Tall, especially on page 2.
+"""Headless Chrome: Budget-page expand/shrink/clear, handles, Wide/Tall (especially on page 2), and Manual
+placement driven by real pointer events (move, bank, resize, overlap, overset, undo).
 
 Builds a throwaway page from the frozen No. 7 fixtures (never touches live staging).
 Skipped if Playwright or Chrome is missing.
@@ -32,8 +33,8 @@ def have_playwright() -> bool:
         return False
 
 
-@unittest.skipUnless(have_playwright(), "playwright or chrome not installed")
-class Interactions(unittest.TestCase):
+class _Browser(unittest.TestCase):
+    """Shared: one throwaway No. 7 page per class, a fresh browser context per test."""
     @classmethod
     def setUpClass(cls):
         from playwright.sync_api import sync_playwright
@@ -82,6 +83,10 @@ class Interactions(unittest.TestCase):
 
     def js(self, body, arg=None):
         return self.page.evaluate(body, arg) if arg is not None else self.page.evaluate(body)
+
+
+@unittest.skipUnless(have_playwright(), "playwright or chrome not installed")
+class Interactions(_Browser):
 
     def test_slip_expand_shrink_clear_update_page2_table_and_the_slip(self):
         info = self.js("""() => {
@@ -356,6 +361,349 @@ class Interactions(unittest.TestCase):
         }''', info["key"])
         self.assertGreater(after["cost"], info["cost"])
         self.assertTrue(after["on"])
+
+
+@unittest.skipUnless(have_playwright(), "playwright or chrome not installed")
+class ManualPlacement(_Browser):
+    """Manual placement with real pointer events (mouse down / move / up), the way Frank drags.
+
+    Frank, 2026-11-17: placement "seems to work randomly", photos "not reliable at all", same-page moves
+    "virtually impossible", dragging off to the left to pull a block "sometimes works". Causes this pins:
+    a picture started the browser's own drag and cancelled the move; the overlap line appeared and vanished
+    mid-drag and shifted the pages under the pointer; Manual had no drop on the bank; pointer capture on
+    <html> ate the click that opens the slip."""
+
+    def setUp(self):
+        super().setUp()
+        self.page.click('#modebox [data-mode="manual"]')
+        self.page.wait_for_selector("body.manual")
+        g = self.js("""() => { const c = document.querySelector('.cols[data-page="1"]'); return { ppi: +c.dataset.ppi }; }""")
+        self.ppi = g["ppi"]
+        self.colw = self.js("() => BudgetPage.core.cap.col_width_in + BudgetPage.core.GUT")
+
+    # ---- helpers ----
+    def frame(self, key):
+        return self.js("""k => { const C = BudgetPage.core, e = C.state.manualLayout[k];
+          return e ? Object.assign({}, e, { on: !!(C.photoMeta[k] ? C.state.photos[k] : C.state.inc[k]) }) : null; }""", key)
+
+    def point(self, key, part=None):
+        """Grab point on a block: its picture ('img'), its headline ('.h'), or its top-left area."""
+        return self.js("""([k, part]) => {
+          const el = document.querySelector('.cols .blk[data-photo="' + k + '"]') || document.querySelector('.cols .blk[data-slot="' + k + '"]');
+          if (!el) return null;
+          const t = (part && el.querySelector(part)) || el, r = t.getBoundingClientRect(), b = el.getBoundingClientRect();
+          return { x: r.x + r.width / 2, y: r.y + Math.min(r.height / 2, 18), bx: b.x, by: b.y, tag: t.tagName };
+        }""", [key, part])
+
+    def cols_tops(self):
+        return self.js("() => [1, 2].map(p => Math.round(document.querySelector('.cols[data-page=\"' + p + '\"]').getBoundingClientRect().top * 10) / 10)")
+
+    def drag(self, x, y, tx, ty, steps=14):
+        """Real pointer drag. Returns the page tops seen at every step (they must never move mid-drag)."""
+        m = self.page.mouse
+        m.move(x, y)
+        m.down()
+        tops = []
+        for i in range(1, steps + 1):
+            m.move(x + (tx - x) * i / steps, y + (ty - y) * i / steps)
+            tops.append(tuple(self.cols_tops()))
+        m.up()
+        return tops
+
+    def move_by(self, key, dx_in, dy_in, part=None):
+        p = self.point(key, part)
+        self.assertIsNotNone(p, "no block for " + key)
+        tops = self.drag(p["x"], p["y"], p["x"] + dx_in * self.ppi, p["y"] + dy_in * self.ppi)
+        self.assertEqual(len(set(tops)), 1, "the pages moved under the pointer mid-drag: %r" % sorted(set(tops)))
+        return p
+
+    def place_photo_by_button(self, page=1):
+        pid = self.js("() => BudgetPage.core.loosePhotos.find(id => BudgetPage.core.canPlacePhoto(id) && BudgetPage.core.media[id].w)")
+        self.assertTrue(pid, "fixture needs a vetted loose photo with a size")
+        btn = '#bank .strip[data-photo="%s"] [data-add="%d"]' % (pid, page)
+        self.page.locator(btn).scroll_into_view_if_needed()
+        self.page.click(btn)
+        self.assertTrue(self.frame(pid)["on"])
+        return pid
+
+    def bank_point(self):
+        return self.js("() => { const b = document.querySelector('#bank').getBoundingClientRect(); return { x: b.x + b.width / 2, y: b.y + 260 }; }")
+
+    # ---- tests ----
+    def test_photo_moves_up_and_down_on_the_same_page_every_time_grabbed_by_the_picture(self):
+        pid = self.place_photo_by_button(1)
+        start = self.frame(pid)
+        self.assertEqual(self.point(pid, "img")["tag"], "IMG")
+        top = start["topIn"]
+        # Five moves in a row, all grabbed on the picture itself (that used to start the browser's image drag).
+        for dy in (-2.0, 1.5, -1.0, 2.2, -2.7):
+            self.move_by(pid, 0, dy, "img")
+            top = max(0.0, top + dy)
+            got = self.frame(pid)
+            self.assertAlmostEqual(got["topIn"], top, delta=0.051, msg="photo did not land where it was dropped (dy %s)" % dy)
+            self.assertEqual((got["page"], got["col"], got["span"], got["heightIn"]), (1, start["col"], start["span"], start["heightIn"]))
+            top = got["topIn"]
+
+    def test_photo_from_a_lower_section_to_a_higher_section_and_back(self):
+        pid = self.place_photo_by_button(1)
+        low = self.frame(pid)
+        self.assertGreater(low["topIn"], 3, "the photo should start low on page 1")
+        # Free the top of the right-hand column by dragging its story off the page to the left.
+        b = self.bank_point()
+        p = self.point("for-the-parents", ".h")
+        self.drag(p["x"], p["y"], b["x"], b["y"])
+        self.assertFalse(self.frame("for-the-parents")["on"])
+        # Lower section, column 1 -> top of column 3: two columns right, all the way up.
+        self.move_by(pid, 2 * self.colw, -low["topIn"], "img")
+        high = self.frame(pid)
+        self.assertEqual((high["page"], high["col"]), (1, 2))
+        self.assertAlmostEqual(high["topIn"], 0, delta=0.051)
+        self.assertEqual((high["span"], high["heightIn"]), (low["span"], low["heightIn"]), "a move never resizes")
+        # Its frame runs a little into the table below: reported, never resolved for Frank.
+        ov = self.js("() => BudgetPage.core.pack(1).overlaps.map(o => [o.a.id, o.b.id].sort().join('+'))")
+        self.assertTrue(all(pid in o for o in ov), ov)
+        # ... and onto an occupied spot higher up the page: it stays where it is put, with a warning, not refused.
+        self.move_by(pid, -2 * self.colw, 0.5, "img")
+        over = self.frame(pid)
+        self.assertEqual((over["col"], over["page"]), (0, 1))
+        self.assertAlmostEqual(over["topIn"], 0.5, delta=0.051)
+        banner = self.js("() => { const b = document.querySelector('#overlap'); return { hidden: b.hidden, calm: b.classList.contains('calm'), text: b.textContent }; }")
+        self.assertFalse(banner["hidden"])
+        self.assertFalse(banner["calm"])
+        self.assertIn("Overlap", banner["text"])
+        self.assertTrue(self.js("id => document.querySelector('.blk[data-photo=\"' + id + '\"]').classList.contains('overlap')", pid))
+        self.assertTrue(self.js("id => document.querySelector('.blk[data-photo=\"' + id + '\"]').classList.contains('lifted')", pid),
+                        "the block just dropped draws on top so an overlap never hides it")
+
+    def test_articles_move_up_down_and_across_on_the_same_page(self):
+        lead = self.frame("lead")
+        self.move_by("lead", 0, 4.6, ".h")
+        down = self.frame("lead")
+        self.assertAlmostEqual(down["topIn"], lead["topIn"] + 4.6, delta=0.051)
+        self.assertEqual((down["page"], down["col"], down["span"]), (lead["page"], lead["col"], lead["span"]))
+        self.move_by("lead", 0, -4.6, ".h")
+        self.assertAlmostEqual(self.frame("lead")["topIn"], lead["topIn"], delta=0.051)
+        nac = self.frame("nac-preview")
+        self.move_by("nac-preview", 2 * self.colw, 2.0, ".h")
+        moved = self.frame("nac-preview")
+        self.assertEqual((moved["page"], moved["col"]), (nac["page"], 2))
+        self.assertAlmostEqual(moved["topIn"], nac["topIn"] + 2.0, delta=0.051)
+        others = self.js("() => { const L = BudgetPage.core.state.manualLayout; return Object.keys(L).filter(k => k !== 'lead' && k !== 'nac-preview').map(k => [k, L[k].page, L[k].col, L[k].topIn]); }")
+        self.assertTrue(others)
+
+    def test_drag_off_the_page_to_the_left_returns_articles_and_photos_to_the_bank(self):
+        pid = self.place_photo_by_button(1)
+        b = self.bank_point()
+        # An article onto the bank rail.
+        p = self.point("lead", ".h")
+        self.drag(p["x"], p["y"], b["x"], b["y"])
+        self.assertFalse(self.frame("lead")["on"])
+        self.assertTrue(self.js("() => !!document.querySelector('#bank .strip[data-slot=\"lead\"]')"))
+        self.assertFalse(self.js("() => !!document.querySelector('.cols .blk[data-slot=\"lead\"]')"))
+        # A photo, grabbed by its picture, released just off page 1's left edge (on the mat, not the rail).
+        for attempt in range(3):  # every time, not sometimes
+            if attempt:
+                btn = '#bank .strip[data-photo="%s"] [data-add="1"]' % pid
+                self.page.locator(btn).scroll_into_view_if_needed()
+                self.page.click(btn)
+                self.assertTrue(self.frame(pid)["on"])
+            p = self.point(pid, "img")
+            edge = self.js("() => document.querySelector('.page[data-page=\"1\"]').getBoundingClientRect().left")
+            self.drag(p["x"], p["y"], edge - 6, p["y"])
+            self.assertFalse(self.frame(pid)["on"], "attempt %d: photo stayed on the page" % attempt)
+            self.assertTrue(self.js("id => !!document.querySelector('#bank .strip[data-photo=\"' + id + '\"]')", pid))
+        doc = self.js("() => BudgetPage.core.submission()")
+        self.assertNotIn("lead", [e["slot"] for e in doc["includedSlots"]])
+        self.assertNotIn("lead", doc["manualLayout"])
+        self.assertNotIn(pid, doc["photoIncludes"])
+        self.assertNotIn(pid, doc["manualLayout"])
+
+    def test_bank_strip_drops_on_the_outline_and_unvetted_strips_stay_in_the_bank(self):
+        key = self.js("() => BudgetPage.core.slots.find(s => !s.empty && !BudgetPage.core.state.inc[s.key] && BudgetPage.core.canPlace(s)).key")
+        s = self.js("""k => { const el = document.querySelector('#bank .strip[data-slot="' + k + '"]'); el.scrollIntoView({ block: 'center' });
+          const r = el.getBoundingClientRect(), c = document.querySelector('.cols[data-page="2"]').getBoundingClientRect();
+          return { x: r.x + 40, y: r.y + 14, tx: c.x + c.width * 0.5, ty: c.y + c.height * 0.75 }; }""", key)
+        m = self.page.mouse
+        m.move(s["x"], s["y"]); m.down()
+        for i in range(1, 13):
+            m.move(s["x"] + (s["tx"] - s["x"]) * i / 12, s["y"] + (s["ty"] - s["y"]) * i / 12)
+        outline = self.js("""() => { const o = document.querySelector('.cols .drop-outline'); if (!o) return null;
+          const c = o.closest('.cols'); return { page: +c.dataset.page, left: parseFloat(o.style.left), top: parseFloat(o.style.top), tag: o.textContent }; }""")
+        m.up()
+        self.assertIsNotNone(outline, "a dashed outline shows where the block will land")
+        got = self.frame(key)
+        self.assertTrue(got["on"])
+        self.assertEqual(got["page"], outline["page"])
+        self.assertAlmostEqual(got["topIn"] * self.ppi, outline["top"], delta=1.5)
+        self.assertIn("Page 2", outline["tag"])
+        self.assertFalse(self.js("() => !!document.querySelector('.drag-ghost, .drop-outline')"), "drag visuals are cleaned up")
+        # Vetting gate: an unvetted strip does not leave the bank.
+        locked = self.js("() => { const s = BudgetPage.core.slots.find(x => !x.empty && !BudgetPage.core.state.inc[x.key] && !BudgetPage.core.canPlace(x)); return s && s.key; }")
+        self.assertTrue(locked, "fixture needs an unvetted slot")
+        s = self.js("""k => { const el = document.querySelector('#bank .strip[data-slot="' + k + '"]'); el.scrollIntoView({ block: 'center' });
+          const r = el.getBoundingClientRect(), c = document.querySelector('.cols[data-page="1"]').getBoundingClientRect();
+          return { x: r.x + 40, y: r.y + 14, tx: c.x + c.width * 0.5, ty: c.y + c.height * 0.8 }; }""", locked)
+        self.drag(s["x"], s["y"], s["tx"], s["ty"])
+        self.assertFalse(self.js("k => !!BudgetPage.core.state.inc[k]", locked))
+        self.assertFalse(self.js("k => k in BudgetPage.core.submission().manualLayout", locked))
+
+    def test_page1_to_page2_by_drag_for_a_photo_and_an_article(self):
+        pid = self.place_photo_by_button(1)
+        for key, part in ((pid, "img"), ("nac-preview", ".h")):
+            p = self.point(key, part)
+            c2 = self.js("() => { const r = document.querySelector('.cols[data-page=\"2\"]').getBoundingClientRect(); return { x: r.x, y: r.y }; }")
+            tx = c2["x"] + 2 * self.colw * self.ppi + (p["x"] - p["bx"])
+            ty = c2["y"] + 5.0 * self.ppi + (p["y"] - p["by"])
+            self.drag(p["x"], p["y"], tx, ty)
+            got = self.frame(key)
+            self.assertEqual((got["page"], got["col"]), (2, 2), key)
+            self.assertAlmostEqual(got["topIn"], 5.0, delta=0.051, msg=key)
+            self.assertTrue(self.js("k => !!document.querySelector('.cols[data-page=\"2\"] .blk[data-photo=\"' + k + '\"], .cols[data-page=\"2\"] .blk[data-slot=\"' + k + '\"]')", key))
+
+    def test_photo_resize_handles_keep_its_shape_and_change_only_that_photo(self):
+        pid = self.place_photo_by_button(1)
+        before = self.js("() => JSON.parse(JSON.stringify(BudgetPage.core.state.manualLayout))")
+        aspect = self.js("id => BudgetPage.core.media[id].h / BudgetPage.core.media[id].w", pid)
+
+        def handle(kind, dx, dy):
+            h = self.js("""([id, kind]) => { const r = document.querySelector('.blk[data-photo="' + id + '"] .handle.' + kind).getBoundingClientRect();
+              return { x: r.x + r.width / 2, y: r.y + r.height / 2 }; }""", [pid, kind])
+            self.drag(h["x"], h["y"], h["x"] + dx, h["y"] + dy, steps=10)
+            return self.js("id => ({ e: BudgetPage.core.state.manualLayout[id], size: BudgetPage.core.photoSize(id) })", pid)
+
+        one = self.js("id => ({ e: BudgetPage.core.state.manualLayout[id], size: BudgetPage.core.photoSize(id) })", pid)
+        wide = handle("wid", (self.colw + 0.1) * self.ppi, 0)  # one column wider
+        self.assertEqual(wide["e"]["span"], one["e"]["span"] + 1)
+        self.assertAlmostEqual(wide["size"]["heightIn"] / wide["size"]["widthIn"], aspect, delta=0.03, msg="never stretched or cropped")
+        self.assertGreater(wide["size"]["widthIn"], one["size"]["widthIn"] * 1.8, "the picture grows with its frame")
+        smaller = handle("len", 0, -1.2 * self.ppi)  # bottom edge up: the picture scales down, it does not jump back
+        self.assertAlmostEqual(smaller["e"]["heightIn"], wide["e"]["heightIn"] - 1.2, delta=0.06)
+        self.assertLess(smaller["size"]["heightIn"], wide["size"]["heightIn"])
+        self.assertAlmostEqual(smaller["size"]["heightIn"] / smaller["size"]["widthIn"], aspect, delta=0.03)
+        taller = handle("len", 0, 2.0 * self.ppi)  # past Clark's 2.2in guide: allowed
+        self.assertGreater(taller["size"]["heightIn"], 2.2)
+        self.assertAlmostEqual(taller["e"]["heightIn"], smaller["e"]["heightIn"] + 2.0, delta=0.06)
+        img = self.js("""id => { const i = document.querySelector('.blk[data-photo="' + id + '"] img'); return { w: i.getBoundingClientRect().width, h: i.getBoundingClientRect().height, fit: getComputedStyle(i).objectFit }; }""", pid)
+        self.assertNotEqual(img["fit"], "cover", "the preview never crops")
+        self.assertAlmostEqual(img["h"] / self.ppi, taller["size"]["heightIn"], delta=0.08)
+        # Only that photo changed.
+        after = self.js("() => JSON.parse(JSON.stringify(BudgetPage.core.state.manualLayout))")
+        self.assertEqual({k: v for k, v in after.items() if k != pid}, {k: v for k, v in before.items() if k != pid})
+        # Slip controls: Smaller / Bigger / Natural size, Wide / Tall — all on that photo only.
+        self.js("id => BudgetPage.select('photo', id)", pid)
+        for v in ("smaller", "bigger", "natural"):
+            self.page.click('#side .sheet [data-act="art"][data-v="%s"]' % v)
+        nat = self.js("id => ({ e: BudgetPage.core.state.manualLayout[id], size: BudgetPage.core.photoSize(id), frameW: BudgetPage.core.frameW(BudgetPage.core.state.manualLayout[id].span) })", pid)
+        self.assertAlmostEqual(nat["size"]["widthIn"], nat["frameW"], delta=0.02, msg="Natural size fills the frame width, uncropped")
+        self.page.click('#side .sheet [data-act="lay"][data-v="tall"]')
+        tall = self.js("id => ({ e: BudgetPage.core.state.manualLayout[id], size: BudgetPage.core.photoSize(id) })", pid)
+        self.assertEqual(tall["e"]["span"], 1)
+        self.assertAlmostEqual(tall["size"]["heightIn"] / tall["size"]["widthIn"], aspect, delta=0.03)
+        final = self.js("() => JSON.parse(JSON.stringify(BudgetPage.core.state.manualLayout))")
+        self.assertEqual({k: v for k, v in final.items() if k != pid}, {k: v for k, v in before.items() if k != pid})
+        # The slip's Page 2 button keeps the size Frank gave it.
+        self.page.click('#side [data-ppg="2"]')
+        moved = self.js("id => BudgetPage.core.state.manualLayout[id]", pid)
+        self.assertEqual((moved["page"], moved["span"], moved["heightIn"]), (2, tall["e"]["span"], tall["e"]["heightIn"]))
+
+    def test_text_width_and_depth_handles_change_only_that_block(self):
+        before = self.js("() => JSON.parse(JSON.stringify(BudgetPage.core.state.manualLayout))")
+        h = self.js("""() => { const r = document.querySelector('.blk[data-slot="lead"] .handle.len').getBoundingClientRect(); return { x: r.x + r.width / 2, y: r.y + r.height / 2 }; }""")
+        self.drag(h["x"], h["y"], h["x"], h["y"] + 1.0 * self.ppi, steps=10)
+        got = self.js("() => { const C = BudgetPage.core, e = C.state.manualLayout.lead; return { e, cost: C.costOf(C.slotBy.lead), rz: C.state.resize.lead }; }")
+        self.assertAlmostEqual(got["e"]["heightIn"], before["lead"]["heightIn"] + 1.0, delta=0.06)
+        self.assertAlmostEqual(got["cost"], got["e"]["heightIn"] * got["e"]["span"], delta=0.1, msg="the words Clark is asked for fill the frame")
+        self.assertEqual(got["rz"]["direction"], "expand")
+        h = self.js("""() => { const r = document.querySelector('.blk[data-slot="lead"] .handle.wid').getBoundingClientRect(); return { x: r.x + r.width / 2, y: r.y + r.height / 2 }; }""")
+        self.drag(h["x"], h["y"], h["x"] - (self.colw - 0.1) * self.ppi, h["y"], steps=10)
+        narrow = self.js("() => { const C = BudgetPage.core; return { e: C.state.manualLayout.lead, cost: C.costOf(C.slotBy.lead) }; }")
+        self.assertEqual(narrow["e"]["span"], 1)
+        self.assertAlmostEqual(narrow["e"]["heightIn"], narrow["cost"], delta=0.06, msg="same words, re-flowed into one column")
+        after = self.js("() => JSON.parse(JSON.stringify(BudgetPage.core.state.manualLayout))")
+        self.assertEqual({k: v for k, v in after.items() if k != "lead"}, {k: v for k, v in before.items() if k != "lead"})
+        # The comic is art: its bottom edge resizes the picture and asks Clark for no words.
+        h = self.js("""() => { const r = document.querySelector('.blk[data-slot="comic"] .handle.len').getBoundingClientRect(); return { x: r.x + r.width / 2, y: r.y + r.height / 2 }; }""")
+        self.drag(h["x"], h["y"], h["x"], h["y"] - 0.5 * self.ppi, steps=8)
+        self.assertIsNone(self.js("() => BudgetPage.core.state.resize.comic || null"))
+
+    def test_overlap_warns_without_moving_the_pages_and_overset_hangs_past_the_trim(self):
+        tops0 = self.cols_tops()
+        banner0 = self.js("() => { const b = document.querySelector('#overlap'); return { hidden: b.hidden, h: b.getBoundingClientRect().height, calm: b.classList.contains('calm') }; }")
+        self.assertFalse(banner0["hidden"])
+        self.assertTrue(banner0["calm"])
+        cobra = self.frame("signup-cobra")
+        nac = self.frame("nac-preview")
+        self.move_by("nac-preview", self.colw, cobra["topIn"] - nac["topIn"] + 0.3, ".h")  # onto the Cobra table
+        banner1 = self.js("() => { const b = document.querySelector('#overlap'); return { hidden: b.hidden, h: b.getBoundingClientRect().height, calm: b.classList.contains('calm'), text: b.textContent }; }")
+        self.assertFalse(banner1["calm"])
+        self.assertIn("Overlap", banner1["text"])
+        self.assertEqual(banner1["h"], banner0["h"], "the overlap line keeps its height")
+        self.assertEqual(self.cols_tops(), tops0, "showing the overlap warning did not push the pages")
+        self.assertTrue(self.js("() => document.querySelector('.blk[data-slot=\"nac-preview\"]').classList.contains('overlap')"))
+        self.assertTrue(any(n["kind"] == "overlap" for n in self.js("() => BudgetPage.core.needs()")))
+        stays = self.frame("nac-preview")
+        self.assertEqual(stays["col"], 1)
+        # Overset: drag a block low on page 2 so it runs past the trim. It hangs; it is not moved for Frank.
+        H = self.js("() => BudgetPage.core.pageH(2)")
+        sec = self.frame("secondary-a")
+        self.move_by("secondary-a", 0, H - 1.0 - sec["topIn"], ".h")
+        hang = self.frame("secondary-a")
+        self.assertAlmostEqual(hang["topIn"], H - 1.0, delta=0.06)
+        self.assertGreater(hang["topIn"] + hang["heightIn"], H)
+        vis = self.js("""() => { const b = document.querySelector('.cols[data-page="2"] .blk[data-slot="secondary-a"]');
+          return { spill: b.classList.contains('spill'), hang: !!b.querySelector('.hang'), trim: !!document.querySelector('.cols[data-page="2"] .trim'),
+                   foot: document.querySelector('.page[data-page="2"] .pfoot').textContent, well: !!document.querySelector('.cols[data-page="2"] .spillwell') }; }""")
+        self.assertTrue(vis["spill"] and vis["hang"] and vis["trim"] and vis["well"], vis)
+        self.assertIn("OVERSET", vis["foot"])
+
+    def test_click_still_opens_the_slip_and_escape_cancels_a_drag(self):
+        p = self.point("lead", ".h")
+        self.page.mouse.click(p["x"], p["y"])
+        self.assertTrue(self.js("() => !!document.querySelector('#side .sheet[data-slot=\"lead\"]')"), "a click on a block opens its slip in Manual")
+        start = self.frame("lead")
+        m = self.page.mouse
+        m.move(p["x"], p["y"]); m.down()
+        for i in range(1, 9):
+            m.move(p["x"], p["y"] + i * 25)
+        self.assertTrue(self.js("() => !!document.querySelector('.drag-ghost')"))
+        self.page.keyboard.press("Escape")
+        m.up()
+        self.assertEqual(self.frame("lead"), start)
+        self.assertFalse(self.js("() => !!document.querySelector('.drag-ghost, .drop-outline, .blk.lifting')"))
+
+    def test_undo_steps_back_through_each_gesture(self):
+        start = self.js("() => JSON.parse(JSON.stringify(BudgetPage.core.state.manualLayout))")
+        self.move_by("lead", 0, 4.6, ".h")
+        self.move_by("nac-preview", 2 * self.colw, 2.0, ".h")
+        b = self.bank_point()
+        p = self.point("camp", ".h")
+        self.drag(p["x"], p["y"], b["x"], b["y"])
+        self.assertFalse(self.frame("camp")["on"])
+        for _ in range(3):
+            self.page.click("#undoplace")
+        back = self.js("() => ({ L: JSON.parse(JSON.stringify(BudgetPage.core.state.manualLayout)), camp: BudgetPage.core.state.inc.camp })")
+        self.assertTrue(back["camp"])
+        for k in ("lead", "nac-preview", "camp"):
+            self.assertEqual(back["L"][k], start[k], k)
+        # One more undo leaves Manual (the switch itself is a step); Auto takes over.
+        self.page.click("#undoplace")
+        self.assertEqual(self.js("() => BudgetPage.core.submission().mode"), "auto")
+
+    def test_auto_mode_drags_still_work_and_off_the_left_edge_is_the_bank(self):
+        self.page.once("dialog", lambda d: d.accept())
+        self.page.click("#toauto")
+        self.page.wait_for_selector("body:not(.manual)")
+        self.assertEqual(self.js("() => BudgetPage.core.submission().mode"), "auto")
+        self.assertTrue(self.js("() => document.querySelector('.cols .blk[data-slot=\"lead\"]').getAttribute('draggable') === 'true'"))
+        p = self.point("camp", ".h")
+        edge = self.js("() => document.querySelector('.page[data-page=\"1\"]').getBoundingClientRect().left")
+        self.drag(p["x"], p["y"], edge - 6, p["y"] + 40)
+        self.assertFalse(self.js("() => BudgetPage.core.state.inc.camp"), "Auto: off page 1's left edge is the bank too")
+        s = self.js("""() => { const el = document.querySelector('#bank .strip[data-slot="camp"]'); el.scrollIntoView({ block: 'center' });
+          const r = el.getBoundingClientRect(), c = document.querySelector('.cols[data-page="2"]').getBoundingClientRect();
+          return { x: r.x + 40, y: r.y + 14, tx: c.x + 60, ty: c.y + 60 }; }""")
+        self.drag(s["x"], s["y"], s["tx"], s["ty"])
+        self.assertTrue(self.js("() => BudgetPage.core.state.inc.camp && BudgetPage.core.state.page.camp === 2"))
 
 
 if __name__ == "__main__":

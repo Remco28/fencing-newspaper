@@ -45,6 +45,19 @@
         <span class="dim">${r.ran.length ? `last ran No. ${r.last}` : 'has never run'} · ${esc(String(r.frequency).replace(/_/g, ' '))}</span></div>`).join('');
     }
 
+    // Manual art: the picture keeps its shape inside its frame. Notes, never refusals.
+    function manualArtHTML(id) {
+      const e = core.isManual() && state.manualLayout[id]; if (!e) return '';
+      const f = core.artFit(id, e.span, e.heightIn), notes = [];
+      if (f.scaled) notes.push(`scaled to fit the frame (${r1(f.w)} of ${r1(f.frameW)} in wide); Clark sets text or a gutter beside it`);
+      if (f.slack > 0.05) notes.push(`${r1(f.slack)} in spare below the picture`);
+      if (f.h > 4.5) notes.push('taller than the 4.5 in cap compose uses; Clark will raise it with you');
+      else if (f.h > 2.2 && isLoosePhoto(id)) notes.push('taller than the 2.2 in photo guide; fine, Clark notes it');
+      return `<div class="sh-fit"><div class="sh-lbl">Size in Manual</div>
+        <div class="seg"><button data-act="art" data-v="smaller">Smaller</button><button data-act="art" data-v="bigger">Bigger</button><button data-act="art" data-v="natural">Natural size</button></div>
+        <span class="dim">Picture ${r1(f.w)} × ${r1(f.h)} in, in a ${e.span}-column frame ${r1(e.heightIn)} in deep (${r1(e.heightIn * e.span)} col-in). Never cropped.${notes.length ? ' ' + esc(notes.join('; ')) + '.' : ''} Drag the block’s right edge for columns, its bottom edge for size.</span></div>`;
+    }
+    const isLoosePhoto = id => !!core.photoMeta[id];
     function layoutResizeHTML(s, photoId) {
       const bits = [];
       if (photoId) {
@@ -52,7 +65,8 @@
         bits.push(`<div class="sh-fit"><div class="sh-lbl">Size on the page</div>
           <div class="seg">${[1,2,3].map(n => `<button data-act="span" data-v="${n}" class="${sp === n ? 'on' : ''}">${n} col</button>`).join('')}</div>
           <div class="seg"><button data-act="lay" data-v="wide" class="${lay === 'wide' ? 'on' : ''}">Wide</button><button data-act="lay" data-v="tall" class="${lay === 'tall' ? 'on' : ''}">Tall</button></div>
-          <span class="dim">${r1(sz.widthIn)} × ${r1(sz.heightIn)} in · ${r1(core.photoCost(photoId))} col-in</span></div>`);
+          <span class="dim">${r1(sz.widthIn)} × ${r1(sz.heightIn)} in · ${r1(core.liveCostOfPhoto(photoId))} col-in</span></div>`);
+        bits.push(manualArtHTML(photoId));
         return bits.join('');
       }
       const kind = (s.cost || {}).type, fig = kind === 'figure';
@@ -63,6 +77,7 @@
           ${fig ? `<div class="seg">${[1,2,3].map(n => `<button data-act="span" data-v="${n}" class="${sp === n ? 'on' : ''}">${n} col</button>`).join('')}</div>
             <span class="dim">${r1(sz.widthIn)} × ${r1(sz.heightIn)} in</span>` : `<span class="dim">${sp} col wide · ${r1(sz.heightIn)} in deep</span>`}</div>`);
       }
+      if (fig) bits.push(manualArtHTML(s.key));
       if (kind === 'prose' || kind === 'qa' || kind === 'table' || kind === 'table_rows') {
         const rz = state.resize[s.key], cur = rz && rz.target ? rz.target : '';
         bits.push(`<div class="sh-fit"><div class="sh-lbl">Ask Clark to grow or shrink this</div>
@@ -75,7 +90,7 @@
     function sheet(key) {
       const s = slotBy[key], it = core.itemOf(s), all = core.allItemsOf(s), m = core.mediaOfSlot(s), inc = state.inc[key];
       const qs = core.questionsOf(s), flags = core.flagsOf(s), c = s.cost;
-      const costTxt = c ? `${r1(core.costOf(s))} col-in${c.type !== 'table' && c.type !== 'table_rows' && core.wordsOf(s) ? ` · ~${core.wordsOf(s)}w` : ''}${c.rows ? ` · ${c.rows} rows` : ''} · ${core.spanOf(s)} col wide` : '';
+      const costTxt = c ? `${r1(core.liveCostOfSlot(s))} col-in${c.type !== 'table' && c.type !== 'table_rows' && core.wordsOf(s) ? ` · ~${core.wordsOf(s)}w` : ''}${c.rows ? ` · ${c.rows} rows` : ''} · ${core.spanOf(s)} col wide` : '';
       return `<div class="sheet" data-slot="${esc(key)}">
         <div class="sh-k">${esc(s.slot)}</div>
         <h2 class="sh-h">${esc(s.title || (it && it.headline) || shortName(s))}</h2>
@@ -102,7 +117,7 @@
       return `<div class="sheet" data-photo="${esc(id)}"><div class="sh-k">Photo — ${esc(m.kind)}</div><h2 class="sh-h">${esc(m.filename)}</h2>
         <img class="sh-img" src="${core.thumb(m.filename)}" alt="">
         <div class="sh-row"><div class="seg"><button data-act="photo" data-v="1" class="${on ? 'on' : ''}" ${core.canPlacePhoto(id) ? '' : 'disabled title="Vet this photo on the slip first"'}>Run it</button><button data-act="photo" data-v="0" class="${on ? '' : 'on'}">Leave out</button></div>
-        <span class="dim">${r1(core.photoCost(id))} col-in · ${core.photoSpanOf(id)} col wide · Clark ${p.proposed ? 'proposed it' : 'did not propose it'}${core.canPlacePhoto(id) ? '' : ' · <b style="color:var(--bad)">vet it before it can run</b>'}</span></div>
+        <span class="dim">${r1(core.liveCostOfPhoto(id))} col-in · ${core.photoSpanOf(id)} col wide · Clark ${p.proposed ? 'proposed it' : 'did not propose it'}${core.canPlacePhoto(id) ? '' : ' · <b style="color:var(--bad)">vet it before it can run</b>'}</span></div>
         <p class="sh-sum">${esc(p.note || '')}</p>${m.caption ? `<p><span class="sh-lbl">Caption on file</span> ${esc(m.caption)}</p>` : ''}
         ${vetBlock(id, 'Vet the photo')}
         ${layoutResizeHTML(null, id)}
@@ -119,6 +134,7 @@
         else if (a === 'unvet') core.act.unvet(b.dataset.id);
         else if (a === 'lay') core.act.setLayout(key || sh.dataset.photo, b.dataset.v);
         else if (a === 'span') core.act.setSpan(key || sh.dataset.photo, +b.dataset.v);
+        else if (a === 'art') core.act.artSize(key || sh.dataset.photo, b.dataset.v);
         else if (a === 'rz') {
           // Buttons step or clear on their own. A leftover value in the target field must not
           // hijack Expand / Shrink (that made a second click, or Clear then Expand, feel like a no-op).
@@ -196,8 +212,8 @@
     const s = b.type === 'slot' ? core.slotBy[b.id] : null;
     let h = '';
     if (core.isManual()) {
-      h += '<i class="handle wid" data-handle="width" title="Drag to set width (snaps to 1, 2 or 3 columns)"></i>';
-      h += '<i class="handle len" data-handle="length" title="Drag to set height (snaps to 0.05 in)"></i>';
+      h += `<i class="handle wid" data-handle="width" title="${fig ? 'Drag for columns (1, 2 or 3); the picture keeps its shape' : 'Drag for columns (1, 2 or 3); the same words re-flow'}"></i>`;
+      h += `<i class="handle len" data-handle="length" title="${fig ? 'Drag to size the picture (0.05 in steps); never cropped' : 'Drag to set the depth; Clark is asked for the length that fills it'}"></i>`;
     } else if (fig) h += '<i class="handle se" data-handle="scale" title="Drag to size (keeps aspect, snaps to 1 / 2 / 3 columns)"></i>';
     else if (s && s.cost && (s.cost.type === 'prose' || s.cost.type === 'qa' || s.cost.type === 'table' || s.cost.type === 'table_rows'))
       h += '<i class="handle len" data-handle="length" title="Drag to grow or shrink the estimated length"></i>';
@@ -217,19 +233,25 @@
     }
     return h;
   }
+  // A picture never starts the browser's own drag (that used to cancel a Manual move a few pixels in).
+  // In Manual it is drawn at the size it prints inside its frame: scaled to fit, never cropped.
+  function picHTML(id, src, b, ppi) {
+    const f = core.isManual() && core.isArtId(id) ? core.artFit(id, b.span, b.h) : null;
+    return `<img draggable="false" src="${src}" alt=""${f ? ` class="fit" style="width:${f.w * ppi}px;height:${f.h * ppi}px"` : ''}>`;
+  }
   function blockHTML(b, ppi, pageH) {
     const pos = `left:${colX(b.col) * ppi}px;top:${b.y * ppi}px;width:${spanW(b.span) * ppi}px;height:${Math.max(6, b.h * ppi - 3)}px`;
     const spillC = (b.spill || b.hang > 0.02) ? ' spill' : '';
-    const overC = b.overlap ? ' overlap' : '';
+    const overC = (b.overlap ? ' overlap' : '') + (core.isManual() && A.lift === b.id ? ' lifted' : '');
     const dragAttr = (!core.isManual() && ((b.type === 'photo' && core.canPlacePhoto(b.id)) || (b.type !== 'photo' && core.canPlace(core.slotBy[b.id])))) ? 'draggable="true"' : '';
     if (b.type === 'photo') {
       const m = core.media[b.id];
-      return `<div class="blk t-photo${isSel('photo', b.id)}${core.canPlacePhoto(b.id) ? '' : ' locked'}${spillC}${overC}" ${dragAttr} tabindex="0" data-photo="${E(b.id)}" style="${pos}"><span class="marks">${core.isVetted(b.id) ? '<i class="mk ok">✓</i>' : '<i class="mk vet">VET</i>'}</span><img src="${core.thumb(m.filename)}" alt=""><div class="k">Photo · ${E(m.kind)}</div>${hangHTML(b, ppi, pageH)}${handlesHTML(b)}</div>`;
+      return `<div class="blk t-photo${isSel('photo', b.id)}${core.canPlacePhoto(b.id) ? '' : ' locked'}${spillC}${overC}" ${dragAttr} tabindex="0" data-photo="${E(b.id)}" style="${pos}"><span class="marks">${core.isVetted(b.id) ? '<i class="mk ok">✓</i>' : '<i class="mk vet">VET</i>'}</span>${picHTML(b.id, core.thumb(m.filename), b, ppi)}<div class="k">Photo · ${E(m.kind)}</div>${hangHTML(b, ppi, pageH)}${handlesHTML(b)}</div>`;
     }
     const s = core.slotBy[b.id], c = s.cost || {}, head = core.headlineOf(s), cont = b.part > 1;
     let inner = `<div class="k">${E(ui.shortName(s))}</div>`;
     if (cont) inner += `<div class="cont-l">continued</div><div class="greek"></div>`;
-    else if (c.type === 'figure') inner += `<img src="${core.thumb(s.thumb)}" alt="">` + (c.head ? `<div class="h">${E(head)}</div><div class="greek" style="flex:1.3"></div>` : '');
+    else if (c.type === 'figure') inner += picHTML(b.id, core.thumb(s.thumb), b, ppi) + (c.head ? `<div class="h">${E(head)}</div><div class="greek" style="flex:1.3"></div>` : '');
     else if (s.table && Array.isArray(s.table.rows)) inner += (s.title ? `<div class="h">${E(head)}</div>` : '') + s.table.rows.map(r => `<div class="tr" style="height:${rowIn(c) * ppi}px;line-height:${rowIn(c) * ppi}px;font-size:${Math.min(9, rowIn(c) * ppi * .8)}px"><b>${E(r[0])}</b> · ${E(r.slice(1).join(' · '))}</div>`).join('');
     else inner += `<div class="h">${E(head)}</div><div class="greek"></div>`;
     return `<div class="blk t-${E(c.type || 'prose')}${c.feature ? ' lead' : ''}${b.span >= 2 ? ' wide' : ''}${cont ? ' cont' : ''}${isSel('slot', b.id)}${core.canPlace(s) ? '' : ' locked'}${spillC}${overC}" ${dragAttr} tabindex="0" data-slot="${E(b.id)}" style="${pos}">${cont ? '' : marks(b.id)}${inner}${hangHTML(b, ppi, pageH)}${handlesHTML(b)}</div>`;
@@ -261,22 +283,27 @@
     });
     renderOverlap();
   }
+  // In Manual this line always keeps its one-line slot, overlaps or not: if it came and went it would push the
+  // pages up and down under the pointer (that made same-page drags land in the wrong place).
   function renderOverlap() {
     const el = $('#overlap'); if (!el) return;
-    if (!core.isManual()) { el.hidden = true; el.textContent = ''; return; }
+    if (!core.isManual()) { el.hidden = true; el.textContent = ''; el.title = ''; return; }
     const ov = core.allOverlaps();
-    if (!ov.length) { el.hidden = true; el.textContent = ''; return; }
     const name = rec => rec.type === 'photo' ? ((core.media[rec.id] || {}).filename || rec.id) : ui.shortName(core.slotBy[rec.id] || { slot: rec.id });
     el.hidden = false;
-    el.textContent = 'Overlap: ' + ov.map(o => name(o.a) + ' and ' + name(o.b)).join('; ') + '. Move a block so they do not sit on top of each other.';
+    el.classList.toggle('calm', !ov.length);
+    el.textContent = ov.length
+      ? 'Overlap: ' + ov.map(o => name(o.a) + ' and ' + name(o.b)).join('; ') + '. Move a block so they do not sit on top of each other.'
+      : 'Manual placement: blocks stay where you put them. No overlaps.';
+    el.title = el.textContent;
   }
 
   function stripHTML(s) {
     const it = core.itemOf(s), k = s.key;
     if (s.empty) return `<div class="strip ghost${isSel('slot', k)}" tabindex="0" data-slot="${E(k)}">${marks(k)}<div class="k">Empty slot</div><div class="h">${E(s.slot)}</div><div class="w">${E(s.why || '')}</div></div>`;
     const who = (k in (dec.slotNotes || {})) || (dec.excluded || []).includes(k) ? 'You left it out' : s.auto ? 'Not slotted by Clark' : s.waiting ? 'Clark is waiting on it' : s.proposed ? 'Pulled' : 'Clark did not propose it';
-    const unvet = !core.canPlace(s);
-    return `<div class="strip${s.item && !it ? ' missing' : ''}${isSel('slot', k)}${unvet ? ' locked' : ''}" ${unvet ? '' : 'draggable="true"'} tabindex="0" data-slot="${E(k)}">${marks(k)}${s.thumb ? `<img src="${core.thumb(s.thumb)}" alt="">` : ''}<div class="k">${E(ui.shortName(s))}</div>
+    const unvet = !core.canPlace(s), drag = !unvet && !core.isManual(); // Manual drags strips with the pointer, not the browser
+    return `<div class="strip${s.item && !it ? ' missing' : ''}${isSel('slot', k)}${unvet ? ' locked' : ''}" ${drag ? 'draggable="true"' : ''} tabindex="0" data-slot="${E(k)}">${marks(k)}${s.thumb ? `<img draggable="false" src="${core.thumb(s.thumb)}" alt="">` : ''}<div class="k">${E(ui.shortName(s))}</div>
       <div class="h">${E(core.headlineOf(s) || s.slot)}</div><div class="w">${who} · ${core.r1(core.costOf(s))} col-in${unvet ? ' · <b style="color:var(--bad)">unvetted — vet on the slip to run it</b>' : ''}${s.item && !it ? ' · <b style="color:var(--bad)">not in staging</b>' : ''}</div>
       <div class="add">run on <button data-add="1" ${unvet ? 'disabled title="Vet this on the slip first"' : ''}>p.1</button><button data-add="2" ${unvet ? 'disabled title="Vet this on the slip first"' : ''}>p.2</button></div></div>`;
   }
@@ -286,7 +313,7 @@
     const np = (core.L.not_proposed || []).concat((core.L.held || []).map(h => ({ item: h.id || h.item, why: h.why || h.note || 'Held.' })));
     const empties = core.slots.filter(s => s.empty);
     $('#bank').innerHTML = `<h3>The bank — not running (${out.length})</h3>${out.map(stripHTML).join('') || '<p class="np">Everything is on the pages.</p>'}
-      ${core.loosePhotos.length ? `<h3>Loose art (${photos.length})</h3>${photos.map(id => { const m = core.media[id], ok = core.canPlacePhoto(id); return `<div class="strip${isSel('photo', id)}${ok ? '' : ' locked'}" ${ok ? 'draggable="true"' : ''} tabindex="0" data-photo="${E(id)}"><img src="${core.thumb(m.filename)}" alt=""><div class="k">${E(m.kind)}</div><div class="h">${E(String(m.filename).replace(/\.\w+$/, ''))}</div><div class="w">${core.r1(core.photoCost(id))} col-in · ${ok ? 'vetted' : '<b style="color:var(--bad)">unvetted — vet on the slip to run it</b>'}</div><div class="add">run on <button data-add="1" ${ok ? '' : 'disabled title="Vet this photo on the slip first"'}>p.1</button><button data-add="2" ${ok ? '' : 'disabled title="Vet this photo on the slip first"'}>p.2</button></div></div>`; }).join('') || '<p class="np">All of it is on the pages.</p>'}` : ''}
+      ${core.loosePhotos.length ? `<h3>Loose art (${photos.length})</h3>${photos.map(id => { const m = core.media[id], ok = core.canPlacePhoto(id); return `<div class="strip${isSel('photo', id)}${ok ? '' : ' locked'}" ${ok && !core.isManual() ? 'draggable="true"' : ''} tabindex="0" data-photo="${E(id)}"><img draggable="false" src="${core.thumb(m.filename)}" alt=""><div class="k">${E(m.kind)}</div><div class="h">${E(String(m.filename).replace(/\.\w+$/, ''))}</div><div class="w">${core.r1(core.photoCost(id))} col-in · ${ok ? 'vetted' : '<b style="color:var(--bad)">unvetted — vet on the slip to run it</b>'}</div><div class="add">run on <button data-add="1" ${ok ? '' : 'disabled title="Vet this photo on the slip first"'}>p.1</button><button data-add="2" ${ok ? '' : 'disabled title="Vet this photo on the slip first"'}>p.2</button></div></div>`; }).join('') || '<p class="np">All of it is on the pages.</p>'}` : ''}
       ${empties.length ? `<h3>Empty slots</h3>${empties.map(stripHTML).join('')}` : ''}
       ${np.length ? `<h3>Staged, not in the lineup</h3>${np.map(n => `<p class="np"><b>${E((core.items[n.item] || {}).headline || n.item)}</b>${E(n.why || '')}</p>`).join('')}` : ''}`;
   }
@@ -469,27 +496,56 @@
       const tag = (e.target && e.target.tagName) || '';
       if (tag !== 'INPUT' && tag !== 'TEXTAREA') { e.preventDefault(); core.act.undo(); return; }
     }
+    if (e.key === 'Escape' && escapeDrag()) { e.preventDefault(); return; }
     if (e.key === 'Escape') { $('#modal').classList.remove('open'); if (A.sel) { A.sel = null; render(); } }
     if (e.key === 'Enter' && e.target.matches && e.target.matches('.blk,.strip')) e.target.click();
   });
-  // drag (desktop): bank <-> pages, page <-> page, and a block onto another block to run ahead of it
+  /* ---------- where a drop lands ---------- */
+  const rectOf = el => el.getBoundingClientRect();
+  const inRect = (r, x, y) => x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+  const pageEl = p => document.querySelector(`.page[data-page="${p}"]`);
+  const colsOf = p => document.querySelector(`.cols[data-page="${p}"]`);
+  const ppiOf = cols => Number(cols && cols.dataset.ppi) || (cols ? cols.clientWidth / PW : 48);
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  // Off the page to the left is the bank: the bank rail itself, or (side-by-side layout) anywhere left of page 1's paper.
+  function inBankZone(x, y) {
+    const bank = $('#bank'), p1 = pageEl(1);
+    if (bank && inRect(rectOf(bank), x, y)) return true;
+    return innerWidth > 900 && !!p1 && x < rectOf(p1).left;
+  }
+  const clearDropMarks = () => document.querySelectorAll('.drop').forEach(z => z.classList.remove('drop'));
+  let dragEndedAt = 0, swallowClick = false; // the click that follows a drag or a handle drag is not a "select" click
+  const markDragEnd = () => { dragEndedAt = performance.now(); swallowClick = true; };
+  window.addEventListener('pointerdown', () => { swallowClick = false; }, true);
+  window.addEventListener('keydown', () => { swallowClick = false; }, true);
+  window.addEventListener('click', e => {
+    if (!swallowClick) return;
+    swallowClick = false;
+    if (performance.now() - dragEndedAt < 600) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+
+  /* ---------- drag, Auto: the browser's drag-and-drop between the bank and the pages, and onto a block to run ahead of it ---------- */
   document.addEventListener('dragstart', e => {
+    if (core.isManual()) { e.preventDefault(); return; } // Manual has its own pointer drag (below) and no browser drag at all
     if (e.target.closest && e.target.closest('[data-handle],.lay-tog,.handle')) { e.preventDefault(); return; }
-    const b = e.target.closest && e.target.closest('[draggable]'); if (!b) return;
+    const b = e.target.closest && e.target.closest('[draggable="true"]'); if (!b) return;
     const ok = b.dataset.photo ? core.canPlacePhoto(b.dataset.photo) : core.canPlace(core.slotBy[b.dataset.slot]);
     if (!ok) { e.preventDefault(); return; }
     e.dataTransfer.setData('text/plain', b.dataset.photo ? 'p:' + b.dataset.photo : 's:' + b.dataset.slot); e.dataTransfer.effectAllowed = 'move'; });
-  document.addEventListener('dragover', e => { const z = e.target.closest && e.target.closest('.cols,.bank'); if (z) { e.preventDefault(); z.classList.add('drop'); } });
-  document.addEventListener('dragleave', e => { const z = e.target.closest && e.target.closest('.cols,.bank'); if (z && !z.contains(e.relatedTarget)) z.classList.remove('drop'); });
+  const autoZone = e => (e.target.closest && e.target.closest('.cols,.bank')) || (inBankZone(e.clientX, e.clientY) ? $('#bank') : null);
+  document.addEventListener('dragover', e => {
+    if (core.isManual()) return;
+    const z = autoZone(e); if (!z) return;
+    e.preventDefault();
+    if (!z.classList.contains('drop')) { clearDropMarks(); z.classList.add('drop'); }
+  });
+  document.addEventListener('dragleave', e => { if (!e.relatedTarget) clearDropMarks(); });
+  document.addEventListener('dragend', clearDropMarks);
   document.addEventListener('drop', e => {
-    const z = e.target.closest && e.target.closest('.cols,.bank'); if (!z) return; e.preventDefault(); z.classList.remove('drop');
+    if (core.isManual()) { e.preventDefault(); return; }
+    const z = autoZone(e); if (!z) return; e.preventDefault(); clearDropMarks();
     const raw = e.dataTransfer.getData('text/plain'), type = raw.slice(0, 1), id = raw.slice(2); if (!id || (type !== 'p' && type !== 's')) return;
-    const p = +z.dataset.page || 0;
-    if (core.isManual() && p) {
-      const cols = z.classList.contains('cols') ? z : z.querySelector('.cols');
-      const pos = dropPos(cols, e.clientX, e.clientY, id, type === 'p');
-      return type === 'p' ? core.act.placePhotoAt(id, pos) : core.act.placeAt(id, pos);
-    }
+    const p = z.classList.contains('cols') ? (+z.dataset.page || 0) : 0;
     if (type === 'p') return core.act.photo(id, !!p, p);
     if (!p) return core.act.include(id, false);
     const over = e.target.closest('.blk[data-slot]');
@@ -497,49 +553,168 @@
     core.act.place(id, p);
   });
 
-  // Corner / bottom handles: scale art (aspect locked, snap 1/2/3 cols) or grow/shrink a story.
-  // Mid-drag we update state and a live preview (this block + footers/meter) on animation frames;
-  // a full pack+DOM rebuild waits until pointerup so the handle is not destroyed mid-gesture
-  // (which used to fire pointercancel and drop the rest of the drag).
-  let handleDrag = null, dragRaf = 0, dragMoved = false;
-  function dragApply(d) {
-    if (!d) return;
-    if (d.kind === 'scale' || d.kind === 'width') {
-      const dx = (d.x - d.startX) / d.ppi, widthIn = (core.SNAP_WIDTHS[d.startSpan] || cap.col_width_in) + dx;
-      const span = core.snapSpan(widthIn);
-      const id = d.photo || d.slot;
+  /* ---------- drag, Manual: one pointer drag for page blocks and bank strips ----------
+     A picture is draggable by default, so the browser's drag used to start on a photo a few pixels in and cancel
+     the move ("photos are not reliable at all"). In Manual the browser's drag is off everywhere and this is the
+     only drag: grab a block anywhere (picture included) and it lands on the dashed outline, snapped to the columns
+     and the 0.05in grid. Nothing in the layout moves while a block is in the air, so the outline is where it lands.
+     Release left of page 1 (over the bank) to pull a block off the pages. Esc cancels. */
+  const DRAG_PX = 4;
+  let mv = null, mvRaf = 0;
+  function moveTarget(d) {
+    if (inBankZone(d.x, d.y)) return { bank: true };
+    let best = null;
+    [1, 2].forEach(p => {
+      const pg = pageEl(p); if (!pg) return;
+      const r = rectOf(pg);
+      const dist = Math.hypot(d.x < r.left ? r.left - d.x : d.x > r.right ? d.x - r.right : 0, d.y < r.top ? r.top - d.y : d.y > r.bottom ? d.y - r.bottom : 0);
+      if (!best || dist < best.dist) best = { p, dist };
+    });
+    if (!best) return null;
+    const cols = colsOf(best.p), cr = rectOf(cols), ppi = ppiOf(cols), H = core.pageH(best.p);
+    const col = clamp(Math.round((d.x - d.grabX - cr.left) / ppi / (CW + GUT)), 0, 3 - d.span);
+    const topIn = clamp(core.snapY((d.y - d.grabY - cr.top) / ppi), 0, core.snapY(Math.max(0, H - 0.25)));
+    return { page: best.p, col, span: d.span, topIn, heightIn: d.heightIn, cols, ppi };
+  }
+  function startMove(d) {
+    d.started = true;
+    const ppi = ppiOf(colsOf(1)), w = spanW(d.span) * ppi, h = Math.max(6, d.heightIn * ppi - 3);
+    let g;
+    if (d.onPage) {
+      g = d.el.cloneNode(true);
+      g.querySelectorAll('.handle,.lay-tog,.hang,.marks').forEach(n => n.remove());
+      ['sel', 'overlap', 'spill', 'lifted', 'lifting'].forEach(c => g.classList.remove(c));
+    } else { // a strip from the bank flies as the block it will become
+      const s = d.slot ? core.slotBy[d.slot] : null;
+      g = document.createElement('div');
+      g.className = 'blk ' + (d.photo ? 't-photo' : 't-' + (((s && s.cost) || {}).type || 'prose'));
+      g.innerHTML = d.photo ? `<img draggable="false" src="${core.thumb(core.media[d.photo].filename)}" alt=""><div class="k">Photo · ${E(core.media[d.photo].kind)}</div>`
+        : `<div class="k">${E(ui.shortName(s))}</div>${s.thumb ? `<img draggable="false" src="${core.thumb(s.thumb)}" alt="">` : ''}<div class="h">${E(core.headlineOf(s) || s.slot)}</div><div class="greek"></div>`;
+      d.grabX = Math.min(14, w / 3); d.grabY = Math.min(12, h / 3);
+    }
+    ['data-slot', 'data-photo', 'tabindex', 'draggable'].forEach(a => g.removeAttribute(a));
+    g.classList.add('drag-ghost');
+    g.setAttribute('aria-hidden', 'true');
+    Object.assign(g.style, { position: 'fixed', left: '0px', top: '0px', width: w + 'px', height: h + 'px', margin: '0', transform: 'none' });
+    const tag = document.createElement('span'); tag.className = 'ghost-tag'; g.appendChild(tag);
+    document.body.appendChild(g);
+    d.ghost = g; d.tag = tag;
+    d.outline = document.createElement('div'); d.outline.className = 'drop-outline';
+    d.where = document.createElement('span'); d.where.className = 'drop-tag'; d.outline.appendChild(d.where);
+    d.el.classList.add('lifting');
+    document.body.classList.add('moving');
+    try { d.el.setPointerCapture(d.pointerId); } catch (err) { /* best-effort: window listeners still see the pointer */ }
+  }
+  function paintMove(d) {
+    const t = moveTarget(d), bank = !!(t && t.bank);
+    d.ghost.style.transform = `translate(${d.x - d.grabX}px,${d.y - d.grabY}px)`;
+    d.ghost.classList.toggle('to-bank', bank);
+    const bk = $('#bank'); if (bk) bk.classList.toggle('drop', bank);
+    d.tag.textContent = bank ? (d.onPage ? 'To the bank' : 'Stays in the bank') : '';
+    if (!t || bank) { d.outline.remove(); return; }
+    if (d.outline.parentNode !== t.cols) t.cols.appendChild(d.outline);
+    Object.assign(d.outline.style, { left: colX(t.col) * t.ppi + 'px', top: t.topIn * t.ppi + 'px', width: spanW(t.span) * t.ppi + 'px', height: Math.max(6, t.heightIn * t.ppi - 3) + 'px' });
+    d.where.textContent = `Page ${t.page} · col ${t.col + 1}${t.span > 1 ? '–' + (t.col + t.span) : ''} · ${t.topIn.toFixed(2)} in down`;
+  }
+  function endMoveVisuals(d) {
+    if (d.ghost) d.ghost.remove();
+    if (d.outline) d.outline.remove();
+    if (d.el) d.el.classList.remove('lifting');
+    document.body.classList.remove('moving');
+    clearDropMarks();
+    try { if (d.el && d.el.hasPointerCapture && d.el.hasPointerCapture(d.pointerId)) d.el.releasePointerCapture(d.pointerId); } catch (err) { /* ignore */ }
+  }
+  function dropMove(d) {
+    const t = moveTarget(d);
+    endMoveVisuals(d);
+    markDragEnd();
+    if (!t) return;
+    if (t.bank) { if (d.onPage) core.act.toBank(d.id); return; }
+    const cur = S.manualLayout[d.id], on = d.photo ? S.photos[d.id] : S.inc[d.id];
+    if (on && cur && cur.page === t.page && cur.col === t.col && Math.abs(cur.topIn - t.topIn) < 0.001) return; // dropped where it was
+    A.lift = d.id; // the block just placed draws on top, so an overlap never hides it
+    const pos = { page: t.page, col: t.col, span: t.span, topIn: t.topIn, heightIn: t.heightIn };
+    if (d.photo) core.act.placePhotoAt(d.photo, pos); else core.act.placeAt(d.slot, pos);
+  }
+  function cancelMove() {
+    if (!mv) return;
+    const d = mv; mv = null;
+    if (mvRaf) { cancelAnimationFrame(mvRaf); mvRaf = 0; }
+    if (d.started) { endMoveVisuals(d); markDragEnd(); }
+  }
+  document.addEventListener('pointerdown', e => {
+    if (!core.isManual() || mv || hd || e.button !== 0) return;
+    const t = e.target;
+    if (!t.closest || t.closest('[data-handle],.lay-tog,button,input,textarea,select,a,label,.marks')) return;
+    const el = t.closest('.cols .blk, #bank .strip'); if (!el || el.classList.contains('ghost')) return;
+    const photo = el.dataset.photo, slot = el.dataset.slot, id = photo || slot; if (!id) return;
+    if (photo ? !core.canPlacePhoto(photo) : !(core.slotBy[slot] && core.canPlace(core.slotBy[slot]))) return; // vet first; a click still opens the slip
+    const onPage = el.classList.contains('blk'), sz = S.manualLayout[id] || core.defaultSize(id), r = rectOf(el);
+    if (e.pointerType === 'mouse') e.preventDefault(); // no text selection or picture drag under the pointer
+    mv = { id, photo, slot, el, onPage, span: sz.span, heightIn: sz.heightIn, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY,
+      grabX: e.clientX - r.left, grabY: e.clientY - r.top, started: false, pointerId: e.pointerId };
+  });
+  window.addEventListener('pointermove', e => {
+    if (!mv || e.pointerId !== mv.pointerId) return;
+    mv.x = e.clientX; mv.y = e.clientY;
+    if (!mv.started) { if (Math.abs(mv.x - mv.x0) + Math.abs(mv.y - mv.y0) < DRAG_PX) return; startMove(mv); }
+    if (!mvRaf) mvRaf = requestAnimationFrame(() => { mvRaf = 0; if (mv && mv.started) paintMove(mv); });
+  });
+  window.addEventListener('pointerup', e => {
+    if (!mv || e.pointerId !== mv.pointerId) return;
+    const d = mv; mv = null;
+    if (mvRaf) { cancelAnimationFrame(mvRaf); mvRaf = 0; }
+    if (!d.started) return; // a click: the click handler opens the slip
+    d.x = e.clientX; d.y = e.clientY;
+    dropMove(d);
+  });
+  window.addEventListener('pointercancel', e => { if (mv && e.pointerId === mv.pointerId) cancelMove(); });
+  window.addEventListener('blur', () => { cancelMove(); });
+
+  /* ---------- handles ----------
+     Manual: right edge = width (snaps to 1, 2 or 3 columns), bottom edge = depth (0.05in grid). Only that block
+     changes. Art keeps its shape (a wider frame scales the picture with it; a deeper or shallower frame scales the
+     picture to fit, never cropped). Text re-flows on a new width; the bottom edge asks Clark for the length that fills it.
+     Auto: the corner scales art (aspect locked, snaps 1/2/3 columns); the bottom edge grows or shrinks a story.
+     Mid-drag only this block and the page footers are redrawn; the full rebuild waits for the release so the handle
+     under the pointer is never destroyed mid-gesture, and nothing above the pages changes size. */
+  let hd = null, hdRaf = 0;
+  function handleApply(d) {
+    const dx = (d.x - d.x0) / d.ppi, dy = (d.y - d.y0) / d.ppi;
+    if (core.isManual() && d.from) {
+      const cur = S.manualLayout[d.id] || d.from;
+      if (d.kind === 'width') {
+        const span = core.snapSpan(core.frameW(d.from.span) + dx);
+        if (span !== cur.span) core.act.frame(d.id, { span }, 'resize-drag', d.from);
+      } else if (d.kind === 'length') {
+        const h = core.snapY(Math.max(0.4, d.from.heightIn + dy));
+        if (Math.abs(h - cur.heightIn) > 0.001) core.act.frame(d.id, { heightIn: h }, 'resize-drag', d.from);
+      }
+    } else if (d.kind === 'scale' || d.kind === 'width') {
+      const span = core.snapSpan((core.SNAP_WIDTHS[d.startSpan] || cap.col_width_in) + dx);
       if (d.photo) { if (core.photoSpanOf(d.photo) !== span) core.act.setSpan(d.photo, span, 'resize-drag'); }
       else if (d.slot && core.spanOf(core.slotBy[d.slot]) !== span) core.act.setSpan(d.slot, span, 'resize-drag');
-    } else if (d.kind === 'length') {
-      const newH = Math.max(0.4, d.startH + (d.y - d.startY) / d.ppi);
-      if (core.isManual()) {
-        const id = d.photo || d.slot;
-        if (id && (!d.lastH || Math.abs(newH - d.lastH) >= core.VGRID / 2)) { d.lastH = newH; core.act.setHeight(id, newH, 'resize-drag'); }
-      } else if (d.slot) {
-        const s = core.slotBy[d.slot]; if (!s) return;
-        const span = core.spanOf(s);
-        const toColIn = newH * span;
-        const wpi = (s.cost && s.cost.feature) ? cap.wpi_feature : cap.wpi;
-        const toWords = Math.max(0, Math.round(toColIn * wpi));
-        const dir = toWords >= core.baseWordsOf(s) ? 'expand' : 'shrink';
-        if (d.lastWords != null && Math.abs(toWords - d.lastWords) < 5) return;
-        d.lastWords = toWords;
-        core.act.setResize(d.slot, dir, toWords + 'w', 'resize-drag');
-      }
+    } else if (d.kind === 'length' && d.slot) {
+      const s = core.slotBy[d.slot]; if (!s) return;
+      const span = core.spanOf(s), newH = Math.max(0.4, d.startH + dy);
+      const toWords = core.wordsForColIn(s, newH * span); // the block's new depth follows the pointer exactly
+      if (d.lastWords != null && Math.abs(toWords - d.lastWords) < 5) return;
+      d.lastWords = toWords;
+      core.act.setResize(d.slot, toWords >= core.baseWordsOf(s) ? 'expand' : 'shrink', toWords + 'w', 'resize-drag');
     }
-    previewDrag(d);
+    previewBlock(d);
   }
-  function previewDrag(d) {
+  function previewBlock(d) {
     const blk = d.el && d.el.isConnected ? d.el : document.querySelector(d.photo ? `.blk[data-photo="${CSS.escape(d.photo)}"]` : `.blk[data-slot="${CSS.escape(d.slot)}"]`);
     if (blk) {
-      const ppi = d.ppi, s = d.slot ? core.slotBy[d.slot] : null;
-      const span = d.photo ? core.photoSpanOf(d.photo) : core.spanOf(s);
-      const man = core.isManual() && S.manualLayout[d.photo || d.slot];
-      const hIn = man ? man.heightIn : ((d.photo ? core.photoCost(d.photo) : core.costOf(s)) / span);
-      blk.style.width = (spanW(span) * ppi) + 'px';
+      const ppi = d.ppi, s = d.slot ? core.slotBy[d.slot] : null, man = core.isManual() && S.manualLayout[d.id];
+      const span = man ? man.span : d.photo ? core.photoSpanOf(d.photo) : core.spanOf(s);
+      const hIn = man ? man.heightIn : (d.photo ? core.photoCost(d.photo) : core.costOf(s)) / span;
+      blk.style.width = spanW(span) * ppi + 'px';
       blk.style.height = Math.max(6, hIn * ppi - 3) + 'px';
-      if (man) { blk.style.left = (colX(man.col) * ppi) + 'px'; blk.style.top = (man.topIn * ppi) + 'px'; }
-      blk.classList.toggle('overlap', !!(d.el && core.allOverlaps().some(o => o.a.id === (d.photo || d.slot) || o.b.id === (d.photo || d.slot))));
+      if (man) blk.style.left = colX(man.col) * ppi + 'px';
+      const img = blk.querySelector('img.fit');
+      if (man && img && core.isArtId(d.id)) { const f = core.artFit(d.id, man.span, man.heightIn); img.style.width = f.w * ppi + 'px'; img.style.height = f.h * ppi + 'px'; }
       const lab = blk.querySelector('.size-lab');
       if (lab) {
         if (d.photo || (s && (s.cost || {}).type === 'figure')) {
@@ -552,142 +727,57 @@
       }
     }
     [1, 2].forEach(p => {
-      const r = core.pack(p), pg = document.querySelector(`.page[data-page="${p}"]`), foot = pg && pg.querySelector('.pfoot');
+      const r = core.pack(p), pg = pageEl(p), foot = pg && pg.querySelector('.pfoot');
       if (!foot) return;
-      const spill = r.spillIn || 0;
       const overTxt = r.overset > 0.02
-        ? `OVERSET by ${core.r1(r.overset)} col-in ≈ ${r.oversetWords || Math.round(r.overset * cap.wpi)} words · hangs ${core.r1(spill)} in below the trim`
+        ? `OVERSET by ${core.r1(r.overset)} col-in ≈ ${r.oversetWords || Math.round(r.overset * cap.wpi)} words · hangs ${core.r1(r.spillIn || 0)} in below the trim`
         : `open ${core.r1(r.open)} col-in ≈ ${Math.round(r.open * cap.wpi)} words`;
       foot.innerHTML = `<span>PAGE ${p} · ${core.r1(r.placedUsed)} of ${core.r1(r.cap)} col-in on the page</span><span class="${r.open > 0.5 || r.overset > 0.02 ? 'short' : ''}">${overTxt}</span>`;
     });
-    const meter = document.getElementById('meter');
-    if (meter) meter.innerHTML = ui.meter();
-    if (typeof renderOverlap === 'function') renderOverlap();
-  }
-  function dropPos(cols, clientX, clientY, id, isPhoto) {
-    const ppi = Number((cols && cols.dataset.ppi) || 0) || (cols ? cols.clientWidth / PW : 48);
-    const page = +((cols && cols.dataset.page) || 1) || 1;
-    const r = cols.getBoundingClientRect();
-    const cur = S.manualLayout[id];
-    const span = (cur && cur.span) || (isPhoto ? core.photoSpanOf(id) : core.spanOf(core.slotBy[id]));
-    const heightIn = (cur && cur.heightIn) || ((isPhoto ? core.photoCost(id) : core.costOf(core.slotBy[id])) / span);
-    const xIn = (clientX - r.left) / ppi, yIn = (clientY - r.top) / ppi;
-    const col = Math.max(0, Math.min(3 - span, Math.round(xIn / (CW + GUT))));
-    return { page, col, span, topIn: Math.max(0, core.snapY(yIn)), heightIn };
-  }
-  function pageAtPoint(clientX, clientY) {
-    for (const p of [1, 2]) {
-      const cols = document.querySelector(`.cols[data-page="${p}"]`);
-      if (!cols) continue;
-      const r = cols.getBoundingClientRect(), pad = 24;
-      if (clientX >= r.left - pad && clientX <= r.right + pad && clientY >= r.top - pad && clientY <= r.bottom + pad)
-        return { page: p, cols, ppi: Number(cols.dataset.ppi) || (cols.clientWidth / PW) };
-    }
-    return null;
   }
   document.addEventListener('pointerdown', e => {
-    const h = e.target.closest && e.target.closest('[data-handle]'); if (!h) return;
+    const h = e.target.closest && e.target.closest('[data-handle]'); if (!h || e.button !== 0 || mv || hd) return;
     const blk = h.closest('.blk'); if (!blk) return;
     e.preventDefault(); e.stopPropagation();
-    const cols = blk.closest('.cols'), ppi = Number((cols && cols.dataset.ppi) || 0) || (cols ? cols.clientWidth / PW : 48);
-    const photo = blk.dataset.photo, slot = blk.dataset.slot;
-    const startSpan = photo ? core.photoSpanOf(photo) : core.spanOf(core.slotBy[slot]);
-    const s = slot ? core.slotBy[slot] : null;
-    handleDrag = { kind: h.dataset.handle, photo, slot, ppi, startX: e.clientX, startY: e.clientY, x: e.clientX, y: e.clientY,
-      startSpan, startWords: s ? core.wordsOf(s) : 0, startH: blk.getBoundingClientRect().height / ppi,
-      pointer: e.pointerId, el: blk };
-    dragMoved = false;
-    if (core.isManual()) core.act.checkpoint();
+    const cols = blk.closest('.cols'), ppi = ppiOf(cols);
+    const photo = blk.dataset.photo, slot = blk.dataset.slot, id = photo || slot, s = slot ? core.slotBy[slot] : null;
+    const man = core.isManual() && S.manualLayout[id], span = photo ? core.photoSpanOf(photo) : core.spanOf(s);
+    hd = { kind: h.dataset.handle, id, photo, slot, el: blk, ppi, x0: e.clientX, y0: e.clientY, x: e.clientX, y: e.clientY,
+      from: man ? Object.assign({}, man) : null, startSpan: span,
+      startH: man ? man.heightIn : (photo ? core.photoCost(photo) : core.costOf(s)) / span, moved: false, pointerId: e.pointerId };
     document.body.classList.add('resizing');
-    try { document.documentElement.setPointerCapture(e.pointerId); } catch (err) { /* capture is best-effort */ }
+    try { h.setPointerCapture(e.pointerId); } catch (err) { /* best-effort */ }
   });
-  document.addEventListener('pointermove', e => {
-    if (!handleDrag) return;
-    handleDrag.x = e.clientX; handleDrag.y = e.clientY;
-    if (Math.abs(e.clientX - handleDrag.startX) + Math.abs(e.clientY - handleDrag.startY) > 3) dragMoved = true;
-    if (dragRaf) return;
-    const d = handleDrag;
-    dragRaf = requestAnimationFrame(() => { dragRaf = 0; if (handleDrag === d) dragApply(d); });
+  window.addEventListener('pointermove', e => {
+    if (!hd || e.pointerId !== hd.pointerId) return;
+    hd.x = e.clientX; hd.y = e.clientY;
+    if (!hd.moved) {
+      if (Math.abs(hd.x - hd.x0) + Math.abs(hd.y - hd.y0) <= 2) return;
+      hd.moved = true;
+      if (core.isManual()) core.act.checkpoint(); // one undo step per handle drag
+    }
+    if (hdRaf) return;
+    const d = hd;
+    hdRaf = requestAnimationFrame(() => { hdRaf = 0; if (hd === d) handleApply(d); });
   });
-  function endHandle(e) {
-    if (!handleDrag) return;
-    if (dragRaf) { cancelAnimationFrame(dragRaf); dragRaf = 0; }
-    const d = handleDrag;
-    handleDrag = null;
+  function endHandle(e, cancelled) {
+    if (!hd || (e && e.pointerId !== hd.pointerId)) return;
+    if (hdRaf) { cancelAnimationFrame(hdRaf); hdRaf = 0; }
+    const d = hd; hd = null;
     document.body.classList.remove('resizing');
-    try { if (e && e.pointerId != null) document.documentElement.releasePointerCapture(e.pointerId); } catch (err) { /* ignore */ }
-    dragApply(d); // flush the last point
+    if (!d.moved) return;
+    if (!cancelled && e) { d.x = e.clientX; d.y = e.clientY; handleApply(d); } // flush the last point
+    markDragEnd();
+    if (core.isManual()) A.lift = d.id;
     render(); save(); // full pack + slip, now that the gesture is done
-    if (e && dragMoved) { e.preventDefault(); e.stopPropagation(); }
   }
-  document.addEventListener('pointerup', endHandle);
-  document.addEventListener('pointercancel', endHandle);
-
-  /* Manual mode: drag a block to any snapped position on either page. Mid-drag is a preview only. */
-  let moveDrag = null, moveRaf = 0, moveMoved = false;
-  function moveApply(d) {
-    if (!d || !core.isManual()) return;
-    const at = pageAtPoint(d.x, d.y);
-    const cols = (at && at.cols) || d.el.closest('.cols');
-    const ppi = (at && at.ppi) || d.ppi;
-    const page = (at && at.page) || d.startPage;
-    const r = cols.getBoundingClientRect();
-    const span = d.span;
-    const col = Math.max(0, Math.min(3 - span, Math.round(((d.x - r.left) / ppi - d.grabX) / (CW + GUT))));
-    const topIn = Math.max(0, core.snapY((d.y - r.top) / ppi - d.grabY));
-    const pos = { page, col, span, topIn, heightIn: d.heightIn };
-    if (d.photo) core.act.placePhotoAt(d.photo, pos, 'move-drag');
-    else core.act.placeAt(d.slot, pos, 'move-drag');
-    // live preview: move the element onto the target page without rebuilding
-    if (at && at.cols && d.el.parentNode !== at.cols) at.cols.appendChild(d.el);
-    d.el.style.left = (colX(col) * ppi) + 'px';
-    d.el.style.top = (topIn * ppi) + 'px';
-    d.el.style.width = (spanW(span) * ppi) + 'px';
-    d.el.style.zIndex = 6;
-    previewDrag({ photo: d.photo, slot: d.slot, el: d.el, ppi, kind: 'move' });
+  window.addEventListener('pointerup', e => endHandle(e, false));
+  window.addEventListener('pointercancel', e => endHandle(e, true));
+  function escapeDrag() { // Esc: a block in the air goes back; a handle drag is undone
+    if (mv) { cancelMove(); return true; }
+    if (hd) { const moved = hd.moved; endHandle(null, true); if (moved && core.isManual()) core.act.undo(); return true; }
+    return false;
   }
-  document.addEventListener('pointerdown', e => {
-    if (!core.isManual()) return;
-    if (e.target.closest && e.target.closest('[data-handle],.lay-tog,.handle,button,.marks')) return;
-    const blk = e.target.closest && e.target.closest('.blk'); if (!blk) return;
-    const slot = blk.dataset.slot, photo = blk.dataset.photo, id = photo || slot;
-    if (photo ? !core.canPlacePhoto(photo) : !core.canPlace(core.slotBy[slot])) return;
-    const cols = blk.closest('.cols'); if (!cols) return;
-    const ppi = Number(cols.dataset.ppi) || (cols.clientWidth / PW);
-    const r = blk.getBoundingClientRect();
-    const cur = S.manualLayout[id] || { page: +cols.dataset.page, col: 0, span: photo ? core.photoSpanOf(photo) : core.spanOf(core.slotBy[slot]), topIn: 0, heightIn: (photo ? core.photoCost(photo) : core.costOf(core.slotBy[slot])) };
-    moveDrag = { photo, slot, el: blk, ppi, startPage: +cols.dataset.page, startX: e.clientX, startY: e.clientY, x: e.clientX, y: e.clientY,
-      grabX: (e.clientX - r.left) / ppi, grabY: (e.clientY - r.top) / ppi, span: cur.span, heightIn: cur.heightIn, pointer: e.pointerId, checked: false };
-    moveMoved = false;
-    try { document.documentElement.setPointerCapture(e.pointerId); } catch (err) { /* best-effort */ }
-  });
-  document.addEventListener('pointermove', e => {
-    if (!moveDrag) return;
-    moveDrag.x = e.clientX; moveDrag.y = e.clientY;
-    if (Math.abs(e.clientX - moveDrag.startX) + Math.abs(e.clientY - moveDrag.startY) > 3) {
-      if (!moveMoved && !moveDrag.checked) { core.act.checkpoint(); moveDrag.checked = true; }
-      moveMoved = true;
-      document.body.classList.add('moving');
-    }
-    if (moveRaf) return;
-    const d = moveDrag;
-    moveRaf = requestAnimationFrame(() => { moveRaf = 0; if (moveDrag === d && moveMoved) moveApply(d); });
-  });
-  function endMove(e) {
-    if (!moveDrag) return;
-    if (moveRaf) { cancelAnimationFrame(moveRaf); moveRaf = 0; }
-    const d = moveDrag;
-    moveDrag = null;
-    document.body.classList.remove('moving');
-    try { if (e && e.pointerId != null) document.documentElement.releasePointerCapture(e.pointerId); } catch (err) { /* ignore */ }
-    if (moveMoved) {
-      moveApply(d);
-      render(); save();
-      if (e) { e.preventDefault(); e.stopPropagation(); }
-    }
-  }
-  document.addEventListener('pointerup', endMove);
-  document.addEventListener('pointercancel', endMove);
 
   renderDatePop(); render();
   window.BudgetPage = { core, payload: () => core.submission(), storeKey: () => STORE_KEY, select };

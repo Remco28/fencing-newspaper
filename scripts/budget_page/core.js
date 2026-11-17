@@ -147,11 +147,21 @@
       const m = media[id] || {}, span = photoSpanOf(id);
       return (figDepth(m.w, m.h, span) + cap.caption_in + cap.gap) * span;
     }
+    // In Manual, art reports the picture as it sits in its frame (see "Manual frames" below).
+    const r2 = n => Math.round(n * 100) / 100;
+    function manualArtSize(id) {
+      const e = isManual() && state.manualLayout[id];
+      if (!e) return null;
+      const f = artFit(id, e.span, e.heightIn);
+      return { span: e.span, widthIn: r2(f.w), heightIn: r2(f.h) };
+    }
     function slotSize(s) {
       const span = spanOf(s);
+      if ((s.cost || {}).type === 'figure') { const m = manualArtSize(s.key); if (m) return m; }
       return { span, widthIn: SNAP_WIDTHS[span] || cap.col_width_in, heightIn: r1(costOf(s) / span) };
     }
     function photoSize(id) {
+      const man = manualArtSize(id); if (man) return man;
       const m = media[id] || {}, span = photoSpanOf(id);
       return { span, widthIn: SNAP_WIDTHS[span] || cap.col_width_in, heightIn: r1(figDepth(m.w, m.h, span)) };
     }
@@ -205,7 +215,9 @@
     }
     const pageNum = v => (v === 1 || v === 2) ? v : (isObj(v) && (v.page === 1 || v.page === 2) ? v.page : 0);
     const takeSpan = v => (isObj(v) && typeof v.span === 'number' && v.span >= 1 && v.span <= 3) ? Math.round(v.span) : 0;
-    const snapY = y => Math.round((Number(y) || 0) / VGRID) * VGRID;
+    // Snap to the 0.05in grid and drop float noise (1.9000000000000001 -> 1.9) so positions compare and print cleanly.
+    const snapY = y => Math.round(Math.round((Number(y) || 0) / VGRID) * VGRID * 100) / 100;
+    const MIN_FRAME = MIN_PIECE * 0.8;
     function takeManual(v) {
       if (!isObj(v)) return null;
       const page = pageNum(v);
@@ -213,9 +225,53 @@
       if (!page || !span) return null;
       const col = Math.max(0, Math.min(3 - span, Math.round(Number(v.col) || 0)));
       const topIn = Math.max(0, snapY(v.topIn));
-      const heightIn = Math.max(MIN_PIECE * 0.8, snapY(v.heightIn != null ? v.heightIn : 0));
+      const heightIn = Math.max(MIN_FRAME, snapY(v.heightIn != null ? v.heightIn : 0));
       if (!(heightIn > 0)) return null;
       return { page, col, span, topIn, heightIn };
+    }
+
+    /* ---------- Manual frames ----------
+       In Manual every block is a frame: `span` columns wide, `heightIn` deep, sitting where Frank put it.
+       - Text (prose, Q&A, tables): the words are the truth. A new width re-flows the same words (depth =
+         col-in / span). The bottom handle asks Clark for a new length, solved so the words fill the frame.
+       - Art (loose photos, comics, photo slots): the frame is the truth. The picture keeps its shape and is
+         scaled to fit inside the frame, never cropped (compose never crops). A new width scales the picture
+         with the frame; the bottom handle scales it to any depth. Clark's 2.2in photo guide and the 4.5in
+         cap are notes on the slip, never a refusal or a snap-back.
+       The frame's area is what the block costs in Manual, so the fill meter follows what is on the pages. */
+    const isArtId = id => !!photoMeta[id] || !!(slotBy[id] && (slotBy[id].cost || {}).type === 'figure');
+    const frameW = span => SNAP_WIDTHS[span] || cap.col_width_in;
+    function artAspect(id) { // picture height / width; square when the file gives no size (as figDepth does)
+      const m = photoMeta[id] ? media[id] : null, c = (!m && slotBy[id] && slotBy[id].cost) || {};
+      const w = m ? m.w : c.w, h = m ? m.h : c.h;
+      return (w > 0 && h > 0) ? h / w : 1;
+    }
+    function artExtra(id, span) { // depth per column that is not picture: caption / head, the gap, any words
+      if (photoMeta[id]) return cap.caption_in + cap.gap;
+      const s = slotBy[id], c = (s && s.cost) || {};
+      const textIn = Math.max(0, (c.words || 0) / cap.wpi + resizeWordDelta(s, c.words || 0));
+      return (c.head ? cap.caption_in + cap.head_short : 0) + cap.gap + textIn / Math.max(1, span);
+    }
+    const minArtFrame = (id, span) => artExtra(id, span) + 0.4;
+    function naturalArtH(id, span) { return frameW(span) * artAspect(id) + artExtra(id, span); } // full frame width, uncropped
+    function artFit(id, span, heightIn) { // the picture as it sits in a frame: never cropped, never wider than the frame
+      const W = frameW(span), a = artAspect(id), room = Math.max(0, heightIn - artExtra(id, span)), full = W * a;
+      const h = Math.min(full, room), w = a ? h / a : W;
+      return { w, h, frameW: W, room, full, scaled: full > room + 0.01, slack: Math.max(0, room - full) };
+    }
+    function defaultSize(id) { // a block that has no frame yet: the size Auto would give it
+      if (photoMeta[id]) { const span = photoSpanOf(id); return { span, heightIn: Math.max(MIN_PIECE, photoCost(id) / span) }; }
+      const s = slotBy[id]; if (!s) return { span: 1, heightIn: 1 };
+      const span = spanOf(s); return { span, heightIn: Math.max(MIN_PIECE, costOf(s) / span) };
+    }
+    // Words that make a text block's estimate fill `colIn` (cost is linear in words; same slope costOf uses).
+    function wordsForColIn(s, colIn) {
+      const c = s.cost || {}, prev = state.resize[s.key];
+      delete state.resize[s.key];
+      const c0 = costOf(s), w0 = baseWordsOf(s);
+      if (prev) state.resize[s.key] = prev;
+      const wpi = ((c.type === 'prose' || c.type === 'qa') && c.feature) ? cap.wpi_feature : cap.wpi;
+      return Math.max(0, Math.round(w0 + (colIn - c0) * wpi));
     }
 
     /* ---------- state ---------- */
@@ -304,6 +360,7 @@
     }
     state = freshState();
     const listeners = [];
+    // fillMissingManual (below) runs once the whole model is defined; see the end of make().
     const on = f => listeners.push(f), emit = why => listeners.forEach(f => f(why));
 
     /* Autosave round trip. A save made before Frank's latest ingested decision is superseded by it; a save made
@@ -349,6 +406,7 @@
         const ok = saved.order.filter((k, i, a) => card(k) && a.indexOf(k) === i);
         state.order = ok.concat(state.order.filter(k => !ok.includes(k)));
       }
+      fillMissingManual();
       return res;
     }
 
@@ -394,10 +452,14 @@
     const questionsOf = s => questionsFor(s).map((q, i) => ({ q, i, key: qKey(s.key, i), answer: state.answers[qKey(s.key, i)] || '' }));
 
     /* ---------- fill ---------- */
+    // What a block takes on the pages: in Manual the frame Frank drew, otherwise the capacity estimate.
+    const frameCost = id => { const e = isManual() && state.manualLayout[id]; return e ? e.heightIn * e.span : null; };
+    const liveCostOfSlot = s => { const f = frameCost(s.key); return f == null ? costOf(s) : f; };
+    const liveCostOfPhoto = id => { const f = frameCost(id); return f == null ? photoCost(id) : f; };
     function fill() {
       let used = 0;
-      slots.forEach(s => { if (state.inc[s.key]) used += costOf(s); });
-      loosePhotos.forEach(id => { if (state.photos[id]) used += photoCost(id); });
+      slots.forEach(s => { if (state.inc[s.key]) used += liveCostOfSlot(s); });
+      loosePhotos.forEach(id => { if (state.photos[id]) used += liveCostOfPhoto(id); });
       const pct = used / total, target = total * cap.oversupply;
       const status = pct < 1 ? 'short' : pct > cap.oversupply ? 'over' : 'ok';
       const gap = status === 'short' ? total - used : status === 'over' ? used - target : 0;
@@ -486,13 +548,13 @@
         if (!state.inc[s.key]) return;
         const e = state.manualLayout[s.key];
         if (!e || e.page !== p) return;
-        out.push({ type: 'slot', id: s.key, span: e.span, cost: costOf(s), kind: (s.cost || {}).type, col: e.col, y: e.topIn, h: e.heightIn });
+        out.push({ type: 'slot', id: s.key, span: e.span, cost: e.heightIn * e.span, kind: (s.cost || {}).type, col: e.col, y: e.topIn, h: e.heightIn });
       });
       loosePhotos.forEach(id => {
         if (!state.photos[id]) return;
         const e = state.manualLayout[id];
         if (!e || e.page !== p) return;
-        out.push({ type: 'photo', id, span: e.span, cost: photoCost(id), kind: 'figure', col: e.col, y: e.topIn, h: e.heightIn });
+        out.push({ type: 'photo', id, span: e.span, cost: e.heightIn * e.span, kind: 'figure', col: e.col, y: e.topIn, h: e.heightIn });
       });
       return out;
     }
@@ -765,20 +827,38 @@
       }
       return n;
     }
+    /* First free spot on a page for a frame of this size: top-down, then left to right, wholly on the page if it
+       can be. If nothing is free it goes top-left and the overlap warning says so; nothing else moves. */
+    function findSpot(page, span, h, exceptId) {
+      const H = pageH(page), others = manualBlocks(page).filter(b => b.id !== exceptId);
+      const ys = [0].concat(others.map(b => snapY(b.y + b.h))).filter(y => y < H - 0.1).sort((a, b) => a - b);
+      const free = (col, y) => !others.some(b => b.col < col + span && col < b.col + b.span && b.y < y + h - 0.02 && y < b.y + b.h - 0.02);
+      let hanging = null;
+      for (const y of ys) {
+        for (let col = 0; col <= 3 - span; col++) {
+          if (!free(col, y)) continue;
+          if (y + h <= H + 0.02) return { col, topIn: y };
+          if (!hanging) hanging = { col, topIn: y };
+        }
+      }
+      return hanging || { col: 0, topIn: 0 };
+    }
+    // Where a block lands when it is sent to a page by a button (not dragged): it keeps the size Frank gave it.
     function defaultManualPos(id, page) {
-      const isPhoto = !!photoMeta[id];
-      const span = isPhoto ? photoSpanOf(id) : spanOf(slotBy[id]);
-      const cost = isPhoto ? photoCost(id) : costOf(slotBy[id]);
-      const heightIn = Math.max(MIN_PIECE, cost / span);
-      const r = packManual(page);
-      const hole = r.holes.filter(x => !x.trapped && x.cols >= span && x.h >= Math.min(heightIn, 0.6)).sort((a, b) => a.y - b.y || a.col - b.col)[0];
-      if (hole) return { page, col: hole.col, span, topIn: hole.y, heightIn };
-      return { page, col: 0, span, topIn: 0, heightIn };
+      const cur = state.manualLayout[id], size = cur ? { span: cur.span, heightIn: cur.heightIn } : defaultSize(id);
+      const spot = findSpot(page, size.span, size.heightIn, id);
+      return { page, col: spot.col, span: size.span, topIn: spot.topIn, heightIn: size.heightIn };
     }
     function ensureManual(id, page) {
       const cur = state.manualLayout[id];
       if (cur && (page == null || cur.page === page)) return writeManual(id, cur);
       return writeManual(id, defaultManualPos(id, page || (cur && cur.page) || 1));
+    }
+    // In Manual every block on the pages has a frame (an older save or decision may not list one).
+    function fillMissingManual() {
+      if (!isManual()) return;
+      slots.forEach(s => { if (state.inc[s.key] && !s.empty && !state.manualLayout[s.key]) writeManual(s.key, defaultManualPos(s.key, state.page[s.key] || 1)); });
+      loosePhotos.forEach(id => { if (state.photos[id] && !state.manualLayout[id]) writeManual(id, defaultManualPos(id, state.photoPage[id] || 1)); });
     }
     function snapshotFromAuto() {
       const layout = {};
@@ -793,20 +873,44 @@
       });
       state.manualLayout = layout;
     }
+    // Text only: after Expand / Shrink / a typed target, the frame follows the new estimate (col-in / span).
     function syncManualFromCost(id) {
-      if (!isManual() || !state.manualLayout[id]) return;
-      const e = state.manualLayout[id];
-      const isPhoto = !!photoMeta[id];
-      const span = isPhoto ? photoSpanOf(id) : (slotBy[id] ? spanOf(slotBy[id]) : e.span);
-      const cost = isPhoto ? photoCost(id) : costOf(slotBy[id]);
-      const col = Math.max(0, Math.min(3 - span, e.col));
-      writeManual(id, { page: e.page, col, span, topIn: e.topIn, heightIn: Math.max(MIN_PIECE * 0.8, cost / span) });
+      if (!isManual() || !state.manualLayout[id] || isArtId(id) || !slotBy[id]) return;
+      const e = state.manualLayout[id], span = spanOf(slotBy[id]);
+      writeManual(id, { page: e.page, col: Math.min(e.col, 3 - span), span, topIn: e.topIn, heightIn: Math.max(MIN_FRAME, costOf(slotBy[id]) / span) });
+    }
+    /* Resize one frame. Only this block changes; nothing else moves.
+       change: {span} and/or {heightIn}. `from` is the frame at the start of a handle drag, so a drag is
+       measured from where it began (no creep from frame to frame). */
+    function resizeFrame(id, change, from) {
+      const cur = state.manualLayout[id]; if (!cur) return null;
+      const base = from || cur, art = isArtId(id), s = slotBy[id];
+      const span = change.span != null ? Math.max(1, Math.min(3, Math.round(Number(change.span) || 1))) : base.span;
+      let heightIn = change.heightIn != null ? Number(change.heightIn) : null;
+      if (heightIn == null) {
+        if (span === base.span) heightIn = base.heightIn;
+        else if (art) { // the picture keeps its shape and grows / shrinks with the frame width
+          const pic = artFit(id, base.span, base.heightIn).h;
+          heightIn = artExtra(id, span) + pic * frameW(span) / frameW(base.span);
+        } else if (s) { // same words, re-flowed
+          state.slotSpan[id] = span;
+          heightIn = costOf(s) / span;
+        }
+      }
+      if (art) heightIn = Math.max(minArtFrame(id, span), heightIn);
+      heightIn = Math.max(MIN_FRAME, snapY(heightIn));
+      if (!art && s && change.heightIn != null) { // the bottom handle on text asks Clark for a length that fills the frame
+        const toWords = wordsForColIn(s, heightIn * span);
+        applyResize(s, toWords >= baseWordsOf(s) ? 'expand' : 'shrink', toWords + 'w');
+      }
+      return writeManual(id, { page: cur.page, col: Math.min(base.col, 3 - span), span, topIn: cur.topIn, heightIn });
     }
     function toManual() {
       if (isManual()) return;
       pushUndo();
       snapshotFromAuto();
       state.mode = 'manual';
+      fillMissingManual();
       emit('mode');
     }
     function toAuto() {
@@ -816,12 +920,7 @@
       state.manualLayout = {};
       emit('mode');
     }
-    function setManualPos(id, pos, why) {
-      if (!isManual()) return;
-      const cur = state.manualLayout[id] || defaultManualPos(id, (pos && pos.page) || 1);
-      writeManual(id, Object.assign({}, cur, pos));
-      emit(why || 'place');
-    }
+    const isDrag = why => String(why || '').endsWith('drag');
 
     /* ---------- mutations ---------- */
     const act = {
@@ -842,18 +941,19 @@
         if (!slotBy[k] || slotBy[k].empty) return; if (!canPlace(slotBy[k])) return;
         if (isManual()) {
           pushUndo();
+          const cur = state.manualLayout[k], stays = state.inc[k] && cur && cur.page === p;
           state.inc[k] = true;
-          const cur = state.manualLayout[k];
-          writeManual(k, Object.assign({}, cur || defaultManualPos(k, p), { page: p }));
+          writeManual(k, stays ? cur : defaultManualPos(k, p)); // same size; a free spot on the new page
           emit('place'); return;
         }
         if (state.page[k] !== p || !state.inc[k]) state.moved[k] = p; state.page[k] = p; act.include(k, true);
       },
+      // Manual: put a block exactly here (a drop). Size comes along unless pos changes it.
       placeAt(k, pos, why) {
         if (photoMeta[k]) return act.placePhotoAt(k, pos, why);
         if (!slotBy[k] || slotBy[k].empty) return; if (!canPlace(slotBy[k])) return;
         if (!isManual()) { return act.place(k, (pos && pos.page) || state.page[k] || 1); }
-        if (!(why || '').endsWith('drag')) pushUndo();
+        if (!isDrag(why)) pushUndo();
         state.inc[k] = true;
         const cur = state.manualLayout[k] || defaultManualPos(k, (pos && pos.page) || 1);
         writeManual(k, Object.assign({}, cur, pos || {}));
@@ -862,7 +962,7 @@
       placePhotoAt(id, pos, why) {
         if (!photoMeta[id] || !canPlacePhoto(id)) return;
         if (!isManual()) { return act.photo(id, true, (pos && pos.page) || 1); }
-        if (!(why || '').endsWith('drag')) pushUndo();
+        if (!isDrag(why)) pushUndo();
         state.photos[id] = true;
         const cur = state.manualLayout[id] || defaultManualPos(id, (pos && pos.page) || 1);
         writeManual(id, Object.assign({}, cur, pos || {}));
@@ -874,6 +974,11 @@
         if (p) state.photoPage[id] = p; state.photos[id] = !!v;
         if (isManual() && v) ensureManual(id, p || state.photoPage[id] || 1);
         emit('photo');
+      },
+      // Off the pages, back to the bank (a drag off the page to the left, or the slip's Bank button).
+      toBank(id) {
+        if (photoMeta[id]) return act.photo(id, false);
+        if (slotBy[id]) return act.include(id, false);
       },
       vet(id, note) { state.vets[id] = note || ''; emit('vet'); },
       unvet(id) {
@@ -894,37 +999,38 @@
       before(k, other) { const o = state.order; if (k === other || !o.includes(k) || !o.includes(other)) return; o.splice(o.indexOf(k), 1); o.splice(o.indexOf(other), 0, k); },
       setLayout(k, v) {
         if (v !== 'wide' && v !== 'tall') return;
-        if (isManual() ) pushUndo();
         if (photoMeta[k]) {
-          state.layout[k] = v;
-          state.photoSpan[k] = v === 'tall' ? 1 : Math.max(2, (photoMeta[k] || {}).span || 2);
-          if (isManual()) syncManualFromCost(k);
+          const span = v === 'tall' ? 1 : Math.max(2, (photoMeta[k] || {}).span || 2);
+          if (isManual() && state.manualLayout[k]) { pushUndo(); resizeFrame(k, { span }); state.layout[k] = v; emit('layout'); return; }
+          state.layout[k] = v; state.photoSpan[k] = span;
           emit('layout'); return;
         }
         const s = slotBy[k]; if (!s || s.empty) return;
+        if (isManual() && state.manualLayout[k]) { pushUndo(); resizeFrame(k, { span: layoutSpan(s, v) }); state.layout[k] = v; emit('layout'); return; }
         state.layout[k] = v;
         state.slotSpan[k] = layoutSpan(s, v);
-        if (isManual()) syncManualFromCost(k);
         emit('layout');
       },
       setSpan(k, span, why) {
         span = Math.max(1, Math.min(3, Math.round(Number(span) || 1)));
-        if (isManual() && !(why || '').endsWith('drag')) pushUndo();
+        if (isManual() && state.manualLayout[k]) {
+          if (!isDrag(why)) pushUndo();
+          resizeFrame(k, { span });
+          emit(why || 'resize'); return;
+        }
         if (photoMeta[k]) {
           state.photoSpan[k] = span;
           state.layout[k] = span >= 2 ? 'wide' : 'tall';
-          if (isManual()) syncManualFromCost(k);
           emit(why || 'resize'); return;
         }
         const s = slotBy[k]; if (!s || s.empty) return;
         state.slotSpan[k] = span;
         state.layout[k] = span >= 2 ? 'wide' : 'tall';
-        if (isManual()) syncManualFromCost(k);
         emit(why || 'resize');
       },
       setResize(k, direction, target, why) {
         const s = slotBy[k]; if (!s || s.empty) return;
-        if (isManual() && !(why || '').endsWith('drag')) pushUndo();
+        if (isManual() && !isDrag(why) && why !== 'resize-text') pushUndo();
         if (!direction) {
           delete state.resize[k];
           if (isManual()) syncManualFromCost(k);
@@ -934,29 +1040,41 @@
         if (isManual()) syncManualFromCost(k);
         emit(why || 'resize');
       },
+      // Manual: the bottom edge. Art scales inside its frame; text asks Clark for the length that fills it.
       setHeight(k, heightIn, why) {
-        if (!isManual()) return;
-        const e = state.manualLayout[k]; if (!e) return;
-        if (!(why || '').endsWith('drag')) pushUndo();
-        const h = Math.max(MIN_PIECE * 0.8, snapY(heightIn));
-        writeManual(k, Object.assign({}, e, { heightIn: h }));
-        if (slotBy[k] && !photoMeta[k]) {
-          const wpi = (slotBy[k].cost && slotBy[k].cost.feature) ? cap.wpi_feature : cap.wpi;
-          const toWords = Math.max(0, Math.round(h * e.span * wpi));
-          const dir = toWords >= baseWordsOf(slotBy[k]) ? 'expand' : 'shrink';
-          applyResize(slotBy[k], dir, toWords + 'w');
-          // keep the dragged height, not the cost-derived height (they can differ on tables)
-          writeManual(k, Object.assign({}, state.manualLayout[k], { heightIn: h }));
-        }
+        if (!isManual() || !state.manualLayout[k]) return;
+        if (!isDrag(why)) pushUndo();
+        resizeFrame(k, { heightIn });
         emit(why || 'resize');
+      },
+      // Manual: one resize primitive for handles. `from` is the frame when the drag began.
+      frame(k, change, why, from) {
+        if (!isManual() || !state.manualLayout[k]) return;
+        if (!isDrag(why)) pushUndo();
+        resizeFrame(k, change || {}, from);
+        emit(why || 'resize');
+      },
+      // Manual art from the slip: 'bigger' / 'smaller' scale the picture 15%; 'natural' fits the frame width uncropped.
+      artSize(k, how) {
+        const e = isManual() && state.manualLayout[k]; if (!e || !isArtId(k)) return;
+        const fit = artFit(k, e.span, e.heightIn);
+        if (how === 'bigger' && !fit.scaled) { // already as wide as its columns: a column wider, same shape
+          if (e.span >= 3) return;
+          pushUndo(); resizeFrame(k, { span: e.span + 1 }); emit('resize'); return;
+        }
+        pushUndo();
+        const h = how === 'natural' ? naturalArtH(k, e.span) : artExtra(k, e.span) + fit.h * (how === 'bigger' ? 1.15 : 1 / 1.15);
+        resizeFrame(k, { heightIn: h });
+        emit('resize');
       },
       toManual, toAuto, undo, checkpoint: pushUndo,
       setManualPos(id, pos, why) {
         if (!isManual()) return;
-        if (!(why || '').endsWith('drag')) pushUndo();
-        setManualPos(id, pos, why);
+        if (photoMeta[id]) return act.placePhotoAt(id, pos, why);
+        return act.placeAt(id, pos, why);
       },
     };
+    fillMissingManual(); // a Manual decision that names fewer blocks than it includes: give the rest a free spot
     const thumb = name => (((D.thumbs || {})[fileOf(name)]) || {}).src || '';
     function answersForSave() { const m = {}; slots.forEach(s => questionsOf(s).forEach(q => { m[q.key] = q.q; })); return m; }
 
@@ -964,7 +1082,8 @@
       headlineOf, shortName, isVetted, vettedOnFile, canPlace, canPlacePhoto, staleness, sourcesOf, flagsOf, questionsOf, mediaOfSlot, loosePhotos, photoMeta, sectionRows, sectionsOfSlot, submission, submissionName,
       placementNotes, placementOf, resizeOf, layoutOf, manualLayoutOf, serialize, restore, answersForSave, fmt, fmtDate, r1, esc, thumb, total, issueNo, GUT, VGRID,
       layoutSpec, canSwitchLayout, currentLayout, layoutSpan, photoSpanOf, photoLayoutOf, photoSize, slotSize, snapSpan, baseWordsOf, naturalSpan, SNAP_WIDTHS,
-      isManual, canUndo, allOverlaps, snapY, takeManual };
+      isManual, canUndo, allOverlaps, snapY, takeManual, isArtId, artFit, artAspect, artExtra, naturalArtH, frameW, defaultSize, findSpot, wordsForColIn,
+      liveCostOfSlot, liveCostOfPhoto };
   }
 
   const Core = { PAGE_VERSION, make };

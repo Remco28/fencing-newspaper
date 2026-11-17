@@ -123,6 +123,14 @@ each included slot or photo to `{page, col, span, topIn, heightIn}`) are stored 
 present. Older submissions without them still ingest. Overlaps and overset past the trim are printed
 as warnings and are not moved. Compose does not yet pack from `manualLayout` (see `compose/README.md`).
 
+Manual placement on the page (2026-11-17): one pointer drag moves page blocks and bank strips (the
+browser's own drag is off in Manual, so a photo moves like any block); the dashed outline is where it
+lands; releasing over the bank or left of page 1 pulls it off the pages; Esc cancels. Each block is a
+frame. Text re-flows on a new width, and its bottom edge asks Clark for the length that fills the frame.
+A photo or comic keeps its shape and is scaled to fit its frame, never cropped; the 2.2in photo guide
+is a note on the slip, not a limit. For art, `manualLayout.heightIn` is the frame (picture plus caption
+allowance) and, in Manual, `pages.photos` `widthIn`/`heightIn` give the picture as it sits in that frame.
+
 
 Test against a throwaway copy, never the live paths:
 

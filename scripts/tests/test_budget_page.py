@@ -401,6 +401,158 @@ class PageLogic(unittest.TestCase):
         self.assertTrue(res["same"], "ingest-style layout must keep the overlapping positions")
         self.assertEqual(res["mode"], "manual")
 
+    def test_manual_photo_frames_keep_their_shape_are_never_cropped_and_have_no_hard_ceiling(self):
+        """Frank 2026-11-17: photos were "not flexible at all". The old rules locked a photo's depth to its width at
+        exactly 1, 2 or 3 columns, capped one column at 2.2in, and reset a dragged depth on the next width change.
+        In Manual a photo now sits in a frame: any depth on the 0.05in grid, the picture scaled to fit, never cropped."""
+        res = node(self.data, """
+          C.act.toManual();
+          const pid = C.loosePhotos.find(id => C.canPlacePhoto(id) && C.media[id].w && C.media[id].h > C.media[id].w); // a portrait photo
+          C.act.photo(pid, true, 1);
+          const snap = () => ({ e: Object.assign({}, C.state.manualLayout[pid]), size: C.photoSize(pid), cost: C.liveCostOfPhoto(pid) });
+          const aspect = C.media[pid].h / C.media[pid].w, others = () => JSON.stringify(Object.keys(C.state.manualLayout).filter(k => k !== pid).map(k => [k, C.state.manualLayout[k]]));
+          const before = others(), a = snap();
+          C.act.setSpan(pid, 2); const b = snap();
+          C.act.setHeight(pid, b.e.heightIn - 1.5); const c = snap();
+          C.act.setSpan(pid, 1); const d = snap();   // the depth Frank chose is scaled, not thrown away
+          C.act.setHeight(pid, 4.0); const e = snap();
+          C.act.artSize(pid, 'natural'); const nat = snap();
+          C.act.artSize(pid, 'smaller'); const sm = snap();
+          C.act.setLayout(pid, 'wide'); const wide = snap();
+          C.act.photo(pid, true, 2); const p2 = snap();
+          const fits = [a, b, c, d, e, nat, sm, wide, p2].map(x => ({ ratio: x.size.heightIn / x.size.widthIn, w: x.size.widthIn, fw: C.frameW(x.e.span) }));
+          out = { aspect, a, b, c, d, e, nat, sm, wide, p2, fits, untouched: others() === before, col: C.cap.col_width_in, ceil: C.cap.photo_ceiling_in };
+        """)
+        for f in res["fits"]:
+            self.assertAlmostEqual(f["ratio"], res["aspect"], delta=0.03, msg="the picture keeps its shape")
+            self.assertLessEqual(f["w"], f["fw"] + 0.01, "never wider than its frame")
+        self.assertEqual(res["b"]["e"]["span"], 2)
+        self.assertGreater(res["b"]["size"]["widthIn"], res["a"]["size"]["widthIn"] * 1.8)  # wider frame, bigger picture
+        self.assertAlmostEqual(res["c"]["e"]["heightIn"], res["b"]["e"]["heightIn"] - 1.5, delta=0.051)
+        self.assertLess(res["c"]["size"]["heightIn"], res["b"]["size"]["heightIn"])
+        self.assertLess(res["d"]["e"]["heightIn"], res["c"]["e"]["heightIn"])          # back to 1 column: scaled down with it
+        self.assertAlmostEqual(res["d"]["size"]["widthIn"] / res["c"]["size"]["widthIn"], res["col"] / 4.96, delta=0.03)
+        self.assertGreater(res["e"]["size"]["heightIn"], res["ceil"], "2.2in is a guide in Manual, not a wall")
+        self.assertAlmostEqual(res["nat"]["size"]["widthIn"], res["col"], delta=0.02)  # natural: full column, uncropped
+        self.assertAlmostEqual(res["nat"]["size"]["heightIn"], res["col"] * res["aspect"], delta=0.03)
+        self.assertLess(res["sm"]["size"]["heightIn"], res["nat"]["size"]["heightIn"])
+        self.assertEqual(res["wide"]["e"]["span"], 2)
+        self.assertEqual((res["p2"]["e"]["page"], res["p2"]["e"]["span"], res["p2"]["e"]["heightIn"]), (2, res["wide"]["e"]["span"], res["wide"]["e"]["heightIn"]),
+                         "sending it to page 2 keeps the size Frank gave it")
+        self.assertAlmostEqual(res["e"]["cost"], res["e"]["e"]["heightIn"] * res["e"]["e"]["span"], places=6)  # Manual counts the frame
+        self.assertTrue(res["untouched"], "resizing a photo changed another block")
+
+    def test_manual_text_depth_asks_for_the_length_that_fills_the_frame(self):
+        res = node(self.data, """
+          C.act.toManual();
+          const out_ = {};
+          ['lead', 'signup-cobra', 'deadlines'].forEach(k => {
+            C.act.setHeight(k, 3.0);
+            const e = C.state.manualLayout[k];
+            out_[k] = { frame: e.heightIn * e.span, cost: C.costOf(C.slotBy[k]), rz: C.state.resize[k] };
+          });
+          const comic = Object.assign({}, C.state.manualLayout.comic);
+          C.act.setHeight('comic', comic.heightIn + 0.6);
+          C.act.setSpan('lead', 1);
+          const lead1 = { e: C.state.manualLayout.lead, cost: C.costOf(C.slotBy.lead) };
+          C.act.setResize('lead', 'expand', '');
+          const lead2 = { e: C.state.manualLayout.lead, cost: C.costOf(C.slotBy.lead) };
+          out = { blocks: out_, comicResize: C.state.resize.comic || null, comic: C.state.manualLayout.comic, comic0: comic, lead1, lead2 };
+        """)
+        for k, b in res["blocks"].items():
+            self.assertAlmostEqual(b["cost"], b["frame"], delta=0.06, msg=k + ": the words asked for fill the frame")
+            self.assertIn(b["rz"]["direction"], ("expand", "shrink"))
+        self.assertIsNone(res["comicResize"], "a comic's bottom edge sizes the picture; it asks Clark for no words")
+        self.assertAlmostEqual(res["comic"]["heightIn"], res["comic0"]["heightIn"] + 0.6, delta=0.051)
+        self.assertAlmostEqual(res["lead1"]["e"]["heightIn"], res["lead1"]["cost"], delta=0.051)  # 1 column: same words re-flowed
+        self.assertGreater(res["lead2"]["e"]["heightIn"], res["lead1"]["e"]["heightIn"])          # Expand grows only that frame
+        self.assertAlmostEqual(res["lead2"]["e"]["heightIn"], res["lead2"]["cost"], delta=0.051)
+
+    def test_manual_fill_follows_the_frames_on_the_pages(self):
+        res = node(self.data, """
+          C.act.toManual();
+          const sum = () => Object.keys(C.manualLayoutOf()).reduce((a, k) => a + C.manualLayoutOf()[k].heightIn * C.manualLayoutOf()[k].span, 0);
+          const pid = C.loosePhotos.find(id => C.canPlacePhoto(id) && C.media[id].w);
+          C.act.photo(pid, true, 1); C.act.setHeight(pid, 4.2);
+          out = { used: C.fill().used, frames: sum(), packed: C.pack(1).used + C.pack(2).used };
+        """)
+        self.assertAlmostEqual(res["used"], res["frames"], places=6)
+        self.assertAlmostEqual(res["packed"], res["frames"], places=6)
+
+    def test_manual_positions_snap_cleanly_and_the_contract_shape_is_unchanged(self):
+        res = node(self.data, """
+          C.act.toManual();
+          C.act.placeAt('lead', { page: 1, col: 0, span: 2, topIn: 1.2345, heightIn: 2.3456 });
+          C.act.placeAt('nac-preview', { page: 2, col: 7, span: 1, topIn: -3, heightIn: 1.9000000000000001 });
+          out = C.submission();
+        """)
+        self.assertEqual(res["mode"], "manual")
+        for k, e in res["manualLayout"].items():
+            self.assertEqual(sorted(e), ["col", "heightIn", "page", "span", "topIn"], k)
+            self.assertIn(e["page"], (1, 2))
+            self.assertTrue(1 <= e["span"] <= 3 and 0 <= e["col"] <= 3 - e["span"], k)
+            for f in ("topIn", "heightIn"):
+                self.assertEqual(e[f], round(e[f], 2), "%s.%s has float noise: %r" % (k, f, e[f]))
+                self.assertAlmostEqual(e[f] / 0.05, round(e[f] / 0.05), places=6)
+        self.assertEqual(res["manualLayout"]["lead"]["topIn"], 1.25)
+        self.assertEqual(res["manualLayout"]["nac-preview"], {"page": 2, "col": 2, "span": 1, "topIn": 0, "heightIn": 1.9})
+
+    def test_manual_vetting_gates_and_bank(self):
+        res = node(self.data, """
+          C.act.toManual();
+          const s = C.slots.find(x => !x.empty && !C.canPlace(x)), pid = C.loosePhotos.find(id => !C.canPlacePhoto(id))
+            || Object.keys(C.photoMeta).find(id => !C.canPlacePhoto(id));
+          if (s) { C.act.placeAt(s.key, { page: 1, col: 0, span: 1, topIn: 1, heightIn: 2 }); C.act.place(s.key, 2); C.act.include(s.key, true); }
+          if (pid) { C.act.placePhotoAt(pid, { page: 1, col: 0, span: 1, topIn: 1, heightIn: 2 }); C.act.photo(pid, true, 1); }
+          const doc = C.submission();
+          C.act.toBank('lead');
+          const vetted = C.loosePhotos.find(id => C.canPlacePhoto(id));
+          C.act.photo(vetted, true, 1); C.act.toBank(vetted);
+          const after = C.submission();
+          out = { slot: s && s.key, pid, inc: s ? !!C.state.inc[s.key] : false, photo: pid ? !!C.state.photos[pid] : false,
+                  docSlots: doc.includedSlots.map(e => e.slot), docPhotos: doc.photoIncludes, layout: Object.keys(doc.manualLayout),
+                  leadOut: !after.includedSlots.some(e => e.slot === 'lead') && !('lead' in after.manualLayout),
+                  photoOut: !after.photoIncludes.includes(vetted) && !(vetted in after.manualLayout) };
+        """)
+        self.assertTrue(res["slot"] or res["pid"])
+        self.assertFalse(res["inc"])
+        self.assertFalse(res["photo"])
+        if res["slot"]:
+            self.assertNotIn(res["slot"], res["docSlots"])
+            self.assertNotIn(res["slot"], res["layout"])
+        if res["pid"]:
+            self.assertNotIn(res["pid"], res["docPhotos"])
+            self.assertNotIn(res["pid"], res["layout"])
+        self.assertTrue(res["leadOut"])
+        self.assertTrue(res["photoOut"])
+
+    def test_manual_undo_keeps_the_last_40_steps(self):
+        res = node(self.data, """
+          C.act.toManual();
+          for (let i = 0; i < 45; i++) C.act.placeAt('lead', { page: 1 + (i % 2), col: 0, span: 2, topIn: i * 0.05, heightIn: 2.35 });
+          let n = 0; while (C.canUndo()) { C.act.undo(); n++; }
+          out = { n, lead: C.state.manualLayout.lead, mode: C.state.mode };
+        """)
+        self.assertEqual(res["n"], 40)
+        self.assertEqual(res["mode"], "manual")  # the oldest steps (including the switch) fell off the stack
+
+    def test_manual_decision_with_missing_frames_gets_free_spots(self):
+        """An older Manual save or decision that includes more blocks than it positions: every included block
+        gets a frame (in free space when there is any) instead of vanishing from the pages."""
+        base = node(self.data, "C.act.toManual(); out = C.submission();")
+        layout = dict(base["manualLayout"])
+        layout.pop("nac-preview")
+        data = dict(self.data, decisions=dict(self.data["decisions"] or {}, mode="manual", manualLayout=layout))
+        res = node(data, """
+          out = { mode: C.state.mode, nac: C.state.manualLayout['nac-preview'] || null, inc: C.state.inc['nac-preview'],
+                  overlaps: C.allOverlaps().length, keys: Object.keys(C.manualLayoutOf()).sort() };
+        """)
+        self.assertEqual(res["mode"], "manual")
+        self.assertTrue(res["inc"])
+        self.assertIsNotNone(res["nac"])
+        self.assertEqual(res["overlaps"], 0, "a free spot was found")
+        self.assertEqual(res["keys"], sorted(base["manualLayout"]))
+
     def test_resize_and_layout_seed_from_a_previous_decision(self):
 
         data = dict(self.data, decisions=dict(self.data["decisions"] or {}, 
@@ -653,6 +805,31 @@ class Ingest(unittest.TestCase):
         r4 = self.ingest(dict(self.base(), mode="manual", manualLayout={"lead": {"page": 1, "col": 0, "span": 3, "topIn": 0, "heightIn": 0}}))
         self.assertEqual(r4.returncode, 1)
         self.assertIn("heightIn", r4.stderr)
+
+    @unittest.skipUnless(NODE, "node not installed")
+    def test_manual_submission_round_trips_through_ingest_and_the_next_build(self):
+        _, _, data = build(self.tmp, "--preview")
+        doc = node(data, """
+          C.act.toManual();
+          const pid = C.loosePhotos.find(id => C.canPlacePhoto(id) && C.media[id].w);
+          C.act.photo(pid, true, 2); C.act.setHeight(pid, 3.6);
+          C.act.placeAt('lead', { page: 1, col: 1, span: 2, topIn: 4.5, heightIn: 2.35 });
+          out = Object.assign(C.submission(), { _pid: pid });
+        """)
+        pid = doc.pop("_pid")
+        self.assertIn(pid, doc["manualLayout"])
+        self.assertEqual(doc["pages"]["photos"][pid]["page"], 2)
+        r = self.ingest(doc)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        d = self.last_decision()
+        self.assertEqual(d["mode"], "manual")
+        self.assertEqual(d["manualLayout"], doc["manualLayout"])
+        r2, _, data2 = build(self.tmp)
+        self.assertEqual(r2.returncode, 0, r2.stderr)
+        again = node(data2, "out = C.submission();")
+        self.assertEqual(again["mode"], "manual")
+        self.assertEqual(again["manualLayout"], doc["manualLayout"])
+        self.assertIn(pid, again["photoIncludes"])
 
     @unittest.skipUnless(NODE, "node not installed")
     def test_page_document_round_trips_through_ingest_and_the_next_build(self):

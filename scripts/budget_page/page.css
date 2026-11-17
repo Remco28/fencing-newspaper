@@ -116,8 +116,10 @@ button{font-family:inherit}
 .blk.lead .greek{columns:2;background:repeating-linear-gradient(180deg,#b9b5aa 0,#b9b5aa 1.5px,transparent 1.5px,transparent 5px)}
 .blk .tr{font:8px/1.25 var(--sans);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:inset 0 .5px 0 #bbb;flex:none}
 .blk .tr b{font-weight:600}
-.blk img{width:100%;flex:1 1 auto;min-height:0;object-fit:cover;object-position:top;filter:grayscale(1) contrast(1.05)}
-.blk.t-figure.wide img{object-fit:contain}
+.blk img{width:100%;flex:1 1 auto;min-height:0;object-fit:contain;object-position:left top;filter:grayscale(1) contrast(1.05)}
+/* Never a browser drag from a picture (it cancelled Manual moves); compose never crops, so neither does the preview. */
+.blk img,.strip img{-webkit-user-drag:none;user-drag:none}
+.blk img.fit{flex:none;max-width:100%;object-fit:contain}
 .marks{position:absolute;top:2px;right:2px;display:flex;gap:2px;z-index:2}
 .mk{font:700 8.5px/15px var(--mono);font-style:normal;min-width:15px;height:15px;text-align:center;border-radius:8px;padding:0 3px;background:var(--paper)}
 .mk.vet,.mk.q{background:var(--bad);color:#fff}
@@ -248,10 +250,24 @@ body.resizing .blk{cursor:nwse-resize}
 .modebox .aux.warn{border-color:var(--bad);color:var(--bad)}
 body.manual .modebox{border-color:var(--accent);box-shadow:0 0 0 2px rgba(31,95,168,.25)}
 .blk.overlap{box-shadow:0 0 0 2px var(--bad);border-color:var(--bad);z-index:4}
-.overlap-banner{max-width:1120px;margin:0 auto 8px;background:#fbe9e7;border:1.5px solid var(--bad);color:var(--bad);padding:6px 10px;font:600 12.5px var(--sans)}
+.blk.lifted{z-index:5}
+.blk.overlap.lifted{z-index:6}
+/* One fixed line in Manual, overlaps or not: it never pushes the pages around under a drag. */
+.overlap-banner{max-width:1120px;margin:0 auto 8px;background:#fbe9e7;border:1.5px solid var(--bad);color:var(--bad);padding:6px 10px;font:600 12.5px/18px var(--sans);height:33px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.overlap-banner.calm{background:transparent;border-color:rgba(255,255,255,.25);color:#cfd6d0;font-weight:500}
 .overlap-banner[hidden]{display:none}
 .handle.wid{width:8px;height:22px;right:1px;top:50%;margin-top:-11px;cursor:ew-resize;border-radius:2px}
 body.manual .blk{cursor:grab}
+body.manual .blk,body.manual .strip{-webkit-user-select:none;user-select:none}
+@media (min-width:901px){body.manual .cols .blk{touch-action:none}}
 body.manual.moving{cursor:grabbing;user-select:none}
 body.manual.moving .blk{cursor:grabbing}
 body.manual .hint .manual-note{font-weight:700;color:#fff}
+/* Manual drag: the block in the air follows the pointer; the dashed outline is exactly where it will land. */
+.blk.lifting{opacity:.35;outline:1.5px dashed var(--accent);outline-offset:1px}
+.blk.drag-ghost{position:fixed;z-index:1000;pointer-events:none;opacity:.92;box-shadow:0 8px 22px rgba(0,0,0,.45);cursor:grabbing;will-change:transform}
+.blk.drag-ghost.to-bank{opacity:.75;border:2px dashed var(--bad);background:#fbe9e7}
+.ghost-tag{position:absolute;left:2px;top:2px;z-index:3;max-width:calc(100% - 4px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font:700 9.5px/16px var(--mono);letter-spacing:.03em;background:var(--ink);color:var(--paper);padding:0 6px;border-radius:2px}
+.ghost-tag:empty{display:none}
+.drop-outline{position:absolute;z-index:7;pointer-events:none;border:2px dashed var(--accent);background:rgba(31,95,168,.12)}
+.drop-tag{position:absolute;left:-2px;bottom:100%;margin-bottom:2px;white-space:nowrap;font:700 9.5px/15px var(--mono);letter-spacing:.03em;background:var(--accent);color:#fff;padding:0 6px;border-radius:2px}

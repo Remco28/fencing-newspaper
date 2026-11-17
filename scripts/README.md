@@ -8,4 +8,4 @@
 - **`budget_page/`**: the Budget page's UI, inlined by `build_budget_html.py`: `page.html`, `page.css`, `core.js` (logic; runs under node for tests), `ui.js` (DOM), `calibration.json` (fitted capacity numbers; generated).
 - **`budget_model.py`**: the capacity model in Python (same arithmetic as `costOf()` in `core.js`); merges `calibration.json` over `lineup.capacity`.
 - **`build_section_history.py [--check] [--explain]`**: derives which registry section ran in which published issue (`site/issues.json` + `issues/<date>/`), using `section_history_rules.json`. Writes `scripts/section-history.json`; `publish_issue.py` refreshes it at publish time and `build_budget_html.py` derives a fresh copy for every budget page.
-- **`tests/`**: `test_budget_page.py`, `test_section_history.py` (no Chrome); `smoke_budget_chrome.py` is an optional Chrome check.
+- **`tests/`**: `test_budget_page.py`, `test_section_history.py` (no Chrome); `test_budget_interactions.py` drives the page in headless Chrome with real pointer events, including Manual placement (skipped without Playwright); `smoke_budget_chrome.py` is an optional Chrome check.
