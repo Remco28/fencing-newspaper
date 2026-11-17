@@ -426,7 +426,8 @@
           "retrieved_at": "2026-11-16T09:30:00-05:00",
           "note": "t.117, t.118, t.119, t.162; penalty chart t.170"
         }
-      ]
+      ],
+      "note": "Proof v3 long copy adds the spare weapon / body cord / mask cord sentence from t.117 of the same rulebook PDF (checked against the PDF text)."
     },
     {
       "id": "email-holiday-party-2026-12-11",
@@ -478,7 +479,7 @@
         }
       ],
       "printed_credit": "Photo: Elite Fencers Club",
-      "note": "Printed with the lead (art-fit float at 1.65in, under the 2.2in photo ceiling). Identified as Penny Young from the New Haven Athletics backdrop and Frank's note that the single-girl photo is Penelope, who goes by Penny. File saved EXIF-normalized, not cropped."
+      "note": "Proof v3: printed uncropped in a side-by-side photo pair above the lead text (2.37in tall, over the 2.2in soft ceiling; tell Frank). The v2 face-safe backdrop crop is retired and its file removed. Identified as Penny Young from the New Haven Athletics backdrop and Frank's note that the single-girl photo is Penelope, who goes by Penny. File saved EXIF-normalized, not cropped."
     },
     {
       "id": "media-mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14",
@@ -505,7 +506,7 @@
         }
       ],
       "printed_credit": "Photo: Elite Fencers Club",
-      "note": "Printed with the lead, in a 1/3 split next to Ratings Earned (stack at ~1.65×2.20in so it stays under the photo ceiling without a second flex slot). Caption names Mila Siu, left (holding the Y14 bronze), and Stella Kuo, as the club email names both. Stella's placements stay out of results copy. File saved EXIF-normalized, not cropped."
+      "note": "Proof v3: printed uncropped beside the Penny photo in the lead's photo pair (2.37in tall, over the 2.2in soft ceiling; tell Frank). Caption names Mila Siu, left (holding the Y14 bronze), and Stella Kuo, as the club email names both. Stella's placements stay out of results copy. File saved EXIF-normalized, not cropped."
     },
     {
       "id": "media-kiefer-meinhardt-podium-group-2026-11-14",
@@ -532,6 +533,28 @@
         }
       ],
       "note": "Extracted from the same newsletter and staged, but not printed in this proof. It is a wider Y14 podium group; Mila is identifiable at far right; Stella is not clearly identifiable; the other medalists are not named in the club email. Held for Frank."
+    },
+    {
+      "id": "usaf-march-nac-atlantic-city-2027",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T23:43:00-05:00",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/2027-march-nac",
+          "retrieved_at": "2026-11-16T23:50:00-05:00",
+          "note": "Fetched via WebFetch and curl 2026-11-16 11:43 PM ET."
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-16T23:43:00-05:00",
+          "note": "t231u: March NAC in Atlantic City; keep it short this week, much larger article next week; it's for basically all the kids at our club; he'll encourage everyone to go since it's 'local'."
+        }
+      ],
+      "printed_as": "page 1 rail: 'March NAC Comes to Atlantic City' (long copy, proof v3)",
+      "note": "Facts from the USA Fencing event page only. Not printed: the withdrawal deadline (the page says Feb. 3, 2027 for a 50% refund in one place and TBD in its Withdrawals section), the exhibit hall (TBD) and the event schedule (not posted). The large feature is carried to No. 8 (staging/weeks/after-next: usaf-march-nac-feature-no8)."
     }
   ]
 }

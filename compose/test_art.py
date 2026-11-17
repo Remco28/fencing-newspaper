@@ -47,12 +47,16 @@ assert A.dpi_floors("diagram", vec) == (None, None)
 
 
 # ---------- photo_span parity with the historical rule (COL2_IN estimates)
-# A 3:2 photo at 2c is 3.31in tall → over the 2.2in ceiling → 1 column
+# 2.2in is a soft ceiling now (Frank t229u): a 3:2 photo at 2c (3.31in tall) may run 2 columns.
 p32 = img("photo32", (1500, 1000))
-cols, reason = A.photo_span(p32)
-assert cols == 1 and "ceiling" in reason, (cols, reason)
+cols32, _ = A.photo_span(p32)
+assert cols32 == 2, cols32
+# A 2:3 portrait at 2c is 7.44in tall → over the 4.5in hard cap → 1 column
+p23 = img("photo23", (1000, 1500))
+cols, reason = A.photo_span(p23)
+assert cols == 1 and "hard cap" in reason, (cols, reason)
 # same through gazette re-export
-assert g.photo_span(p32) == (cols, reason)
+assert g.photo_span(p23) == (cols, reason)
 assert g.MIN_PRINT_DPI == 150 and g.PHOTO_CEILING_IN == 2.2
 
 # A very wide photo (aspect >= 2.25) at high dpi is eligible for 2 columns
@@ -133,8 +137,8 @@ assert (hard, soft) == (3.0, 3.5)
 
 
 # ---------- ceiling / dpi arithmetic
-# 3:2 photo: ceiling_w = 2.2 * 1.5 = 3.3in, so a 4.96in 2c stack is ineligible
-assert abs(A.ceiling_w(1.5, "photo") - 3.3) < 1e-9
+# 3:2 photo: hard cap width = 4.5 * 1.5 = 6.75in (2.2in is a soft WARN, not a cap)
+assert abs(A.ceiling_w(1.5, "photo") - 6.75) < 1e-9
 assert A.ceiling_w(1.5, "comic") is None
 assert A.ceiling_w(1.5, "photo", accept=("ceiling",)) is None
 # 1800px / 200 dpi = 9in max for line art; /150 = 12in for photos
@@ -178,11 +182,16 @@ cs4 = A.candidates(rail_photo, 2.35, wrap_ok=True, px_w=1500, px_h=1000, path="p
 assert any(c["role"] == "stack" and c["eligible"] for c in cs4)
 assert not any(c["mode"] == "float" and c.get("eligible") for c in cs4)
 
-# Portrait photo 2:3 at 1c: 2.42 * 3/2 = 3.63in tall → over ceiling, stack ineligible
+# Portrait photo 2:3 at 1c: 2.42 * 3/2 = 3.63in tall → over the 2.2in SOFT ceiling: eligible,
+# but soft_warns tells Frank. At 2c (7.44in) it is over the 4.5in hard cap: ineligible.
 port = {"id": "p", "src": "m.jpg", "kind": "photo", "alt": "a", "region": "rail", "caption": "c"}
 cs5 = A.candidates(port, 2.42, wrap_ok=False, px_w=800, px_h=1200, path="p.jpg")
 st = next(c for c in cs5 if c["role"] == "stack")
-assert not st["eligible"] and "ceiling" in "".join(st["why"]), st
+assert st["eligible"] and st.get("over_soft_ceiling_in"), st
+assert any("soft ceiling" in w for w in A.soft_warns({}, st, port, 2.42)), A.soft_warns({}, st, port, 2.42)
+cs5b = A.candidates(port, 4.96, wrap_ok=False, px_w=800, px_h=1200, path="p.jpg")
+st = next(c for c in cs5b if c["role"] == "stack")
+assert not st["eligible"] and "hard cap" in "".join(st["why"]), st
 
 # Low-res: 300x200 photo at 2c is 60 dpi, ineligible
 lp = {"id": "p", "src": "m.jpg", "kind": "photo", "alt": "a", "region": "span2", "caption": "c"}

@@ -9,6 +9,10 @@ Going-forward home for the print compositor (adopted 2026-11-11 from the Fable d
 | `render.py` | HTML to PDF via Chrome CDP, plus the fill instrument and the art-fit pass. |
 | `art.py` | Art-fit policy: eligibility, candidate list, `choose()`. No Chrome. |
 | `fit.js` | Dumb apply/reset/measure helpers, evaluated once per Chrome session. |
+| `balance.py` | Row-balance pass, **report-only** since 2026-11-16 (lists holes with suggestions; `--balance=pair` may pair two stacked photos; never moves boxes, dissolves rows or crops). |
+| `eyecheck.py` | The eye check every proof must pass before it goes to Frank: previews, pixel blank map, instrument FLAGs, length targets, and a vision critique by a different model (`sonnet`). `--verify <pdf>` is the send gate. |
+| `arrange.py` | Renders a recipe's candidate ARRANGEMENTS and ranks them by the eye check's numbers (`--eye=2` adds the vision critique for the top two). |
+| `test_spacing.py` | Spacing tokens, the unwrap fix, copy lengths, and the eye check's offline parts (Chrome). |
 | `test_gazette.py` | Golden checks: `python3 compose/test_gazette.py`. |
 | `test_art.py` | Art-fit unit tests (no Chrome): `python3 compose/test_art.py`. |
 | `test_art_fixtures.py` | Chrome fixtures (writes only under `/tmp/gz-fixtures/`): `python3 compose/test_art_fixtures.py`. |
@@ -20,10 +24,24 @@ Going-forward home for the print compositor (adopted 2026-11-11 from the Fable d
 ## Build an issue
 
 ```
-python3 issues/<date>/recipe/compose.py x
+python3 compose/arrange.py issues/<date>                      # optional: rank the recipe's arrangements
+python3 issues/<date>/recipe/compose.py x                     # recipe/arrangement.json + recipe/lengths.json
 python3 compose/render.py issues/<date>/issue.html issues/<date>/en-garde-gazette-no-<N>-<date>.pdf --author="Nico's Dad" --report=issues/<date>/fit-report.json
-pdftoppm -r 200 -png <out.pdf> issues/<date>/preview
+python3 compose/eyecheck.py issues/<date>/en-garde-gazette-no-<N>-<date>.pdf --report=issues/<date>/fit-report.json
+#   -> eye-check.json / eye-check.md and 200 dpi preview-p1/p2.png; FAIL lists fixes and length targets
+python3 compose/eyecheck.py --verify issues/<date>/en-garde-gazette-no-<N>-<date>.pdf   # SENDABLE or not
 ```
+
+Then Clark opens every preview himself before the proof goes out. A render that FLAGs writes
+`<name>.FAILED.pdf` and leaves the proof path untouched.
+
+**Copy lengths.** A recipe can offer an item in `short` / `standard` / `long` copy
+(`copy_length(item, {...}, picks)`), all from vetted sources; `recipe/lengths.json` or
+`--len=item:long` picks per issue. Grow/shrink is the editor's call after the eye check.
+
+**Arrangements.** A recipe can declare `ARRANGEMENTS` and `build(name, picks)`: tall vs wide
+boxes (`box_table(shape=)`), photo pair (`photo_pair()`) vs float, rail vs full width.
+`recipe/arrangement.json` names the one the proof uses.
 
 - `x` loads the issue's `recipe/overrides.json`, as before.
 - An issue whose `issue.json` status starts with APPROVED is frozen. Composing it in place needs `--force`, or `--out=PATH` to write a trial copy somewhere else. `render.py` uses the same rule for the PDF path. Published Nos. 1–6 stay frozen.
@@ -44,11 +62,13 @@ pdftoppm -r 200 -png <out.pdf> issues/<date>/preview
 
 **Photo credit** (`credit_line()`, `check_credit()`). For new work, one short black line under the caption: author / source, licence with version, "(cropped)" if changed. Do not file-name or URL a printed credit. The full attribution stays in `sources.json`. Published issues keep the credit they already printed.
 
-**Photo placement** (`photo_span()`). A results photo runs two columns wide under the lead only if, uncropped at that width, it stays within the 2.2in ceiling of STYLE-GUIDE §19 and still has 150 dpi. Otherwise it runs one column in the rail. Layout never silently CSS-crops. The row-balance pass may write a prepared face-safe backdrop crop (`compose/balance.py`, credit must include "(cropped)") to close an in-row hole; faces stay inside the keep-band.
+**Photo placement** (`photo_span()`). A results photo runs two columns wide under the lead only if, uncropped at that width, it stays within the hard 4.5in cap (the 2.2in ceiling of STYLE-GUIDE §19 is now a soft WARN to mention to Frank) and still has 150 dpi. Otherwise it runs one column in the rail. Layout never silently CSS-crops, and the balancer no longer crops. `photo_pair()` puts two photos side by side with no column rule between them.
 
-**Art-fit** (`art()`, `load_art_manifest()`). For No. 7 onward, put scalable pictures in `recipe/art.json` and emit them with `art()`. Required fields: `id`, `src`, `kind` (`photo` / `comic` / `diagram` / `illustration`), `alt`, `region`. Photos still need a caption and a credit. The fitter measures leftover room and picks a grid width (stack, then a float beside following prose, then a last-resort gutter of at most 0.25in, flush left). A legal stack always wins. Wordless comics may go as small as 1.6in; lettered comics stay at 3.0in hard / 4.5in soft. Diagrams stay stack-only by default; full width needs `allow_full`. The art must come before any prose that should wrap beside it. Do not use `.fill-art` or a hard `max-height`. Art-fit itself does not crop; the later row-balance pass may apply a prepared face-safe backdrop crop (§19). Details: STYLE-GUIDE §19.
+**Art-fit** (`art()`, `load_art_manifest()`). For No. 7 onward, put scalable pictures in `recipe/art.json` and emit them with `art()`. Required fields: `id`, `src`, `kind` (`photo` / `comic` / `diagram` / `illustration`), `alt`, `region`. Photos still need a caption and a credit. The fitter measures leftover room and picks a grid width (stack, then a float beside following prose, then a last-resort gutter of at most 0.25in, flush left). A legal stack always wins. Wordless comics may go as small as 1.6in; lettered comics stay at 3.0in hard / 4.5in soft. Diagrams stay stack-only by default; full width needs `allow_full`. The art must come before any prose that should wrap beside it. Do not use `.fill-art` or a hard `max-height`. Nothing in the pipeline crops. Details: STYLE-GUIDE §19.
 
-**Row balance** (`compose/balance.py`). After art-fit, a general pass evens short columns in every row band: a short box or short may move into the shorter column or rail; two photos in a tall column may pair in a split; a photo may scale within its ceilings or take a face-safe backdrop crop (lettered comics are never cover-cropped). Leftover holes are reported, never padded with invented copy. `--no-balance` skips the pass.
+**Row balance** (`compose/balance.py`). After art-fit, a report-only pass lists every remaining in-row hole with a plain-words suggestion (grow/trim copy, scale art, another arrangement). It moves nothing. `--balance=pair` opts in to the one move left (two stacked photos side by side, kept only if the page gets better). It never dissolves a row, strips a neighbour or crops. `--no-balance` skips the pass.
+
+**Spacing tokens** (`template-a.css`). `--gap-block` 7pt between stacked blocks (one page-level rule, one column rule), `--gap-gutter` 9pt side by side, `--gap-inner` 3pt inside a block, `--gap-tight` 1.5pt for captions. Do not hand-set block margins elsewhere.
 
 **Checks at compose time.** Weapon spelled both "épée" and "epee" in running text: warning. A credit that still contains a file name or URL: warning (the strict check is on `photo()` / `credit_line()` so a published long credit is not rewritten).
 
@@ -61,5 +81,8 @@ pdftoppm -r 200 -png <out.pdf> issues/<date>/preview
 - **Column spread** for every multi-column row, including board halves and prose columns. FLAG over 0.5in.
 - **Type floor** across every element that holds text, including ears, captions, credits and kickers. FLAG under 7pt.
 - **Hyphenated line breaks.** Zero on a page with justified text prints a WARN.
+- **Inter-block gaps** in the page stack and in every column, ink to ink (box borders count as ink). FLAG outside 5–12.5pt (the token is 7pt).
+- **Side holes** beside stacked art with nothing next to it (over 0.25in), words per square inch (for the eye check's length targets), and picture rectangles (masked out of the pixel blank map).
+- **Send gate.** The PDF is written as `<name>.draft.pdf`; any FLAG renames it `<name>.FAILED.pdf` and leaves the proof path untouched (`--allow-flag` overrides, for trials).
 
 `--report=FILE.json` saves the raw measurements (and `art_fit` when a fit ran). `--fit-report=FILE.json` saves only the art decisions.

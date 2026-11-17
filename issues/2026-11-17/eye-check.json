@@ -1,0 +1,134 @@
+{
+  "verdict": "PASS",
+  "pdf": "issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf",
+  "pdf_sha256": "5fbc9b00aa6d0308d340f8fc84c352fa3a22cf72b5299f00131e268799239cf1",
+  "checked_at": "2026-11-16T23:55:26-05:00",
+  "reasons": [],
+  "length_targets": [],
+  "pixel_blank_map": {
+    "1": [
+      {
+        "w_in": 1.02,
+        "h_in": 0.8,
+        "sq_in": 0.82,
+        "x_in": 6.98,
+        "y_in": 3.52,
+        "bottom_band": false
+      },
+      {
+        "w_in": 1.74,
+        "h_in": 0.46,
+        "sq_in": 0.8,
+        "x_in": 6.26,
+        "y_in": 8.56,
+        "bottom_band": false
+      }
+    ],
+    "2": [
+      {
+        "w_in": 4.66,
+        "h_in": 0.46,
+        "sq_in": 2.14,
+        "x_in": 3.34,
+        "y_in": 1.58,
+        "bottom_band": false
+      }
+    ]
+  },
+  "inter_block_gaps_pt": {
+    "1": [
+      7.0,
+      7.9,
+      8.3,
+      7.9
+    ],
+    "2": [
+      7.9,
+      8.3,
+      7.0,
+      7.0
+    ]
+  },
+  "instrument_flags": [],
+  "vision": {
+    "meta": {
+      "model_alias": "sonnet",
+      "cmd": "claude -p --model sonnet (Read only)",
+      "returncode": 0,
+      "cost_usd": 0.1333252,
+      "num_turns": 7,
+      "model": "claude-sonnet-5-5"
+    },
+    "critique": {
+      "verdict": "PASS",
+      "rubric": {
+        "blank_space": {
+          "pass": true,
+          "notes": "Both flagged page 1 areas are ragged-right ends of text in the right column. One sits after 'Division I Men on Monday.' and the other after 'fect working order (t.117).' Neither is a real hole. The page 2 flag is white space beside the 'Hungary Rules World Cup Weekend' headline, which is normal ragged-right headline space. The 0.39in band above the footer on page 2 is within the reference's tolerance. The page 1 footer gap is 0.09in, tight but not touching."
+        },
+        "even_gaps": {
+          "pass": true,
+          "notes": "Measured inter-block gaps are 7.0 to 8.3pt on both pages. Nothing touches, and the boxes and cartoon strip on page 2 are evenly spaced."
+        },
+        "no_widows": {
+          "pass": true,
+          "notes": "No stranded one-word lines at the top of a column or box. The Ratings table 'Where' cell fits on one line. The page 2 tables do not wrap into slivers."
+        },
+        "photo_sizing": {
+          "pass": true,
+          "notes": "Two large lead photos on page 1 read clearly as the lead. The three cartoon panels on page 2 are large, and their lettering ('Great bout!', 'Good effort!', 'TSAI TPE') is readable."
+        },
+        "focal_point": {
+          "pass": true,
+          "notes": "The headline and photo pair 'Penny Young and Mila Siu Take Bronze' is clearly the focal point of page 1."
+        },
+        "alignment": {
+          "pass": true,
+          "notes": "On page 1, the left column (Ratings box) and the right column bottom out at about the same level, and the two bottom stories end together. On page 2, the Road and Deadlines boxes are the same height and the cartoon panels are equal and aligned. Rules and borders are consistent."
+        }
+      },
+      "issues": [
+        {
+          "page": 1,
+          "severity": "minor",
+          "where": "Ratings Earned box",
+          "problem": "The box has only one data row. The reference also has short boxes, so this is acceptable.",
+          "fix": "If more ratings come in, add them. Otherwise leave as is."
+        },
+        {
+          "page": 1,
+          "severity": "minor",
+          "where": "Bottom-left 'A National Youth Event Next Door' and the footer",
+          "problem": "The last line, 'fencing starts.', is a short line. The text sits only 0.09in above the footer rule, which is tight.",
+          "fix": "Trim about 5 to 8 words from the story to remove the short last line and open the footer gap slightly."
+        },
+        {
+          "page": 2,
+          "severity": "minor",
+          "where": "'Hungary Rules World Cup Weekend' paragraph",
+          "problem": "The last line, 'Ukraine bronze).', is short.",
+          "fix": "Trim or add about 4 words so the last line is fuller."
+        },
+        {
+          "page": 2,
+          "severity": "minor",
+          "where": "Holiday Party paragraph",
+          "problem": "The story is a thin two-line item.",
+          "fix": "Optionally add about 15 words of detail, such as time or place, if known."
+        }
+      ],
+      "summary": "Both pages are clean. They have strong lead art, even gaps, aligned column bottoms and no holes or widows. The only issues are minor short last lines and a one-row table, similar to what the approved reference already does."
+    }
+  },
+  "reference": "issues/2026-11-11",
+  "previews": [
+    "/workspace/fencing-newspaper/issues/2026-11-17/preview-p1.png",
+    "/workspace/fencing-newspaper/issues/2026-11-17/preview-p2.png"
+  ],
+  "rules": {
+    "hole_max_sq_in": 1.5,
+    "bottom_band_max_in": 0.5
+  },
+  "clark_looked": true,
+  "clark_looked_at": "2026-11-16T23:57:00-05:00"
+}

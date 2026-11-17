@@ -19,6 +19,9 @@ What lives here
   photo(), credit_line(), photo_span()   photo furniture and the placement rule
   art(), load_art_manifest()             flexible art slot (comics, diagrams, photos)
   textcols(), split()   prose in ruled columns
+  photo_pair()          two pictures side by side (no column rule between pictures)
+  copy_length(), lengths_for()   per-item short/standard/long copy, picked per issue
+  box_table()           a box in its tall (one column) or wide (two halves) shape
   masthead(), dateline(), footer(), page(), document(), write_issue()
   PAGE_CONTENT_IN    Letter content box (10.1in): 11in minus 0.5in top and 0.4in bottom
   check_issue()         compose-time checks (credit form, weapon spelling)
@@ -369,16 +372,96 @@ def stack(*items):
     return "\n".join(out)
 
 
+# ----------------------------------------------------------------- copy lengths (Frank t229u)
+# Growing and shrinking stories is an editor's judgement call made AFTER the eye check
+# (compose/eyecheck.py reports "page 1 needs ~N words" / "cut ~N words"). A recipe offers
+# each flexible item in up to three lengths, every one written only from vetted sources,
+# and the issue picks a length per item:
+#     recipe/lengths.json   {"lead": "long", "parents": "short"}
+#     or on the command line   --len=lead:long --len=parents:short
+# Never pad with unvetted facts: a "long" variant needs the same provenance as "standard".
+LENGTHS = ("short", "standard", "long")
+LENGTH_CHOICES = {}
+
+
+def lengths_for(issue_dir, argv=None):
+    """The issue's length picks: recipe/lengths.json overlaid with --len=item:size flags."""
+    argv = sys.argv if argv is None else argv
+    picks = {}
+    f = ROOT / issue_dir / "recipe" / "lengths.json"
+    if f.is_file():
+        picks.update(json.loads(f.read_text(encoding="utf-8")))
+    for a in argv:
+        if a.startswith("--len="):
+            k, _, v = a.split("=", 1)[1].partition(":")
+            picks[k] = v
+    for k, v in picks.items():
+        if v not in LENGTHS:
+            raise SystemExit(f"compose FAIL: length for {k!r} must be one of {LENGTHS}, got {v!r}")
+    return picks
+
+
+def copy_length(item, variants, picks=None, default="standard"):
+    """Return the variant of `item`'s copy chosen in `picks` (see lengths_for()).
+
+    `variants` maps "short"/"standard"/"long" to text (or HTML). A missing size falls back to
+    the nearest one toward standard, with a WARN. The choice is recorded in LENGTH_CHOICES so
+    the issue's notes can say what ran."""
+    picks = picks or {}
+    want = picks.get(item, default)
+    if want not in LENGTHS:
+        raise SystemExit(f"compose FAIL: unknown length {want!r} for {item!r}")
+    got = want
+    if got not in variants:
+        order = {"short": ["standard", "long"], "long": ["standard", "short"],
+                 "standard": ["long", "short"]}[want]
+        got = next((o for o in order if o in variants), None)
+        if got is None:
+            raise SystemExit(f"compose FAIL: {item!r} has no copy variants")
+        warn(f"{item}: no {want} copy; using {got}")
+    LENGTH_CHOICES[item] = got
+    text = variants[got]
+    return text
+
+
+def words(text):
+    """Word count of plain text or simple HTML (for length targets)."""
+    return len(re.sub(r"<[^>]+>", " ", text or "").split())
+
+
 def textcols(inner, n=2):
     """Prose in n ruled newspaper columns under one headline (browser balances the columns)."""
     return f'<div class="textcols n{n}" data-balance="text">{inner}</div>'
 
 
-def split(*cols, widths=None):
+def split(*cols, widths=None, cls=""):
     """Side-by-side prose columns that are not thirds. Always ruled (A12)."""
     widths = widths or [1] * len(cols)
-    return ('<div class="split" data-balance="split">'
+    return (f'<div class="split{(" " + cls) if cls else ""}" data-balance="split">'
             + "".join(f'<div style="flex:{w}">{c}</div>' for c, w in zip(cols, widths)) + "</div>")
+
+
+def photo_pair(a, b, widths=None):
+    """Two pictures side by side in one row (the "lead with a photo pair" layout). Pictures
+    are not prose, so there is no column rule between them. Widths default to each
+    picture's aspect so both print at the same height (pass widths=[1, 1] to override)."""
+    return split(a, b, widths=widths or [1, 1], cls="pair")
+
+
+def box_table(title, blocks, note=None, shape="tall", cls=""):
+    """One box in one of two shapes (Frank t229u: sections get tall and wide layouts).
+
+    shape="tall": the blocks stack in one column (fits a rail or a half-width box-pair).
+    shape="wide": the blocks run in two halves side by side via board_split() (fits a
+    full-width w3 box and is about half as deep). A recipe arrangement picks the shape."""
+    if shape not in ("tall", "wide"):
+        raise SystemExit(f"compose FAIL: box_table shape must be tall or wide, got {shape!r}")
+    blocks = list(blocks)
+    if shape == "wide" and len(blocks) >= 2:
+        half = (len(blocks) + 1) // 2
+        markup, _info = board_split(blocks[:half], blocks[half:], notes=[note] if note else ())
+        return box(title, markup, cls=cls)
+    return box(title, "\n".join(str(b) for b in blocks), note=note, cls=cls)
 
 
 # ----------------------------------------------------------------- photos and flexible art

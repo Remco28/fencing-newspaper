@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>En Garde Gazette — Vol. I No. 7 — November 17, 2026 (proof v2)</title>
+<title>En Garde Gazette — Vol. I No. 7 — November 17, 2026 (proof v3)</title>
 <meta name="author" content="Nico&#x27;s Dad">
 <style>
   /* ==== En Garde Gazette — Template A base CSS ====================================
@@ -20,6 +20,13 @@
   /* --colw is the estimate for a one-column rail (2.42in). The fitter overwrites it with the
      measured content width when it runs. .pfloat uses the variable so it cannot overflow a rail. */
   :root { --colw: 2.42in; --art-w: 100%; }
+  /* ---- Spacing tokens (Frank t229u, 2026-11-16: one consistent set of gaps) ----
+     Every vertical gap between stacked blocks on a page or in a column is --gap-block,
+     applied by ONE page-level rule and ONE column rule below. Side-by-side gutters are
+     --gap-gutter. Inside a block: --gap-inner (paragraphs, box title) and --gap-tight
+     (caption, credit, kicker). Do not hand-set a block margin anywhere else; the fill
+     instrument measures every inter-block gap against --gap-block and FLAGs drift. */
+  :root { --gap-block: 7pt; --gap-gutter: 9pt; --gap-inner: 3pt; --gap-tight: 1.5pt; }
   .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
   .page:last-child { page-break-after: auto; }
   /* Pin the footer to the bottom of the 10.1in content box. flex-shrink: 0 so a tall
@@ -59,25 +66,33 @@
     font-variant: small-caps; font-weight: 400; }
 
   /* ---- Grid ---- */
-  .cols3 { display: flex; gap: 9pt; }
+  .cols3 { display: flex; gap: var(--gap-gutter); }
   .cols3 > .c { flex: 1; min-width: 0; }
   .cols3 > .span2 { flex: 2.06; }
-  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: 9pt; }
+  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: var(--gap-gutter); }
   .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
-  .page > :is(.box, .cols3, .split, .rail-block) + :is(.box, .cols3, .split, .rail-block) { margin-top: 7pt; }
-  .page > .box, .page > .rail-block { margin-bottom: 0; }
+  /* THE page-level rhythm rule: every stacked block after the dateline gets --gap-block above
+     it, whatever its class (box, box-pair, split, piece, art). Blocks carry no bottom margin. */
+  .page > * { margin-bottom: 0; }
+  .page > .art, .page > .fill-art { margin-top: 0; margin-bottom: 0; }
+  .page > :not(.masthead, .dateline) + :not(.footer) { margin-top: var(--gap-block); }
   /* Any other side-by-side split of prose (A12): always ruled, like the thirds. */
-  .split, .page2-lower { display: flex; gap: 9pt; align-items: stretch; }
+  .split, .page2-lower { display: flex; gap: var(--gap-gutter); align-items: stretch; }
   .split > *, .page2-lower > * { min-width: 0; }
-  .split > * + *, .page2-lower > * + * { border-left: 1pt solid #000; padding-left: 9pt; }
+  .split > * + *, .page2-lower > * + * { border-left: 1pt solid #000; padding-left: var(--gap-gutter); }
+  /* A photo pair (two art cells side by side) is not prose: no column rule between pictures. */
+  .split.pair > * + * { border-left: none; padding-left: 0; }
+  .split.pair > * > .art { margin-top: 0; margin-bottom: 0; }
+  /* Inside a story the pair takes the block gap below it; at page level the page rule spaces it. */
+  :not(.page) > .split.pair { margin: var(--gap-inner) 0 var(--gap-block) 0; }
   /* Prose set in newspaper columns under one headline (feature in a span2, short across the page). */
   .textcols { column-gap: 19pt; column-rule: 1pt solid #000; orphans: 2; widows: 2; }
   .textcols.n2 { column-count: 2; }
   .textcols.n3 { column-count: 3; }
 
   /* ---- Boxes (tables only, STYLE-GUIDE §8) and prose furniture ---- */
-  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
-  .rail-block { margin-bottom: 6pt; padding: 0; border: none; }
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 0; }
+  .rail-block { margin-bottom: 0; padding: 0; border: none; }
   .boxtitle { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
     text-transform: uppercase; letter-spacing: 0.5pt; padding-bottom: 2pt; margin-bottom: 3pt; }
   .box > .boxtitle { border-bottom: 1pt solid #000; }
@@ -86,7 +101,7 @@
   .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.25pt;
     line-height: 1.2; text-transform: uppercase; letter-spacing: 0.6pt; border: none; padding: 0; margin: 0 0 1.5pt 0; }
   /* Two small tables side by side as half-width boxes (A3; §10: few rows never earn full width). */
-  .box-pair { display: flex; gap: 9pt; align-items: stretch; }
+  .box-pair { display: flex; gap: var(--gap-gutter); align-items: stretch; }
   .box-pair > .box { flex: 1; min-width: 0; margin-bottom: 0; }
 
   /* ---- Type scale (STYLE-GUIDE §4) ---- */
@@ -106,7 +121,7 @@
     letter-spacing: 0.4pt; margin-bottom: 3pt; }
   /* Body text (A5). Hyphenation points are soft hyphens placed by gazette.ty(); `manual`
      keeps the result identical on every machine, with or without a browser dictionary. */
-  p { margin-bottom: 3pt; text-align: justify; hyphens: manual; }
+  p { margin-bottom: var(--gap-inner); text-align: justify; hyphens: manual; }
   p, td { text-wrap: pretty; }
   /* Table cells never auto-hyphenate; gazette.ty() uses U+2011 in compounds (regular-fee). */
   td, th { hyphens: none; }
@@ -116,9 +131,10 @@
   .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
 
   /* ---- Vertical rhythm between stacked pieces in a column: margin only, never an HR ---- */
-  .c > :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo)
-      + :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo) { margin-top: 7pt; }
-  .c > p + :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo) { margin-top: 7pt; }
+  /* THE column rhythm rule: any block after anything in a column gets --gap-block (paragraph
+     to paragraph keeps the --gap-inner body spacing). Works for every block class. */
+  .c > * + :not(p), .c > :not(p) + p { margin-top: var(--gap-block); }
+  .c > .art:first-child { margin-top: 0; }
   .c > :last-child { margin-bottom: 0; }
 
   /* ---- Boards ---- */
@@ -167,13 +183,13 @@
   /* Flexible art (Frank t212u). Stack is flush to the region; float wraps following prose;
      gutter is a last-resort narrow stack (≤ 0.25in side space, flush left, never centered).
      Never crop: width is set, height follows aspect. Fixed margins, no auto. */
-  .art { margin: 6pt 0; max-width: 100%; }
+  .art { margin: var(--gap-block) 0; max-width: 100%; }
   .art img { display: block; width: 100%; height: auto; filter: grayscale(100%); }
   .art--float { float: left; width: var(--art-w); margin: 2pt 9pt 3pt 0; }
-  .art--gutter { width: var(--art-w); margin: 6pt auto 6pt 0; } /* flush left; leftover is one side only */
+  .art--gutter { width: var(--art-w); margin: var(--gap-block) auto var(--gap-block) 0; } /* flush left; leftover is one side only */
 
   /* Scalable line art takes whatever depth is left on a .page.fit — scaled, never cropped. */
-  .fill-art { flex: 1 1 0; min-height: 0; margin: 7pt 0 5pt 0; display: flex; justify-content: center; align-items: flex-start; }
+  .fill-art { flex: 1 1 0; min-height: 0; margin: var(--gap-block) 0 0 0; display: flex; justify-content: center; align-items: flex-start; }
   .fill-art img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; }
 
   /* ---- Parent Q&A (§8a) ---- */
@@ -206,15 +222,16 @@
 <div class="cols3 ruled" data-balance="columns">
 <div class="c span2">
 <div class="lead"><h1 class="head">Penny Young and Mila Siu Take Bronze</h1><p class="dek">Penny Young medals in New Haven; Mila Siu medals in Glen Allen, Va., and earns a C26.</p>
-<figure class="art" data-art="penny-young-pizza-ryc" data-kind="photo" data-region="span2" data-flex="true" data-modes="stack,float" data-src="media/penny-young-pizza-ryc-2026-11-15.jpg" data-min-w="1.6000" data-lettered="false"><img src="media/penny-young-pizza-ryc-2026-11-15.jpg" alt="Penny Young standing in front of a New Haven Athletics backdrop, wearing a bronze medal and holding up two fingers."><p class="caption">Penny Young with her Youth 12 bronze at the Pizza RYC/RJCC in New Haven.</p><p class="credit">Photo: Elite Fencers Club</p></figure>
-<p>Elite FC brought home two youth bronzes this week­end, one in New Haven and one in Glen Allen, Va. Penny Young won bronze in Youth 12 Women at the Pizza RYC/RJCC in New Haven, Conn., on Sunday, Nov.&nbsp;15, fin­ish­ing third in a field of 52. A day ear­lier she placed 13th of 67 in Youth 14 Women.</p>
+<div class="split pair" data-balance="split"><div style="flex:1"><figure class="art" data-art="penny-young-pizza-ryc" data-kind="photo" data-region="span2" data-flex="false" data-modes="stack" data-src="media/penny-young-pizza-ryc-2026-11-15.jpg" data-min-w="1.6000" data-lettered="false"><img src="media/penny-young-pizza-ryc-2026-11-15.jpg" alt="Penny Young standing in front of a New Haven Athletics backdrop, wearing a bronze medal and holding up two fingers."><p class="caption">Penny Young with her Youth 12 bronze at the Pizza RYC/RJCC in New Haven.</p><p class="credit">Photo: Elite Fencers Club</p></figure></div><div style="flex:1"><figure class="art" data-art="mila-siu-stella-kuo-kiefer" data-kind="photo" data-region="span2" data-flex="false" data-modes="stack" data-src="media/mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14.jpg" data-min-w="1.6000" data-lettered="false"><img src="media/mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14.jpg" alt="Mila Siu, left, holding a bronze medal, and Stella Kuo standing beside her in Elite FC jackets against a Kiefer Meinhardt Cup backdrop."><p class="caption">Mila Siu, left, with her Youth 14 bronze at the Kiefer Meinhardt Cup in Glen Allen, Va., and Stella Kuo.</p><p class="credit">Photo: Elite Fencers Club</p></figure></div></div>
+<p>Elite FC brought home two youth bronzes this week­end, one in New Haven and one in Glen Allen, Va. Penny Young won bronze in Youth 12 Women at the Pizza RYC/RJCC, a regional tour­na­ment at the Floyd Little Athletic Center in New Haven, Conn., on Sunday, Nov.&nbsp;15, fin­ish­ing third in a field of 52. A day ear­lier she fenced up an age group and placed 13th of 67 in Youth 14 Women.</p>
 <p>At the Kiefer Meinhardt Cup, a Super Youth Circuit event, Mila Siu took bronze in Youth 14 Women on Saturday, Nov.&nbsp;14, fin­ish­ing third in a field of 62 and earn­ing a C26. On Sunday she placed 10th of 54 in Youth 12 Women.</p>
 <p>Clubmate Amina Gore made the top 16 twice at the New Haven regional: 16th of 54 in Junior Women on Saturday and 13th of 54 in Cadet Women on Sunday. Closer to home, Nico Ng fin­ished fifth of 30 in Division IA Mixed at Freehold Fencing’s November Open on Sunday.</p></div>
-<div class="split" data-balance="split"><div style="flex:1"><figure class="art" data-art="mila-siu-stella-kuo-kiefer" data-kind="photo" data-region="rail" data-flex="false" data-modes="stack" data-src="media/mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14.jpg" data-min-w="1.6000" data-lettered="false"><img src="media/mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14.jpg" alt="Mila Siu, left, holding a bronze medal, and Stella Kuo standing beside her in Elite FC jackets against a Kiefer Meinhardt Cup backdrop."><p class="caption">Mila Siu, left, with her Youth 14 bronze at the Kiefer Meinhardt Cup in Glen Allen, Va., and Stella Kuo.</p><p class="credit">Photo: Elite Fencers Club</p></figure></div><div style="flex:2"><div class="box"><div class="boxtitle">Ratings Earned</div><table class="board"><colgroup><col style="width:0.85in"><col style="width:0.55in"><col></colgroup><tr><th>Fencer</th><th class="r">Rating</th><th>Where</th></tr><tr><td>Mila Siu</td><td class="num">C26</td><td>Kiefer Meinhardt Cup, Glen Allen, Va.</td></tr></table></div></div></div>
+<div class="box"><div class="boxtitle">Ratings Earned</div><table class="board"><colgroup><col style="width:1.1in"><col style="width:0.7in"><col></colgroup><tr><th>Fencer</th><th>Rating</th><th>Where</th></tr><tr><td>Mila Siu</td><td>C26</td><td>Kiefer Meinhardt Cup, Glen Allen, Va., Nov.&nbsp;14</td></tr></table></div>
 </div>
 <div class="c">
 <div class="slot-a"><div class="rail-title">November NAC</div><h2 class="head">Three Head to Columbus</h2><p>Three Elite FC fencers are entered at the November NAC, a USA Fencing national event, at the Greater Columbus Convention Center in Columbus, Ohio, Nov.&nbsp;20–23. Anayaa Sheth opens the club’s run in Junior Women on Friday. Nico Ng fences Cadet Men on Saturday. On Sunday, Athreya Aravind and Nico Ng are both in Junior Men, and Athreya stays for Division I Men on Monday.</p></div>
-<div class="rail-block"><div class="rail-title">By the Book</div><h2 class="head">Three Calls, Two Minutes</h2><p>At a big tour­na­ment, being late to the strip costs touches. Before a pool or the direct‑elimination round, the referee’s first call comes ten min­utes before the start; a fencer who isn’t there is elim­i­nated (t.118). Once fenc­ing is under way, a fencer not ready when called gets a Yellow Card. One minute later comes a second call and a Red Card, which adds a touch to the opponent’s score. A third call a minute after that means elim­i­na­tion (t.119). Bring a spare weapon, body cord and mask cord to the strip, too (t.117).</p></div>
+<div class="rail-block"><div class="rail-title">March NAC</div><h2 class="head">March NAC Comes to Atlantic City</h2><p>USA Fencing’s March North American Cup comes to New Jersey this season: Mar. 5–8, 2027, at the Atlantic City Convention Center. The national event is for Youth 14, Youth 12, Youth 10 and Division II fencers in all three weapons, and it is free to the public. Registration opens Wednesday, Nov.&nbsp;18, at noon Eastern. The regular‑fee dead­line is Jan.&nbsp;6: $225 for one event, $320 for two and $415 for three. Late entries, taken until 5&nbsp;p.m. local time the night before an event, cost three times as much. A fencer who misses an event with­out giving notice by 5&nbsp;p.m. local time the day before faces a $250 fine per event. More on the March NAC next week.</p></div>
+<div class="rail-block"><div class="rail-title">By the Book</div><h2 class="head">Three Calls, Two Minutes</h2><p>At a big tour­na­ment, being late to the strip costs touches. Before a pool or the direct‑elimination round, the referee’s first call comes ten min­utes before the start; a fencer who isn’t there is elim­i­nated (t.118). Once fenc­ing is under way, a fencer not ready when called gets a Yellow Card. One minute later comes a second call and a Red Card, which adds a touch to the opponent’s score. A third call a minute after that means elim­i­na­tion (t.119). Bring a spare weapon, a spare body cord and a spare mask cord to the strip, too, all in per­fect work­ing order (t.117).</p></div>
 </div>
 </div>
 <div class="split" data-balance="split"><div style="flex:1"><div class="rail-block"><div class="rail-title">For the Parents</div><h2 class="head">A National Youth Event Next Door</h2><p>Sixteen Elite FC fencers are entered at the Cobra Challenge, Nov.&nbsp;27–29 at the Meadowlands Expo Center in Secaucus. It is a Super Youth Circuit (SYC) and Regional Cadet Circuit (RCC) event: Y10, Y12, Y14 and Cadet. Parking is free in the garages next to the venue. Every event has a cap, and the times posted can shift with atten­dance. Absolute Fencing Gear sup­plies the strips and scor­ing machines and will be on site to sell and repair equip­ment, handy if a blade breaks. Check the time listed for each event: at USA Fencing tour­na­ments it is usu­ally when check‑in closes, not when fenc­ing starts.</p></div></div><div style="flex:1"><div class="rail-block"><div class="rail-title">Club Events</div><h2 class="head">Winter Camp: Sign Up Now</h2><p>Elite FC Winter Camp runs Dec.&nbsp;27–31, 9:30&nbsp;a.m. to 2&nbsp;p.m., and it’s open to all levels: foot­work, tech­ni­cal and tac­ti­cal drills, and games. Dec.&nbsp;27 starts with a swag give­away. K2 Fitness runs strength and con­di­tion­ing on Dec.&nbsp;28 and 30. On Dec.&nbsp;29, a pro­fes­sional instruc­tor leads yoga and breath con­trol for com­pe­ti­tion, and lunch is served. Crepes on Dec.&nbsp;31 cel­e­brate the end of camp and 2026. Call it a tune‑up for the second half of the season, or a good excuse to escape vis­it­ing rel­a­tives for a few hours. If you’re going, let the club know as soon as pos­si­ble for a head­count; con­tact the club for price and sign‑up.</p></div></div></div>
@@ -230,7 +247,8 @@
     <div class="edition">Page Two</div>
     <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 7</div>
   </div>
-<div class="split" data-balance="split"><div style="flex:1"><div class="slot-a"><div class="rail-title">World Cup</div><h2 class="head">Hungary Rules World Cup Weekend</h2><p>Senior epee World Cups, Nov.&nbsp;13–15 (FIE’s own posts): Bern men’s indi­vid­ual (Nov.&nbsp;13): Gergely Siklosi (Hungary) gold, Matteo Galassi (Italy) silver, Kendrick Jean Joseph (France) and Vadim Sharlaimov (Kazakhstan) bronze. Wuxi women’s indi­vid­ual (Nov.&nbsp;14): Alberta Santuccio (Italy) beat Sera Song (Korea) 13–12 in the final; Eszter Muhari (Hungary) and Auriane Mallo‑Breton (France) bronze. Team events: Hungary beat Switzerland 38–30 in Bern (Italy bronze) and France 45–36 in Wuxi (Ukraine bronze).</p></div></div><div style="flex:1"><div class="rail-block"><div class="rail-title">Club Events</div><h2 class="head">Holiday Party: Friday, Dec.&nbsp;11</h2><p>This year’s Elite FC hol­i­day party will be Friday, Dec.&nbsp;11. There will be food, drinks and snacks, and every­one is wel­come. Please mark your cal­en­dars; the club hopes you can join to cel­e­brate every­thing we have accomplished.</p></div></div></div>
+<div class="rail-block"><div class="rail-title">Club Events</div><h2 class="head">Holiday Party: Friday, Dec.&nbsp;11</h2><p>This year’s Elite FC hol­i­day party will be Friday, Dec.&nbsp;11. There will be food, drinks and snacks, and every­one is wel­come. Please mark your cal­en­dars; the club hopes you can join to cel­e­brate every­thing we have accom­plished. After the party comes Winter Camp, Dec.&nbsp;27–31; the details are on page 1.</p></div>
+<div class="slot-a"><div class="rail-title">World Cup</div><h2 class="head">Hungary Rules World Cup Weekend</h2><p>Senior epee World Cups, Nov.&nbsp;13–15 (FIE’s own posts): Bern men’s indi­vid­ual (Nov.&nbsp;13): Gergely Siklosi (Hungary) gold, Matteo Galassi (Italy) silver, Kendrick Jean Joseph (France) and Vadim Sharlaimov (Kazakhstan) bronze. Wuxi women’s indi­vid­ual (Nov.&nbsp;14): Alberta Santuccio (Italy) beat Sera Song (Korea) 13–12 in the final; Eszter Muhari (Hungary) and Auriane Mallo‑Breton (France) bronze. Team events: Hungary beat Switzerland 38–30 in Bern (Italy bronze) and France 45–36 in Wuxi (Ukraine bronze).</p></div>
 <div class="box w3"><div class="boxtitle">Nearby Tournaments — Elite FC Entries</div><div class="tourney"><div class="tourney-head">Cobra Challenge SYC/RCC <span>· Secaucus, N.J. · Nov.&nbsp;27–29</span></div><table class="board"><colgroup><col style="width:1.15in"><col></colgroup><tr><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="2">Fri. Nov.&nbsp;27</td></tr><tr><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah‑Mirani</td></tr><tr><td>Cadet Women</td><td>Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young</td></tr><tr><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong</td></tr><tr class="day"><td colspan="2">Sat. Nov.&nbsp;28</td></tr><tr><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu, Penny Young</td></tr><tr><td>Y12 Men</td><td>Kian Jaising, Joshua Jeong, Remy Ng</td></tr><tr class="day"><td colspan="2">Sun. Nov.&nbsp;29</td></tr><tr><td>Y14 Women</td><td>Stella Kuo, Mila Siu, Penny Young</td></tr><tr><td>Cadet Men</td><td>Connor Anderson, Nico Ng, Caden Wu</td></tr></table></div><p class="boxnote">Sixteen Elite FC fencers, 26 entries, all approved. Meadowlands Expo Center. Event times were not posted on the official entrant list.</p></div>
 <div class="box-pair" data-balance="boxes"><div class="box"><div class="boxtitle">On the Road — November NAC</div><div class="tourney"><div class="tourney-head">November NAC <span>· Columbus, Ohio · Nov.&nbsp;20–23</span></div><table class="board"><colgroup><col style="width:0.98in"><col style="width:1.2in"><col></colgroup><tr><th>Day</th><th>Event</th><th>Elite FC</th></tr><tr><td class="dayc">Fri. Nov.&nbsp;20</td><td>Junior Women</td><td>Anayaa Sheth</td></tr><tr><td class="dayc">Sat. Nov.&nbsp;21</td><td>Cadet Men</td><td>Nico Ng</td></tr><tr><td class="dayc">Sun. Nov.&nbsp;22</td><td>Junior Men</td><td>Athreya Aravind, Nico Ng</td></tr><tr><td class="dayc">Mon. Nov.&nbsp;23</td><td>Division I Men</td><td>Athreya Aravind</td></tr></table></div><p class="boxnote">Greater Columbus Convention Center. Official USA Fencing entries as of Nov.&nbsp;16, 8:55&nbsp;a.m. ET; all approved.</p></div><div class="box"><div class="boxtitle">Deadlines</div><table class="board"><colgroup><col style="width:0.85in"><col></colgroup><tr><th class="r">Date</th><th>What’s due</th></tr><tr><td class="num">Nov.&nbsp;23</td><td>Z1 RYC/RJCC (Newtown, Conn., Dec.&nbsp;12–13): last day of regular fees; triple fees from Nov.&nbsp;24</td></tr><tr><td class="num">Nov.&nbsp;30</td><td>Fairfax Challenge (Fredericksburg, Va., Dec.&nbsp;18–20): last day of regular fees; triple fees from Dec.&nbsp;1</td></tr><tr><td class="num">Jan.&nbsp;7</td><td>Junior Olympics: online (late‑fee) registration ends</td></tr><tr><td class="num">Jan.&nbsp;8</td><td>N.J. high school: independent fencers’ entries close</td></tr></table><p class="boxnote">USA Fencing fee deadlines are 11:59&nbsp;p.m. Pacific.</p></div></div>
 <figure class="art" data-art="vr-parent-filter" data-kind="comic" data-region="full" data-flex="true" data-modes="stack" data-src="media/vr-parent-filter-comic.png" data-min-w="3.0000" data-soft-w="4.5000" data-lettered="true"><img src="media/vr-parent-filter-comic.png" alt="A three-panel comic: a parent labeled PARENT yells at a youth fencing tournament while a girl whose jersey reads TSAI TPE looks on; she puts on a VR headset; through the headset the same parent smiles and says Great bout, Good effort, and I&#x27;m proud of you, while the real parent still yells in the background."></figure>

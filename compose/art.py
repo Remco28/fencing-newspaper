@@ -14,7 +14,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # Estimate-only grid constants (STYLE-GUIDE / historical). Fitting uses measured widths.
+# §19 photo height: 2.2in is a SOFT ceiling (Frank t229u, 2026-11-16: images scale up and
+# down to make content fit). Going over it is a WARN reported to Frank, not a gate.
+# PHOTO_MAX_H_IN is the hard sanity cap (under half the 10.1in content box).
 PHOTO_CEILING_IN = 2.2
+PHOTO_MAX_H_IN = 4.5
 COL1_IN, COL2_IN = 2.42, 4.96
 PHOTO_MIN_DPI = 150
 PHOTO_SOFT_DPI = 200
@@ -162,13 +166,14 @@ def max_w_dpi(px_w, kind, path, accept=()):
 
 
 def ceiling_w(aspect_wh, kind, accept=()):
-    """Max width (in) so a photo's printed height stays at the §19 2.2in ceiling. Photos only."""
+    """Max width (in) so a photo's printed height stays under the hard PHOTO_MAX_H_IN cap.
+    Photos only. The 2.2in §19 ceiling is soft: see soft_warns()."""
     if kind != "photo" or "ceiling" in (accept or ()):
         return None
     if aspect_wh <= 0:
         return None
     # aspect_wh = width/height; height = width / aspect_wh; width = ceiling * aspect_wh
-    return PHOTO_CEILING_IN * aspect_wh
+    return PHOTO_MAX_H_IN * aspect_wh
 
 
 def W_hi(region_w, px_w, aspect_wh, kind, path, accept=(), max_w_in=None):
@@ -354,8 +359,8 @@ def candidates(asset, region_w, wrap_ok=False, px_w=None, px_h=None, path=None, 
         # photo ceiling at this width
         if kind == "photo" and "ceiling" not in accept and aspect_wh:
             tall = w / aspect_wh
-            if tall > PHOTO_CEILING_IN + 1e-9:
-                why.append(f"{tall:.2f}in tall, over the {PHOTO_CEILING_IN}in ceiling")
+            if tall > PHOTO_MAX_H_IN + 1e-9:
+                why.append(f"{tall:.2f}in tall, over the {PHOTO_MAX_H_IN}in hard cap")
         rec = {
             "mode": mode, "width": round(w, 4), "gutter": round(gutter, 4),
             "eligible": not why, "why": why,
@@ -363,6 +368,8 @@ def candidates(asset, region_w, wrap_ok=False, px_w=None, px_h=None, path=None, 
             "dpi": None if dpi is None else round(dpi, 1),
             "height": round(w / aspect_wh, 4) if aspect_wh else None,
         }
+        if kind == "photo" and aspect_wh and w / aspect_wh > PHOTO_CEILING_IN + 1e-9:
+            rec["over_soft_ceiling_in"] = round(w / aspect_wh, 3)
         if reason:
             rec["note"] = reason
         return rec
@@ -453,6 +460,9 @@ def soft_warns(rec, cand, asset, region_w=None):
     _, soft_dpi = dpi_floors(kind, path)
     if dpi and soft_dpi and dpi < soft_dpi - 0.5:
         warns.append(f"{dpi:.0f} dpi is below the soft target {soft_dpi}")
+    if cand.get("over_soft_ceiling_in"):
+        warns.append(f"photo {cand['over_soft_ceiling_in']:.2f}in tall, over the {PHOTO_CEILING_IN}in "
+                     "soft ceiling (tell Frank)")
     nominal = NOMINAL_W.get(asset.get("region"))
     w = region_w if region_w is not None else rec.get("region_w_in")
     if nominal and w and abs(w - nominal) / nominal > 0.10:
@@ -634,8 +644,8 @@ def photo_span(path, is_results_photo=True, root=None):
     except Exception as e:
         return 1, f"could not measure ({e}); one column"
     tall2, dpi2 = COL2_IN * h / w, w / COL2_IN
-    if tall2 > PHOTO_CEILING_IN:
-        return 1, (f"{w}x{h}: {tall2:.1f}in tall at two columns, over the {PHOTO_CEILING_IN}in ceiling; "
+    if tall2 > PHOTO_MAX_H_IN:
+        return 1, (f"{w}x{h}: {tall2:.1f}in tall at two columns, over the {PHOTO_MAX_H_IN}in hard cap; "
                    f"one column ({COL1_IN * h / w:.1f}in)")
     if dpi2 < PHOTO_MIN_DPI:
         return 1, f"{w}x{h}: only {dpi2:.0f} dpi at two columns; one column"

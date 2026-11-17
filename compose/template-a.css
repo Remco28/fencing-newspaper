@@ -13,6 +13,13 @@
   /* --colw is the estimate for a one-column rail (2.42in). The fitter overwrites it with the
      measured content width when it runs. .pfloat uses the variable so it cannot overflow a rail. */
   :root { --colw: 2.42in; --art-w: 100%; }
+  /* ---- Spacing tokens (Frank t229u, 2026-11-16: one consistent set of gaps) ----
+     Every vertical gap between stacked blocks on a page or in a column is --gap-block,
+     applied by ONE page-level rule and ONE column rule below. Side-by-side gutters are
+     --gap-gutter. Inside a block: --gap-inner (paragraphs, box title) and --gap-tight
+     (caption, credit, kicker). Do not hand-set a block margin anywhere else; the fill
+     instrument measures every inter-block gap against --gap-block and FLAGs drift. */
+  :root { --gap-block: 7pt; --gap-gutter: 9pt; --gap-inner: 3pt; --gap-tight: 1.5pt; }
   .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
   .page:last-child { page-break-after: auto; }
   /* Pin the footer to the bottom of the 10.1in content box. flex-shrink: 0 so a tall
@@ -52,25 +59,33 @@
     font-variant: small-caps; font-weight: 400; }
 
   /* ---- Grid ---- */
-  .cols3 { display: flex; gap: 9pt; }
+  .cols3 { display: flex; gap: var(--gap-gutter); }
   .cols3 > .c { flex: 1; min-width: 0; }
   .cols3 > .span2 { flex: 2.06; }
-  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: 9pt; }
+  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: var(--gap-gutter); }
   .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
-  .page > :is(.box, .cols3, .split, .rail-block) + :is(.box, .cols3, .split, .rail-block) { margin-top: 7pt; }
-  .page > .box, .page > .rail-block { margin-bottom: 0; }
+  /* THE page-level rhythm rule: every stacked block after the dateline gets --gap-block above
+     it, whatever its class (box, box-pair, split, piece, art). Blocks carry no bottom margin. */
+  .page > * { margin-bottom: 0; }
+  .page > .art, .page > .fill-art { margin-top: 0; margin-bottom: 0; }
+  .page > :not(.masthead, .dateline) + :not(.footer) { margin-top: var(--gap-block); }
   /* Any other side-by-side split of prose (A12): always ruled, like the thirds. */
-  .split, .page2-lower { display: flex; gap: 9pt; align-items: stretch; }
+  .split, .page2-lower { display: flex; gap: var(--gap-gutter); align-items: stretch; }
   .split > *, .page2-lower > * { min-width: 0; }
-  .split > * + *, .page2-lower > * + * { border-left: 1pt solid #000; padding-left: 9pt; }
+  .split > * + *, .page2-lower > * + * { border-left: 1pt solid #000; padding-left: var(--gap-gutter); }
+  /* A photo pair (two art cells side by side) is not prose: no column rule between pictures. */
+  .split.pair > * + * { border-left: none; padding-left: 0; }
+  .split.pair > * > .art { margin-top: 0; margin-bottom: 0; }
+  /* Inside a story the pair takes the block gap below it; at page level the page rule spaces it. */
+  :not(.page) > .split.pair { margin: var(--gap-inner) 0 var(--gap-block) 0; }
   /* Prose set in newspaper columns under one headline (feature in a span2, short across the page). */
   .textcols { column-gap: 19pt; column-rule: 1pt solid #000; orphans: 2; widows: 2; }
   .textcols.n2 { column-count: 2; }
   .textcols.n3 { column-count: 3; }
 
   /* ---- Boxes (tables only, STYLE-GUIDE §8) and prose furniture ---- */
-  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 4pt; }
-  .rail-block { margin-bottom: 6pt; padding: 0; border: none; }
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 0; }
+  .rail-block { margin-bottom: 0; padding: 0; border: none; }
   .boxtitle { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
     text-transform: uppercase; letter-spacing: 0.5pt; padding-bottom: 2pt; margin-bottom: 3pt; }
   .box > .boxtitle { border-bottom: 1pt solid #000; }
@@ -79,7 +94,7 @@
   .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.25pt;
     line-height: 1.2; text-transform: uppercase; letter-spacing: 0.6pt; border: none; padding: 0; margin: 0 0 1.5pt 0; }
   /* Two small tables side by side as half-width boxes (A3; §10: few rows never earn full width). */
-  .box-pair { display: flex; gap: 9pt; align-items: stretch; }
+  .box-pair { display: flex; gap: var(--gap-gutter); align-items: stretch; }
   .box-pair > .box { flex: 1; min-width: 0; margin-bottom: 0; }
 
   /* ---- Type scale (STYLE-GUIDE §4) ---- */
@@ -99,7 +114,7 @@
     letter-spacing: 0.4pt; margin-bottom: 3pt; }
   /* Body text (A5). Hyphenation points are soft hyphens placed by gazette.ty(); `manual`
      keeps the result identical on every machine, with or without a browser dictionary. */
-  p { margin-bottom: 3pt; text-align: justify; hyphens: manual; }
+  p { margin-bottom: var(--gap-inner); text-align: justify; hyphens: manual; }
   p, td { text-wrap: pretty; }
   /* Table cells never auto-hyphenate; gazette.ty() uses U+2011 in compounds (regular-fee). */
   td, th { hyphens: none; }
@@ -109,9 +124,10 @@
   .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
 
   /* ---- Vertical rhythm between stacked pieces in a column: margin only, never an HR ---- */
-  .c > :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo)
-      + :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo) { margin-top: 7pt; }
-  .c > p + :is(.box, .box-pair, .rail-block, .slot-a, .slot-b, .slot-feature, .photo) { margin-top: 7pt; }
+  /* THE column rhythm rule: any block after anything in a column gets --gap-block (paragraph
+     to paragraph keeps the --gap-inner body spacing). Works for every block class. */
+  .c > * + :not(p), .c > :not(p) + p { margin-top: var(--gap-block); }
+  .c > .art:first-child { margin-top: 0; }
   .c > :last-child { margin-bottom: 0; }
 
   /* ---- Boards ---- */
@@ -160,13 +176,13 @@
   /* Flexible art (Frank t212u). Stack is flush to the region; float wraps following prose;
      gutter is a last-resort narrow stack (≤ 0.25in side space, flush left, never centered).
      Never crop: width is set, height follows aspect. Fixed margins, no auto. */
-  .art { margin: 6pt 0; max-width: 100%; }
+  .art { margin: var(--gap-block) 0; max-width: 100%; }
   .art img { display: block; width: 100%; height: auto; filter: grayscale(100%); }
   .art--float { float: left; width: var(--art-w); margin: 2pt 9pt 3pt 0; }
-  .art--gutter { width: var(--art-w); margin: 6pt auto 6pt 0; } /* flush left; leftover is one side only */
+  .art--gutter { width: var(--art-w); margin: var(--gap-block) auto var(--gap-block) 0; } /* flush left; leftover is one side only */
 
   /* Scalable line art takes whatever depth is left on a .page.fit — scaled, never cropped. */
-  .fill-art { flex: 1 1 0; min-height: 0; margin: 7pt 0 5pt 0; display: flex; justify-content: center; align-items: flex-start; }
+  .fill-art { flex: 1 1 0; min-height: 0; margin: var(--gap-block) 0 0 0; display: flex; justify-content: center; align-items: flex-start; }
   .fill-art img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; }
 
   /* ---- Parent Q&A (§8a) ---- */

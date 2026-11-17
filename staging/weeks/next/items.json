@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-16T21:56:35-05:00",
+  "updated_at": "2026-11-16T23:50:00-05:00",
   "note": "Hold pile for Issue No. 7. Started at the No. 6 roll-forward 2026-11-10. Still-relevant held and upcoming items copied from staging/weeks/2026-11-11 with carried_from. Winter Camp, the classes table, Photo from History 10, and the college-season short stay held. 2026-11-11 2:40 p.m. ET: staged Kiefer Meinhardt Cup results-watch (Frank t204u) for No. 7. 2026-11-15 11:55 PM ET: Frank's VR parent-filter comic staged as a vetted page-2 visual (no attribution). 2026-11-16 Monday full pass: official Pizza RYC + Freehold results staged; NAC/Cobra/NJFA boards refreshed; deadlines and Epee on Screen rebuilt; 4 stale items moved to dropped-2026-11-16.json; lead, NAC preview, Cobra For the Parents and FIE World Cup items staged unvetted. 2026-11-16 3:38 PM ET: Frank (chat t223u) said YES, add the Kiefer Meinhardt results and share the lead between Mila Siu and Penny Young. C26 is the new rating. Stella Kuo stays out. 2026-11-16 9:51 PM ET: Frank (chat t226u) pointed to the club Mailchimp (Group Class + HOLIDAY PARTY!, 10:18 AM ET) for the remaining No. 7 content: holiday party on Friday, Dec. 11, plus photos of Mila Siu and Stella Kuo and of Penny Young.",
   "items": [
     {
@@ -1887,6 +1887,73 @@
       ],
       "created_at": "2026-11-16T21:56:35-05:00",
       "updated_at": "2026-11-16T21:56:35-05:00"
+    },
+    {
+      "id": "usaf-march-nac-atlantic-city-2027",
+      "kind": "news",
+      "headline": "March NAC Comes to Atlantic City",
+      "body": "USA Fencing's March North American Cup comes to New Jersey this season: Mar. 5–8, 2027, at the Atlantic City Convention Center. The national event is for Youth 14, Youth 12, Youth 10 and Division II fencers in all three weapons, and it is free to the public. Registration opens Wednesday, Nov. 18, at noon Eastern. The regular-fee deadline is Jan. 6: $225 for one event, $320 for two and $415 for three. Late entries, taken until 5 p.m. local time the night before an event, cost three times as much. More on the March NAC next week.",
+      "source": "web",
+      "from": "https://www.usafencing.org/2027-march-nac",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-16T23:43:00-05:00",
+      "vet_scope": "Frank chat t231u: run a short piece in No. 7; facts from the USA Fencing event page only.",
+      "facts": {
+        "event": "2027 March North American Cup (March NAC), USA Fencing national event",
+        "dates": "Mar. 5–8, 2027",
+        "categories": "Y14, Y12, Y10 and Division II; epee, foil and saber",
+        "venue": "Atlantic City Convention Center, 1 Convention Blvd., Atlantic City, NJ 08401 (exhibit hall TBD)",
+        "spectators": "free to the public",
+        "registration_opens": "Nov. 18, 2026, 12:00 p.m. ET",
+        "regular_fee_deadline": "Jan. 6, 2027",
+        "late_entry_deadline": "5 p.m. local time the night before the event",
+        "withdrawal_deadline": "Feb. 3, 2027 for a 50% event-fee refund (the Withdrawals section of the same page says the refund deadline is TBD, 11:59 p.m. Pacific — conflicting; confirm before printing)",
+        "classification_change_deadline": "Mar. 3, 2027",
+        "fees_regular": {
+          "one": "$225",
+          "two": "$320",
+          "three": "$415",
+          "team": "$190"
+        },
+        "fees_late": {
+          "one": "$675",
+          "two": "$960",
+          "three": "$1,245",
+          "team": "$570"
+        },
+        "no_show": "$250 per event fine plus suspension of membership privileges until paid, for not appearing without notice by 5 p.m. local the day before",
+        "refunds": "tournament and administration fees nonrefundable; 50% event-fee refunds processed 4–6 weeks after the tournament",
+        "parking": "see convention center website; USA Fencing partner SpotHero",
+        "schedule": "Event Schedule section was empty when fetched (no per-day event list yet)",
+        "eligibility": "see USA Fencing Athlete Handbook"
+      },
+      "vet_notes": "Frank chat t231u 2026-11-16 11:43 PM ET (verbatim): 'Today we'll keep it short, next week we will have a much larger article because March NAC is for basically all the kids at our club. I will highly encourage everyone to go esp since it's \"local\".' Short news piece for No. 7 written only from the official event page. Not printed: withdrawal/refund deadline (the page gives Feb. 3, 2027 and TBD in two places), exhibit hall (TBD), no-show fine, team fees. Full feature carried to No. 8 as usaf-march-nac-feature-no8.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/2027-march-nac",
+          "retrieved_at": "2026-11-16T23:50:00-05:00",
+          "note": "Fetched via WebFetch and curl 2026-11-16 11:43 PM ET."
+        },
+        {
+          "type": "chat",
+          "from": "frank",
+          "at": "2026-11-16T23:43:00-05:00",
+          "note": "t231u: March NAC in Atlantic City; keep it short this week, much larger article next week; it's for basically all the kids at our club; he'll encourage everyone to go since it's 'local'."
+        }
+      ],
+      "slot_hint": "page1-short",
+      "suggested_slot": "march-nac",
+      "tags": [
+        "nac",
+        "national",
+        "new-jersey"
+      ],
+      "word_count": 97,
+      "created_at": "2026-11-16T23:50:00-05:00",
+      "updated_at": "2026-11-16T23:50:00-05:00"
     }
   ],
   "rolled_forward": {

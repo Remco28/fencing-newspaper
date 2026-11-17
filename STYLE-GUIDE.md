@@ -154,8 +154,10 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
   FLAG above 0.75in. It also measures the blank at the bottom of **every column, rail and box
   in every row band**, and any float hole beside a photo, and FLAGs any of those holes above
   0.35in — filling the gap above the footer is not enough if it has pushed white space up
-  into a short rail. Fill shortfalls with layout (the row-balance pass) or by asking Frank
-  for copy; never invent or pad prose. If layout cannot close a hole, report its size and
+  into a short rail. It also measures **every inter-block gap** (page stack and each column)
+  against the `--gap-block` spacing token and FLAGs anything outside 5–12.5pt (touching
+  boxes, a stretched container). Fill shortfalls with **content first** (§18 fix order) or by
+  asking Frank for copy; never invent or pad prose. If a hole remains, report its size and
   location.
 - Art (photos, comics, diagrams, illustrations) is the flexible element; the words stay put.
   `compose/render.py` sizes each `art()` slot against this same instrument (§19). A shortfall
@@ -191,6 +193,18 @@ Any NO = fix, re-render, re-check. Fitting on the page is necessary but NOT suff
 it must look purpose-built for this club. **A proof is not “done” (and no “proof ready”
 doorbell goes out) until Clark has opened and inspected every page PNG** of the current render
 (v3.20 — reaffirmed from the first real run).
+**The eye check gate (Frank t229u, 2026-11-16: "we must always check every proof by eye").**
+Every proof goes through `python3 compose/eyecheck.py <pdf> --report=<fit-report.json>`
+before it goes to Frank, and is sent only when `python3 compose/eyecheck.py --verify <pdf>`
+says SENDABLE. The eye check renders the previews, maps every blank rectangle with pictures
+masked out (rule: no blank over ~1.5 sq in that is at least 0.75in tall anywhere; the band
+above the footer at most ~0.5in), reads the instrument's FLAGs and inter-block gaps, turns
+holes into length targets ("page 1: add ~N words in X"), and asks a **different model**
+from the composer (Claude Code `sonnet` by default) to grade the page against No. 6's
+approved pages with a rubric: blank space, even gaps, no widows/slivers, photos sized for
+role, one focal point, alignment. Any "major" issue fails the proof; "minor" ones are listed
+for Clark. Only Frank can waive a FAIL (`waived_by` in eye-check.json). The eye check does
+not replace Clark: he still opens every preview himself.
 Store page previews at **200 dpi** (`pdftoppm -r 200`). Board-level QA must be done on zoomed
 crops of each table, not full-page thumbnails — alignment cannot be judged through frosted glass.
 
@@ -350,7 +364,12 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   floated art slot whose wrapping text does not reach the art's bottom (or vice versa).
   After art-fit, a row-balance pass (`compose/balance.py`) may move a short box into the
   shorter column, pair photos in a row, or scale / face-safe-crop a photo to close those
-  holes (`--no-balance` skips it). It also checks the 7pt type floor on
+  holes. **Since 2026-11-16 (Frank t229u) that pass is report-only**: it lists each hole with
+  a plain-words suggestion and touches nothing (`--balance=pair` opts in to the one move it
+  still has, putting two stacked photos side by side; `--no-balance` skips it). It never
+  dissolves a row, moves a box out of its row, or crops a photo to move blank space.
+  A build that FLAGs writes `<name>.FAILED.pdf` and leaves the proof path untouched, so a
+  failed check never leaves a sendable proof. It also checks the 7pt type floor on
   every text element (ears, captions, credits, kickers, board heads) and counts hyphenated
   line breaks.
   The art-fit pass uses this same instrument as its verifier (`--report` includes `art_fit`
@@ -392,20 +411,31 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   defect even when the footer reaches the bottom. Column-spread (deepest minus
   shallowest) is still reported and FLAGs above 0.5in.
 - `compose/render.py` reports those per-column bottom gaps and the spread alongside the
-  per-column footer gap. Fixes, in the general row-balance pass: move a short box
-  (Ratings Earned, a small short) into the shorter column or rail; let paired items in
-  a row equalize; scale a photo within its ceilings, or apply a prepared face-safe
-  backdrop crop (§19). Then, if a hole remains, report its size and location to Frank —
-  never invent or pad prose, never leave a region void unreported. In a `.board-split`,
+  per-column footer gap. **Fix order (restored 2026-11-16 after the No. 7 v2 review):**
+  1. Content: grow or trim the stories beside the hole with vetted copy, using the eye
+     check's length targets and the recipe's short/standard/long variants
+     (`gazette.copy_length`, `recipe/lengths.json`). Never pad with unvetted facts.
+  2. Art: scale pictures up or down (the 2.2in photo ceiling is soft, §19).
+  3. Arrangement: pick another of the recipe's candidate arrangements (tall vs wide box,
+     photo pair vs float, rail vs full width); `python3 compose/arrange.py issues/<date>`
+     renders them all and ranks them; show Frank the top two when it is close.
+  4. Otherwise report the hole's size and location to Frank.
+  The balancer does not move boxes, dissolve rows or crop photos. In a `.board-split`,
   box notes go under the shorter half rather than as one full-width line under both.
+- **Spacing tokens.** One set of gaps, defined once in `compose/template-a.css`:
+  `--gap-block` 7pt between any two stacked blocks (one page-level rule and one column
+  rule apply it to every block class), `--gap-gutter` 9pt side by side, `--gap-inner` 3pt
+  inside a block, `--gap-tight` 1.5pt for captions and credits. Do not hand-set a block
+  margin anywhere else.
 
 ## 19. Photos — fit, no silent crop (locked 2026-10-07, plan v3.9)
 - Default CSS: `width: 100%; height: auto;` — preserve the original aspect ratio. **Never**
   use `object-fit: cover` or a hard `max-height` that silently crops the frame in the
   stylesheet. A prepared crop is a different thing: see the backdrop-crop note below.
 - Grayscale filter (`filter: grayscale(100%)`) may stay for B&W print.
-- Soft ceiling: if a photo would print taller than **~2.2in** in its column, FLAG to Frank
-  (crop on the photo desk, pick a smaller slot, or swap the image). Do not auto-crop in CSS.
+- Soft ceiling: if a photo would print taller than **~2.2in** in its column, tell Frank in
+  the proof note; it is a WARN, not a gate (Frank t229u, 2026-11-16: images scale up and down
+  to make content fit). The hard cap is 4.5in tall (`art.PHOTO_MAX_H_IN`). Do not auto-crop.
   Measure **as displayed** (honor EXIF orientation) — a 640×480 file with orientation=6
   renders as portrait and can exceed the ceiling even when the file header looks landscape.
   Sample note (2026-10-14): `club-newsletter-photo-1.jpeg` FLAGS at ~3.1in in a 1-col;
@@ -415,8 +445,9 @@ Recurring **content category** (CONTENT-HIERARCHY slot **Parent Q&A**). Not a bo
   in the printed line; the full attribution stays in `sources.json`. Published issues keep
   the credit they already printed. Photo desk still chooses which frames run; layout
   only scales to column width, except for the prepared crop below.
-- **Face-safe backdrop crop (row-balance, 2026-11-16).** To close an in-row hole, the
-  balancer may write a sibling `*-fillcrop` file that cover-crops a portrait's backdrop
+- **Face-safe backdrop crop (2026-11-16; balancer use retired the same night).** The
+  balancer no longer crops anything. `balance.safe_cover_crop` stays as an editorial helper
+  for a crop Frank asks for. It writes a sibling `*-fillcrop` file that cover-crops a portrait's backdrop
   and floor only. A keep-band (default 10–55% of the original height) must stay intact
   so faces and torsos are not touched; a target that cannot contain the band is
   refused. The original file stays; the printed credit must include "(cropped)". This
@@ -467,7 +498,8 @@ column grid (one column, two columns, or full width).
 - **Published Nos. 1–6 are unchanged.** `render.py` refuses to write a PDF into an
   APPROVED issue folder unless you pass `--force` or write the file somewhere else.
   Fitting is on by default for new issues that call `art()`; `--no-fit` skips it.
-  The row-balance pass runs after art-fit by default; `--no-balance` skips it.
+  The row-balance pass runs after art-fit by default in report-only mode; `--no-balance`
+  skips it.
 
 ## PDF filename & download (locked 2026-10-15)
 

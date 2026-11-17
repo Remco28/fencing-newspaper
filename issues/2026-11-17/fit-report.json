@@ -1,0 +1,498 @@
+{
+ "pages": [
+  {
+   "page": 1,
+   "last": "split",
+   "gaps": [
+    8.8,
+    8.8
+   ],
+   "rows": [
+    {
+     "kind": "columns",
+     "depths": [
+      627,
+      630.9
+     ],
+     "spread": 4,
+     "col_gaps": [
+      7.3,
+      3.3
+     ],
+     "row_bottom": 634.3
+    },
+    {
+     "kind": "split",
+     "depths": [
+      344.8,
+      344.8
+     ],
+     "spread": 0,
+     "col_gaps": [
+      1.7,
+      1.7
+     ],
+     "row_bottom": 346.5
+    },
+    {
+     "kind": "split",
+     "depths": [
+      158.1,
+      158.1
+     ],
+     "spread": 0,
+     "col_gaps": [
+      1.3,
+      1.3
+     ],
+     "row_bottom": 159.3
+    }
+   ],
+   "holes": [],
+   "block_gaps": [
+    {
+     "where": "page",
+     "above": "cols3",
+     "below": "split",
+     "gap": 9.3
+    },
+    {
+     "where": "column 1",
+     "above": "lead",
+     "below": "box",
+     "gap": 10.6
+    },
+    {
+     "where": "column 2",
+     "above": "slot-a",
+     "below": "rail-block",
+     "gap": 11.1
+    },
+    {
+     "where": "column 2",
+     "above": "rail-block",
+     "below": "rail-block",
+     "gap": 10.6
+    }
+   ],
+   "words_per_sq_in": 23,
+   "img_rects": [
+    [
+     0,
+     0,
+     7.5,
+     0.98
+    ],
+    [
+     0,
+     1.008,
+     7.5,
+     0.468
+    ],
+    [
+     0,
+     1.956,
+     2.374,
+     3.166
+    ],
+    [
+     2.499,
+     1.956,
+     2.374,
+     3.166
+    ]
+   ],
+   "overflow": 0,
+   "footer_drop": 0,
+   "page_h": 969.6
+  },
+  {
+   "page": 2,
+   "last": "art",
+   "gaps": [
+    37.3
+   ],
+   "rows": [
+    {
+     "kind": "boxes",
+     "depths": [
+      165,
+      164.4
+     ],
+     "spread": 0.7,
+     "col_gaps": [
+      8.6,
+      9.3
+     ],
+     "row_bottom": 173.6
+    }
+   ],
+   "holes": [],
+   "block_gaps": [
+    {
+     "where": "page",
+     "above": "rail-block",
+     "below": "slot-a",
+     "gap": 10.6
+    },
+    {
+     "where": "page",
+     "above": "slot-a",
+     "below": "box",
+     "gap": 11.1
+    },
+    {
+     "where": "page",
+     "above": "box",
+     "below": "box-pair",
+     "gap": 9.3
+    },
+    {
+     "where": "page",
+     "above": "box-pair",
+     "below": "vr-parent-filter",
+     "gap": 9.3
+    }
+   ],
+   "words_per_sq_in": 18.1,
+   "img_rects": [
+    [
+     0,
+     0,
+     7.5,
+     0.468
+    ],
+    [
+     0,
+     7.03,
+     7.5,
+     2.5
+    ]
+   ],
+   "overflow": 0,
+   "footer_drop": 0,
+   "page_h": 969.6
+  }
+ ],
+ "minPt": 6.9999975,
+ "minWho": "p.caption",
+ "shy": 71,
+ "used": 2,
+ "justified": 10,
+ "art_fit": {
+  "slots": [
+   {
+    "id": "penny-young-pizza-ryc",
+    "kind": "photo",
+    "region": "span2",
+    "flex": false,
+    "modes": "stack",
+    "src": "media/penny-young-pizza-ryc-2026-11-15.jpg",
+    "wrap_ok": false,
+    "region_w_in": 2.3743,
+    "page": 1,
+    "px_w": 480,
+    "px_h": 640,
+    "min_w": 1.6,
+    "lettered": false
+   },
+   {
+    "id": "mila-siu-stella-kuo-kiefer",
+    "kind": "photo",
+    "region": "span2",
+    "flex": false,
+    "modes": "stack",
+    "src": "media/mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14.jpg",
+    "wrap_ok": false,
+    "region_w_in": 2.3743,
+    "page": 1,
+    "px_w": 480,
+    "px_h": 640,
+    "min_w": 1.6,
+    "lettered": false
+   },
+   {
+    "id": "vr-parent-filter",
+    "kind": "comic",
+    "region": "full",
+    "flex": true,
+    "modes": "stack",
+    "src": "media/vr-parent-filter-comic.png",
+    "wrap_ok": false,
+    "region_w_in": 7.5,
+    "page": 2,
+    "px_w": 2172,
+    "px_h": 724,
+    "min_w": 3,
+    "lettered": true
+   }
+  ],
+  "decisions": [
+   {
+    "id": "penny-young-pizza-ryc",
+    "flex": false,
+    "ok": true,
+    "flag": false,
+    "page": 1,
+    "cand": {
+     "mode": "stack",
+     "width": 2.3743,
+     "role": "stack"
+    },
+    "reasons": [],
+    "rec": {
+     "overflow_in": 0,
+     "min_gap_in": 4.3711,
+     "worst_gap_in": 4.3711,
+     "max_spread_in": 0,
+     "footer_drop_in": 0.0001,
+     "aspect_err": 3e-05,
+     "float_hole_in": 0,
+     "interior_gap_in": 0,
+     "side_gutter_in": 0,
+     "region_w_in": 2.3743,
+     "img_w_in": 2.3743,
+     "img_h_in": 3.1657,
+     "region_gap_in": 4.3711,
+     "row_spread_in": 0,
+     "page_overflow_in": 0
+    },
+    "why": "fixed-stack"
+   },
+   {
+    "id": "mila-siu-stella-kuo-kiefer",
+    "flex": false,
+    "ok": true,
+    "flag": false,
+    "page": 1,
+    "cand": {
+     "mode": "stack",
+     "width": 2.3743,
+     "role": "stack"
+    },
+    "reasons": [],
+    "rec": {
+     "overflow_in": 0,
+     "min_gap_in": 4.3711,
+     "worst_gap_in": 4.3711,
+     "max_spread_in": 0,
+     "footer_drop_in": 0.0001,
+     "aspect_err": 3e-05,
+     "float_hole_in": 0,
+     "interior_gap_in": 0,
+     "side_gutter_in": 0,
+     "region_w_in": 2.3743,
+     "img_w_in": 2.3743,
+     "img_h_in": 3.1657,
+     "region_gap_in": 4.3711,
+     "row_spread_in": 0,
+     "page_overflow_in": 0
+    },
+    "why": "fixed-stack"
+   },
+   {
+    "ok": true,
+    "flag": false,
+    "cand": {
+     "mode": "stack",
+     "width": 7.5,
+     "gutter": 0.0,
+     "eligible": true,
+     "why": [],
+     "soft_floor": null,
+     "lettering_confirmed": true,
+     "dpi": 289.6,
+     "height": 2.5,
+     "role": "stack"
+    },
+    "rec": {
+     "overflow_in": 0,
+     "min_gap_in": 0.3885,
+     "worst_gap_in": 0.3885,
+     "max_spread_in": 0.007291666666666666,
+     "footer_drop_in": 0.0001,
+     "aspect_err": 0,
+     "float_hole_in": 0,
+     "interior_gap_in": 0.0972,
+     "side_gutter_in": 0,
+     "region_w_in": 7.5,
+     "img_w_in": 7.5,
+     "img_h_in": 2.5,
+     "region_gap_in": 0.3885,
+     "page_overflow_in": 0
+    },
+    "warns": [
+     "290 dpi is below the soft target 300"
+    ],
+    "reasons": [],
+    "residual": 0.0,
+    "why": "stack-passes",
+    "report": [
+     "stack leaves a 0.39in footer gap; or about 68 words"
+    ],
+    "id": "vr-parent-filter",
+    "flex": true,
+    "page": 2,
+    "region_w": 7.5,
+    "wrap_ok": false
+   }
+  ],
+  "balance": {
+   "mode": "report",
+   "actions": [],
+   "before": [
+    {
+     "page": 1,
+     "footer_gaps_in": [
+      0.09,
+      0.09
+     ],
+     "footer_drop_in": 0.0,
+     "rows": [
+      {
+       "row": 1,
+       "kind": "columns",
+       "col_gaps_in": [
+        0.08,
+        0.03
+       ],
+       "depths_in": [
+        6.53,
+        6.57
+       ],
+       "spread_in": 0.04
+      },
+      {
+       "row": 2,
+       "kind": "split",
+       "col_gaps_in": [
+        0.02,
+        0.02
+       ],
+       "depths_in": [
+        3.59,
+        3.59
+       ],
+       "spread_in": 0.0
+      },
+      {
+       "row": 3,
+       "kind": "split",
+       "col_gaps_in": [
+        0.01,
+        0.01
+       ],
+       "depths_in": [
+        1.65,
+        1.65
+       ],
+       "spread_in": 0.0
+      }
+     ],
+     "holes": []
+    },
+    {
+     "page": 2,
+     "footer_gaps_in": [
+      0.39
+     ],
+     "footer_drop_in": 0.0,
+     "rows": [
+      {
+       "row": 1,
+       "kind": "boxes",
+       "col_gaps_in": [
+        0.09,
+        0.1
+       ],
+       "depths_in": [
+        1.72,
+        1.71
+       ],
+       "spread_in": 0.01
+      }
+     ],
+     "holes": []
+    }
+   ],
+   "after": [
+    {
+     "page": 1,
+     "footer_gaps_in": [
+      0.09,
+      0.09
+     ],
+     "footer_drop_in": 0.0,
+     "rows": [
+      {
+       "row": 1,
+       "kind": "columns",
+       "col_gaps_in": [
+        0.08,
+        0.03
+       ],
+       "depths_in": [
+        6.53,
+        6.57
+       ],
+       "spread_in": 0.04
+      },
+      {
+       "row": 2,
+       "kind": "split",
+       "col_gaps_in": [
+        0.02,
+        0.02
+       ],
+       "depths_in": [
+        3.59,
+        3.59
+       ],
+       "spread_in": 0.0
+      },
+      {
+       "row": 3,
+       "kind": "split",
+       "col_gaps_in": [
+        0.01,
+        0.01
+       ],
+       "depths_in": [
+        1.65,
+        1.65
+       ],
+       "spread_in": 0.0
+      }
+     ],
+     "holes": []
+    },
+    {
+     "page": 2,
+     "footer_gaps_in": [
+      0.39
+     ],
+     "footer_drop_in": 0.0,
+     "rows": [
+      {
+       "row": 1,
+       "kind": "boxes",
+       "col_gaps_in": [
+        0.09,
+        0.1
+       ],
+       "depths_in": [
+        1.72,
+        1.71
+       ],
+       "spread_in": 0.01
+      }
+     ],
+     "holes": []
+    }
+   ],
+   "leftovers": [],
+   "suggestions": [],
+   "threshold_in": 0.35
+  }
+ }
+}

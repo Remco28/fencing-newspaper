@@ -6,7 +6,8 @@
     "alt": "Penny Young standing in front of a New Haven Athletics backdrop, wearing a bronze medal and holding up two fingers.",
     "caption": "Penny Young with her Youth 12 bronze at the Pizza RYC/RJCC in New Haven.",
     "region": "span2",
-    "flex": true
+    "flex": false,
+    "modes": "stack"
   },
   "mila-siu-stella-kuo-kiefer": {
     "id": "mila-siu-stella-kuo-kiefer",
@@ -14,7 +15,7 @@
     "kind": "photo",
     "alt": "Mila Siu, left, holding a bronze medal, and Stella Kuo standing beside her in Elite FC jackets against a Kiefer Meinhardt Cup backdrop.",
     "caption": "Mila Siu, left, with her Youth 14 bronze at the Kiefer Meinhardt Cup in Glen Allen, Va., and Stella Kuo.",
-    "region": "rail",
+    "region": "span2",
     "flex": false,
     "modes": "stack"
   },

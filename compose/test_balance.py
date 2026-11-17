@@ -160,39 +160,32 @@ leftovers = B.leftover_flags(_inst([0, 211], footer_gaps_px=[48]))
 check("leftover_flags names the 2.20in hole",
       any("2.20in" in x for x in leftovers), leftovers)
 
-# ----- move picker -----------------------------------------------------------
+# ----- reined-in balancer (Frank t229u) -------------------------------------
 
-print("=== move picker ===")
-layout_page = {
-    "page": 1,
-    "rows": [
-        {"kind": "columns", "cols": [
-            {"id": "p1c1", "gap_in": 0.0, "items": [
-                {"id": "i1", "kind": "lead", "movable": False, "label": "Lead", "h_in": 3.0},
-            ]},
-            {"id": "p1c2", "gap_in": 2.20, "items": [
-                {"id": "i2", "kind": "short", "movable": True, "label": "By the Book", "h_in": 1.5},
-            ]},
-        ]},
-        {"kind": "split", "cols": [
-            {"id": "p1c3", "gap_in": 0.0, "items": [
-                {"id": "i3", "kind": "art", "movable": False, "photo": True,
-                 "art_id": "mila", "label": "mila", "h_in": 2.5},
-            ]},
-            {"id": "p1c4", "gap_in": 1.86, "items": [
-                {"id": "i4", "kind": "box", "movable": True, "label": "Ratings Earned", "h_in": 0.85},
-            ]},
-        ]},
-    ],
-}
-worst = {"page": 1, "row": 0, "col": 1, "gap_in": 2.20, "kind": "columns"}
-move = B._pick_move(layout_page, worst)
-check("picker moves Ratings Earned into the short rail",
-      move and move["item"] == "i4" and move["dest"] == "p1c2", move)
-check("picker names the box",
-      move and "Ratings Earned" in (move.get("label") or ""), move)
+print("=== balancer is report-only ===")
+check("move picker is gone (no box moves, no neighbour stripping)", not hasattr(B, "_pick_move"))
+check("balance modes are report and pair only", B.BALANCE_MODES == ("report", "pair"), B.BALANCE_MODES)
+sugg = B._suggestions(_inst([0, 211], footer_gaps_px=[48]))
+check("report mode turns a hole into a plain-words suggestion",
+      any("2.20in short" in x and "grow the copy" in x for x in sugg), sugg)
+import inspect as _inspect
+_src = _inspect.getsource(B.run_balance)
+check("run_balance never crops, moves, floats, or unwraps",
+      not any(k in _src for k in ("safe_cover_crop", "moveItem", "floatIntoLead", "setArtSrc", "unwrapLonelySplits")))
 
-# ----- Chrome fixture: FLAG without balance; move with balance ---------------
+# ----- block-gap rhythm in report() ------------------------------------------
+inst = _inst([0, 10])
+inst["pages"][0]["block_gaps"] = [
+    {"where": "page", "above": "rail-block", "below": "box", "gap": 9.3},      # 7pt OK
+    {"where": "page", "above": "box", "below": "box-pair", "gap": 0.0},        # touching
+    {"where": "page", "above": "rail-block", "below": "box", "gap": 46.7},     # 35pt stretch
+]
+flags, out = flags_for(inst)
+check("a touching pair of blocks FLAGs", any("gap 0.0pt" in f for f in flags), flags)
+check("a 35pt stretched gap FLAGs", any("gap 35.0pt" in f for f in flags), flags)
+check("a 7pt gap does not FLAG", not any("gap 7.0pt" in f for f in flags), flags)
+
+# ----- Chrome fixture: FLAG without balance; report-only balance; send gate ----
 
 print("=== Chrome instrument + balancer fixture ===")
 sys.path.insert(0, str(g.ROOT / "compose"))
@@ -288,36 +281,27 @@ if rep_a.is_file():
         check("unbalanced fixture still has a last-row footer measurement",
               "gaps" in (data.get("pages") or [{}])[0], data.get("pages"))
 
-# 2) With the balancer: Ratings Earned should move into the rail and shrink the hole.
+# 2) Default balancer (report-only): nothing moves; the hole is reported with a suggestion.
 pdf_b = TMP / "balanced.pdf"
 rep_b = TMP / "balanced.json"
 r = run_render(pdf_b, rep_b, ["--allow-flag"])
-check("balanced fixture rendered", pdf_b.is_file() and rep_b.is_file(),
+check("report-only fixture rendered", pdf_b.is_file() and rep_b.is_file(),
       (r.returncode, (r.stderr or r.stdout)[-400:]))
 if rep_b.is_file():
     data = json.loads(rep_b.read_text())
     bal = (data.get("art_fit") or {}).get("balance") or {}
-    acts = bal.get("actions") or []
-    check("balancer moved or paired something",
-          any(a.get("op") in ("move", "pair", "crop") for a in acts), acts)
-    check("balancer mentions Ratings Earned (the short box)",
-          any("Ratings Earned" in str(a) for a in acts), acts)
-    after = bal.get("after") or []
-    before = bal.get("before") or []
-    def worst_cols3(side):
-        for pg in side:
-            if pg.get("page") != 1:
-                continue
-            for row in pg.get("rows") or []:
-                if row.get("kind") in ("columns", "cols3"):
-                    gaps = row.get("col_gaps_in") or []
-                    return max(gaps) if gaps else 0
-        return None
-    wb, wa = worst_cols3(before), worst_cols3(after)
-    if wb is not None and wa is not None:
-        check("cols3 worst column gap shrank after balance",
-              wa < wb - 0.04, f"before={wb} after={wa}")
+    check("report mode takes no actions", bal.get("mode") == "report" and not bal.get("actions"), bal.get("actions"))
+    check("report mode leaves a suggestion for the hole", bool(bal.get("suggestions")), bal)
+    check("Ratings Earned stays where the recipe put it",
+          "Ratings Earned" in html_path.read_text() and bal.get("before") == bal.get("after"))
 
+# 3) A failed build is not a proof: <out> is untouched and the PDF is kept as .FAILED.pdf.
+pdf_c = TMP / "gate.pdf"
+r = run_render(pdf_c, TMP / "gate.json", [])
+check("failed build exits non-zero", r.returncode != 0, r.returncode)
+check("failed build does not write the proof path", not pdf_c.exists())
+check("failed build keeps a .FAILED.pdf", (TMP / "gate.FAILED.pdf").is_file())
+check("no draft left behind", not (TMP / "gate.draft.pdf").exists())
 
 print()
 if failures:

@@ -1,0 +1,316 @@
+{
+ "slots": [
+  {
+   "id": "penny-young-pizza-ryc",
+   "kind": "photo",
+   "region": "span2",
+   "flex": false,
+   "modes": "stack",
+   "src": "media/penny-young-pizza-ryc-2026-11-15.jpg",
+   "wrap_ok": false,
+   "region_w_in": 2.3743,
+   "page": 1,
+   "px_w": 480,
+   "px_h": 640,
+   "min_w": 1.6,
+   "lettered": false
+  },
+  {
+   "id": "mila-siu-stella-kuo-kiefer",
+   "kind": "photo",
+   "region": "span2",
+   "flex": false,
+   "modes": "stack",
+   "src": "media/mila-siu-stella-kuo-kiefer-meinhardt-2026-11-14.jpg",
+   "wrap_ok": false,
+   "region_w_in": 2.3743,
+   "page": 1,
+   "px_w": 480,
+   "px_h": 640,
+   "min_w": 1.6,
+   "lettered": false
+  },
+  {
+   "id": "vr-parent-filter",
+   "kind": "comic",
+   "region": "full",
+   "flex": true,
+   "modes": "stack",
+   "src": "media/vr-parent-filter-comic.png",
+   "wrap_ok": false,
+   "region_w_in": 7.5,
+   "page": 2,
+   "px_w": 2172,
+   "px_h": 724,
+   "min_w": 3,
+   "lettered": true
+  }
+ ],
+ "decisions": [
+  {
+   "id": "penny-young-pizza-ryc",
+   "flex": false,
+   "ok": true,
+   "flag": false,
+   "page": 1,
+   "cand": {
+    "mode": "stack",
+    "width": 2.3743,
+    "role": "stack"
+   },
+   "reasons": [],
+   "rec": {
+    "overflow_in": 0,
+    "min_gap_in": 4.3711,
+    "worst_gap_in": 4.3711,
+    "max_spread_in": 0,
+    "footer_drop_in": 0.0001,
+    "aspect_err": 3e-05,
+    "float_hole_in": 0,
+    "interior_gap_in": 0,
+    "side_gutter_in": 0,
+    "region_w_in": 2.3743,
+    "img_w_in": 2.3743,
+    "img_h_in": 3.1657,
+    "region_gap_in": 4.3711,
+    "row_spread_in": 0,
+    "page_overflow_in": 0
+   },
+   "why": "fixed-stack"
+  },
+  {
+   "id": "mila-siu-stella-kuo-kiefer",
+   "flex": false,
+   "ok": true,
+   "flag": false,
+   "page": 1,
+   "cand": {
+    "mode": "stack",
+    "width": 2.3743,
+    "role": "stack"
+   },
+   "reasons": [],
+   "rec": {
+    "overflow_in": 0,
+    "min_gap_in": 4.3711,
+    "worst_gap_in": 4.3711,
+    "max_spread_in": 0,
+    "footer_drop_in": 0.0001,
+    "aspect_err": 3e-05,
+    "float_hole_in": 0,
+    "interior_gap_in": 0,
+    "side_gutter_in": 0,
+    "region_w_in": 2.3743,
+    "img_w_in": 2.3743,
+    "img_h_in": 3.1657,
+    "region_gap_in": 4.3711,
+    "row_spread_in": 0,
+    "page_overflow_in": 0
+   },
+   "why": "fixed-stack"
+  },
+  {
+   "ok": true,
+   "flag": false,
+   "cand": {
+    "mode": "stack",
+    "width": 7.5,
+    "gutter": 0.0,
+    "eligible": true,
+    "why": [],
+    "soft_floor": null,
+    "lettering_confirmed": true,
+    "dpi": 289.6,
+    "height": 2.5,
+    "role": "stack"
+   },
+   "rec": {
+    "overflow_in": 0,
+    "min_gap_in": 0.3885,
+    "worst_gap_in": 0.3885,
+    "max_spread_in": 0.007291666666666666,
+    "footer_drop_in": 0.0001,
+    "aspect_err": 0,
+    "float_hole_in": 0,
+    "interior_gap_in": 0.0972,
+    "side_gutter_in": 0,
+    "region_w_in": 7.5,
+    "img_w_in": 7.5,
+    "img_h_in": 2.5,
+    "region_gap_in": 0.3885,
+    "page_overflow_in": 0
+   },
+   "warns": [
+    "290 dpi is below the soft target 300"
+   ],
+   "reasons": [],
+   "residual": 0.0,
+   "why": "stack-passes",
+   "report": [
+    "stack leaves a 0.39in footer gap; or about 68 words"
+   ],
+   "id": "vr-parent-filter",
+   "flex": true,
+   "page": 2,
+   "region_w": 7.5,
+   "wrap_ok": false
+  }
+ ],
+ "balance": {
+  "mode": "report",
+  "actions": [],
+  "before": [
+   {
+    "page": 1,
+    "footer_gaps_in": [
+     0.09,
+     0.09
+    ],
+    "footer_drop_in": 0.0,
+    "rows": [
+     {
+      "row": 1,
+      "kind": "columns",
+      "col_gaps_in": [
+       0.08,
+       0.03
+      ],
+      "depths_in": [
+       6.53,
+       6.57
+      ],
+      "spread_in": 0.04
+     },
+     {
+      "row": 2,
+      "kind": "split",
+      "col_gaps_in": [
+       0.02,
+       0.02
+      ],
+      "depths_in": [
+       3.59,
+       3.59
+      ],
+      "spread_in": 0.0
+     },
+     {
+      "row": 3,
+      "kind": "split",
+      "col_gaps_in": [
+       0.01,
+       0.01
+      ],
+      "depths_in": [
+       1.65,
+       1.65
+      ],
+      "spread_in": 0.0
+     }
+    ],
+    "holes": []
+   },
+   {
+    "page": 2,
+    "footer_gaps_in": [
+     0.39
+    ],
+    "footer_drop_in": 0.0,
+    "rows": [
+     {
+      "row": 1,
+      "kind": "boxes",
+      "col_gaps_in": [
+       0.09,
+       0.1
+      ],
+      "depths_in": [
+       1.72,
+       1.71
+      ],
+      "spread_in": 0.01
+     }
+    ],
+    "holes": []
+   }
+  ],
+  "after": [
+   {
+    "page": 1,
+    "footer_gaps_in": [
+     0.09,
+     0.09
+    ],
+    "footer_drop_in": 0.0,
+    "rows": [
+     {
+      "row": 1,
+      "kind": "columns",
+      "col_gaps_in": [
+       0.08,
+       0.03
+      ],
+      "depths_in": [
+       6.53,
+       6.57
+      ],
+      "spread_in": 0.04
+     },
+     {
+      "row": 2,
+      "kind": "split",
+      "col_gaps_in": [
+       0.02,
+       0.02
+      ],
+      "depths_in": [
+       3.59,
+       3.59
+      ],
+      "spread_in": 0.0
+     },
+     {
+      "row": 3,
+      "kind": "split",
+      "col_gaps_in": [
+       0.01,
+       0.01
+      ],
+      "depths_in": [
+       1.65,
+       1.65
+      ],
+      "spread_in": 0.0
+     }
+    ],
+    "holes": []
+   },
+   {
+    "page": 2,
+    "footer_gaps_in": [
+     0.39
+    ],
+    "footer_drop_in": 0.0,
+    "rows": [
+     {
+      "row": 1,
+      "kind": "boxes",
+      "col_gaps_in": [
+       0.09,
+       0.1
+      ],
+      "depths_in": [
+       1.72,
+       1.71
+      ],
+      "spread_in": 0.01
+     }
+    ],
+    "holes": []
+   }
+  ],
+  "leftovers": [],
+  "suggestions": [],
+  "threshold_in": 0.35
+ }
+}

@@ -246,7 +246,24 @@ INSTRUMENT_JS = r"""
       const fr = art.getBoundingClientRect();
       const floated = art.classList.contains("art--float") ||
         ((getComputedStyle(art).cssFloat || "none") !== "none");
-      if (!floated) return;
+      if (!floated) {
+        // A stacked picture narrower than its column with nothing beside it leaves a
+        // 2-D hole the column-depth check cannot see (No. 7 v2, beside the Mila photo).
+        const pcs = getComputedStyle(parent);
+        const content = parent.getBoundingClientRect().width - (parseFloat(pcs.paddingLeft) || 0)
+          - (parseFloat(pcs.paddingRight) || 0);
+        const side = content - fr.width;
+        const beside = [...parent.children].some(n => n !== art && (() => {
+          const b = n.getBoundingClientRect();
+          return b.height > 0 && b.top < fr.bottom - 2 && b.bottom > fr.top + 2 && (b.left >= fr.right - 1 || b.right <= fr.left + 1);
+        })());
+        if (side > 0.25 * 96 && !beside) {
+          holes.push({ kind: "side", id: art.getAttribute("data-art") || "", gap: +side.toFixed(1),
+                       signed: +side.toFixed(1), h: +fr.height.toFixed(1),
+                       where: "blank beside stacked art" });
+        }
+        return;
+      }
       let last = null;
       for (const n of parent.children) {
         if (n === art) continue;
@@ -265,11 +282,73 @@ INSTRUMENT_JS = r"""
         where: signed > 0 ? "under wrapping text beside art" : "under art",
       });
     });
+    // Inter-block gaps (spacing tokens): visible gap between consecutive stacked blocks on
+    // the page and inside every column. Boxes/rules count their border as ink; text blocks
+    // count their first/last line of ink. A stretched invisible container shows up here.
+    const inkTop = (el) => {
+      let t = Infinity;
+      const take = (r) => { if (r.width > 0 && r.height > 0 && r.top < t) t = r.top; };
+      const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      const range = document.createRange();
+      for (let n = w.nextNode(); n; n = w.nextNode()) {
+        if (!n.nodeValue.trim()) continue;
+        range.selectNodeContents(n);
+        for (const r of range.getClientRects()) take(r);
+      }
+      el.querySelectorAll('img, svg, hr, td, th').forEach(e => take(e.getBoundingClientRect()));
+      if (el.matches && el.matches('img, svg')) take(el.getBoundingClientRect());
+      return t;
+    };
+    const bordered = (el, side) => {
+      const cs = getComputedStyle(el);
+      return (parseFloat(cs['border' + side + 'Width']) || 0) > 0 && cs['border' + side + 'Style'] !== 'none';
+    };
+    // A box's border is ink, also when the box sits inside a wrapper (box-pair, split cell).
+    const boxes = (el) => [el, ...el.querySelectorAll('.box')];
+    const visTop = (el) => Math.min(inkTop(el),
+      ...boxes(el).filter(b => bordered(b, 'Top')).map(b => b.getBoundingClientRect().top));
+    const visBottom = (el) => Math.max(inkBottom(el),
+      ...boxes(el).filter(b => bordered(b, 'Bottom')).map(b => b.getBoundingClientRect().bottom));
+    const block_gaps = [];
+    const lab = (el) => (el.getAttribute('data-art') || (el.className || el.tagName).toString().split(' ')[0] || el.tagName).slice(0, 40);
+    const scan = (container, where) => {
+      const kids = [...container.children].filter(k => !k.matches('.masthead, .dateline, .footer, style, script')
+        && k.getBoundingClientRect().height > 0);
+      for (let k = 1; k < kids.length; k++) {
+        const a = kids[k - 1], b = kids[k];
+        if (b.tagName === 'P' && a.tagName === 'P') continue;
+        // Inside a story (kicker -> head -> dek -> body) spacing is type, not block rhythm.
+        if (a.matches('h1, h2, h3, .rail-title, .dek, .byline') || b.matches('.dek, .byline')) continue;
+        const ab = visBottom(a), bt = visTop(b);
+        if (!isFinite(ab) || !isFinite(bt)) continue;
+        block_gaps.push({ where, above: lab(a), below: lab(b), gap: +(bt - ab).toFixed(1) });
+      }
+    };
+    scan(p, 'page');
+    p.querySelectorAll('.cols3 > .c').forEach((c, ci) => scan(c, 'column ' + (ci + 1)));
+    // Body-copy density on this page (words per square inch of paragraph area), for word targets.
+    let words = 0, area = 0;
+    p.querySelectorAll('p').forEach(el => {
+      if (el.closest('.box, .footer, .dateline, .masthead, figure')) return;
+      const r = el.getBoundingClientRect();
+      const n = (el.textContent || '').replace(/\u00ad/g, '').trim().split(/\s+/).filter(Boolean).length;
+      if (n && r.width > 0) { words += n; area += r.width * r.height; }
+    });
+    const words_per_sq_in = area > 0 ? +(words / (area / (96 * 96))).toFixed(1) : null;
+    // Picture rectangles (inches from the page content-box top-left) so the eye check's
+    // pixel blank map does not count a photo's white backdrop as a hole.
+    const pr0 = p.getBoundingClientRect();
+    // The masthead and dateline are locked furniture (their side space is design, not a hole).
+    const img_rects = [...p.querySelectorAll('img, :scope > .masthead, :scope > .dateline')].filter(im => !im.closest('.masthead') || im.matches('.masthead')).map(im => {
+      const r = im.getBoundingClientRect();
+      return [+((r.left - pr0.left) / 96).toFixed(3), +((r.top - pr0.top) / 96).toFixed(3),
+              +(r.width / 96).toFixed(3), +(r.height / 96).toFixed(3)];
+    });
     const pr = p.getBoundingClientRect();
     const fb = f ? f.getBoundingClientRect() : { bottom: pr.top };
     // Expected content-box bottom is pageTop + 10.1in, even if .page shrink-wrapped.
     const footer_drop = +((pr.top + 10.1 * 96) - fb.bottom).toFixed(1);
-    return { page: i + 1, last: label(last), gaps: cols, rows, holes,
+    return { page: i + 1, last: label(last), gaps: cols, rows, holes, block_gaps, words_per_sq_in, img_rects,
              overflow: +Math.max(p.scrollHeight - p.clientHeight, pr.height - 10.1 * 96).toFixed(1),
              footer_drop, page_h: +pr.height.toFixed(1) };
   });
@@ -309,6 +388,23 @@ GAP_FLAG_IN = 0.75
 SPREAD_FLAG_IN = 0.5
 COL_GAP_FLAG_IN = 0.35  # must match art.COL_GAP_FLAG_IN; in-row holes + float holes
 FOOTER_PIN_FLAG_IN = 0.15  # must match art.FOOTER_PIN_FLAG_IN
+# Spacing token (template-a.css --gap-block). Visible gaps between stacked blocks are the
+# token plus a text block's half-leading; outside this band is drift (0pt touching, 35pt stretch).
+BLOCK_GAP_PT = 7.0
+BLOCK_GAP_MIN_PT = 5.0
+BLOCK_GAP_MAX_PT = 12.5
+
+
+def draft_path(out):
+    """Where render.py writes before the checks pass."""
+    base = out[:-4] if out.lower().endswith(".pdf") else out
+    return base + ".draft.pdf"
+
+
+def failed_path(out):
+    """Where a build that failed its checks is kept (never sendable)."""
+    base = out[:-4] if out.lower().endswith(".pdf") else out
+    return base + ".FAILED.pdf"
 
 
 def report(m):
@@ -364,12 +460,24 @@ def report(m):
             print(msg)
             if tag == "FLAG":
                 flags.append(msg)
+        for bg in pg.get("block_gaps") or []:
+            pt = (bg.get("gap") or 0) * 0.75
+            if pt < BLOCK_GAP_MIN_PT or pt > BLOCK_GAP_MAX_PT:
+                msg = (f"page {pg['page']} {bg.get('where')}: gap {pt:.1f}pt between {bg.get('above')} and "
+                       f"{bg.get('below')} (token {BLOCK_GAP_PT:g}pt; allowed {BLOCK_GAP_MIN_PT:g}-{BLOCK_GAP_MAX_PT:g}pt) [FLAG]")
+                print(msg)
+                flags.append(msg)
+        bgs = [(bg.get("gap") or 0) * 0.75 for bg in (pg.get("block_gaps") or [])]
+        if bgs:
+            print(f"page {pg['page']}: {len(bgs)} inter-block gaps {min(bgs):.1f}-{max(bgs):.1f}pt "
+                  f"(token {BLOCK_GAP_PT:g}pt)")
         for hole in pg.get("holes") or []:
             gap_in = inch(hole.get("gap") or 0)
             loc = hole.get("where") or "float"
             hid = hole.get("id") or ""
             tag = "OK" if gap_in <= COL_GAP_FLAG_IN else "FLAG"
-            msg = (f"page {pg['page']}: float hole {gap_in:.2f}in {loc}"
+            kind = "side hole" if hole.get("kind") == "side" else "float hole"
+            msg = (f"page {pg['page']}: {kind} {gap_in:.2f}in {loc}"
                    + (f" ({hid})" if hid else "") + f" [{tag}]")
             print(msg)
             if tag == "FLAG":
@@ -544,6 +652,11 @@ def run_fit(call, flags):
             extra = eval_js(call, "window.__gzFit.measureSlot(%s)" % json.dumps(sid))
             rec = instrument_to_rec(m, extra, page=s.get("page"))
             ok, resid, reasons = artmod.hard_gates(rec)
+            # Fixed art cannot fix a short page or a column spread; those are content/arrangement
+            # findings the instrument and the eye check report. Gate fixed art only on overflow,
+            # overlap, footer pin and aspect.
+            reasons = [r for r in reasons if not r.startswith(("footer gap", "column spread"))]
+            ok = not reasons
             decisions.append({
                 "id": sid, "flex": False, "ok": ok, "flag": not ok,
                 "page": s.get("page"),
@@ -693,6 +806,7 @@ def main():
                 bal_report = balancemod.run_balance(
                     call, flags, Path(src).parent,
                     eval_js=eval_js, instrument_js=INSTRUMENT_JS, fit_js=FIT_JS,
+                    mode=arg("--balance=", "report"),
                 )
                 if fit_report is None:
                     fit_report = {"slots": [], "decisions": [], "note": "no art-fit"}
@@ -708,9 +822,14 @@ def main():
             "printBackground": True,
             "marginTop": 0, "marginBottom": 0, "marginLeft": 0, "marginRight": 0,
         })
+        # Never leave a sendable proof behind a failed check (Frank t229u): the PDF is written
+        # to a draft path first and only becomes <out> when every check passes (or
+        # --allow-flag). A failed build leaves <stem>.FAILED.pdf and does not touch <out>.
+        final_out = out
+        out = draft_path(final_out)
         with open(out, "wb") as f:
             f.write(base64.b64decode(res["data"]))
-        print(f"wrote {out}")
+        print(f"wrote draft {out}")
         # PDF Author (STYLE-GUIDE § PDF filename): --author=NAME, else <meta name="author">, else default
         author = arg("--author=")
         if author is None:
@@ -777,8 +896,16 @@ def main():
         except Exception:
             pass
         if flags and "--allow-flag" not in sys.argv:
+            failed = failed_path(final_out)
+            os.replace(out, failed)
+            print(f"FAILED build kept as {failed} (not a proof; {final_out} untouched)")
             print("FAIL: " + "; ".join(flags), file=sys.stderr)
             sys.exit(1)
+        os.replace(out, final_out)
+        stale = failed_path(final_out)
+        if os.path.exists(stale):
+            os.remove(stale)
+        print(f"wrote {final_out}" + (" (with --allow-flag: NOT a proof until the eye check passes)" if flags else ""))
     finally:
         chrome.terminate()
         try:

@@ -5,8 +5,12 @@ After art-fit, this pass evens out short columns in every row band so the
 fill instrument's per-column bottom-gap check can pass. It is general
 composer/fit behavior, not a one-issue layout.
 
-What it may do, looping until every column/float hole is at most
-COL_GAP_FLAG_IN or no safe move remains:
+REINED IN 2026-11-16 (Frank t229u, after the No. 7 v2 review): the pass is
+report-only by default. The numbered moves below are history; only photo
+pairing (2) survives, and only behind ``--balance=pair``. ``safe_cover_crop``
+stays as an editorial helper but the balancer never calls it.
+
+What it used to do:
 
 1. Move a short box (``.box`` that is not ``.w3``) or a short rail piece
    (``.rail-block``, ``.slot-a``, ``.slot-b``, never the lead, masthead,
@@ -318,77 +322,6 @@ def _measure(eval_js, call, instrument_js):
     return json.loads(eval_js(call, instrument_js))
 
 
-def _pick_move(layout_page, worst):
-    """Choose a short movable item and the shorter destination column.
-
-    Prefers a short box inside an uneven nested split on the same page,
-    then the smallest movable item in the tall column of the worst row.
-    Destination is the short column of the worst row (typically the rail).
-    """
-    if not layout_page or worst.get("row") is None:
-        return None
-    rows = layout_page.get("rows") or []
-    ri = worst["row"]
-    if ri >= len(rows):
-        return None
-    row = rows[ri]
-    cols = row.get("cols") or []
-    if len(cols) < 2:
-        return None
-    dest = max(cols, key=lambda c: c.get("gap_in") or 0)
-    tall = min(cols, key=lambda c: c.get("gap_in") or 0)
-    if dest.get("id") == tall.get("id"):
-        return None
-    dest_gap = dest.get("gap_in") or 0
-    dest_item_ids = {it["id"] for it in (dest.get("items") or [])}
-
-    cands = []
-    # Nested uneven splits: a short box in a short half is the first thing
-    # to move into this row's short rail (Ratings Earned → the page rail).
-    for rj, nrow in enumerate(rows):
-        if rj == ri:
-            continue
-        ncols = nrow.get("cols") or []
-        if len(ncols) < 2:
-            continue
-        short_n = max(ncols, key=lambda c: c.get("gap_in") or 0)
-        for it in short_n.get("items") or []:
-            if it.get("movable") and it.get("kind") in ("box", "short"):
-                cands.append((it, short_n, True))
-    for it in tall.get("items") or []:
-        if it.get("movable"):
-            cands.append((it, tall, False))
-
-    filtered = []
-    for it, col, nested in cands:
-        if not it.get("id") or it["id"] in dest_item_ids:
-            continue
-        if col.get("id") == dest.get("id"):
-            continue
-        filtered.append((it, col, nested))
-    if not filtered:
-        return None
-
-    def score(entry):
-        it, col, nested = entry
-        h = it.get("h_in") or 0
-        kind_rank = 0 if it.get("kind") == "box" else (1 if it.get("kind") == "short" else 2)
-        fits = 0 if h <= dest_gap + 0.20 else 1
-        nest_rank = 0 if nested else 1
-        return (nest_rank, kind_rank, fits, h)
-
-    filtered.sort(key=score)
-    it, col, nested = filtered[0]
-    return {
-        "item": it["id"],
-        "label": it.get("label") or it["id"],
-        "dest": dest["id"],
-        "from": col.get("id"),
-        "why": "move %r into the shorter column (hole %.2fin)" % (
-            it.get("label") or it["id"], dest_gap),
-    }
-
-
 def _photos_in_column(layout_page, worst):
     """Photo items (not lettered comics) sitting in the tall side of the hole."""
     found = []
@@ -429,238 +362,89 @@ def _all_photos_on_page(layout_page):
     return out
 
 
-def run_balance(call, flags, issue_dir, eval_js, instrument_js, fit_js):
-    """One Chrome-session balance pass. Returns a report dict."""
+def _suggestions(inst):
+    """Plain-words hints for each leftover hole. Report-only: nothing is moved."""
+    out = []
+    for pg in inst.get("pages") or []:
+        pn = pg.get("page")
+        for i, row in enumerate(pg.get("rows") or [], 1):
+            for ci, g in enumerate(row.get("col_gaps") or [], 1):
+                gap_in = (g or 0) / 96.0
+                if round(gap_in, 2) > COL_GAP_FLAG_IN:
+                    out.append(
+                        "page %s row %s (%s) column %s is %.2fin short: grow the copy in that "
+                        "column, scale its art, or try another arrangement (compose/arrange.py)"
+                        % (pn, i, row.get("kind") or "row", ci, gap_in))
+        for h in pg.get("holes") or []:
+            gap_in = (h.get("gap") or 0) / 96.0
+            if round(gap_in, 2) > COL_GAP_FLAG_IN:
+                out.append("page %s %s hole %.2fin %s (%s): rescale the art or adjust the copy beside it"
+                           % (pn, h.get("kind") or "float", gap_in, h.get("where") or "", h.get("id") or ""))
+    return out
+
+
+BALANCE_MODES = ("report", "pair")
+
+
+def run_balance(call, flags, issue_dir, eval_js, instrument_js, fit_js, mode="report"):
+    """Row-balance pass (Frank 2026-11-16 t229u: rein it in).
+
+    ``mode="report"`` (default): measure and report holes with suggestions; the
+    DOM is never touched. ``mode="pair"`` (opt-in, ``--balance=pair``): the only
+    automatic change allowed is putting two stacked photos side by side in one
+    row, kept only if total blank does not grow and the footer gap does not grow.
+
+    Never: dissolve a row, move a box out of its row (stripping a neighbour),
+    or crop/shrink a photo to push blank space somewhere else. Those were the
+    v2 No. 7 failures (Opus review 2026-11-16).
+    """
+    if mode not in BALANCE_MODES:
+        raise ValueError("balance mode must be one of %s" % (BALANCE_MODES,))
     issue_dir = Path(issue_dir)
     eval_js(call, fit_js)
     before = _measure(eval_js, call, instrument_js)
     actions = []
 
-    def attempt(action_fn):
-        """Run action_fn. Commit only if the page stays printable and the worst hole shrinks."""
-        inst = _measure(eval_js, call, instrument_js)
-        worst = _worst(inst)
-        if not worst:
-            return None
-        snap = _snapshot(eval_js, call)
-        result = action_fn()
-        if not result or not result.get("ok"):
-            _restore(eval_js, call, snap)
-            return None
-        inst2 = _measure(eval_js, call, instrument_js)
-        ok = _page_ok(inst2, before=inst)
-        new_worst = _worst(inst2)
-        improved = (new_worst is None) or (new_worst["gap_in"] < worst["gap_in"] - 0.04)
-        if not ok:
-            _restore(eval_js, call, snap)
-            return None
-        if not improved:
-            _restore(eval_js, call, snap)
-            return None
-        result["before_gap_in"] = round(worst["gap_in"], 2)
-        result["after_gap_in"] = None if new_worst is None else round(new_worst["gap_in"], 2)
-        result["where"] = worst["where"]
-        return result
-
-    for _pass in range(MAX_PASSES):
-        inst = _measure(eval_js, call, instrument_js)
-        worst = _worst(inst)
-        if not worst:
-            break
+    if mode == "pair" and _worst(before):
         layout = eval_js(call, "window.__gzFit.listMovable()") or {"pages": []}
+        worst = _worst(before)
         layout_page = _layout_page(layout, worst["page"])
-
-        # 1. Move a short box / short into the shorter column.
-        move = _pick_move(layout_page, worst)
-        if move:
-            def do_move(m=move):
-                # Move only. Pairing photos is a later, separate attempt so a
-                # useful move is not reverted when the pair would overflow.
-                return eval_js(
-                    call,
-                    "window.__gzFit.moveItem(%s, %s)" % (
-                        json.dumps(m["item"]), json.dumps(m["dest"])),
-                )
-            result = attempt(do_move)
-            if result:
-                rec = {
-                    "op": "move",
-                    "item": move["item"],
-                    "label": move["label"],
-                    "dest": move["dest"],
-                    "why": move["why"],
-                    "before_gap_in": result["before_gap_in"],
-                    "after_gap_in": result["after_gap_in"],
-                }
-                actions.append(rec)
-                print("row-balance: %s" % move["why"])
-                continue
-
-        # 2. Pair two photos in the tall column so they share a row.
-        photos = _photos_in_column(layout_page, worst)
-        if len(photos) < 2:
-            # A float in the lead plus a stacked portrait in the same span
-            # should still pair — look at every photo on the page's tall side
-            # plus other photos on the same page in the same parent column.
-            photos = _all_photos_on_page(layout_page)
+        photos = _photos_in_column(layout_page, worst) or _all_photos_on_page(layout_page)
         if len(photos) >= 2:
             a, b = photos[0], photos[1]
-            def do_pair(ids=None):
-                ids = ids or [a["id"], b["id"]]
-                return eval_js(
-                    call,
-                    "window.__gzFit.wrapInSplit(%s, [1, 1])" % json.dumps(ids),
-                )
-            result = attempt(do_pair)
-            if result:
-                rec = {
-                    "op": "pair",
-                    "items": [a["id"], b["id"]],
-                    "labels": [a.get("art_id") or a.get("label"),
-                               b.get("art_id") or b.get("label")],
-                    "why": "pair %s and %s in one row" % (
-                        a.get("art_id") or a["id"], b.get("art_id") or b["id"]),
-                    "before_gap_in": result["before_gap_in"],
-                    "after_gap_in": result["after_gap_in"],
-                }
+            snap = _snapshot(eval_js, call)
+            res = eval_js(call, "window.__gzFit.wrapInSplit(%s, [1, 1])" % json.dumps([a["id"], b["id"]]))
+            inst2 = _measure(eval_js, call, instrument_js)
+            new_worst = _worst(inst2)
+            m0 = {m["page"]: m for m in _page_metrics(before)}
+            footer_grew = any(m["max_gap"] > m0.get(m["page"], m)["max_gap"] + 0.05
+                              for m in _page_metrics(inst2))
+            improved = (new_worst is None) or (new_worst["gap_in"] < worst["gap_in"] - 0.04)
+            if res and res.get("ok") and _page_ok(inst2, before=before) and improved and not footer_grew:
+                rec = {"op": "pair", "items": [a["id"], b["id"]],
+                       "why": "pair %s and %s in one row" % (a.get("art_id") or a["id"], b.get("art_id") or b["id"]),
+                       "before_gap_in": round(worst["gap_in"], 2),
+                       "after_gap_in": None if new_worst is None else round(new_worst["gap_in"], 2)}
                 actions.append(rec)
                 print("row-balance: %s" % rec["why"])
-                continue
+            else:
+                _restore(eval_js, call, snap)
 
-        # 3. Face-safe backdrop crop / scale of a photo in the tall column.
-        crop_targets = _photos_in_column(layout_page, worst) or _all_photos_on_page(layout_page)
-        cropped_any = False
-        for it in crop_targets:
-            aid = it.get("art_id")
-            src = resolve_src(it.get("src"), issue_dir)
-            if not aid or src is None:
-                continue
-            current_h = it.get("h_in") or 0
-            # Figure height includes caption/credit; use a conservative trim.
-            # We ask the image itself to lose enough to close the hole, but
-            # never go under PHOTO_CROP_MIN_H_IN or over the ceiling already.
-            needed = worst["gap_in"] - (COL_GAP_FLAG_IN - 0.05)
-            if needed <= 0.05:
-                break
-            # Estimate printed image height as ~85% of the figure (caption/credit).
-            img_h = max(current_h * 0.85, current_h - 0.45)
-            img_w = None
-            # We don't have printed width on the item; infer from height and
-            # the file's aspect, then aim at a shorter printed height.
-            try:
-                from PIL import Image as _Im
-                with _Im.open(src) as _im:
-                    pw, ph = _im.size
-                if ph:
-                    img_w = img_h * (pw / ph)
-            except Exception:
-                img_w = None
-            if not img_w or img_w <= 0:
-                continue
-            target_h = max(PHOTO_CROP_MIN_H_IN, min(PHOTO_CEILING_IN, img_h - needed))
-            if target_h >= img_h - 0.05:
-                # Not enough room to shrink this photo; try the next.
-                continue
-            target_aspect = img_w / target_h
-            original, dest = original_and_dest(src)
-            if not original.is_file():
-                continue
-            # Never write a crop into an APPROVED / published issue folder.
-            if frozen_output_path(str(dest)):
-                continue
-
-            def do_crop(aid=aid, original=original, dest=dest, target_aspect=target_aspect):
-                info = safe_cover_crop(original, dest, target_aspect)
-                if not info.get("cropped"):
-                    return {"ok": False, "reason": info.get("reason")}
-                # New file is in the issue folder; use a path relative to the HTML.
-                try:
-                    rel = dest.resolve().relative_to(issue_dir.resolve())
-                except ValueError:
-                    rel = dest.name
-                # Cache-bust in case a prior crop used the same name.
-                src_rel = str(rel) + "?v=fillcrop"
-                ret = eval_js(
-                    call,
-                    "window.__gzFit.setArtSrc(%s, %s, %s)" % (
-                        json.dumps(aid), json.dumps(src_rel), json.dumps(CREDIT_CROPPED)),
-                )
-                if ret and ret.get("ok"):
-                    ret["crop"] = {k: info[k] for k in info if k != "dest"}
-                    ret["dest"] = str(dest)
-                return ret or {"ok": False}
-
-            result = attempt(do_crop)
-            if result:
-                rec = {
-                    "op": "crop",
-                    "id": aid,
-                    "dest": str(dest),
-                    "why": "face-safe backdrop crop of %s (%.2fin → ~%.2fin)" % (
-                        aid, img_h, target_h),
-                    "before_gap_in": result["before_gap_in"],
-                    "after_gap_in": result["after_gap_in"],
-                    "keep_band": list(DEFAULT_KEEP_BAND),
-                }
-                actions.append(rec)
-                print("row-balance: %s" % rec["why"])
-                cropped_any = True
-                break
-        if cropped_any:
-            continue
-
-        # 4. Float a leftover narrow photo up into the lead so it sits
-        # beside wrapping text instead of leaving a side gutter under the
-        # lead in a wide column.
-        photos = _photos_in_column(layout_page, worst) or _all_photos_on_page(layout_page)
-        floated = False
-        for it in photos:
-            aid = it.get("art_id")
-            if not aid or it.get("lettered"):
-                continue
-            # Already a float inside the lead: skip.
-            # We still try a stacked sibling photo that sits below the lead.
-            def do_float(aid=aid, width=it.get("w_in") or None):
-                w = width
-                return eval_js(
-                    call,
-                    "window.__gzFit.floatIntoLead(%s, %s)" % (
-                        json.dumps(aid), "null" if not w else json.dumps(round(w, 4))),
-                )
-            result = attempt(do_float)
-            if result:
-                rec = {
-                    "op": "float",
-                    "id": aid,
-                    "why": "float %s into the lead to close a side gutter" % aid,
-                    "before_gap_in": result["before_gap_in"],
-                    "after_gap_in": result["after_gap_in"],
-                }
-                actions.append(rec)
-                print("row-balance: %s" % rec["why"])
-                floated = True
-                break
-        if floated:
-            continue
-
-        # Nothing safe left to do for this hole.
-        break
-
-    after = _measure(eval_js, call, instrument_js)
+    after = _measure(eval_js, call, instrument_js) if actions else before
     leftovers = leftover_flags(after)
-    if leftovers:
-        for line in leftovers:
-            print("row-balance leftover: %s" % line)
-    elif actions:
-        print("row-balance: all in-row column and float holes <= %.2fin" % COL_GAP_FLAG_IN)
-    else:
-        print("row-balance: no moves needed (or no safe move remained)")
+    suggestions = _suggestions(after)
+    for line in suggestions:
+        print("row-balance (report): %s" % line)
+    if not leftovers:
+        print("row-balance (report): no in-row holes over %.2fin" % COL_GAP_FLAG_IN)
 
     return {
+        "mode": mode,
         "actions": actions,
         "before": summarize_gaps(before),
         "after": summarize_gaps(after),
         "leftovers": leftovers,
+        "suggestions": suggestions,
         "threshold_in": COL_GAP_FLAG_IN,
     }
 

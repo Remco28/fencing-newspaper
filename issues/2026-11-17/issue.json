@@ -2,9 +2,9 @@
   "issue": 7,
   "vol": "I",
   "date": "2026-11-17",
-  "dateline": "Tuesday Edition \u00b7 Vol. I \u2014 No. 7 \u00b7 Chatham, N.J. \u00b7 November 17, 2026",
-  "status": "PROOF v2 \u2014 pending Frank's review (v1 was sent)",
-  "proof_version": 2,
+  "dateline": "Tuesday Edition · Vol. I — No. 7 · Chatham, N.J. · November 17, 2026",
+  "status": "PROOF v3 — pending Frank's review (v1 was sent; v2 and v3 not sent)",
+  "proof_version": 3,
   "proof_history": [
     {
       "v": 1,
@@ -14,61 +14,77 @@
     {
       "v": 1,
       "at": "2026-11-16T15:46:32-05:00",
-      "note": "Re-rendered after the page-2 footer-pin composer fix (fit.js no longer sets display:flow-root on .page, which had shrink-wrapped the page and left blank paper below the footer; the fill instrument now also checks footer position against the 10.1in content-box bottom) and after Frank's 3:38 PM ET chat decision (t223u, budget v3, decision #2) to add the Kiefer Meinhardt results and share the lead between Penny Young and Mila Siu. Lead: Penny Young and Mila Siu Take Bronze (Penny 3rd/52 Y12 and 13th/67 Y14 at Pizza RYC; Mila 3rd/62 Y14 with C26 and 10th/54 Y12 at Kiefer Meinhardt, Glen Allen, Va.). Ratings Earned box on page 1 (Mila Siu, C26). Stella Kuo is not printed. Page 1: 2.71in gap above the footer [FLAG]; row-1 spread 0.15in [OK]. Page 2: footer pinned at the page bottom (0.00in drop [OK]); 2.22in gap above the footer [FLAG] (lettered comic is aspect-locked at 7.50\u00d72.50in; no unused vetted copy was added). Comic 290 dpi [WARN, soft 300]."
+      "note": "Re-rendered after the page-2 footer-pin composer fix (fit.js no longer sets display:flow-root on .page, which had shrink-wrapped the page and left blank paper below the footer; the fill instrument now also checks footer position against the 10.1in content-box bottom) and after Frank's 3:38 PM ET chat decision (t223u, budget v3, decision #2) to add the Kiefer Meinhardt results and share the lead between Penny Young and Mila Siu. Lead: Penny Young and Mila Siu Take Bronze (Penny 3rd/52 Y12 and 13th/67 Y14 at Pizza RYC; Mila 3rd/62 Y14 with C26 and 10th/54 Y12 at Kiefer Meinhardt, Glen Allen, Va.). Ratings Earned box on page 1 (Mila Siu, C26). Stella Kuo is not printed. Page 1: 2.71in gap above the footer [FLAG]; row-1 spread 0.15in [OK]. Page 2: footer pinned at the page bottom (0.00in drop [OK]); 2.22in gap above the footer [FLAG] (lettered comic is aspect-locked at 7.50×2.50in; no unused vetted copy was added). Comic 290 dpi [WARN, soft 300]."
     },
     {
       "v": 1,
       "at": "2026-11-16T22:01:30-05:00",
-      "note": "Re-rendered after Frank's 9:51 PM ET chat (t226u) pointing to the club Mailchimp 'Group Class + HOLIDAY PARTY!' (10:18 AM ET) for the remaining content. Added the holiday party short (Friday, Dec. 11; food, drinks and snacks; everyone welcome \u2014 no time, venue, cost, or RSVP in the email) and two result photos: Penny Young floats beside the lead; Mila Siu and Stella Kuo sit with Ratings Earned. Stella is named only in the caption. A group podium photo was staged, not printed. Budget v4, decision #3. Page 1 and page 2 both have a 0.54in gap above a pinned footer [OK], 0.00in footer drop [OK]. Remaining FLAGs are column spreads: page 1 row 1 2.23in (the rail is shorter than the lead-and-photos column) and the Ratings Earned box is short beside the Mila photo (1.86in); page 2 world/party split 0.65in."
+      "note": "Re-rendered after Frank's 9:51 PM ET chat (t226u) pointing to the club Mailchimp 'Group Class + HOLIDAY PARTY!' (10:18 AM ET) for the remaining content. Added the holiday party short (Friday, Dec. 11; food, drinks and snacks; everyone welcome — no time, venue, cost, or RSVP in the email) and two result photos: Penny Young floats beside the lead; Mila Siu and Stella Kuo sit with Ratings Earned. Stella is named only in the caption. A group podium photo was staged, not printed. Budget v4, decision #3. Page 1 and page 2 both have a 0.54in gap above a pinned footer [OK], 0.00in footer drop [OK]. Remaining FLAGs are column spreads: page 1 row 1 2.23in (the rail is shorter than the lead-and-photos column) and the Ratings Earned box is short beside the Mila photo (1.86in); page 2 world/party split 0.65in."
     },
     {
       "v": 2,
       "at": "2026-11-16T22:39:22-05:00",
       "note": "Proof v2 after a general composer fix: the fill instrument now measures blank at the bottom of every column/rail/box in every row band (and float holes), FLAG > 0.35in, and a row-balance pass may move short boxes, pair photos, or apply a face-safe backdrop crop. No. 7 content is unchanged. Layout: Ratings Earned moved into the page-1 rail; Penny photo cropped (faces untouched, credit includes (cropped)); World Cup stacked under the Holiday Party at full width on page 2. In-row holes from v1 (2.23in, 1.86in, 0.65in float, 0.65in under the party) are all <= 0.35in. Leftover FLAG is 1.29in above the page-1 footer; some daylight remains beside the Mila photo under the lead. v1 was sent earlier tonight."
+    },
+    {
+      "v": 3,
+      "at": "2026-11-16T23:55:00-05:00",
+      "arrangement": "pair-under+stacked",
+      "lengths": {
+        "march-nac": "long",
+        "by-the-book": "long",
+        "party": "long",
+        "lead-penny": "long"
+      },
+      "eye_check": {
+        "verdict": "PASS",
+        "pdf_sha256": "5fbc9b00aa6d0308d340f8fc84c352fa3a22cf72b5299f00131e268799239cf1",
+        "model": "sonnet (claude-sonnet-5-5)",
+        "clark_looked": true
+      },
+      "note": "Proof v3 from the Opus 5.5 experiment D: lead photo pair (no column rule), wide one-line Ratings box, March NAC short in the rail (Frank t231u), long vetted copy for the Penny lead, By the Book (t.117), Holiday Party and March NAC to close the ~120-word page-1 shortfall. No crop; the v2 fillcrop file is removed. Eye check PASS; Clark inspected both previews. Not sent."
     }
   ],
-  "composed_at": "2026-11-16T22:39:22-05:00",
+  "composed_at": "2026-11-16T23:55:00-05:00",
   "pdf": "issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf",
   "previews": [
     "issues/2026-11-17/preview-p1.png",
     "issues/2026-11-17/preview-p2.png"
   ],
   "pdf_metadata": {
-    "Title": "En Garde Gazette \u2014 Vol. I No. 7 \u2014 November 17, 2026",
+    "Title": "En Garde Gazette — Vol. I No. 7 — November 17, 2026",
     "Author": "Nico's Dad"
   },
-  "build": "python3 issues/2026-11-17/recipe/compose.py x && python3 compose/render.py issues/2026-11-17/issue.html issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf --author=\"Nico's Dad\" --report=issues/2026-11-17/fit-report.json --fit-report=issues/2026-11-17/art-fit.json && pdftoppm -r 200 -png issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf issues/2026-11-17/preview",
+  "build": "python3 issues/2026-11-17/recipe/compose.py x && python3 compose/render.py issues/2026-11-17/issue.html issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf --author=\"Nico's Dad\" --report=issues/2026-11-17/fit-report.json --fit-report=issues/2026-11-17/art-fit.json && python3 compose/eyecheck.py issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf --report=issues/2026-11-17/fit-report.json && python3 compose/eyecheck.py --verify issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf",
   "pages": {
     "1": [
-      "Lead: Penny Young and Mila Siu Take Bronze, with a face-safe backdrop crop of Penny's Pizza RYC photo floating beside the lead and the Mila+Stella Kiefer Meinhardt photo stacked under the lead in the span2",
-      "November NAC preview: Three Head to Columbus",
-      "By the Book: Three Calls, Two Minutes",
-      "Ratings Earned (Mila Siu, C26) \u2014 moved into the rail by the general balancer",
-      "For the Parents: A National Youth Event Next Door",
-      "Club Events: Winter Camp: Sign Up Now",
-      "FILL: 1.29in gap above the footer [FLAG]; footer 0.00in above the page bottom [OK]; row-1 column bottom gaps [0.02in, 0.35in] [OK]; spread 0.33in [OK] (span2 5.34in vs rail 5.01in); parents/camp split 0.00in [OK]; float hole 0.03in [OK]"
+      "Lead: Penny Young and Mila Siu Take Bronze — the Penny (Pizza RYC) and Mila+Stella (Kiefer Meinhardt) photos side by side above the text, no column rule between them, both uncropped at 2.37in tall (over the 2.2in soft ceiling)",
+      "Ratings Earned (Mila Siu, C26) — wide 3-column box under the lead, one line",
+      "November NAC preview: Three Head to Columbus (rail)",
+      "March NAC Comes to Atlantic City (rail, new; Frank t231u)",
+      "By the Book: Three Calls, Two Minutes (rail, long copy with t.117)",
+      "For the Parents: A National Youth Event Next Door | Club Events: Winter Camp: Sign Up Now",
+      "FILL: 0.09in gap above the footer [OK]; row-1 column bottom gaps [0.08in, 0.03in] [OK]; inter-block gaps 7.0–8.3pt; no FLAGs"
     ],
     "2": [
-      "Club Events: Holiday Party: Friday, Dec. 11, then World Cup: Hungary Rules World Cup Weekend (full-width stack after the balancer moved World Cup into the shorter column and unwrapped the split)",
+      "Club Events: Holiday Party: Friday, Dec. 11 (long copy points to Winter Camp on page 1), then World Cup: Hungary Rules World Cup Weekend",
       "Nearby Tournaments: Cobra Challenge SYC/RCC (16 fencers / 26 entries)",
-      "On the Road: November NAC; Deadlines (NJFA omitted)",
-      "VR parent-filter comic (7.50in \u00d7 2.50in, 290 dpi)",
-      "FILL: 0.08in gap above the footer [OK]; footer 0.00in above the page bottom [OK]; board spread 0.01in [OK]; no in-row column FLAGs"
+      "On the Road: November NAC | Deadlines",
+      "VR parent-filter comic (7.50in wide, 290 dpi)",
+      "FILL: 0.39in gap above the footer [OK]; boxes row spread 0.01in [OK]; inter-block gaps 7.0–8.3pt; no FLAGs"
     ]
   },
   "fill": {
-    "p1_gap_in": 1.29,
-    "p1_footer_drop_in": 0.0,
+    "p1_gap_in": 0.09,
     "p1_row1_col_gaps_in": [
-      0.02,
-      0.35
+      0.08,
+      0.03
     ],
-    "p1_row1_spread_in": 0.33,
-    "p1_float_hole_in": 0.03,
-    "p1_parents_camp_spread_in": 0.0,
-    "p2_gap_in": 0.08,
-    "p2_footer_drop_in": 0.0,
-    "p2_board_spread_in": 0.01,
-    "notes": "General row-balance pass (compose/balance.py) plus the new per-column bottom-gap check (FLAG > 0.35in). Before (sent v1): p1 footer 0.54in [OK] but column gaps 2.23in under By the Book and 1.86in beside Ratings Earned, plus a 0.65in float hole beside Penny; p2 footer 0.54in [OK] with 0.65in under the Holiday Party. After: Ratings Earned moved into the page-1 rail; a face-safe backdrop crop of the Penny photo (credit: Photo: Elite Fencers Club (cropped)) closed the float hole (0.65in \u2192 0.03in); World Cup moved into the short Holiday Party column and the split unwrapped, so page 2 now stacks Holiday Party then World Cup at full width. All in-row column and float holes are <= 0.35in. Remaining FLAG: 1.29in above the page-1 footer (layout could not close it without reopening a column hole; no unvetted copy was added). Visible leftover daylight also remains to the right of the Mila+Stella photo under the lead, where the portrait stays at ~1.65in in the span2 \u2014 a full-width crop would cut the keep-band, and pairing the two photos overshot the rail. Both footers are pinned (drop 0.00in). Page 2 footer gap 0.08in [OK]."
+    "p2_gap_in": 0.39,
+    "block_gaps_pt": [
+      7.0,
+      8.3
+    ],
+    "notes": "Proof v3 (Frank t229u fixes): one spacing token set, report-only balancer, soft photo ceiling, arrangement chosen by compose/arrange.py (pair-under+stacked), copy lengths from recipe/lengths.json, March NAC short added. Eye check PASS (see eye-check.md)."
   }
 }

@@ -369,6 +369,8 @@
       return { pages };
     },
 
+    // moveItem/unwrapLonelySplits/floatIntoLead/setArtSrc are no longer called by
+    // the balancer (report-only since 2026-11-16); kept for fixtures and manual trials.
     moveItem(itemId, destColId) {
       const el = document.querySelector('[data-bal-id="' + CSS.escape(itemId) + '"]');
       const dest = document.querySelector('[data-bal-col="' + CSS.escape(destColId) + '"]');
@@ -417,7 +419,20 @@
                !keep.matches("figure, .art, .box, .lead, .rail-block, .slot-a, .slot-b, .w3")) {
           keep = keep.children[0];
         }
-        parent.insertBefore(keep, row);
+        // A split cell is a bare <div style="flex:N">. Hoisting the cell itself
+        // into the .page flex column made it grow and swallow the page's
+        // slack (No. 7 v2: a 0.49in gap above Nearby Tournaments). Hoist the
+        // cell's children instead, and never carry a flex value out of a row.
+        const bareCell = (el) => el.tagName === "DIV" && !el.className && el.parentElement === row;
+        if (bareCell(keep)) {
+          [...keep.children].forEach((k) => {
+            if (k.style) k.style.removeProperty("flex");
+            parent.insertBefore(k, row);
+          });
+        } else {
+          if (keep.style) keep.style.removeProperty("flex");
+          parent.insertBefore(keep, row);
+        }
         row.remove();
         n++;
       });
