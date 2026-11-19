@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-17T00:20:00-05:00",
+  "updated_at": "2026-11-19T07:58:00-05:00",
   "note": "Hold pile for Issue No. 8. Started at the No. 7 roll-forward 2026-11-17 12:20 AM ET. after-next (March NAC feature (large), Frank t231u) became part of next; still-relevant held and upcoming items copied from staging/weeks/2026-11-17 with carried_from. Frank (t232u, 12:09 AM ET): keep the proof v3 workflow next week (eye check gate, spacing tokens, copy lengths, arrangements).",
   "rolled_forward": {
     "from": [
@@ -86,7 +86,7 @@
       "vetted_by": "frank",
       "vet_scope": "angle_tone_only",
       "facts_status": "verified (price omitted)",
-      "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Clark 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Clark 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Clark 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md. | Frank chat 2026-11-02 20:56 ET: 'the winter camp can get a full write up since we have space.' Runs in full (~115w, v4 body) in No. 5. | Clark 2026-11-11: club Mailchimp ‘Winter Camp!’ (Tue Nov 10 11:01 AM ET) ingested. No new print facts; new photo flyer staged as media-winter-camp-flyer-photos-2026-11-10.",
+      "vet_notes": "Frank chat 2026-10-07 18:53 ET: short reminder to sign up for Elite FC Winter Camp; pitch = tune-up for the second half of the competitive season; light joke = excuse to get away from visiting family for a few hours. Vetted for ANGLE AND TONE only (Frank's own idea). Facts pending: price, ages, sign-up method/deadline, and Sunday Dec 27 (club standing schedule lists Sunday closed). Do not print [NEED] placeholders. | 2026-10-07 19:20 ET: facts updated from Frank's forward of the club's Sep 30 Mailchimp email (source of truth per Frank). Still pending: price, sign-up method. | Clark 2026-10-18: price still unpublished; sign-up method = contact the club (website). Draft prints only verified facts; [NEED] placeholders removed. | Frank 2026-10-18 09:13 ET: leave at 'contact the club' (no email printed). | Clark 2026-10-23: club published the day-by-day schedule (see item email-mailchimp-winter-camp-schedule-2026-10-22). Body NOT rewritten; Frank to say whether to fold highlights (swag, yoga, crepes, headcount ask) into the reminder. | Frank 2026-10-23 (chat): yes, fold the Winter Camp highlights into the reminder. Clark 2026-10-23: v4 body adds the Oct 22 day-by-day schedule (swag, K2 Fitness S&C, yoga/breath control + lunch, crepes) and the headcount ask ('let the club know'). No price, no email printed. PENDING FRANK REVIEW; prior v3 kept in body_prior and drafts/winter-camp.md. | Frank chat 2026-11-02 20:56 ET: 'the winter camp can get a full write up since we have space.' Runs in full (~115w, v4 body) in No. 5. | Clark 2026-11-11: club Mailchimp ‘Winter Camp!’ (Tue Nov 10 11:01 AM ET) ingested. No new print facts; new photo flyer staged as media-winter-camp-flyer-photos-2026-11-10. | Clark 2026-11-19: club Mailchimp ‘Group Class + Winter Camp!’ (Wed Nov 18 10:19 AM ET) ingested. No new print facts; same schedule graphic already on file.",
       "facts": [
         {
           "claim": "Winter Camp runs Dec 27–31 (12/27 - 31st)",
@@ -145,6 +145,12 @@
           "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261110160053.3d65440681.578871c8@mail150.atl241.mcsv.net>",
           "where": "email body + embedded schedule graphic + new photo flyer",
           "status": "verified-email (allowlisted club Mailchimp). Print body unchanged (already covers dates, hours, schedule highlights, headcount). Phone/email still omitted per Frank 2026-10-18 (‘contact the club’)."
+        },
+        {
+          "claim": "Nov 18 Mailchimp reminder restates Winter Camp Dec 27–31 and asks anyone who wants to attend to reach out as soon as possible. No hours or price in this email. Same Oct 22 day-by-day schedule graphic (identical bytes).",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net>",
+          "where": "email body + embedded schedule graphic",
+          "status": "verified-email (allowlisted club Mailchimp). Print body unchanged (already covers dates, schedule highlights, headcount). Phone/email still omitted per Frank 2026-10-18 (‘contact the club’)."
         }
       ],
       "need": [
@@ -210,6 +216,18 @@
           "retrieved_at": "2026-11-11T08:00:00-05:00",
           "url": "https://mailchi.mp/87b743a9be9b/winter-camp?e=f656c71db1",
           "note": "Club Mailchimp reminder (arrived Tue Nov 10 11:01 AM ET, after that morning’s daily pass). Restates Dec 27–31, 9:30 a.m.–2 p.m., headcount ask, and ‘new and fun activities’ pointing at the same Oct 22 schedule graphic. New photo-collage flyer extracted; no price."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net>",
+          "from": "Elite Fencers Club <elitefencersclub@111617670.mailchimpapp.com>",
+          "subject": "Group Class + Winter Camp!",
+          "received_at": "2026-11-18T10:18:58-05:00",
+          "retrieved_at": "2026-11-19T07:58:00-05:00",
+          "url": "https://mailchi.mp/958a3f687c4f/group-class-winter-camp?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Wed Nov 18 Mailchimp (10:19 AM ET, after Wednesday's morning pass). Restates 2026 Winter Camp Dec 27–31 and asks anyone who wants to attend to reach out as soon as possible. No hours, no price, no new activities in the body. Same Oct 22 schedule graphic (identical bytes to staging/weeks/next/media/winter-camp-schedule-2026-10-22.png). Club logo only otherwise (500x500 JPEG) — no new media extract. Same email also listed a Local Competition link (Freehold Fencing - November Youth Foil & Epee); staged separately as askfred-freehold-nov-youth-epee-2026-11-22."
         }
       ],
       "media_path": "staging/weeks/next/media/efc-winter-camp-2026-flyer-email.png",
@@ -255,7 +273,7 @@
         ],
         "text_copy": "staging/weeks/next/sources/email-fwd-winter-camp-2026-10-07.txt"
       },
-      "updated_at": "2026-11-11T08:00:00-05:00",
+      "updated_at": "2026-11-19T07:58:00-05:00",
       "ingest_notes": [
         "2026-10-08 daily email pass: Frank's 'Fwd: Group Class! + Winter Camp' (<CA+CzU4c_Vd4ooTs7gz7+N1XYqMWCVAaAwDpXWukP3qLCwwtX=Q@mail.gmail.com>) was already ingested 2026-10-07 ~19:20 ET; it had just not been labeled processed. Labeled now; no new facts (price and sign-up method still pending)."
       ],
@@ -500,6 +518,17 @@
           "retrieved_at": "2026-11-16T08:25:00-05:00",
           "vetted_by": "auto-club-mailchimp",
           "note": "Fri Nov 13 Mailchimp (10:23 AM ET, after Friday's morning pass): all lessons Friday and Saturday; Mini-Musketeers Group Class Fri 4:15 PM; Intermediate Group Class Fri 5:00 PM (end time not restated; Nov 6 email and No. 5 copy had 5:00–6:30 PM); Sat Musketeers Group Class 11:00 AM; Advanced Group Class 1:00 PM. Matches standing schedule / known Intermediate class; no change. Club logo only (mcusercontent Elite FC shield) — no media extract. The Friday/Saturday classes named in the email were already past by this Monday ingest."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class + Winter Camp!",
+          "received_at": "2026-11-18T10:18:58-05:00",
+          "retrieved_at": "2026-11-19T07:58:00-05:00",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Wed Nov 18 Mailchimp (10:19 AM ET, after Wednesday's morning pass): all lessons Wed+Thu; Musketeers Group Class Wed 5:00 PM; Footwork Class Wed 6:30 PM; Advanced Group Class Thu 6:00 PM. Matches standing schedule; no change. Club logo only (500x500 JPEG) plus the already-staged Winter Camp schedule graphic — no new media extract. Wed class times are past by this Thu morning ingest; Thu Advanced Group Class is same-day."
         }
       ],
       "suggested_slot": "club-events",
@@ -516,7 +545,7 @@
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Standing club schedule reference; still held (classes table out).",
       "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
-      "updated_at": "2026-11-16T08:25:00-05:00"
+      "updated_at": "2026-11-19T07:58:00-05:00"
     },
     {
       "id": "history-photo-10-timea-nagy",
@@ -1258,6 +1287,108 @@
       "created_at": "2026-11-16T23:50:00-05:00",
       "updated_at": "2026-11-16T23:50:00-05:00",
       "rolled_from": "staging/weeks/after-next"
+    },
+    {
+      "id": "askfred-freehold-nov-youth-epee-2026-11-22",
+      "kind": "signup_row",
+      "headline": "Freehold November Youth Foil & Epee (Sun. Nov. 22) — Christina Jiang entered",
+      "body": "Freehold Fencing - November Youth Foil & Epee, Freehold Fencing Academy, 56 Thoreau Dr, Freehold, N.J., Sunday, Nov. 22, 2026; preregistration closes Nov. 22. Club Mailchimp (Wed Nov 18) listed it under Local Competition. Elite FC entered (AskFRED / fencing-api live entries, Thu Nov 19, 7:56 a.m. ET; confirmed list, not pending): Jiang, Christina (Elite Fencers Club, rating U) in Y12 Women's Epee, check-in 11:00 a.m. No other Elite FC names on the preregistration. Other epee events and check-ins: Y14 Women's and Y14 Men's Epee, 9:00 a.m.; Y12 Men's Epee, 11:00 a.m.; Y10 Mixed Epee, 1:00 p.m. (0 entered). Print Christina Jiang via the roster house form. Scraped registration — unvetted until Frank confirms.",
+      "source": "email+askfred+fencingapi",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net>",
+      "target_week": "next",
+      "vetted": false,
+      "board": "Nearby Tournaments",
+      "slot_hint": "signup",
+      "tags": [
+        "entries",
+        "nearby_tournaments",
+        "local",
+        "results-watch"
+      ],
+      "panels_rows": [
+        [
+          "Sun. Nov. 22 · 11:00 a.m.",
+          "Y12 Women's Epee",
+          "Christina Jiang"
+        ]
+      ],
+      "row_count": 1,
+      "word_count": 120,
+      "vet_notes": "Daily pass 2026-11-19. Club Mailchimp (allowlisted) promoted the tournament; the Christina Jiang entry is from AskFRED/fencing-api, so it stays unvetted under the scraped-registration rule until Frank confirms. Same weekend as the November NAC (Nov. 20–23). Event is Sunday; if No. 8 publishes Mon/Tue it becomes a results watch. Check-in times are not start times.",
+      "facts": [
+        {
+          "claim": "Freehold Fencing - November Youth Foil & Epee is Sunday, Nov. 22, 2026, at Freehold Fencing Academy, 56 Thoreau Dr, Freehold, N.J.; preregistration closes Nov. 22.",
+          "source": "https://www.askfred.net/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16",
+          "status": "verified-askfred 2026-11-19 7:55 AM ET; also linked from club Mailchimp Nov 18 (allowlisted) as Local Competition."
+        },
+        {
+          "claim": "Jiang, Christina (Elite Fencers Club, U) is entered in Y12 Women's Epee, check-in 11:00 a.m.; not pending. No other Elite FC names on the preregistration as of Thu Nov 19, 7:56 a.m. ET.",
+          "source": "/v1/askfred/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/entries (live)",
+          "status": "unvetted scraped registration (fencing-api live, source=live, final=false). Print form Christina Jiang (roster)."
+        },
+        {
+          "claim": "Epee events and check-in times: Y14WE and Y14ME 9:00 a.m.; Y12ME and Y12WE 11:00 a.m.; Y10 Mixed Epee 1:00 p.m. (0 entered).",
+          "source": "/v1/askfred/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/entries (live)",
+          "status": "from fencing-api live entries payload (check_in). AskFRED close_of_registration times match. Not start times."
+        }
+      ],
+      "provenance": [
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class + Winter Camp!",
+          "received_at": "2026-11-18T10:18:58-05:00",
+          "retrieved_at": "2026-11-19T07:58:00-05:00",
+          "url": "https://mailchi.mp/958a3f687c4f/group-class-winter-camp?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Wed Nov 18 Mailchimp Local Competition link resolved to https://www.askfred.net/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/preregistrations. The email does not name entrants."
+        },
+        {
+          "type": "api",
+          "source": "askfred",
+          "endpoint": "scripts/askfred.py tournament + events --per-page 20 9bfd01d2-e99f-4914-ae9f-394acbd07c16",
+          "retrieved_at": "2026-11-19T07:55:00-05:00",
+          "url": "https://www.askfred.net/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16",
+          "note": "start_date=end_date=2026-11-22; prereg_close=2026-11-22; venue Freehold Fencing Academy, 56 Thoreau Dr, Freehold, NJ 07728; USFA sanction 12503 verified. Epee events: Y14WE, Y14ME, Y12WE, Y12ME, Y10MxE."
+        },
+        {
+          "type": "fencingapi",
+          "endpoint": "/v1/askfred/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/entries",
+          "live": true,
+          "fetched_at": "2026-11-19T12:56:48Z",
+          "fetched_at_et": "2026-11-19 7:56 AM ET",
+          "final": false,
+          "note": "Jiang, Christina — Elite Fencers Club, U, on the confirmed entries list for Y12 Women's Epee (check-in 11:00). Only Elite FC name. Y10 Mixed Epee 0 entered."
+        },
+        {
+          "type": "url",
+          "url": "https://member.usafencing.org/details/tournaments/12503",
+          "note": "USA Fencing tournament 12503 (AskFRED usfa_sanction).",
+          "retrieved_at": "2026-11-19T07:55:00-05:00"
+        }
+      ],
+      "created_at": "2026-11-19T07:58:00-05:00",
+      "updated_at": "2026-11-19T07:58:00-05:00",
+      "entries_last_confirmed": "2026-11-19T07:58:00-05:00"
     }
-  ]
+  ],
+  "last_daily_pass": {
+    "at": "2026-11-19T07:58:00-05:00",
+    "kind": "weekday morning email + FencingTracker quick look",
+    "email": [
+      "ingested <d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net> (club Mailchimp Group Class + Winter Camp!, Wed Nov 18 10:19 AM ET, after Wednesday's morning pass). Class times match the standing schedule; Winter Camp dates unchanged (Dec 27–31, reach out ASAP); no price; same Oct 22 schedule graphic, no new media. Local Competition link is Freehold Fencing - November Youth Foil & Epee (Sun Nov 22)."
+    ],
+    "fencingtracker": {
+      "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+      "retrieved_at": "2026-11-19T07:54:00-05:00",
+      "note": "One fetch, HTTP 200. No new Elite FC results vs the Nov 18 Wednesday skim. Newest remains Freehold Fencing - November Open Epee (Nov 15; Nico Ng 5th D1AXE), then Kiefer Meinhardt Cup and Pizza RYC/RJCC — all already ran in No. 7. Manchen Friday Night Epee E & Under (Nov 13) still lists only Brendan Mendez; skipped per standing rule (do not stage, do not ask)."
+    },
+    "fencingapi": {
+      "club_results": "cached club-results since 2026-11-13 (fetched_at 2026-11-16T20:23:35Z); matches known weekend results (Pizza RYC, Kiefer Meinhardt, Freehold November Open). No newer cached rows. No Elite FC event today, so no live results scrape.",
+      "entries": "live /v1/askfred/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/entries at 2026-11-19T12:56:48Z: Jiang, Christina in Y12WE; no other Elite FC names."
+    }
+  }
 }
