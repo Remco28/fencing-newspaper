@@ -1,0 +1,280 @@
+{
+ "issue": "issues/2026-11-17",
+ "lengths": {
+  "march-nac": "long",
+  "by-the-book": "long",
+  "party": "long"
+ },
+ "ranked": [
+  {
+   "arrangement": "pair-under+stacked",
+   "choices": {
+    "p1": "pair-under",
+    "p2": "stacked"
+   },
+   "score": 4.04,
+   "rule_breaking_holes": 0,
+   "instrument_flags": [],
+   "length_targets": [
+    {
+     "page": 1,
+     "action": "add",
+     "words": 25,
+     "where": "1.74x0.62in right, 8.4-9.0in from the top",
+     "density": 22.4
+    }
+   ],
+   "pixel_blank_map": {
+    "1": [
+     {
+      "w_in": 1.74,
+      "h_in": 0.62,
+      "sq_in": 1.08,
+      "x_in": 6.26,
+      "y_in": 8.4,
+      "bottom_band": false
+     },
+     {
+      "w_in": 1.02,
+      "h_in": 0.8,
+      "sq_in": 0.82,
+      "x_in": 6.98,
+      "y_in": 3.52,
+      "bottom_band": false
+     }
+    ],
+    "2": [
+     {
+      "w_in": 4.66,
+      "h_in": 0.46,
+      "sq_in": 2.14,
+      "x_in": 3.34,
+      "y_in": 1.58,
+      "bottom_band": false
+     }
+    ]
+   },
+   "previews": [
+    "/tmp/gz-arrange-1y5vxck1/pair-under+stacked/preview-p1.png",
+    "/tmp/gz-arrange-1y5vxck1/pair-under+stacked/preview-p2.png"
+   ],
+   "pdf": "/tmp/gz-arrange-1y5vxck1/pair-under+stacked.pdf"
+  },
+  {
+   "arrangement": "pair-under+split",
+   "choices": {
+    "p1": "pair-under",
+    "p2": "split"
+   },
+   "score": 17.38,
+   "rule_breaking_holes": 1,
+   "instrument_flags": [
+    "page 2 row 1 (split): column 2 bottom gap 0.52in [FLAG]",
+    "page 2 row 1 (split): column spread 0.51in [FLAG] [1.56in, 1.05in]"
+   ],
+   "length_targets": [
+    {
+     "page": 1,
+     "action": "add",
+     "words": 25,
+     "where": "1.74x0.62in right, 8.4-9.0in from the top",
+     "density": 22.4
+    },
+    {
+     "page": 2,
+     "action": "add",
+     "words": 45,
+     "where": "3.28x0.76in right, 1.9-2.6in from the top",
+     "density": 17.3
+    }
+   ],
+   "pixel_blank_map": {
+    "1": [
+     {
+      "w_in": 1.74,
+      "h_in": 0.62,
+      "sq_in": 1.08,
+      "x_in": 6.26,
+      "y_in": 8.4,
+      "bottom_band": false
+     },
+     {
+      "w_in": 1.02,
+      "h_in": 0.8,
+      "sq_in": 0.82,
+      "x_in": 6.98,
+      "y_in": 3.52,
+      "bottom_band": false
+     }
+    ],
+    "2": [
+     {
+      "w_in": 7.5,
+      "h_in": 0.44,
+      "sq_in": 3.3,
+      "x_in": 0.5,
+      "y_in": 9.96,
+      "bottom_band": true
+     },
+     {
+      "w_in": 3.28,
+      "h_in": 0.76,
+      "sq_in": 2.49,
+      "x_in": 4.72,
+      "y_in": 1.88,
+      "bottom_band": false
+     }
+    ]
+   },
+   "previews": [
+    "/tmp/gz-arrange-1y5vxck1/pair-under+split/preview-p1.png",
+    "/tmp/gz-arrange-1y5vxck1/pair-under+split/preview-p2.png"
+   ],
+   "pdf": "/tmp/gz-arrange-1y5vxck1/pair-under+split.pdf"
+  },
+  {
+   "arrangement": "pair-rail+stacked",
+   "choices": {
+    "p1": "pair-rail",
+    "p2": "stacked"
+   },
+   "score": 30.19,
+   "rule_breaking_holes": 1,
+   "instrument_flags": [
+    "page 1: worst gap above footer 0.01in [FLAG] per column [0.01in, 0.01in] in .split (page is 1.08in too deep or content overlaps the footer)",
+    "page 1: footer hangs 1.09in past the page bottom [FLAG]",
+    "page 1 row 1 (columns): column 1 bottom gap 2.03in [FLAG]",
+    "page 1 row 1 (columns): column spread 1.94in [FLAG] [5.74in, 7.69in]"
+   ],
+   "length_targets": [
+    {
+     "page": 1,
+     "action": "cut",
+     "words": 180,
+     "where": "page is overset",
+     "density": 22.4
+    }
+   ],
+   "pixel_blank_map": {
+    "1": [
+     {
+      "w_in": 5.0,
+      "h_in": 2.12,
+      "sq_in": 10.6,
+      "x_in": 0.5,
+      "y_in": 7.72,
+      "bottom_band": false
+     },
+     {
+      "w_in": 1.02,
+      "h_in": 0.8,
+      "sq_in": 0.82,
+      "x_in": 6.98,
+      "y_in": 3.52,
+      "bottom_band": false
+     },
+     {
+      "w_in": 1.74,
+      "h_in": 0.44,
+      "sq_in": 0.77,
+      "x_in": 6.26,
+      "y_in": 9.76,
+      "bottom_band": false
+     }
+    ],
+    "2": []
+   },
+   "previews": [
+    "/tmp/gz-arrange-1y5vxck1/pair-rail+stacked/preview-p1.png",
+    "/tmp/gz-arrange-1y5vxck1/pair-rail+stacked/preview-p2.png"
+   ],
+   "pdf": "/tmp/gz-arrange-1y5vxck1/pair-rail+stacked.pdf"
+  },
+  {
+   "arrangement": "pair-rail+split",
+   "choices": {
+    "p1": "pair-rail",
+    "p2": "split"
+   },
+   "score": 45.67,
+   "rule_breaking_holes": 2,
+   "instrument_flags": [
+    "page 1: worst gap above footer 0.01in [FLAG] per column [0.01in, 0.01in] in .split (page is 1.08in too deep or content overlaps the footer)",
+    "page 1: footer hangs 1.09in past the page bottom [FLAG]",
+    "page 1 row 1 (columns): column 1 bottom gap 2.03in [FLAG]",
+    "page 1 row 1 (columns): column spread 1.94in [FLAG] [5.74in, 7.69in]",
+    "page 2 row 1 (split): column 2 bottom gap 0.52in [FLAG]",
+    "page 2 row 1 (split): column spread 0.51in [FLAG] [1.56in, 1.05in]"
+   ],
+   "length_targets": [
+    {
+     "page": 1,
+     "action": "cut",
+     "words": 180,
+     "where": "page is overset",
+     "density": 22.4
+    },
+    {
+     "page": 2,
+     "action": "add",
+     "words": 45,
+     "where": "3.28x0.76in right, 1.9-2.6in from the top",
+     "density": 17.3
+    }
+   ],
+   "pixel_blank_map": {
+    "1": [
+     {
+      "w_in": 5.0,
+      "h_in": 2.12,
+      "sq_in": 10.6,
+      "x_in": 0.5,
+      "y_in": 7.72,
+      "bottom_band": false
+     },
+     {
+      "w_in": 1.02,
+      "h_in": 0.8,
+      "sq_in": 0.82,
+      "x_in": 6.98,
+      "y_in": 3.52,
+      "bottom_band": false
+     },
+     {
+      "w_in": 1.74,
+      "h_in": 0.44,
+      "sq_in": 0.77,
+      "x_in": 6.26,
+      "y_in": 9.76,
+      "bottom_band": false
+     }
+    ],
+    "2": [
+     {
+      "w_in": 7.5,
+      "h_in": 0.44,
+      "sq_in": 3.3,
+      "x_in": 0.5,
+      "y_in": 9.96,
+      "bottom_band": true
+     },
+     {
+      "w_in": 3.28,
+      "h_in": 0.76,
+      "sq_in": 2.49,
+      "x_in": 4.72,
+      "y_in": 1.88,
+      "bottom_band": false
+     }
+    ]
+   },
+   "previews": [
+    "/tmp/gz-arrange-1y5vxck1/pair-rail+split/preview-p1.png",
+    "/tmp/gz-arrange-1y5vxck1/pair-rail+split/preview-p2.png"
+   ],
+   "pdf": "/tmp/gz-arrange-1y5vxck1/pair-rail+split.pdf"
+  }
+ ],
+ "errors": [],
+ "work_dir": "/tmp/gz-arrange-1y5vxck1"
+}
