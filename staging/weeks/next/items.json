@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-19T07:58:00-05:00",
+  "updated_at": "2026-11-23T07:56:00-05:00",
   "note": "Hold pile for Issue No. 8. Started at the No. 7 roll-forward 2026-11-17 12:20 AM ET. after-next (March NAC feature (large), Frank t231u) became part of next; still-relevant held and upcoming items copied from staging/weeks/2026-11-17 with carried_from. Frank (t232u, 12:09 AM ET): keep the proof v3 workflow next week (eye check gate, spacing tokens, copy lengths, arrangements).",
   "rolled_forward": {
     "from": [
@@ -336,6 +336,57 @@
       "carry_note": "Ran in No. 7 (page 2). Party Fri. Dec. 11 still upcoming; reminder candidate for No. 8. Time, place and RSVP are still not in any vetted source; do not print them until the club or Frank says."
     },
     {
+      "id": "email-thanksgiving-schedule-2026-11-20",
+      "kind": "graf",
+      "headline": "Club closed Wednesday through Friday for Thanksgiving",
+      "slot_hint": "club_events",
+      "suggested_slot": "club_events",
+      "body": "Elite FC will be closed Wednesday, Nov. 25, Thursday, Nov. 26, and Friday, Nov. 27 for the Thanksgiving holiday.",
+      "word_count": 24,
+      "source": "email",
+      "from": "elitefencersclub@111617670.mailchimpapp.com",
+      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net>",
+      "target_week": "next",
+      "vetted": true,
+      "vetted_by": "auto-club-mailchimp",
+      "vetted_at": "2026-11-23T07:56:00-05:00",
+      "tags": [
+        "club",
+        "schedule",
+        "thanksgiving",
+        "closure"
+      ],
+      "vet_notes": "Daily pass 2026-11-23. Auto-vetted club Mailchimp (Fri Nov 20, 9:45 AM ET), 'Group Class! + Thanksgiving Schedule.' Print body uses only the three closure dates as written. The email also says 'Back to our normal schedule on Saturday 12/28.' That is almost certainly a typo for Saturday, Nov. 28 (the Saturday after Thanksgiving). Dec. 28, 2026 is a Monday and falls during Winter Camp (Dec. 27-31). Do not print the reopen date until Frank confirms it is Sat. Nov. 28. Same-email class reminders (lessons Fri+Sat Nov 20-21; Mini-Musketeers 4:15 p.m.; Intermediate 5:00 p.m.; Musketeers 11:00 a.m.; Advanced 1:00 p.m.) match the standing schedule and the known Friday Intermediate class; not staged as a classes item (those days are now past). Logo-only image, no media extract.",
+      "facts": [
+        {
+          "claim": "Club closed Wednesday 11/25, Thursday 11/26, and Friday 11/27 for the Thanksgiving holiday.",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net>",
+          "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp)"
+        },
+        {
+          "claim": "Email text: 'Back to our normal schedule on Saturday 12/28.'",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net>",
+          "status": "as written in the club email; probable typo for Saturday 11/28. Do not print until Frank confirms."
+        }
+      ],
+      "provenance": [
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class! + Thanksgiving Schedule",
+          "received_at": "2026-11-20T09:45:32-05:00",
+          "retrieved_at": "2026-11-23T07:56:00-05:00",
+          "url": "https://mailchi.mp/f219da2cef90/group-class-thanksgiving-schedule?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Inbox efc.weekly@agentmail.to. Allowlisted club Mailchimp. Only image is the club logo (plus social icons and a 1x1 tracking pixel); no media extract."
+        }
+      ],
+      "created_at": "2026-11-23T07:56:00-05:00",
+      "updated_at": "2026-11-23T07:56:00-05:00"
+    },
+    {
       "id": "web-efc-standing-schedule",
       "kind": "fact",
       "headline": "Elite FC weekly class schedule (club website)",
@@ -529,6 +580,18 @@
           "retrieved_at": "2026-11-19T07:58:00-05:00",
           "vetted_by": "auto-club-mailchimp",
           "note": "Wed Nov 18 Mailchimp (10:19 AM ET, after Wednesday's morning pass): all lessons Wed+Thu; Musketeers Group Class Wed 5:00 PM; Footwork Class Wed 6:30 PM; Advanced Group Class Thu 6:00 PM. Matches standing schedule; no change. Club logo only (500x500 JPEG) plus the already-staged Winter Camp schedule graphic — no new media extract. Wed class times are past by this Thu morning ingest; Thu Advanced Group Class is same-day."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class! + Thanksgiving Schedule",
+          "received_at": "2026-11-20T09:45:32-05:00",
+          "retrieved_at": "2026-11-23T07:56:00-05:00",
+          "url": "https://mailchi.mp/f219da2cef90/group-class-thanksgiving-schedule?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Fri Nov 20 Mailchimp (lessons Fri+Sat Nov 20-21): Mini-Musketeers 4:15 PM; Intermediate Group Class 5:00 PM; Sat Musketeers 11:00 AM; Advanced Group Class 1:00 PM. Matches standing schedule and the known Friday Intermediate class (first noted Nov 6). Thanksgiving closure staged separately as email-thanksgiving-schedule-2026-11-20. Logo only, no media extract."
         }
       ],
       "suggested_slot": "club-events",
@@ -545,7 +608,7 @@
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Standing club schedule reference; still held (classes table out).",
       "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
-      "updated_at": "2026-11-19T07:58:00-05:00"
+      "updated_at": "2026-11-23T07:56:00-05:00"
     },
     {
       "id": "history-photo-10-timea-nagy",
@@ -950,7 +1013,7 @@
       "source": "fencingtracker",
       "target_week": "next",
       "vetted": true,
-      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.\n[2026-11-10 5:21 PM ET] Frank (chat): 'Athreya is definitely a member of our club!  He's an OG.' Kept on On the Road; added to roster/people.json. Confirm-before-print flag dropped.\n[2026-11-11 2:40 p.m. ET] Frank (chat t204u): 'I forgot to include Keifer Meinhardt tournament. We'll mention the results next week I guess.' Results-watch item staged as chat-kiefer-meinhardt-results-watch-2026-11-11 for Issue No. 7.\n[2026-11-16 Monday full pass] Kiefer Meinhardt (Nov. 14–15) is past: dropped from the board (results watch is chat-kiefer-meinhardt-results-watch-2026-11-11). NEW official entry: Athreya Aravind, Division I Men's Epee, Mon. Nov. 23 (USA Fencing via fencing-api; FencingTracker registrations agree: 5 entries / 3 fencers). Names in roster form (FT 'Sheth, Anayaà' -> Anayaa Sheth).",
+      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.\n[2026-11-10 5:21 PM ET] Frank (chat): 'Athreya is definitely a member of our club!  He's an OG.' Kept on On the Road; added to roster/people.json. Confirm-before-print flag dropped.\n[2026-11-11 2:40 p.m. ET] Frank (chat t204u): 'I forgot to include Keifer Meinhardt tournament. We'll mention the results next week I guess.' Results-watch item staged as chat-kiefer-meinhardt-results-watch-2026-11-11 for Issue No. 7.\n[2026-11-16 Monday full pass] Kiefer Meinhardt (Nov. 14–15) is past: dropped from the board (results watch is chat-kiefer-meinhardt-results-watch-2026-11-11). NEW official entry: Athreya Aravind, Division I Men's Epee, Mon. Nov. 23 (USA Fencing via fencing-api; FencingTracker registrations agree: 5 entries / 3 fencers). Names in roster form (FT 'Sheth, Anayaà' -> Anayaa Sheth).\n[2026-11-23 daily pass] November NAC is in progress (Div I Men today). No Elite FC NAC results on the FencingTracker club page (7:51 AM ET). fencing-api live results for JNRWE (78693), CDTME (78696), and JNRME (78690) returned empty lists, final=false (7:53 AM ET). Still a results watch; Monday full pass should try official event pages again.",
       "tags": [
         "entries",
         "travel"
@@ -1060,10 +1123,20 @@
           "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
           "retrieved_at": "2026-11-16T08:51:49-05:00",
           "note": "Monday registrations check: November NAC 5 entries / 3 fencers (same as official)."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/events/{78693,78696,78690}/results",
+          "fetched_at": "2026-11-23T12:53:26Z/12:53:44Z/12:53:47Z",
+          "fetched_at_et": "2026-11-23 7:53 AM ET",
+          "final": false,
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "note": "JNRWE came back from cache with 0 items; CDTME and JNRME live scrapes also returned 0 items, final=false. No placements to stage. DV1ME (today) not fetched."
         }
       ],
       "created_at": "2026-10-28T09:58:00-04:00",
-      "updated_at": "2026-11-16T09:20:00-05:00",
+      "updated_at": "2026-11-23T07:56:00-05:00",
       "carried_from": "staging/weeks/2026-11-17",
       "carry_note": "Ran in No. 7 (On the Road — November NAC). November NAC Nov. 20–23 becomes a RESULTS WATCH for No. 8 (Anayaa Sheth, Nico Ng, Athreya Aravind); December travel entries still upcoming.",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -1304,7 +1377,8 @@
         "entries",
         "nearby_tournaments",
         "local",
-        "results-watch"
+        "results-watch",
+        "results-posted"
       ],
       "panels_rows": [
         [
@@ -1315,7 +1389,7 @@
       ],
       "row_count": 1,
       "word_count": 120,
-      "vet_notes": "Daily pass 2026-11-19. Club Mailchimp (allowlisted) promoted the tournament; the Christina Jiang entry is from AskFRED/fencing-api, so it stays unvetted under the scraped-registration rule until Frank confirms. Same weekend as the November NAC (Nov. 20–23). Event is Sunday; if No. 8 publishes Mon/Tue it becomes a results watch. Check-in times are not start times.",
+      "vet_notes": "Daily pass 2026-11-19. Club Mailchimp (allowlisted) promoted the tournament; the Christina Jiang entry is from AskFRED/fencing-api, so it stays unvetted under the scraped-registration rule until Frank confirms. Same weekend as the November NAC (Nov. 20–23). Event is Sunday; if No. 8 publishes Mon/Tue it becomes a results watch. Check-in times are not start times.\n[2026-11-23 daily pass] Official USA Fencing results are in (final): Christina Jiang 1st of 4 in Y12WE; Joshua Jeong tied for 3rd of 4 in Y12ME. Joshua was not on the Nov 19 prereg list. Results staged as ft-freehold-nov-youth-results-2026-11-22 (unvetted).",
       "facts": [
         {
           "claim": "Freehold Fencing - November Youth Foil & Epee is Sunday, Nov. 22, 2026, at Freehold Fencing Academy, 56 Thoreau Dr, Freehold, N.J.; preregistration closes Nov. 22.",
@@ -1368,27 +1442,198 @@
           "url": "https://member.usafencing.org/details/tournaments/12503",
           "note": "USA Fencing tournament 12503 (AskFRED usfa_sanction).",
           "retrieved_at": "2026-11-19T07:55:00-05:00"
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-23T07:51:00-05:00",
+          "note": "Results posted: Jiang, Christina Y12WE 1st; Jeong, Joshua Y12ME 3rd. Official USFA results (final, 7:54 AM ET) confirm Jiang 1st of 4 and Jeong tied for 3rd of 4. See ft-freehold-nov-youth-results-2026-11-22."
         }
       ],
       "created_at": "2026-11-19T07:58:00-05:00",
-      "updated_at": "2026-11-19T07:58:00-05:00",
-      "entries_last_confirmed": "2026-11-19T07:58:00-05:00"
+      "updated_at": "2026-11-23T07:56:00-05:00",
+      "entries_last_confirmed": "2026-11-19T07:58:00-05:00",
+      "related_item": "ft-freehold-nov-youth-results-2026-11-22"
+    },
+    {
+      "id": "ft-freehold-nov-youth-results-2026-11-22",
+      "kind": "result",
+      "headline": "Christina Jiang 1st of 4 in Y12 Women, Joshua Jeong tied for 3rd of 4 in Y12 Men, at Freehold Youth",
+      "body": "Official USA Fencing results (final) for Freehold Fencing - November Youth Foil & Epee, Freehold Fencing Academy, Sunday, Nov. 22, 2026: Jiang, Christina (Elite Fencers Club) 1st of 4 in Youth 12 Women's Epee (Y12WE, event 79559); Jeong, Joshua (Elite Fencers Club) tied for 3rd of 4 in Youth 12 Men's Epee (Y12ME, event 79558) with Charna, Luca of Lilov Fencing Academy (two 3rds, no fence-off). No rating earned for either Elite FC fencer. FencingTracker club page agrees (Jiang 1st, Jeong 3rd; it does not note the tie). Print Christina Jiang and Joshua Jeong via roster house forms. Small local fields.",
+      "source": "web",
+      "from": "FencingTracker club page + USA Fencing results via fencing-api",
+      "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+      "target_week": "next",
+      "vetted": false,
+      "slot_hint": "club_results",
+      "suggested_slot": "club_results",
+      "tags": [
+        "club",
+        "result",
+        "local",
+        "freehold"
+      ],
+      "print_rows": [
+        [
+          "Christina Jiang",
+          "Freehold Youth, Y12 Women (Nov. 22)",
+          "1st of 4"
+        ],
+        [
+          "Joshua Jeong",
+          "Freehold Youth, Y12 Men (Nov. 22)",
+          "tied for 3rd of 4"
+        ]
+      ],
+      "facts": [
+        {
+          "claim": "Christina Jiang 1st of 4, Youth 12 Women's Epee (Y12WE, event 79559), Freehold Fencing - November Youth Foil & Epee, Nov. 22, 2026; no rating earned",
+          "source": "fencingapi live /v1/usfa/tournaments/12503/events/79559/results (final=true), fetched 2026-11-23 7:54 AM ET; underlying https://member.usafencing.org/details/tournaments/12503",
+          "status": "official results (final); unvetted until Frank vets"
+        },
+        {
+          "claim": "Joshua Jeong tied for 3rd of 4, Youth 12 Men's Epee (Y12ME, event 79558), same tournament, Nov. 22, 2026, with Luca Charna (Lilov); no rating earned",
+          "source": "fencingapi live /v1/usfa/tournaments/12503/events/79558/results (final=true), fetched 2026-11-23 7:54 AM ET; underlying https://member.usafencing.org/details/tournaments/12503",
+          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 3."
+        },
+        {
+          "claim": "FencingTracker club page lists Jeong, Joshua Y12ME 3rd and Jiang, Christina Y12WE 1st, no rating earned, date 2026-11-22; 2 results recorded",
+          "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "status": "unvetted; FencingTracker club page 2026-11-23 7:51 AM ET. Does not mark the Y12ME bronze as a tie."
+        }
+      ],
+      "field_note": "'of 4' = number of finishers in the official USA Fencing results list. Catalog official_competitors for both events was also 4.",
+      "print_hint": "Club Results rows: local medals, but fields of 4 — flag the field size if this leads. Joshua was not on the Nov 19 prereg list.",
+      "vet_notes": "Daily FT quick look + fencing-api live results 2026-11-23. Scraped/official results — unvetted until Frank vets. Christina's gold and Joshua's shared bronze are in four-fencer fields. Joshua Jeong was not on the AskFRED/fencing-api prereg as of Thu Nov 19 (that item listed only Christina Jiang in Y12WE). Related entries item: askfred-freehold-nov-youth-epee-2026-11-22.",
+      "related_item": "askfred-freehold-nov-youth-epee-2026-11-22",
+      "provenance": [
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-23T07:51:00-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "Newest club-page tournament: Freehold Fencing - November Youth Foil & Epee, Nov 22, 2026, 2 results. Jeong, Joshua, Youth 12 Men's Epee (Y12ME), 3rd, rating earned '-'; Jiang, Christina, Youth 12 Women's Epee (Y12WE), 1st, rating earned '-'. Date 2026-11-22. USFA https://member.usafencing.org/details/tournaments/12503."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12503?live=true",
+          "fetched_at": "2026-11-23T12:53:42Z",
+          "fetched_at_et": "2026-11-23 7:53 AM ET",
+          "final": false,
+          "data_kind": "catalog",
+          "underlying": "https://member.usafencing.org/details/tournaments/12503",
+          "note": "source=live, kind=usfa.tournament. Y12ME event 79558 official_competitors 4; Y12WE event 79559 official_competitors 4. No placements in this catalog payload."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12503/events/79558/results?live=true and /events/79559/results?live=true",
+          "fetched_at": "2026-11-23T12:54:14Z/12:54:17Z",
+          "fetched_at_et": "2026-11-23 7:54 AM ET",
+          "final": true,
+          "underlying": "https://member.usafencing.org/details/tournaments/12503",
+          "note": "Y12ME: 4 finishers — Lee, Jace 1 (Wanglei); Mak, Nolan 2 (Medeo); Charna, Luca 3 (Lilov) and Jeong, Joshua 3 (Elite Fencers Club). Y12WE: 4 finishers — Jiang, Christina 1 (Elite Fencers Club); Choi, Serine 2 (Wanglei); Fleming, Evangeline 3 (Lilov) and Tee, Romana 3 (Unattached). Empty rating fields; no rating earned listed."
+        }
+      ],
+      "created_at": "2026-11-23T07:56:00-05:00",
+      "updated_at": "2026-11-23T07:56:00-05:00"
+    },
+    {
+      "id": "ft-freehold-nov-junior-chen-2026-11-20",
+      "kind": "result",
+      "headline": "Xinxuewei Chen 7th at Freehold November Junior Epee",
+      "body": "FencingTracker club page (Nov. 23, 7:51 a.m. ET) lists Chen, Xinxuewei (Elite Fencers Club) 7th in Junior Mixed Epee (JNRXE) at Freehold Fencing - November Junior Epee, Nov. 20, 2026; no rating earned. Official finisher count is not yet on a posted results list (AskFRED has no results table; FencingTimeLive is login-walled; USA Fencing id was not on the AskFRED search record). AskFRED entries (live, Nov. 23, 7:55 a.m. ET) list 10 names in Junior Mixed Epee, including Chen, Xinxuewei (Elite Fencers Club, rating U); that is an entries list, not finishers. Print Xinxuewei Chen via the new roster house form (AskFRED/FencingTracker 'Chen, Xinxuewei'). Unvetted.",
+      "source": "web",
+      "from": "FencingTracker club page",
+      "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+      "target_week": "next",
+      "vetted": false,
+      "slot_hint": "club_results",
+      "suggested_slot": "club_results",
+      "tags": [
+        "club",
+        "result",
+        "local",
+        "freehold"
+      ],
+      "print_rows": [
+        [
+          "Xinxuewei Chen",
+          "Freehold November Junior, Junior Mixed Epee (Nov. 20)",
+          "7th"
+        ]
+      ],
+      "facts": [
+        {
+          "claim": "Chen, Xinxuewei (Elite Fencers Club) 7th, Junior Mixed Epee (JNRXE), Freehold Fencing - November Junior Epee, Nov. 20, 2026; no rating earned listed",
+          "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "status": "unvetted; FencingTracker club page 2026-11-23 7:51 AM ET"
+        },
+        {
+          "claim": "AskFRED entries list 10 names in Junior Mixed Epee, including Chen, Xinxuewei (Elite Fencers Club, U); pending_or_invalid empty; event predicted rating E1",
+          "source": "fencingapi live /v1/askfred/tournaments/149dcd16-e601-4734-a397-d1357e339784/entries, fetched 2026-11-23 7:55 AM ET",
+          "status": "unvetted; entries list, not a posted finishers list. Do not print 'of 10' until official results confirm the field."
+        }
+      ],
+      "print_hint": "Club Results row: local 7th; field size not yet confirmed. New name on the club result list.",
+      "vet_notes": "Daily FT quick look 2026-11-23. New Elite FC name on FencingTracker and AskFRED (Chen, Xinxuewei). Added to roster/people.json from the official AskFRED spelling under Frank's standing names rule — not asking about the spelling. Result stays unvetted until Frank vets. This tournament was not on the prior Nearby Tournaments board. Monday full pass should fetch official results for the finisher count if they are up.",
+      "provenance": [
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-23T07:51:00-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "Freehold Fencing - November Junior Epee, Nov 20, 2026, 1 result recorded. Chen, Xinxuewei, Junior Mixed Epee (JNRXE), 7th, rating earned '-', date 2026-11-20."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/tournaments?q=Freehold+Fencing+-+November+Junior+Epee&period=past&live=true",
+          "fetched_at": "2026-11-23T12:54:47Z",
+          "fetched_at_et": "2026-11-23 7:54 AM ET",
+          "note": "AskFRED search hit: Freehold Fencing - November Junior Epee (Local Points!), askfred_id 149dcd16-e601-4734-a397-d1357e339784, Freehold Fencing Academy, 56 Thoreau Dr, Freehold, NJ, Nov 20, 2026. usfa_id null on the search record."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/askfred/tournaments/149dcd16-e601-4734-a397-d1357e339784 and /entries?live=true",
+          "fetched_at": "2026-11-23T12:55:04Z/12:55:06Z",
+          "fetched_at_et": "2026-11-23 7:55 AM ET",
+          "final": false,
+          "url": "https://www.askfred.net/tournaments/149dcd16-e601-4734-a397-d1357e339784",
+          "note": "One event: Junior Mixed Epee (JrMxE), clock 18:00 close of registration, authority USFA, event_rating E1. Entries: 10 confirmed, 0 pending, rating mix 1B, 2D, 2E, 5U. Chen, Xinxuewei — Elite Fencers Club, U, fencer_id 9969. Only Elite FC name."
+        },
+        {
+          "type": "url",
+          "url": "https://www.askfred.net/tournaments/149dcd16-e601-4734-a397-d1357e339784",
+          "retrieved_at": "2026-11-23T07:55:00-05:00",
+          "note": "AskFRED tournament page: Verified USA Fencing Sanctioned; Junior Mixed Epee starts at 6 p.m.; live results on FencingTimeLive (login-walled). No results table on the public page."
+        }
+      ],
+      "created_at": "2026-11-23T07:56:00-05:00",
+      "updated_at": "2026-11-23T07:56:00-05:00"
     }
   ],
   "last_daily_pass": {
-    "at": "2026-11-19T07:58:00-05:00",
+    "at": "2026-11-23T07:56:00-05:00",
     "kind": "weekday morning email + FencingTracker quick look",
     "email": [
-      "ingested <d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net> (club Mailchimp Group Class + Winter Camp!, Wed Nov 18 10:19 AM ET, after Wednesday's morning pass). Class times match the standing schedule; Winter Camp dates unchanged (Dec 27–31, reach out ASAP); no price; same Oct 22 schedule graphic, no new media. Local Competition link is Freehold Fencing - November Youth Foil & Epee (Sun Nov 22)."
+      "ingested <d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net> (club Mailchimp Group Class! + Thanksgiving Schedule, Fri Nov 20 9:45 AM ET, arrived after Friday's 7:56 AM pass). Class times match the standing schedule and the known Friday Intermediate class; logo only, no new media. New facts: club closed Wed 11/25, Thu 11/26, Fri 11/27 for Thanksgiving. Email says return to normal schedule on Saturday 12/28 — probable typo for Saturday 11/28; flagged for Frank, not printed. No other new mail; no chunkymonkey digest since Mon Nov 16."
     ],
     "fencingtracker": {
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
-      "retrieved_at": "2026-11-19T07:54:00-05:00",
-      "note": "One fetch, HTTP 200. No new Elite FC results vs the Nov 18 Wednesday skim. Newest remains Freehold Fencing - November Open Epee (Nov 15; Nico Ng 5th D1AXE), then Kiefer Meinhardt Cup and Pizza RYC/RJCC — all already ran in No. 7. Manchen Friday Night Epee E & Under (Nov 13) still lists only Brendan Mendez; skipped per standing rule (do not stage, do not ask)."
+      "retrieved_at": "2026-11-23T07:51:00-05:00",
+      "note": "One fetch. New vs staging: (1) Freehold Fencing - November Youth Foil & Epee (Nov 22): Jeong, Joshua 3rd Y12ME; Jiang, Christina 1st Y12WE; no ratings earned. (2) Freehold Fencing - November Junior Epee (Nov 20): Chen, Xinxuewei 7th JNRXE; no rating earned. Official USFA results (final) later the same pass confirm the Youth finishes and the Y12ME tie, fields of 4. No November NAC results on the club page. Nico Ng 5th at Freehold November Open, Kiefer Meinhardt, and Pizza RYC already ran in No. 7. Manchen Friday Night (Nov 13) still lists only Brendan Mendez; skipped per standing rule (do not stage, do not ask)."
     },
     "fencingapi": {
-      "club_results": "cached club-results since 2026-11-13 (fetched_at 2026-11-16T20:23:35Z); matches known weekend results (Pizza RYC, Kiefer Meinhardt, Freehold November Open). No newer cached rows. No Elite FC event today, so no live results scrape.",
-      "entries": "live /v1/askfred/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/entries at 2026-11-19T12:56:48Z: Jiang, Christina in Y12WE; no other Elite FC names."
+      "club_results": "cached club-results since 2026-11-16 returned 0 items (fetched_at null); new weekend results were not in the cache.",
+      "youth_results": "live /v1/usfa/tournaments/12503 catalog at 2026-11-23T12:53:42Z (official_competitors 4/4) and live event results at 12:54:14Z/12:54:17Z, final=true: Jiang 1st of 4 Y12WE (79559); Jeong tied for 3rd of 4 Y12ME (79558).",
+      "junior_results": "live AskFRED search + /v1/askfred/tournaments/149dcd16-e601-4734-a397-d1357e339784/entries at 2026-11-23T12:55:06Z: 10 entries in Junior Mixed Epee including Chen, Xinxuewei (Elite Fencers Club, U). No official results list. AskFRED page has no results table.",
+      "nac": "live/cache results for November NAC (USFA 12316) JNRWE 78693, CDTME 78696, JNRME 78690 empty, final=false, 7:53 AM ET. No NAC results staged."
     }
   }
 }

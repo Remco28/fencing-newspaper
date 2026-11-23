@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-16",
+  "updated": "2026-11-23",
   "note": "Frank-confirmed club-people facts only (plus names cleared by Frank's 2026-10-18 standing rule: official club/tournament pages are the source of truth for name spellings). No ratings, ages, birthdays, or invented data. See roster/README.md. | 2026-10-19: added Morris/Ultimate/Cobra/JO names from USA Fencing / AskFRED under the official-pages standing rule.",
   "people": [
     {
@@ -611,6 +611,21 @@
         "who": "Frank",
         "when": "2026-11-10",
         "via": "chat"
+      }
+    },
+    {
+      "id": "xinxuewei-chen",
+      "canonical": "Xinxuewei Chen",
+      "aliases": [
+        "Chen, Xinxuewei"
+      ],
+      "relations": [],
+      "notes": "AskFRED and FencingTracker list as Chen, Xinxuewei, club Elite Fencers Club (Freehold Fencing - November Junior Epee, Nov. 20, 2026, 7th in Junior Mixed Epee). Added from the official AskFRED spelling.",
+      "spelling_unresolved": false,
+      "provenance": {
+        "who": "Frank (standing rule)",
+        "when": "2026-11-23",
+        "via": "Clark's daily pass; print as official list (AskFRED / FencingTracker)"
       }
     }
   ]
