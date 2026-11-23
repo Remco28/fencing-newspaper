@@ -1,0 +1,156 @@
+{
+  "note": "Clean step, Monday full pass 2026-11-23 (Issue No. 8). Items removed from next/items.json as stale.",
+  "items": [
+    {
+      "id": "askfred-freehold-nov-youth-epee-2026-11-22",
+      "why": "event past (Nov. 22); superseded by the results item ft-freehold-nov-youth-results-2026-11-22",
+      "dropped_at": "2026-11-23T09:12:00-05:00",
+      "item": {
+        "id": "askfred-freehold-nov-youth-epee-2026-11-22",
+        "kind": "signup_row",
+        "headline": "Freehold November Youth Foil & Epee (Sun. Nov. 22) — Christina Jiang entered",
+        "body": "Freehold Fencing - November Youth Foil & Epee, Freehold Fencing Academy, 56 Thoreau Dr, Freehold, N.J., Sunday, Nov. 22, 2026; preregistration closes Nov. 22. Club Mailchimp (Wed Nov 18) listed it under Local Competition. Elite FC entered (AskFRED / fencing-api live entries, Thu Nov 19, 7:56 a.m. ET; confirmed list, not pending): Jiang, Christina (Elite Fencers Club, rating U) in Y12 Women's Epee, check-in 11:00 a.m. No other Elite FC names on the preregistration. Other epee events and check-ins: Y14 Women's and Y14 Men's Epee, 9:00 a.m.; Y12 Men's Epee, 11:00 a.m.; Y10 Mixed Epee, 1:00 p.m. (0 entered). Print Christina Jiang via the roster house form. Scraped registration — unvetted until Frank confirms.",
+        "source": "email+askfred+fencingapi",
+        "from": "elitefencersclub@111617670.mailchimpapp.com",
+        "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net>",
+        "target_week": "next",
+        "vetted": false,
+        "board": "Nearby Tournaments",
+        "slot_hint": "signup",
+        "tags": [
+          "entries",
+          "nearby_tournaments",
+          "local",
+          "results-watch",
+          "results-posted"
+        ],
+        "panels_rows": [
+          [
+            "Sun. Nov. 22 · 11:00 a.m.",
+            "Y12 Women's Epee",
+            "Christina Jiang"
+          ]
+        ],
+        "row_count": 1,
+        "word_count": 120,
+        "vet_notes": "Daily pass 2026-11-19. Club Mailchimp (allowlisted) promoted the tournament; the Christina Jiang entry is from AskFRED/fencing-api, so it stays unvetted under the scraped-registration rule until Frank confirms. Same weekend as the November NAC (Nov. 20–23). Event is Sunday; if No. 8 publishes Mon/Tue it becomes a results watch. Check-in times are not start times.\n[2026-11-23 daily pass] Official USA Fencing results are in (final): Christina Jiang 1st of 4 in Y12WE; Joshua Jeong tied for 3rd of 4 in Y12ME. Joshua was not on the Nov 19 prereg list. Results staged as ft-freehold-nov-youth-results-2026-11-22 (unvetted).",
+        "facts": [
+          {
+            "claim": "Freehold Fencing - November Youth Foil & Epee is Sunday, Nov. 22, 2026, at Freehold Fencing Academy, 56 Thoreau Dr, Freehold, N.J.; preregistration closes Nov. 22.",
+            "source": "https://www.askfred.net/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16",
+            "status": "verified-askfred 2026-11-19 7:55 AM ET; also linked from club Mailchimp Nov 18 (allowlisted) as Local Competition."
+          },
+          {
+            "claim": "Jiang, Christina (Elite Fencers Club, U) is entered in Y12 Women's Epee, check-in 11:00 a.m.; not pending. No other Elite FC names on the preregistration as of Thu Nov 19, 7:56 a.m. ET.",
+            "source": "/v1/askfred/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/entries (live)",
+            "status": "unvetted scraped registration (fencing-api live, source=live, final=false). Print form Christina Jiang (roster)."
+          },
+          {
+            "claim": "Epee events and check-in times: Y14WE and Y14ME 9:00 a.m.; Y12ME and Y12WE 11:00 a.m.; Y10 Mixed Epee 1:00 p.m. (0 entered).",
+            "source": "/v1/askfred/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/entries (live)",
+            "status": "from fencing-api live entries payload (check_in). AskFRED close_of_registration times match. Not start times."
+          }
+        ],
+        "provenance": [
+          {
+            "type": "email",
+            "source": "agentmail",
+            "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261118151855.efb75cc150.fcc8d4bf@mail150.atl241.mcsv.net>",
+            "from": "elitefencersclub@111617670.mailchimpapp.com",
+            "subject": "Group Class + Winter Camp!",
+            "received_at": "2026-11-18T10:18:58-05:00",
+            "retrieved_at": "2026-11-19T07:58:00-05:00",
+            "url": "https://mailchi.mp/958a3f687c4f/group-class-winter-camp?e=f656c71db1",
+            "vetted_by": "auto-club-mailchimp",
+            "note": "Wed Nov 18 Mailchimp Local Competition link resolved to https://www.askfred.net/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/preregistrations. The email does not name entrants."
+          },
+          {
+            "type": "api",
+            "source": "askfred",
+            "endpoint": "scripts/askfred.py tournament + events --per-page 20 9bfd01d2-e99f-4914-ae9f-394acbd07c16",
+            "retrieved_at": "2026-11-19T07:55:00-05:00",
+            "url": "https://www.askfred.net/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16",
+            "note": "start_date=end_date=2026-11-22; prereg_close=2026-11-22; venue Freehold Fencing Academy, 56 Thoreau Dr, Freehold, NJ 07728; USFA sanction 12503 verified. Epee events: Y14WE, Y14ME, Y12WE, Y12ME, Y10MxE."
+          },
+          {
+            "type": "fencingapi",
+            "endpoint": "/v1/askfred/tournaments/9bfd01d2-e99f-4914-ae9f-394acbd07c16/entries",
+            "live": true,
+            "fetched_at": "2026-11-19T12:56:48Z",
+            "fetched_at_et": "2026-11-19 7:56 AM ET",
+            "final": false,
+            "note": "Jiang, Christina — Elite Fencers Club, U, on the confirmed entries list for Y12 Women's Epee (check-in 11:00). Only Elite FC name. Y10 Mixed Epee 0 entered."
+          },
+          {
+            "type": "url",
+            "url": "https://member.usafencing.org/details/tournaments/12503",
+            "note": "USA Fencing tournament 12503 (AskFRED usfa_sanction).",
+            "retrieved_at": "2026-11-19T07:55:00-05:00"
+          },
+          {
+            "type": "web",
+            "source": "fencingtracker",
+            "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+            "retrieved_at": "2026-11-23T07:51:00-05:00",
+            "note": "Results posted: Jiang, Christina Y12WE 1st; Jeong, Joshua Y12ME 3rd. Official USFA results (final, 7:54 AM ET) confirm Jiang 1st of 4 and Jeong tied for 3rd of 4. See ft-freehold-nov-youth-results-2026-11-22."
+          }
+        ],
+        "created_at": "2026-11-19T07:58:00-05:00",
+        "updated_at": "2026-11-23T07:56:00-05:00",
+        "entries_last_confirmed": "2026-11-19T07:58:00-05:00",
+        "related_item": "ft-freehold-nov-youth-results-2026-11-22"
+      }
+    },
+    {
+      "id": "media-kiefer-meinhardt-podium-group-2026-11-14",
+      "why": "stale: Kiefer Meinhardt (Nov. 14) results and photos ran in No. 7; this wider podium frame was never used (Stella not clearly identifiable, other medalists unnamed). Media file and manifest entry kept.",
+      "dropped_at": "2026-11-23T09:12:00-05:00",
+      "item": {
+        "id": "media-kiefer-meinhardt-podium-group-2026-11-14",
+        "kind": "photo",
+        "headline": "Youth medalists on the podium at the Kiefer Meinhardt Cup. Mila Siu of Elite FC is at far right, holding her Youth 14 bronze; the other medalists are from other clubs and are not named here.",
+        "body": "Youth medalists on the podium at the Kiefer Meinhardt Cup. Mila Siu of Elite FC is at far right, holding her Youth 14 bronze; the other medalists are from other clubs and are not named here.",
+        "media_path": "staging/weeks/next/media/kiefer-meinhardt-podium-group-2026-11-14.jpg",
+        "alt": "A group of youth fencers on the second- and third-place podium at the Kiefer Meinhardt Cup. Mila Siu stands at far right holding a bronze medal.",
+        "source": "email",
+        "from": "elitefencersclub@111617670.mailchimpapp.com",
+        "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+        "target_week": "next",
+        "vetted": true,
+        "vetted_by": "frank",
+        "vetted_at": "2026-11-16T21:51:00-05:00",
+        "tags": [
+          "photo",
+          "club",
+          "held"
+        ],
+        "suggested_slot": null,
+        "slot_hint": "held",
+        "do_not_print": true,
+        "vet_notes": "Frank chat t226u 2026-11-16 9:51 PM ET: the remaining No. 7 content is in the club email (holiday party and these photos). Also on the club Mailchimp auto-vet allowlist. Landscape 640x480. Extracted from the same newsletter but not used in No. 7 proof v1: Frank asked for the two-girl photo (Mila and Stella) and the Penny photo. This frame is a wider podium group; Stella is not clearly identifiable, and the other medalists are not named in the club email. Held for Frank if he wants it.",
+        "provenance": [
+          {
+            "type": "email",
+            "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261116151823.8f59fffb3b.49d225ef@mail67.atl91.mcsv.net>",
+            "from": "elitefencersclub@111617670.mailchimpapp.com",
+            "subject": "Group Class + HOLIDAY PARTY!",
+            "sent_at": "2026-11-16T15:18:28Z",
+            "sent_at_et": "2026-11-16 10:18 AM ET",
+            "retrieved_at": "2026-11-16T21:53:00-05:00",
+            "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/288eb33f-dd28-4c84-46aa-63ea93e84a31.jpeg"
+          },
+          {
+            "type": "chat",
+            "from": "frank",
+            "at": "2026-11-16T21:51:00-05:00",
+            "note": "t226u: remaining No. 7 content is the club email's holiday party and the photos of Mila and Stella plus Penny (Penelope, she goes by Penny)."
+          }
+        ],
+        "created_at": "2026-11-16T21:56:35-05:00",
+        "updated_at": "2026-11-16T21:56:35-05:00",
+        "carried_from": "staging/weeks/2026-11-17",
+        "carry_note": "Held photo, not printed in No. 7. Probably stale for No. 8 (results already ran); only if Frank asks."
+      }
+    }
+  ]
+}

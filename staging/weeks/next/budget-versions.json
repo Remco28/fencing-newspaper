@@ -1,7 +1,16 @@
 {
   "issue": 8,
-  "publish": null,
-  "note": "Budget version counter + decision log for Issue No. 8, reset at the No. 7 roll-forward 2026-11-17 (No. 7's log is in staging/weeks/2026-11-17/budget-versions.json). build_budget_html.py starts a fresh log keyed to issue+publish date on the first build.",
-  "versions": [],
+  "publish": "2026-11-24",
+  "versions": [
+    {
+      "v": 1,
+      "built_at": "2026-11-23T09:12:26-05:00",
+      "data": "55e4eb1e9caa",
+      "page": "budget-paper-v2",
+      "decisions_through": null,
+      "decisions": 0,
+      "out": "budget-demo/out/budget-no-8-2026-11-24-v1.html"
+    }
+  ],
   "decisions": []
 }
