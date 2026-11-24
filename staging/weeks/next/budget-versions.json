@@ -377,6 +377,22 @@
           "heightIn": 2.15
         }
       }
+    },
+    {
+      "at": "2026-11-24T18:02:00-05:00",
+      "client_submitted_at": "2026-11-24T17:59:00-05:00",
+      "source": "chat:frank:2026-11-24T17:59:00-05:00",
+      "kind": "chat",
+      "chat": {
+        "from": "frank",
+        "at": "2026-11-24T17:59:00-05:00",
+        "text": "looks good now, let's publish."
+      },
+      "carried_from": 1,
+      "publishDate": "2026-11-24",
+      "changes": [
+        "Frank approved proof v2 of No. 8 for publication (Tuesday, Nov. 24, 2026)."
+      ]
     }
   ]
 }

@@ -36,6 +36,11 @@
       "number": 7,
       "date": "2026-11-17",
       "headline": "Penny Young and Mila Siu Take Bronze"
+    },
+    {
+      "number": 8,
+      "date": "2026-11-24",
+      "headline": "March NAC Comes to Atlantic City"
     }
   ],
   "sections": [
@@ -50,9 +55,10 @@
         4,
         5,
         6,
-        7
+        7,
+        8
       ],
-      "last": 7,
+      "last": 8,
       "evidence": {
         "1": [
           "page-1 headline: “School Fencing Season Starts Nov. 30”"
@@ -74,6 +80,9 @@
         ],
         "7": [
           "page-1 headline: “Penny Young and Mila Siu Take Bronze”"
+        ],
+        "8": [
+          "page-1 headline: “This Weekend at Cobra: What an SYC Is, and Why It Matters”"
         ]
       }
     },
@@ -86,9 +95,10 @@
         2,
         4,
         5,
-        6
+        6,
+        8
       ],
-      "last": 6,
+      "last": 8,
       "evidence": {
         "1": [
           "box “Ben Gutenberg SYC — Elite FC” = budget slot “Club results box”"
@@ -103,6 +113,9 @@
           "box “Club Results”"
         ],
         "6": [
+          "box “Club Results”"
+        ],
+        "8": [
           "box “Club Results”"
         ]
       }
@@ -135,9 +148,10 @@
         3,
         4,
         5,
-        7
+        7,
+        8
       ],
-      "last": 7,
+      "last": 8,
       "evidence": {
         "1": [
           "story: “School Rules Let the Flèche Fly”",
@@ -164,6 +178,12 @@
           "story: “Three Head to Columbus” (kicker “November NAC”)",
           "story: “March NAC Comes to Atlantic City” (kicker “March NAC”)",
           "story: “Hungary Rules World Cup Weekend” (kicker “World Cup”)"
+        ],
+        "8": [
+          "story: “March NAC Comes to Atlantic City” (kicker “A National Tournament Next Door”)",
+          "story: “The Touch He Gave Back” (kicker “Fair Play”)",
+          "story: “Nico Ng 15th of 136 in Cadet Challenger” (kicker “November NAC”)",
+          "story: “College Season Opens Next Door” (kicker “College”)"
         ]
       }
     },
@@ -219,9 +239,10 @@
         4,
         5,
         6,
-        7
+        7,
+        8
       ],
-      "last": 7,
+      "last": 8,
       "evidence": {
         "1": [
           "box “Go Cheer — Elite FC Entries (All Epee)”"
@@ -243,6 +264,9 @@
         ],
         "7": [
           "box “Nearby Tournaments — Elite FC Entries”"
+        ],
+        "8": [
+          "box “Nearby Tournaments — Elite FC Entries”"
         ]
       }
     },
@@ -256,9 +280,10 @@
         4,
         5,
         6,
-        7
+        7,
+        8
       ],
-      "last": 7,
+      "last": 8,
       "evidence": {
         "2": [
           "box “Deadlines”"
@@ -277,6 +302,9 @@
         ],
         "7": [
           "box “Deadlines”"
+        ],
+        "8": [
+          "box “Deadlines”"
         ]
       }
     },
@@ -290,9 +318,10 @@
         3,
         4,
         5,
-        7
+        7,
+        8
       ],
-      "last": 7,
+      "last": 8,
       "evidence": {
         "1": [
           "box “Weekly Classes at Elite FC”"
@@ -313,6 +342,10 @@
         ],
         "7": [
           "kicker “Club Events”: “Winter Camp: Sign Up Now”",
+          "kicker “Club Events”: “Holiday Party: Friday, Dec. 11”"
+        ],
+        "8": [
+          "kicker “Club Events”: “Club Closed Wednesday Through Friday”",
           "kicker “Club Events”: “Holiday Party: Friday, Dec. 11”"
         ]
       }
@@ -339,9 +372,10 @@
         3,
         4,
         5,
-        7
+        7,
+        8
       ],
-      "last": 7,
+      "last": 8,
       "evidence": {
         "3": [
           "kicker “By the Book”: “You Can’t Appeal What the Referee Saw”"
@@ -354,6 +388,9 @@
         ],
         "7": [
           "kicker “By the Book”: “Three Calls, Two Minutes”"
+        ],
+        "8": [
+          "kicker “By the Book”: “Two of Everything”"
         ]
       }
     },
@@ -574,7 +611,8 @@
       "kind": "box",
       "ran": [
         6,
-        7
+        7,
+        8
       ],
       "evidence": {
         "6": [
@@ -582,9 +620,12 @@
         ],
         "7": [
           "box “On the Road — November NAC”"
+        ],
+        "8": [
+          "box “On the Road — December SJCC”"
         ]
       },
-      "last": 7
+      "last": 8
     },
     {
       "name": "Also on the Calendar",
@@ -603,14 +644,18 @@
       "name": "November NAC",
       "kind": "topical kicker",
       "ran": [
-        7
+        7,
+        8
       ],
       "evidence": {
         "7": [
           "over “Three Head to Columbus”"
+        ],
+        "8": [
+          "over “Nico Ng 15th of 136 in Cadet Challenger”"
         ]
       },
-      "last": 7
+      "last": 8
     },
     {
       "name": "March NAC",
@@ -637,6 +682,45 @@
         ]
       },
       "last": 7
+    },
+    {
+      "name": "A National Tournament Next Door",
+      "kind": "topical kicker",
+      "ran": [
+        8
+      ],
+      "evidence": {
+        "8": [
+          "over “March NAC Comes to Atlantic City”"
+        ]
+      },
+      "last": 8
+    },
+    {
+      "name": "Fair Play",
+      "kind": "topical kicker",
+      "ran": [
+        8
+      ],
+      "evidence": {
+        "8": [
+          "over “The Touch He Gave Back”"
+        ]
+      },
+      "last": 8
+    },
+    {
+      "name": "College",
+      "kind": "topical kicker",
+      "ran": [
+        8
+      ],
+      "evidence": {
+        "8": [
+          "over “College Season Opens Next Door”"
+        ]
+      },
+      "last": 8
     }
   ],
   "notes": {
@@ -646,6 +730,10 @@
     "7": [
       "figure not matched to a section: “Penny Young with her Youth 12 bronze at the Pizza RYC/RJCC in New Have”",
       "figure not matched to a section: “Mila Siu, left, with her Youth 14 bronze at the Kiefer Meinhardt Cup i”"
+    ],
+    "8": [
+      "figure not matched to a section: “Christina Jiang in first place after winning Youth 12 Women’s Epee at ”",
+      "figure not matched to a section: “Remy Ng coaching Nico Ng on the strip at the November NAC in Columbus.”"
     ]
   }
 }

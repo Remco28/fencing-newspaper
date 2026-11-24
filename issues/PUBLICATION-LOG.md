@@ -5,6 +5,7 @@ Publish step: `python3 scripts/publish_issue.py <date>`, then commit + push (Pag
 
 | No. | Date | Edition | Approved (Frank) | On site | PDF |
 |---|---|---|---|---|---|
+| 8 | 2026-11-24 | Tuesday Edition | 2026-11-24 5:59 PM ET (proof v2; eye check PASS) | 2026-11-24 | `issues/2026-11-24/en-garde-gazette-no-8-2026-11-24.pdf` |
 | 7 | 2026-11-17 | Tuesday Edition | 2026-11-17 12:09 AM ET (proof v3; eye check PASS) | 2026-11-17 | `issues/2026-11-17/en-garde-gazette-no-7-2026-11-17.pdf` |
 | 6 | 2026-11-11 | Wednesday Edition | 2026-11-10 11:50 PM ET (proof v3) | 2026-11-10 | `issues/2026-11-11/en-garde-gazette-no-6-2026-11-11.pdf` |
 | 5 | 2026-11-03 | Tuesday Edition | 2026-11-03 15:07 ET (proof v2; Frank sent it out himself) | 2026-11-03 | `issues/2026-11-03/en-garde-gazette-no-5-2026-11-03.pdf` |
