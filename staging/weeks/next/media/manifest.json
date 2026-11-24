@@ -1,7 +1,7 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-24T08:01:14-05:00",
-  "note": "Media carried into Issue No. 8 after the No. 7 roll-forward: Photo from History 10 (Tímea Nagy), the two Winter Camp graphics, and the held Kiefer Meinhardt podium group. Printed No. 7 photos and the VR comic stay in staging/weeks/2026-11-17/media and issues/2026-11-17/media.",
+  "updated_at": "2026-11-24T18:05:00-05:00",
+  "note": "Media carried into Issue No. 9 after the No. 8 roll-forward: Photo from History 10 (Tímea Nagy), the two Winter Camp graphics, and the held Kiefer Meinhardt podium group. Printed No. 8 photos (Jiang podium, November NAC strip) stay in staging/weeks/2026-11-24/media and issues/2026-11-24/media.",
   "items": [
     {
       "id": "media-history-10-timea-nagy",
@@ -73,46 +73,6 @@
       "h": 480,
       "used_in_no7": false,
       "note": "Landscape 640x480. Extracted from the same newsletter but not used in No. 7 proof v1: Frank asked for the two-girl photo (Mila and Stella) and the Penny photo. This frame is a wider podium group; Stella is not clearly identifiable, and the other medalists are not named in the club email. Held for Frank if he wants it. Image normalized (EXIF orientation applied, saved as JPEG) so printed pixels match the displayed frame; not cropped."
-    },
-    {
-      "id": "media-efc-november-nac-photo-2026-11-23",
-      "kind": "photo",
-      "filename": "efc-november-nac-photo-2026-11-23.jpg",
-      "media_path": "staging/weeks/next/media/efc-november-nac-photo-2026-11-23.jpg",
-      "caption": "A fencer in white epee kit on the strip at a USA Fencing event, from the club's Nov. 23 newsletter congratulating Nico Ng on a top-16 finish at the November NAC in Columbus. A younger boy in street clothes stands in front of him; a referee sits behind a USA Fencing banner. The email does not name the people in the photo.",
-      "alt": "A fencer in a white epee uniform stands on a strip in a convention-hall venue, holding a water bottle, with a USA Fencing banner on the table behind him and a boy in a blue shirt facing him.",
-      "source": "email",
-      "from": "elitefencersclub@111617670.mailchimpapp.com",
-      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
-      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/e74f9152-4740-1153-a6b8-0cc9dbd2a9b6.jpg",
-      "retrieved_at": "2026-11-24T08:01:14-05:00",
-      "vetted": true,
-      "vetted_by": "auto-club-mailchimp",
-      "vetted_at": "2026-11-24T08:01:14-05:00",
-      "parent_item_id": "ft-november-nac-results-2026-11-24",
-      "w": 1500,
-      "h": 2000,
-      "note": "Portrait 1500x2000. Extracted from the Mon Nov 23 club Mailchimp (allowlisted). Email does not identify the fencer; the same letter congratulates Nico Ng's NAC top-16. Ask Frank to confirm it is Nico before a named caption. A boy in a blue shirt and a referee are also in the frame and are not named. EXIF orientation applied, saved as JPEG; not cropped."
-    },
-    {
-      "id": "media-christina-jiang-freehold-youth-podium-2026-11-22",
-      "kind": "photo",
-      "filename": "christina-jiang-freehold-youth-y12we-podium-2026-11-22.jpg",
-      "media_path": "staging/weeks/next/media/christina-jiang-freehold-youth-y12we-podium-2026-11-22.jpg",
-      "caption": "Christina Jiang of Elite FC stands on the first-place box after winning Youth 12 Women's Epee at Freehold Fencing Academy's November Youth Foil & Epee. The other medalists are from other clubs and are not named here.",
-      "alt": "Four youth fencers on a podium at Freehold Fencing Academy, with Christina Jiang on the first-place box under a Freehold Fencing Academy banner and an American flag.",
-      "source": "email",
-      "from": "elitefencersclub@111617670.mailchimpapp.com",
-      "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
-      "url": "https://mcusercontent.com/d0ff43e598e6fe5cb242389b7/images/8794acff-c429-6007-d965-b8bdfb6b877d.jpeg",
-      "retrieved_at": "2026-11-24T08:01:14-05:00",
-      "vetted": true,
-      "vetted_by": "auto-club-mailchimp",
-      "vetted_at": "2026-11-24T08:01:14-05:00",
-      "parent_item_id": "ft-freehold-nov-youth-results-2026-11-22",
-      "w": 640,
-      "h": 480,
-      "note": "Landscape 640x480 (source was an iPhone MPO). Extracted from the Mon Nov 23 club Mailchimp (allowlisted) that congratulates Christina Jiang on 1st in Y12 Freehold. Official Y12WE results match the four-fencer podium (Jiang 1st). Other medalists not named in the email, so they are not named in the caption. Normalized (EXIF orientation applied, first MPO frame saved as JPEG); not cropped."
     }
   ]
 }

@@ -89,7 +89,7 @@
     "publishDate": "2026-11-24",
     "publishDateAlt": "2026-11-25",
     "source": "issues/2026-11-24/budget-submission.json",
-    "decision": "staging/weeks/next/budget-versions.json decision #1"
+    "decision": "staging/weeks/2026-11-24/budget-versions.json decision #1"
   },
   "pages": {
     "1": [
@@ -128,7 +128,7 @@
   "approval": "Frank approved proof v2 in chat 2026-11-24 5:59 PM ET (\"looks good now, let's publish\"). Eye check PASS, --verify SENDABLE (sha256 91c25d19e856).",
   "published": {
     "at": "2026-11-24",
-    "commit": "PENDING",
+    "commit": "531e5ff",
     "via": "scripts/publish_issue.py 2026-11-24"
   }
 }
