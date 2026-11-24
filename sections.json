@@ -38,7 +38,7 @@
     {
       "id": "club-results",
       "name": "Club Results",
-      "status": "configured 2026-10-20; inclusion bar 2026-10-26",
+      "status": "configured 2026-10-20; inclusion bar 2026-10-26; print-scope reaffirmed 2026-11-24",
       "priority": "core",
       "frequency": "when_available",
       "frequency_detail": "only when a finish meets the inclusion bar (see rules), or a medal, qualification or rating earned",
@@ -55,7 +55,8 @@
         "Inclusion bar by event level (Frank 2026-10-26): a finish prints if it is top 32 at a national (FIE/international events count as national or higher), top 16 at a regional, or top 8 at a local. Small fields (under ~16 fencers): only top 8 or a medal counts. Always print, at any level: a medal (top 3), a qualification, or a rating earned. Anything below the bar is not printed.",
         "Qualifying is the result (Frank 2026-10-20): whether someone qualified matters most, and it's sensitive; print 'qualified for X', placement not the headline (omit by default)",
         "No 'also fenced' line; nobody embarrassed",
-        "No birth years; schools per global school rule"
+        "No birth years; schools per global school rule",
+        "The same inclusion bar is a general print rule, not only a box rule: it applies to captions, leads, shorts, notes, and deadlines. A vetted fact, or a staging note that parks other finishes 'in the article,' is not a waiver. Frank must clear a below-bar place for print explicitly (HTML: data-results-bar-ok). Compose fails unmarked printed 'Nth of M' that miss the bar (compose/results_bar.py)."
       ],
       "last_ran": null,
       "last_ran_note": "to verify from published issues"
@@ -175,7 +176,7 @@
         "When tight: fewer tournaments before fewer names",
         "Multi-day tournament = one block, days in order",
         "No '(Epee)' labels",
-        "Do not recommend NJFA tournaments for now (Frank budget submission 2026-11-16): unreliable organizers; padded signups; turnout often 1–2; they push their class afterwards. Do not list NJFA on this board until Frank lifts the hold."
+        "Do not recommend NJFA tournaments for now (Frank budget submission 2026-11-16): unreliable organizers; padded signups; turnout often 1\u20132; they push their class afterwards. Do not list NJFA on this board until Frank lifts the hold."
       ],
       "last_ran": 3
     },
@@ -483,15 +484,15 @@
       "lead_time": "a week+ if art must be made",
       "placement": "usually page 2",
       "rules": [
-        "First run prints normally; a rerun carries a small tag, e.g. 'From the Vault · first ran in No. 2'",
+        "First run prints normally; a rerun carries a small tag, e.g. 'From the Vault \u00b7 first ran in No. 2'",
         "Re-check facts before any rerun",
         "Line art preferred for figures (cheap B&W)",
         "Labels fact-checked",
         "Vault entries are listed in 'entries' with the issue they first ran in (rerun tag uses that number)"
       ],
       "examples": [
-        "THE WEAPON (exploded epee) — first ran in No. 2",
-        "Want to Referee? Start at the Club (how to become a referee) — first ran in No. 4",
+        "THE WEAPON (exploded epee) \u2014 first ran in No. 2",
+        "Want to Referee? Start at the Club (how to become a referee) \u2014 first ran in No. 4",
         "Planned: changing a tip screw + tip screw types (idea bank)",
         "First-hand interviews"
       ],
@@ -512,12 +513,13 @@
           "source_item": "chat-become-a-referee-placeholder-2026-10-13",
           "added": "2026-10-26",
           "added_by": "Frank, chat 2026-10-26 ('should probably go in the vault')",
-          "notes": "~270 words from USA Fencing's become-a-referee page + Regional Tournament Requirements 2026-28. First run in No. 4 prints with no tag; reruns carry 'From the Vault · first ran in No. 4'. Re-check P/L/R steps, exam score, ages and pay facts before any rerun."
+          "notes": "~270 words from USA Fencing's become-a-referee page + Regional Tournament Requirements 2026-28. First run in No. 4 prints with no tag; reruns carry 'From the Vault \u00b7 first ran in No. 4'. Re-check P/L/R steps, exam score, ages and pay facts before any rerun."
         }
       ]
     }
   ],
   "house_rules_global": [
+    "Results tone \u2014 strong finishes only (STYLE-GUIDE \u00a70d; Frank 2026-10-12 / 2026-10-26; print-scope reaffirmed 2026-11-24): never print a weak finish or place, in the Club Results box, captions, leads, shorts, notes, or deadlines. Inclusion bar: top 32 national (FIE/international = national+), top 16 regional, top 8 local; small fields under ~16: top 8 or a medal; always a medal, qualification, or rating earned; no bottom-half places; no 'also fenced' line. Vetting a fact is not permission to print a below-bar place \u2014 Frank must clear that place for print explicitly.",
     "Schools (Frank 2026-10-20): a high schooler's school may print when it appears on an official results page and is relevant (e.g. NJ HS roundup); otherwise leave it out. Never print a middle/elementary schooler's school. (Replaces the old 'Brendan's school never prints' caution, which was only about an unverified school.)",
     "No birth years",
     "Names as on official pages",

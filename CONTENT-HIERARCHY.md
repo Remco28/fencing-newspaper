@@ -14,7 +14,9 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 - Pipeline (Staging → Clean → Budget → Proof) and vetting: **STAGING.md**. Sources and cadence:
   **SOURCES.md**. This file owns slot order + budgets only.
 - **House rules that apply to every row:** invent nothing (STYLE-GUIDE §0b); no club "Epee" labels
-  (§0c); results tone — strong finishes only, no "also fenced" line (§0d; master: `sections.json`); no
+  (§0c); results tone — strong finishes only, in every printed place (box, captions, leads, shorts,
+  notes, deadlines), no "also fenced" line of weak places (§0d; master: `sections.json` plus
+  `compose/results_bar.py`); vetting a fact is not permission to print a below-bar place; no
   bylines except real guest authors (PLAN §1b); no Reddit/X usernames; no minors' personal accounts.
 
 ### Source key (used in the table)
@@ -32,7 +34,7 @@ hasn't set yet — see "Open questions for Frank" at the bottom.
 | # | Slot | Rough guide | Source | Notes |
 |---|------|--------|--------|-------|
 | 1 | Lead story | ~150–180w | FT / Web / Email | Weekend's biggest epee result (club result if strong, else national/NJ). |
-| 2 | Club results box | ~3–5 strong rows | FT / Email / Chat | Elite FC finishes, always in. **Strong results only** — bar by level (Frank 2026-10-26): top 32 national (FIE/international = national+), top 16 regional, top 8 local; fields under ~16: top 8 or medal only; always a medal, qualification or rating earned; everyone else is not printed — **no "also fenced" line** (Frank 2026-10-20) — STYLE-GUIDE §0d; master rules in `sections.json`. |
+| 2 | Club results box | ~3–5 strong rows | FT / Email / Chat | Elite FC finishes, always in. **Strong results only** — bar by level (Frank 2026-10-26): top 32 national (FIE/international = national+), top 16 regional, top 8 local; fields under ~16: top 8 or medal only; always a medal, qualification or rating earned; everyone else is not printed — **no "also fenced" line** (Frank 2026-10-20) — STYLE-GUIDE §0d. The same bar applies to leads, shorts, captions, notes and deadlines, not only this box; parking a weak finish "in the article" is not allowed unless Frank clears that place for print. Master rules in `sections.json`; compose enforces printed "Nth of M" via `compose/results_bar.py`. |
 | 3 | Ratings earned | ~2–5 rows | FT / Email | Celebration; always in **when any were earned** (none posted for No. 2). |
 | 4 | Secondary article A | ~80–100w | Web (USA Fencing / national) | Beefier news or explainer, not just scores. |
 | 5 | Secondary article B | ~80–100w | Web (FIE / national / regional) | Drop first if tight. |

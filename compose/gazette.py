@@ -24,7 +24,7 @@ What lives here
   box_table()           a box in its tall (one column) or wide (two halves) shape
   masthead(), dateline(), footer(), page(), document(), write_issue()
   PAGE_CONTENT_IN    Letter content box (10.1in): 11in minus 0.5in top and 0.4in bottom
-  check_issue()         compose-time checks (credit form, weapon spelling)
+  check_issue()         compose-time checks (credit form, weapon spelling, results bar)
 """
 import html, json, math, re, sys
 from pathlib import Path
@@ -44,6 +44,11 @@ except Exception:                                          # composing still wor
 SHY = "­"
 NBH = "‑"  # U+2011 non-breaking hyphen; preserves compounds like regular-fee
 WARNINGS = []
+
+try:
+    from results_bar import find_weak_places, format_flags as results_bar_flags
+except ImportError:
+    from compose.results_bar import find_weak_places, format_flags as results_bar_flags
 
 
 def warn(msg):
@@ -571,11 +576,19 @@ def document(title, pages, extra_css="", author="Nico's Dad"):
 
 
 def check_issue(doc):
-    """Compose-time checks that warn (they never rewrite approved copy)."""
+    """Compose-time checks. Spelling and credit form warn; a below-bar printed place fails."""
     text = plain(re.sub(r"<style>.*?</style>", "", doc, flags=re.S))
     a = len(re.findall(r"\bépée\b", text)); b = len(re.findall(r"\bepee\b", text))     # lowercase = running text
     if a and b:
         warn(f"weapon spelled two ways in one issue: 'épée' x{a}, 'epee' x{b} (A9: lock one in VOCABULARY.md)")
+
+    # STYLE-GUIDE §0d: a printed "Nth of M" below the inclusion bar (or in the
+    # bottom half of the field) is a compose failure unless Frank has marked
+    # that place with data-results-bar-ok. Item-level vetting is not a waiver.
+    weak = find_weak_places(text, html=doc)
+    for msg in results_bar_flags(weak):
+        raise SystemExit("compose FAIL: " + msg)
+
     for m in re.finditer(r'<p class="credit">(.*?)</p>', doc, flags=re.S):
         text = plain(m.group(1))
         try:

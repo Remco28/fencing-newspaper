@@ -55,7 +55,7 @@
     text-align: center; font-weight: 400; }
   .dateline { text-align: center;
     border-top: 3pt double #000; border-bottom: 2pt solid #000;
-    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 0 0; }
   .dateline .edition {
     font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
     font-weight: 700; font-size: 12.5pt; line-height: 1.02;
@@ -72,9 +72,16 @@
   .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: var(--gap-gutter); }
   .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
   /* THE page-level rhythm rule: every stacked block after the dateline gets --gap-block above
-     it, whatever its class (box, box-pair, split, piece, art). Blocks carry no bottom margin. */
+     it, whatever its class (box, box-pair, split, piece, art). Blocks carry no bottom margin.
+     The first content block after the dateline MUST be included. The 2026-11-16 token
+     refactor (29d34e7) used `.page > :not(.masthead, .dateline) + …`, which skips that
+     first block, and `.page > * { margin-bottom: 0 }` zeroed the dateline's old 4pt
+     bottom margin (higher specificity than `.dateline`). Boxes then sat against the
+     PAGE TWO header rule (Frank, No. 8 proof v1, 2026-11-24). Both pages use this
+     same gap so page 2 matches page 1 and the No. 6 approved look. */
   .page > * { margin-bottom: 0; }
   .page > .art, .page > .fill-art { margin-top: 0; margin-bottom: 0; }
+  .page > .dateline + :not(.footer),
   .page > :not(.masthead, .dateline) + :not(.footer) { margin-top: var(--gap-block); }
   /* Any other side-by-side split of prose (A12): always ruled, like the thirds. */
   .split, .page2-lower { display: flex; gap: var(--gap-gutter); align-items: stretch; }
@@ -230,8 +237,8 @@
 <p>The day‑by‑day sched­ule isn’t posted yet. Parking details are on the con­ven­tion center’s web­site, and USA Fencing books hotels through its offi­cial provider.</p>
 <p>Already entered from Elite FC: Noah Gore (Y14 Men, Fri. Mar. 5; Division II Men, Sat. Mar. 6), Caden Wu (Division II Men, Sat.), Christina Jiang and Mila Siu (Y12 Women, Sat.), and Mila Siu (Y14 Women, Sun. Mar. 7).</p></div>
 <div class="split" data-balance="split"><div style="flex:1"><div class="rail-block"><div class="rail-title">Fair Play</div><h2 class="head">The Touch He Gave Back</h2><p>The FIE named Kruz Schembri, the world’s No. 1 junior men’s epee fencer, a co‑winner of its 2026 Fair Play Trophy at its annual awards gala in Budapest on Sunday, Nov.&nbsp;22. The award rec­og­nized a moment at this year’s Senior World Championships in Hong Kong: Schembri was tied 13–13 in a round‑of-32 bout with Italy’s Davide Di Veroli when he was awarded a touch that would have put him one away from win­ning. He told the ref­eree he had hit him­self and refused the touch. Di Veroli won the bout 15–13 and went on to take silver at the cham­pi­onships. Schembri shared the trophy with Gilles Martinage, the French team’s armorer, who had fixed Schembri’s weapons in Hong Kong after three of his four blades failed inspec­tion. Schembri, 20, rep­re­sents the U.S. Virgin Islands. The same gala hon­ored the season’s other epee No. 1s: Alberta Santuccio of Italy and Mohamed Elsayed of Egypt among the seniors, and Sofija Prošina of Latvia among junior women.</p></div>
-<div class="rail-block"><div class="rail-title">Club Events</div><h2 class="head">Club Closed Wednesday Through Friday</h2><p>Elite FC will be closed Wednesday, Nov.&nbsp;25, through Friday, Nov.&nbsp;27, for the Thanksgiving hol­i­day, includ­ing Friday, when the Cobra Challenge begins. Regular classes resume Saturday, Nov.&nbsp;28.</p></div></div><div style="flex:1"><div class="slot-a"><div class="rail-title">November NAC</div><h2 class="head">Nico Ng 15th of 136 in Cadet Challenger</h2><p>The November NAC was held at the Greater Columbus Convention Center, Nov.&nbsp;20–23. Cadet, Junior and Division I events at the November NAC in Columbus were split into two com­pe­ti­tions, Elite and Challenger, when­ever an event had 169 or more entries. Places are within each field, not across the com­bined entry list.</p>
-<p>Nico Ng fin­ished 15th of 136 in Cadet Men’s Epee (Challenger) on Saturday, Nov.&nbsp;21. He also placed 90th of 235 in Junior Men’s Epee (Challenger) on Sunday. Athreya Aravind was 83rd of 116 in Junior Men’s Epee (Elite) on Sunday and 55th of 229 in Division I Men’s Epee (Challenger) on Monday. Anayaa Sheth was 85th of 107 in Junior Women’s Epee (Challenger) on Friday, Nov.&nbsp;20. None of the five Elite FC results earned a rating.</p></div>
+<div class="rail-block"><div class="rail-title">Club Events</div><h2 class="head">Club Closed Wednesday Through Friday</h2><p>Elite FC will be closed Wednesday, Nov.&nbsp;25, through Friday, Nov.&nbsp;27, for the Thanksgiving hol­i­day, includ­ing Friday, when the Cobra Challenge begins. Regular classes resume Saturday, Nov.&nbsp;28.</p></div></div><div style="flex:1"><div class="slot-a"><div class="rail-title">November NAC</div><h2 class="head">Nico Ng 15th of 136 in Cadet Challenger</h2><p>The November NAC was held at the Greater Columbus Convention Center in Columbus, Ohio, Nov.&nbsp;20–23. Cadet, Junior and Division I events were split into two com­pe­ti­tions, Elite and Challenger, when­ever an event had 169 or more entries. Places are within each field, not across the com­bined entry list. The four‑day event drew 257 offi­cial com­peti­tors in Cadet Men, 357 in Junior Men, 221 in Junior Women and 358 in Division I Men.</p>
+<p>Nico Ng fin­ished 15th of 136 in Cadet Men’s Epee (Challenger) on Saturday, Nov.&nbsp;21. Three Elite FC fencers were in Columbus: Nico, Athreya Aravind and Anayaa Sheth, across Cadet, Junior and Division I events. The next national tour­na­ment on the club cal­en­dar is the December Super Junior and Cadet Circuit in Milwaukee, Dec.&nbsp;4–6.</p></div>
 <div class="rail-block"><div class="rail-title">Club Events</div><h2 class="head">Holiday Party: Friday, Dec.&nbsp;11</h2><p>This year’s Elite FC hol­i­day party will be Friday, Dec.&nbsp;11. There will be food, drinks and snacks, and every­one is wel­come. Please mark your cal­en­dars; the club hopes you can join to cel­e­brate every­thing we have accomplished.</p></div></div></div>
 </div>
 <div class="c">

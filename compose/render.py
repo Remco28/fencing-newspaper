@@ -326,6 +326,22 @@ INSTRUMENT_JS = r"""
     };
     scan(p, 'page');
     p.querySelectorAll('.cols3 > .c').forEach((c, ci) => scan(c, 'column ' + (ci + 1)));
+    // Gap below the dateline's bottom header rule (the 2pt solid line) to the next
+    // content, including a box's top border. scan() skips .dateline, so this is
+    // a dedicated check (Frank, No. 8 proof v1: boxes sat against PAGE TWO).
+    const header_gaps = [];
+    const dl = p.querySelector(':scope > .dateline');
+    if (dl) {
+      let nxt = dl.nextElementSibling;
+      while (nxt && nxt.matches('.footer, style, script')) nxt = nxt.nextElementSibling;
+      if (nxt) {
+        const ab = dl.getBoundingClientRect().bottom;
+        const bt = visTop(nxt);
+        if (isFinite(ab) && isFinite(bt)) {
+          header_gaps.push({ above: 'dateline', below: lab(nxt), gap: +(bt - ab).toFixed(1) });
+        }
+      }
+    }
     // Body-copy density on this page (words per square inch of paragraph area), for word targets.
     let words = 0, area = 0;
     p.querySelectorAll('p').forEach(el => {
@@ -348,7 +364,7 @@ INSTRUMENT_JS = r"""
     const fb = f ? f.getBoundingClientRect() : { bottom: pr.top };
     // Expected content-box bottom is pageTop + 10.1in, even if .page shrink-wrapped.
     const footer_drop = +((pr.top + 10.1 * 96) - fb.bottom).toFixed(1);
-    return { page: i + 1, last: label(last), gaps: cols, rows, holes, block_gaps, words_per_sq_in, img_rects,
+    return { page: i + 1, last: label(last), gaps: cols, rows, holes, block_gaps, header_gaps, words_per_sq_in, img_rects,
              overflow: +Math.max(p.scrollHeight - p.clientHeight, pr.height - 10.1 * 96).toFixed(1),
              footer_drop, page_h: +pr.height.toFixed(1) };
   });
@@ -471,6 +487,14 @@ def report(m):
         if bgs:
             print(f"page {pg['page']}: {len(bgs)} inter-block gaps {min(bgs):.1f}-{max(bgs):.1f}pt "
                   f"(token {BLOCK_GAP_PT:g}pt)")
+        for hg in pg.get("header_gaps") or []:
+            pt = (hg.get("gap") or 0) * 0.75
+            tag = "OK" if pt >= BLOCK_GAP_MIN_PT else "FLAG"
+            msg = (f"page {pg['page']}: content ({hg.get('below')}) {pt:.1f}pt below the dateline "
+                   f"header rule (token {BLOCK_GAP_PT:g}pt; minimum {BLOCK_GAP_MIN_PT:g}pt) [{tag}]")
+            print(msg)
+            if tag == "FLAG":
+                flags.append(msg)
         for hole in pg.get("holes") or []:
             gap_in = inch(hole.get("gap") or 0)
             loc = hole.get("where") or "float"

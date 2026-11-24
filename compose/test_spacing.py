@@ -32,7 +32,9 @@ def check(name, cond, detail=""):
 css = g.base_css()
 print("=== spacing tokens ===")
 check("--gap-block token is defined at 7pt", "--gap-block: 7pt" in css)
-check("one page-level rhythm rule", css.count(".page > :not(.masthead, .dateline) + :not(.footer)") == 1)
+check("one page-level rhythm rule includes the first block after the dateline",
+      ".page > .dateline + :not(.footer)" in css
+      and css.count(".page > :not(.masthead, .dateline) + :not(.footer)") == 1)
 check("one column rhythm rule", css.count(".c > * + :not(p), .c > :not(p) + p") == 1)
 check("render.py's token matches the CSS", abs(R.BLOCK_GAP_PT - 7.0) < 1e-9)
 check("photo pairs have no column rule", ".split.pair > * + * { border-left: none" in css)
@@ -86,6 +88,15 @@ if rep.is_file():
     check("box to box-pair is exactly the token (no touching borders)",
           box_gaps and all(abs(x - 7.0) <= 0.6 for x in box_gaps), box_gaps)
     check("instrument reports picture rectangles", any(pg.get("img_rects") for pg in data["pages"]))
+    # Regression (Frank, No. 8 proof v1): content must not sit against a page header rule.
+    header = [(pg["page"], (hg.get("gap") or 0) * 0.75)
+              for pg in data["pages"] for hg in pg.get("header_gaps") or []]
+    print("  header gaps (pt):", header)
+    check("each page reports a dateline-to-content header gap",
+          {p for p, _ in header} >= {1, 2}, header)
+    bad_h = [x for x in header if x[1] < R.BLOCK_GAP_MIN_PT]
+    check("header-rule gap is at least the token minimum on every page",
+          not bad_h, bad_h)
 
 # ----- Chrome: unwrapLonelySplits never hoists a bare flex cell ---------------
 print("=== Chrome: fit.js unwrap fix ===")

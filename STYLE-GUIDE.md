@@ -76,18 +76,22 @@ Elite FC is **epee-only**, so the word is redundant on anything about our club a
   cleaned in v3.20 — do not reintroduce them when copying a past issue (the approved
   2026-10-08 issue still carries “(All Epee)” and “Finish (Epee)”; drop them when reusing it).
 
-## 0d. Results tone — strong finishes only (locked 2026-10-12, plan v3.23; inclusion bar 2026-10-26)
+## 0d. Results tone — strong finishes only (locked 2026-10-12, plan v3.23; inclusion bar 2026-10-26; print-scope reaffirmed 2026-11-24)
 
-**Never print a weak finish or place.** Policy from Frank (chat 2026-10-12), permanent.
+**Never print a weak finish or place. This is a general print rule, not only a Club Results box rule.** Policy from Frank (chat 2026-10-12), permanent. Reaffirmed 2026-11-24 when below-bar November NAC places reached print in a short: the bar had been applied to the box, but article copy still printed weak finishes that had been staged as facts.
 - **Inclusion bar by event level (Frank 2026-10-26; supersedes the vaguer podium/top-8/climb list):**
   a finish prints if it is **top 32 at a national** (FIE/international events count as national or higher),
   **top 16 at a regional**, or **top 8 at a local**. **Small fields** (under ~16 fencers): only top 8 or a medal counts.
+  A place in the **bottom half of the field** also does not print, even if some other reading might seem kind.
 - **Always print, at any level:** a medal (top 3), a qualification, or a rating earned.
-- Everyone else is simply **not printed** — **no "also fenced" / "also attended" line**
+- Everyone else is simply **not printed** — **no "also fenced" / "also attended" line** of weak places
   (Frank, 2026-10-20; supersedes the 2026-10-12 also-fenced line). Nobody embarrassed.
+  Naming who competed, without a place, is allowed only when Frank asks for a kind mention; it is not a vehicle for publishing a poor result.
 - **When unsure, leave it out.** Never print a place to fill a row.
-- Master for Club Results rules: `sections.json` (`club-results.rules`).
-- Applies to the club results box, captions, lead/secondary copy about our fencers, and boards.
+- **Vetting is not a print waiver.** Confirming that a place is factually correct (or parking it in `print_hint` / a "put the other finishes in the article" note) does **not** authorize printing a below-bar place. Frank must clear that place for print explicitly. In HTML, that mark is `data-results-bar-ok` on the element.
+- **Enforcement:** `compose/results_bar.py` scans every printed "Nth of M" at compose time (`check_issue`). A below-bar or bottom-half place fails the compose unless it is waived as above. Run the same reading when staging the Monday pile and when filling the Budget (see STAGING.md and `staging/weeks/next/COMPOSE.md`).
+- Master for Club Results rules: `sections.json` (`club-results.rules`). Those box rules are the same bar; they do not exhaust the rule's scope.
+- Applies to **every printed word**: the club results box, captions, leads, shorts, secondary copy, boards, notes, and deadlines.
 
 ## 1. Page
 - US Letter, 1 sheet front + back = exactly 2 PDF pages. Never 1.5, never 3.
@@ -189,6 +193,12 @@ Render to PDF, rasterize pages to PNG, and LOOK at them. Checklist:
 - [ ] Art-fit (§19): each illustration keeps its aspect (no silent crop); flush to the
       column grid when a stack or float fits; a fit FLAG or a side gutter over ~0.25in
       is a defect?
+- [ ] Header-rule gap: first content on each page sits a full `--gap-block` (7pt, never
+      under 5pt) below the dateline's bottom rule — boxes especially must not kiss the
+      PAGE TWO / edition rule? (instrument `header_gaps`; a FLAG fails the eye check)
+- [ ] Results tone (§0d): no printed "Nth of M" below the inclusion bar or in the bottom
+      half of the field (box, captions, shorts, notes, deadlines) unless Frank cleared
+      that place for print? Compose fails the rest automatically.
 Any NO = fix, re-render, re-check. Fitting on the page is necessary but NOT sufficient —
 it must look purpose-built for this club. **A proof is not “done” (and no “proof ready”
 doorbell goes out) until Clark has opened and inspected every page PNG** of the current render

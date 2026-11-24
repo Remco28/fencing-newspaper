@@ -2,9 +2,9 @@
   "issue": 8,
   "vol": "I",
   "date": "2026-11-24",
-  "dateline": "Tuesday Edition \u00b7 Vol. I \u2014 No. 8 \u00b7 Chatham, N.J. \u00b7 November 24, 2026",
-  "status": "PROOF v1 \u2014 not published. Eye check PASS / SENDABLE. Clark looked at both 200 dpi previews. Do not publish until Frank approves.",
-  "proof_version": 1,
+  "dateline": "Tuesday Edition · Vol. I — No. 8 · Chatham, N.J. · November 24, 2026",
+  "status": "PROOF v2 — not published. Eye check PASS / SENDABLE. Clark looked at both 200 dpi previews. Do not publish until Frank approves.",
+  "proof_version": 2,
   "proof_history": [
     {
       "v": 1,
@@ -36,16 +36,48 @@
         "checked_at": "2026-11-24T16:01:07-05:00"
       },
       "note": "Proof v1 from Frank's Manual Budget submission (2026-11-24 3:38 PM ET, budget v2, data ebead6e13faa). Ingest applied 7 vets; no ingest warnings. Page/column map honored: March NAC feature is the span-2 top of page 1; the Cobra SYC explainer is the page-2 lead under the Cobra board. Thanksgiving was moved from under the NAC photo to under Fair Play so the page-1 columns fill; the portrait NAC photo stacks at rail width (3.15in tall, over the 2.2in soft ceiling, under the 4.5in hard cap). Captions follow Frank's notes (Christina in first place; Remy coaching Nico). Club results is the table only (Nico 15th of 136 Cadet Challenger; Christina 1st of 4) plus a one-line Challenger-field note. Eye check PASS; Clark inspected both official 200 dpi previews. Not published."
+    },
+    {
+      "v": 2,
+      "at": "2026-11-24T16:53:41-05:00",
+      "arrangement": "manual",
+      "lengths": {
+        "lead": "standard",
+        "fair-play": "standard",
+        "college": "short",
+        "party": "long",
+        "thanksgiving": "standard",
+        "by-the-book": "standard",
+        "march-nac": "standard"
+      },
+      "word_counts": {
+        "lead": 541,
+        "fair-play": 165,
+        "college": 52,
+        "party": 38,
+        "thanksgiving": 29,
+        "by-the-book": 91,
+        "march-nac": 284,
+        "november-nac": 128
+      },
+      "eye_check": {
+        "verdict": "PASS",
+        "pdf_sha256": "91c25d19e85622037390c6533252f3ac2208cf2f5ff3faba3d6417df3506761a",
+        "model": "sonnet (claude-sonnet-5-5)",
+        "clark_looked": true,
+        "checked_at": "2026-11-24T16:53:41-05:00"
+      },
+      "note": "Proof v2 after Frank's 4:40 PM ET review of v1. Shared CSS fix: first content after the dateline now gets --gap-block (7pt) so boxes no longer sit against the PAGE TWO header rule (root cause: 29d34e7 zeroed the dateline's 4pt bottom margin and the new sibling selector skipped the first block; the instrument also skipped .dateline). Manual placement unchanged. November NAC short rewritten at the same length (128w): dropped Athreya 83rd/116 and 55th/229, Anayaa 85th/107, and Nico's Junior 90th/235; kept Nico's cadet 15th of 136; named who competed without those places; filled with verified Columbus / split-format / field-scale / December SJCC facts. STYLE-GUIDE §0d made prominent as a general print rule; checklists in COMPOSE.md and STAGING.md 2b; compose fails an unmarked below-bar 'Nth of M' (compose/results_bar.py). Header-rule gap is now instrumented and FLAGs under 5pt. Eye check PASS; Clark inspected both official 200 dpi previews. Not published."
     }
   ],
-  "composed_at": "2026-11-24T16:00:31-05:00",
+  "composed_at": "2026-11-24T16:53:41-05:00",
   "pdf": "issues/2026-11-24/en-garde-gazette-no-8-2026-11-24.pdf",
   "previews": [
     "issues/2026-11-24/preview-p1.png",
     "issues/2026-11-24/preview-p2.png"
   ],
   "pdf_metadata": {
-    "Title": "En Garde Gazette \u2014 Vol. I No. 8 \u2014 November 24, 2026",
+    "Title": "En Garde Gazette — Vol. I No. 8 — November 24, 2026",
     "Author": "Nico's Dad"
   },
   "build": "python3 issues/2026-11-24/recipe/compose.py x && python3 compose/render.py issues/2026-11-24/issue.html issues/2026-11-24/en-garde-gazette-no-8-2026-11-24.pdf --author=\"Nico's Dad\" --report=issues/2026-11-24/fit-report.json --fit-report=issues/2026-11-24/art-fit.json && python3 compose/eyecheck.py issues/2026-11-24/en-garde-gazette-no-8-2026-11-24.pdf --report=issues/2026-11-24/fit-report.json && python3 compose/eyecheck.py --verify issues/2026-11-24/en-garde-gazette-no-8-2026-11-24.pdf",
@@ -63,30 +95,34 @@
     "1": [
       "Span 2: March NAC Comes to Atlantic City (kicker: A National Tournament Next Door), then a split of Fair Play: The Touch He Gave Back + Thanksgiving / November NAC short + Holiday Party",
       "Rail: Club Results (table only: Nico Ng 15th of 136 Cadet Challenger; Christina Jiang 1st of 4 Y12 Women, plus a Challenger-field note), Jiang podium photo, NAC strip photo (Remy coaching Nico)",
-      "FILL: footer gaps 0.16in / 0.24in [OK]; row-1 column spread 0.08in [OK]; split spread 0.26in [OK]; inter-block gaps 7.0\u20138.3pt; no FLAGs"
+      "FILL: footer gaps 0.07in / 0.15in [OK]; row-1 column spread 0.08in [OK]; split spread 0.26in [OK]; inter-block gaps 7.0–8.3pt; header-rule gap 7.0pt [OK]; no FLAGs"
     ],
     "2": [
       "Nearby Tournaments: Cobra Challenge SYC/RCC (16 fencers / 26 entries, all approved) | On the Road: December SJCC (3 fencers, 5 approved entries)",
       "Lead (span 2): This Weekend at Cobra: What an SYC Is, and Why It Matters (541w)",
       "Rail: Deadlines, By the Book: Two of Everything, College Season Opens Next Door",
-      "FILL: footer gaps 0.24in / 0.19in [OK]; Cobra/road spread 0.09in [OK]; lead/rail spread 0.05in [OK]; inter-block gaps 6.2\u20137.9pt; no FLAGs"
+      "FILL: footer gaps 0.14in / 0.09in [OK]; Cobra/road spread 0.09in [OK]; lead/rail spread 0.05in [OK]; inter-block gaps 6.2–7.9pt; header-rule gap 7.0pt [OK]; no FLAGs"
     ]
   },
   "fill": {
-    "p1_gap_in": 0.24,
+    "p1_gap_in": 0.15,
     "p1_col_gaps_in": [
-      0.16,
-      0.24
+      0.07,
+      0.15
     ],
     "p1_row1_spread_in": 0.08,
     "p1_split_spread_in": 0.26,
-    "p2_gap_in": 0.24,
+    "p2_gap_in": 0.14,
     "p2_col_gaps_in": [
-      0.24,
-      0.19
+      0.14,
+      0.09
     ],
     "p2_row1_spread_in": 0.09,
     "p2_row2_spread_in": 0.05,
-    "footer_drop_in": 0.0
+    "footer_drop_in": 0.0,
+    "header_gap_pt": {
+      "1": 7.0,
+      "2": 7.0
+    }
   }
 }

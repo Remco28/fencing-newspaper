@@ -1291,8 +1291,8 @@
       "id": "ft-november-nac-results-2026-11-24",
       "kind": "result",
       "headline": "Nico Ng 15th of 136 in Cadet Challenger at the November NAC",
-      "body": "Cadet, Junior and Division I events at the November NAC in Columbus were split into two competitions, Elite and Challenger, whenever an event had 169 or more entries. Places are within each field, not across the combined entry list.\n\nNico Ng finished 15th of 136 in Cadet Men's Epee (Challenger) on Saturday, Nov. 21. He also placed 90th of 235 in Junior Men's Epee (Challenger) on Sunday. Athreya Aravind was 83rd of 116 in Junior Men's Epee (Elite) on Sunday and 55th of 229 in Division I Men's Epee (Challenger) on Monday. Anayaa Sheth was 85th of 107 in Junior Women's Epee (Challenger) on Friday, Nov. 20. None of the five Elite FC results earned a rating.",
-      "word_count": 117,
+      "body": "The November NAC was held at the Greater Columbus Convention Center in Columbus, Ohio, Nov. 20–23. Cadet, Junior and Division I events were split into two competitions, Elite and Challenger, whenever an event had 169 or more entries. Places are within each field, not across the combined entry list. The four-day event drew 257 official competitors in Cadet Men, 357 in Junior Men, 221 in Junior Women and 358 in Division I Men.\n\nNico Ng finished 15th of 136 in Cadet Men's Epee (Challenger) on Saturday, Nov. 21. Three Elite FC fencers were in Columbus: Nico, Athreya Aravind and Anayaa Sheth, across Cadet, Junior and Division I events. The next national tournament on the club calendar is the December Super Junior and Cadet Circuit in Milwaukee, Dec. 4–6.",
+      "word_count": 128,
       "source": "web",
       "from": null,
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
@@ -1365,8 +1365,8 @@
         }
       ],
       "field_note": "Cadet, Junior and Division I events at this NAC split into Elite and Challenger when an event had 169 or more entries (official format page; November NAC split date Nov. 5). Official results on member.usafencing.org interleave the two fields in one table and show a combined entrant count (CDTME 257, JNRME 351 finishers / 357 official competitors, JNRWE 220 / 221, DV1ME 349 placed + 1 DNF / 358). The official entrants list for each event labels each fencer 'Approved Elite Field' or 'Approved Challenger Field', and official place numbers restart in each field (both fields have a 1st, 2nd and 3rd). 'of N' is the number of finishers in that fencer's field, from the official results table joined to the official field label. Earlier staging used the combined counts (15th of 257, etc.); that was wrong. FencingTracker and fencing-api also reported the combined denominators and treated same place labels across fields as ties (e.g. Nico and Alexander Luo both 15.5, but Luo was Elite). Within each field the Elite FC places are unique. Finisher counts: CDTME Elite 121 / Challenger 136 (all 257 approved entrants finished); JNRME Elite 116 / Challenger 235 (357 approved, 6 no-shows); JNRWE Elite 113 / Challenger 107 (221 approved, 1 Challenger no-show); DV1ME Elite 121 / Challenger 229 (358 approved, 8 no-shows; one Elite DNF, Moore, Shomari, is among the 121 Elite results and is not Elite FC).",
-      "print_hint": "Respectful, results-focused NAC short (not the lead). Explain the Elite/Challenger split in a sentence. Use within-field denominators, not the combined 257/351/220/349 figures. Do not say 'tied' for the Elite FC places (those earlier ties were a merged-list artifact). Club Results box: only Nico's cadet 15th of 136. Do not caption the club NAC strip photo as Nico (email does not name the people in it).",
-      "vet_notes": "Frank t240u, 2026-11-24: asked to talk about the November NAC and flagged the 15th-of-257 denominator (Elite/Challenger split; he guessed ~138). Treated as vetted per that request. Corrected from official USA Fencing entrants (Elite Field / Challenger Field labels) + results tables, retrieved 2026-11-24 ~2:50 PM ET. Nico fenced Cadet and Junior in Challenger (15th of 136 cadet; 90th of 235 junior). Tone: kind, no commentary. Frank's private remark about the weekend is not for print. NAC strip photo remains unnamed.",
+      "print_hint": "Respectful, results-focused NAC short (not the lead). Explain the Elite/Challenger split in a sentence. Use within-field denominators for a fencer's place, not the combined 257/351/220/349 figures as an 'of N'. Combined official-competitor counts may be used as event scale only. Do not say 'tied' for the Elite FC places (those earlier ties were a merged-list artifact). Club Results box and the article: only Nico's cadet 15th of 136 may print as a place. Do not print Athreya's 83rd of 116 or 55th of 229, Anayaa's 85th of 107, or Nico's Junior 90th of 235 (STYLE-GUIDE §0d; Frank, proof v1 review, 2026-11-24 4:40 PM ET). Naming who competed, without those places, is the kind mention Frank allowed. Caption of the club NAC strip photo (confirmed in the Manual Budget): Remy Ng coaching Nico Ng; the cadet 15th may appear in the caption; do not add the dropped places.",
+      "vet_notes": "Frank t240u, 2026-11-24: asked to talk about the November NAC and flagged the 15th-of-257 denominator (Elite/Challenger split; he guessed ~138). Treated as vetted per that request. Corrected from official USA Fencing entrants (Elite Field / Challenger Field labels) + results tables, retrieved 2026-11-24 ~2:50 PM ET. Nico fenced Cadet and Junior in Challenger (15th of 136 cadet; 90th of 235 junior). Tone: kind, no commentary. Frank's private remark about the weekend is not for print. NAC strip photo remains unnamed. Frank, proof v1 review, 2026-11-24 4:40 PM ET: some NAC results weren't flattering to Athreya and Anayaa; do not publish poor results; keep the article the same length and fill with other verified NAC facts. Dropped from print: Athreya 83rd of 116 and 55th of 229, Anayaa 85th of 107, Nico Junior 90th of 235. Kept: Nico cadet 15th of 136. Kind mention of who competed, without those places, is allowed. Those four finishes remain here as staging facts and are not a print waiver.",
       "related_item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
       "related_media": [
         "media-efc-november-nac-photo-2026-11-23"
@@ -1459,7 +1459,7 @@
         }
       ],
       "created_at": "2026-11-24T08:01:14-05:00",
-      "updated_at": "2026-11-24T14:59:00-05:00",
+      "updated_at": "2026-11-24T16:50:00-05:00",
       "vetted_by": "frank",
       "vetted_at": "2026-11-24T14:59:00-05:00",
       "club_results_rows": [
@@ -1469,7 +1469,7 @@
           "15th of 136"
         ]
       ],
-      "club_results_note": "Only Nico's cadet 15th of 136 (Challenger) clears the national top-32 bar for the Club Results box. The other four NAC finishes are in the article, not the box (no 'also fenced' line)."
+      "club_results_note": "Only Nico's cadet 15th of 136 (Challenger) clears the national top-32 bar. The other four NAC finishes stay out of the box, the article, captions, notes and deadlines (STYLE-GUIDE §0d; no 'also fenced' line of weak places). The short may name Athreya Aravind and Anayaa Sheth as having competed, without places, per Frank 2026-11-24."
     },
     {
       "id": "askfred-bernards-hs-senior-open-2026-12-19",

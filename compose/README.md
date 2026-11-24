@@ -15,6 +15,8 @@ Going-forward home for the print compositor (adopted 2026-11-11 from the Fable d
 | `test_spacing.py` | Spacing tokens, the unwrap fix, copy lengths, and the eye check's offline parts (Chrome). |
 | `test_gazette.py` | Golden checks: `python3 compose/test_gazette.py`. |
 | `test_art.py` | Art-fit unit tests (no Chrome): `python3 compose/test_art.py`. |
+| `test_results_bar.py` | STYLE-GUIDE §0d results-bar unit tests (no Chrome): `python3 compose/test_results_bar.py`. |
+| `results_bar.py` | Inclusion-bar scan of printed "Nth of M" places (`check_issue` fails a below-bar place unless Frank marked `data-results-bar-ok`). |
 | `test_art_fixtures.py` | Chrome fixtures (writes only under `/tmp/gz-fixtures/`): `python3 compose/test_art_fixtures.py`. |
 | `recipe_template.py` | Starter recipe for the next issue. Copy it to `issues/<date>/recipe/compose.py` after the budget is approved. |
 | `vendor/` | `pyphen` (hyphenation), installed with `pip install --target compose/vendor pyphen`. |
@@ -68,9 +70,9 @@ boxes (`box_table(shape=)`), photo pair (`photo_pair()`) vs float, rail vs full 
 
 **Row balance** (`compose/balance.py`). After art-fit, a report-only pass lists every remaining in-row hole with a plain-words suggestion (grow/trim copy, scale art, another arrangement). It moves nothing. `--balance=pair` opts in to the one move left (two stacked photos side by side, kept only if the page gets better). It never dissolves a row, strips a neighbour or crops. `--no-balance` skips the pass.
 
-**Spacing tokens** (`template-a.css`). `--gap-block` 7pt between stacked blocks (one page-level rule, one column rule), `--gap-gutter` 9pt side by side, `--gap-inner` 3pt inside a block, `--gap-tight` 1.5pt for captions. Do not hand-set block margins elsewhere.
+**Spacing tokens** (`template-a.css`). `--gap-block` 7pt between stacked blocks (one page-level rule, one column rule), `--gap-gutter` 9pt side by side, `--gap-inner` 3pt inside a block, `--gap-tight` 1.5pt for captions. The first content block after the dateline is included: `.page > .dateline + :not(.footer)` so boxes do not sit against the PAGE TWO / edition header rule. Do not close that gap with a recipe override.
 
-**Checks at compose time.** Weapon spelled both "épée" and "epee" in running text: warning. A credit that still contains a file name or URL: warning (the strict check is on `photo()` / `credit_line()` so a published long credit is not rewritten).
+**Checks at compose time.** Weapon spelled both "épée" and "epee" in running text: warning. A credit that still contains a file name or URL: warning (the strict check is on `photo()` / `credit_line()` so a published long credit is not rewritten). A printed "Nth of M" below the STYLE-GUIDE §0d inclusion bar (or in the bottom half of the field) is a compose failure unless Frank cleared that place for print (`data-results-bar-ok`). Vetting an item as a fact is not a waiver. See `results_bar.py`.
 
 ## What the fill instrument reports
 
@@ -78,6 +80,7 @@ boxes (`box_table(shape=)`), photo pair (`photo_pair()`) vs float, rail vs full 
 - **Footer pin.** The footer's bottom edge vs the expected 10.1in content-box bottom, measured from the top of `.page` (not the element's used height). FLAG if the footer is more than 0.15in away from that bottom — this catches a shrink-wrapped page whose content-to-footer gap looks fine but leaves blank paper below the footer.
 - **Column bottom gaps** for every column, rail and box in every row band (the row content-box bottom minus that column's ink). FLAG over 0.35in. This is the in-row hole the footer-gap check cannot see.
 - **Float holes** beside a floated art slot (art vs wrapping text). FLAG over 0.35in.
+- **Header-rule gap.** Distance from the dateline's bottom rule to the next content (including a box's top border). FLAG under 5pt (`BLOCK_GAP_MIN_PT`); the token is 7pt `--gap-block`. This check is what the inter-block scan cannot see, because it skips `.dateline`.
 - **Column spread** for every multi-column row, including board halves and prose columns. FLAG over 0.5in.
 - **Type floor** across every element that holds text, including ears, captions, credits and kickers. FLAG under 7pt.
 - **Hyphenated line breaks.** Zero on a page with justified text prints a WARN.

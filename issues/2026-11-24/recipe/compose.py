@@ -181,10 +181,7 @@ MARCH = {
     "standard": items["desk-march-nac-feature-2026-11-23"]["body"],
 }
 
-NAC_BODY = (
-    "The November NAC was held at the Greater Columbus Convention Center, Nov. 20–23. "
-    + items["ft-november-nac-results-2026-11-24"]["body"]
-)
+NAC_BODY = items["ft-november-nac-results-2026-11-24"]["body"]
 
 FAIR = {
     "short": items["desk-secondary-fair-play-schembri-2026-11-23"]["body"],

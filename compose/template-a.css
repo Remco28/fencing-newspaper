@@ -48,7 +48,7 @@
     text-align: center; font-weight: 400; }
   .dateline { text-align: center;
     border-top: 3pt double #000; border-bottom: 2pt solid #000;
-    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 0 0; }
   .dateline .edition {
     font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
     font-weight: 700; font-size: 12.5pt; line-height: 1.02;
@@ -65,9 +65,16 @@
   .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: var(--gap-gutter); }
   .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
   /* THE page-level rhythm rule: every stacked block after the dateline gets --gap-block above
-     it, whatever its class (box, box-pair, split, piece, art). Blocks carry no bottom margin. */
+     it, whatever its class (box, box-pair, split, piece, art). Blocks carry no bottom margin.
+     The first content block after the dateline MUST be included. The 2026-11-16 token
+     refactor (29d34e7) used `.page > :not(.masthead, .dateline) + …`, which skips that
+     first block, and `.page > * { margin-bottom: 0 }` zeroed the dateline's old 4pt
+     bottom margin (higher specificity than `.dateline`). Boxes then sat against the
+     PAGE TWO header rule (Frank, No. 8 proof v1, 2026-11-24). Both pages use this
+     same gap so page 2 matches page 1 and the No. 6 approved look. */
   .page > * { margin-bottom: 0; }
   .page > .art, .page > .fill-art { margin-top: 0; margin-bottom: 0; }
+  .page > .dateline + :not(.footer),
   .page > :not(.masthead, .dateline) + :not(.footer) { margin-top: var(--gap-block); }
   /* Any other side-by-side split of prose (A12): always ruled, like the thirds. */
   .split, .page2-lower { display: flex; gap: var(--gap-gutter); align-items: stretch; }
