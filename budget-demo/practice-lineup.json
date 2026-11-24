@@ -48,9 +48,9 @@
  ],
  "seed_ids": [],
  "about": "Clark Kent's proposed lineup for staging/weeks/next. mode 'real' = live budget for the issue named below. Judgment lives here. budget-demo/practice.html renders it against live staging/weeks/next/items.json + media/manifest.json.",
- "generated": "2026-11-23T09:15:00-05:00",
+ "generated": "2026-11-24T14:59:00-05:00",
  "target_week": "next",
- "generated_at": "2026-11-23T09:15:00-05:00",
+ "generated_at": "2026-11-24T14:59:00-05:00",
  "issue": {
   "number": 8,
   "label": "Issue No. 8",
@@ -60,25 +60,26 @@
   "date": "2026-11-24",
   "label": "Tuesday, November 24, 2026",
   "alt": "2026-11-25",
-  "why": "Thanksgiving week: Cobra Challenge (Secaucus, 16 Elite FC fencers) starts Fri. Nov. 27 and the club is closed Wed.–Fri., so the paper should be out by Tuesday (Wednesday at the latest). November NAC results (Athreya Aravind, Division I Men, today) have not posted; Wednesday gives them a day."
+  "why": "Thanksgiving week: Cobra Challenge (Secaucus, 16 Elite FC fencers) starts Fri. Nov. 27 and the club is closed Wed.–Fri., so the paper should be out by Tuesday (Wednesday at the latest). Frank, Nov. 24: lead with Cobra plus a longer RYC vs SYC explainer; move the March NAC feature to page 2; write the November NAC results with Elite/Challenger field sizes."
  },
  "desk_summary": [
-  "Issue No. 8, target Tue. Nov. 24 (alt Wed. Nov. 25). Monday full pass + second email pass done 9:13 AM ET; v1.",
-  "Lead (proposed): the large March NAC feature you asked for — 'A National Tournament Next Door' (Atlantic City, Mar. 5–8): who can enter, fees and the Jan. 6 regular-fee deadline, no-show fine, GRACE fee help, and the 4 Elite FC fencers already entered. Clark's draft (~285w) from the official page and the 2026–27 Athlete Handbook; needs your Vet.",
-  "Club Results: thin week — Christina Jiang 1st of 4 (Y12 Women) and Joshua Jeong tied 3rd of 4 (Y12 Men) at Freehold Youth (official, final), plus Xinxuewei Chen 7th in Junior Mixed at Freehold Junior (FencingTracker). All awaiting your Vet. November NAC results not posted (9:05 AM ET). No ratings earned.",
-  "Boards: Cobra Challenge (Nov. 27–29) unchanged, 26 entries / 16 fencers, now with field sizes; On the Road switches to December SJCC (Milwaukee, Dec. 4–6; 3 fencers). Deadlines rebuilt: Fairfax Nov. 30, Z1 late close Dec. 10, March NAC Jan. 6, JO Jan. 7, NJ HS Jan. 8. Club Events: Thanksgiving closure Wed.–Fri. (reopen date waits on you) and a short Winter Camp reminder.",
-  "Page 2 shorts: 'The Touch He Gave Back' (FIE Fair Play Trophy to junior No. 1 Kruz Schembri, from fie.org) and By the Book 'Two of Everything' (t.117 spare weapons, timed for Cobra). Filler: Epee on Screen (2 rows), holiday-party reminder, Photo from History (Nagy, unvetted). Fill is light until you vet the drafts."
+  "Issue No. 8, target Tue. Nov. 24 (alt Wed. Nov. 25). Budget v2 after Frank's Nov. 24 note. Auto placement.",
+  "Lead (proposed): Cobra this weekend plus a longer parent explainer, 'This Weekend at Cobra: What an SYC Is, and Why It Matters' (~601w, 2 columns). Official points, standings, March NAC and Summer Nationals paths, format, eligibility, and Cobra's field sizes. Needs your Vet. World Cup/team-selection claims were dropped (not verified).",
+  "November NAC (vetted, your request): a short explaining the Elite/Challenger split. Nico Ng was 15th of 136 in Cadet Men's Epee (Challenger) — you were right that 15th of 257 was the combined list; the official Challenger field is 136 finishers, close to your ~138. Also: Nico 90th of 235 Junior Challenger; Athreya Aravind 83rd of 116 Junior Elite and 55th of 229 Division I Challenger; Anayaa Sheth 85th of 107 Junior Women's Challenger. No ratings earned. Only Nico's cadet 15th clears the national top-32 bar for the Club Results box.",
+  "Club Results: Christina Jiang 1st of 4 in Y12 Women at Freehold (vetted; club email + podium photo). Proposed but still unvetted: Joshua Jeong tied 3rd of 4 in Y12 Men, and Xinxuewei Chen 7th at Freehold Junior.",
+  "Page 2 feature (proposed): the March NAC piece, 'A National Tournament Next Door' (~285w), moved off the lead as you asked. Still needs your Vet.",
+  "Also proposed: Fair Play short on Kruz Schembri (you said go for it; still a Vet on the slip) and By the Book 'Two of Everything.' Boards: Cobra 26 entries / 16 fencers (names last confirmed Mon.; official page today has Y14 Men at 140, up 1, and lists close-of-registration times). Club Events: closed Wed.–Fri., regular classes resume Sat. Nov. 28 (vetted).",
+  "The NAC strip photo from the club email is not proposed — the email does not name anyone in it."
  ],
  "slots": [
   {
    "key": "lead",
    "section": "lead",
-   "slot": "Lead story — March NAC feature (Atlantic City)",
-   "budget": "~285w, 2 columns",
-   "item": "desk-march-nac-feature-2026-11-23",
+   "slot": "Lead story — Cobra SYC, and what an SYC is",
+   "budget": "~601w, 2 columns (long, for a thin week)",
+   "item": "desk-cobra-syc-ryc-explainer-2026-11-24",
    "merged": [
-    "usaf-march-nac-feature-no8",
-    "ft-efc-march-nac-registrations-2026-11-23"
+    "fencingapi-cobra-efc-entries-2026-10-19"
    ],
    "proposed": true,
    "waiting": false,
@@ -86,25 +87,49 @@
     "type": "prose",
     "span": 2,
     "feature": true,
-    "words": 285
+    "words": 601
    },
-   "title": "A National Tournament Next Door: March NAC Comes to Atlantic City",
-   "summary": "The much larger March NAC article you asked for on Nov. 16. Mar. 5–8, 2027, Atlantic City Convention Center, Y10/Y12/Y14/Division II, free for spectators. Who can enter (Y14 age only; Y10/Y12 need one RYC or SYC this season, and Cobra is an SYC; Div II = C/D/E/U), fees ($225/$320/$415, triple after Jan. 6), late entry until 5 p.m. the night before, $250 no-show fine, GRACE fee waivers. Closes with who's already in: Noah Gore, Caden Wu, Christina Jiang, Mila Siu (6 entries). Withdrawal deadline left out (the page contradicts itself). Schedule not posted yet.",
-   "questions": [
-    "Lead: run the March NAC feature as the lead (Clark's pick, since results are thin), or lead with a Cobra weekend preview and move March NAC to a page-2 feature?"
-   ],
+   "title": "This Weekend at Cobra: What an SYC Is, and Why It Matters",
+   "summary": "Cobra Challenge, Secaucus, Fri.–Sun. Nov. 27–29: 16 Elite FC fencers / 26 entries, and a longer explainer for new parents on how an SYC differs from an RYC — regional vs national points, how Youth Point Standings work, March NAC and Summer Nationals qualifying paths, why it matters more for Y10/Y12, format, eligibility, and that Cobra's cadet events are RCC, not SYC. Field sizes from the official page today (Y14 Men now 140). Needs your Vet.",
+   "questions": [],
    "flags": [
     {
      "level": "warn",
-     "text": "UNVETTED Clark draft (official USA Fencing page + Athlete Handbook)."
-    },
-    {
-     "level": "warn",
-     "text": "Last paragraph (who's entered) is from FencingTracker registrations — unvetted; it drops if you don't vet ft-efc-march-nac-registrations-2026-11-23."
+     "text": "UNVETTED Clark draft (Athlete Handbook 2026-27 + official USA Fencing SYC/RYC pages + today's Cobra page)."
     },
     {
      "level": "info",
-     "text": "If a strong November NAC result posts before compose (top 32 at a national), it gets a page-1 spot and the feature can slide to page 2."
+     "text": "Long on purpose (thin week). Cut from the Nationals-threshold sentence or the format paragraph if it oversets."
+    },
+    {
+     "level": "info",
+     "text": "Club names last confirmed Mon.; today's official page does not list them. Y14 Men field is 140, up 1 from Monday — not assumed to be an Elite FC entry."
+    }
+   ]
+  },
+  {
+   "key": "secondary-nac",
+   "section": "lead",
+   "slot": "Secondary — November NAC results",
+   "budget": "~117w",
+   "item": "ft-november-nac-results-2026-11-24",
+   "proposed": true,
+   "waiting": false,
+   "cost": {
+    "type": "prose",
+    "span": 1,
+    "words": 117
+   },
+   "title": "Nico Ng 15th of 136 in Cadet Challenger at the November NAC",
+   "summary": "Vetted (your Nov. 24 request). Official USA Fencing entrants label each fencer Elite or Challenger; places are within that field. Nico: 15th of 136 Cadet Challenger (Nov. 21) and 90th of 235 Junior Challenger (Nov. 22). Athreya: 83rd of 116 Junior Elite and 55th of 229 Division I Challenger. Anayaa: 85th of 107 Junior Women's Challenger. No ratings earned. The earlier '15th of 257' used the combined event list.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "VETTED. Club Results box gets only Nico's cadet 15th (national top-32 bar). The other four finishes stay in this short, not the box."
+    },
+    {
+     "level": "info",
+     "text": "Do not caption the club NAC photo as Nico; the email does not name the people in it."
     }
    ]
   },
@@ -126,7 +151,39 @@
    "flags": [
     {
      "level": "warn",
-     "text": "UNVETTED Clark draft (fie.org, tier 1)."
+     "text": "UNVETTED Clark draft (fie.org, tier 1). You said go for it — please Vet on the slip."
+    }
+   ]
+  },
+  {
+   "key": "feature-march-nac",
+   "section": "lead",
+   "slot": "Page 2 feature — March NAC (Atlantic City)",
+   "budget": "~285w, 2 columns",
+   "item": "desk-march-nac-feature-2026-11-23",
+   "merged": [
+    "usaf-march-nac-feature-no8",
+    "ft-efc-march-nac-registrations-2026-11-23"
+   ],
+   "proposed": true,
+   "waiting": false,
+   "cost": {
+    "type": "prose",
+    "span": 2,
+    "feature": true,
+    "words": 285
+   },
+   "title": "A National Tournament Next Door: March NAC Comes to Atlantic City",
+   "summary": "Moved from the lead per your Nov. 24 note. Mar. 5–8, 2027, Atlantic City: who can enter, fees and the Jan. 6 regular-fee deadline, no-show fine, GRACE, and the 4 Elite FC fencers already entered. Still needs your Vet. The last paragraph drops if you don't vet the registrations item.",
+   "questions": [],
+   "flags": [
+    {
+     "level": "warn",
+     "text": "UNVETTED Clark draft (official USA Fencing page + Athlete Handbook)."
+    },
+    {
+     "level": "warn",
+     "text": "Last paragraph (who's entered) is from FencingTracker registrations — unvetted; it drops if you don't vet ft-efc-march-nac-registrations-2026-11-23."
     }
    ]
   },
@@ -134,16 +191,14 @@
    "key": "club-results",
    "section": "club",
    "slot": "Club results",
-   "budget": "3 rows (no 'also fenced' line)",
+   "budget": "2 vetted rows",
    "item": "ft-freehold-nov-youth-results-2026-11-22",
-   "merged": [
-    "ft-freehold-nov-junior-chen-2026-11-20"
-   ],
+   "merged": [],
    "proposed": true,
    "waiting": false,
    "cost": {
     "type": "table_rows",
-    "rows": 3
+    "rows": 2
    },
    "title": "Club results",
    "table": {
@@ -154,30 +209,27 @@
     ],
     "rows": [
      [
+      "Nico Ng",
+      "November NAC, Cadet Men Challenger (Nov. 21)",
+      "15th of 136"
+     ],
+     [
       "Christina Jiang",
       "Freehold Youth, Y12 Women (Nov. 22)",
       "1st of 4"
-     ],
-     [
-      "Joshua Jeong",
-      "Freehold Youth, Y12 Men (Nov. 22)",
-      "tied for 3rd of 4"
-     ],
-     [
-      "Xinxuewei Chen",
-      "Freehold November Junior, Junior Mixed (Nov. 20)",
-      "7th"
      ]
     ]
    },
-   "summary": "Two medals at Freehold's November Youth (official USA Fencing results, final; four-fencer fields) and a 7th in Junior Mixed at Freehold's November Junior (FencingTracker; 10 preregistered, no official finisher list). No ratings earned. November NAC (Anayaa Sheth, Nico Ng, Athreya Aravind) not posted as of 9:05 AM ET; rows added if they clear the national top-32 bar before compose.",
-   "questions": [
-    "Xinxuewei Chen's 7th (local, about 10 in the field, not a medal) clears the small-field top-8 bar on paper. Run it, or keep Club Results to the two medals?"
-   ],
+   "summary": "Vetted: Nico Ng 15th of 136 in Cadet Challenger at the November NAC (national top-32), and Christina Jiang 1st of 4 in Y12 Women at Freehold (club email + podium photo). Still in the bank, unvetted: Joshua Jeong tied 3rd of 4 in Y12 Men, and Xinxuewei Chen 7th at Freehold Junior. The other four NAC finishes are in the NAC short, not this box.",
+   "questions": [],
    "flags": [
     {
-     "level": "warn",
-     "text": "UNVETTED: all three rows (official results / FencingTracker). Bank rows until you vet."
+     "level": "info",
+     "text": "VETTED rows: Nico cadet 15th of 136, Christina Jiang 1st of 4 (plus her podium photo)."
+    },
+    {
+     "level": "info",
+     "text": "Joshua Jeong's shared bronze and Xinxuewei Chen's 7th stay in the bank until you vet them. Chen's 7th would clear the small-field top-8 bar if you want it."
     }
    ]
   },
@@ -187,7 +239,7 @@
    "slot": "Ratings earned",
    "budget": "0 rows",
    "empty": true,
-   "why": "No rating earned for any Elite FC fencer in this week's posted results (Freehold Youth, Freehold Junior). November NAC not posted."
+   "why": "No rating earned for any Elite FC fencer in this week's posted results (November NAC, Freehold Youth, Freehold Junior)."
   },
   {
    "key": "signup-cobra",
@@ -246,7 +298,13 @@
      ]
     ]
    },
-   "summary": "This weekend. Unchanged on FencingTracker registrations (9:01 AM ET) and USA Fencing (9:03 AM ET): 26 entries / 16 fencers, all approved. New: every event is capped and fields are big (Y14 Men 139, Y14 Women 133, Cadet Men 126, Y12 Women 106, Cadet Women 105, Y12 Men 89, Y10 Men 47) — a field column is optional. Only Elite FC tournament on the board (NJFA hold; Artdu Dec. 6 has no Elite FC entries)."
+   "summary": "This weekend. Official page today (2:55 PM ET): Y14 Men 140 official competitors (was 139 Monday), other Elite-relevant epee fields unchanged (Y14 Women 133, Cadet Men 126, Y12 Women 106, Cadet Women 105, Y12 Men 89, Y10 Men 47). Several events capped. Close-of-registration times are now on the official page (Fri. Y14 Men and Cadet Women 8:00 a.m., Y10 Men 2:00 p.m.; Sat. Y12 Women 8:00 a.m., Y12 Men 1:30 p.m.; Sun. Y14 Women 8:00 a.m., Cadet Men 1:00 p.m.). 26 entries / 16 fencers, all approved, last confirmed from official USA Fencing via fencing-api on Monday; names are not on the public page.",
+   "flags": [
+    {
+     "level": "info",
+     "text": "VETTED board (you vetted the entries earlier). Field sizes and close times refreshed from the official page today."
+    }
+   ]
   },
   {
    "key": "on-the-road",
@@ -316,18 +374,22 @@
    "key": "club-events",
    "section": "club",
    "slot": "Club events — Thanksgiving closure",
-   "budget": "one line (~20w)",
+   "budget": "one line (~25w)",
    "item": "email-thanksgiving-schedule-2026-11-20",
    "proposed": true,
    "cost": {
     "type": "prose",
     "span": 1,
-    "words": 20
+    "words": 25
    },
    "title": "Club closed Wednesday through Friday for Thanksgiving",
-   "summary": "Club Mailchimp (Fri. Nov. 20): closed Wed. Nov. 25, Thu. Nov. 26, Fri. Nov. 27. The email says the normal schedule returns 'Saturday 12/28', which looks like a typo for Sat. Nov. 28; the reopen date stays out until you confirm.",
-   "questions": [
-    "Thanksgiving: the club email says 'back to our normal schedule on Saturday 12/28.' Is that Saturday, Nov. 28? If yes, the line adds 'reopens Saturday, Nov. 28.'"
+   "summary": "Vetted. Closed Wed. Nov. 25, Thu. Nov. 26, Fri. Nov. 27. Regular classes resume Saturday, Nov. 28 (Monday Nov. 23 club email confirmed the date; the Nov. 20 '12/28' typo is settled).",
+   "questions": [],
+   "flags": [
+    {
+     "level": "info",
+     "text": "VETTED (club Mailchimp, reopen date confirmed Nov. 23)."
+    }
    ]
   },
   {
@@ -463,7 +525,7 @@
    "slot": "For the Parents",
    "budget": "—",
    "empty": true,
-   "why": "This week's parent explainer (qualifying, fees, no-show fine) is folded into the March NAC feature."
+   "why": "This week's parent explainer (RYC vs SYC, points, qualifying) is the Cobra lead. March NAC still has its own qualifying/fees graf on page 2."
   },
   {
    "key": "nj-hs",
@@ -492,6 +554,12 @@
  ],
  "photos": [
   {
+   "id": "media-christina-jiang-freehold-youth-podium-2026-11-22",
+   "proposed": true,
+   "span": 1,
+   "note": "Christina Jiang on the Y12 Women's podium at Freehold, Nov. 22. From the club's Nov. 23 email; auto-vetted. Pairs with her Club Results row."
+  },
+  {
    "id": "media-winter-camp-flyer-photos-2026-11-10",
    "proposed": false,
    "span": 1,
@@ -508,13 +576,19 @@
    "proposed": false,
    "span": 1,
    "note": "Photo from History 10 (held, unvetted)."
+  },
+  {
+   "id": "media-efc-november-nac-photo-2026-11-23",
+   "proposed": false,
+   "span": 1,
+   "note": "From the club's Nov. 23 newsletter congratulating Nico's top-16. The email does not name the people in the photo — do not caption it as Nico until you say so."
   }
  ],
  "held": [],
  "not_proposed": [
   {
    "item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
-   "why": "November NAC is over; results watch (not posted 9:05 AM ET). On the Road moves to December SJCC."
+   "why": "November NAC is over; results are in the vetted NAC short. On the Road stays on December SJCC."
   },
   {
    "item": "askfred-njfa-div3-y8-y14-2026-12-01",
@@ -526,11 +600,11 @@
   },
   {
    "item": "usaf-march-nac-feature-no8",
-   "why": "Your direction for the feature; merged into the lead draft."
+   "why": "Your direction for the feature; merged into the page-2 March NAC draft."
   },
   {
    "item": "ft-efc-march-nac-registrations-2026-11-23",
-   "why": "Merged into the lead (last paragraph); vet it to keep the names."
+   "why": "Merged into the page-2 March NAC draft (last paragraph); vet it to keep the names."
   }
  ]
 }

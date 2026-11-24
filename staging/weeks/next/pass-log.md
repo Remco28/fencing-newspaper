@@ -1,5 +1,27 @@
 # Pass log — Issue No. 8 (staging/weeks/next)
 
+## 2026-11-24 afternoon — No. 8 rework (Cobra lead, NAC denominators)
+
+Frank (t240u, ~2:45 PM ET): slow week; lead with Cobra plus a longer RYC vs SYC explainer for new parents; keep March NAC but not as the lead; write the Kruz Schembri Fair Play short; talk about the November NAC; correct Nico's 15th-of-257 (Elite/Challenger split; he guessed ~138). Private remarks not for print.
+
+**Cobra / RYC vs SYC.** New unvetted lead draft `desk-cobra-syc-ryc-explainer-2026-11-24` (~601w): what an SYC is, regional vs national points, Youth Point Standings, March NAC and Summer Nationals paths, format, eligibility, why it matters more for Y10/Y12, and that Cobra's cadet events are RCC. Sources: Athlete Handbook 2026-27 (§2.9, §2.10.1–2.10.6, §3.1.6, §3.3.1, §3.4.3), usafencing.org SYC/RYC/regional-events pages, Zendesk Regional Points, official Cobra page. Dropped unverified World Cup/team-selection and JO claims; dropped a fee comparison (no single official RYC fee).
+
+**Cobra entries.** Official public page re-check 2:55 PM ET: Y14 Men 140 official competitors (was 139 Monday); other Elite-relevant epee fields unchanged (Y14WE 133, CDTME 126, Y12WE 106, CDTWE 105, Y12ME 89, Y10ME 47). Close-of-registration times now listed. Club names are not on the public page; 26 entries / 16 fencers, all approved, last confirmed from official fencing-api cache (fetched_at 2026-11-23T04:05:55Z).
+
+**November NAC denominators.** Official entrants tables label each fencer Elite Field or Challenger Field; official results interleave the two fields and report combined totals. Within-field finishers:
+
+- CDTME (event 78696): Elite 121, Challenger 136 (all 257 approved finished). Nico Ng is Challenger, 15th of 136 (not 15th of 257; not a tie with Elite's Alexander Luo).
+- JNRME (78690): Elite 116 finishers / 117 approved; Challenger 235 / 240. Nico Challenger 90th of 235; Athreya Aravind Elite 83rd of 116.
+- JNRWE (78693): Elite 113; Challenger 107 finishers / 108 approved. Anayaa Sheth Challenger 85th of 107.
+- DV1ME (78684): Elite 121 finishers / 123 approved; Challenger 229 / 235. Athreya Challenger 55th of 229.
+
+Item `ft-november-nac-results-2026-11-24` rewritten and marked vetted (Frank asked to talk about the NAC and to fix the denominator). Club Results box: only the cadet 15th clears the national top-32 bar.
+
+**Other vets.** Christina Jiang 1st of 4 at Freehold (club email) split onto its own vetted item; Joshua Jeong's shared bronze moved to `ft-freehold-nov-youth-jeong-2026-11-22` and stays unvetted. Thanksgiving reopen Sat. Nov. 28 already vetted. Xinxuewei Chen 7th and the NAC strip photo (unnamed) still unvetted / not proposed as Nico.
+
+**Budget.** Lineup rewritten: Cobra explainer as lead, NAC short on page 1, March NAC feature on page 2, Auto placement. Built as `budget-demo/out/budget-no-8-2026-11-24-v2.html` (gitignored). Headless Chrome: no script errors, no network requests. Auto (vetted only) is 30% full (16 of 53.4 col-in), no overset: page 1 has the NAC short, Club Results (Nico + Christina) and Deadlines plus the Jiang podium photo; page 2 has the Cobra board, Thanksgiving and Winter Camp. The unvetted lead, March NAC feature, Schembri short and By the Book stay in the bank until Frank vets them.
+
+
 ## 2026-11-24 daily email check + FencingTracker quick look (8:01 AM ET)
 
 Follows the 2026-11-23 Monday full pass (commit 6fafbc6).

@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-24T08:01:14-05:00",
+  "updated_at": "2026-11-24T14:59:00-05:00",
   "note": "Hold pile for Issue No. 8. Started at the No. 7 roll-forward 2026-11-17 12:20 AM ET. after-next (March NAC feature (large), Frank t231u) became part of next; still-relevant held and upcoming items copied from staging/weeks/2026-11-17 with carried_from. Frank (t232u, 12:09 AM ET): keep the proof v3 workflow next week (eye check gate, spacing tokens, copy lengths, arrangements).",
   "rolled_forward": {
     "from": [
@@ -961,7 +961,7 @@
       "vetted": true,
       "board": "Nearby Tournaments",
       "slot_hint": "signup",
-      "body": "USA Fencing entrants (via fencing-api, live, Oct 26 9:00 AM ET), Cobra Challenge SYC/RCC, Meadowlands Expo Center, Secaucus NJ, Nov 27–29 — 26 entries / 16 Elite FC fencers, all approved. Fri Nov 27: Y14ME Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani; CDTWE Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young; Y10ME Bryce Cheng, Joshua Jeong. Sat Nov 28: Y12WE Christina Jiang, Stella Kuo, Mila Siu, Penny Young; Y12ME Kian Jaising, Joshua Jeong, Remy Ng. Sun Nov 29: Y14WE Stella Kuo, Mila Siu, Penny Young; CDTME Connor Anderson, Nico Ng, Caden Wu. No event times listed in the payload (clock: close of registration, no time).",
+      "body": "USA Fencing official page (Nov. 24, 2:55 PM ET), Cobra Challenge SYC/RCC, Meadowlands Expo Center, Secaucus NJ, Nov. 27–29. Elite FC entries last confirmed 26 / 16 fencers, all approved (official fencing-api cache, Nov. 23). Fri. Nov. 27: Y14ME close 8:00 a.m. — Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah-Mirani (field 140, capped); CDTWE close 8:00 a.m. — Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young (field 105, capped); Y10ME close 2:00 p.m. — Bryce Cheng, Joshua Jeong (field 47). Sat. Nov. 28: Y12WE close 8:00 a.m. — Christina Jiang, Stella Kuo, Mila Siu, Penny Young (field 106); Y12ME close 1:30 p.m. — Kian Jaising, Joshua Jeong, Remy Ng (field 89). Sun. Nov. 29: Y14WE close 8:00 a.m. — Stella Kuo, Mila Siu, Penny Young (field 133, capped); CDTME close 1:00 p.m. — Connor Anderson, Nico Ng, Caden Wu (field 126, capped). Times are close of registration on the official page.",
       "panels_rows": [
         [
           "Fri. Nov. 27",
@@ -1067,12 +1067,18 @@
           "fetched_at_et": "2026-11-23 9:03 AM ET",
           "underlying": "https://member.usafencing.org/details/tournaments/12119",
           "note": "Event days unchanged; every event capped. Entrant counts: Y14ME 139 (0 open), CDTWE 105 (0 open), Y10ME 47, Y12WE 106, Y12ME 89, Y14WE 133 (0 open), CDTME 126 (0 open). Times listed only as close of registration (no clock)."
+        },
+        {
+          "type": "url",
+          "url": "https://member.usafencing.org/details/tournaments/12119",
+          "retrieved_at": "2026-11-24T14:59:00-05:00",
+          "note": "Public official page re-check (Tue. Nov. 24 ~2:55 PM ET). Epee official competitors: Y14ME 140 (was 139 on Mon. Nov. 23), CDTWE 105, Y10ME 47, Y12WE 106, Y12ME 89, Y14WE 133, CDTME 126. Close of registration times now listed (Y14ME and CDTWE 8:00 a.m. Friday; Y10ME 2:00 p.m. Friday; Y12WE 8:00 a.m. Saturday; Y12ME 1:30 p.m. Saturday; Y14WE 8:00 a.m. Sunday; CDTME 1:00 p.m. Sunday). Club names are not on the public page. Cached official entries (fencing-api, fetched_at 2026-11-23T04:05:55Z) still show 26 approved Elite FC entries / 16 fencers, same names."
         }
       ],
       "name_notes": "All names print in the official/roster form: 'Young, Penelope' -> Penny Young (roster); 'WU, Caden' -> Caden Wu (roster); Ash Shah-Mirani (roster). Others as USA Fencing lists them.",
-      "vet_notes": "Monday full pass 2026-10-19. New to staging. Official USA Fencing entrant list (via Frank's API) + FencingTracker agree. Stage unvetted per fencing-api rule; Frank vets on the budget page.\n[2026-11-23 Monday full pass] Unchanged on FencingTracker registrations (9:01 AM ET) and USA Fencing event list via fencing-api live (9:03 AM ET). Fields are large and capped (Y14 Men 139, Y14 Women 133, Cadet Men 126, Y12 Women 106, Cadet Women 105, Y12 Men 89, Y10 Men 47) — optional 'field' column. Tournament is Fri.–Sun. after Thanksgiving; the club is closed Wed.–Fri. (Thanksgiving item). Main board for No. 8 (4th straight issue; last chance before the event).",
+      "vet_notes": "Monday full pass 2026-10-19. New to staging. Official USA Fencing entrant list (via Frank's API) + FencingTracker agree. Stage unvetted per fencing-api rule; Frank vets on the budget page.\n[2026-11-23 Monday full pass] Unchanged on FencingTracker registrations (9:01 AM ET) and USA Fencing event list via fencing-api live (9:03 AM ET). Fields are large and capped (Y14 Men 139, Y14 Women 133, Cadet Men 126, Y12 Women 106, Cadet Women 105, Y12 Men 89, Y10 Men 47) — optional 'field' column. Tournament is Fri.–Sun. after Thanksgiving; the club is closed Wed.–Fri. (Thanksgiving item). Main board for No. 8 (4th straight issue; last chance before the event).\n[2026-11-24 ~2:55 PM ET] Official public page re-check: Y14 Men now 140 official competitors (capped; was 139 Monday). Other Elite-relevant epee fields unchanged. Close-of-registration times added from the same page. Club entry list (26/16, all approved) last confirmed from official USA Fencing via fencing-api cache; names not visible on the public page today.",
       "created_at": "2026-10-19T09:30:00-04:00",
-      "updated_at": "2026-11-23T09:12:00-05:00",
+      "updated_at": "2026-11-24T14:59:00-05:00",
       "vetted_at": "2026-10-26T16:18:50-04:00",
       "vetted_by": "frank",
       "carried_from": "staging/weeks/2026-11-17",
@@ -1087,6 +1093,24 @@
         "Y12 Men": 89,
         "Y14 Women": 133,
         "Cadet Men": 126
+      },
+      "field_sizes_2026_11_24": {
+        "Y14 Men": 140,
+        "Cadet Women": 105,
+        "Y10 Men": 47,
+        "Y12 Women": 106,
+        "Y12 Men": 89,
+        "Y14 Women": 133,
+        "Cadet Men": 126
+      },
+      "close_of_registration_2026_11_24": {
+        "Y14 Men": "8:00 a.m.",
+        "Cadet Women": "8:00 a.m.",
+        "Y10 Men": "2:00 p.m.",
+        "Y12 Women": "8:00 a.m.",
+        "Y12 Men": "1:30 p.m.",
+        "Y14 Women": "8:00 a.m.",
+        "Cadet Men": "1:00 p.m."
       }
     },
     {
@@ -1264,16 +1288,16 @@
     {
       "id": "ft-november-nac-results-2026-11-24",
       "kind": "result",
-      "headline": "Nico Ng tied for 15th of 257 in Cadet Men's Epee at the November NAC",
-      "body": "Nico Ng finished tied for 15th of 257 in Cadet Men's Epee at the November NAC in Columbus, Ohio, on Saturday, Nov. 21. He also placed tied for 90th of 351 in Junior Men's Epee on Sunday. Athreya Aravind was tied for 55th of 349 in Division I Men's Epee on Monday and tied for 83rd of 351 in Junior Men. Anayaa Sheth was tied for 85th of 220 in Junior Women's Epee on Friday, Nov. 20. None of the five Elite FC results earned a rating.",
-      "word_count": 87,
+      "headline": "Nico Ng 15th of 136 in Cadet Challenger at the November NAC",
+      "body": "Cadet, Junior and Division I events at the November NAC in Columbus were split into two competitions, Elite and Challenger, whenever an event had 169 or more entries. Places are within each field, not across the combined entry list.\n\nNico Ng finished 15th of 136 in Cadet Men's Epee (Challenger) on Saturday, Nov. 21. He also placed 90th of 235 in Junior Men's Epee (Challenger) on Sunday. Athreya Aravind was 83rd of 116 in Junior Men's Epee (Elite) on Sunday and 55th of 229 in Division I Men's Epee (Challenger) on Monday. Anayaa Sheth was 85th of 107 in Junior Women's Epee (Challenger) on Friday, Nov. 20. None of the five Elite FC results earned a rating.",
+      "word_count": 117,
       "source": "web",
       "from": null,
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
       "target_week": "next",
-      "vetted": false,
-      "slot_hint": "club_results",
-      "suggested_slot": "club_results",
+      "vetted": true,
+      "slot_hint": "secondary",
+      "suggested_slot": "secondary",
       "tags": [
         "results",
         "nac",
@@ -1282,70 +1306,65 @@
       "print_rows": [
         [
           "Nico Ng",
-          "November NAC, Cadet Men (Nov. 21)",
-          "tied for 15th of 257"
+          "November NAC, Cadet Men Challenger (Nov. 21)",
+          "15th of 136"
         ],
         [
           "Athreya Aravind",
-          "November NAC, Division I Men (Nov. 23)",
-          "tied for 55th of 349"
+          "November NAC, Junior Men Elite (Nov. 22)",
+          "83rd of 116"
         ],
         [
           "Athreya Aravind",
-          "November NAC, Junior Men (Nov. 22)",
-          "tied for 83rd of 351"
+          "November NAC, Division I Men Challenger (Nov. 23)",
+          "55th of 229"
         ],
         [
           "Nico Ng",
-          "November NAC, Junior Men (Nov. 22)",
-          "tied for 90th of 351"
+          "November NAC, Junior Men Challenger (Nov. 22)",
+          "90th of 235"
         ],
         [
           "Anayaa Sheth",
-          "November NAC, Junior Women (Nov. 20)",
-          "tied for 85th of 220"
+          "November NAC, Junior Women Challenger (Nov. 20)",
+          "85th of 107"
         ]
       ],
       "facts": [
         {
-          "claim": "Nico Ng tied for 15th of 257, Cadet Men's Epee (CDTME, event 78696), November NAC, Saturday Nov. 21, 2026, with Alexander Luo (Wanglei International Fencing Club); no rating earned",
-          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78696/results (final=true, 257 finishers), fetched 2026-11-24 7:56 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
-          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 15 (place_label 15.5, tied=false in the API). FencingTracker lists Nico as 15th."
+          "claim": "November NAC Cadet/Junior/Division I events split into Elite and Challenger when registration reached 169 or more; Elite capped (normally 112, with an Oct/Nov 2026 legacy-list exception that can add fencers); Challenger holds the rest. Split date for this tournament: Nov. 5, 2026. Places are in each field separately.",
+          "source": "https://www.usafencing.org/new-points-and-events-structure/elite-and-challenger-format ; https://www.usafencing.org/news/2026/september/19/how-the-event-split-works-what-to-know-before-the-october-nac ; https://www.usafencing.org/2026-november-north-american-cup (Event Split Date: November 5, 2026); Athlete Handbook 2026-27 §2.5 (incl. Oct/Nov 2026 Elite-tier transition exception). All retrieved 2026-11-24.",
+          "status": "verified-usafencing + handbook"
         },
         {
-          "claim": "Nico Ng tied for 90th of 351, Junior Men's Epee (JNRME, event 78690), November NAC, Sunday Nov. 22, 2026, with Evan Boss (Traverse City Fencing Club); no rating earned",
-          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78690/results (final=true, 351 finishers), fetched 2026-11-24 7:56 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
-          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 90. Catalog official_competitors was 357."
+          "claim": "Nico Ng, approved Challenger Field, 15th of 136 finishers, Cadet Men's Epee (CDTME, event 78696), Saturday Nov. 21, 2026; no rating earned. Official place label 15.5. Unique within Challenger (14 finishers placed strictly ahead).",
+          "source": "Official entrants + results tables: GET https://member.usafencing.org/details/tournaments/12316/entrants?event_id=78696 and /results?event_id=78696 (retrieved 2026-11-24 ~2:50 PM ET). Underlying https://member.usafencing.org/details/tournaments/12316",
+          "status": "official results (final); vetted by Frank 2026-11-24 (t240u) — he asked to talk about the November NAC and to correct the combined 257 denominator. He estimated ~138; official Challenger field is 136 finishers (136 approved Challenger entrants, all finished)."
         },
         {
-          "claim": "Athreya Aravind tied for 83rd of 351, Junior Men's Epee (JNRME, event 78690), November NAC, Sunday Nov. 22, 2026, with Dylan Leung (Maximum Fencing Club); no rating earned",
-          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78690/results (final=true, 351 finishers), fetched 2026-11-24 7:56 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
-          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 83."
+          "claim": "Nico Ng, approved Challenger Field, 90th of 235 finishers, Junior Men's Epee (JNRME, event 78690), Sunday Nov. 22, 2026; no rating earned. Official place label 90.5. Unique within Challenger.",
+          "source": "Official entrants + results tables, event 78690, retrieved 2026-11-24 ~2:50 PM ET.",
+          "status": "official results (final); vetted by Frank 2026-11-24 (t240u)."
         },
         {
-          "claim": "Athreya Aravind tied for 55th of 349, Division I Men's Epee (DV1ME, event 78684), November NAC, Monday Nov. 23, 2026, with Luke Kugler (New York Fencing Academy); no rating earned",
-          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78684/results (final=true, 349 placed + 1 DNF), fetched 2026-11-24 7:57 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
-          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 55. Catalog official_competitors was 358. One DNF (not Elite FC) excluded from the 'of 349' field size."
+          "claim": "Athreya Aravind, approved Elite Field, 83rd of 116 finishers, Junior Men's Epee (JNRME, event 78690), Sunday Nov. 22, 2026; no rating earned. Official place label 83.5. Unique within Elite. (117 Elite approved; 1 Elite no-show.)",
+          "source": "Official entrants + results tables, event 78690, retrieved 2026-11-24 ~2:50 PM ET.",
+          "status": "official results (final); vetted by Frank 2026-11-24 (t240u)."
         },
         {
-          "claim": "Anayaa Sheth tied for 85th of 220, Junior Women's Epee (JNRWE, event 78693), November NAC, Friday Nov. 20, 2026, with Kyubi Emmanuelle Suico (Philadelphia Fencers Club); no rating earned. Official list spelling: Sheth, Anayaà.",
-          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78693/results (final=true, 220 finishers), fetched 2026-11-24 7:56 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
-          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 85. Catalog official_competitors was 221. Print roster/Frank spelling Anayaa Sheth."
+          "claim": "Athreya Aravind, approved Challenger Field, 55th of 229 finishers, Division I Men's Epee (DV1ME, event 78684), Monday Nov. 23, 2026; no rating earned. Official place label 55.5. Unique within Challenger. (235 Challenger approved; 6 Challenger no-shows among the event's 8 no-shows.)",
+          "source": "Official entrants + results tables, event 78684, retrieved 2026-11-24 ~2:50 PM ET.",
+          "status": "official results (final); vetted by Frank 2026-11-24 (t240u)."
         },
         {
-          "claim": "FencingTracker club page lists the same five placements (Sheth JNRWE 85, Ng CDTME 15, Aravind JNRME 83, Ng JNRME 90, Aravind DV1ME 55), no ratings earned, dates 2026-11-20 through 2026-11-23.",
-          "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
-          "status": "unvetted; FencingTracker club page 2026-11-24 7:53 AM ET. Does not mark the shared places as ties. Places agree with official USA Fencing results."
-        },
-        {
-          "claim": "Club newsletter congratulates Nico Ng on his top-16 finish at the November NAC (event not named in the email).",
-          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
-          "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp). Official results show the top-16 is the Cadet Men's Epee finish (tied for 15th of 257)."
+          "claim": "Anayaa Sheth, approved Challenger Field, 85th of 107 finishers, Junior Women's Epee (JNRWE, event 78693), Friday Nov. 20, 2026; no rating earned. Official place label 85.5. Unique within Challenger. Official list spelling: Sheth, Anayaà. Print Anayaa Sheth.",
+          "source": "Official entrants + results tables, event 78693, retrieved 2026-11-24 ~2:50 PM ET.",
+          "status": "official results (final); vetted by Frank 2026-11-24 (t240u)."
         }
       ],
-      "field_note": "'of N' = number of placed finishers in the official USA Fencing results list (CDTME 257, matching catalog official_competitors 257; JNRME 351 vs catalog 357; JNRWE 220 vs catalog 221; DV1ME 349 placed + 1 DNF, catalog official_competitors 358). Shared places are printed as ties (two fencers at the same place number).",
-      "print_hint": "Strong result: Nico's tied-for-15th in Cadet Men at a NAC (257-fencer field) is the lead candidate for No. 8. The club newsletter already congratulated the top-16 and included a photo that appears to be Nico on the strip (email does not name the people in the photo — confirm before captioning). The other four NAC finishes are mid-pack / notable Div I (Athreya T55 of 349) for a roundup, not a lead.",
-      "vet_notes": "Daily FT quick look + fencing-api live official results 2026-11-24. Scraped/official results — unvetted until Frank vets. Club Mailchimp (allowlisted, auto-vetted as a congratulations) said 'top 16 finish at the November NAC' without naming the event; official final results show Nico tied for 15th of 257 in Cadet Men's Epee (event 78696, Sat. Nov. 21) and tied for 90th of 351 in Junior Men the next day. FencingTracker placements agree; FT does not flag the ties. No ratings earned. Names via roster (Sheth, Anayaà → Anayaa Sheth). No API-vs-FencingTracker mismatch on places. Catalog official_competitors ran a few heads higher than the posted finishers lists for JNRME/JNRWE/DV1ME (typical no-shows); print the official finishers-list field sizes. Manchen Friday Night still lists only Brendan Mendez; skipped per standing rule (do not stage, do not ask).",
+      "field_note": "Cadet, Junior and Division I events at this NAC split into Elite and Challenger when an event had 169 or more entries (official format page; November NAC split date Nov. 5). Official results on member.usafencing.org interleave the two fields in one table and show a combined entrant count (CDTME 257, JNRME 351 finishers / 357 official competitors, JNRWE 220 / 221, DV1ME 349 placed + 1 DNF / 358). The official entrants list for each event labels each fencer 'Approved Elite Field' or 'Approved Challenger Field', and official place numbers restart in each field (both fields have a 1st, 2nd and 3rd). 'of N' is the number of finishers in that fencer's field, from the official results table joined to the official field label. Earlier staging used the combined counts (15th of 257, etc.); that was wrong. FencingTracker and fencing-api also reported the combined denominators and treated same place labels across fields as ties (e.g. Nico and Alexander Luo both 15.5, but Luo was Elite). Within each field the Elite FC places are unique. Finisher counts: CDTME Elite 121 / Challenger 136 (all 257 approved entrants finished); JNRME Elite 116 / Challenger 235 (357 approved, 6 no-shows); JNRWE Elite 113 / Challenger 107 (221 approved, 1 Challenger no-show); DV1ME Elite 121 / Challenger 229 (358 approved, 8 no-shows; one Elite DNF, Moore, Shomari, is among the 121 Elite results and is not Elite FC).",
+      "print_hint": "Respectful, results-focused NAC short (not the lead). Explain the Elite/Challenger split in a sentence. Use within-field denominators, not the combined 257/351/220/349 figures. Do not say 'tied' for the Elite FC places (those earlier ties were a merged-list artifact). Club Results box: only Nico's cadet 15th of 136. Do not caption the club NAC strip photo as Nico (email does not name the people in it).",
+      "vet_notes": "Frank t240u, 2026-11-24: asked to talk about the November NAC and flagged the 15th-of-257 denominator (Elite/Challenger split; he guessed ~138). Treated as vetted per that request. Corrected from official USA Fencing entrants (Elite Field / Challenger Field labels) + results tables, retrieved 2026-11-24 ~2:50 PM ET. Nico fenced Cadet and Junior in Challenger (15th of 136 cadet; 90th of 235 junior). Tone: kind, no commentary. Frank's private remark about the weekend is not for print. NAC strip photo remains unnamed.",
       "related_item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
       "related_media": [
         "media-efc-november-nac-photo-2026-11-23"
@@ -1421,10 +1440,34 @@
           "url": "https://mailchi.mp/be0b7ca989d6/group-class-thanksgiving?e=f656c71db1",
           "vetted_by": "auto-club-mailchimp",
           "note": "Allowlisted club Mailchimp congratulates Nico Ng on a top-16 finish at the November NAC (event not named) and includes a photo of a fencer in white epee kit at a USA Fencing event (extracted; email does not name the people in the photo)."
+        },
+        {
+          "type": "web",
+          "source": "usafencing",
+          "url": "https://member.usafencing.org/details/tournaments/12316/entrants",
+          "retrieved_at": "2026-11-24T14:59:00-05:00",
+          "note": "Official entrants tables for events 78696, 78690, 78693, 78684 via ?event_id= (JSON, entrants_table HTML). Each row labeled Approved Elite Field or Approved Challenger Field."
+        },
+        {
+          "type": "web",
+          "source": "usafencing",
+          "url": "https://member.usafencing.org/details/tournaments/12316/results",
+          "retrieved_at": "2026-11-24T14:59:00-05:00",
+          "note": "Official results tables for the same four events via ?event_id=. Place numbers are per field; the page interleaves Elite and Challenger and reports combined totals."
         }
       ],
       "created_at": "2026-11-24T08:01:14-05:00",
-      "updated_at": "2026-11-24T08:01:14-05:00"
+      "updated_at": "2026-11-24T14:59:00-05:00",
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-24T14:59:00-05:00",
+      "club_results_rows": [
+        [
+          "Nico Ng",
+          "November NAC, Cadet Men Challenger (Nov. 21)",
+          "15th of 136"
+        ]
+      ],
+      "club_results_note": "Only Nico's cadet 15th of 136 (Challenger) clears the national top-32 bar for the Club Results box. The other four NAC finishes are in the article, not the box (no 'also fenced' line)."
     },
     {
       "id": "askfred-bernards-hs-senior-open-2026-12-19",
@@ -1577,13 +1620,13 @@
     {
       "id": "ft-freehold-nov-youth-results-2026-11-22",
       "kind": "result",
-      "headline": "Christina Jiang 1st of 4 in Y12 Women, Joshua Jeong tied for 3rd of 4 in Y12 Men, at Freehold Youth",
-      "body": "Official USA Fencing results (final) for Freehold Fencing - November Youth Foil & Epee, Freehold Fencing Academy, Sunday, Nov. 22, 2026: Jiang, Christina (Elite Fencers Club) 1st of 4 in Youth 12 Women's Epee (Y12WE, event 79559); Jeong, Joshua (Elite Fencers Club) tied for 3rd of 4 in Youth 12 Men's Epee (Y12ME, event 79558) with Charna, Luca of Lilov Fencing Academy (two 3rds, no fence-off). No rating earned for either Elite FC fencer. FencingTracker club page agrees (Jiang 1st, Jeong 3rd; it does not note the tie). Print Christina Jiang and Joshua Jeong via roster house forms. Small local fields.",
+      "headline": "Christina Jiang 1st of 4 in Y12 Women at Freehold Youth",
+      "body": "Christina Jiang finished 1st of 4 in Youth 12 Women's Epee at Freehold Fencing's November Youth Foil & Epee on Sunday, Nov. 22. No rating was earned.",
       "source": "web",
       "from": "FencingTracker club page + USA Fencing results via fencing-api",
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "club_results",
       "suggested_slot": "club_results",
       "tags": [
@@ -1597,18 +1640,13 @@
           "Christina Jiang",
           "Freehold Youth, Y12 Women (Nov. 22)",
           "1st of 4"
-        ],
-        [
-          "Joshua Jeong",
-          "Freehold Youth, Y12 Men (Nov. 22)",
-          "tied for 3rd of 4"
         ]
       ],
       "facts": [
         {
           "claim": "Christina Jiang 1st of 4, Youth 12 Women's Epee (Y12WE, event 79559), Freehold Fencing - November Youth Foil & Epee, Nov. 22, 2026; no rating earned",
           "source": "fencingapi live /v1/usfa/tournaments/12503/events/79559/results (final=true), fetched 2026-11-23 7:54 AM ET; underlying https://member.usafencing.org/details/tournaments/12503",
-          "status": "official results (final); unvetted until Frank vets"
+          "status": "official results (final); unvetted until Frank vets [2026-11-24: gold vetted — club Mailchimp congratulated her 1st in Y12 Freehold, and Frank's No. 8 direction treats that confirmation as a vet.]"
         },
         {
           "claim": "Joshua Jeong tied for 3rd of 4, Youth 12 Men's Epee (Y12ME, event 79558), same tournament, Nov. 22, 2026, with Luca Charna (Lilov); no rating earned",
@@ -1618,18 +1656,18 @@
         {
           "claim": "FencingTracker club page lists Jeong, Joshua Y12ME 3rd and Jiang, Christina Y12WE 1st, no rating earned, date 2026-11-22; 2 results recorded",
           "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
-          "status": "unvetted; FencingTracker club page 2026-11-23 7:51 AM ET. Does not mark the Y12ME bronze as a tie."
+          "status": "unvetted; FencingTracker club page 2026-11-23 7:51 AM ET. Does not mark the Y12ME bronze as a tie. [2026-11-24: gold vetted — club Mailchimp congratulated her 1st in Y12 Freehold, and Frank's No. 8 direction treats that confirmation as a vet.]"
         },
         {
           "claim": "Club newsletter congratulates Christina Jiang on her 1st-place finish in Y12 Freehold.",
           "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
-          "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp). Does not mention Joshua Jeong or field size."
+          "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp). Does not mention Joshua Jeong or field size. [2026-11-24: gold vetted — club Mailchimp congratulated her 1st in Y12 Freehold, and Frank's No. 8 direction treats that confirmation as a vet.]"
         }
       ],
       "field_note": "'of 4' = number of finishers in the official USA Fencing results list. Catalog official_competitors for both events was also 4.",
-      "print_hint": "Club Results rows: local medals, but fields of 4 — flag the field size if this leads. Joshua was not on the Nov 19 prereg list.",
-      "vet_notes": "Daily FT quick look + fencing-api live results 2026-11-23. Scraped/official results — unvetted until Frank vets. Christina's gold and Joshua's shared bronze are in four-fencer fields. Joshua Jeong was not on the AskFRED/fencing-api prereg as of Thu Nov 19 (that item listed only Christina Jiang in Y12WE). Related entries item: askfred-freehold-nov-youth-epee-2026-11-22.\n[2026-11-23 Monday full pass] FencingTracker club page unchanged at 9:02 AM ET. Both are medals, so they clear the bar at any level; small fields (4) are why the field size is shown. Still awaiting Frank's vet.\n[2026-11-24 daily pass] Club Mailchimp (Mon Nov 23, 9:56 AM ET, auto-club-mailchimp) congratulates 'Christina Jiang for her 1st place finish in Y12 Freehold competition.' That confirms her gold; Joshua Jeong's shared bronze is not mentioned in the email, so this item stays unvetted. The same email included the Y12 Women's podium photo (Christina on the first-place box). FencingTracker club page re-fetched 2026-11-24T07:53:12-05:00: Youth results unchanged (Jiang 1st Y12WE, Jeong 3rd Y12ME, no rating).",
-      "related_item": "askfred-freehold-nov-youth-epee-2026-11-22",
+      "print_hint": "Club Results row: Christina Jiang, Freehold Youth, Y12 Women (Nov. 22), 1st of 4. Podium photo is auto-vetted (club email); do not add Joshua to this item.",
+      "vet_notes": "2026-11-24: vetted. Club Mailchimp (Mon. Nov. 23, allowlisted) congratulated Christina Jiang on 1st in Y12 Freehold and included the podium photo. Frank's t240u direction for No. 8 treats this as vetted. Joshua Jeong's shared bronze was split to ft-freehold-nov-youth-jeong-2026-11-22 and stays unvetted. Official field: 1st of 4, Y12WE event 79559, no rating earned.",
+      "related_item": "ft-freehold-nov-youth-jeong-2026-11-22",
       "provenance": [
         {
           "type": "web",
@@ -1689,10 +1727,13 @@
         }
       ],
       "created_at": "2026-11-23T07:56:00-05:00",
-      "updated_at": "2026-11-24T08:01:14-05:00",
+      "updated_at": "2026-11-24T14:59:00-05:00",
       "related_media": [
         "media-christina-jiang-freehold-youth-podium-2026-11-22"
-      ]
+      ],
+      "word_count": 27,
+      "vetted_by": "frank",
+      "vetted_at": "2026-11-24T14:59:00-05:00"
     },
     {
       "id": "ft-freehold-nov-junior-chen-2026-11-20",
@@ -1873,8 +1914,8 @@
       "from": "clark",
       "target_week": "next",
       "vetted": false,
-      "slot_hint": "lead",
-      "suggested_slot": "lead",
+      "slot_hint": "feature",
+      "suggested_slot": "page2-feature",
       "related_item": "usaf-march-nac-feature-no8",
       "tags": [
         "feature",
@@ -1934,9 +1975,9 @@
         "Birth-year ranges (house rule spirit: no birth years).",
         "Exhibit hall TBD."
       ],
-      "vet_notes": "Clark's draft (~300w) of the large March NAC feature Frank asked for (t231u, Nov. 16: 'next week we will have a much larger article because March NAC is for basically all the kids at our club. I will highly encourage everyone to go esp since it's \"local\"'). Proposed as the No. 8 lead (2 columns). Facts re-fetched Nov. 23 from the official page and the 2026-27 Athlete Handbook. The last paragraph (who's entered) is from FencingTracker registrations and depends on Frank vetting that item; drop the paragraph if not. No Frank byline; no quotes attributed to Frank. Could grow a 'Getting there' box once the schedule posts.",
+      "vet_notes": "Clark's draft (~300w) of the large March NAC feature Frank asked for (t231u, Nov. 16: 'next week we will have a much larger article because March NAC is for basically all the kids at our club. I will highly encourage everyone to go esp since it's \"local\"'). Proposed as the No. 8 lead (2 columns). Facts re-fetched Nov. 23 from the official page and the 2026-27 Athlete Handbook. The last paragraph (who's entered) is from FencingTracker registrations and depends on Frank vetting that item; drop the paragraph if not. No Frank byline; no quotes attributed to Frank. Could grow a 'Getting there' box once the schedule posts.\n[2026-11-24] Frank t240u: Cobra leads; this feature moves to page 2. Draft unchanged except placement. Still needs his Vet. Cobra-this-weekend-is-an-SYC line remains true.",
       "created_at": "2026-11-23T09:12:00-05:00",
-      "updated_at": "2026-11-23T09:12:00-05:00"
+      "updated_at": "2026-11-24T14:59:00-05:00"
     },
     {
       "id": "desk-secondary-fair-play-schembri-2026-11-23",
@@ -1985,9 +2026,9 @@
           "retrieved_at": "2026-11-23T09:07:00-05:00"
         }
       ],
-      "vet_notes": "Clark's draft secondary (~140w) from FIE's own articles (tier 1). Adult athlete, public figure. Pairs with By the Book 'Two of Everything' (spare weapons) and the Cobra weekend. Hong Kong Worlds date not in the article; 'this year' per the second reference.",
+      "vet_notes": "Clark's draft secondary (~140w) from FIE's own articles (tier 1). Adult athlete, public figure. Pairs with By the Book 'Two of Everything' (spare weapons) and the Cobra weekend. Hong Kong Worlds date not in the article; 'this year' per the second reference.\n[2026-11-24] Frank t240u: 'I don't know anything about Kruz Schembri but go for it.' Approved to write/include; still needs a Vet on the Budget slip. Facts re-checked against the FIE headline and date today (fie.org/news/1809, dated Nov. 23, 2026); the article body is JavaScript-rendered and did not come back in a plain fetch. Body facts remain those verified from the same official FIE articles on Nov. 23.",
       "created_at": "2026-11-23T09:12:00-05:00",
-      "updated_at": "2026-11-23T09:12:00-05:00"
+      "updated_at": "2026-11-24T14:59:00-05:00"
     },
     {
       "id": "desk-by-the-book-two-of-everything-2026-11-23",
@@ -2021,6 +2062,251 @@
       "vet_notes": "Clark's By the Book draft (~80w), timely for Cobra weekend; also echoes the Fair Play secondary (Schembri's blades failing inspection). Rule numbers from the Oct. 2026 USA Fencing rulebook. No mention of mask-cord penalty beyond t.117's list.",
       "created_at": "2026-11-23T09:12:00-05:00",
       "updated_at": "2026-11-23T09:12:00-05:00"
+    },
+    {
+      "id": "desk-cobra-syc-ryc-explainer-2026-11-24",
+      "kind": "graf",
+      "headline": "This Weekend at Cobra: What an SYC Is, and Why It Matters",
+      "body": "The Cobra Challenge SYC/RCC is Friday through Sunday, Nov. 27–29, at the Meadowlands Expo Center in Secaucus, a short trip from the club. Sixteen Elite FC fencers have 26 approved entries in Youth 10, Youth 12, Youth 14 and Cadet epee. Several fields are already full: Youth 14 Men has 140 official competitors, Youth 14 Women 133, Cadet Men 126, Youth 12 Women 106 and Cadet Women 105.\n\nFor parents still learning the youth-tournament alphabet, Cobra's important letters are SYC: Super Youth Circuit. An SYC is not simply a larger Regional Youth Circuit event. The two circuits award different points, feed different standings and open different paths to national tournaments, and those differences matter most for the younger age groups.\n\nA Regional Youth Circuit tournament, or RYC, awards only regional points, and only to fencers competing in their home region. Everyone in the event earns some. The formula is ((number of entries minus place plus 1) divided by the number of entries) times 100, so the winner always receives 100 points, whatever the field size. A fencer's best three RYC results in that region count toward the Regional Youth Point Standings. Those points do not appear on the national point lists. An RYC must have at least two competitors for regional points to be awarded.\n\nA Super Youth Circuit tournament awards national youth points, and a fencer from any region can earn them by placing high enough. Points go to the top 40 percent of the competitive field — current competitive members in the starting field — rounded up, to a maximum of 64th place. At least three fencers must compete. Only a fencer's single best SYC result in each age category counts. USA Fencing then builds the Youth Point Standings from the four highest results among that SYC, North American Cups and National Championships in the eligible age groups.\n\nThat is why an SYC carries more weight for younger fencers. To enter Youth 10 or Youth 12 at the March NAC in Atlantic City, a fencer must have competed in one RYC or one SYC this season in the same age group and weapon (Youth 12 fencers on the national point standings also qualify). Youth 14 has no such qualifying path for the March NAC; age is enough. For the USA Fencing National Championships in the summer, the national point standings — which an SYC result can help build — are one qualifying path in Youth 10, Youth 12 and Youth 14. Regional RYC points are another: 60 Youth 12 regional points can qualify a Youth 10 fencer, 70 Youth 12 or 160 Youth 14 regional points a Youth 12 fencer, and 160 Youth 14 regional points a Youth 14 fencer, each from the fencer's best three regional results.\n\nCobra is a local SYC, which is unusual. Super Youth Circuit tournaments are held throughout the country, and many families travel to them. This one is in Secaucus. There are no rating requirements for an SYC or an RYC, only a current competitive membership and the right age group. Youth 8 events, when they appear, are not part of either circuit for points.\n\nThe SYC format is one round of pools, with every fencer advancing to direct elimination. Youth 10 direct-elimination bouts are to 10 touches, in two three-minute periods. Youth 12 and Youth 14 are to 15. There is no fence-off for third place.\n\nCobra also runs Cadet events as a Regional Cadet Circuit, not as an SYC, and those results do not earn youth national points.\n\nThe club is closed Friday for Thanksgiving. Regular classes resume Saturday, Nov. 28.",
+      "word_count": 601,
+      "source": "desk",
+      "from": "clark",
+      "target_week": "next",
+      "vetted": false,
+      "slot_hint": "lead",
+      "suggested_slot": "lead",
+      "related_item": "fencingapi-cobra-efc-entries-2026-10-19",
+      "tags": [
+        "feature",
+        "cobra",
+        "syc",
+        "ryc",
+        "parents",
+        "youth"
+      ],
+      "facts": [
+        {
+          "claim": "Cobra Challenge SYC/RCC, Meadowlands Expo Center, Secaucus, N.J., Nov. 27–29, 2026",
+          "source": "https://member.usafencing.org/details/tournaments/12119 (retrieved 2026-11-24 ~2:55 PM ET); tournament name, venue, dates",
+          "status": "verified-usafencing"
+        },
+        {
+          "claim": "26 approved Elite FC entries / 16 fencers (names unchanged vs Monday)",
+          "source": "fencingapi cached /v1/usfa/tournaments/12119/entries, fetched_at 2026-11-23T04:05:55Z (2026-11-22 11:05 PM ET). Public official page does not list club names without sign-in. Live API refresh was not available today.",
+          "status": "verified-usafencing-cache (names last confirmed Mon. Nov. 23 / cache of Nov. 22 evening); registrations are entries, not results"
+        },
+        {
+          "claim": "Official competitors (public page 2026-11-24 ~2:55 PM ET): Y14ME 140 (was 139 on Mon. Nov. 23), Y14WE 133, CDTME 126, Y12WE 106, CDTWE 105, Y12ME 89, Y10ME 47. Y14ME, Y14WE, CDTME, CDTWE capped / waitlist.",
+          "source": "https://member.usafencing.org/details/tournaments/12119 (retrieved 2026-11-24 ~2:55 PM ET)",
+          "status": "verified-usafencing"
+        },
+        {
+          "claim": "RYC: regional points only, home region only; formula ((# entries – place + 1) / # entries) x 100; winner always 100; best 3 RYC results count; not used in national point standings; at least 2 competitors",
+          "source": "USA Fencing Athlete Handbook 2026-27 (PDF dated Nov. 4, 2026), §3.3.1; also https://www.usafencing.org/ryc-resources and https://usafencing.zendesk.com/hc/en-us/articles/29045164407437-Regional-Points (retrieved 2026-11-24)",
+          "status": "verified-handbook + usafencing"
+        },
+        {
+          "claim": "SYC: national youth points, any region; top 40% of competitive field (current competitive members in starting field), rounded up, maximum 64th place; at least 3 fencers; only the single best SYC result per age category counts",
+          "source": "Athlete Handbook 2026-27 §3.4.3 and §2.2 (SYC); https://www.usafencing.org/syc-resources and https://www.usafencing.org/events-regional (retrieved 2026-11-24)",
+          "status": "verified-handbook + usafencing"
+        },
+        {
+          "claim": "Youth Point Standings: four highest results among the one counting SYC, NACs and National Championships in the eligible age groups (Y10: SYC Y10/Y12, NAC Y10/Y12, National Championship Y10/Y12; Y12: SYC Y12/Y14, NAC Y12/Y14, National Championship Y12/Y14; Y14: SYC Y14, NAC Y14, National Championship Y14); only one SYC result per age category",
+          "source": "Athlete Handbook 2026-27 §3.1.6",
+          "status": "verified-handbook"
+        },
+        {
+          "claim": "Y10 and Y12 March NAC: one RYC or one SYC this season in the same age and weapon (Y12 also: on Y12 national point standings; also Y10 standings / IRC). Y14 March NAC: birth-year criteria only, no qualifying path.",
+          "source": "Athlete Handbook 2026-27 §2.10.1–2.10.3",
+          "status": "verified-handbook (Y10/Y12 IRC and Y10-standings paths mentioned only in source notes, not printed, to keep the graf to the main RYC/SYC rule)"
+        },
+        {
+          "claim": "Summer Nationals (USA Fencing National Championships) qualifying paths include national point standings (Y10, Y12, Y14) and regional-point thresholds: Y10 — 60 Y12 regional points; Y12 — 70 Y12 or 160 Y14 regional points; Y14 — 160 Y14 regional points; each from the fencer's top three regional results. Additional paths (regional standings, division Y14 qualifier, IRC) exist and were not all printed.",
+          "source": "Athlete Handbook 2026-27 §2.10.4–2.10.6",
+          "status": "verified-handbook (printed the national-points path and the regional-point thresholds; omitted Y10 regional standings, division qualifier, and IRC percentages to keep the graf readable — see omitted)"
+        },
+        {
+          "claim": "RYC and SYC: no rating requirements; must meet birth years in Table 2.5.1; current competitive membership (open to current competitive members / International Competitive License)",
+          "source": "Athlete Handbook 2026-27 §2.9; https://www.usafencing.org/syc-resources and ryc-resources Eligibility",
+          "status": "verified-handbook + usafencing (birth years not printed, house rule)"
+        },
+        {
+          "claim": "Y8 events are not official parts of the SYC or RYC circuits for points",
+          "source": "Athlete Handbook 2026-27 §2.2 (SYC/RYC); https://www.usafencing.org/events-regional and syc-resources / ryc-resources",
+          "status": "verified-handbook + usafencing"
+        },
+        {
+          "claim": "SYC format: one round of pools, 100% promoted to DE; pools of 6 or 7 when possible; no fence-off for third. Y10 DE: 10 hits or two 3-minute periods with a 1-minute rest; Y12 and Y14 DE: 15 hits, three 3-minute periods.",
+          "source": "https://www.usafencing.org/syc-resources (Format), retrieved 2026-11-24",
+          "status": "verified-usafencing (printed the bout lengths and 100% promotion / no fence-off; omitted the pool-size and Y14 coach-on-strip details)"
+        },
+        {
+          "claim": "Cobra cadet events are RCC (Regional Cadet Circuit), not SYC, and do not earn youth national points. SYC contested events are Y14/Y12/Y10; cadet events at an SYC/RCC, if sanctioned as RCC/RJCC, earn cadet/junior circuit points, not youth national points.",
+          "source": "Tournament name Cobra Challenge SYC/RCC, https://member.usafencing.org/details/tournaments/12119; https://www.usafencing.org/events-regional (SYC vs RJCC/RCC); https://www.usafencing.org/syc-resources (cadet events sanctioned as Regional Cadet Circuit award regional/circuit points, not youth national points)",
+          "status": "verified-usafencing"
+        },
+        {
+          "claim": "Club closed Friday, Nov. 27; regular classes resume Saturday, Nov. 28",
+          "source": "email-thanksgiving-schedule-2026-11-20 (club Mailchimp, vetted; Monday Nov. 23 email confirmed Nov. 28)",
+          "status": "verified-email"
+        }
+      ],
+      "omitted": [
+        "SYC points feed Youth/Cadet World Cup or team selection: not verified in the 2026-27 Athlete Handbook or official SYC/points pages; dropped. Youth national points are a domestic youth standing (SYC, NAC, National Championships). Cadet/Junior international selection uses the Unified Points List and designated international events, not SYC youth points.",
+        "Junior Olympics qualification via SYC/RYC: not a standard SYC/RYC path (JO is Cadet/Junior). IRC can contribute to JO eligibility (handbook § International Regional Circuit); not printed because it is not an RYC/SYC fact.",
+        "Y10 Nationals also: be on Y10 Regional Youth Point Standings; earn points in an IRC Y10. Y12 Nationals also: top 25% of the division Y14 qualifier; top 40% at a Y12 IRC. Y14 Nationals also: top 40% at a Y14 IRC; top 25% (round up) of the division Y14 qualifier. Left out of the printed graf; in source notes if the piece grows.",
+        "Y10 March NAC additional paths (IRC; the Y12 feature also lists Y10 national standings / IRC) — printed the main 'one RYC or SYC' rule.",
+        "Typical RYC vs SYC entry fees: no single official fee schedule; Cobra's posted regular fees were not compared because late registration had already closed and RYC fees vary by organizer.",
+        "Birth-year ranges (house rule: no birth years).",
+        "Full list of 16 Elite FC names (on the vetted Nearby Tournaments board, not repeated in the lead)."
+      ],
+      "vet_notes": "Clark's draft of the Cobra lead Frank asked for (t240u, Nov. 24): longer parent explainer of RYC vs SYC, many verified angles, sized for a thin week (~601w, 2 columns). Needs Frank's Vet. Club entry names last confirmed from official USA Fencing via fencing-api cache (Mon.); today's public official page updated Y14 Men from 139 to 140 official competitors — not assumed to be an Elite FC entry. Did not claim World Cup/team-selection effects (unverified). Registrations are entries, not results.",
+      "provenance": [
+        {
+          "type": "url",
+          "url": "https://member.usafencing.org/details/tournaments/12119",
+          "retrieved_at": "2026-11-24T14:59:00-05:00",
+          "note": "Official Cobra page: venue, dates, official competitor counts and close-of-registration times. Y14ME 140 (up 1 from Monday)."
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/syc-resources",
+          "retrieved_at": "2026-11-24T14:59:00-05:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/ryc-resources",
+          "retrieved_at": "2026-11-24T14:59:00-05:00"
+        },
+        {
+          "type": "url",
+          "url": "https://www.usafencing.org/events-regional",
+          "retrieved_at": "2026-11-24T14:59:00-05:00"
+        },
+        {
+          "type": "url",
+          "url": "https://usafencing.zendesk.com/hc/en-us/articles/29045164407437-Regional-Points",
+          "retrieved_at": "2026-11-24T14:59:00-05:00"
+        },
+        {
+          "type": "handbook",
+          "source": "USA Fencing Athlete Handbook 2026-27",
+          "url": "https://assets.contentstack.io/v3/assets/blteb7d012fc7ebef7f/blt46a0168c9377fc1b/USA%20Fencing%20Athlete%20Handbook%202026-27",
+          "retrieved_at": "2026-11-24T14:59:00-05:00",
+          "note": "PDF, 88 pages, CreationDate/ModDate Nov. 4, 2026. Sections 2.2, 2.9, 2.10.1–2.10.6, 3.1.6, 3.3.1, 3.4.3."
+        }
+      ],
+      "created_at": "2026-11-24T14:59:00-05:00",
+      "updated_at": "2026-11-24T14:59:00-05:00"
+    },
+    {
+      "id": "ft-freehold-nov-youth-jeong-2026-11-22",
+      "kind": "result",
+      "headline": "Joshua Jeong tied for 3rd of 4 in Y12 Men at Freehold Youth",
+      "body": "Official USA Fencing results (final) for Freehold Fencing - November Youth Foil & Epee, Sunday, Nov. 22, 2026: Jeong, Joshua (Elite Fencers Club) tied for 3rd of 4 in Youth 12 Men's Epee (Y12ME, event 79558) with Charna, Luca of Lilov Fencing Academy (two 3rds, no fence-off). No rating earned. FencingTracker lists him as 3rd and does not note the tie. The club's Nov. 23 newsletter congratulated Christina Jiang's gold and did not mention this result.",
+      "source": "web",
+      "from": "FencingTracker club page + USA Fencing results via fencing-api",
+      "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+      "target_week": "next",
+      "vetted": false,
+      "slot_hint": "club_results",
+      "suggested_slot": "club_results",
+      "tags": [
+        "club",
+        "result",
+        "local",
+        "freehold"
+      ],
+      "print_rows": [
+        [
+          "Joshua Jeong",
+          "Freehold Youth, Y12 Men (Nov. 22)",
+          "tied for 3rd of 4"
+        ]
+      ],
+      "facts": [
+        {
+          "claim": "Joshua Jeong tied for 3rd of 4, Youth 12 Men's Epee (Y12ME, event 79558), same tournament, Nov. 22, 2026, with Luca Charna (Lilov); no rating earned",
+          "source": "fencingapi live /v1/usfa/tournaments/12503/events/79558/results (final=true), fetched 2026-11-23 7:54 AM ET; underlying https://member.usafencing.org/details/tournaments/12503",
+          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 3."
+        },
+        {
+          "claim": "FencingTracker club page lists Jeong, Joshua Y12ME 3rd and Jiang, Christina Y12WE 1st, no rating earned, date 2026-11-22; 2 results recorded",
+          "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "status": "unvetted; FencingTracker club page 2026-11-23 7:51 AM ET. Does not mark the Y12ME bronze as a tie. [2026-11-24: gold vetted — club Mailchimp congratulated her 1st in Y12 Freehold, and Frank's No. 8 direction treats that confirmation as a vet.]"
+        },
+        {
+          "claim": "Club newsletter congratulates Christina Jiang on her 1st-place finish in Y12 Freehold.",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp). Does not mention Joshua Jeong or field size. [2026-11-24: gold vetted — club Mailchimp congratulated her 1st in Y12 Freehold, and Frank's No. 8 direction treats that confirmation as a vet.]"
+        }
+      ],
+      "field_note": "'of 4' = number of finishers in the official USA Fencing results list. Catalog official_competitors for both events was also 4.",
+      "print_hint": "Club Results rows: local medals, but fields of 4 — flag the field size if this leads. Joshua was not on the Nov 19 prereg list.",
+      "vet_notes": "Split out of ft-freehold-nov-youth-results-2026-11-22 on 2026-11-24 so Christina Jiang's gold can be vetted on its own. Joshua's shared bronze was not mentioned in the club's Nov. 23 newsletter. Still unvetted. Four-fencer field.",
+      "related_item": "ft-freehold-nov-youth-results-2026-11-22",
+      "provenance": [
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-23T07:51:00-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "Newest club-page tournament: Freehold Fencing - November Youth Foil & Epee, Nov 22, 2026, 2 results. Jeong, Joshua, Youth 12 Men's Epee (Y12ME), 3rd, rating earned '-'; Jiang, Christina, Youth 12 Women's Epee (Y12WE), 1st, rating earned '-'. Date 2026-11-22. USFA https://member.usafencing.org/details/tournaments/12503."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12503?live=true",
+          "fetched_at": "2026-11-23T12:53:42Z",
+          "fetched_at_et": "2026-11-23 7:53 AM ET",
+          "final": false,
+          "data_kind": "catalog",
+          "underlying": "https://member.usafencing.org/details/tournaments/12503",
+          "note": "source=live, kind=usfa.tournament. Y12ME event 79558 official_competitors 4; Y12WE event 79559 official_competitors 4. No placements in this catalog payload."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12503/events/79558/results?live=true and /events/79559/results?live=true",
+          "fetched_at": "2026-11-23T12:54:14Z/12:54:17Z",
+          "fetched_at_et": "2026-11-23 7:54 AM ET",
+          "final": true,
+          "underlying": "https://member.usafencing.org/details/tournaments/12503",
+          "note": "Y12ME: 4 finishers — Lee, Jace 1 (Wanglei); Mak, Nolan 2 (Medeo); Charna, Luca 3 (Lilov) and Jeong, Joshua 3 (Elite Fencers Club). Y12WE: 4 finishers — Jiang, Christina 1 (Elite Fencers Club); Choi, Serine 2 (Wanglei); Fleming, Evangeline 3 (Lilov) and Tee, Romana 3 (Unattached). Empty rating fields; no rating earned listed."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-23T09:02:00-05:00",
+          "note": "Monday full pass: unchanged (Jeong 3, Jiang 1, no rating earned)."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class! + Thanksgiving",
+          "received_at": "2026-11-23T09:56:58-05:00",
+          "retrieved_at": "2026-11-24T08:01:14-05:00",
+          "url": "https://mailchi.mp/be0b7ca989d6/group-class-thanksgiving?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Allowlisted club Mailchimp congratulates Christina Jiang, 1st in Y12 Freehold. Includes the Y12 Women's podium photo (extracted). Does not mention Joshua Jeong."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-24T07:53:12-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "Freehold Youth unchanged: Jeong, Joshua Y12ME 3rd; Jiang, Christina Y12WE 1st; no rating earned."
+        }
+      ],
+      "created_at": "2026-11-23T07:56:00-05:00",
+      "updated_at": "2026-11-24T14:59:00-05:00",
+      "related_media": [],
+      "word_count": 76
     }
   ],
   "last_daily_pass": {

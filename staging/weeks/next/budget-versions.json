@@ -10,6 +10,15 @@
       "decisions_through": null,
       "decisions": 0,
       "out": "budget-demo/out/budget-no-8-2026-11-24-v1.html"
+    },
+    {
+      "v": 2,
+      "built_at": "2026-11-24T15:02:50-05:00",
+      "data": "ebead6e13faa",
+      "page": "budget-paper-v2",
+      "decisions_through": null,
+      "decisions": 0,
+      "out": "budget-demo/out/budget-no-8-2026-11-24-v2.html"
     }
   ],
   "decisions": []
