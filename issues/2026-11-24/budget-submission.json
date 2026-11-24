@@ -1,0 +1,556 @@
+{
+  "publishDate": "2026-11-24",
+  "practice": false,
+  "pretend": false,
+  "targetWeek": "next",
+  "issue": {
+    "number": 8,
+    "label": "Issue No. 8",
+    "week": "Week of Nov. 23, 2026"
+  },
+  "includedSlots": [
+    {
+      "slot": "lead",
+      "name": "Lead story — Cobra SYC, and what an SYC is",
+      "headline": "This Weekend at Cobra: What an SYC Is, and Why It Matters",
+      "itemId": "desk-cobra-syc-ryc-explainer-2026-11-24",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-nac",
+      "name": "Secondary — November NAC results",
+      "headline": "Nico Ng 15th of 136 in Cadet Challenger at the November NAC",
+      "itemId": "ft-november-nac-results-2026-11-24",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "secondary-fair-play",
+      "name": "Secondary — Fair Play Trophy (Kruz Schembri)",
+      "headline": "The Touch He Gave Back",
+      "itemId": "desk-secondary-fair-play-schembri-2026-11-23",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "feature-march-nac",
+      "name": "Page 2 feature — March NAC (Atlantic City)",
+      "headline": "A National Tournament Next Door: March NAC Comes to Atlantic City",
+      "itemId": "desk-march-nac-feature-2026-11-23",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-results",
+      "name": "Club results",
+      "headline": "Club results",
+      "itemId": "ft-freehold-nov-youth-results-2026-11-22",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "signup-cobra",
+      "name": "Nearby Tournaments — Cobra Challenge",
+      "headline": "Cobra Challenge SYC/RCC — Secaucus, N.J., Nov. 27–29",
+      "itemId": "fencingapi-cobra-efc-entries-2026-10-19",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "on-the-road",
+      "name": "On the Road — December SJCC",
+      "headline": "On the Road: December SJCC, Milwaukee, Dec. 4–6",
+      "itemId": "ft-efc-on-the-road-dec-sjcc-2026-11-23",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "deadlines",
+      "name": "Deadlines box",
+      "headline": "Deadlines box — No. 8",
+      "itemId": "desk-deadlines-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-events",
+      "name": "Club events — Thanksgiving closure",
+      "headline": "Club closed Wednesday through Friday for Thanksgiving",
+      "itemId": "email-thanksgiving-schedule-2026-11-20",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "club-events-party",
+      "name": "Club events — Holiday party",
+      "headline": "Holiday Party: Friday, Dec. 11",
+      "itemId": "email-holiday-party-2026-12-11",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "by-the-book",
+      "name": "By the Book — Two of Everything",
+      "headline": "By the Book: Two of Everything",
+      "itemId": "desk-by-the-book-two-of-everything-2026-11-23",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "college",
+      "name": "Secondary — College season",
+      "headline": "College Season Opens Next Door",
+      "itemId": "x-college-season-opens-2026-11-09",
+      "vetted": true,
+      "stale": false
+    }
+  ],
+  "excludedSlots": [
+    {
+      "slot": "camp",
+      "name": "Club events — Winter Camp",
+      "headline": "Winter Camp: Sign Up Now",
+      "itemId": "chat-winter-camp-reminder",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "classes",
+      "name": "Weekly classes table",
+      "headline": "Elite FC weekly class schedule (club website)",
+      "itemId": "web-efc-standing-schedule",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "tv",
+      "name": "Epee on Screen",
+      "headline": "Epee on Screen — No. 8",
+      "itemId": "desk-epee-on-screen-2026-10-18",
+      "vetted": true,
+      "stale": false
+    },
+    {
+      "slot": "photo-history",
+      "name": "Photo from History",
+      "headline": "Photo from History: Tímea Nagy",
+      "itemId": "history-photo-10-timea-nagy",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "auto-ft-freehold-nov-junior-chen-2026-11-20",
+      "name": "Not slotted yet (club_results)",
+      "headline": "Xinxuewei Chen 7th at Freehold November Junior Epee",
+      "itemId": "ft-freehold-nov-junior-chen-2026-11-20",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "auto-ft-freehold-nov-youth-jeong-2026-11-22",
+      "name": "Not slotted yet (club_results)",
+      "headline": "Joshua Jeong tied for 3rd of 4 in Y12 Men at Freehold Youth",
+      "itemId": "ft-freehold-nov-youth-jeong-2026-11-22",
+      "vetted": false,
+      "stale": false
+    },
+    {
+      "slot": "ratings",
+      "name": "Ratings earned",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "for-the-parents",
+      "name": "For the Parents",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "nj-hs",
+      "name": "NJ high-school roundup",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "qa",
+      "name": "Parent Q&A",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    },
+    {
+      "slot": "overheard",
+      "name": "Overheard on Reddit",
+      "headline": "",
+      "itemId": null,
+      "vetted": true,
+      "stale": false,
+      "empty": true
+    }
+  ],
+  "photoIncludes": [
+    "media-christina-jiang-freehold-youth-podium-2026-11-22",
+    "media-efc-november-nac-photo-2026-11-23"
+  ],
+  "notes": "The layout is approximate and not pixel perfect, but I think you know that right?  \n\nWe can fill some of the space on the first page with captions of Christina in 1st place and Remy coaching Nico in the second photo.  \n\nthe \"by the book\" stuff is something we can re-use in the future right?  maybe that goes in the vault? \n\nWe're looking pretty good right now and I think you won't have a hard time filling in the gaps.  Apply taste to make sure it looks good and is ready for print.",
+  "slotNotes": {},
+  "answers": [],
+  "order": [
+    "lead",
+    "secondary-nac",
+    "secondary-fair-play",
+    "feature-march-nac",
+    "club-results",
+    "signup-cobra",
+    "on-the-road",
+    "deadlines",
+    "club-events",
+    "camp",
+    "club-events-party",
+    "classes",
+    "by-the-book",
+    "tv",
+    "photo-history",
+    "college",
+    "auto-ft-freehold-nov-junior-chen-2026-11-20",
+    "auto-ft-freehold-nov-youth-jeong-2026-11-22"
+  ],
+  "pageVersion": "budget-paper-v2",
+  "submittedAt": "2026-11-24T15:38:24-05:00",
+  "vets": [
+    {
+      "id": "desk-cobra-syc-ryc-explainer-2026-11-24",
+      "vet_notes": ""
+    },
+    {
+      "id": "desk-secondary-fair-play-schembri-2026-11-23",
+      "vet_notes": ""
+    },
+    {
+      "id": "ft-efc-march-nac-registrations-2026-11-23",
+      "vet_notes": ""
+    },
+    {
+      "id": "desk-march-nac-feature-2026-11-23",
+      "vet_notes": ""
+    },
+    {
+      "id": "ft-efc-on-the-road-dec-sjcc-2026-11-23",
+      "vet_notes": ""
+    },
+    {
+      "id": "desk-by-the-book-two-of-everything-2026-11-23",
+      "vet_notes": ""
+    },
+    {
+      "id": "x-college-season-opens-2026-11-09",
+      "vet_notes": ""
+    }
+  ],
+  "publishDateAlt": "2026-11-25",
+  "budgetVersion": 2,
+  "dataVersion": "ebead6e13faa",
+  "pages": {
+    "slots": {
+      "lead": {
+        "page": 2,
+        "span": 2,
+        "widthIn": 4.96,
+        "heightIn": 7.4
+      },
+      "secondary-nac": {
+        "page": 1,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 2.9
+      },
+      "secondary-fair-play": {
+        "page": 1,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 4.2
+      },
+      "feature-march-nac": {
+        "page": 1,
+        "span": 2,
+        "widthIn": 4.96,
+        "heightIn": 4.1
+      },
+      "club-results": {
+        "page": 1,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 1.2
+      },
+      "signup-cobra": {
+        "page": 2,
+        "span": 2,
+        "widthIn": 4.96,
+        "heightIn": 2
+      },
+      "on-the-road": {
+        "page": 2,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 2.1
+      },
+      "deadlines": {
+        "page": 2,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 2.5
+      },
+      "club-events": {
+        "page": 1,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 1.3
+      },
+      "club-events-party": {
+        "page": 1,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 1.3
+      },
+      "by-the-book": {
+        "page": 2,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 2.5
+      },
+      "college": {
+        "page": 2,
+        "span": 1,
+        "widthIn": 2.42,
+        "heightIn": 2.2
+      }
+    },
+    "photos": {
+      "media-christina-jiang-freehold-youth-podium-2026-11-22": {
+        "page": 1,
+        "span": 1,
+        "widthIn": 2.4,
+        "heightIn": 1.8
+      },
+      "media-efc-november-nac-photo-2026-11-23": {
+        "page": 1,
+        "span": 1,
+        "widthIn": 1.65,
+        "heightIn": 2.2
+      }
+    }
+  },
+  "resize": {
+    "lead": {
+      "direction": "shrink",
+      "target": "563w",
+      "fromWords": 601,
+      "toWords": 563,
+      "fromColIn": 15.6,
+      "unit": "words",
+      "pct": 94,
+      "toColIn": 14.7
+    },
+    "club-events-party": {
+      "direction": "expand",
+      "target": "34w",
+      "fromWords": 20,
+      "toWords": 34,
+      "fromColIn": 1,
+      "unit": "words",
+      "pct": 170,
+      "toColIn": 1.3
+    },
+    "secondary-fair-play": {
+      "direction": "expand",
+      "target": "183w",
+      "fromWords": 141,
+      "toWords": 183,
+      "fromColIn": 3.4,
+      "unit": "words",
+      "pct": 130,
+      "toColIn": 4.2
+    },
+    "on-the-road": {
+      "direction": "shrink",
+      "target": "54w",
+      "fromWords": 61,
+      "toWords": 54,
+      "fromColIn": 2.2,
+      "unit": "words",
+      "pct": 89,
+      "toColIn": 2.1
+    },
+    "college": {
+      "direction": "expand",
+      "target": "78w",
+      "fromWords": 55,
+      "toWords": 78,
+      "fromColIn": 1.7,
+      "unit": "words",
+      "pct": 142,
+      "toColIn": 2.2
+    },
+    "by-the-book": {
+      "direction": "expand",
+      "target": "96w",
+      "fromWords": 89,
+      "toWords": 96,
+      "fromColIn": 2.4,
+      "unit": "words",
+      "pct": 108,
+      "toColIn": 2.5
+    },
+    "club-results": {
+      "direction": "shrink",
+      "target": "3w",
+      "fromWords": 27,
+      "toWords": 3,
+      "fromColIn": 1.7,
+      "unit": "words",
+      "pct": 11,
+      "toColIn": 1.2
+    },
+    "club-events": {
+      "direction": "expand",
+      "target": "32w",
+      "fromWords": 25,
+      "toWords": 32,
+      "fromColIn": 1.1,
+      "unit": "words",
+      "pct": 128,
+      "toColIn": 1.3
+    }
+  },
+  "layout": {
+    "media-christina-jiang-freehold-youth-podium-2026-11-22": "tall",
+    "deadlines": "tall",
+    "lead": "wide",
+    "signup-cobra": "wide",
+    "feature-march-nac": "wide",
+    "club-events-party": "tall",
+    "club-events": "tall",
+    "camp": "tall",
+    "media-efc-november-nac-photo-2026-11-23": "tall",
+    "secondary-fair-play": "tall",
+    "secondary-nac": "tall",
+    "on-the-road": "tall",
+    "by-the-book": "tall",
+    "college": "tall",
+    "club-results": "tall"
+  },
+  "mode": "manual",
+  "manualLayout": {
+    "secondary-nac": {
+      "page": 1,
+      "col": 1,
+      "span": 1,
+      "topIn": 4.15,
+      "heightIn": 2.9
+    },
+    "secondary-fair-play": {
+      "page": 1,
+      "col": 0,
+      "span": 1,
+      "topIn": 4.2,
+      "heightIn": 4.2
+    },
+    "feature-march-nac": {
+      "page": 1,
+      "col": 0,
+      "span": 2,
+      "topIn": 0,
+      "heightIn": 4.15
+    },
+    "club-results": {
+      "page": 1,
+      "col": 2,
+      "span": 1,
+      "topIn": 0,
+      "heightIn": 1.2
+    },
+    "deadlines": {
+      "page": 2,
+      "col": 2,
+      "span": 1,
+      "topIn": 2.15,
+      "heightIn": 2.55
+    },
+    "media-christina-jiang-freehold-youth-podium-2026-11-22": {
+      "page": 1,
+      "col": 2,
+      "span": 1,
+      "topIn": 1.2,
+      "heightIn": 2.35
+    },
+    "lead": {
+      "page": 2,
+      "col": 0,
+      "span": 2,
+      "topIn": 2.05,
+      "heightIn": 7.35
+    },
+    "signup-cobra": {
+      "page": 2,
+      "col": 0,
+      "span": 2,
+      "topIn": 0,
+      "heightIn": 2
+    },
+    "on-the-road": {
+      "page": 2,
+      "col": 2,
+      "span": 1,
+      "topIn": 0,
+      "heightIn": 2.1
+    },
+    "club-events": {
+      "page": 1,
+      "col": 2,
+      "span": 1,
+      "topIn": 7.15,
+      "heightIn": 1.25
+    },
+    "club-events-party": {
+      "page": 1,
+      "col": 1,
+      "span": 1,
+      "topIn": 7.05,
+      "heightIn": 1.3
+    },
+    "media-efc-november-nac-photo-2026-11-23": {
+      "page": 1,
+      "col": 2,
+      "span": 1,
+      "topIn": 4.05,
+      "heightIn": 2.75
+    },
+    "by-the-book": {
+      "page": 2,
+      "col": 2,
+      "span": 1,
+      "topIn": 4.75,
+      "heightIn": 2.5
+    },
+    "college": {
+      "page": 2,
+      "col": 2,
+      "span": 1,
+      "topIn": 7.25,
+      "heightIn": 2.15
+    }
+  }
+}

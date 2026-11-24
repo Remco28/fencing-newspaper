@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-24T14:59:00-05:00",
+  "updated_at": "2026-11-24T15:39:59-05:00",
   "note": "Hold pile for Issue No. 8. Started at the No. 7 roll-forward 2026-11-17 12:20 AM ET. after-next (March NAC feature (large), Frank t231u) became part of next; still-relevant held and upcoming items copied from staging/weeks/2026-11-17 with carried_from. Frank (t232u, 12:09 AM ET): keep the proof v3 workflow next week (eye check gate, spacing tokens, copy lengths, arrangements).",
   "rolled_forward": {
     "from": [
@@ -672,7 +672,7 @@
       "body": "NCAA fencing season opened the first weekends of November. NJIT hosted its first home meet since 2019 on Nov 1 (men 2–0, women 1–1), then fenced the Drew Invitational in Madison, N.J., on Nov 7 and the Columbia Invitational in New York on Nov 8. Duke beat North Carolina in their opener.",
       "source": "x",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "secondary",
       "word_count": 55,
       "vet_notes": "Lead only. NJIT facts from @njitfencing (tier A, own news); Duke/UNC from Google News headlines (unverified). Needs Frank vet; could be a short college-path item.\n[2026-11-16] Lead: Penn Elite Invitational / Elite Duals in Philadelphia, Nov. 14–15 (Google News headlines: Columbia 'strong weekend', Penn ten wins, UNC, Temple, Cleveland State). Not fetched or verified; could refresh this short if Frank wants it.\n[2026-11-23] Google News headlines (unverified, not opened): Stevens (Hoboken) men's and women's teams at the Vassar Invitational (Nov. 21–22); FDU (Teaneck) season preview (NY Amsterdam News, Nov. 19); Harvard/Duke at Penn Elite Invitational (Nov. 14–15). Still a lead only; stale for No. 8 unless Frank wants a college short.",
@@ -708,7 +708,9 @@
       "created_at": "2026-11-09T09:20:00-05:00",
       "carried_from": "staging/weeks/2026-11-17",
       "updated_at": "2026-11-23T09:12:00-05:00",
-      "carry_note": "Still held, unvetted. Early-November meets are stale now; refresh from a fetched source if Frank wants a college short."
+      "carry_note": "Still held, unvetted. Early-November meets are stale now; refresh from a fetched source if Frank wants a college short.",
+      "vetted_at": "2026-11-24T15:39:59-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "desk-deadlines-2026-10-18",
@@ -1851,7 +1853,7 @@
       "from": "FencingTracker registrations",
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "signup",
       "suggested_slot": "on-the-road",
       "tags": [
@@ -1871,7 +1873,9 @@
       ],
       "vet_notes": "Monday full pass 2026-11-23. Scraped registrations (unvetted rule). The same three names were listed as 'next travel' in the vetted November NAC item (official USA Fencing entries, Nov. 16); event days are new from FencingTracker. Replaces the November NAC table in On the Road (that event is over).",
       "created_at": "2026-11-23T09:12:00-05:00",
-      "updated_at": "2026-11-23T09:12:00-05:00"
+      "updated_at": "2026-11-23T09:12:00-05:00",
+      "vetted_at": "2026-11-24T15:39:59-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "ft-efc-march-nac-registrations-2026-11-23",
@@ -1882,7 +1886,7 @@
       "from": "FencingTracker registrations",
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/registrations",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "lead",
       "suggested_slot": "lead",
       "related_item": "desk-march-nac-feature-2026-11-23",
@@ -1902,7 +1906,9 @@
       ],
       "vet_notes": "Scraped registrations: unvetted until Frank confirms. Used as the 'already entered' line in the March NAC feature draft. Names via roster (WU, Caden -> Caden Wu). USA Fencing per-day schedule is not posted yet; the days come from FencingTracker's entry rows.",
       "created_at": "2026-11-23T09:12:00-05:00",
-      "updated_at": "2026-11-23T09:12:00-05:00"
+      "updated_at": "2026-11-23T09:12:00-05:00",
+      "vetted_at": "2026-11-24T15:39:59-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "desk-march-nac-feature-2026-11-23",
@@ -1913,7 +1919,7 @@
       "source": "desk",
       "from": "clark",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "feature",
       "suggested_slot": "page2-feature",
       "related_item": "usaf-march-nac-feature-no8",
@@ -1977,7 +1983,9 @@
       ],
       "vet_notes": "Clark's draft (~300w) of the large March NAC feature Frank asked for (t231u, Nov. 16: 'next week we will have a much larger article because March NAC is for basically all the kids at our club. I will highly encourage everyone to go esp since it's \"local\"'). Proposed as the No. 8 lead (2 columns). Facts re-fetched Nov. 23 from the official page and the 2026-27 Athlete Handbook. The last paragraph (who's entered) is from FencingTracker registrations and depends on Frank vetting that item; drop the paragraph if not. No Frank byline; no quotes attributed to Frank. Could grow a 'Getting there' box once the schedule posts.\n[2026-11-24] Frank t240u: Cobra leads; this feature moves to page 2. Draft unchanged except placement. Still needs his Vet. Cobra-this-weekend-is-an-SYC line remains true.",
       "created_at": "2026-11-23T09:12:00-05:00",
-      "updated_at": "2026-11-24T14:59:00-05:00"
+      "updated_at": "2026-11-24T14:59:00-05:00",
+      "vetted_at": "2026-11-24T15:39:59-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "desk-secondary-fair-play-schembri-2026-11-23",
@@ -1988,7 +1996,7 @@
       "source": "web",
       "from": "fie.org",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "secondary",
       "suggested_slot": "secondary",
       "tags": [
@@ -2028,7 +2036,9 @@
       ],
       "vet_notes": "Clark's draft secondary (~140w) from FIE's own articles (tier 1). Adult athlete, public figure. Pairs with By the Book 'Two of Everything' (spare weapons) and the Cobra weekend. Hong Kong Worlds date not in the article; 'this year' per the second reference.\n[2026-11-24] Frank t240u: 'I don't know anything about Kruz Schembri but go for it.' Approved to write/include; still needs a Vet on the Budget slip. Facts re-checked against the FIE headline and date today (fie.org/news/1809, dated Nov. 23, 2026); the article body is JavaScript-rendered and did not come back in a plain fetch. Body facts remain those verified from the same official FIE articles on Nov. 23.",
       "created_at": "2026-11-23T09:12:00-05:00",
-      "updated_at": "2026-11-24T14:59:00-05:00"
+      "updated_at": "2026-11-24T14:59:00-05:00",
+      "vetted_at": "2026-11-24T15:39:59-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "desk-by-the-book-two-of-everything-2026-11-23",
@@ -2039,7 +2049,7 @@
       "source": "desk",
       "from": "clark",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "by_the_book",
       "suggested_slot": "by-the-book",
       "tags": [
@@ -2061,7 +2071,9 @@
       ],
       "vet_notes": "Clark's By the Book draft (~80w), timely for Cobra weekend; also echoes the Fair Play secondary (Schembri's blades failing inspection). Rule numbers from the Oct. 2026 USA Fencing rulebook. No mention of mask-cord penalty beyond t.117's list.",
       "created_at": "2026-11-23T09:12:00-05:00",
-      "updated_at": "2026-11-23T09:12:00-05:00"
+      "updated_at": "2026-11-23T09:12:00-05:00",
+      "vetted_at": "2026-11-24T15:39:59-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "desk-cobra-syc-ryc-explainer-2026-11-24",
@@ -2072,7 +2084,7 @@
       "source": "desk",
       "from": "clark",
       "target_week": "next",
-      "vetted": false,
+      "vetted": true,
       "slot_hint": "lead",
       "suggested_slot": "lead",
       "related_item": "fencingapi-cobra-efc-entries-2026-10-19",
@@ -2197,7 +2209,9 @@
         }
       ],
       "created_at": "2026-11-24T14:59:00-05:00",
-      "updated_at": "2026-11-24T14:59:00-05:00"
+      "updated_at": "2026-11-24T14:59:00-05:00",
+      "vetted_at": "2026-11-24T15:39:59-05:00",
+      "vetted_by": "frank"
     },
     {
       "id": "ft-freehold-nov-youth-jeong-2026-11-22",

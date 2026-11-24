@@ -66,3 +66,7 @@ Follows the 7:56 AM daily pass (commit ba176ae: Thanksgiving closure, Freehold Y
 **New drafts (unvetted)**: March NAC feature (~285w, proposed lead), "The Touch He Gave Back" (Fair Play, ~140w), By the Book "Two of Everything" (t.117, ~90w).
 
 **Budget**: No. 8 v1 built (target Tue. Nov. 24, alt Wed. Nov. 25). Fill ~17% now, ~51% if Frank vets the proposals, ~72% with filler (holiday party, Epee on Screen, Photo from History, college short; not counting the classes table).
+
+## 2026-11-24 4:01 PM ET — No. 8 Budget ingest + proof v1
+
+Frank's Manual Budget (3:38 PM ET) ingested: 7 vets applied, no warnings. Proof v1 composed to his page/column map in issues/2026-11-24/. Eye check PASS / SENDABLE. Not published.

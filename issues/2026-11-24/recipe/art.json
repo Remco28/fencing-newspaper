@@ -1,0 +1,22 @@
+{
+  "christina-jiang-freehold-youth": {
+    "id": "christina-jiang-freehold-youth",
+    "src": "media/christina-jiang-freehold-youth-y12we-podium-2026-11-22.jpg",
+    "kind": "photo",
+    "alt": "Four youth fencers on a podium at Freehold Fencing Academy, with Christina Jiang on the first-place box under a Freehold Fencing Academy banner and an American flag.",
+    "caption": "Christina Jiang in first place after winning Youth 12 Women's Epee at Freehold Fencing's November Youth on Sunday, Nov. 22. The official field was four fencers.",
+    "region": "rail",
+    "flex": false,
+    "modes": "stack"
+  },
+  "efc-november-nac-photo": {
+    "id": "efc-november-nac-photo",
+    "src": "media/efc-november-nac-photo-2026-11-23.jpg",
+    "kind": "photo",
+    "alt": "Nico Ng in a white epee uniform stands on a strip in a convention-hall venue, holding a water bottle, while Remy Ng, in a blue shirt, faces him; a referee sits behind a USA Fencing banner.",
+    "caption": "Remy Ng coaching Nico Ng on the strip at the November NAC in Columbus. Nico finished 15th of 136 in Cadet Men's Epee (Challenger) on Nov. 21.",
+    "region": "rail",
+    "flex": false,
+    "modes": "stack"
+  }
+}

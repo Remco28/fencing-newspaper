@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>En Garde Gazette — Vol. I No. 8 — November 24, 2026</title>
+<meta name="author" content="Nico&#x27;s Dad">
+<style>
+  /* ==== En Garde Gazette — Template A base CSS ====================================
+     The ONE stylesheet every issue is composed with (prototype/gazette.py inlines it).
+     History: extracted 2026-11-11 from the CSS that composers used to scrape out of
+     issues/2026-10-13/issue.html, plus prototype/template-a-v2.css, plus the per-issue
+     "composition additions" that had become permanent. Review ids (A4, A10 ...) refer
+     to the Nov. 11 advisory review. Black and white only. Nothing below 7pt.
+     ================================================================================= */
+  @page { size: Letter; margin: 0.5in 0.5in 0.4in 0.5in; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8.5pt; line-height: 1.26; color: #000;
+    font-variant-numeric: tabular-nums; }
+  /* --colw is the estimate for a one-column rail (2.42in). The fitter overwrites it with the
+     measured content width when it runs. .pfloat uses the variable so it cannot overflow a rail. */
+  :root { --colw: 2.42in; --art-w: 100%; }
+  /* ---- Spacing tokens (Frank t229u, 2026-11-16: one consistent set of gaps) ----
+     Every vertical gap between stacked blocks on a page or in a column is --gap-block,
+     applied by ONE page-level rule and ONE column rule below. Side-by-side gutters are
+     --gap-gutter. Inside a block: --gap-inner (paragraphs, box title) and --gap-tight
+     (caption, credit, kicker). Do not hand-set a block margin anywhere else; the fill
+     instrument measures every inter-block gap against --gap-block and FLAGs drift. */
+  :root { --gap-block: 7pt; --gap-gutter: 9pt; --gap-inner: 3pt; --gap-tight: 1.5pt; }
+  .page { page-break-after: always; width: 7.5in; display: flex; flex-direction: column; min-height: 10.1in; }
+  .page:last-child { page-break-after: auto; }
+  /* Pin the footer to the bottom of the 10.1in content box. flex-shrink: 0 so a tall
+     art slot cannot squash it. Do not change .page's display (art-fit included):
+     flow-root on the page kills this pin and shrink-wraps the page in print, leaving
+     blank paper below the footer. */
+  .page .footer { margin-top: auto; flex-shrink: 0; }
+  /* A page that carries scalable art (.fill-art) gets a definite height so the art can
+     take exactly the space that is left. The instrument flags any overlap with the footer
+     and any footer that is not at the physical page bottom. */
+  .page.fit { height: 10.1in; }
+
+  /* ---- Masthead, ears, dateline (design locked; A11 raises the ears to the 7pt floor) ---- */
+  .masthead { display: flex; align-items: center; gap: 18pt; }
+  .masthead img { display: block; width: 50%; height: auto; margin: 0 10pt; flex: none; }
+  .flank { flex: 1; min-width: 0; padding: 5pt 7pt; margin: 0;
+    border-top: 0.75pt solid #000; border-bottom: 0.75pt solid #000;
+    line-height: 1.22; }
+  .flank.left {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.1pt; font-variant: small-caps; letter-spacing: 0.06em;
+    text-align: center; font-weight: 400; }
+  .flank.right {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.1pt; font-style: italic; letter-spacing: 0.01em;
+    text-align: center; font-weight: 400; }
+  .dateline { text-align: center;
+    border-top: 3pt double #000; border-bottom: 2pt solid #000;
+    padding: 3pt 0 2.5pt 0; margin: 2pt 0 4pt 0; }
+  .dateline .edition {
+    font-family: "Playfair Display SC", "Cinzel", "Times New Roman", serif;
+    font-weight: 700; font-size: 12.5pt; line-height: 1.02;
+    letter-spacing: 0.16em; text-transform: uppercase; }
+  .dateline .meta {
+    font-family: "Libre Caslon Text", "Times New Roman", "Liberation Serif", serif;
+    font-size: 7.5pt; letter-spacing: 0.05em; margin-top: 1.5pt;
+    font-variant: small-caps; font-weight: 400; }
+
+  /* ---- Grid ---- */
+  .cols3 { display: flex; gap: var(--gap-gutter); }
+  .cols3 > .c { flex: 1; min-width: 0; }
+  .cols3 > .span2 { flex: 2.06; }
+  .cols3.ruled > .c + .c { border-left: 1pt solid #000; padding-left: var(--gap-gutter); }
+  .c.w1 { flex: 1; } .c.w2 { flex: 2.06; } .box.w3 { width: 100%; }
+  /* THE page-level rhythm rule: every stacked block after the dateline gets --gap-block above
+     it, whatever its class (box, box-pair, split, piece, art). Blocks carry no bottom margin. */
+  .page > * { margin-bottom: 0; }
+  .page > .art, .page > .fill-art { margin-top: 0; margin-bottom: 0; }
+  .page > :not(.masthead, .dateline) + :not(.footer) { margin-top: var(--gap-block); }
+  /* Any other side-by-side split of prose (A12): always ruled, like the thirds. */
+  .split, .page2-lower { display: flex; gap: var(--gap-gutter); align-items: stretch; }
+  .split > *, .page2-lower > * { min-width: 0; }
+  .split > * + *, .page2-lower > * + * { border-left: 1pt solid #000; padding-left: var(--gap-gutter); }
+  /* A photo pair (two art cells side by side) is not prose: no column rule between pictures. */
+  .split.pair > * + * { border-left: none; padding-left: 0; }
+  .split.pair > * > .art { margin-top: 0; margin-bottom: 0; }
+  /* Inside a story the pair takes the block gap below it; at page level the page rule spaces it. */
+  :not(.page) > .split.pair { margin: var(--gap-inner) 0 var(--gap-block) 0; }
+  /* Prose set in newspaper columns under one headline (feature in a span2, short across the page). */
+  .textcols { column-gap: 19pt; column-rule: 1pt solid #000; orphans: 2; widows: 2; }
+  .textcols.n2 { column-count: 2; }
+  .textcols.n3 { column-count: 3; }
+
+  /* ---- Boxes (tables only, STYLE-GUIDE §8) and prose furniture ---- */
+  .box { border: 1.5pt solid #000; padding: 4pt 5pt; margin-bottom: 0; }
+  .rail-block { margin-bottom: 0; padding: 0; border: none; }
+  .boxtitle { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 900; font-size: 10pt;
+    text-transform: uppercase; letter-spacing: 0.5pt; padding-bottom: 2pt; margin-bottom: 3pt; }
+  .box > .boxtitle { border-bottom: 1pt solid #000; }
+  /* Kicker (A4): a label, not a second headline. Small bold sans caps, the .tourney-head voice.
+     No underline, ever (§8). */
+  .rail-title { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.25pt;
+    line-height: 1.2; text-transform: uppercase; letter-spacing: 0.6pt; border: none; padding: 0; margin: 0 0 1.5pt 0; }
+  /* Two small tables side by side as half-width boxes (A3; §10: few rows never earn full width). */
+  .box-pair { display: flex; gap: var(--gap-gutter); align-items: stretch; }
+  .box-pair > .box { flex: 1; min-width: 0; margin-bottom: 0; }
+
+  /* ---- Type scale (STYLE-GUIDE §4) ---- */
+  h1.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 18.5pt; line-height: 1.02; letter-spacing: -0.35pt; margin-bottom: 2pt; text-wrap: balance; }
+  .span2 > p { font-size: 9pt; } /* lead body +0.5pt vs shorts */
+  /* Dek (A10): display type is never justified or hyphenated. */
+  .dek { font-style: italic; font-size: 8.5pt; margin-bottom: 3pt; text-align: left; hyphens: none; text-wrap: balance; }
+  h2.head { font-family: "Arial Black", "Arial", "Liberation Sans", sans-serif; font-weight: 900;
+    font-size: 10.5pt; line-height: 1.05; margin-bottom: 2pt; text-wrap: balance; }
+  .slot-a h2.head { font-size: 12pt; }
+  .slot-a > p { font-size: 8.8pt; }
+  .slot-b h2.head { font-size: 10.5pt; }
+  .slot-feature h2.head { font-size: 13pt; line-height: 1.04; margin-bottom: 3pt; }
+  .slot-feature > p { font-size: 8.8pt; }
+  .byline { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; margin-bottom: 3pt; }
+  /* Body text (A5). Hyphenation points are soft hyphens placed by gazette.ty(); `manual`
+     keeps the result identical on every machine, with or without a browser dictionary. */
+  p { margin-bottom: var(--gap-inner); text-align: justify; hyphens: manual; }
+  p, td { text-wrap: pretty; }
+  /* Table cells never auto-hyphenate; gazette.ty() uses U+2011 in compounds (regular-fee). */
+  td, th { hyphens: none; }
+  p:last-child { margin-bottom: 0; }
+  .factcheck { font-style: italic; }
+  .span2 p b.run { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 8pt; letter-spacing: 0.2pt; }
+  .rule { border: none; border-top: 1pt solid #000; margin: 3pt 0; }
+
+  /* ---- Vertical rhythm between stacked pieces in a column: margin only, never an HR ---- */
+  /* THE column rhythm rule: any block after anything in a column gets --gap-block (paragraph
+     to paragraph keeps the --gap-inner body spacing). Works for every block class. */
+  .c > * + :not(p), .c > :not(p) + p { margin-top: var(--gap-block); }
+  .c > .art:first-child { margin-top: 0; }
+  .c > :last-child { margin-bottom: 0; }
+
+  /* ---- Boards ---- */
+  table.board { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 8.5pt; }
+  table.board th { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; text-transform: uppercase;
+    letter-spacing: 0.4pt; text-align: left; border-bottom: 1.5pt solid #000; padding: 1pt 4pt 1pt 0; }
+  table.board td { border-bottom: 0.5pt solid #000; padding: 1pt 4pt 1pt 0; vertical-align: top; }
+  table.board tr:last-child td { border-bottom: none; }
+  td.r, th.r, table.board th.r { text-align: right; }
+  td.num { text-align: right; white-space: nowrap; }
+  table.board th.t, table.board td.t { text-align: left; white-space: nowrap; padding-right: 8pt; }
+  td .nw { white-space: nowrap; }
+  /* Sub-row: a day inside a tournament (§10a) or a tournament inside Club Results (A7). */
+  table.board tr.day td { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7pt;
+    letter-spacing: 0.3pt; text-transform: uppercase; padding-top: 3pt; padding-bottom: 1pt;
+    border-bottom: 0.5pt solid #000; text-align: left; }
+  /* Day column (A8): the day prints once; its later rows leave the cell empty. */
+  table.board td.dayc { white-space: nowrap; }
+  .board-split { display: flex; gap: 12pt; }
+  .board-split > div { flex: 1; min-width: 0; }
+  .tourney + .tourney { margin-top: 9pt; }
+  .tourney-head, .board-cap { font-family: "Arial", "Liberation Sans", sans-serif; font-weight: 700; font-size: 7.5pt;
+    text-transform: uppercase; letter-spacing: 0.3pt; margin: 0 0 1pt 0; }
+  .tourney-head span, .board-cap span { font-weight: 400; text-transform: none; letter-spacing: 0;
+    font-family: "Times New Roman", "Liberation Serif", serif; font-size: 8pt; }
+  .boxnote { margin-top: 3pt; text-align: left; }
+  /* A note carried inside one half of a split board (A2) sits under that half's last table. */
+  .board-split .boxnote { margin-top: 5pt; }
+  .board-split .boxnote + .boxnote { margin-top: 3pt; }
+
+  /* ---- Photos, captions, credits, art ---- */
+  .photo { margin-bottom: 3pt; }
+  .photo img { display: block; width: 100%; height: auto; /* full frame, never a CSS crop (§19) */
+    filter: grayscale(100%); }
+  .caption { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; margin-top: 2pt;
+    text-align: left; line-height: 1.3; hyphens: none; }
+  /* Credit (A6): one short black line directly under the caption. */
+  .credit { font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt; color: #000; margin-top: 1.5pt;
+    text-align: left; line-height: 1.25; hyphens: none; }
+  .pfloat { float: left; width: var(--colw); margin: 2pt 9pt 3pt 0; } /* one grid column wide */
+  .photowide::after { content: ""; display: block; clear: both; }
+  .figure img, .comicfig img { display: block; width: 100%; height: auto; }
+  .figure .caption { margin-top: 3pt; }
+  .comicfig { margin: 0; }
+
+  /* Flexible art (Frank t212u). Stack is flush to the region; float wraps following prose;
+     gutter is a last-resort narrow stack (≤ 0.25in side space, flush left, never centered).
+     Never crop: width is set, height follows aspect. Fixed margins, no auto. */
+  .art { margin: var(--gap-block) 0; max-width: 100%; }
+  .art img { display: block; width: 100%; height: auto; filter: grayscale(100%); }
+  .art--float { float: left; width: var(--art-w); margin: 2pt 9pt 3pt 0; }
+  .art--gutter { width: var(--art-w); margin: var(--gap-block) auto var(--gap-block) 0; } /* flush left; leftover is one side only */
+
+  /* Scalable line art takes whatever depth is left on a .page.fit — scaled, never cropped. */
+  .fill-art { flex: 1 1 0; min-height: 0; margin: var(--gap-block) 0 0 0; display: flex; justify-content: center; align-items: flex-start; }
+  .fill-art img { display: block; width: auto; height: auto; max-width: 100%; max-height: 100%; }
+
+  /* ---- Parent Q&A (§8a) ---- */
+  .qa .q { font-style: italic; font-weight: bold; margin-bottom: 2pt; text-align: left; }
+  .qa .q::before { content: "Q. "; font-style: normal; font-weight: 900;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7.5pt; letter-spacing: 0.3pt; }
+  .qa .a { margin-bottom: 0; }
+  .qa .a::before { content: "A. "; font-family: "Arial", "Liberation Sans", sans-serif;
+    font-weight: 900; font-size: 7.5pt; letter-spacing: 0.3pt; }
+
+  /* ---- Footer trio (locked) ---- */
+  .footer { border-top: 2.5pt solid #000; margin-top: 1pt; padding-top: 2pt;
+    font-family: "Arial", "Liberation Sans", sans-serif; font-size: 7pt;
+    display: flex; justify-content: space-between; text-transform: uppercase;
+    gap: 14pt; letter-spacing: 0.15pt; }
+    /* Same column rhythm as .c, inside a .split (Fair Play / NAC short stacks). Uses the --gap-block token, not a one-off margin. */
+    .split > * > * + :not(p),
+    .split > * > :not(p) + p { margin-top: var(--gap-block); }
+</style>
+</head>
+<body>
+
+<div class="page fit">
+  <div class="masthead">
+    <div class="flank left">Published by a fencing parent and his bot.</div>
+    <img src="../../masthead001.png" alt="The En Garde Gazette — The Elite Fencers Club Weekly">
+    <div class="flank right">It is better to deserve a rating than to have one.</div>
+  </div>
+  <div class="dateline">
+    <div class="edition">Tuesday Edition</div>
+    <div class="meta">Vol. I — No. 8 · Chatham, N.J. · November 24, 2026</div>
+  </div>
+<div class="cols3 ruled" data-balance="columns">
+<div class="c span2">
+<div class="slot-a"><div class="rail-title">A National Tournament Next Door</div><h2 class="head">March NAC Comes to Atlantic City</h2><p>Every so often a national tour­na­ment lands close enough to drive to. The March North American Cup is one of them: USA Fencing brings it to the Atlantic City Convention Center March 5–8, 2027, and it is built for younger fencers, with Youth 10, Youth 12, Youth 14 and Division II events in all three weapons. Spectators get in free.</p>
+<p>Who can enter? Youth 14 has no qual­i­fy­ing path beyond the age group. Youth 10 and Youth 12 fencers need one Regional Youth Circuit (RYC) or Super Youth Circuit (SYC) event this season in the same age group and weapon (Youth 12 fencers on the national point stand­ings also qual­ify). Division II is for fencers rated C, D or E, or unrated. Cobra this week­end is an SYC, so Youth 10 and Youth 12 entrants there check that box.</p>
+<p>Registration opened Nov.&nbsp;18. Regular fees run through Jan.&nbsp;6: $225 for one event, $320 for two, $415 for three. After that the price triples ($675 for one event), though late entries stay open until 5&nbsp;p.m. local time the night before. Skip an event with­out with­draw­ing by 5&nbsp;p.m. the day before and the fine is $250 per event. USA Fencing’s GRACE pro­gram can waive NAC entry fees for fam­i­lies who need help; its March NAC dead­line has not been set.</p>
+<p>The day‑by‑day sched­ule isn’t posted yet. Parking details are on the con­ven­tion center’s web­site, and USA Fencing books hotels through its offi­cial provider.</p>
+<p>Already entered from Elite FC: Noah Gore (Y14 Men, Fri. Mar. 5; Division II Men, Sat. Mar. 6), Caden Wu (Division II Men, Sat.), Christina Jiang and Mila Siu (Y12 Women, Sat.), and Mila Siu (Y14 Women, Sun. Mar. 7).</p></div>
+<div class="split" data-balance="split"><div style="flex:1"><div class="rail-block"><div class="rail-title">Fair Play</div><h2 class="head">The Touch He Gave Back</h2><p>The FIE named Kruz Schembri, the world’s No. 1 junior men’s epee fencer, a co‑winner of its 2026 Fair Play Trophy at its annual awards gala in Budapest on Sunday, Nov.&nbsp;22. The award rec­og­nized a moment at this year’s Senior World Championships in Hong Kong: Schembri was tied 13–13 in a round‑of-32 bout with Italy’s Davide Di Veroli when he was awarded a touch that would have put him one away from win­ning. He told the ref­eree he had hit him­self and refused the touch. Di Veroli won the bout 15–13 and went on to take silver at the cham­pi­onships. Schembri shared the trophy with Gilles Martinage, the French team’s armorer, who had fixed Schembri’s weapons in Hong Kong after three of his four blades failed inspec­tion. Schembri, 20, rep­re­sents the U.S. Virgin Islands. The same gala hon­ored the season’s other epee No. 1s: Alberta Santuccio of Italy and Mohamed Elsayed of Egypt among the seniors, and Sofija Prošina of Latvia among junior women.</p></div>
+<div class="rail-block"><div class="rail-title">Club Events</div><h2 class="head">Club Closed Wednesday Through Friday</h2><p>Elite FC will be closed Wednesday, Nov.&nbsp;25, through Friday, Nov.&nbsp;27, for the Thanksgiving hol­i­day, includ­ing Friday, when the Cobra Challenge begins. Regular classes resume Saturday, Nov.&nbsp;28.</p></div></div><div style="flex:1"><div class="slot-a"><div class="rail-title">November NAC</div><h2 class="head">Nico Ng 15th of 136 in Cadet Challenger</h2><p>The November NAC was held at the Greater Columbus Convention Center, Nov.&nbsp;20–23. Cadet, Junior and Division I events at the November NAC in Columbus were split into two com­pe­ti­tions, Elite and Challenger, when­ever an event had 169 or more entries. Places are within each field, not across the com­bined entry list.</p>
+<p>Nico Ng fin­ished 15th of 136 in Cadet Men’s Epee (Challenger) on Saturday, Nov.&nbsp;21. He also placed 90th of 235 in Junior Men’s Epee (Challenger) on Sunday. Athreya Aravind was 83rd of 116 in Junior Men’s Epee (Elite) on Sunday and 55th of 229 in Division I Men’s Epee (Challenger) on Monday. Anayaa Sheth was 85th of 107 in Junior Women’s Epee (Challenger) on Friday, Nov.&nbsp;20. None of the five Elite FC results earned a rating.</p></div>
+<div class="rail-block"><div class="rail-title">Club Events</div><h2 class="head">Holiday Party: Friday, Dec.&nbsp;11</h2><p>This year’s Elite FC hol­i­day party will be Friday, Dec.&nbsp;11. There will be food, drinks and snacks, and every­one is wel­come. Please mark your cal­en­dars; the club hopes you can join to cel­e­brate every­thing we have accomplished.</p></div></div></div>
+</div>
+<div class="c">
+<div class="box"><div class="boxtitle">Club Results</div><table class="board"><colgroup><col style="width:0.88in"><col><col style="width:0.70in"></colgroup><tr><th>Fencer</th><th>Event</th><th>Finish</th></tr><tr class="day"><td colspan="3">November <span class="nw">NAC · Nov.&nbsp;21</span></td></tr><tr><td>Nico Ng</td><td>Cadet Challenger</td><td>15th of 136</td></tr><tr class="day"><td colspan="3">Freehold <span class="nw">Youth · Nov.&nbsp;22</span></td></tr><tr><td>Christina Jiang</td><td>Y12 Women</td><td>1st of 4</td></tr></table><p class="boxnote">Cadet place is in the Challenger field, not the combined entry list.</p></div>
+<figure class="art" data-art="christina-jiang-freehold-youth" data-kind="photo" data-region="rail" data-flex="false" data-modes="stack" data-src="media/christina-jiang-freehold-youth-y12we-podium-2026-11-22.jpg" data-min-w="1.6000" data-lettered="false"><img src="media/christina-jiang-freehold-youth-y12we-podium-2026-11-22.jpg" alt="Four youth fencers on a podium at Freehold Fencing Academy, with Christina Jiang on the first-place box under a Freehold Fencing Academy banner and an American flag."><p class="caption">Christina Jiang in first place after winning Youth 12 Women’s Epee at Freehold Fencing’s November Youth on Sunday, Nov.&nbsp;22. The official field was four fencers.</p><p class="credit">Photo: Elite Fencers Club</p></figure>
+<figure class="art" data-art="efc-november-nac-photo" data-kind="photo" data-region="rail" data-flex="false" data-modes="stack" data-src="media/efc-november-nac-photo-2026-11-23.jpg" data-min-w="1.6000" data-lettered="false"><img src="media/efc-november-nac-photo-2026-11-23.jpg" alt="Nico Ng in a white epee uniform stands on a strip in a convention-hall venue, holding a water bottle, while Remy Ng, in a blue shirt, faces him; a referee sits behind a USA Fencing banner."><p class="caption">Remy Ng coaching Nico Ng on the strip at the November NAC in Columbus. Nico finished 15th of 136 in Cadet Men’s Epee (Challenger) on Nov.&nbsp;21.</p><p class="credit">Photo: Elite Fencers Club</p></figure>
+</div>
+</div>
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 8</span>
+    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>
+    <span>For fun only — facts aren’t guaranteed accurate.</span>
+  </div>
+</div>
+
+<div class="page fit">
+  <div class="dateline" style="margin-top:0;">
+    <div class="edition">Page Two</div>
+    <div class="meta">Club Calendar &amp; Notes &nbsp;·&nbsp; Vol. I — No. 8</div>
+  </div>
+<div class="cols3 ruled" data-balance="columns">
+<div class="c span2">
+<div class="box w3"><div class="boxtitle">Nearby Tournaments — Elite FC Entries</div><div class="tourney"><div class="tourney-head">Cobra Challenge SYC/RCC <span>· Secaucus, N.J. · Nov.&nbsp;27–29</span></div><table class="board"><colgroup><col style="width:1.05in"><col></colgroup><tr><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="2">Fri. Nov.&nbsp;27</td></tr><tr><td>Y14 Men</td><td>Connor Anderson, Noah Gore, Kian Jaising, Remy Ng, Ash Shah‑Mirani</td></tr><tr><td>Cadet Women</td><td>Amina Gore, Olivia Hayes, Stella Kuo, Lillian Liu, Mila Siu, Penny Young</td></tr><tr><td>Y10 Men</td><td>Bryce Cheng, Joshua Jeong</td></tr><tr class="day"><td colspan="2">Sat. Nov.&nbsp;28</td></tr><tr><td>Y12 Women</td><td>Christina Jiang, Stella Kuo, Mila Siu, Penny Young</td></tr><tr><td>Y12 Men</td><td>Kian Jaising, Joshua Jeong, Remy Ng</td></tr><tr class="day"><td colspan="2">Sun. Nov.&nbsp;29</td></tr><tr><td>Y14 Women</td><td>Stella Kuo, Mila Siu, Penny Young</td></tr><tr><td>Cadet Men</td><td>Connor Anderson, Nico Ng, Caden Wu</td></tr></table></div><p class="boxnote">Sixteen Elite FC fencers, 26 entries, all approved. Close of registration is on the official USA Fencing page (Nov.&nbsp;24). Youth 14 Men is at 140 and capped.</p></div>
+</div>
+<div class="c">
+<div class="box"><div class="boxtitle">On the Road — December SJCC</div><div class="tourney"><div class="tourney-head">December SJCC <span>· Milwaukee, Wis. · Dec.&nbsp;4–6</span></div><table class="board"><colgroup><col style="width:1.05in"><col></colgroup><tr><th>Event</th><th>Elite FC</th></tr><tr class="day"><td colspan="2">Fri. Dec.&nbsp;4</td></tr><tr><td>Cadet Men</td><td>Nico Ng</td></tr><tr class="day"><td colspan="2">Sat. Dec.&nbsp;5</td></tr><tr><td>Junior Women</td><td>Amina Gore</td></tr><tr><td>Junior Men</td><td>Nico Ng</td></tr><tr class="day"><td colspan="2">Sun. Dec.&nbsp;6</td></tr><tr><td>Cadet Women</td><td>Amina Gore, Anayaa Sheth</td></tr></table></div><p class="boxnote">Baird Center. Three Elite FC fencers, five approved entries, as of Nov.&nbsp;23.</p></div>
+</div>
+</div>
+<div class="cols3 ruled" data-balance="columns">
+<div class="c span2">
+<div class="lead"><h1 class="head">This Weekend at Cobra: What an SYC Is, and Why It Matters</h1><p>The Cobra Challenge SYC/RCC is Friday through Sunday, Nov.&nbsp;27–29, at the Meadowlands Expo Center in Secaucus, a short trip from the club. Sixteen Elite FC fencers have 26 approved entries in Youth 10, Youth 12, Youth 14 and Cadet epee. Several fields are already full: Youth 14 Men has 140 offi­cial com­peti­tors, Youth 14 Women 133, Cadet Men 126, Youth 12 Women 106 and Cadet Women 105.</p>
+<p>For par­ents still learn­ing the youth‑tournament alpha­bet, Cobra is an SYC — a Super Youth Circuit, not simply a larger Regional Youth Circuit event. The two cir­cuits award dif­fer­ent points, feed dif­fer­ent stand­ings and open dif­fer­ent paths to national tournaments.</p>
+<p>A Regional Youth Circuit tour­na­ment, or RYC, awards only regional points, and only to fencers com­pet­ing in their home region. Everyone in the event earns some. The for­mula is ((number of entries minus place plus 1) divided by the number of entries) times 100, so the winner always receives 100 points, what­ever the field size. A fencer’s best three RYC results in that region count toward the Regional Youth Point Standings. Those points do not appear on the national point lists.</p>
+<p>A Super Youth Circuit tour­na­ment awards national youth points, and a fencer from any region can earn them by plac­ing high enough. Points go to the top 40 per­cent of the com­pet­i­tive field — cur­rent com­pet­i­tive mem­bers in the start­ing field — rounded up, to a max­i­mum of 64th place. At least three fencers must com­pete. Only a fencer’s single best SYC result in each age cat­e­gory counts. USA Fencing then builds the Youth Point Standings from the four high­est results among that SYC, North American Cups and National Championships in the eli­gi­ble age groups.</p>
+<p>That is why an SYC car­ries more weight for younger fencers. To enter Youth 10 or Youth 12 at the March NAC in Atlantic City, a fencer must have com­peted in one RYC or one SYC this season in the same age group and weapon (Youth 12 fencers on the national point stand­ings also qual­ify). Youth 14 has no such qual­i­fy­ing path for the March NAC; age is enough. For the USA Fencing National Championships in the summer, the national point stand­ings — which an SYC result can help build — are one qual­i­fy­ing path in Youth 10, Youth 12 and Youth 14. Regional RYC points are another: 60 Youth 12 regional points can qual­ify a Youth 10 fencer, 70 Youth 12 or 160 Youth 14 regional points a Youth 12 fencer, and 160 Youth 14 regional points a Youth 14 fencer, each from the fencer’s best three regional results.</p>
+<p>Cobra is a local SYC, which is unusual. Super Youth Circuit tour­na­ments are held through­out the coun­try, and many fam­i­lies travel to them. This one is in Secaucus. There are no rating require­ments for an SYC or an RYC, only a cur­rent com­pet­i­tive mem­ber­ship and the right age group.</p>
+<p>The SYC format is one round of pools, with every fencer advanc­ing to direct elim­i­na­tion. Youth 10 direct‑elimination bouts are to 10 touches, in two three‑minute peri­ods. Youth 12 and Youth 14 are to 15.</p>
+<p>Cobra also runs Cadet events as a Regional Cadet Circuit, not as an SYC, and those results do not earn youth national points.</p></div>
+</div>
+<div class="c">
+<div class="box"><div class="boxtitle">Deadlines</div><table class="board"><colgroup><col style="width:0.72in"><col></colgroup><tr><th class="r">Date</th><th>What’s due</th></tr><tr><td class="num">Nov.&nbsp;30</td><td>Fairfax Challenge: last day of regular fees; triple from Dec.&nbsp;1</td></tr><tr><td class="num">Dec.&nbsp;10</td><td>Z1 RYC/RJCC: late registration closes</td></tr><tr><td class="num">Jan.&nbsp;6</td><td>March NAC: last day of regular fees; late fees triple</td></tr><tr><td class="num">Jan.&nbsp;7</td><td>Junior Olympics: late registration ends</td></tr><tr><td class="num">Jan.&nbsp;8</td><td>N.J. high school: independent fencers’ entries close</td></tr></table><p class="boxnote">USA Fencing fee deadlines are 11:59&nbsp;p.m. Pacific. Z1 regular fees ended Nov.&nbsp;23.</p></div>
+<div class="rail-block"><div class="rail-title">By the Book</div><h2 class="head">Two of Everything</h2><p>Packing for Cobra this week­end? Rule t.117 says a fencer must come to the strip with two weapons, two body cords and two mask cords, one of each as a spare, all in per­fect work­ing order. Arriving with­out the second weapon or body cord, or with equip­ment that doesn’t work or doesn’t con­form, is a first‑group offense on the penalty chart (t.71–t.73, t.117): a Yellow Card the first time, then a Red Card, which gives the oppo­nent a touch. Check tips and cords at home, not in line at the strip.</p></div>
+<div class="rail-block"><div class="rail-title">College</div><h2 class="head">College Season Opens Next Door</h2><p>NCAA fenc­ing season opened the first week­ends of November. NJIT hosted its first home meet since 2019 on Nov.&nbsp;1 (men 2–0, women 1–1), then fenced the Drew Invitational in Madison, N.J., on Nov.&nbsp;7 and the Columbia Invitational in New York on Nov.&nbsp;8. Duke beat North Carolina in their opener.</p></div>
+</div>
+</div>
+  <div class="footer">
+    <span>En Garde Gazette · Issue No. 8</span>
+    <span class="foot-archive">Past issues · newsletter.teamremco.org</span>
+    <span>For fun only — facts aren’t guaranteed accurate.</span>
+  </div>
+</div>
+
+</body>
+</html>

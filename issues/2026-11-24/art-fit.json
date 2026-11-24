@@ -1,0 +1,257 @@
+{
+ "slots": [
+  {
+   "id": "christina-jiang-freehold-youth",
+   "kind": "photo",
+   "region": "rail",
+   "flex": false,
+   "modes": "stack",
+   "src": "media/christina-jiang-freehold-youth-y12we-podium-2026-11-22.jpg",
+   "wrap_ok": true,
+   "region_w_in": 2.3763,
+   "page": 1,
+   "px_w": 640,
+   "px_h": 480,
+   "min_w": 1.6,
+   "lettered": false
+  },
+  {
+   "id": "efc-november-nac-photo",
+   "kind": "photo",
+   "region": "rail",
+   "flex": false,
+   "modes": "stack",
+   "src": "media/efc-november-nac-photo-2026-11-23.jpg",
+   "wrap_ok": false,
+   "region_w_in": 2.3763,
+   "page": 1,
+   "px_w": 1500,
+   "px_h": 2000,
+   "min_w": 1.6,
+   "lettered": false
+  }
+ ],
+ "decisions": [
+  {
+   "id": "christina-jiang-freehold-youth",
+   "flex": false,
+   "ok": true,
+   "flag": false,
+   "page": 1,
+   "cand": {
+    "mode": "stack",
+    "width": 2.3763,
+    "role": "stack"
+   },
+   "reasons": [],
+   "rec": {
+    "overflow_in": 0,
+    "min_gap_in": 0.2438,
+    "worst_gap_in": 0.2438,
+    "max_spread_in": 0.0796,
+    "footer_drop_in": 0.0001,
+    "aspect_err": 0,
+    "float_hole_in": 0,
+    "interior_gap_in": 0.0972,
+    "side_gutter_in": 0.0104,
+    "region_w_in": 2.3763,
+    "img_w_in": 2.3659,
+    "img_h_in": 1.7744,
+    "region_gap_in": 0.2438,
+    "row_spread_in": 0.0796,
+    "page_overflow_in": 0
+   },
+   "why": "fixed-stack"
+  },
+  {
+   "id": "efc-november-nac-photo",
+   "flex": false,
+   "ok": true,
+   "flag": false,
+   "page": 1,
+   "cand": {
+    "mode": "stack",
+    "width": 2.3763,
+    "role": "stack"
+   },
+   "reasons": [],
+   "rec": {
+    "overflow_in": 0,
+    "min_gap_in": 0.2438,
+    "worst_gap_in": 0.2438,
+    "max_spread_in": 0.0796,
+    "footer_drop_in": 0.0001,
+    "aspect_err": 2e-05,
+    "float_hole_in": 0,
+    "interior_gap_in": 0.0972,
+    "side_gutter_in": 0.0104,
+    "region_w_in": 2.3763,
+    "img_w_in": 2.3659,
+    "img_h_in": 3.1545,
+    "region_gap_in": 0.2438,
+    "row_spread_in": 0.0796,
+    "page_overflow_in": 0
+   },
+   "why": "fixed-stack"
+  }
+ ],
+ "balance": {
+  "mode": "report",
+  "actions": [],
+  "before": [
+   {
+    "page": 1,
+    "footer_gaps_in": [
+     0.16,
+     0.24
+    ],
+    "footer_drop_in": 0.0,
+    "rows": [
+     {
+      "row": 1,
+      "kind": "columns",
+      "col_gaps_in": [
+       0.01,
+       0.09
+      ],
+      "depths_in": [
+       8.28,
+       8.2
+      ],
+      "spread_in": 0.08
+     },
+     {
+      "row": 2,
+      "kind": "split",
+      "col_gaps_in": [
+       0.01,
+       0.28
+      ],
+      "depths_in": [
+       4.74,
+       4.48
+      ],
+      "spread_in": 0.26
+     }
+    ],
+    "holes": []
+   },
+   {
+    "page": 2,
+    "footer_gaps_in": [
+     0.24,
+     0.19
+    ],
+    "footer_drop_in": 0.0,
+    "rows": [
+     {
+      "row": 1,
+      "kind": "columns",
+      "col_gaps_in": [
+       0.09,
+       0.18
+      ],
+      "depths_in": [
+       2.84,
+       2.75
+      ],
+      "spread_in": 0.09
+     },
+     {
+      "row": 2,
+      "kind": "columns",
+      "col_gaps_in": [
+       0.07,
+       0.01
+      ],
+      "depths_in": [
+       6.18,
+       6.23
+      ],
+      "spread_in": 0.05
+     }
+    ],
+    "holes": []
+   }
+  ],
+  "after": [
+   {
+    "page": 1,
+    "footer_gaps_in": [
+     0.16,
+     0.24
+    ],
+    "footer_drop_in": 0.0,
+    "rows": [
+     {
+      "row": 1,
+      "kind": "columns",
+      "col_gaps_in": [
+       0.01,
+       0.09
+      ],
+      "depths_in": [
+       8.28,
+       8.2
+      ],
+      "spread_in": 0.08
+     },
+     {
+      "row": 2,
+      "kind": "split",
+      "col_gaps_in": [
+       0.01,
+       0.28
+      ],
+      "depths_in": [
+       4.74,
+       4.48
+      ],
+      "spread_in": 0.26
+     }
+    ],
+    "holes": []
+   },
+   {
+    "page": 2,
+    "footer_gaps_in": [
+     0.24,
+     0.19
+    ],
+    "footer_drop_in": 0.0,
+    "rows": [
+     {
+      "row": 1,
+      "kind": "columns",
+      "col_gaps_in": [
+       0.09,
+       0.18
+      ],
+      "depths_in": [
+       2.84,
+       2.75
+      ],
+      "spread_in": 0.09
+     },
+     {
+      "row": 2,
+      "kind": "columns",
+      "col_gaps_in": [
+       0.07,
+       0.01
+      ],
+      "depths_in": [
+       6.18,
+       6.23
+      ],
+      "spread_in": 0.05
+     }
+    ],
+    "holes": []
+   }
+  ],
+  "leftovers": [],
+  "suggestions": [],
+  "threshold_in": 0.35
+ }
+}

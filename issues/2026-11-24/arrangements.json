@@ -1,0 +1,93 @@
+{
+ "issue": "issues/2026-11-24",
+ "lengths": {
+  "lead": "standard",
+  "fair-play": "short",
+  "college": "standard",
+  "party": "long",
+  "thanksgiving": "standard",
+  "by-the-book": "standard",
+  "march-nac": "standard"
+ },
+ "ranked": [
+  {
+   "arrangement": "manual",
+   "choices": {
+    "map": "frank-2026-11-24"
+   },
+   "score": 10.3,
+   "rule_breaking_holes": 1,
+   "instrument_flags": [],
+   "length_targets": [
+    {
+     "page": 1,
+     "action": "add",
+     "words": 100,
+     "where": "7.5x0.66in above the footer, full width",
+     "density": 20.6
+    }
+   ],
+   "pixel_blank_map": {
+    "1": [
+     {
+      "w_in": 7.5,
+      "h_in": 0.66,
+      "sq_in": 4.95,
+      "x_in": 0.5,
+      "y_in": 9.74,
+      "bottom_band": true
+     },
+     {
+      "w_in": 0.74,
+      "h_in": 0.54,
+      "sq_in": 0.4,
+      "x_in": 4.64,
+      "y_in": 5.5,
+      "bottom_band": false
+     },
+     {
+      "w_in": 0.6,
+      "h_in": 0.52,
+      "sq_in": 0.31,
+      "x_in": 2.2,
+      "y_in": 8.48,
+      "bottom_band": false
+     }
+    ],
+    "2": [
+     {
+      "w_in": 1.38,
+      "h_in": 0.66,
+      "sq_in": 0.91,
+      "x_in": 4.0,
+      "y_in": 3.92,
+      "bottom_band": false
+     },
+     {
+      "w_in": 1.66,
+      "h_in": 0.42,
+      "sq_in": 0.7,
+      "x_in": 6.34,
+      "y_in": 8.62,
+      "bottom_band": false
+     },
+     {
+      "w_in": 1.12,
+      "h_in": 0.44,
+      "sq_in": 0.49,
+      "x_in": 6.88,
+      "y_in": 6.74,
+      "bottom_band": false
+     }
+    ]
+   },
+   "previews": [
+    "/tmp/gz-arrange-oljpgp5h/manual/preview-p1.png",
+    "/tmp/gz-arrange-oljpgp5h/manual/preview-p2.png"
+   ],
+   "pdf": "/tmp/gz-arrange-oljpgp5h/manual.pdf"
+  }
+ ],
+ "errors": [],
+ "work_dir": "/tmp/gz-arrange-oljpgp5h"
+}
