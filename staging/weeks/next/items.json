@@ -1,6 +1,6 @@
 {
   "target_week": "next",
-  "updated_at": "2026-11-23T09:12:00-05:00",
+  "updated_at": "2026-11-24T08:01:14-05:00",
   "note": "Hold pile for Issue No. 8. Started at the No. 7 roll-forward 2026-11-17 12:20 AM ET. after-next (March NAC feature (large), Frank t231u) became part of next; still-relevant held and upcoming items copied from staging/weeks/2026-11-17 with carried_from. Frank (t232u, 12:09 AM ET): keep the proof v3 workflow next week (eye check gate, spacing tokens, copy lengths, arrangements).",
   "rolled_forward": {
     "from": [
@@ -341,8 +341,8 @@
       "headline": "Club closed Wednesday through Friday for Thanksgiving",
       "slot_hint": "club_events",
       "suggested_slot": "club_events",
-      "body": "Elite FC will be closed Wednesday, Nov. 25, Thursday, Nov. 26, and Friday, Nov. 27 for the Thanksgiving holiday.",
-      "word_count": 24,
+      "body": "Elite FC will be closed Wednesday, Nov. 25, Thursday, Nov. 26, and Friday, Nov. 27 for the Thanksgiving holiday. Regular classes resume Saturday, Nov. 28.",
+      "word_count": 25,
       "source": "email",
       "from": "elitefencersclub@111617670.mailchimpapp.com",
       "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net>",
@@ -356,7 +356,7 @@
         "thanksgiving",
         "closure"
       ],
-      "vet_notes": "Daily pass 2026-11-23. Auto-vetted club Mailchimp (Fri Nov 20, 9:45 AM ET), 'Group Class! + Thanksgiving Schedule.' Print body uses only the three closure dates as written. The email also says 'Back to our normal schedule on Saturday 12/28.' That is almost certainly a typo for Saturday, Nov. 28 (the Saturday after Thanksgiving). Dec. 28, 2026 is a Monday and falls during Winter Camp (Dec. 27-31). Do not print the reopen date until Frank confirms it is Sat. Nov. 28. Same-email class reminders (lessons Fri+Sat Nov 20-21; Mini-Musketeers 4:15 p.m.; Intermediate 5:00 p.m.; Musketeers 11:00 a.m.; Advanced 1:00 p.m.) match the standing schedule and the known Friday Intermediate class; not staged as a classes item (those days are now past). Logo-only image, no media extract.",
+      "vet_notes": "Daily pass 2026-11-23. Auto-vetted club Mailchimp (Fri Nov 20, 9:45 AM ET), 'Group Class! + Thanksgiving Schedule.' Print body uses only the three closure dates as written. The email also says 'Back to our normal schedule on Saturday 12/28.' That is almost certainly a typo for Saturday, Nov. 28 (the Saturday after Thanksgiving). Dec. 28, 2026 is a Monday and falls during Winter Camp (Dec. 27-31). Do not print the reopen date until Frank confirms it is Sat. Nov. 28. Same-email class reminders (lessons Fri+Sat Nov 20-21; Mini-Musketeers 4:15 p.m.; Intermediate 5:00 p.m.; Musketeers 11:00 a.m.; Advanced 1:00 p.m.) match the standing schedule and the known Friday Intermediate class; not staged as a classes item (those days are now past). Logo-only image, no media extract.\n[2026-11-24 daily pass] Club Mailchimp 'Group Class! + Thanksgiving' (Mon Nov 23, 9:56 AM ET, allowlisted, auto-club-mailchimp) restates the same three closure dates and says 'We will be back to our normal schedule on Saturday 11/28!' That confirms the Nov. 20 email's 'Saturday 12/28' was a typo. Reopen date is now safe to print. Same-email class reminders (lessons Mon+Tue Nov 23-24; Musketeers Mon 4:30 p.m.; Advanced Tue 6:00 p.m.) match the standing schedule; not staged as a classes item. The email also congratulates Nico Ng on a top-16 at the November NAC and Christina Jiang on 1st in Y12 Freehold (see NAC results item and the Freehold Youth item). Two content photos extracted.",
       "facts": [
         {
           "claim": "Club closed Wednesday 11/25, Thursday 11/26, and Friday 11/27 for the Thanksgiving holiday.",
@@ -364,9 +364,14 @@
           "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp)"
         },
         {
-          "claim": "Email text: 'Back to our normal schedule on Saturday 12/28.'",
-          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net>",
-          "status": "as written in the club email; probable typo for Saturday 11/28. Do not print until Frank confirms."
+          "claim": "The Nov. 20 club email said 'Back to our normal schedule on Saturday 12/28.' The Nov. 23 club email says 'We will be back to our normal schedule on Saturday 11/28!'",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net>; confirmed <d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "status": "confirmed by later allowlisted club Mailchimp (Mon Nov 23): resume Saturday, Nov. 28. Safe to print."
+        },
+        {
+          "claim": "Regular classes resume Saturday, Nov. 28.",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp)"
         }
       ],
       "provenance": [
@@ -381,10 +386,22 @@
           "url": "https://mailchi.mp/f219da2cef90/group-class-thanksgiving-schedule?e=f656c71db1",
           "vetted_by": "auto-club-mailchimp",
           "note": "Inbox efc.weekly@agentmail.to. Allowlisted club Mailchimp. Only image is the club logo (plus social icons and a 1x1 tracking pixel); no media extract."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class! + Thanksgiving",
+          "received_at": "2026-11-23T09:56:58-05:00",
+          "retrieved_at": "2026-11-24T08:01:14-05:00",
+          "url": "https://mailchi.mp/be0b7ca989d6/group-class-thanksgiving?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Inbox efc.weekly@agentmail.to. Allowlisted club Mailchimp, arrived after the Monday 9:15 AM ET pre-budget pass. Confirms reopen Saturday 11/28 (correcting the Nov. 20 typo of 12/28). Class-time reminders match the standing schedule. Congrats + two photos handled on the results items."
         }
       ],
       "created_at": "2026-11-23T07:56:00-05:00",
-      "updated_at": "2026-11-23T07:56:00-05:00"
+      "updated_at": "2026-11-24T08:01:14-05:00"
     },
     {
       "id": "web-efc-standing-schedule",
@@ -490,7 +507,7 @@
       "vetted": true,
       "vetted_by": "frank",
       "vetted_at": "2026-10-07T17:18:05-04:00",
-      "vet_notes": "Clark's gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.' | Frank chat 2026-10-07T17:32: Friday Mini Musketeers moved to 4:15 PM (likely permanent; website not updated). End time not confirmed — print start time only unless Frank confirms.\n[2026-11-23] Website re-checked; no schedule change vs the club emails. Not proposed (Thanksgiving closure is the only change this week).",
+      "vet_notes": "Clark's gather 2026-10-07 17:10 ET at Frank's request (he isn't sure how current the site is). FRESHNESS UNKNOWN: no 'last updated' date on the page; footer '© 2026' only; the served copy's Vercel cache age was ~25 days (since ~Sep 12, 2026) — a cache signal, not a content date. Matches every class time in the Oct 5 + Oct 7 club emails (Mon 4:30, Tue 6:00, Wed 5:00, Wed 6:30 footwork, Thu 6:00). Naming differs: emails say 'Musketeers' / 'Advanced Group Class'; site says 'Group Class (Little Musketeers)' / 'Group Class'. Site conflict: Location & Hours page lists Mon–Fri 3:00–9:00 PM and Sat 8:30 AM–3:00 PM, but this schedule runs private lessons to 10:00 PM weekdays and starts Sat at 9:00 AM. Location page also says 'Contact us for the most up-to-date class times.' | Frank chat 2026-10-07T17:32: Friday Mini Musketeers moved to 4:15 PM (likely permanent; website not updated). End time not confirmed — print start time only unless Frank confirms.\n[2026-11-23] Website re-checked; no schedule change vs the club emails. Not proposed (Thanksgiving closure is the only change this week).\n[2026-11-24] Mon Nov 23 club Mailchimp: all lessons Mon+Tue; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. Matches standing schedule; no change.",
       "provenance": [
         {
           "type": "url",
@@ -598,6 +615,18 @@
           "url": "https://www.elitefencersclub.com/programs",
           "retrieved_at": "2026-11-23T09:09:00-05:00",
           "note": "Monday full pass: table unchanged vs Oct. 7 except it now lists Friday Mini Musketeers (Ages 5–7) 4:00–4:45 PM; Frank (Oct. 7) and the Nov. 20 club email say 4:15 PM. Website stays secondary; print 4:15 if a classes line ever runs."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class! + Thanksgiving",
+          "received_at": "2026-11-23T09:56:58-05:00",
+          "retrieved_at": "2026-11-24T08:01:14-05:00",
+          "url": "https://mailchi.mp/be0b7ca989d6/group-class-thanksgiving?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Club Mailchimp (Mon Nov 23): all lessons Mon+Tue; Musketeers Group Class Mon 4:30 PM; Advanced Group Class Tue 6:00 PM. Matches standing schedule; no change."
         }
       ],
       "suggested_slot": "club-events",
@@ -614,7 +643,7 @@
       "carried_at": "2026-11-03T15:20:00-05:00",
       "carry_note": "Standing club schedule reference; still held (classes table out).",
       "budget_note": "Excluded from No. 3 by Frank's budget submission 2026-10-18 09:13 ET.",
-      "updated_at": "2026-11-23T09:12:00-05:00"
+      "updated_at": "2026-11-24T08:01:14-05:00"
     },
     {
       "id": "history-photo-10-timea-nagy",
@@ -1068,7 +1097,7 @@
       "source": "fencingtracker",
       "target_week": "next",
       "vetted": true,
-      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.\n[2026-11-10 5:21 PM ET] Frank (chat): 'Athreya is definitely a member of our club!  He's an OG.' Kept on On the Road; added to roster/people.json. Confirm-before-print flag dropped.\n[2026-11-11 2:40 p.m. ET] Frank (chat t204u): 'I forgot to include Keifer Meinhardt tournament. We'll mention the results next week I guess.' Results-watch item staged as chat-kiefer-meinhardt-results-watch-2026-11-11 for Issue No. 7.\n[2026-11-16 Monday full pass] Kiefer Meinhardt (Nov. 14–15) is past: dropped from the board (results watch is chat-kiefer-meinhardt-results-watch-2026-11-11). NEW official entry: Athreya Aravind, Division I Men's Epee, Mon. Nov. 23 (USA Fencing via fencing-api; FencingTracker registrations agree: 5 entries / 3 fencers). Names in roster form (FT 'Sheth, Anayaà' -> Anayaa Sheth).\n[2026-11-23 daily pass] November NAC is in progress (Div I Men today). No Elite FC NAC results on the FencingTracker club page (7:51 AM ET). fencing-api live results for JNRWE (78693), CDTME (78696), and JNRME (78690) returned empty lists, final=false (7:53 AM ET). Still a results watch; Monday full pass should try official event pages again.\n[2026-11-23 Monday full pass 9:05 AM ET] November NAC results still not posted for Elite FC: FencingTracker club page has no NAC rows (9:02 AM ET); fencing-api cached results for JNRWE 78693, CDTME 78696, JNRME 78690 empty, final=false (cached 7:53 AM ET); USA Fencing tournament page 12316 shows no results. Div I Men (Athreya Aravind) is today. Not on the No. 8 board (event is over); results watch only. December SJCC travel now staged separately (ft-efc-on-the-road-dec-sjcc-2026-11-23).",
+      "vet_notes": "Scraped source, unvetted until Frank vets. Candidate for an 'on the road' line or Deadlines/upcoming; November NAC (Nov 20–22) is the nearest. Confirm the four non-roster names are Elite FC before printing.\n[2026-11-10 4:21 PM ET] Frank vetted this item in the budget submission and asked for a clearer, compact rewrite covering November NAC and Kiefer Meinhardt (his spelling ‘Keifer’; official name is Kiefer). Official USA Fencing entries rechecked via fencing-api live, Nov. 10, 4:25–4:26 p.m. ET: same four + four entries as the Nov. 9 FencingTracker pass. Other travel events (December SJCC, Z1, Fairfax, Austin, Boston) left out of this issue per his note. Athreya Aravind is on the official NAC list as Elite Fencers Club but not on the club roster — printed as registered; confirm before print.\n[2026-11-10 5:21 PM ET] Frank (chat): 'Athreya is definitely a member of our club!  He's an OG.' Kept on On the Road; added to roster/people.json. Confirm-before-print flag dropped.\n[2026-11-11 2:40 p.m. ET] Frank (chat t204u): 'I forgot to include Keifer Meinhardt tournament. We'll mention the results next week I guess.' Results-watch item staged as chat-kiefer-meinhardt-results-watch-2026-11-11 for Issue No. 7.\n[2026-11-16 Monday full pass] Kiefer Meinhardt (Nov. 14–15) is past: dropped from the board (results watch is chat-kiefer-meinhardt-results-watch-2026-11-11). NEW official entry: Athreya Aravind, Division I Men's Epee, Mon. Nov. 23 (USA Fencing via fencing-api; FencingTracker registrations agree: 5 entries / 3 fencers). Names in roster form (FT 'Sheth, Anayaà' -> Anayaa Sheth).\n[2026-11-23 daily pass] November NAC is in progress (Div I Men today). No Elite FC NAC results on the FencingTracker club page (7:51 AM ET). fencing-api live results for JNRWE (78693), CDTME (78696), and JNRME (78690) returned empty lists, final=false (7:53 AM ET). Still a results watch; Monday full pass should try official event pages again.\n[2026-11-23 Monday full pass 9:05 AM ET] November NAC results still not posted for Elite FC: FencingTracker club page has no NAC rows (9:02 AM ET); fencing-api cached results for JNRWE 78693, CDTME 78696, JNRME 78690 empty, final=false (cached 7:53 AM ET); USA Fencing tournament page 12316 shows no results. Div I Men (Athreya Aravind) is today. Not on the No. 8 board (event is over); results watch only. December SJCC travel now staged separately (ft-efc-on-the-road-dec-sjcc-2026-11-23).\n[2026-11-24 daily pass 8:01 AM ET] November NAC results are now on the FencingTracker club page and in official USA Fencing results (final=true). See ft-november-nac-results-2026-11-24. This board item is no longer a results watch.",
       "tags": [
         "entries",
         "travel"
@@ -1188,10 +1217,18 @@
           "final": false,
           "underlying": "https://member.usafencing.org/details/tournaments/12316",
           "note": "JNRWE came back from cache with 0 items; CDTME and JNRME live scrapes also returned 0 items, final=false. No placements to stage. DV1ME (today) not fetched."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-24T07:53:12-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "November NAC now listed (was absent on Nov 23). Five Elite FC results: Sheth JNRWE 85; Ng CDTME 15; Aravind JNRME 83; Ng JNRME 90; Aravind DV1ME 55. No ratings earned."
         }
       ],
       "created_at": "2026-10-28T09:58:00-04:00",
-      "updated_at": "2026-11-23T09:12:00-05:00",
+      "updated_at": "2026-11-24T08:01:14-05:00",
       "carried_from": "staging/weeks/2026-11-17",
       "carry_note": "Ran in No. 7 (On the Road — November NAC). November NAC Nov. 20–23 becomes a RESULTS WATCH for No. 8 (Anayaa Sheth, Nico Ng, Athreya Aravind); December travel entries still upcoming.",
       "carried_at": "2026-11-03T15:20:00-05:00",
@@ -1221,7 +1258,173 @@
         ]
       ],
       "row_count": 4,
-      "status": "results_watch"
+      "status": "results_posted",
+      "related_item": "ft-november-nac-results-2026-11-24"
+    },
+    {
+      "id": "ft-november-nac-results-2026-11-24",
+      "kind": "result",
+      "headline": "Nico Ng tied for 15th of 257 in Cadet Men's Epee at the November NAC",
+      "body": "Nico Ng finished tied for 15th of 257 in Cadet Men's Epee at the November NAC in Columbus, Ohio, on Saturday, Nov. 21. He also placed tied for 90th of 351 in Junior Men's Epee on Sunday. Athreya Aravind was tied for 55th of 349 in Division I Men's Epee on Monday and tied for 83rd of 351 in Junior Men. Anayaa Sheth was tied for 85th of 220 in Junior Women's Epee on Friday, Nov. 20. None of the five Elite FC results earned a rating.",
+      "word_count": 87,
+      "source": "web",
+      "from": null,
+      "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+      "target_week": "next",
+      "vetted": false,
+      "slot_hint": "club_results",
+      "suggested_slot": "club_results",
+      "tags": [
+        "results",
+        "nac",
+        "travel"
+      ],
+      "print_rows": [
+        [
+          "Nico Ng",
+          "November NAC, Cadet Men (Nov. 21)",
+          "tied for 15th of 257"
+        ],
+        [
+          "Athreya Aravind",
+          "November NAC, Division I Men (Nov. 23)",
+          "tied for 55th of 349"
+        ],
+        [
+          "Athreya Aravind",
+          "November NAC, Junior Men (Nov. 22)",
+          "tied for 83rd of 351"
+        ],
+        [
+          "Nico Ng",
+          "November NAC, Junior Men (Nov. 22)",
+          "tied for 90th of 351"
+        ],
+        [
+          "Anayaa Sheth",
+          "November NAC, Junior Women (Nov. 20)",
+          "tied for 85th of 220"
+        ]
+      ],
+      "facts": [
+        {
+          "claim": "Nico Ng tied for 15th of 257, Cadet Men's Epee (CDTME, event 78696), November NAC, Saturday Nov. 21, 2026, with Alexander Luo (Wanglei International Fencing Club); no rating earned",
+          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78696/results (final=true, 257 finishers), fetched 2026-11-24 7:56 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
+          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 15 (place_label 15.5, tied=false in the API). FencingTracker lists Nico as 15th."
+        },
+        {
+          "claim": "Nico Ng tied for 90th of 351, Junior Men's Epee (JNRME, event 78690), November NAC, Sunday Nov. 22, 2026, with Evan Boss (Traverse City Fencing Club); no rating earned",
+          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78690/results (final=true, 351 finishers), fetched 2026-11-24 7:56 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
+          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 90. Catalog official_competitors was 357."
+        },
+        {
+          "claim": "Athreya Aravind tied for 83rd of 351, Junior Men's Epee (JNRME, event 78690), November NAC, Sunday Nov. 22, 2026, with Dylan Leung (Maximum Fencing Club); no rating earned",
+          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78690/results (final=true, 351 finishers), fetched 2026-11-24 7:56 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
+          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 83."
+        },
+        {
+          "claim": "Athreya Aravind tied for 55th of 349, Division I Men's Epee (DV1ME, event 78684), November NAC, Monday Nov. 23, 2026, with Luke Kugler (New York Fencing Academy); no rating earned",
+          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78684/results (final=true, 349 placed + 1 DNF), fetched 2026-11-24 7:57 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
+          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 55. Catalog official_competitors was 358. One DNF (not Elite FC) excluded from the 'of 349' field size."
+        },
+        {
+          "claim": "Anayaa Sheth tied for 85th of 220, Junior Women's Epee (JNRWE, event 78693), November NAC, Friday Nov. 20, 2026, with Kyubi Emmanuelle Suico (Philadelphia Fencers Club); no rating earned. Official list spelling: Sheth, Anayaà.",
+          "source": "fencingapi live /v1/usfa/tournaments/12316/events/78693/results (final=true, 220 finishers), fetched 2026-11-24 7:56 AM ET; underlying https://member.usafencing.org/details/tournaments/12316",
+          "status": "official results (final); unvetted until Frank vets. Two finishers listed as place 85. Catalog official_competitors was 221. Print roster/Frank spelling Anayaa Sheth."
+        },
+        {
+          "claim": "FencingTracker club page lists the same five placements (Sheth JNRWE 85, Ng CDTME 15, Aravind JNRME 83, Ng JNRME 90, Aravind DV1ME 55), no ratings earned, dates 2026-11-20 through 2026-11-23.",
+          "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "status": "unvetted; FencingTracker club page 2026-11-24 7:53 AM ET. Does not mark the shared places as ties. Places agree with official USA Fencing results."
+        },
+        {
+          "claim": "Club newsletter congratulates Nico Ng on his top-16 finish at the November NAC (event not named in the email).",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp). Official results show the top-16 is the Cadet Men's Epee finish (tied for 15th of 257)."
+        }
+      ],
+      "field_note": "'of N' = number of placed finishers in the official USA Fencing results list (CDTME 257, matching catalog official_competitors 257; JNRME 351 vs catalog 357; JNRWE 220 vs catalog 221; DV1ME 349 placed + 1 DNF, catalog official_competitors 358). Shared places are printed as ties (two fencers at the same place number).",
+      "print_hint": "Strong result: Nico's tied-for-15th in Cadet Men at a NAC (257-fencer field) is the lead candidate for No. 8. The club newsletter already congratulated the top-16 and included a photo that appears to be Nico on the strip (email does not name the people in the photo — confirm before captioning). The other four NAC finishes are mid-pack / notable Div I (Athreya T55 of 349) for a roundup, not a lead.",
+      "vet_notes": "Daily FT quick look + fencing-api live official results 2026-11-24. Scraped/official results — unvetted until Frank vets. Club Mailchimp (allowlisted, auto-vetted as a congratulations) said 'top 16 finish at the November NAC' without naming the event; official final results show Nico tied for 15th of 257 in Cadet Men's Epee (event 78696, Sat. Nov. 21) and tied for 90th of 351 in Junior Men the next day. FencingTracker placements agree; FT does not flag the ties. No ratings earned. Names via roster (Sheth, Anayaà → Anayaa Sheth). No API-vs-FencingTracker mismatch on places. Catalog official_competitors ran a few heads higher than the posted finishers lists for JNRME/JNRWE/DV1ME (typical no-shows); print the official finishers-list field sizes. Manchen Friday Night still lists only Brendan Mendez; skipped per standing rule (do not stage, do not ask).",
+      "related_item": "ft-efc-travel-registrations-nov-dec-2026-10-28",
+      "related_media": [
+        "media-efc-november-nac-photo-2026-11-23"
+      ],
+      "provenance": [
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-24T07:53:12-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "New vs staging: November NAC now the second tournament on the club page (Freehold Youth still first). Five Elite FC rows, no ratings earned: Sheth, Anayaà JNRWE 85 on 2026-11-20; Ng, Nico CDTME 15 on 2026-11-21; Aravind, Athreya JNRME 83 and Ng, Nico JNRME 90 on 2026-11-22; Aravind, Athreya DV1ME 55 on 2026-11-23. Event links go to https://member.usafencing.org/details/tournaments/12316."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316?live=true",
+          "fetched_at": "2026-11-24T12:55:11Z",
+          "fetched_at_et": "2026-11-24 7:55 AM ET",
+          "final": false,
+          "data_kind": "catalog",
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "note": "source=live, kind=usfa.tournament. Epee official_competitors: JNRWE 78693 (Nov 20) 221; CDTME 78696 (Nov 21) 257; JNRME 78690 (Nov 22) 357; DV1ME 78684 (Nov 23) 358. No placements in this catalog payload."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/events/78696/results?live=true",
+          "fetched_at": "2026-11-24T12:56:33Z",
+          "fetched_at_et": "2026-11-24 7:56 AM ET",
+          "final": true,
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "note": "CDTME: 257 finishers, final=true. Ng, Nico (Elite Fencers Club) place 15 / label 15.5, with Luo, Alexander (Wanglei) also place 15. Rating empty."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/events/78690/results?live=true",
+          "fetched_at": "2026-11-24T12:56:46Z",
+          "fetched_at_et": "2026-11-24 7:56 AM ET",
+          "final": true,
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "note": "JNRME: 351 finishers, final=true (catalog official_competitors 357). Aravind, Athreya place 83 (shared); Ng, Nico place 90 (shared). Ratings empty."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/events/78693/results?live=true",
+          "fetched_at": "2026-11-24T12:56:54Z",
+          "fetched_at_et": "2026-11-24 7:56 AM ET",
+          "final": true,
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "note": "JNRWE: 220 finishers, final=true (catalog official_competitors 221). Sheth, Anayaà place 85 (shared). Rating empty."
+        },
+        {
+          "type": "fencingapi",
+          "source": "fencingapi",
+          "endpoint": "/v1/usfa/tournaments/12316/events/78684/results?live=true",
+          "fetched_at": "2026-11-24T12:57:14Z",
+          "fetched_at_et": "2026-11-24 7:57 AM ET",
+          "final": true,
+          "underlying": "https://member.usafencing.org/details/tournaments/12316",
+          "note": "DV1ME: 349 placed + 1 DNF (Moore, Shomari, Cloak and Dagger; not Elite FC), final=true (catalog official_competitors 358). Aravind, Athreya place 55 (shared with Kugler, Luke). Rating empty."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class! + Thanksgiving",
+          "received_at": "2026-11-23T09:56:58-05:00",
+          "retrieved_at": "2026-11-24T08:01:14-05:00",
+          "url": "https://mailchi.mp/be0b7ca989d6/group-class-thanksgiving?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Allowlisted club Mailchimp congratulates Nico Ng on a top-16 finish at the November NAC (event not named) and includes a photo of a fencer in white epee kit at a USA Fencing event (extracted; email does not name the people in the photo)."
+        }
+      ],
+      "created_at": "2026-11-24T08:01:14-05:00",
+      "updated_at": "2026-11-24T08:01:14-05:00"
     },
     {
       "id": "askfred-bernards-hs-senior-open-2026-12-19",
@@ -1416,11 +1619,16 @@
           "claim": "FencingTracker club page lists Jeong, Joshua Y12ME 3rd and Jiang, Christina Y12WE 1st, no rating earned, date 2026-11-22; 2 results recorded",
           "source": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
           "status": "unvetted; FencingTracker club page 2026-11-23 7:51 AM ET. Does not mark the Y12ME bronze as a tie."
+        },
+        {
+          "claim": "Club newsletter congratulates Christina Jiang on her 1st-place finish in Y12 Freehold.",
+          "source": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "status": "verified-email (allowlisted club Mailchimp, auto-club-mailchimp). Does not mention Joshua Jeong or field size."
         }
       ],
       "field_note": "'of 4' = number of finishers in the official USA Fencing results list. Catalog official_competitors for both events was also 4.",
       "print_hint": "Club Results rows: local medals, but fields of 4 — flag the field size if this leads. Joshua was not on the Nov 19 prereg list.",
-      "vet_notes": "Daily FT quick look + fencing-api live results 2026-11-23. Scraped/official results — unvetted until Frank vets. Christina's gold and Joshua's shared bronze are in four-fencer fields. Joshua Jeong was not on the AskFRED/fencing-api prereg as of Thu Nov 19 (that item listed only Christina Jiang in Y12WE). Related entries item: askfred-freehold-nov-youth-epee-2026-11-22.\n[2026-11-23 Monday full pass] FencingTracker club page unchanged at 9:02 AM ET. Both are medals, so they clear the bar at any level; small fields (4) are why the field size is shown. Still awaiting Frank's vet.",
+      "vet_notes": "Daily FT quick look + fencing-api live results 2026-11-23. Scraped/official results — unvetted until Frank vets. Christina's gold and Joshua's shared bronze are in four-fencer fields. Joshua Jeong was not on the AskFRED/fencing-api prereg as of Thu Nov 19 (that item listed only Christina Jiang in Y12WE). Related entries item: askfred-freehold-nov-youth-epee-2026-11-22.\n[2026-11-23 Monday full pass] FencingTracker club page unchanged at 9:02 AM ET. Both are medals, so they clear the bar at any level; small fields (4) are why the field size is shown. Still awaiting Frank's vet.\n[2026-11-24 daily pass] Club Mailchimp (Mon Nov 23, 9:56 AM ET, auto-club-mailchimp) congratulates 'Christina Jiang for her 1st place finish in Y12 Freehold competition.' That confirms her gold; Joshua Jeong's shared bronze is not mentioned in the email, so this item stays unvetted. The same email included the Y12 Women's podium photo (Christina on the first-place box). FencingTracker club page re-fetched 2026-11-24T07:53:12-05:00: Youth results unchanged (Jiang 1st Y12WE, Jeong 3rd Y12ME, no rating).",
       "related_item": "askfred-freehold-nov-youth-epee-2026-11-22",
       "provenance": [
         {
@@ -1458,10 +1666,33 @@
           "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
           "retrieved_at": "2026-11-23T09:02:00-05:00",
           "note": "Monday full pass: unchanged (Jeong 3, Jiang 1, no rating earned)."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Group Class! + Thanksgiving",
+          "received_at": "2026-11-23T09:56:58-05:00",
+          "retrieved_at": "2026-11-24T08:01:14-05:00",
+          "url": "https://mailchi.mp/be0b7ca989d6/group-class-thanksgiving?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Allowlisted club Mailchimp congratulates Christina Jiang, 1st in Y12 Freehold. Includes the Y12 Women's podium photo (extracted). Does not mention Joshua Jeong."
+        },
+        {
+          "type": "web",
+          "source": "fencingtracker",
+          "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
+          "retrieved_at": "2026-11-24T07:53:12-05:00",
+          "method": "daily FT quick look, one fetch",
+          "note": "Freehold Youth unchanged: Jeong, Joshua Y12ME 3rd; Jiang, Christina Y12WE 1st; no rating earned."
         }
       ],
       "created_at": "2026-11-23T07:56:00-05:00",
-      "updated_at": "2026-11-23T09:12:00-05:00"
+      "updated_at": "2026-11-24T08:01:14-05:00",
+      "related_media": [
+        "media-christina-jiang-freehold-youth-podium-2026-11-22"
+      ]
     },
     {
       "id": "ft-freehold-nov-junior-chen-2026-11-20",
@@ -1793,21 +2024,20 @@
     }
   ],
   "last_daily_pass": {
-    "at": "2026-11-23T07:56:00-05:00",
+    "at": "2026-11-24T08:01:14-05:00",
     "kind": "weekday morning email + FencingTracker quick look",
     "email": [
-      "ingested <d0ff43e598e6fe5cb242389b7.f656c71db1.20261120144523.e61dc5891b.1df7525f@mail67.atl91.mcsv.net> (club Mailchimp Group Class! + Thanksgiving Schedule, Fri Nov 20 9:45 AM ET, arrived after Friday's 7:56 AM pass). Class times match the standing schedule and the known Friday Intermediate class; logo only, no new media. New facts: club closed Wed 11/25, Thu 11/26, Fri 11/27 for Thanksgiving. Email says return to normal schedule on Saturday 12/28 — probable typo for Saturday 11/28; flagged for Frank, not printed. No other new mail; no chunkymonkey digest since Mon Nov 16."
+      "ingested <d0ff43e598e6fe5cb242389b7.f656c71db1.20261123145655.18853f37af.71934335@mail67.atl91.mcsv.net> (club Mailchimp Group Class! + Thanksgiving, Mon Nov 23 9:56 AM ET, arrived after Monday's 9:15 AM pre-budget pass). Auto-vetted. Class times match the standing schedule (lessons Mon+Tue; Musketeers 4:30 p.m.; Advanced 6:00 p.m.). Closure dates unchanged (Wed 11/25–Fri 11/27); email says return to normal schedule on Saturday 11/28, confirming the Nov. 20 '12/28' typo. Congratulates Nico Ng on a top-16 at the November NAC and Christina Jiang on 1st in Y12 Freehold. Two content photos extracted (NAC strip photo, Freehold Y12WE podium). Logo / social / tracking pixel skipped. No other new mail; no chunkymonkey digest since Mon Nov 16."
     ],
     "fencingtracker": {
       "url": "https://fencingtracker.com/club/100261977/Elite%20FC/results",
-      "retrieved_at": "2026-11-23T07:51:00-05:00",
-      "note": "One fetch. New vs staging: (1) Freehold Fencing - November Youth Foil & Epee (Nov 22): Jeong, Joshua 3rd Y12ME; Jiang, Christina 1st Y12WE; no ratings earned. (2) Freehold Fencing - November Junior Epee (Nov 20): Chen, Xinxuewei 7th JNRXE; no rating earned. Official USFA results (final) later the same pass confirm the Youth finishes and the Y12ME tie, fields of 4. No November NAC results on the club page. Nico Ng 5th at Freehold November Open, Kiefer Meinhardt, and Pizza RYC already ran in No. 7. Manchen Friday Night (Nov 13) still lists only Brendan Mendez; skipped per standing rule (do not stage, do not ask)."
+      "retrieved_at": "2026-11-24T07:53:12-05:00",
+      "note": "One fetch. New vs staging: November NAC now on the club page with five Elite FC results (Sheth JNRWE 85; Ng CDTME 15; Aravind JNRME 83; Ng JNRME 90; Aravind DV1ME 55; no ratings earned). Freehold Youth unchanged (Jiang 1st Y12WE, Jeong 3rd Y12ME). Freehold Junior unchanged (Chen 7th). Older results (Freehold Open, Kiefer, Pizza RYC, FC Open) already ran in No. 7. Manchen Friday Night (Nov 13) still lists only Brendan Mendez; skipped per standing rule (do not stage, do not ask)."
     },
     "fencingapi": {
-      "club_results": "cached club-results since 2026-11-16 returned 0 items (fetched_at null); new weekend results were not in the cache.",
-      "youth_results": "live /v1/usfa/tournaments/12503 catalog at 2026-11-23T12:53:42Z (official_competitors 4/4) and live event results at 12:54:14Z/12:54:17Z, final=true: Jiang 1st of 4 Y12WE (79559); Jeong tied for 3rd of 4 Y12ME (79558).",
-      "junior_results": "live AskFRED search + /v1/askfred/tournaments/149dcd16-e601-4734-a397-d1357e339784/entries at 2026-11-23T12:55:06Z: 10 entries in Junior Mixed Epee including Chen, Xinxuewei (Elite Fencers Club, U). No official results list. AskFRED page has no results table.",
-      "nac": "live/cache results for November NAC (USFA 12316) JNRWE 78693, CDTME 78696, JNRME 78690 empty, final=false, 7:53 AM ET. No NAC results staged."
+      "club_results": "cached club-results since 2026-11-16 returned only the two Freehold Youth rows already staged (fetched_at 2026-11-23T12:54:17Z); November NAC was not in the cache.",
+      "nac_catalog": "live /v1/usfa/tournaments/12316 at 2026-11-24T12:55:11Z (final=false, catalog): official_competitors JNRWE 221, CDTME 257, JNRME 357, DV1ME 358.",
+      "nac_results": "live event results, all final=true: CDTME 78696 (7:56 AM ET) 257 finishers, Nico Ng tied for 15th; JNRME 78690 (7:56 AM ET) 351 finishers, Athreya Aravind tied for 83rd and Nico Ng tied for 90th; JNRWE 78693 (7:56 AM ET) 220 finishers, Anayaa Sheth (official Sheth, Anayaà) tied for 85th; DV1ME 78684 (7:57 AM ET) 349 placed + 1 DNF, Athreya Aravind tied for 55th. No ratings earned. Places agree with the FencingTracker club page (FT does not flag ties). Field-size differences vs catalog official_competitors noted on the item (no-shows); not a place-data mismatch."
     }
   },
   "last_monday_pass": {

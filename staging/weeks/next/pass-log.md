@@ -1,5 +1,26 @@
 # Pass log — Issue No. 8 (staging/weeks/next)
 
+## 2026-11-24 daily email check + FencingTracker quick look (8:01 AM ET)
+
+Follows the 2026-11-23 Monday full pass (commit 6fafbc6).
+
+**Email (AgentMail efc.weekly):** one new message, ingested and labeled processed.
+
+- Club Mailchimp "Group Class! + Thanksgiving" (Mon Nov 23, 9:56 AM ET; allowlisted, auto-vetted). Lessons Mon+Tue and class times (Musketeers 4:30 p.m., Advanced 6:00 p.m.) match the standing schedule. Closure dates unchanged (Wed 11/25–Fri 11/27). Reopen date is now **Saturday, Nov. 28** — the later email confirms the Nov. 20 "Saturday 12/28" typo; Thanksgiving item body updated and the typo flag for Frank is cleared. Congratulates Nico Ng on a top-16 at the November NAC and Christina Jiang on 1st in Y12 Freehold. Two content photos extracted (logo / social / 1×1 pixel skipped). No other new mail. No chunkymonkey club-schedule digest since Mon. Nov. 16 (already flagged yesterday).
+
+**FencingTracker** (1 fetch, club results page, 7:53 AM ET): **new November NAC results** (absent yesterday). Official cross-check below. Freehold Youth and Freehold Junior unchanged. Manchen still only Brendan Mendez; skipped per standing rule.
+
+**fencing-api** (5 calls: 1 cached club-results since Nov. 16, then live NAC catalog + 4 epee event results): cache still had only Freehold Youth. Live official results (final=true) agree with FencingTracker places:
+
+- Nico Ng tied for **15th of 257** in Cadet Men's Epee (Sat. Nov. 21) — the club's "top 16." Also tied for 90th of 351 in Junior Men (Sun. Nov. 22).
+- Athreya Aravind tied for 55th of 349 in Division I Men (Mon. Nov. 23) and tied for 83rd of 351 in Junior Men.
+- Anayaa Sheth (official "Sheth, Anayaà") tied for 85th of 220 in Junior Women (Fri. Nov. 20).
+- No ratings earned. Field sizes are official finishers-list counts (catalog official_competitors ran slightly higher for JNRME/JNRWE/DV1ME). No place-data mismatch with FencingTracker.
+
+**Staged:** ft-november-nac-results-2026-11-24 (unvetted; proposed lead). Thanksgiving item updated (Sat. 11/28 confirmed, auto-vetted). Jiang podium photo + NAC strip photo in media/ (auto-club-mailchimp; ask Frank to confirm the NAC photo is Nico before a named caption). Freehold Youth item gets the club confirmation of Jiang's gold (Jeong still unvetted).
+
+**For Frank:** Nico's cadet T15 of 257 is a strong new result and a natural No. 8 lead. The Monday Budget did not have these NAC results. Confirm the NAC photo, and whether he wants a revised Budget.
+
 ## 2026-11-23 Monday full pass + pre-budget email pass (9:00–9:15 AM ET)
 
 Follows the 7:56 AM daily pass (commit ba176ae: Thanksgiving closure, Freehold Youth results, Xinxuewei Chen 7th).
