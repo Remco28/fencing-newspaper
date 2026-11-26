@@ -357,7 +357,7 @@
         "thanksgiving",
         "closure"
       ],
-      "vet_notes": "Daily pass 2026-11-23. Auto-vetted club Mailchimp (Fri Nov 20, 9:45 AM ET), 'Group Class! + Thanksgiving Schedule.' Print body uses only the three closure dates as written. The email also says 'Back to our normal schedule on Saturday 12/28.' That is almost certainly a typo for Saturday, Nov. 28 (the Saturday after Thanksgiving). Dec. 28, 2026 is a Monday and falls during Winter Camp (Dec. 27-31). Do not print the reopen date until Frank confirms it is Sat. Nov. 28. Same-email class reminders (lessons Fri+Sat Nov 20-21; Mini-Musketeers 4:15 p.m.; Intermediate 5:00 p.m.; Musketeers 11:00 a.m.; Advanced 1:00 p.m.) match the standing schedule and the known Friday Intermediate class; not staged as a classes item (those days are now past). Logo-only image, no media extract.\n[2026-11-24 daily pass] Club Mailchimp 'Group Class! + Thanksgiving' (Mon Nov 23, 9:56 AM ET, allowlisted, auto-club-mailchimp) restates the same three closure dates and says 'We will be back to our normal schedule on Saturday 11/28!' That confirms the Nov. 20 email's 'Saturday 12/28' was a typo. Reopen date is now safe to print. Same-email class reminders (lessons Mon+Tue Nov 23-24; Musketeers Mon 4:30 p.m.; Advanced Tue 6:00 p.m.) match the standing schedule; not staged as a classes item. The email also congratulates Nico Ng on a top-16 at the November NAC and Christina Jiang on 1st in Y12 Freehold (see NAC results item and the Freehold Youth item). Two content photos extracted.",
+      "vet_notes": "Daily pass 2026-11-23. Auto-vetted club Mailchimp (Fri Nov 20, 9:45 AM ET), 'Group Class! + Thanksgiving Schedule.' Print body uses only the three closure dates as written. The email also says 'Back to our normal schedule on Saturday 12/28.' That is almost certainly a typo for Saturday, Nov. 28 (the Saturday after Thanksgiving). Dec. 28, 2026 is a Monday and falls during Winter Camp (Dec. 27-31). Do not print the reopen date until Frank confirms it is Sat. Nov. 28. Same-email class reminders (lessons Fri+Sat Nov 20-21; Mini-Musketeers 4:15 p.m.; Intermediate 5:00 p.m.; Musketeers 11:00 a.m.; Advanced 1:00 p.m.) match the standing schedule and the known Friday Intermediate class; not staged as a classes item (those days are now past). Logo-only image, no media extract.\n[2026-11-24 daily pass] Club Mailchimp 'Group Class! + Thanksgiving' (Mon Nov 23, 9:56 AM ET, allowlisted, auto-club-mailchimp) restates the same three closure dates and says 'We will be back to our normal schedule on Saturday 11/28!' That confirms the Nov. 20 email's 'Saturday 12/28' was a typo. Reopen date is now safe to print. Same-email class reminders (lessons Mon+Tue Nov 23-24; Musketeers Mon 4:30 p.m.; Advanced Tue 6:00 p.m.) match the standing schedule; not staged as a classes item. The email also congratulates Nico Ng on a top-16 at the November NAC and Christina Jiang on 1st in Y12 Freehold (see NAC results item and the Freehold Youth item). Two content photos extracted.\n[2026-11-26 daily pass] Club Mailchimp 'Club Closed + Happy Thanksgiving!' (Wed Nov 25, 10:07 AM ET, allowlisted, auto-club-mailchimp) restates the same three closure dates and 'back to our normal schedule on Saturday 11/28!' No new print facts. Logo-only image (Elite FC shield), no media extract. Item already printed in No. 8 and was not carried into No. 9.",
       "facts": [
         {
           "claim": "Club closed Wednesday 11/25, Thursday 11/26, and Friday 11/27 for the Thanksgiving holiday.",
@@ -399,10 +399,22 @@
           "url": "https://mailchi.mp/be0b7ca989d6/group-class-thanksgiving?e=f656c71db1",
           "vetted_by": "auto-club-mailchimp",
           "note": "Inbox efc.weekly@agentmail.to. Allowlisted club Mailchimp, arrived after the Monday 9:15 AM ET pre-budget pass. Confirms reopen Saturday 11/28 (correcting the Nov. 20 typo of 12/28). Class-time reminders match the standing schedule. Congrats + two photos handled on the results items."
+        },
+        {
+          "type": "email",
+          "source": "agentmail",
+          "message_id": "<d0ff43e598e6fe5cb242389b7.f656c71db1.20261125150228.246b28dfe5.84e2d978@mail67.atl91.mcsv.net>",
+          "from": "elitefencersclub@111617670.mailchimpapp.com",
+          "subject": "Club Closed + Happy Thanksgiving!",
+          "received_at": "2026-11-25T10:07:03-05:00",
+          "retrieved_at": "2026-11-26T07:59:00-05:00",
+          "url": "https://mailchi.mp/9bb05286d612/club-closed-happy-thanksgiving?e=f656c71db1",
+          "vetted_by": "auto-club-mailchimp",
+          "note": "Inbox efc.weekly@agentmail.to. Allowlisted club Mailchimp. Confirms the same Wed 11/25–Fri 11/27 closure and Saturday 11/28 reopen already printed in No. 8. Only image is the club logo (plus social icons and a 1x1 tracking pixel); no media extract. Not re-added to the No. 9 pile."
         }
       ],
       "created_at": "2026-11-23T07:56:00-05:00",
-      "updated_at": "2026-11-24T08:01:14-05:00",
+      "updated_at": "2026-11-26T07:59:00-05:00",
       "printed_in": 8
     },
     {
