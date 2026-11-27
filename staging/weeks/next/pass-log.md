@@ -1,5 +1,15 @@
 # Pass log — Issue No. 9 (staging/weeks/next)
 
+## 2026-11-27 daily email check + FencingTracker quick look (7:53 AM ET)
+
+Friday after Thanksgiving; the club is closed today (dates already confirmed and printed in No. 8; back Saturday 11/28).
+
+**Email (AgentMail efc.weekly):** no new mail. Paginated the whole inbox (70 messages); all already labeled processed. Newest remains the Wed Nov 25 club Mailchimp "Club Closed + Happy Thanksgiving!" ingested yesterday.
+
+**FencingTracker** (1 fetch, club results page, 2026-11-27 7:53 AM ET): unchanged versus yesterday's pass and the known pile. Newest tournament is still Freehold Fencing - November Youth Foil & Epee (Nov 22), 2 results: Jiang, Christina, Youth 12 Women's Epee, 1st (printed in No. 8); Jeong, Joshua, Youth 12 Men's Epee, 3rd (already staged unvetted as ft-freehold-nov-youth-jeong-2026-11-22). Freehold November Junior (Chen 7th) and November NAC results unchanged. Manchen still only Brendan Mendez; skipped per standing rule. No new Elite FC result staged. URL: https://fencingtracker.com/club/100261977/Elite%20FC/results.
+
+**Not for Frank:** no new mail, no strong new result, no entry change. Stay quiet.
+
 ## 2026-11-26 daily email check + FencingTracker quick look (7:59 AM ET)
 
 First weekday pass after the No. 8 roll-forward (commit de80458, 2026-11-24 6:05 PM ET). Thanksgiving Day.
